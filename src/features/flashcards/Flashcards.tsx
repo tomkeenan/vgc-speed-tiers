@@ -1,8 +1,8 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { getAllPokemon } from '../../lib/data';
+import { useDecks } from '../../decks/DecksContext';
 import { computeSpeed } from '../../lib/speed';
 import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
@@ -16,9 +16,16 @@ import { randomIndex } from '../random';
  * and shuffles to the next card. Returns the element.
  */
 export function Flashcards() {
-  const pool = useMemo(() => getAllPokemon(), []);
+  const { activePokemon: pool, activeDeckId } = useDecks();
   const [index, setIndex] = useState(() => randomIndex(pool.length));
   const [revealed, setRevealed] = useState(false);
+
+  // Reset to a fresh card whenever the active deck changes.
+  useEffect(() => {
+    setRevealed(false);
+    setIndex(randomIndex(pool.length || 1));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeDeckId]);
 
   if (pool.length === 0) {
     return (
@@ -28,7 +35,7 @@ export function Flashcards() {
     );
   }
 
-  const pokemon = pool[index];
+  const pokemon = pool[Math.min(index, pool.length - 1)];
   const base = pokemon.baseStats.spe;
   const noEvs = computeSpeed({ base, ev: 0, nature: 'neutral' });
   const spd32 = computeSpeed({ base, ev: 32, nature: 'neutral' });
@@ -62,8 +69,18 @@ export function Flashcards() {
           </Typography>
           <TypeBadges types={pokemon.types} />
 
-          {revealed ? (
-            <Stack spacing={1.5} sx={{ mt: 1, width: '100%' }}>
+          {/* Both states share one grid cell so the card holds the revealed height and never reflows. */}
+          <Box sx={{ mt: 1, width: '100%', display: 'grid' }}>
+            <Stack
+              spacing={1.5}
+              sx={{
+                gridArea: '1 / 1',
+                width: '100%',
+                visibility: revealed ? 'visible' : 'hidden',
+                opacity: revealed ? 1 : 0,
+                transition: 'opacity 200ms',
+              }}
+            >
               <Box
                 sx={{
                   bgcolor: 'speed.main',
@@ -120,11 +137,21 @@ export function Flashcards() {
                 </Box>
               </Box>
             </Stack>
-          ) : (
-            <Typography sx={{ mt: 1, fontSize: '0.875rem', color: 'text.secondary' }}>
-              Tap to reveal Speed tiers
-            </Typography>
-          )}
+            <Box
+              sx={{
+                gridArea: '1 / 1',
+                alignSelf: 'center',
+                justifySelf: 'center',
+                visibility: revealed ? 'hidden' : 'visible',
+                opacity: revealed ? 0 : 1,
+                transition: 'opacity 200ms',
+              }}
+            >
+              <Typography sx={{ fontSize: '0.875rem', color: 'text.secondary' }}>
+                Tap to reveal Speed tiers
+              </Typography>
+            </Box>
+          </Box>
         </Stack>
       </Card>
 
