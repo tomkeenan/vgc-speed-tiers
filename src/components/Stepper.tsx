@@ -1,3 +1,7 @@
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+
 interface StepperProps {
   label: string;
   value: number;
@@ -6,6 +10,20 @@ interface StepperProps {
   onChange: (value: number) => void;
   format?: (value: number) => string;
 }
+
+const buttonSx = {
+  width: 40,
+  height: 40,
+  flexShrink: 0,
+  borderRadius: '12px',
+  border: '1px solid',
+  borderColor: 'divider',
+  bgcolor: 'background.paper',
+  color: 'text.primary',
+  fontSize: '1.25rem',
+  fontWeight: 700,
+  '&:hover': { bgcolor: 'background.default' },
+} as const;
 
 /**
  * A labelled numeric stepper with decrement/increment buttons, clamped to a range.
@@ -16,31 +34,44 @@ export function Stepper({ label, value, min, max, onChange, format }: StepperPro
   const display = format ? format(value) : String(value);
 
   return (
-    <div className="flex flex-col gap-1.5">
-      <span className="text-ink-muted text-sm font-semibold">{label}</span>
-      <div className="flex items-center gap-3">
-        <button
-          type="button"
+    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.75 }}>
+      <Typography
+        component="span"
+        sx={{ fontSize: '0.875rem', fontWeight: 600, color: 'text.secondary' }}
+      >
+        {label}
+      </Typography>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+        <IconButton
           aria-label={`Decrease ${label}`}
           disabled={value <= min}
           onClick={() => onChange(clamp(value - 1))}
-          className="border-ink/10 bg-surface text-ink hover:bg-surface-muted h-10 w-10 shrink-0 rounded-xl border text-xl font-bold transition-colors disabled:opacity-40"
+          sx={buttonSx}
         >
           -
-        </button>
-        <span className="text-ink flex-1 text-center text-base font-bold tabular-nums">
+        </IconButton>
+        <Typography
+          component="span"
+          sx={{
+            flex: 1,
+            textAlign: 'center',
+            fontSize: '1rem',
+            fontWeight: 700,
+            fontVariantNumeric: 'tabular-nums',
+            color: 'text.primary',
+          }}
+        >
           {display}
-        </span>
-        <button
-          type="button"
+        </Typography>
+        <IconButton
           aria-label={`Increase ${label}`}
           disabled={value >= max}
           onClick={() => onChange(clamp(value + 1))}
-          className="border-ink/10 bg-surface text-ink hover:bg-surface-muted h-10 w-10 shrink-0 rounded-xl border text-xl font-bold transition-colors disabled:opacity-40"
+          sx={buttonSx}
         >
           +
-        </button>
-      </div>
-    </div>
+        </IconButton>
+      </Box>
+    </Box>
   );
 }

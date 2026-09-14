@@ -1,4 +1,7 @@
 import { useMemo, useState } from 'react';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import { getAllPokemon } from '../../lib/data';
 import { computeSpeed } from '../../lib/speed';
 import { Button } from '../../components/Button';
@@ -20,7 +23,7 @@ export function Flashcards() {
   if (pool.length === 0) {
     return (
       <Card>
-        <p className="text-ink-muted">No Pokemon available.</p>
+        <Typography sx={{ color: 'text.secondary' }}>No Pokemon available.</Typography>
       </Card>
     );
   }
@@ -41,57 +44,91 @@ export function Flashcards() {
   };
 
   return (
-    <div className="flex flex-col gap-4">
-      <p className="text-ink-muted text-center text-sm">
+    <Stack spacing={2}>
+      <Typography sx={{ textAlign: 'center', color: 'text.secondary', fontSize: '0.875rem' }}>
         Tap the card to reveal its Speed tiers at level 50.
-      </p>
+      </Typography>
 
       <Card
-        role="button"
-        tabIndex={0}
-        aria-label={`${pokemon.name} flashcard, ${revealed ? 'showing' : 'hiding'} speed tiers`}
         onClick={() => setRevealed((r) => !r)}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            setRevealed((r) => !r);
-          }
-        }}
-        className="flex cursor-pointer flex-col items-center gap-3 select-none"
+        ariaLabel={`${pokemon.name} flashcard, ${revealed ? 'showing' : 'hiding'} speed tiers`}
       >
-        <div className="w-48 max-w-full sm:w-56">
-          <PokemonImage src={pokemon.sprite} name={pokemon.name} />
-        </div>
-        <h2 className="text-ink text-xl font-bold">{pokemon.name}</h2>
-        <TypeBadges types={pokemon.types} />
+        <Stack spacing={1.5} sx={{ alignItems: 'center' }}>
+          <Box sx={{ width: { xs: 192, sm: 224 }, maxWidth: '100%' }}>
+            <PokemonImage src={pokemon.sprite} name={pokemon.name} />
+          </Box>
+          <Typography variant="h6" sx={{ fontWeight: 700, color: 'text.primary' }}>
+            {pokemon.name}
+          </Typography>
+          <TypeBadges types={pokemon.types} />
 
-        {revealed ? (
-          <div className="mt-2 flex w-full flex-col gap-3">
-            <div className="bg-speed flex flex-col items-center rounded-2xl px-4 py-4 text-white">
-              <span className="text-xs font-semibold tracking-widest text-white/80 uppercase">
-                Base Speed
-              </span>
-              <span className="text-5xl leading-none font-black tabular-nums">
-                {pokemon.baseStats.spe}
-              </span>
-            </div>
-            <div>
-              <p className="text-ink-muted mb-1 text-center text-xs font-medium tracking-wide uppercase">
-                Level 50 Speed
-              </p>
-              <div className="grid grid-cols-3 gap-2">
-                <StatPill label="0 EVs" value={noEvs} />
-                <StatPill label="32 Spd" value={spd32} />
-                <StatPill label="32 Spd +Nat" value={spd32Nat} />
-              </div>
-            </div>
-          </div>
-        ) : (
-          <p className="text-ink-muted mt-2 text-sm">Tap to reveal Speed tiers</p>
-        )}
+          {revealed ? (
+            <Stack spacing={1.5} sx={{ mt: 1, width: '100%' }}>
+              <Box
+                sx={{
+                  bgcolor: 'speed.main',
+                  color: 'common.white',
+                  borderRadius: '16px',
+                  px: 2,
+                  py: 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                }}
+              >
+                <Typography
+                  sx={{
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em',
+                    fontSize: '0.75rem',
+                    fontWeight: 600,
+                    color: 'common.white',
+                    opacity: 0.8,
+                  }}
+                >
+                  Base Speed
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: '3rem',
+                    lineHeight: 1,
+                    fontWeight: 900,
+                    fontVariantNumeric: 'tabular-nums',
+                  }}
+                >
+                  {pokemon.baseStats.spe}
+                </Typography>
+              </Box>
+              <Box>
+                <Typography
+                  sx={{
+                    mb: 0.5,
+                    textAlign: 'center',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                    fontSize: '0.75rem',
+                    fontWeight: 500,
+                    color: 'text.secondary',
+                  }}
+                >
+                  Level 50 Speed
+                </Typography>
+                <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 1 }}>
+                  <StatPill label="0 EVs" value={noEvs} />
+                  <StatPill label="32 Spd" value={spd32} />
+                  <StatPill label="32 Spd +Nat" value={spd32Nat} />
+                </Box>
+              </Box>
+            </Stack>
+          ) : (
+            <Typography sx={{ mt: 1, fontSize: '0.875rem', color: 'text.secondary' }}>
+              Tap to reveal Speed tiers
+            </Typography>
+          )}
+        </Stack>
       </Card>
 
       <Button onClick={next}>Next Pokemon</Button>
-    </div>
+    </Stack>
   );
 }

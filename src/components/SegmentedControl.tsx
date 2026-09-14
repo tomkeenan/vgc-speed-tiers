@@ -1,3 +1,8 @@
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+
 interface Option<T extends string> {
   label: string;
   value: T;
@@ -21,25 +26,28 @@ export function SegmentedControl<T extends string>({
   onChange,
 }: SegmentedControlProps<T>) {
   return (
-    <div className="flex flex-col gap-1.5">
-      <span className="text-ink-muted text-sm font-semibold">{label}</span>
-      <div className="border-ink/10 flex overflow-hidden rounded-xl border">
+    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.75 }}>
+      <Typography
+        component="span"
+        sx={{ fontSize: '0.875rem', fontWeight: 600, color: 'text.secondary' }}
+      >
+        {label}
+      </Typography>
+      <ToggleButtonGroup
+        exclusive
+        fullWidth
+        size="small"
+        value={value}
+        onChange={(_, next) => {
+          if (next !== null) onChange(next as T);
+        }}
+      >
         {options.map((option) => (
-          <button
-            key={option.value}
-            type="button"
-            aria-pressed={value === option.value}
-            onClick={() => onChange(option.value)}
-            className={`flex-1 px-3 py-2 text-sm font-semibold transition-colors ${
-              value === option.value
-                ? 'bg-ink text-white'
-                : 'bg-surface text-ink hover:bg-surface-muted'
-            }`}
-          >
+          <ToggleButton key={option.value} value={option.value}>
             {option.label}
-          </button>
+          </ToggleButton>
         ))}
-      </div>
-    </div>
+      </ToggleButtonGroup>
+    </Box>
   );
 }

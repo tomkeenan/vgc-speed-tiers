@@ -1,3 +1,6 @@
+import Box from '@mui/material/Box';
+import Chip from '@mui/material/Chip';
+
 interface TypeBadgesProps {
   types: string[];
 }
@@ -40,19 +43,25 @@ function textColor(bg: string): string {
  */
 export function TypeBadges({ types }: TypeBadgesProps) {
   return (
-    <div className="flex flex-wrap justify-center gap-1.5">
+    <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 0.75 }}>
       {types.map((type) => {
         const bg = TYPE_COLORS[type.toLowerCase()] ?? FALLBACK;
         return (
-          <span
+          <Chip
             key={type}
-            style={{ backgroundColor: bg, color: textColor(bg) }}
-            className="rounded-full px-2.5 py-0.5 text-xs font-semibold"
-          >
-            {type}
-          </span>
+            label={type}
+            size="small"
+            sx={{
+              bgcolor: bg,
+              color: textColor(bg),
+              fontSize: '0.75rem',
+              fontWeight: 600,
+              height: 'auto',
+              '& .MuiChip-label': { px: 1.25, py: 0.25 },
+            }}
+          />
         );
       })}
-    </div>
+    </Box>
   );
 }

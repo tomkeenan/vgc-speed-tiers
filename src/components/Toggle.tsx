@@ -1,3 +1,6 @@
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Switch from '@mui/material/Switch';
+
 interface ToggleProps {
   label: string;
   checked: boolean;
@@ -10,24 +13,22 @@ interface ToggleProps {
  */
 export function Toggle({ label, checked, onChange }: ToggleProps) {
   return (
-    <label className="border-ink/10 bg-surface flex cursor-pointer items-center justify-between gap-3 rounded-xl border px-4 py-3">
-      <span className="text-ink text-sm font-semibold">{label}</span>
-      <button
-        type="button"
-        role="switch"
-        aria-checked={checked}
-        aria-label={label}
-        onClick={() => onChange(!checked)}
-        className={`relative h-6 w-11 shrink-0 rounded-full transition-colors ${
-          checked ? 'bg-ink' : 'bg-ink/20'
-        }`}
-      >
-        <span
-          className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${
-            checked ? 'translate-x-5' : 'translate-x-0.5'
-          }`}
-        />
-      </button>
-    </label>
+    <FormControlLabel
+      label={label}
+      labelPlacement="start"
+      control={<Switch checked={checked} onChange={(e) => onChange(e.target.checked)} />}
+      sx={{
+        m: 0,
+        width: '100%',
+        justifyContent: 'space-between',
+        border: '1px solid',
+        borderColor: 'divider',
+        borderRadius: '12px',
+        bgcolor: 'background.paper',
+        px: 2,
+        py: 1,
+        '& .MuiFormControlLabel-label': { fontSize: '0.875rem', fontWeight: 600 },
+      }}
+    />
   );
 }

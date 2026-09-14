@@ -1,7 +1,13 @@
 import { useMemo, useState } from 'react';
+import Autocomplete from '@mui/material/Autocomplete';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
 import { getAllPokemon } from '../../lib/data';
 import { applyModifiers, computeSpeed } from '../../lib/speed';
 import type { NatureEffect } from '../../lib/speed';
+import type { Pokemon } from '../../lib/types';
 import { Card } from '../../components/Card';
 import { PokemonImage } from '../../components/PokemonImage';
 import { SegmentedControl } from '../../components/SegmentedControl';
@@ -39,7 +45,7 @@ export function SpeedExplorer() {
   if (!pokemon) {
     return (
       <Card>
-        <p className="text-ink-muted">No Pokemon available.</p>
+        <Typography sx={{ color: 'text.secondary' }}>No Pokemon available.</Typography>
       </Card>
     );
   }
@@ -49,34 +55,34 @@ export function SpeedExplorer() {
   const finalSpeed = applyModifiers(statSpeed, { stage, tailwind, choiceScarf, paralysis });
 
   return (
-    <div className="flex flex-col gap-4">
-      <Card className="flex flex-col items-center gap-3">
-        <div className="w-40 max-w-full">
+    <Stack spacing={2}>
+      <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1.5 }}>
+        <Box sx={{ width: 160, maxWidth: '100%' }}>
           <PokemonImage src={pokemon.sprite} name={pokemon.name} />
-        </div>
-        <label className="w-full">
-          <span className="text-ink-muted mb-1 block text-sm font-semibold">Pokemon</span>
-          <select
-            value={pokemon.id}
-            onChange={(e) => setId(e.target.value)}
-            className="border-ink/10 bg-surface text-ink w-full rounded-xl border px-4 py-3 text-base font-semibold"
-          >
-            {pool.map((p) => (
-              <option key={p.id} value={p.id}>
-                {p.name}
-              </option>
-            ))}
-          </select>
-        </label>
+        </Box>
+        <Box sx={{ width: '100%' }}>
+          <Autocomplete<Pokemon, false, true, false>
+            fullWidth
+            disableClearable
+            options={pool}
+            getOptionLabel={(p) => p.name}
+            isOptionEqualToValue={(a, b) => a.id === b.id}
+            value={pokemon}
+            onChange={(_, next) => {
+              if (next) setId(next.id);
+            }}
+            renderInput={(params) => <TextField {...params} label="Pokemon" />}
+          />
+        </Box>
 
-        <div className="grid w-full grid-cols-3 gap-2">
+        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 1, width: '100%' }}>
           <StatPill label="Base Stat" value={base} />
           <StatPill label="Stat @ 50" value={statSpeed} />
           <StatPill label="Live Speed" value={finalSpeed} emphasis />
-        </div>
+        </Box>
       </Card>
 
-      <Card className="flex flex-col gap-4">
+      <Card sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         <SegmentedControl
           label="Nature"
           options={NATURE_OPTIONS}
@@ -97,12 +103,12 @@ export function SpeedExplorer() {
           onChange={setStage}
           format={(v) => (v > 0 ? `+${v}` : String(v))}
         />
-        <div className="flex flex-col gap-2">
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Toggle label="Tailwind (x2)" checked={tailwind} onChange={setTailwind} />
           <Toggle label="Choice Scarf (x1.5)" checked={choiceScarf} onChange={setChoiceScarf} />
           <Toggle label="Paralysis (x0.5)" checked={paralysis} onChange={setParalysis} />
-        </div>
+        </Box>
       </Card>
-    </div>
+    </Stack>
   );
 }

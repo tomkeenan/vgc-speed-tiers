@@ -1,39 +1,65 @@
 import { useState } from 'react';
+import type { SxProps, Theme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Skeleton from '@mui/material/Skeleton';
+import Typography from '@mui/material/Typography';
 
 interface PokemonImageProps {
   src: string;
   name: string;
-  className?: string;
+  sx?: SxProps<Theme>;
 }
 
 /**
- * Responsive Pokemon artwork with a loading shimmer and a fallback on error.
- * Takes a sprite src, the Pokemon name (for alt text), and optional classes, returns the element.
+ * Responsive Pokemon artwork with a loading skeleton and a fallback on error.
+ * Takes a sprite src, the Pokemon name (for alt text), and optional sx overrides, returns the element.
  */
-export function PokemonImage({ src, name, className = '' }: PokemonImageProps) {
+export function PokemonImage({ src, name, sx }: PokemonImageProps) {
   const [status, setStatus] = useState<'loading' | 'loaded' | 'error'>('loading');
 
   return (
-    <div className={`relative aspect-square w-full overflow-hidden ${className}`}>
-      {status !== 'loaded' && (
-        <div className="bg-surface-muted absolute inset-0 flex items-center justify-center">
-          {status === 'loading' ? (
-            <div className="bg-ink/5 h-2/3 w-2/3 animate-pulse rounded-full" />
-          ) : (
-            <span className="text-ink-muted px-2 text-center text-sm">{name}</span>
-          )}
-        </div>
+    <Box
+      sx={{ position: 'relative', aspectRatio: '1 / 1', width: '100%', overflow: 'hidden', ...sx }}
+    >
+      {status === 'loading' && (
+        <Skeleton
+          variant="rectangular"
+          sx={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
+        />
       )}
-      <img
+      {status === 'error' && (
+        <Box
+          sx={{
+            position: 'absolute',
+            inset: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            bgcolor: 'background.default',
+          }}
+        >
+          <Typography
+            sx={{ color: 'text.secondary', fontSize: '0.875rem', textAlign: 'center', px: 1 }}
+          >
+            {name}
+          </Typography>
+        </Box>
+      )}
+      <Box
+        component="img"
         src={src}
         alt={name}
         loading="lazy"
         onLoad={() => setStatus('loaded')}
         onError={() => setStatus('error')}
-        className={`h-full w-full object-contain transition-opacity duration-200 ${
-          status === 'loaded' ? 'opacity-100' : 'opacity-0'
-        }`}
+        sx={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'contain',
+          transition: 'opacity 200ms',
+          opacity: status === 'loaded' ? 1 : 0,
+        }}
       />
-    </div>
+    </Box>
   );
 }
