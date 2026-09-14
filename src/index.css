@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+
+/* Shared design tokens. Agents: use these via Tailwind (e.g. bg-surface, text-brand). */
+@theme {
+  --color-brand: #ef4444;
+  --color-brand-dark: #b91c1c;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f4f4f5;
+  --color-ink: #18181b;
+  --color-ink-muted: #71717a;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--color-surface-muted);
+  color: var(--color-ink);
+  font-family: system-ui, -apple-system, sans-serif;
+}

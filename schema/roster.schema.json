@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://speed-tiers/schema/roster.json",
+  "title": "Champions Roster",
+  "description": "Stage-1 output: the format's used-Pokemon pool with a resolved PokeAPI slug. Boundary between the @pkmn tool and the PokeAPI dataset builder.",
+  "type": "object",
+  "required": ["meta", "pokemon"],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["format", "generatedAt", "source", "count"],
+      "additionalProperties": false,
+      "properties": {
+        "format": { "type": "string" },
+        "generatedAt": { "type": "string", "format": "date-time" },
+        "source": { "type": "string" },
+        "count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "pokemon": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["showdownName", "id", "usage", "usageRank"],
+        "additionalProperties": false,
+        "properties": {
+          "showdownName": { "type": "string", "description": "Name as it appears in Showdown/Smogon stats." },
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "description": "Resolved PokeAPI slug." },
+          "usage": { "type": "number", "minimum": 0, "maximum": 1 },
+          "usageRank": { "type": "integer", "minimum": 1, "description": "1-based rank by usage (1 = most used)." }
+        }
+      }
+    }
+  }
+}
