@@ -7,6 +7,7 @@ import { computeSpeed } from '../../lib/speed';
 import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
 import { PokemonImage } from '../../components/PokemonImage';
+import { SlotNumber } from '../../components/SlotNumber';
 import { StatPill } from '../../components/StatPill';
 import { TypeBadges } from '../../components/TypeBadges';
 import { randomIndex } from '../random';
@@ -69,22 +70,14 @@ export function Flashcards() {
           </Typography>
           <TypeBadges types={pokemon.types} />
 
-          {/* Both states share one grid cell so the card holds the revealed height and never reflows. */}
-          <Box sx={{ mt: 1, width: '100%', display: 'grid' }}>
-            <Stack
-              spacing={1.5}
-              sx={{
-                gridArea: '1 / 1',
-                width: '100%',
-                visibility: revealed ? 'visible' : 'hidden',
-                opacity: revealed ? 1 : 0,
-                transition: 'opacity 200ms',
-              }}
-            >
+          {/* The tiers are always laid out; values stay masked as ??? then spin in on reveal, so
+              the card never reflows - matching the Who's Faster? reveal. */}
+          <Box sx={{ mt: 1, width: '100%' }}>
+            <Stack spacing={1.5} sx={{ width: '100%' }}>
               <Box
                 sx={{
-                  bgcolor: 'speed.main',
-                  color: 'common.white',
+                  bgcolor: 'background.default',
+                  color: 'text.primary',
                   borderRadius: '16px',
                   px: 2,
                   py: 2,
@@ -99,8 +92,7 @@ export function Flashcards() {
                     letterSpacing: '0.1em',
                     fontSize: '0.75rem',
                     fontWeight: 600,
-                    color: 'common.white',
-                    opacity: 0.8,
+                    color: 'text.secondary',
                   }}
                 >
                   Base Speed
@@ -113,7 +105,7 @@ export function Flashcards() {
                     fontVariantNumeric: 'tabular-nums',
                   }}
                 >
-                  {pokemon.baseStats.spe}
+                  {revealed ? <SlotNumber value={base} /> : '???'}
                 </Typography>
               </Box>
               <Box>
@@ -131,26 +123,15 @@ export function Flashcards() {
                   Level 50 Speed
                 </Typography>
                 <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 1 }}>
-                  <StatPill label="0 EVs" value={noEvs} />
-                  <StatPill label="32 Spd" value={spd32} />
-                  <StatPill label="32 Spd +Nat" value={spd32Nat} />
+                  <StatPill label="0 EVs" value={revealed ? <SlotNumber value={noEvs} /> : '???'} />
+                  <StatPill label="32 Spd" value={revealed ? <SlotNumber value={spd32} /> : '???'} />
+                  <StatPill
+                    label="32 Spd +Nat"
+                    value={revealed ? <SlotNumber value={spd32Nat} /> : '???'}
+                  />
                 </Box>
               </Box>
             </Stack>
-            <Box
-              sx={{
-                gridArea: '1 / 1',
-                alignSelf: 'center',
-                justifySelf: 'center',
-                visibility: revealed ? 'hidden' : 'visible',
-                opacity: revealed ? 0 : 1,
-                transition: 'opacity 200ms',
-              }}
-            >
-              <Typography sx={{ fontSize: '0.875rem', color: 'text.secondary' }}>
-                Tap to reveal Speed tiers
-              </Typography>
-            </Box>
           </Box>
         </Stack>
       </Card>
