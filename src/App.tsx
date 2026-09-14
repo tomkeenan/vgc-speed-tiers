@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Box from '@mui/material/Box';
 import { Flashcards } from './features/flashcards/Flashcards';
 import { FasterGame } from './features/faster-game/FasterGame';
-import { SpeedExplorer } from './features/speed-explorer/SpeedExplorer';
 import { SettingsDialog } from './features/settings/SettingsDialog';
 import { Header } from './components/Header';
 import { TabNav } from './components/TabNav';
@@ -11,7 +10,6 @@ import { DecksProvider } from './decks/DecksContext';
 const TABS = [
   { key: 'flashcards', label: 'Flashcards', render: () => <Flashcards /> },
   { key: 'faster', label: "Who's Faster?", render: () => <FasterGame /> },
-  { key: 'explorer', label: 'Explorer', render: () => <SpeedExplorer /> },
 ] as const;
 
 type TabKey = (typeof TABS)[number]['key'];

@@ -1,8 +1,7 @@
 # VGC Speed Tiers
 
-A small React SPA for drilling Pokemon **speed tiers** in the VGC Champions format - flashcards,
-a "who's faster?" game, and a speed explorer for natures, EVs and field effects (Tailwind, boosts,
-Choice Scarf, paralysis).
+A small React SPA for drilling Pokemon **speed tiers** in the VGC Champions format - flashcards
+and a "who's faster?" game.
 
 ## Architecture
 
@@ -12,8 +11,8 @@ A three-stage, API-first pipeline. Data is made solid before any UI consumes it.
 Stage 1  @pkmn (build-time)        Stage 2  PokeAPI (build-time)      Stage 3  React SPA (runtime)
 ─────────────────────────          ────────────────────────          ──────────────────────────
 Champions usage stats    ─roster─▶  base stats + types + art ─pokemon─▶  flashcards / faster-game
-→ names + usage %         .json     (factual only, no math)    .json     / speed-explorer
-→ PokeAPI slug per form                                                  + shared src/lib/speed.ts
+→ names + usage %         .json     (factual only, no math)    .json     + shared src/lib/speed.ts
+→ PokeAPI slug per form
 ```
 
 Two frozen boundaries let work happen in parallel:
@@ -41,7 +40,7 @@ schema/     JSON Schema contracts (roster, pokemon)
 data/       roster.json, pokemon.json, pokemon.sample.json (fixture)
 tools/      @pkmn + PokeAPI build-time pipeline (.mjs)
 src/lib/    types, speed engine, dataset loader
-src/features/  flashcards, faster-game, speed-explorer
+src/features/  flashcards, faster-game
 src/components/ shared UI primitives
 ```
 
