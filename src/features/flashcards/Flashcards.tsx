@@ -124,7 +124,10 @@ export function Flashcards() {
                 </Typography>
                 <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 1 }}>
                   <StatPill label="0 EVs" value={revealed ? <SlotNumber value={noEvs} /> : '???'} />
-                  <StatPill label="32 Spd" value={revealed ? <SlotNumber value={spd32} /> : '???'} />
+                  <StatPill
+                    label="32 Spd"
+                    value={revealed ? <SlotNumber value={spd32} /> : '???'}
+                  />
                   <StatPill
                     label="32 Spd +Nat"
                     value={revealed ? <SlotNumber value={spd32Nat} /> : '???'}

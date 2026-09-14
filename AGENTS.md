@@ -1,7 +1,7 @@
 # Agent Harness - VGC Speed Tiers
 
-A small React SPA for learning VGC (Champions format) Pokemon **speed tiers**: flashcards,
-a "who's faster?" game, and a speed explorer with nature/EV/field-effect modifiers.
+A small React SPA for learning VGC (Champions format) Pokemon **speed tiers**: flashcards
+and a "who's faster?" game.
 
 This file is the contract every agent works to. Read it fully before writing code.
 
@@ -93,10 +93,8 @@ This file is the contract every agent works to. Read it fully before writing cod
 
 - **Owns:** `src/App.tsx`, `src/components/**`, `src/features/**`, and UI styling.
 - **Do not touch:** `src/lib/**`, `tools/**`, `schema/**`, `data/**`.
-- **Task:** Build the three features against the fixture + frozen `speed.ts` API:
+- **Task:** Build the two features against the fixture + frozen `speed.ts` API:
   - **Flashcards:** artwork front; flip/click reveals the speed tier (min / neutral-max / max).
-  - **Who's Faster?:** two Pokemon, pick the faster, reveal + running score.
-  - **Speed Explorer:** pick a Pokemon; toggle nature / EVs / Tailwind / stage / Choice Scarf /
-    paralysis and show the live Speed via `applyModifiers`.
+  - **Who's Faster?:** two Pokemon, pick the faster by base Speed, reveal + running score.
   - Replace the stub shell in `App.tsx` with real navigation + layout. Mobile-first throughout.
 - **DoD:** `npm run typecheck` + `npm run test` pass; `npm run dev` boots clean on mobile widths.

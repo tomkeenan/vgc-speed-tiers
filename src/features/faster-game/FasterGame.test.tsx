@@ -12,8 +12,8 @@ vi.mock('../random', async (importOriginal) => {
 });
 
 const all = getAllPokemon();
-const slow = all.find((p) => p.id === 'kingambit')!; // base spe 50, max 112
-const fast = all.find((p) => p.id === 'garchomp')!; // base spe 102, max 169
+const slow = all.find((p) => p.id === 'kingambit')!; // base spe 50
+const fast = all.find((p) => p.id === 'garchomp')!; // base spe 102
 
 const renderGame = () =>
   renderWithTheme(
@@ -45,11 +45,11 @@ describe('FasterGame', () => {
     expect(screen.getAllByText('???')).toHaveLength(2); // both values masked up front
 
     click(choices()[0]); // pick the slower one
-    expect(screen.getByText('112')).toBeTruthy(); // picked value unmasked immediately
-    expect(screen.queryByText('169')).toBeNull(); // other still masked
+    expect(screen.getByText('50')).toBeTruthy(); // picked value unmasked immediately
+    expect(screen.queryByText('102')).toBeNull(); // other still masked
 
     advance(600);
-    expect(screen.getByText('169')).toBeTruthy(); // other now unmasked
+    expect(screen.getByText('102')).toBeTruthy(); // other now unmasked
     expect(screen.getByText(/Score: [01]\/1/)).toBeTruthy();
   });
 
@@ -86,14 +86,11 @@ describe('FasterGame', () => {
     advance(3000);
 
     expect(vi.mocked(pickTwo).mock.calls.length).toBeGreaterThan(callsBefore); // new pair drawn
-    expect(screen.queryByText('112')).toBeNull(); // back to idle, values masked again
+    expect(screen.queryByText('50')).toBeNull(); // back to idle, values masked again
   });
 
-  it('switches the prompt when the compare mode changes', () => {
+  it('prompts for the higher base Speed', () => {
     renderGame();
-    expect(screen.getByText('Which Pokemon has the higher max Speed?')).toBeTruthy();
-
-    click(screen.getByRole('button', { name: 'Base Speed' }));
     expect(screen.getByText('Which Pokemon has the higher base Speed?')).toBeTruthy();
   });
 });

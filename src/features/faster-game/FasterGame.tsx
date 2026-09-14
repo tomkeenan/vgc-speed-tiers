@@ -3,41 +3,31 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useDecks } from '../../decks/DecksContext';
-import { speedTiers } from '../../lib/speed';
 import type { Pokemon } from '../../lib/types';
 import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
 import { PokemonImage } from '../../components/PokemonImage';
-import { SegmentedControl } from '../../components/SegmentedControl';
 import { SlotNumber, slotSpinMs } from '../../components/SlotNumber';
 import { StatPill } from '../../components/StatPill';
 import { TypeBadges } from '../../components/TypeBadges';
 import { pickTwo } from '../random';
 
-type Mode = 'base' | 'max';
 type Phase = 'idle' | 'revealClicked' | 'revealBoth' | 'resolved';
 type Outcome = 'correct' | 'wrong' | 'tie';
-
-const MODE_OPTIONS: { label: string; value: Mode }[] = [
-  { label: 'Base Speed', value: 'base' },
-  { label: 'Max Speed', value: 'max' },
-];
 
 const REVEAL_DELAY_MS = 600;
 const SETTLE_BUFFER_MS = 150; // ensure the verdict lands firmly after the reel stops
 const RESOLVE_HOLD_MS = 1800; // how long the verdict shows before auto-advancing
 
-const speedOf = (p: Pokemon, mode: Mode) =>
-  mode === 'base' ? p.baseStats.spe : speedTiers(p.baseStats.spe).max;
+const speedOf = (p: Pokemon) => p.baseStats.spe;
 
 /**
- * Who's Faster? feature: pick the faster of two Pokemon (by base or max Speed), reveal the
- * picked speed then the other, tint the card green/red, and auto-advance on a correct guess.
+ * Who's Faster? feature: pick the faster of two Pokemon by base Speed, reveal the picked speed
+ * then the other, tint the card green/red, and auto-advance on a correct guess.
  * Returns the element.
  */
 export function FasterGame() {
   const { activePokemon: pool, activeDeckId } = useDecks();
-  const [mode, setMode] = useState<Mode>('max');
   const [pair, setPair] = useState<[Pokemon, Pokemon] | null>(() =>
     pool.length >= 2 ? pickTwo(pool) : null,
   );
@@ -83,15 +73,10 @@ export function FasterGame() {
 
   const [left, right] = pair;
 
-  const changeMode = (next: Mode) => {
-    setMode(next);
-    startRound();
-  };
-
   const guess = (choice: Pokemon) => {
     if (phase !== 'idle') return;
     const other = choice === left ? right : left;
-    const diff = speedOf(choice, mode) - speedOf(other, mode);
+    const diff = speedOf(choice) - speedOf(other);
     const result: Outcome = diff === 0 ? 'tie' : diff > 0 ? 'correct' : 'wrong';
 
     setPicked(choice);
@@ -106,7 +91,7 @@ export function FasterGame() {
     }
 
     // The second value reveals after REVEAL_DELAY_MS, then spins; the verdict lands once it settles.
-    const resolveAt = REVEAL_DELAY_MS + slotSpinMs(speedOf(other, mode)) + SETTLE_BUFFER_MS;
+    const resolveAt = REVEAL_DELAY_MS + slotSpinMs(speedOf(other)) + SETTLE_BUFFER_MS;
     timers.current.push(setTimeout(() => setPhase('revealBoth'), REVEAL_DELAY_MS));
     timers.current.push(setTimeout(() => setPhase('resolved'), resolveAt));
     if (result !== 'wrong') {
@@ -138,8 +123,8 @@ export function FasterGame() {
           {/* Both pills show immediately; the value stays masked as ??? then spins in on reveal. */}
           <Box sx={{ width: '100%' }}>
             <StatPill
-              label={mode === 'base' ? 'Base Speed' : 'Max Speed'}
-              value={showSpeed ? <SlotNumber value={speedOf(p, mode)} /> : '???'}
+              label="Base Speed"
+              value={showSpeed ? <SlotNumber value={speedOf(p)} /> : '???'}
             />
           </Box>
         </Stack>
@@ -168,13 +153,6 @@ export function FasterGame() {
 
   return (
     <Stack spacing={2}>
-      <SegmentedControl
-        label="Compare by"
-        options={MODE_OPTIONS}
-        value={mode}
-        onChange={changeMode}
-      />
-
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
         <Typography sx={{ fontWeight: 600, color: 'text.primary' }}>
           Score: {score}/{rounds}
@@ -183,7 +161,7 @@ export function FasterGame() {
       </Box>
 
       <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'center' }}>
-        Which Pokemon has the higher {mode === 'base' ? 'base' : 'max'} Speed?
+        Which Pokemon has the higher base Speed?
       </Typography>
 
       <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
