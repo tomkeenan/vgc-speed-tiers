@@ -12,7 +12,11 @@ if (!res.ok) throw new Error(`stats fetch failed: ${res.status} ${STATS_URL}`);
 const stats = await res.json();
 
 const pokemon = Object.entries(stats.pokemon)
-  .map(([showdownName, d]) => ({ showdownName, id: toPokeApiSlug(showdownName), usage: d.usage.weighted }))
+  .map(([showdownName, d]) => ({
+    showdownName,
+    id: toPokeApiSlug(showdownName),
+    usage: d.usage.weighted,
+  }))
   .filter((p) => p.usage >= MIN_USAGE)
   .sort((a, b) => b.usage - a.usage)
   .map((p, i) => ({ ...p, usageRank: i + 1 }));
@@ -27,5 +31,8 @@ const roster = {
   pokemon,
 };
 
-await writeFile(new URL('../data/roster.json', import.meta.url), JSON.stringify(roster, null, 2) + '\n');
+await writeFile(
+  new URL('../data/roster.json', import.meta.url),
+  JSON.stringify(roster, null, 2) + '\n',
+);
 console.log(`roster: ${pokemon.length} Pokemon (>= ${MIN_USAGE * 100}% usage) in ${FORMAT}`);

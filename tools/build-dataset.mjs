@@ -40,7 +40,11 @@ for (const entry of roster.pokemon) {
       usageRank: entry.usageRank,
     });
   } catch (e) {
-    failures.push({ id: entry.id, showdownName: entry.showdownName, error: String(e.message ?? e) });
+    failures.push({
+      id: entry.id,
+      showdownName: entry.showdownName,
+      error: String(e.message ?? e),
+    });
   }
 }
 
@@ -55,7 +59,10 @@ const dataset = {
   pokemon,
 };
 
-await writeFile(new URL('../data/pokemon.json', import.meta.url), JSON.stringify(dataset, null, 2) + '\n');
+await writeFile(
+  new URL('../data/pokemon.json', import.meta.url),
+  JSON.stringify(dataset, null, 2) + '\n',
+);
 console.log(`dataset: ${pokemon.length} written, ${failures.length} failures`);
 if (failures.length) {
   console.error('Unresolved (add overrides to tools/lib/name-map.mjs):');

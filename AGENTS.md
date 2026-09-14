@@ -19,16 +19,16 @@ This file is the contract every agent works to. Read it fully before writing cod
 
 ## Commands
 
-| Command | Purpose |
-| --- | --- |
-| `npm run dev` | Vite dev server |
-| `npm run test` | Vitest (single run) |
-| `npm run typecheck` | `tsc --noEmit` |
-| `npm run format` | Prettier write |
-| `npm run roster` | Stage 1: usage stats -> `data/roster.json` |
+| Command              | Purpose                                          |
+| -------------------- | ------------------------------------------------ |
+| `npm run dev`        | Vite dev server                                  |
+| `npm run test`       | Vitest (single run)                              |
+| `npm run typecheck`  | `tsc --noEmit`                                   |
+| `npm run format`     | Prettier write                                   |
+| `npm run roster`     | Stage 1: usage stats -> `data/roster.json`       |
 | `npm run build:data` | Stage 2: roster + PokeAPI -> `data/pokemon.json` |
-| `npm run validate` | Validate both data files against schemas |
-| `npm run data` | roster -> build:data -> validate |
+| `npm run validate`   | Validate both data files against schemas         |
+| `npm run data`       | roster -> build:data -> validate                 |
 
 ## Contracts
 
@@ -70,6 +70,7 @@ This file is the contract every agent works to. Read it fully before writing cod
 ## Agents (parallel, disjoint file ownership)
 
 ### Agent A - Data pipeline
+
 - **Owns:** `tools/**`, `data/roster.json`, `data/pokemon.json`, `tools/lib/name-map.mjs`.
 - **Do not touch:** `src/**`, `schema/**`, `data/pokemon.sample.json`.
 - **Task:** Run `npm run data`. Iterate `tools/lib/name-map.mjs` overrides until every roster
@@ -80,6 +81,7 @@ This file is the contract every agent works to. Read it fully before writing cod
 - **DoD:** `npm run data` exits 0; `data/pokemon.json` validates and covers the roster.
 
 ### Agent C - UI
+
 - **Owns:** `src/App.tsx`, `src/components/**`, `src/features/**`, and UI styling.
 - **Do not touch:** `src/lib/**`, `tools/**`, `schema/**`, `data/**`.
 - **Task:** Build the three features against the fixture + frozen `speed.ts` API:

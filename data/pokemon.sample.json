@@ -11,10 +11,7 @@
       "id": "kingambit",
       "num": 983,
       "name": "Kingambit",
-      "types": [
-        "Dark",
-        "Steel"
-      ],
+      "types": ["Dark", "Steel"],
       "baseStats": {
         "hp": 100,
         "atk": 135,
@@ -31,10 +28,7 @@
       "id": "garchomp",
       "num": 445,
       "name": "Garchomp",
-      "types": [
-        "Dragon",
-        "Ground"
-      ],
+      "types": ["Dragon", "Ground"],
       "baseStats": {
         "hp": 108,
         "atk": 130,
@@ -51,10 +45,7 @@
       "id": "incineroar",
       "num": 727,
       "name": "Incineroar",
-      "types": [
-        "Fire",
-        "Dark"
-      ],
+      "types": ["Fire", "Dark"],
       "baseStats": {
         "hp": 95,
         "atk": 115,
@@ -71,10 +62,7 @@
       "id": "whimsicott",
       "num": 547,
       "name": "Whimsicott",
-      "types": [
-        "Grass",
-        "Fairy"
-      ],
+      "types": ["Grass", "Fairy"],
       "baseStats": {
         "hp": 60,
         "atk": 67,
@@ -91,10 +79,7 @@
       "id": "charizard-mega-y",
       "num": 6,
       "name": "Charizard-Mega-Y",
-      "types": [
-        "Fire",
-        "Flying"
-      ],
+      "types": ["Fire", "Flying"],
       "baseStats": {
         "hp": 78,
         "atk": 104,
@@ -111,10 +96,7 @@
       "id": "flutter-mane",
       "num": 987,
       "name": "Flutter Mane",
-      "types": [
-        "Ghost",
-        "Fairy"
-      ],
+      "types": ["Ghost", "Fairy"],
       "baseStats": {
         "hp": 55,
         "atk": 55,

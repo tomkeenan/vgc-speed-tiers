@@ -29,7 +29,7 @@ const OVERRIDES = {
   'Mr. Mime': 'mr-mime',
   'Mr. Rime': 'mr-rime',
   'Type: Null': 'type-null',
-  'Flabébé': 'flabebe',
+  Flabébé: 'flabebe',
 };
 
 /**

@@ -25,10 +25,21 @@
         "required": ["showdownName", "id", "usage", "usageRank"],
         "additionalProperties": false,
         "properties": {
-          "showdownName": { "type": "string", "description": "Name as it appears in Showdown/Smogon stats." },
-          "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "description": "Resolved PokeAPI slug." },
+          "showdownName": {
+            "type": "string",
+            "description": "Name as it appears in Showdown/Smogon stats."
+          },
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+            "description": "Resolved PokeAPI slug."
+          },
           "usage": { "type": "number", "minimum": 0, "maximum": 1 },
-          "usageRank": { "type": "integer", "minimum": 1, "description": "1-based rank by usage (1 = most used)." }
+          "usageRank": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "1-based rank by usage (1 = most used)."
+          }
         }
       }
     }
