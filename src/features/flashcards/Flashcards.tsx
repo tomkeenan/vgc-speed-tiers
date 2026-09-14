@@ -67,7 +67,7 @@ export function Flashcards() {
 
         {revealed ? (
           <div className="mt-2 flex w-full flex-col gap-3">
-            <div className="bg-brand flex flex-col items-center rounded-2xl px-4 py-4 text-white">
+            <div className="bg-speed flex flex-col items-center rounded-2xl px-4 py-4 text-white">
               <span className="text-xs font-semibold tracking-widest text-white/80 uppercase">
                 Base Speed
               </span>

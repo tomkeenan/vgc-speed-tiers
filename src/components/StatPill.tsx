@@ -12,7 +12,7 @@ export function StatPill({ label, value, emphasis = false }: StatPillProps) {
   return (
     <div
       className={`flex flex-col items-center rounded-xl px-3 py-2 ${
-        emphasis ? 'bg-brand text-white' : 'bg-surface-muted text-ink'
+        emphasis ? 'bg-speed text-white' : 'bg-surface-muted text-ink'
       }`}
     >
       <span

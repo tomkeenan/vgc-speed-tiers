@@ -27,7 +27,7 @@ export function TabNav<T extends string>({ tabs, active, onChange }: TabNavProps
           onClick={() => onChange(tab.key)}
           className={`flex-1 rounded-xl px-2 py-2.5 text-sm font-semibold transition-colors ${
             active === tab.key
-              ? 'bg-brand text-white'
+              ? 'bg-ink text-white'
               : 'text-ink-muted hover:bg-surface-muted bg-transparent'
           }`}
         >

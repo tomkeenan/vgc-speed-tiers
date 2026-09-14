@@ -73,7 +73,7 @@ export function FasterGame() {
         : result.outcome === 'correct'
           ? 'Correct!'
           : 'Not quite.';
-    const tone = result.outcome === 'wrong' ? 'bg-ink text-white' : 'bg-brand text-white';
+    const tone = result.outcome === 'wrong' ? 'bg-ink text-white' : 'bg-correct text-white';
     return <div className={`rounded-xl px-4 py-3 text-center font-semibold ${tone}`}>{text}</div>;
   };
 
@@ -93,8 +93,8 @@ export function FasterGame() {
           }
         }}
         className={`flex flex-1 cursor-pointer flex-col items-center gap-2 text-center select-none ${
-          result ? 'cursor-default' : 'hover:border-brand'
-        } ${isPicked ? 'ring-brand ring-2' : ''} ${result && isFaster ? 'border-brand' : ''}`}
+          result ? 'cursor-default' : 'hover:border-ink/40'
+        } ${isPicked ? 'ring-ink ring-2' : ''} ${result && isFaster ? 'border-correct' : ''}`}
       >
         <div className="w-32 max-w-full sm:w-40">
           <PokemonImage src={p.sprite} name={p.name} />
