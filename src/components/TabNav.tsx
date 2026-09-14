@@ -1,10 +1,13 @@
-interface Tab<T extends string> {
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+
+interface TabItem<T extends string> {
   key: T;
   label: string;
 }
 
 interface TabNavProps<T extends string> {
-  tabs: Tab<T>[];
+  tabs: TabItem<T>[];
   active: T;
   onChange: (key: T) => void;
 }
@@ -15,25 +18,15 @@ interface TabNavProps<T extends string> {
  */
 export function TabNav<T extends string>({ tabs, active, onChange }: TabNavProps<T>) {
   return (
-    <nav
-      className="border-ink/10 bg-surface flex gap-1 rounded-2xl border p-1"
+    <Tabs
+      value={active}
+      onChange={(_, value) => onChange(value as T)}
+      variant="fullWidth"
       aria-label="Features"
     >
       {tabs.map((tab) => (
-        <button
-          key={tab.key}
-          type="button"
-          aria-current={active === tab.key ? 'page' : undefined}
-          onClick={() => onChange(tab.key)}
-          className={`flex-1 rounded-xl px-2 py-2.5 text-sm font-semibold transition-colors ${
-            active === tab.key
-              ? 'bg-ink text-white'
-              : 'text-ink-muted hover:bg-surface-muted bg-transparent'
-          }`}
-        >
-          {tab.label}
-        </button>
+        <Tab key={tab.key} value={tab.key} label={tab.label} />
       ))}
-    </nav>
+    </Tabs>
   );
 }

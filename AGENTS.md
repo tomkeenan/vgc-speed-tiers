@@ -61,11 +61,20 @@ This file is the contract every agent works to. Read it fully before writing cod
 - **Component-first.** One component per file in `src/components/` (shared) or a feature folder.
   Components are small and single-purpose; presentational components take props and do no data
   fetching. Features compose components; no monolithic files.
-- **Styling = Tailwind v4, consistent.** Use utility classes and the shared tokens in
-  `src/index.css` (`bg-surface`, `text-ink`, `bg-brand`, ...). Extract repeated markup into a
-  component rather than copy-pasting class strings.
-- **Mobile-first.** Base styles target mobile; add `sm:` / `md:` for larger screens. Buttons and
-  images are full-width on mobile (`w-full sm:w-auto`, `w-full` images). See `Button.tsx`.
+- **Styling = Material UI (MUI v7), consistent.** All styling goes through the MUI theme in
+  `src/theme.ts` and the `sx` prop. There is no Tailwind and no global CSS reset beyond MUI's
+  `CssBaseline`. Use theme tokens (the `primary` / `success` / custom `speed` palette keys,
+  `text.primary`, `text.secondary`, `background.paper`, `background.default`, `divider`) rather
+  than raw hex. Extract repeated markup into a component rather than copy-pasting `sx` blocks.
+- **Mobile-first.** Base styles target mobile; use MUI responsive values (`{ xs, sm }`) for larger
+  screens. Buttons are full-width on mobile and auto-width from `sm` up. See `Button.tsx`.
+
+> **This is the standard going forward.** MUI + the `src/theme.ts` theme + the `sx` prop is the
+> single styling system for all new UI work. Do not reintroduce Tailwind, add a second global CSS
+> reset, or hand-roll behavior MUI already provides (e.g. use `CardActionArea` for clickable cards,
+> `Skeleton` for loading states, `Autocomplete` for searchable pickers). New look-and-feel is tuned
+> in the theme, not re-derived per component. Component tests render through `renderWithTheme`
+> (`src/test/`) so the theme context is present.
 
 ## Agents (parallel, disjoint file ownership)
 

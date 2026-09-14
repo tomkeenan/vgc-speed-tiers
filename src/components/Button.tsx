@@ -1,24 +1,23 @@
-import type { ButtonHTMLAttributes } from 'react';
+import MuiButton, { type ButtonProps as MuiButtonProps } from '@mui/material/Button';
 
 type Variant = 'primary' | 'ghost';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends Omit<MuiButtonProps, 'variant' | 'color'> {
   variant?: Variant;
 }
 
-const VARIANTS: Record<Variant, string> = {
-  primary: 'bg-brand text-white hover:bg-brand-dark',
-  ghost: 'bg-surface text-ink border border-ink/10 hover:bg-surface-muted',
-};
-
 /**
  * A tappable button. Full-width on mobile, auto-width from sm up.
- * Takes standard button props plus an optional variant, returns the element.
+ * Takes standard MUI button props plus an optional variant, returns the element.
  */
-export function Button({ variant = 'primary', className = '', ...props }: ButtonProps) {
+export function Button({ variant = 'primary', sx, ...props }: ButtonProps) {
   return (
-    <button
-      className={`w-full rounded-xl px-5 py-3 text-base font-semibold transition-colors sm:w-auto ${VARIANTS[variant]} ${className}`}
+    <MuiButton
+      variant={variant === 'primary' ? 'contained' : 'outlined'}
+      color={variant === 'primary' ? 'primary' : 'inherit'}
+      disableElevation
+      size="large"
+      sx={{ width: { xs: '100%', sm: 'auto' }, px: 2.5, py: 1.5, ...sx }}
       {...props}
     />
   );

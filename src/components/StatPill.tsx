@@ -1,3 +1,6 @@
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+
 interface StatPillProps {
   label: string;
   value: string | number;
@@ -10,19 +13,36 @@ interface StatPillProps {
  */
 export function StatPill({ label, value, emphasis = false }: StatPillProps) {
   return (
-    <div
-      className={`flex flex-col items-center rounded-xl px-3 py-2 ${
-        emphasis ? 'bg-speed text-white' : 'bg-surface-muted text-ink'
-      }`}
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        borderRadius: '12px',
+        px: 1.5,
+        py: 1,
+        bgcolor: emphasis ? 'speed.main' : 'background.default',
+        color: emphasis ? 'common.white' : 'text.primary',
+      }}
     >
-      <span
-        className={`text-xs font-medium tracking-wide uppercase ${
-          emphasis ? 'text-white/80' : 'text-ink-muted'
-        }`}
+      <Typography
+        component="span"
+        sx={{
+          fontSize: '0.75rem',
+          fontWeight: 500,
+          letterSpacing: '0.05em',
+          textTransform: 'uppercase',
+          color: emphasis ? 'rgba(255, 255, 255, 0.8)' : 'text.secondary',
+        }}
       >
         {label}
-      </span>
-      <span className="text-xl font-bold tabular-nums">{value}</span>
-    </div>
+      </Typography>
+      <Typography
+        component="span"
+        sx={{ fontSize: '1.25rem', fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}
+      >
+        {value}
+      </Typography>
+    </Box>
   );
 }

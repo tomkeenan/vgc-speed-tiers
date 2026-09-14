@@ -1,4 +1,7 @@
 import { useMemo, useState } from 'react';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import { getAllPokemon } from '../../lib/data';
 import { speedTiers } from '../../lib/speed';
 import type { Pokemon } from '../../lib/types';
@@ -33,7 +36,7 @@ export function FasterGame() {
   if (pool.length < 2) {
     return (
       <Card>
-        <p className="text-ink-muted">Need at least two Pokemon to play.</p>
+        <Typography sx={{ color: 'text.secondary' }}>Need at least two Pokemon to play.</Typography>
       </Card>
     );
   }
@@ -73,8 +76,21 @@ export function FasterGame() {
         : result.outcome === 'correct'
           ? 'Correct!'
           : 'Not quite.';
-    const tone = result.outcome === 'wrong' ? 'bg-ink text-white' : 'bg-correct text-white';
-    return <div className={`rounded-xl px-4 py-3 text-center font-semibold ${tone}`}>{text}</div>;
+    return (
+      <Box
+        sx={{
+          borderRadius: '12px',
+          px: 2,
+          py: 1.5,
+          textAlign: 'center',
+          fontWeight: 600,
+          color: 'common.white',
+          bgcolor: result.outcome === 'wrong' ? 'text.primary' : 'success.main',
+        }}
+      >
+        {text}
+      </Box>
+    );
   };
 
   const contender = (p: Pokemon, speed: number) => {
@@ -82,53 +98,53 @@ export function FasterGame() {
     const isFaster = result && speed >= (p === left ? rightSpeed : leftSpeed);
     return (
       <Card
-        role="button"
-        tabIndex={0}
-        aria-label={`Choose ${p.name}`}
         onClick={() => guess(p)}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            guess(p);
-          }
+        ariaLabel={`Choose ${p.name}`}
+        sx={{
+          flex: 1,
+          ...(isPicked && { outline: '2px solid', outlineColor: 'text.primary' }),
+          ...(result && isFaster && { borderColor: 'success.main' }),
         }}
-        className={`flex flex-1 cursor-pointer flex-col items-center gap-2 text-center select-none ${
-          result ? 'cursor-default' : 'hover:border-ink/40'
-        } ${isPicked ? 'ring-ink ring-2' : ''} ${result && isFaster ? 'border-correct' : ''}`}
       >
-        <div className="w-32 max-w-full sm:w-40">
-          <PokemonImage src={p.sprite} name={p.name} />
-        </div>
-        <h3 className="text-ink text-lg font-bold">{p.name}</h3>
-        <TypeBadges types={p.types} />
-        {result && (
-          <div className="mt-1 w-full">
-            <StatPill label="Max Speed" value={speed} emphasis={isFaster ?? false} />
-          </div>
-        )}
+        <Stack alignItems="center" spacing={1} sx={{ textAlign: 'center' }}>
+          <Box sx={{ width: { xs: 128, sm: 160 }, maxWidth: '100%' }}>
+            <PokemonImage src={p.sprite} name={p.name} />
+          </Box>
+          <Typography variant="subtitle1" sx={{ fontWeight: 700, color: 'text.primary' }}>
+            {p.name}
+          </Typography>
+          <TypeBadges types={p.types} />
+          {result && (
+            <Box sx={{ width: '100%' }}>
+              <StatPill label="Max Speed" value={speed} emphasis={isFaster ?? false} />
+            </Box>
+          )}
+        </Stack>
       </Card>
     );
   };
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="text-ink flex items-center justify-between gap-2 text-sm font-semibold">
-        <span>
+    <Stack spacing={2}>
+      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
+        <Typography sx={{ fontWeight: 600, color: 'text.primary' }}>
           Score: {score}/{rounds}
-        </span>
-        <span className="text-brand">Streak: {streak}</span>
-      </div>
+        </Typography>
+        <Typography sx={{ color: 'primary.main', fontWeight: 600 }}>Streak: {streak}</Typography>
+      </Box>
 
-      <p className="text-ink-muted text-center text-sm">Which Pokemon has the higher max Speed?</p>
+      <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'center' }}>
+        Which Pokemon has the higher max Speed?
+      </Typography>
 
-      <div className="flex flex-col gap-3 sm:flex-row">
+      <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
         {contender(left, leftSpeed)}
         {contender(right, rightSpeed)}
-      </div>
+      </Stack>
 
       {banner()}
 
       {result && <Button onClick={nextRound}>Next Matchup</Button>}
-    </div>
+    </Stack>
   );
 }

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import { Flashcards } from './features/flashcards/Flashcards';
 import { FasterGame } from './features/faster-game/FasterGame';
 import { SpeedExplorer } from './features/speed-explorer/SpeedExplorer';
@@ -19,13 +21,28 @@ export default function App() {
   const active = TABS.find((t) => t.key === tab) ?? TABS[0];
 
   return (
-    <div className="mx-auto flex min-h-dvh max-w-2xl flex-col gap-4 p-4">
-      <header className="flex flex-col gap-1">
-        <h1 className="text-ink text-2xl font-bold">VGC Speed Tiers</h1>
-        <p className="text-ink-muted text-sm">
+    <Box
+      sx={{
+        mx: 'auto',
+        maxWidth: '42rem',
+        minHeight: '100dvh',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+        p: 2,
+      }}
+    >
+      <Box component="header" sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+        <Typography
+          component="h1"
+          sx={{ fontSize: '1.5rem', fontWeight: 700, color: 'text.primary' }}
+        >
+          VGC Speed Tiers
+        </Typography>
+        <Typography sx={{ color: 'text.secondary', fontSize: '0.875rem' }}>
           Learn Champions-format Speed at level 50 - {meta.count} Pokemon.
-        </p>
-      </header>
+        </Typography>
+      </Box>
 
       <TabNav
         tabs={TABS.map(({ key, label }) => ({ key, label }))}
@@ -33,7 +50,9 @@ export default function App() {
         onChange={setTab}
       />
 
-      <main className="flex-1">{active.render()}</main>
-    </div>
+      <Box component="main" sx={{ flex: 1 }}>
+        {active.render()}
+      </Box>
+    </Box>
   );
 }
