@@ -9,14 +9,21 @@ interface CardProps {
   onClick?: () => void;
   ariaLabel?: string;
   sx?: SxProps<Theme>;
+  state?: 'correct' | 'wrong';
 }
+
+const STATE_SX = {
+  correct: { borderColor: 'success.main', borderWidth: 2 },
+  wrong: { borderColor: 'primary.main', borderWidth: 2 },
+} as const;
 
 /**
  * A padded surface panel with consistent rounding and a subtle border. When given an onClick
- * it becomes a keyboard-accessible button via CardActionArea.
- * Takes children plus an optional onClick, aria-label, and sx overrides, returns the element.
+ * it becomes a keyboard-accessible button via CardActionArea; when given a state it colours the
+ * border green (correct) or red (wrong).
+ * Takes children plus an optional onClick, aria-label, sx overrides, and state, returns the element.
  */
-export function Card({ children, onClick, ariaLabel, sx }: CardProps) {
+export function Card({ children, onClick, ariaLabel, sx, state }: CardProps) {
   const content = (
     <CardContent sx={{ p: 2.5, '&:last-child': { pb: 2.5 } }}>{children}</CardContent>
   );
@@ -24,7 +31,13 @@ export function Card({ children, onClick, ariaLabel, sx }: CardProps) {
   return (
     <MuiCard
       variant="outlined"
-      sx={{ borderRadius: '16px', boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)', ...sx }}
+      sx={{
+        borderRadius: '16px',
+        boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+        transition: 'border-color 200ms',
+        ...(state && STATE_SX[state]),
+        ...sx,
+      }}
     >
       {onClick ? (
         <CardActionArea onClick={onClick} aria-label={ariaLabel}>
