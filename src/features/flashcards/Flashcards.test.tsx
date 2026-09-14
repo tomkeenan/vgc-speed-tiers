@@ -10,7 +10,8 @@ describe('Flashcards', () => {
 
     await userEvent.click(screen.getByRole('button', { name: /flashcard/i }));
 
-    expect(screen.getByText('Neutral Max')).toBeTruthy();
-    expect(screen.getByText('Min')).toBeTruthy();
+    expect(screen.getByText('Base Speed')).toBeTruthy();
+    expect(screen.getByText('0 EVs')).toBeTruthy();
+    expect(screen.getByText('32 Spd +Nat')).toBeTruthy();
   });
 });

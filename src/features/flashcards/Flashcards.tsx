@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { getAllPokemon } from '../../lib/data';
-import { speedTiers } from '../../lib/speed';
+import { computeSpeed } from '../../lib/speed';
 import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
 import { PokemonImage } from '../../components/PokemonImage';
@@ -26,7 +26,10 @@ export function Flashcards() {
   }
 
   const pokemon = pool[index];
-  const tiers = speedTiers(pokemon.baseStats.spe);
+  const base = pokemon.baseStats.spe;
+  const noEvs = computeSpeed({ base, ev: 0, nature: 'neutral' });
+  const spd32 = computeSpeed({ base, ev: 32, nature: 'neutral' });
+  const spd32Nat = computeSpeed({ base, ev: 32, nature: 'positive' });
 
   const next = () => {
     setRevealed(false);
@@ -63,14 +66,24 @@ export function Flashcards() {
         <TypeBadges types={pokemon.types} />
 
         {revealed ? (
-          <div className="mt-2 w-full">
-            <p className="text-ink-muted mb-1 text-center text-xs font-medium tracking-wide uppercase">
-              Base Speed {pokemon.baseStats.spe} - Level 50 tiers
-            </p>
-            <div className="grid grid-cols-3 gap-2">
-              <StatPill label="Min" value={tiers.min} />
-              <StatPill label="Neutral Max" value={tiers.neutralMax} />
-              <StatPill label="Max" value={tiers.max} emphasis />
+          <div className="mt-2 flex w-full flex-col gap-3">
+            <div className="bg-brand flex flex-col items-center rounded-2xl px-4 py-4 text-white">
+              <span className="text-xs font-semibold tracking-widest text-white/80 uppercase">
+                Base Speed
+              </span>
+              <span className="text-5xl leading-none font-black tabular-nums">
+                {pokemon.baseStats.spe}
+              </span>
+            </div>
+            <div>
+              <p className="text-ink-muted mb-1 text-center text-xs font-medium tracking-wide uppercase">
+                Level 50 Speed
+              </p>
+              <div className="grid grid-cols-3 gap-2">
+                <StatPill label="0 EVs" value={noEvs} />
+                <StatPill label="32 Spd" value={spd32} />
+                <StatPill label="32 Spd +Nat" value={spd32Nat} />
+              </div>
             </div>
           </div>
         ) : (
