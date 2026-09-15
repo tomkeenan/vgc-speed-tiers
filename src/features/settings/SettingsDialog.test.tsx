@@ -1,7 +1,8 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { fireEvent, screen } from '@testing-library/react';
 import { SettingsDialog } from './SettingsDialog';
 import { DecksProvider } from '../../decks/DecksContext';
+import { getAllPokemon } from '../../lib/data';
 import { renderWithTheme } from '../../test/renderWithTheme';
 
 const renderDialog = () =>
@@ -39,5 +40,41 @@ describe('SettingsDialog', () => {
       'aria-expanded',
       'false',
     );
+  });
+
+  it('imports a deck from pasted JSON, keeping only known Pokemon', () => {
+    renderDialog();
+    const known = getAllPokemon()[0].id;
+    const json = JSON.stringify({ name: 'Imported', pokemonIds: [known, 'not-a-real-mon'] });
+
+    fireEvent.change(screen.getByLabelText('Paste deck JSON'), { target: { value: json } });
+    fireEvent.click(screen.getByRole('button', { name: 'Import deck' }));
+
+    // The deck appears in the list with a size of 1 (the unknown id was dropped).
+    const row = screen.getByRole('button', { name: 'Edit Imported' }).closest('div');
+    expect(row?.textContent).toContain('· 1');
+  });
+
+  it('shows an error for invalid import JSON and imports nothing', () => {
+    renderDialog();
+    fireEvent.change(screen.getByLabelText('Paste deck JSON'), { target: { value: '{bad json' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Import deck' }));
+
+    expect(screen.getByText(/valid JSON/i)).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /^Edit / })).toBeNull();
+  });
+
+  it('copies a deck to the clipboard as JSON', async () => {
+    const writeText = vi.fn().mockResolvedValue(undefined);
+    Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
+
+    renderDialog();
+    fireEvent.change(screen.getByLabelText('Deck name'), { target: { value: 'Sun' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Save deck' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Edit Sun' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Copy JSON' }));
+
+    expect(writeText).toHaveBeenCalledWith(expect.stringContaining('"name": "Sun"'));
+    expect(await screen.findByRole('button', { name: 'Copied!' })).toBeInTheDocument();
   });
 });
