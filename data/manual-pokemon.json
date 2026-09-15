@@ -1,5 +1,5 @@
 {
-  "note": "Factual records for Champions VGC 2026 Reg-MC Mega Evolutions that PokeAPI has no /pokemon entry for. These formes debuted in Pokemon Legends: Z-A's Mega Dimension DLC and became legal in Reg MC (Sept 8 2026). Base stats and types are from Bulbapedia. spriteUrl is a stand-in (each mega's regular-Mega or base-form official artwork) because no artwork for these formes is available via PokeAPI. Consumed directly by tools/build-dataset.mjs, which trusts these records instead of calling PokeAPI. Sources: bulbapedia.bulbagarden.net species pages.",
+  "note": "Factual records for Champions VGC 2026 Reg-MC Mega Evolutions that PokeAPI has no /pokemon entry for. These formes debuted in Pokemon Legends: Z-A's Mega Dimension DLC and became legal in Reg MC (Sept 8 2026). Base stats and types are from Bulbapedia. spriteUrl points at each forme's official Ken Sugimori Z-A artwork on Bulbagarden Archives, since PokeAPI has no /pokemon-form artwork for them; salamence-mega reuses the classic Gen 6 Mega Salamence artwork from PokeAPI, which matches its stat spread. Consumed directly by tools/build-dataset.mjs, which trusts these records instead of calling PokeAPI. Sources: bulbapedia.bulbagarden.net species pages; archives.bulbagarden.net artwork.",
   "pokemon": [
     {
       "id": "salamence-mega",
@@ -15,7 +15,7 @@
       "num": 768,
       "types": ["Bug", "Steel"],
       "baseStats": { "hp": 75, "atk": 150, "def": 175, "spa": 70, "spd": 120, "spe": 40 },
-      "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/768.png"
+      "spriteUrl": "https://archives.bulbagarden.net/media/upload/c/c7/0768Golisopod-Mega.png"
     },
     {
       "id": "baxcalibur-mega",
@@ -23,7 +23,7 @@
       "num": 998,
       "types": ["Dragon", "Ice"],
       "baseStats": { "hp": 115, "atk": 175, "def": 117, "spa": 105, "spd": 101, "spe": 87 },
-      "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/998.png"
+      "spriteUrl": "https://archives.bulbagarden.net/media/upload/0/0b/0998Baxcalibur-Mega.png"
     },
     {
       "id": "absol-mega-z",
@@ -31,7 +31,7 @@
       "num": 359,
       "types": ["Dark", "Ghost"],
       "baseStats": { "hp": 65, "atk": 154, "def": 60, "spa": 75, "spd": 60, "spe": 151 },
-      "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10057.png"
+      "spriteUrl": "https://archives.bulbagarden.net/media/upload/e/e1/0359Absol-Mega_Z.png"
     },
     {
       "id": "garchomp-mega-z",
@@ -39,7 +39,7 @@
       "num": 445,
       "types": ["Dragon"],
       "baseStats": { "hp": 108, "atk": 130, "def": 85, "spa": 141, "spd": 85, "spe": 151 },
-      "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10058.png"
+      "spriteUrl": "https://archives.bulbagarden.net/media/upload/7/75/0445Garchomp-Mega_Z.png"
     },
     {
       "id": "lucario-mega-z",
@@ -47,7 +47,7 @@
       "num": 448,
       "types": ["Fighting", "Steel"],
       "baseStats": { "hp": 70, "atk": 100, "def": 70, "spa": 164, "spd": 70, "spe": 151 },
-      "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10059.png"
+      "spriteUrl": "https://archives.bulbagarden.net/media/upload/5/56/0448Lucario-Mega_Z.png"
     }
   ]
 }
