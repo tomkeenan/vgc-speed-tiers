@@ -116,11 +116,15 @@ describe('FasterGame', () => {
     expect(loadBestStreak()).toBe(2); // persisted
 
     advance(3000); // auto-advance
-    click(choices()[0]); // wrong: resets streak, best holds
+    click(choices()[0]); // wrong
     advance(600);
-    advance(3000);
-    expect(streakValue()).toBe('0');
+    advance(3000); // resolved
+    expect(streakValue()).toBe('2'); // streak held on screen after a loss
     expect(bestValue()).toBe('2');
+
+    click(screen.getByRole('button', { name: 'Try again' }));
+    expect(streakValue()).toBe('0'); // reset only on Try again
+    expect(bestValue()).toBe('2'); // best holds
   });
 
   it('prompts for the higher base Speed', () => {

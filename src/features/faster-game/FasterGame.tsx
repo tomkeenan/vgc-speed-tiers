@@ -54,6 +54,12 @@ export function FasterGame() {
     setNextPair(drawPair());
   };
 
+  // Wrong guesses hold the streak on screen; it only zeroes when the player taps Try again.
+  const tryAgain = () => {
+    setStreak(0);
+    startRound();
+  };
+
   useEffect(() => {
     clearTimers();
     setPhase('idle');
@@ -98,17 +104,20 @@ export function FasterGame() {
     setOutcome(result);
     setPhase('revealClicked');
 
-    const next = result === 'wrong' ? 0 : streak + 1;
     const resolveAt = REVEAL_DELAY_MS + slotSpinMs(speedOf(other)) + SETTLE_BUFFER_MS;
     timers.current.push(setTimeout(() => setPhase('revealBoth'), REVEAL_DELAY_MS));
-    // Update the streak in step with the green/red highlight, which appears on 'resolved'.
+    // Advance the streak in step with the green/red highlight, which appears on 'resolved'.
+    // A wrong guess holds the streak on screen until Try again; only correct/tie updates it.
     timers.current.push(
       setTimeout(() => {
         setPhase('resolved');
-        setStreak(next);
-        if (next > best) {
-          setBest(next);
-          saveBestStreak(next);
+        if (result !== 'wrong') {
+          const next = streak + 1;
+          setStreak(next);
+          if (next > best) {
+            setBest(next);
+            saveBestStreak(next);
+          }
         }
       }, resolveAt),
     );
@@ -173,9 +182,7 @@ export function FasterGame() {
         {contender(right)}
       </Stack>
 
-      {outcome === 'wrong' && phase === 'resolved' && (
-        <Button onClick={startRound}>Try again</Button>
-      )}
+      {outcome === 'wrong' && phase === 'resolved' && <Button onClick={tryAgain}>Try again</Button>}
     </Stack>
   );
 }
