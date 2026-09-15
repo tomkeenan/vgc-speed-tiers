@@ -16,8 +16,8 @@ type Phase = 'idle' | 'revealClicked' | 'revealBoth' | 'resolved';
 type Outcome = 'correct' | 'wrong' | 'tie';
 
 const REVEAL_DELAY_MS = 600;
-const SETTLE_BUFFER_MS = 150; // ensure the verdict lands firmly after the reel stops
-const RESOLVE_HOLD_MS = 1800; // how long the verdict shows before auto-advancing
+const SETTLE_BUFFER_MS = 150;
+const RESOLVE_HOLD_MS = 1800;
 
 const speedOf = (p: Pokemon) => p.baseStats.spe;
 
@@ -53,7 +53,6 @@ export function FasterGame() {
     setNextPair(drawPair());
   };
 
-  // Start a fresh matchup with fresh draws whenever the active deck changes.
   useEffect(() => {
     clearTimers();
     setPhase('idle');
@@ -64,7 +63,6 @@ export function FasterGame() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeDeckId]);
 
-  // Warm the browser cache with the next matchup's sprites so the next round shows instantly.
   useEffect(() => {
     if (typeof Image === 'undefined' || !nextPair) return;
     for (const p of nextPair) {
@@ -73,7 +71,6 @@ export function FasterGame() {
     }
   }, [nextPair]);
 
-  // Clear any pending timers on unmount.
   useEffect(() => clearTimers, []);
 
   if (pool.length < 2 || !pair) {
@@ -105,7 +102,6 @@ export function FasterGame() {
       setStreak((s) => s + 1);
     }
 
-    // The second value reveals after REVEAL_DELAY_MS, then spins; the verdict lands once it settles.
     const resolveAt = REVEAL_DELAY_MS + slotSpinMs(speedOf(other)) + SETTLE_BUFFER_MS;
     timers.current.push(setTimeout(() => setPhase('revealBoth'), REVEAL_DELAY_MS));
     timers.current.push(setTimeout(() => setPhase('resolved'), resolveAt));
@@ -118,7 +114,6 @@ export function FasterGame() {
     const isPicked = picked === p;
     const bothShown = phase === 'revealBoth' || phase === 'resolved';
     const showSpeed = isPicked ? phase !== 'idle' : bothShown;
-    // Hold the verdict border until the second reel has finished spinning.
     const state =
       isPicked && outcome && phase === 'resolved'
         ? outcome === 'wrong'
@@ -135,7 +130,6 @@ export function FasterGame() {
             {p.name}
           </Typography>
           <TypeBadges types={p.types} />
-          {/* Both pills show immediately; the value stays masked as ??? then spins in on reveal. */}
           <Box sx={{ width: '100%' }}>
             <StatPill
               label="Base Speed"
@@ -152,7 +146,7 @@ export function FasterGame() {
     return (
       <Box
         sx={{
-          borderRadius: '12px',
+          borderRadius: 1,
           px: 2,
           py: 1.5,
           textAlign: 'center',

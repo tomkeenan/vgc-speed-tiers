@@ -7,16 +7,24 @@ declare module '@mui/material/styles' {
   interface PaletteOptions {
     speed?: PaletteOptions['primary'];
   }
+  interface Theme {
+    tokens: {
+      cardShadow: string;
+      emphasisLabelColor: string;
+    };
+  }
+  interface ThemeOptions {
+    tokens?: {
+      cardShadow?: string;
+      emphasisLabelColor?: string;
+    };
+  }
 }
 
 const INK = '#18181b';
 const WHITE = '#ffffff';
 
-/**
- * The single MUI theme for the app: maps the existing brand/speed/correct/ink tokens onto
- * MUI's palette (plus a custom `speed` key) and neutralises the selected states that MUI
- * would otherwise tint with the primary red. Returns the theme.
- */
+/** The single MUI theme for the app. */
 export const theme = createTheme({
   palette: {
     mode: 'light',
@@ -28,6 +36,10 @@ export const theme = createTheme({
     divider: 'rgba(24, 24, 27, 0.1)',
   },
   shape: { borderRadius: 12 },
+  tokens: {
+    cardShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+    emphasisLabelColor: 'rgba(255, 255, 255, 0.8)',
+  },
   typography: {
     fontFamily: 'system-ui, -apple-system, sans-serif',
     button: { textTransform: 'none', fontWeight: 600 },
@@ -40,12 +52,12 @@ export const theme = createTheme({
     },
     MuiTab: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           textTransform: 'none',
           fontWeight: 600,
-          color: '#71717a',
-          '&.Mui-selected': { color: INK },
-        },
+          color: theme.palette.text.secondary,
+          '&.Mui-selected': { color: theme.palette.text.primary },
+        }),
       },
     },
     MuiToggleButton: {

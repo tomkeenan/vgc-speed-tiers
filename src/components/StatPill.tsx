@@ -19,7 +19,7 @@ export function StatPill({ label, value, emphasis = false }: StatPillProps) {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        borderRadius: '12px',
+        borderRadius: 1,
         px: 1.5,
         py: 1,
         bgcolor: emphasis ? 'speed.main' : 'background.default',
@@ -28,13 +28,13 @@ export function StatPill({ label, value, emphasis = false }: StatPillProps) {
     >
       <Typography
         component="span"
-        sx={{
+        sx={(theme) => ({
           fontSize: '0.75rem',
           fontWeight: 500,
           letterSpacing: '0.05em',
           textTransform: 'uppercase',
-          color: emphasis ? 'rgba(255, 255, 255, 0.8)' : 'text.secondary',
-        }}
+          color: emphasis ? theme.tokens.emphasisLabelColor : 'text.secondary',
+        })}
       >
         {label}
       </Typography>

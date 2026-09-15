@@ -31,13 +31,17 @@ export function Card({ children, onClick, ariaLabel, sx, state }: CardProps) {
   return (
     <MuiCard
       variant="outlined"
-      sx={{
-        borderRadius: '16px',
-        boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-        transition: 'border-color 200ms',
-        ...(state && STATE_SX[state]),
-        ...sx,
-      }}
+      sx={[
+        (theme) => ({
+          borderRadius: 1,
+          boxShadow: theme.tokens.cardShadow,
+          transition: theme.transitions.create('border-color', {
+            duration: theme.transitions.duration.shorter,
+          }),
+        }),
+        state ? STATE_SX[state] : false,
+        ...(Array.isArray(sx) ? sx : [sx]),
+      ]}
     >
       {onClick ? (
         <CardActionArea onClick={onClick} aria-label={ariaLabel}>

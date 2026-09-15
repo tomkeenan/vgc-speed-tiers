@@ -12,6 +12,8 @@ import { StatPill } from '../../components/StatPill';
 import { TypeBadges } from '../../components/TypeBadges';
 import { randomIndex } from '../random';
 
+const SPEED_EV_STEP = 32;
+
 /**
  * Flashcards feature: shows a Pokemon's artwork, flips to reveal its level-50 speed tiers,
  * and shuffles to the next card. Returns the element.
@@ -28,7 +30,6 @@ export function Flashcards() {
     return n;
   };
 
-  // Reset to a fresh card whenever the active deck changes.
   useEffect(() => {
     setRevealed(false);
     const first = randomIndex(pool.length || 1);
@@ -58,8 +59,8 @@ export function Flashcards() {
   const pokemon = pool[Math.min(index, pool.length - 1)];
   const base = pokemon.baseStats.spe;
   const noEvs = computeSpeed({ base, ev: 0, nature: 'neutral' });
-  const spd32 = computeSpeed({ base, ev: 32, nature: 'neutral' });
-  const spd32Nat = computeSpeed({ base, ev: 32, nature: 'positive' });
+  const spdStep = computeSpeed({ base, ev: SPEED_EV_STEP, nature: 'neutral' });
+  const spdStepNat = computeSpeed({ base, ev: SPEED_EV_STEP, nature: 'positive' });
 
   const next = () => {
     setRevealed(false);
@@ -86,15 +87,13 @@ export function Flashcards() {
           </Typography>
           <TypeBadges types={pokemon.types} />
 
-          {/* The tiers are always laid out; values stay masked as ??? then spin in on reveal, so
-              the card never reflows - matching the Who's Faster? reveal. */}
           <Box sx={{ mt: 1, width: '100%' }}>
             <Stack spacing={1.5} sx={{ width: '100%' }}>
               <Box
                 sx={{
                   bgcolor: 'background.default',
                   color: 'text.primary',
-                  borderRadius: '16px',
+                  borderRadius: 1,
                   px: 2,
                   py: 2,
                   display: 'flex',
@@ -141,12 +140,12 @@ export function Flashcards() {
                 <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 1 }}>
                   <StatPill label="0 EVs" value={revealed ? <SlotNumber value={noEvs} /> : '???'} />
                   <StatPill
-                    label="32 Spd"
-                    value={revealed ? <SlotNumber value={spd32} /> : '???'}
+                    label={`${SPEED_EV_STEP} Spd`}
+                    value={revealed ? <SlotNumber value={spdStep} /> : '???'}
                   />
                   <StatPill
-                    label="32 Spd +Nat"
-                    value={revealed ? <SlotNumber value={spd32Nat} /> : '???'}
+                    label={`${SPEED_EV_STEP} Spd +Nat`}
+                    value={revealed ? <SlotNumber value={spdStepNat} /> : '???'}
                   />
                 </Box>
               </Box>
