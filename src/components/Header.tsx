@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { getMeta } from '../lib/data';
+import { DeckSelector } from './DeckSelector';
 import { GearIcon } from './GearIcon';
 
 interface HeaderProps {
@@ -32,13 +33,12 @@ export function Header({ onOpenSettings }: HeaderProps) {
         </Typography>
       </Box>
 
-      <IconButton
-        aria-label="Settings"
-        onClick={onOpenSettings}
-        sx={{ flexShrink: 0, color: 'text.primary' }}
-      >
-        <GearIcon />
-      </IconButton>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, flexShrink: 0 }}>
+        <DeckSelector />
+        <IconButton aria-label="Settings" onClick={onOpenSettings} sx={{ color: 'text.primary' }}>
+          <GearIcon />
+        </IconButton>
+      </Box>
     </Box>
   );
 }
