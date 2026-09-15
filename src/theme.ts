@@ -92,7 +92,7 @@ export const theme = createTheme({
       styleOverrides: {
         switchBase: ({ theme }) => ({
           '&.Mui-checked': {
-            color: theme.vars.palette.text.primary,
+            color: WHITE,
             '& + .MuiSwitch-track': {
               backgroundColor: theme.vars.palette.primary.main,
               opacity: 1,
