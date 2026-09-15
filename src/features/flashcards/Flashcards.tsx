@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -15,6 +16,7 @@ import { randomIndex } from '../random';
  * and shuffles to the next card. Returns the element.
  */
 export function Flashcards() {
+  const { t } = useTranslation();
   const { activePokemon: pool, activeDeckId } = useDecks();
   const [index, setIndex] = useState(() => randomIndex(pool.length));
   const [nextIndex, setNextIndex] = useState(() => randomIndex(pool.length));
@@ -47,7 +49,7 @@ export function Flashcards() {
     return (
       <Stack spacing={2}>
         <Card>
-          <Typography sx={{ color: 'text.secondary' }}>No Pokemon available.</Typography>
+          <Typography sx={{ color: 'text.secondary' }}>{t('common.noPokemon')}</Typography>
         </Card>
       </Stack>
     );
@@ -65,12 +67,15 @@ export function Flashcards() {
   return (
     <Stack spacing={2}>
       <Typography sx={{ textAlign: 'center', color: 'text.secondary', fontSize: '0.875rem' }}>
-        Tap the card to reveal its base Speed.
+        {t('flashcards.prompt')}
       </Typography>
 
       <Card
         onClick={() => setRevealed((r) => !r)}
-        ariaLabel={`${pokemon.name} flashcard, ${revealed ? 'showing' : 'hiding'} base Speed`}
+        ariaLabel={t('flashcards.cardAria', {
+          name: pokemon.name,
+          state: revealed ? t('flashcards.showing') : t('flashcards.hiding'),
+        })}
       >
         <Stack spacing={1.5} sx={{ alignItems: 'center' }}>
           <Box sx={{ width: { xs: 192, sm: 224 }, maxWidth: '100%' }}>
@@ -85,7 +90,7 @@ export function Flashcards() {
         </Stack>
       </Card>
 
-      <Button onClick={next}>Next Pokemon</Button>
+      <Button onClick={next}>{t('flashcards.next')}</Button>
     </Stack>
   );
 }

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
@@ -23,6 +24,7 @@ const RESOLVE_HOLD_MS = 1800;
  * auto-advances to the next card while a wrong one holds until Try again. Returns the element.
  */
 export function HowFast() {
+  const { t } = useTranslation();
   const { activePokemon: pool, activeDeckId } = useDecks();
   const [index, setIndex] = useState(() => randomIndex(pool.length));
   const [nextIndex, setNextIndex] = useState(() => randomIndex(pool.length));
@@ -84,7 +86,7 @@ export function HowFast() {
     return (
       <Stack spacing={2}>
         <Card>
-          <Typography sx={{ color: 'text.secondary' }}>No Pokemon available.</Typography>
+          <Typography sx={{ color: 'text.secondary' }}>{t('common.noPokemon')}</Typography>
         </Card>
       </Stack>
     );
@@ -114,20 +116,20 @@ export function HowFast() {
     <Stack spacing={2}>
       <Stack direction="row" spacing={{ xs: 1, sm: 1.5 }}>
         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-          <StreakStat value={streak} label="Streak" color="primary.main" />
+          <StreakStat value={streak} label={t('common.streak')} color="primary.main" />
         </Box>
         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-          <StreakStat value={best} label="Best" color="text.primary" />
+          <StreakStat value={best} label={t('common.best')} color="text.primary" />
         </Box>
       </Stack>
 
       <Typography sx={{ textAlign: 'center', color: 'text.secondary', fontSize: '0.875rem' }}>
-        Type this Pokemon's exact base Speed.
+        {t('howFast.prompt')}
       </Typography>
 
       <Card
         state={revealed ? (correct ? 'correct' : 'wrong') : undefined}
-        ariaLabel={`${pokemon.name} card`}
+        ariaLabel={t('howFast.cardAria', { name: pokemon.name })}
       >
         <Stack spacing={1.5} sx={{ alignItems: 'center' }}>
           <Box sx={{ width: { xs: 192, sm: 224 }, maxWidth: '100%' }}>
@@ -150,17 +152,17 @@ export function HowFast() {
           if (e.key === 'Enter' && !revealed) submit();
         }}
         disabled={revealed}
-        placeholder="Base Speed"
+        placeholder={t('howFast.placeholder')}
         fullWidth
-        inputProps={{ inputMode: 'numeric', min: 0, 'aria-label': 'Your base Speed guess' }}
+        inputProps={{ inputMode: 'numeric', min: 0, 'aria-label': t('howFast.inputAria') }}
       />
 
       {!revealed && (
         <Button onClick={submit} disabled={!canSubmit}>
-          Submit
+          {t('howFast.submit')}
         </Button>
       )}
-      {revealed && !correct && <Button onClick={tryAgain}>Try again</Button>}
+      {revealed && !correct && <Button onClick={tryAgain}>{t('common.tryAgain')}</Button>}
     </Stack>
   );
 }

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { SlotNumber } from './SlotNumber';
@@ -12,6 +13,7 @@ interface SpeedRevealProps {
  * then spins the number in. Takes the base Speed and whether it is revealed, returns the element.
  */
 export function SpeedReveal({ value, revealed }: SpeedRevealProps) {
+  const { t } = useTranslation();
   return (
     <Box sx={{ mt: 1, width: '100%' }}>
       <Box
@@ -35,7 +37,7 @@ export function SpeedReveal({ value, revealed }: SpeedRevealProps) {
             color: 'text.secondary',
           }}
         >
-          Base Speed
+          {t('common.baseSpeed')}
         </Typography>
         <Typography
           sx={{

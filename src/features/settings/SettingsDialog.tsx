@@ -1,4 +1,5 @@
 import { useMemo, useRef, useState } from 'react';
+import { Trans, useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
 import Dialog from '@mui/material/Dialog';
@@ -40,6 +41,7 @@ const sectionLabelSx = {
  * Takes open and onClose, returns the element.
  */
 export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
+  const { t } = useTranslation();
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const { decks, createDeck, renameDeck, setDeckMembers, deleteDeck } = useDecks();
@@ -76,7 +78,7 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
     }
     const known = result.deck.pokemonIds.filter((id) => byId.has(id));
     if (known.length === 0) {
-      setImportError('None of those Pokemon are in the current dataset.');
+      setImportError(t('settings.noneInDataset'));
       return;
     }
     createDeck(result.deck.name, known);
@@ -111,9 +113,13 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
         sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1 }}
       >
         <Box component="span" sx={{ fontWeight: 700 }}>
-          Settings
+          {t('settings.title')}
         </Box>
-        <IconButton aria-label="Close" onClick={onClose} sx={{ color: 'text.primary' }}>
+        <IconButton
+          aria-label={t('settings.close')}
+          onClick={onClose}
+          sx={{ color: 'text.primary' }}
+        >
           <CloseIcon />
         </IconButton>
       </DialogTitle>
@@ -121,22 +127,25 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
       <DialogContent dividers>
         <Stack spacing={3}>
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            A deck is a custom list of Pokemon. Pick one from the{' '}
-            <Box
-              component="span"
-              sx={{ display: 'inline-flex', verticalAlign: 'text-bottom', mx: 0.25 }}
-            >
-              <PokeballIcon size={18} />
-            </Box>{' '}
-            menu in the header to use only those Pokemon in each game mode. The built-in All Pokemon
-            deck uses the full dataset. Streaks are tied to each deck and mode, so don&apos;t panic
-            if switching deck resets your streak. Create, edit, and share your own decks below.
+            <Trans
+              i18nKey="settings.explainer"
+              components={{
+                icon: (
+                  <Box
+                    component="span"
+                    sx={{ display: 'inline-flex', verticalAlign: 'text-bottom', mx: 0.25 }}
+                  >
+                    <PokeballIcon size={18} />
+                  </Box>
+                ),
+              }}
+            />
           </Typography>
 
           {userDecks.length > 0 && (
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
               <Typography component="span" sx={sectionLabelSx}>
-                Your decks
+                {t('settings.yourDecks')}
               </Typography>
               {userDecks.map((deck) => {
                 const expanded = editing.has(deck.id);
@@ -165,7 +174,11 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
                         </Box>
                       </Typography>
                       <IconButton
-                        aria-label={`${expanded ? 'Collapse' : 'Edit'} ${deck.name}`}
+                        aria-label={
+                          expanded
+                            ? t('settings.collapse', { name: deck.name })
+                            : t('settings.edit', { name: deck.name })
+                        }
                         aria-expanded={expanded}
                         onClick={() => toggleEditing(deck.id)}
                         size="small"
@@ -178,13 +191,13 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
                     <Collapse in={expanded} unmountOnExit>
                       <Stack spacing={1.5} sx={{ pt: 1.5 }}>
                         <TextField
-                          label="Deck name"
+                          label={t('settings.deckName')}
                           value={deck.name}
                           onChange={(e) => renameDeck(deck.id, e.target.value)}
                           fullWidth
                         />
                         <MemberPicker
-                          label="Pokemon"
+                          label={t('settings.pokemon')}
                           options={pool}
                           value={membersOf(deck.pokemonIds)}
                           onChange={(next) =>
@@ -203,10 +216,10 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
                             variant="ghost"
                             onClick={() => copyDeck(deck.id, deck.name, deck.pokemonIds)}
                           >
-                            {copiedId === deck.id ? 'Copied!' : 'Export deck'}
+                            {copiedId === deck.id ? t('common.copied') : t('settings.exportDeck')}
                           </Button>
                           <Button variant="ghost" onClick={() => deleteDeck(deck.id)}>
-                            Delete deck
+                            {t('settings.deleteDeck')}
                           </Button>
                         </Stack>
                       </Stack>
@@ -220,16 +233,16 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
           {userDecks.length > 0 && <Divider />}
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
             <Typography component="span" sx={sectionLabelSx}>
-              Create a deck
+              {t('settings.createDeck')}
             </Typography>
             <TextField
-              label="Deck name"
+              label={t('settings.deckName')}
               value={newName}
               onChange={(e) => setNewName(e.target.value)}
               fullWidth
             />
             <MemberPicker
-              label="Pokemon"
+              label={t('settings.pokemon')}
               options={pool}
               value={newMembers}
               onChange={setNewMembers}
@@ -239,25 +252,25 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
               disabled={!newName.trim()}
               sx={{ alignSelf: { sm: 'flex-start' } }}
             >
-              Save deck
+              {t('settings.saveDeck')}
             </Button>
           </Box>
 
           <Divider />
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
             <Typography component="span" sx={sectionLabelSx}>
-              Import a deck
+              {t('settings.importDeck')}
             </Typography>
             <TextField
-              label="Paste deck JSON"
-              placeholder={'{ "name": "My deck", "pokemonIds": ["garchomp", "..."] }'}
+              label={t('settings.pasteDeckJson')}
+              placeholder={t('settings.pastePlaceholder')}
               value={importText}
               onChange={(e) => {
                 setImportText(e.target.value);
                 if (importError) setImportError(null);
               }}
               error={!!importError}
-              helperText={importError ?? 'Paste JSON copied from a deck above.'}
+              helperText={importError ?? t('settings.pasteHelper')}
               multiline
               minRows={3}
               fullWidth
@@ -267,7 +280,7 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
               disabled={!importText.trim()}
               sx={{ alignSelf: { sm: 'flex-start' } }}
             >
-              Import deck
+              {t('settings.importButton')}
             </Button>
           </Box>
         </Stack>

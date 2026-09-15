@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -14,6 +15,7 @@ interface HeaderProps {
  * Takes an onOpenSettings handler, returns the element.
  */
 export function Header({ onOpenSettings }: HeaderProps) {
+  const { t } = useTranslation();
   return (
     <Box
       component="header"
@@ -24,14 +26,18 @@ export function Header({ onOpenSettings }: HeaderProps) {
           component="h1"
           sx={{ fontSize: '1.5rem', fontWeight: 700, color: 'text.primary' }}
         >
-          Just Move First
+          {t('app.title')}
         </Typography>
       </Box>
 
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, flexShrink: 0 }}>
         <DeckSelector />
         <ThemeToggle />
-        <IconButton aria-label="Settings" onClick={onOpenSettings} sx={{ color: 'text.primary' }}>
+        <IconButton
+          aria-label={t('header.settings')}
+          onClick={onOpenSettings}
+          sx={{ color: 'text.primary' }}
+        >
           <GearIcon />
         </IconButton>
       </Box>
