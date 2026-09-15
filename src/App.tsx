@@ -14,6 +14,7 @@ const TABS = [
 
 type TabKey = (typeof TABS)[number]['key'];
 
+/** Root component: header, tab navigation, the two features, and the settings dialog. */
 export default function App() {
   const [tab, setTab] = useState<TabKey>('flashcards');
   const [settingsOpen, setSettingsOpen] = useState(false);

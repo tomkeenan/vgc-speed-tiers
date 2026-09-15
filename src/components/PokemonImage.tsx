@@ -52,13 +52,15 @@ export function PokemonImage({ src, name, sx }: PokemonImageProps) {
         loading="lazy"
         onLoad={() => setStatus('loaded')}
         onError={() => setStatus('error')}
-        sx={{
+        sx={(theme) => ({
           width: '100%',
           height: '100%',
           objectFit: 'contain',
-          transition: 'opacity 200ms',
+          transition: theme.transitions.create('opacity', {
+            duration: theme.transitions.duration.shorter,
+          }),
           opacity: status === 'loaded' ? 1 : 0,
-        }}
+        })}
       />
     </Box>
   );
