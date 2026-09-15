@@ -189,7 +189,7 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
                             variant="ghost"
                             onClick={() => copyDeck(deck.id, deck.name, deck.pokemonIds)}
                           >
-                            {copiedId === deck.id ? 'Copied!' : 'Copy JSON'}
+                            {copiedId === deck.id ? 'Copied!' : 'Export deck'}
                           </Button>
                           <Button variant="ghost" onClick={() => deleteDeck(deck.id)}>
                             Delete deck
