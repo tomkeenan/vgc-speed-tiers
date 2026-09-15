@@ -29,7 +29,7 @@ export function HowFast() {
   const [guess, setGuess] = useState('');
   const [revealed, setRevealed] = useState(false);
   const [streak, setStreak] = useState(0);
-  const [best, setBest] = useState(loadBestStreak);
+  const [best, setBest] = useState(() => loadBestStreak(activeDeckId));
 
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const clearTimers = () => {
@@ -62,6 +62,7 @@ export function HowFast() {
     setRevealed(false);
     setGuess('');
     setStreak(0);
+    setBest(loadBestStreak(activeDeckId));
     const first = randomIndex(pool.length || 1);
     setIndex(first);
     setNextIndex(pickNext(first));
@@ -102,7 +103,7 @@ export function HowFast() {
     setStreak(next);
     if (next > best) {
       setBest(next);
-      saveBestStreak(next);
+      saveBestStreak(activeDeckId, next);
     }
     // Auto-advance once the number has settled and held for a beat, matching Who's Faster?.
     const advanceAt = slotSpinMs(base) + SETTLE_BUFFER_MS + RESOLVE_HOLD_MS;

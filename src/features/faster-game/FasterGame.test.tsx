@@ -3,6 +3,7 @@ import { act, fireEvent, screen } from '@testing-library/react';
 import { FasterGame } from './FasterGame';
 import { loadBestStreak } from './bestStreak';
 import { DecksProvider } from '../../decks/DecksContext';
+import { ALL_DECK_ID } from '../../decks/store';
 import { getAllPokemon } from '../../lib/data';
 import { renderWithTheme } from '../../test/renderWithTheme';
 import { pickTwo } from '../random';
@@ -113,7 +114,7 @@ describe('FasterGame', () => {
     advance(1000); // resolve: streak 2, best 2
     expect(streakValue()).toBe('2');
     expect(bestValue()).toBe('2');
-    expect(loadBestStreak()).toBe(2); // persisted
+    expect(loadBestStreak(ALL_DECK_ID)).toBe(2); // persisted per deck
 
     advance(3000); // auto-advance
     click(choices()[0]); // wrong
