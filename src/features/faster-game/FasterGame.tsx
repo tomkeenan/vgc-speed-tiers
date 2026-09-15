@@ -9,6 +9,7 @@ import { Card } from '../../components/Card';
 import { PokemonImage } from '../../components/PokemonImage';
 import { SlotNumber, slotSpinMs } from '../../components/SlotNumber';
 import { StatPill } from '../../components/StatPill';
+import { StreakStat } from '../../components/StreakStat';
 import { TypeBadges } from '../../components/TypeBadges';
 import { pickTwo } from '../random';
 import { loadBestStreak, saveBestStreak } from './bestStreak';
@@ -21,36 +22,6 @@ const SETTLE_BUFFER_MS = 150;
 const RESOLVE_HOLD_MS = 1800;
 
 const speedOf = (p: Pokemon) => p.baseStats.spe;
-
-/** A single labelled streak counter: the big number above its uppercase label. Returns the element. */
-function StreakStat({ value, label, color }: { value: number; label: string; color: string }) {
-  return (
-    <Box sx={{ textAlign: 'center' }}>
-      <Typography
-        sx={{
-          color,
-          fontWeight: 800,
-          fontSize: { xs: '2.5rem', sm: '3rem' },
-          lineHeight: 1,
-          fontVariantNumeric: 'tabular-nums',
-        }}
-      >
-        {value}
-      </Typography>
-      <Typography
-        sx={{
-          color: 'text.secondary',
-          fontSize: '0.75rem',
-          fontWeight: 600,
-          letterSpacing: '0.08em',
-          textTransform: 'uppercase',
-        }}
-      >
-        {label}
-      </Typography>
-    </Box>
-  );
-}
 
 /**
  * Who's Faster? feature: pick the faster of two Pokemon by base Speed, reveal the picked speed
