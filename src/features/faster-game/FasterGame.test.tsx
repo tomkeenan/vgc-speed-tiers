@@ -39,9 +39,12 @@ describe('FasterGame', () => {
     vi.mocked(pickTwo).mockReset();
   });
 
-  it('reveals the picked speed first, then the other after a beat, and scores the round', () => {
+  // The streak value is the <p> immediately before the "Streak" label in the counter block.
+  const streakValue = () => screen.getByText('Streak').previousElementSibling?.textContent;
+
+  it('reveals the picked speed first, then the other after a beat, and breaks the streak on a wrong guess', () => {
     renderGame();
-    expect(screen.getByText('Score: 0/0')).toBeTruthy();
+    expect(streakValue()).toBe('0'); // streak starts at 0
     expect(screen.getAllByText('???')).toHaveLength(2); // both values masked up front
 
     click(choices()[0]); // pick the slower one
@@ -50,7 +53,7 @@ describe('FasterGame', () => {
 
     advance(600);
     expect(screen.getByText('102')).toBeTruthy(); // other now unmasked
-    expect(screen.getByText(/Score: [01]\/1/)).toBeTruthy();
+    expect(streakValue()).toBe('0'); // wrong guess keeps the streak at 0
   });
 
   it('shows Try again on a wrong guess, does not auto-advance, and advances on click', () => {
@@ -78,9 +81,12 @@ describe('FasterGame', () => {
 
     click(choices()[1]); // fast = correct
     advance(600);
-    expect(screen.getByText('Score: 1/1')).toBeTruthy();
+    expect(streakValue()).toBe('0'); // highlight not shown yet, so streak not counted
     expect(screen.queryByText('Not quite.')).toBeNull();
     expect(screen.queryByRole('button', { name: 'Try again' })).toBeNull();
+
+    advance(1000); // past resolve: the highlight appears and the streak advances with it
+    expect(streakValue()).toBe('1');
 
     const callsBefore = vi.mocked(pickTwo).mock.calls.length;
     advance(3000);

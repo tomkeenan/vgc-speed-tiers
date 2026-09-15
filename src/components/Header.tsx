@@ -1,21 +1,19 @@
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { getMeta } from '../lib/data';
 import { DeckSelector } from './DeckSelector';
 import { GearIcon } from './GearIcon';
+import { ThemeToggle } from './ThemeToggle';
 
 interface HeaderProps {
   onOpenSettings: () => void;
 }
 
 /**
- * The app header: title and subtitle on the left, a settings button on the right.
+ * The app header: title on the left, deck / theme / settings controls on the right.
  * Takes an onOpenSettings handler, returns the element.
  */
 export function Header({ onOpenSettings }: HeaderProps) {
-  const meta = getMeta();
-
   return (
     <Box
       component="header"
@@ -28,13 +26,11 @@ export function Header({ onOpenSettings }: HeaderProps) {
         >
           VGC Speed Tiers
         </Typography>
-        <Typography sx={{ color: 'text.secondary', fontSize: '0.875rem' }}>
-          Learn Champions-format Speed at level 50 - {meta.count} Pokemon.
-        </Typography>
       </Box>
 
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, flexShrink: 0 }}>
         <DeckSelector />
+        <ThemeToggle />
         <IconButton aria-label="Settings" onClick={onOpenSettings} sx={{ color: 'text.primary' }}>
           <GearIcon />
         </IconButton>

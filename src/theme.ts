@@ -21,19 +21,32 @@ declare module '@mui/material/styles' {
   }
 }
 
-const INK = '#18181b';
 const WHITE = '#ffffff';
 
-/** The single MUI theme for the app. */
+/** The single MUI theme for the app, with light and dark color schemes. */
 export const theme = createTheme({
-  palette: {
-    mode: 'light',
-    primary: { main: '#ef4444', dark: '#b91c1c', contrastText: WHITE },
-    success: { main: '#16a34a', dark: '#15803d', contrastText: WHITE },
-    speed: { main: '#2563eb', dark: '#1d4ed8', contrastText: WHITE },
-    text: { primary: INK, secondary: '#71717a' },
-    background: { paper: WHITE, default: '#f4f4f5' },
-    divider: 'rgba(24, 24, 27, 0.1)',
+  cssVariables: { colorSchemeSelector: 'class' },
+  colorSchemes: {
+    light: {
+      palette: {
+        primary: { main: '#ef4444', dark: '#b91c1c', contrastText: WHITE },
+        success: { main: '#16a34a', dark: '#15803d', contrastText: WHITE },
+        speed: { main: '#2563eb', dark: '#1d4ed8', contrastText: WHITE },
+        text: { primary: '#18181b', secondary: '#71717a' },
+        background: { paper: WHITE, default: '#f4f4f5' },
+        divider: 'rgba(24, 24, 27, 0.1)',
+      },
+    },
+    dark: {
+      palette: {
+        primary: { main: '#f87171', dark: '#ef4444', contrastText: '#18181b' },
+        success: { main: '#22c55e', dark: '#16a34a', contrastText: '#18181b' },
+        speed: { main: '#60a5fa', dark: '#3b82f6', contrastText: '#18181b' },
+        text: { primary: '#f4f4f5', secondary: '#a1a1aa' },
+        background: { paper: '#27272a', default: '#18181b' },
+        divider: 'rgba(244, 244, 245, 0.12)',
+      },
+    },
   },
   shape: { borderRadius: 12 },
   tokens: {
@@ -47,7 +60,7 @@ export const theme = createTheme({
   components: {
     MuiTabs: {
       styleOverrides: {
-        indicator: { backgroundColor: INK },
+        indicator: ({ theme }) => ({ backgroundColor: theme.vars.palette.text.primary }),
       },
     },
     MuiTab: {
@@ -55,36 +68,36 @@ export const theme = createTheme({
         root: ({ theme }) => ({
           textTransform: 'none',
           fontWeight: 600,
-          color: theme.palette.text.secondary,
-          '&.Mui-selected': { color: theme.palette.text.primary },
+          color: theme.vars.palette.text.secondary,
+          '&.Mui-selected': { color: theme.vars.palette.text.primary },
         }),
       },
     },
     MuiToggleButton: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           textTransform: 'none',
           fontWeight: 600,
-          color: INK,
+          color: theme.vars.palette.text.primary,
           '&.Mui-selected': {
-            backgroundColor: INK,
-            color: WHITE,
-            '&:hover': { backgroundColor: INK },
+            backgroundColor: theme.vars.palette.text.primary,
+            color: theme.vars.palette.background.paper,
+            '&:hover': { backgroundColor: theme.vars.palette.text.primary },
           },
-        },
+        }),
       },
     },
     MuiSwitch: {
       styleOverrides: {
-        switchBase: {
+        switchBase: ({ theme }) => ({
           '&.Mui-checked': {
             color: WHITE,
             '& + .MuiSwitch-track': {
-              backgroundColor: INK,
+              backgroundColor: theme.vars.palette.text.primary,
               opacity: 1,
             },
           },
-        },
+        }),
       },
     },
   },
