@@ -6,7 +6,9 @@ export function loadBestStreak(): number {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return 0;
     const value = JSON.parse(raw) as unknown;
-    return typeof value === 'number' && Number.isFinite(value) && value >= 0 ? Math.floor(value) : 0;
+    return typeof value === 'number' && Number.isFinite(value) && value >= 0
+      ? Math.floor(value)
+      : 0;
   } catch {
     return 0;
   }

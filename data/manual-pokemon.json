@@ -1,0 +1,53 @@
+{
+  "note": "Factual records for Champions VGC 2026 Reg-MC Mega Evolutions that PokeAPI has no /pokemon entry for. These formes debuted in Pokemon Legends: Z-A's Mega Dimension DLC and became legal in Reg MC (Sept 8 2026). Base stats and types are from Bulbapedia. spriteUrl is a stand-in (each mega's regular-Mega or base-form official artwork) because no artwork for these formes is available via PokeAPI. Consumed directly by tools/build-dataset.mjs, which trusts these records instead of calling PokeAPI. Sources: bulbapedia.bulbagarden.net species pages.",
+  "pokemon": [
+    {
+      "id": "salamence-mega",
+      "showdownName": "Salamence-Mega",
+      "num": 373,
+      "types": ["Dragon", "Flying"],
+      "baseStats": { "hp": 95, "atk": 145, "def": 130, "spa": 120, "spd": 90, "spe": 120 },
+      "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10089.png"
+    },
+    {
+      "id": "golisopod-mega",
+      "showdownName": "Golisopod-Mega",
+      "num": 768,
+      "types": ["Bug", "Steel"],
+      "baseStats": { "hp": 75, "atk": 150, "def": 175, "spa": 70, "spd": 120, "spe": 40 },
+      "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/768.png"
+    },
+    {
+      "id": "baxcalibur-mega",
+      "showdownName": "Baxcalibur-Mega",
+      "num": 998,
+      "types": ["Dragon", "Ice"],
+      "baseStats": { "hp": 115, "atk": 175, "def": 117, "spa": 105, "spd": 101, "spe": 87 },
+      "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/998.png"
+    },
+    {
+      "id": "absol-mega-z",
+      "showdownName": "Absol-Mega-Z",
+      "num": 359,
+      "types": ["Dark", "Ghost"],
+      "baseStats": { "hp": 65, "atk": 154, "def": 60, "spa": 75, "spd": 60, "spe": 151 },
+      "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10057.png"
+    },
+    {
+      "id": "garchomp-mega-z",
+      "showdownName": "Garchomp-Mega-Z",
+      "num": 445,
+      "types": ["Dragon"],
+      "baseStats": { "hp": 108, "atk": 130, "def": 85, "spa": 141, "spd": 85, "spe": 151 },
+      "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10058.png"
+    },
+    {
+      "id": "lucario-mega-z",
+      "showdownName": "Lucario-Mega-Z",
+      "num": 448,
+      "types": ["Fighting", "Steel"],
+      "baseStats": { "hp": 70, "atk": 100, "def": 70, "spa": 164, "spd": 70, "spe": 151 },
+      "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10059.png"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "note": "Champions VGC 2026 Reg-MC newly-available base Pokemon that are not yet in the Smogon usage-stats mirror (which still serves Reg MB). Merged into the pool by tools/generate-roster.mjs and resolved to base stats via PokeAPI. This is a stopgap: once the mirror publishes gen9championsvgc2026regmc, point FORMAT at it and delete the entries it now covers. The six new Mega Evolutions live in data/manual-pokemon.json. Forms that share a stat spread are one entry; Indeedee is listed for both genders because their Speed differs (M 95 / F 85). Source: pokemon.com Reg-MC announcement + theclick.gg.",
+  "showdownNames": [
+    "Wigglytuff",
+    "Persian",
+    "Persian-Alola",
+    "Farfetch'd",
+    "Mr. Mime",
+    "Swalot",
+    "Salamence",
+    "Gogoat",
+    "Golisopod",
+    "Rillaboom",
+    "Cinderace",
+    "Inteleon",
+    "Thievul",
+    "Toxtricity",
+    "Grapploct",
+    "Perrserker",
+    "Sirfetch'd",
+    "Pincurchin",
+    "Indeedee",
+    "Indeedee-F",
+    "Pawmot",
+    "Arboliva",
+    "Squawkabilly",
+    "Mabosstiff",
+    "Baxcalibur"
+  ]
+}
