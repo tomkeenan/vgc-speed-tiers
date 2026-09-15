@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
 import Dialog from '@mui/material/Dialog';
@@ -14,6 +14,7 @@ import { getAllPokemon } from '../../lib/data';
 import type { Pokemon } from '../../lib/types';
 import { useDecks } from '../../decks/DecksContext';
 import { ALL_DECK_ID } from '../../decks/store';
+import { parseDeckJson, serializeDeck } from '../../decks/deckIO';
 import { Button } from '../../components/Button';
 import { CloseIcon } from '../../components/CloseIcon';
 import { EditIcon } from '../../components/EditIcon';
@@ -50,6 +51,37 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
   const [newName, setNewName] = useState('');
   const [newMembers, setNewMembers] = useState<Pokemon[]>([]);
   const [editing, setEditing] = useState<Set<string>>(new Set());
+  const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [importText, setImportText] = useState('');
+  const [importError, setImportError] = useState<string | null>(null);
+  const copyTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  const copyDeck = async (id: string, name: string, pokemonIds: string[]) => {
+    try {
+      await navigator.clipboard.writeText(serializeDeck(name, pokemonIds));
+      setCopiedId(id);
+      clearTimeout(copyTimer.current);
+      copyTimer.current = setTimeout(() => setCopiedId(null), 1500);
+    } catch {
+      setCopiedId(null);
+    }
+  };
+
+  const importDeck = () => {
+    const result = parseDeckJson(importText);
+    if (!result.ok) {
+      setImportError(result.error);
+      return;
+    }
+    const known = result.deck.pokemonIds.filter((id) => byId.has(id));
+    if (known.length === 0) {
+      setImportError('None of those Pokemon are in the current dataset.');
+      return;
+    }
+    createDeck(result.deck.name, known);
+    setImportText('');
+    setImportError(null);
+  };
 
   const toggleEditing = (id: string) =>
     setEditing((prev) => {
@@ -148,13 +180,21 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
                             )
                           }
                         />
-                        <Button
-                          variant="ghost"
-                          onClick={() => deleteDeck(deck.id)}
+                        <Stack
+                          direction={{ xs: 'column', sm: 'row' }}
+                          spacing={1}
                           sx={{ alignSelf: { sm: 'flex-start' } }}
                         >
-                          Delete deck
-                        </Button>
+                          <Button
+                            variant="ghost"
+                            onClick={() => copyDeck(deck.id, deck.name, deck.pokemonIds)}
+                          >
+                            {copiedId === deck.id ? 'Copied!' : 'Copy JSON'}
+                          </Button>
+                          <Button variant="ghost" onClick={() => deleteDeck(deck.id)}>
+                            Delete deck
+                          </Button>
+                        </Stack>
                       </Stack>
                     </Collapse>
                   </Box>
@@ -186,6 +226,34 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
               sx={{ alignSelf: { sm: 'flex-start' } }}
             >
               Save deck
+            </Button>
+          </Box>
+
+          <Divider />
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+            <Typography component="span" sx={sectionLabelSx}>
+              Import a deck
+            </Typography>
+            <TextField
+              label="Paste deck JSON"
+              placeholder={'{ "name": "My deck", "pokemonIds": ["garchomp", "..."] }'}
+              value={importText}
+              onChange={(e) => {
+                setImportText(e.target.value);
+                if (importError) setImportError(null);
+              }}
+              error={!!importError}
+              helperText={importError ?? 'Paste JSON copied from a deck above.'}
+              multiline
+              minRows={3}
+              fullWidth
+            />
+            <Button
+              onClick={importDeck}
+              disabled={!importText.trim()}
+              sx={{ alignSelf: { sm: 'flex-start' } }}
+            >
+              Import deck
             </Button>
           </Box>
         </Stack>
