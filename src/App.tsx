@@ -4,6 +4,7 @@ import { Flashcards } from './features/flashcards/Flashcards';
 import { FasterGame } from './features/faster-game/FasterGame';
 import { HowFast } from './features/how-fast/HowFast';
 import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 import { TabNav } from './components/TabNav';
 import { DecksProvider } from './decks/DecksContext';
 
@@ -50,6 +51,8 @@ export default function App() {
         <Box component="main" sx={{ flex: 1 }}>
           {active.render()}
         </Box>
+
+        <Footer />
       </Box>
 
       {settingsOpen && (
