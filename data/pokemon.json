@@ -11,7 +11,10 @@
       "id": "kingambit",
       "num": 983,
       "name": "Kingambit",
-      "types": ["Dark", "Steel"],
+      "types": [
+        "Dark",
+        "Steel"
+      ],
       "baseStats": {
         "hp": 100,
         "atk": 135,
@@ -20,7 +23,7 @@
         "spd": 85,
         "spe": 50
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/983.png",
+      "sprite": "kingambit.webp",
       "usage": 0.4074,
       "usageRank": 1
     },
@@ -28,7 +31,10 @@
       "id": "basculegion-male",
       "num": 902,
       "name": "Basculegion",
-      "types": ["Water", "Ghost"],
+      "types": [
+        "Water",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 120,
         "atk": 112,
@@ -37,7 +43,7 @@
         "spd": 75,
         "spe": 78
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/902.png",
+      "sprite": "basculegion-male.webp",
       "usage": 0.304,
       "usageRank": 2
     },
@@ -45,7 +51,10 @@
       "id": "garchomp",
       "num": 445,
       "name": "Garchomp",
-      "types": ["Dragon", "Ground"],
+      "types": [
+        "Dragon",
+        "Ground"
+      ],
       "baseStats": {
         "hp": 108,
         "atk": 130,
@@ -54,7 +63,7 @@
         "spd": 85,
         "spe": 102
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/445.png",
+      "sprite": "garchomp.webp",
       "usage": 0.2755,
       "usageRank": 3
     },
@@ -62,7 +71,10 @@
       "id": "incineroar",
       "num": 727,
       "name": "Incineroar",
-      "types": ["Fire", "Dark"],
+      "types": [
+        "Fire",
+        "Dark"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 115,
@@ -71,7 +83,7 @@
         "spd": 90,
         "spe": 60
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/727.png",
+      "sprite": "incineroar.webp",
       "usage": 0.2685,
       "usageRank": 4
     },
@@ -79,7 +91,10 @@
       "id": "sneasler",
       "num": 903,
       "name": "Sneasler",
-      "types": ["Fighting", "Poison"],
+      "types": [
+        "Fighting",
+        "Poison"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 130,
@@ -88,7 +103,7 @@
         "spd": 80,
         "spe": 120
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/903.png",
+      "sprite": "sneasler.webp",
       "usage": 0.2664,
       "usageRank": 5
     },
@@ -96,7 +111,10 @@
       "id": "whimsicott",
       "num": 547,
       "name": "Whimsicott",
-      "types": ["Grass", "Fairy"],
+      "types": [
+        "Grass",
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 67,
@@ -105,7 +123,7 @@
         "spd": 75,
         "spe": 116
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/547.png",
+      "sprite": "whimsicott.webp",
       "usage": 0.244,
       "usageRank": 6
     },
@@ -113,7 +131,10 @@
       "id": "sinistcha",
       "num": 1013,
       "name": "Sinistcha",
-      "types": ["Grass", "Ghost"],
+      "types": [
+        "Grass",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 71,
         "atk": 60,
@@ -122,7 +143,7 @@
         "spd": 80,
         "spe": 70
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1013.png",
+      "sprite": "sinistcha.webp",
       "usage": 0.2379,
       "usageRank": 7
     },
@@ -130,7 +151,10 @@
       "id": "farigiraf",
       "num": 981,
       "name": "Farigiraf",
-      "types": ["Normal", "Psychic"],
+      "types": [
+        "Normal",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 120,
         "atk": 90,
@@ -139,7 +163,7 @@
         "spd": 70,
         "spe": 60
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/981.png",
+      "sprite": "farigiraf.webp",
       "usage": 0.2256,
       "usageRank": 8
     },
@@ -147,7 +171,10 @@
       "id": "charizard-mega-y",
       "num": 6,
       "name": "Charizard-Mega-Y",
-      "types": ["Fire", "Flying"],
+      "types": [
+        "Fire",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 78,
         "atk": 104,
@@ -156,7 +183,7 @@
         "spd": 115,
         "spe": 100
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10035.png",
+      "sprite": "charizard-mega-y.webp",
       "usage": 0.2109,
       "usageRank": 9
     },
@@ -164,7 +191,10 @@
       "id": "staraptor-mega",
       "num": 398,
       "name": "Staraptor-Mega",
-      "types": ["Fighting", "Flying"],
+      "types": [
+        "Fighting",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 85,
         "atk": 140,
@@ -173,7 +203,7 @@
         "spd": 90,
         "spe": 110
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10308.png",
+      "sprite": "staraptor-mega.webp",
       "usage": 0.1861,
       "usageRank": 10
     },
@@ -181,7 +211,9 @@
       "id": "sylveon",
       "num": 700,
       "name": "Sylveon",
-      "types": ["Fairy"],
+      "types": [
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 65,
@@ -190,7 +222,7 @@
         "spd": 130,
         "spe": 60
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/700.png",
+      "sprite": "sylveon.webp",
       "usage": 0.1715,
       "usageRank": 11
     },
@@ -198,7 +230,9 @@
       "id": "floette-mega",
       "num": 670,
       "name": "Floette-Mega",
-      "types": ["Fairy"],
+      "types": [
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 74,
         "atk": 85,
@@ -207,7 +241,7 @@
         "spd": 148,
         "spe": 102
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10296.png",
+      "sprite": "floette-mega.webp",
       "usage": 0.1326,
       "usageRank": 12
     },
@@ -215,7 +249,9 @@
       "id": "raichu-mega-y",
       "num": 26,
       "name": "Raichu-Mega-Y",
-      "types": ["Electric"],
+      "types": [
+        "Electric"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 100,
@@ -224,7 +260,7 @@
         "spd": 80,
         "spe": 130
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10305.png",
+      "sprite": "raichu-mega-y.webp",
       "usage": 0.1257,
       "usageRank": 13
     },
@@ -232,7 +268,10 @@
       "id": "archaludon",
       "num": 1018,
       "name": "Archaludon",
-      "types": ["Steel", "Dragon"],
+      "types": [
+        "Steel",
+        "Dragon"
+      ],
       "baseStats": {
         "hp": 90,
         "atk": 105,
@@ -241,7 +280,7 @@
         "spd": 65,
         "spe": 85
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1018.png",
+      "sprite": "archaludon.webp",
       "usage": 0.1094,
       "usageRank": 14
     },
@@ -249,7 +288,10 @@
       "id": "gholdengo",
       "num": 1000,
       "name": "Gholdengo",
-      "types": ["Steel", "Ghost"],
+      "types": [
+        "Steel",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 87,
         "atk": 60,
@@ -258,7 +300,7 @@
         "spd": 91,
         "spe": 84
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1000.png",
+      "sprite": "gholdengo.webp",
       "usage": 0.1033,
       "usageRank": 15
     },
@@ -266,7 +308,10 @@
       "id": "delphox-mega",
       "num": 655,
       "name": "Delphox-Mega",
-      "types": ["Fire", "Psychic"],
+      "types": [
+        "Fire",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 69,
@@ -275,7 +320,7 @@
         "spd": 125,
         "spe": 134
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10293.png",
+      "sprite": "delphox-mega.webp",
       "usage": 0.0988,
       "usageRank": 16
     },
@@ -283,7 +328,10 @@
       "id": "pelipper",
       "num": 279,
       "name": "Pelipper",
-      "types": ["Water", "Flying"],
+      "types": [
+        "Water",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 50,
@@ -292,7 +340,7 @@
         "spd": 70,
         "spe": 65
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/279.png",
+      "sprite": "pelipper.webp",
       "usage": 0.0948,
       "usageRank": 17
     },
@@ -300,7 +348,9 @@
       "id": "blastoise-mega",
       "num": 9,
       "name": "Blastoise-Mega",
-      "types": ["Water"],
+      "types": [
+        "Water"
+      ],
       "baseStats": {
         "hp": 79,
         "atk": 103,
@@ -309,7 +359,7 @@
         "spd": 115,
         "spe": 78
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10036.png",
+      "sprite": "blastoise-mega.webp",
       "usage": 0.0848,
       "usageRank": 18
     },
@@ -317,7 +367,10 @@
       "id": "grimmsnarl",
       "num": 861,
       "name": "Grimmsnarl",
-      "types": ["Dark", "Fairy"],
+      "types": [
+        "Dark",
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 120,
@@ -326,7 +379,7 @@
         "spd": 75,
         "spe": 60
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/861.png",
+      "sprite": "grimmsnarl.webp",
       "usage": 0.0772,
       "usageRank": 19
     },
@@ -334,7 +387,10 @@
       "id": "froslass-mega",
       "num": 478,
       "name": "Froslass-Mega",
-      "types": ["Ice", "Ghost"],
+      "types": [
+        "Ice",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 80,
@@ -343,7 +399,7 @@
         "spd": 100,
         "spe": 120
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10285.png",
+      "sprite": "froslass-mega.webp",
       "usage": 0.0744,
       "usageRank": 20
     },
@@ -351,7 +407,9 @@
       "id": "milotic",
       "num": 350,
       "name": "Milotic",
-      "types": ["Water"],
+      "types": [
+        "Water"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 60,
@@ -360,7 +418,7 @@
         "spd": 125,
         "spe": 81
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/350.png",
+      "sprite": "milotic.webp",
       "usage": 0.0743,
       "usageRank": 21
     },
@@ -368,7 +426,9 @@
       "id": "maushold-family-of-four",
       "num": 925,
       "name": "Maushold",
-      "types": ["Normal"],
+      "types": [
+        "Normal"
+      ],
       "baseStats": {
         "hp": 74,
         "atk": 75,
@@ -377,7 +437,7 @@
         "spd": 75,
         "spe": 111
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/925.png",
+      "sprite": "maushold-family-of-four.webp",
       "usage": 0.0732,
       "usageRank": 22
     },
@@ -385,7 +445,10 @@
       "id": "aerodactyl-mega",
       "num": 142,
       "name": "Aerodactyl-Mega",
-      "types": ["Rock", "Flying"],
+      "types": [
+        "Rock",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 135,
@@ -394,7 +457,7 @@
         "spd": 95,
         "spe": 150
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10042.png",
+      "sprite": "aerodactyl-mega.webp",
       "usage": 0.066,
       "usageRank": 23
     },
@@ -402,7 +465,10 @@
       "id": "swampert-mega",
       "num": 260,
       "name": "Swampert-Mega",
-      "types": ["Water", "Ground"],
+      "types": [
+        "Water",
+        "Ground"
+      ],
       "baseStats": {
         "hp": 100,
         "atk": 150,
@@ -411,7 +477,7 @@
         "spd": 110,
         "spe": 70
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10064.png",
+      "sprite": "swampert-mega.webp",
       "usage": 0.0651,
       "usageRank": 24
     },
@@ -419,7 +485,10 @@
       "id": "ninetales-alola",
       "num": 38,
       "name": "Ninetales-Alola",
-      "types": ["Ice", "Fairy"],
+      "types": [
+        "Ice",
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 73,
         "atk": 67,
@@ -428,7 +497,7 @@
         "spd": 100,
         "spe": 109
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10104.png",
+      "sprite": "ninetales-alola.webp",
       "usage": 0.0648,
       "usageRank": 25
     },
@@ -436,7 +505,10 @@
       "id": "tyranitar-mega",
       "num": 248,
       "name": "Tyranitar-Mega",
-      "types": ["Rock", "Dark"],
+      "types": [
+        "Rock",
+        "Dark"
+      ],
       "baseStats": {
         "hp": 100,
         "atk": 164,
@@ -445,7 +517,7 @@
         "spd": 120,
         "spe": 71
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10049.png",
+      "sprite": "tyranitar-mega.webp",
       "usage": 0.0623,
       "usageRank": 26
     },
@@ -453,7 +525,10 @@
       "id": "venusaur",
       "num": 3,
       "name": "Venusaur",
-      "types": ["Grass", "Poison"],
+      "types": [
+        "Grass",
+        "Poison"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 82,
@@ -462,7 +537,7 @@
         "spd": 100,
         "spe": 80
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
+      "sprite": "venusaur.webp",
       "usage": 0.0612,
       "usageRank": 27
     },
@@ -470,7 +545,10 @@
       "id": "gengar-mega",
       "num": 94,
       "name": "Gengar-Mega",
-      "types": ["Ghost", "Poison"],
+      "types": [
+        "Ghost",
+        "Poison"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 65,
@@ -479,7 +557,7 @@
         "spd": 95,
         "spe": 130
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10038.png",
+      "sprite": "gengar-mega.webp",
       "usage": 0.0595,
       "usageRank": 28
     },
@@ -487,7 +565,10 @@
       "id": "arcanine-hisui",
       "num": 59,
       "name": "Arcanine-Hisui",
-      "types": ["Fire", "Rock"],
+      "types": [
+        "Fire",
+        "Rock"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 115,
@@ -496,7 +577,7 @@
         "spd": 80,
         "spe": 90
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10230.png",
+      "sprite": "arcanine-hisui.webp",
       "usage": 0.0572,
       "usageRank": 29
     },
@@ -504,7 +585,9 @@
       "id": "torkoal",
       "num": 324,
       "name": "Torkoal",
-      "types": ["Fire"],
+      "types": [
+        "Fire"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 85,
@@ -513,7 +596,7 @@
         "spd": 70,
         "spe": 20
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/324.png",
+      "sprite": "torkoal.webp",
       "usage": 0.0567,
       "usageRank": 30
     },
@@ -521,7 +604,10 @@
       "id": "excadrill",
       "num": 530,
       "name": "Excadrill",
-      "types": ["Ground", "Steel"],
+      "types": [
+        "Ground",
+        "Steel"
+      ],
       "baseStats": {
         "hp": 110,
         "atk": 135,
@@ -530,7 +616,7 @@
         "spd": 65,
         "spe": 88
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/530.png",
+      "sprite": "excadrill.webp",
       "usage": 0.0521,
       "usageRank": 31
     },
@@ -538,7 +624,10 @@
       "id": "metagross-mega",
       "num": 376,
       "name": "Metagross-Mega",
-      "types": ["Steel", "Psychic"],
+      "types": [
+        "Steel",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 145,
@@ -547,7 +636,7 @@
         "spd": 110,
         "spe": 110
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10076.png",
+      "sprite": "metagross-mega.webp",
       "usage": 0.0484,
       "usageRank": 32
     },
@@ -555,7 +644,10 @@
       "id": "scovillain-mega",
       "num": 952,
       "name": "Scovillain-Mega",
-      "types": ["Grass", "Fire"],
+      "types": [
+        "Grass",
+        "Fire"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 138,
@@ -564,7 +656,7 @@
         "spd": 85,
         "spe": 75
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10320.png",
+      "sprite": "scovillain-mega.webp",
       "usage": 0.0483,
       "usageRank": 33
     },
@@ -572,7 +664,10 @@
       "id": "kommo-o",
       "num": 784,
       "name": "Kommo-o",
-      "types": ["Dragon", "Fighting"],
+      "types": [
+        "Dragon",
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 110,
@@ -581,7 +676,7 @@
         "spd": 105,
         "spe": 85
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/784.png",
+      "sprite": "kommo-o.webp",
       "usage": 0.0479,
       "usageRank": 34
     },
@@ -589,7 +684,10 @@
       "id": "glimmora",
       "num": 970,
       "name": "Glimmora",
-      "types": ["Rock", "Poison"],
+      "types": [
+        "Rock",
+        "Poison"
+      ],
       "baseStats": {
         "hp": 83,
         "atk": 55,
@@ -598,7 +696,7 @@
         "spd": 81,
         "spe": 86
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/970.png",
+      "sprite": "glimmora.webp",
       "usage": 0.0443,
       "usageRank": 35
     },
@@ -606,7 +704,9 @@
       "id": "politoed",
       "num": 186,
       "name": "Politoed",
-      "types": ["Water"],
+      "types": [
+        "Water"
+      ],
       "baseStats": {
         "hp": 90,
         "atk": 75,
@@ -615,7 +715,7 @@
         "spd": 100,
         "spe": 70
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/186.png",
+      "sprite": "politoed.webp",
       "usage": 0.0413,
       "usageRank": 36
     },
@@ -623,7 +723,10 @@
       "id": "dragonite-mega",
       "num": 149,
       "name": "Dragonite-Mega",
-      "types": ["Dragon", "Flying"],
+      "types": [
+        "Dragon",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 91,
         "atk": 124,
@@ -632,7 +735,7 @@
         "spd": 125,
         "spe": 100
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10281.png",
+      "sprite": "dragonite-mega.webp",
       "usage": 0.0408,
       "usageRank": 37
     },
@@ -640,7 +743,10 @@
       "id": "dragonite",
       "num": 149,
       "name": "Dragonite",
-      "types": ["Dragon", "Flying"],
+      "types": [
+        "Dragon",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 91,
         "atk": 134,
@@ -649,7 +755,7 @@
         "spd": 100,
         "spe": 80
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png",
+      "sprite": "dragonite.webp",
       "usage": 0.0392,
       "usageRank": 38
     },
@@ -657,7 +763,10 @@
       "id": "mawile-mega",
       "num": 303,
       "name": "Mawile-Mega",
-      "types": ["Steel", "Fairy"],
+      "types": [
+        "Steel",
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 50,
         "atk": 105,
@@ -666,7 +775,7 @@
         "spd": 95,
         "spe": 50
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10052.png",
+      "sprite": "mawile-mega.webp",
       "usage": 0.0376,
       "usageRank": 39
     },
@@ -674,7 +783,10 @@
       "id": "talonflame",
       "num": 663,
       "name": "Talonflame",
-      "types": ["Fire", "Flying"],
+      "types": [
+        "Fire",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 78,
         "atk": 81,
@@ -683,7 +795,7 @@
         "spd": 69,
         "spe": 126
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/663.png",
+      "sprite": "talonflame.webp",
       "usage": 0.0371,
       "usageRank": 40
     },
@@ -691,7 +803,10 @@
       "id": "venusaur-mega",
       "num": 3,
       "name": "Venusaur-Mega",
-      "types": ["Grass", "Poison"],
+      "types": [
+        "Grass",
+        "Poison"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 100,
@@ -700,7 +815,7 @@
         "spd": 120,
         "spe": 80
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10033.png",
+      "sprite": "venusaur-mega.webp",
       "usage": 0.0357,
       "usageRank": 41
     },
@@ -708,7 +823,10 @@
       "id": "tyranitar",
       "num": 248,
       "name": "Tyranitar",
-      "types": ["Rock", "Dark"],
+      "types": [
+        "Rock",
+        "Dark"
+      ],
       "baseStats": {
         "hp": 100,
         "atk": 134,
@@ -717,7 +835,7 @@
         "spd": 100,
         "spe": 61
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/248.png",
+      "sprite": "tyranitar.webp",
       "usage": 0.035,
       "usageRank": 42
     },
@@ -725,7 +843,10 @@
       "id": "toxapex",
       "num": 748,
       "name": "Toxapex",
-      "types": ["Poison", "Water"],
+      "types": [
+        "Poison",
+        "Water"
+      ],
       "baseStats": {
         "hp": 50,
         "atk": 63,
@@ -734,7 +855,7 @@
         "spd": 142,
         "spe": 35
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/748.png",
+      "sprite": "toxapex.webp",
       "usage": 0.0323,
       "usageRank": 43
     },
@@ -742,7 +863,10 @@
       "id": "sableye",
       "num": 302,
       "name": "Sableye",
-      "types": ["Dark", "Ghost"],
+      "types": [
+        "Dark",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 50,
         "atk": 75,
@@ -751,7 +875,7 @@
         "spd": 65,
         "spe": 50
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/302.png",
+      "sprite": "sableye.webp",
       "usage": 0.0318,
       "usageRank": 44
     },
@@ -759,7 +883,10 @@
       "id": "vivillon",
       "num": 666,
       "name": "Vivillon",
-      "types": ["Bug", "Flying"],
+      "types": [
+        "Bug",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 52,
@@ -768,7 +895,7 @@
         "spd": 50,
         "spe": 89
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/666.png",
+      "sprite": "vivillon.webp",
       "usage": 0.0315,
       "usageRank": 45
     },
@@ -776,7 +903,10 @@
       "id": "blaziken-mega",
       "num": 257,
       "name": "Blaziken-Mega",
-      "types": ["Fire", "Fighting"],
+      "types": [
+        "Fire",
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 160,
@@ -785,7 +915,7 @@
         "spd": 80,
         "spe": 100
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10050.png",
+      "sprite": "blaziken-mega.webp",
       "usage": 0.0305,
       "usageRank": 46
     },
@@ -793,7 +923,10 @@
       "id": "annihilape",
       "num": 979,
       "name": "Annihilape",
-      "types": ["Fighting", "Ghost"],
+      "types": [
+        "Fighting",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 110,
         "atk": 115,
@@ -802,7 +935,7 @@
         "spd": 90,
         "spe": 90
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/979.png",
+      "sprite": "annihilape.webp",
       "usage": 0.0303,
       "usageRank": 47
     },
@@ -810,7 +943,10 @@
       "id": "corviknight",
       "num": 823,
       "name": "Corviknight",
-      "types": ["Flying", "Steel"],
+      "types": [
+        "Flying",
+        "Steel"
+      ],
       "baseStats": {
         "hp": 98,
         "atk": 87,
@@ -819,7 +955,7 @@
         "spd": 85,
         "spe": 67
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/823.png",
+      "sprite": "corviknight.webp",
       "usage": 0.03,
       "usageRank": 48
     },
@@ -827,7 +963,10 @@
       "id": "primarina",
       "num": 730,
       "name": "Primarina",
-      "types": ["Water", "Fairy"],
+      "types": [
+        "Water",
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 74,
@@ -836,7 +975,7 @@
         "spd": 116,
         "spe": 60
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/730.png",
+      "sprite": "primarina.webp",
       "usage": 0.0294,
       "usageRank": 49
     },
@@ -844,7 +983,9 @@
       "id": "tsareena",
       "num": 763,
       "name": "Tsareena",
-      "types": ["Grass"],
+      "types": [
+        "Grass"
+      ],
       "baseStats": {
         "hp": 72,
         "atk": 120,
@@ -853,7 +994,7 @@
         "spd": 98,
         "spe": 72
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/763.png",
+      "sprite": "tsareena.webp",
       "usage": 0.0288,
       "usageRank": 50
     },
@@ -861,7 +1002,10 @@
       "id": "ceruledge",
       "num": 937,
       "name": "Ceruledge",
-      "types": ["Fire", "Ghost"],
+      "types": [
+        "Fire",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 125,
@@ -870,7 +1014,7 @@
         "spd": 100,
         "spe": 85
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/937.png",
+      "sprite": "ceruledge.webp",
       "usage": 0.0282,
       "usageRank": 51
     },
@@ -878,7 +1022,10 @@
       "id": "rotom-wash",
       "num": 479,
       "name": "Rotom-Wash",
-      "types": ["Electric", "Water"],
+      "types": [
+        "Electric",
+        "Water"
+      ],
       "baseStats": {
         "hp": 50,
         "atk": 65,
@@ -887,7 +1034,7 @@
         "spd": 107,
         "spe": 86
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10009.png",
+      "sprite": "rotom-wash.webp",
       "usage": 0.027,
       "usageRank": 52
     },
@@ -895,7 +1042,10 @@
       "id": "aerodactyl",
       "num": 142,
       "name": "Aerodactyl",
-      "types": ["Rock", "Flying"],
+      "types": [
+        "Rock",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 105,
@@ -904,7 +1054,7 @@
         "spd": 75,
         "spe": 130
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/142.png",
+      "sprite": "aerodactyl.webp",
       "usage": 0.0253,
       "usageRank": 53
     },
@@ -912,7 +1062,10 @@
       "id": "hydreigon",
       "num": 635,
       "name": "Hydreigon",
-      "types": ["Dark", "Dragon"],
+      "types": [
+        "Dark",
+        "Dragon"
+      ],
       "baseStats": {
         "hp": 92,
         "atk": 105,
@@ -921,7 +1074,7 @@
         "spd": 90,
         "spe": 98
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/635.png",
+      "sprite": "hydreigon.webp",
       "usage": 0.0253,
       "usageRank": 54
     },
@@ -929,7 +1082,10 @@
       "id": "camerupt-mega",
       "num": 323,
       "name": "Camerupt-Mega",
-      "types": ["Fire", "Ground"],
+      "types": [
+        "Fire",
+        "Ground"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 120,
@@ -938,7 +1094,7 @@
         "spd": 105,
         "spe": 20
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10087.png",
+      "sprite": "camerupt-mega.webp",
       "usage": 0.0246,
       "usageRank": 55
     },
@@ -946,7 +1102,10 @@
       "id": "gardevoir-mega",
       "num": 282,
       "name": "Gardevoir-Mega",
-      "types": ["Psychic", "Fairy"],
+      "types": [
+        "Psychic",
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 68,
         "atk": 85,
@@ -955,7 +1114,7 @@
         "spd": 135,
         "spe": 100
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10051.png",
+      "sprite": "gardevoir-mega.webp",
       "usage": 0.0237,
       "usageRank": 56
     },
@@ -963,7 +1122,9 @@
       "id": "lycanroc-dusk",
       "num": 745,
       "name": "Lycanroc-Dusk",
-      "types": ["Rock"],
+      "types": [
+        "Rock"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 117,
@@ -972,7 +1133,7 @@
         "spd": 65,
         "spe": 110
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10152.png",
+      "sprite": "lycanroc-dusk.webp",
       "usage": 0.023,
       "usageRank": 57
     },
@@ -980,7 +1141,10 @@
       "id": "garchomp-mega",
       "num": 445,
       "name": "Garchomp-Mega",
-      "types": ["Dragon", "Ground"],
+      "types": [
+        "Dragon",
+        "Ground"
+      ],
       "baseStats": {
         "hp": 108,
         "atk": 170,
@@ -989,7 +1153,7 @@
         "spd": 95,
         "spe": 92
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10058.png",
+      "sprite": "garchomp-mega.webp",
       "usage": 0.0213,
       "usageRank": 58
     },
@@ -997,7 +1161,10 @@
       "id": "glimmora-mega",
       "num": 970,
       "name": "Glimmora-Mega",
-      "types": ["Rock", "Poison"],
+      "types": [
+        "Rock",
+        "Poison"
+      ],
       "baseStats": {
         "hp": 83,
         "atk": 90,
@@ -1006,7 +1173,7 @@
         "spd": 96,
         "spe": 101
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10321.png",
+      "sprite": "glimmora-mega.webp",
       "usage": 0.0205,
       "usageRank": 59
     },
@@ -1014,7 +1181,9 @@
       "id": "kangaskhan-mega",
       "num": 115,
       "name": "Kangaskhan-Mega",
-      "types": ["Normal"],
+      "types": [
+        "Normal"
+      ],
       "baseStats": {
         "hp": 105,
         "atk": 125,
@@ -1023,7 +1192,7 @@
         "spd": 100,
         "spe": 100
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10039.png",
+      "sprite": "kangaskhan-mega.webp",
       "usage": 0.0191,
       "usageRank": 60
     },
@@ -1031,7 +1200,10 @@
       "id": "meowscarada",
       "num": 908,
       "name": "Meowscarada",
-      "types": ["Grass", "Dark"],
+      "types": [
+        "Grass",
+        "Dark"
+      ],
       "baseStats": {
         "hp": 76,
         "atk": 110,
@@ -1040,7 +1212,7 @@
         "spd": 70,
         "spe": 123
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/908.png",
+      "sprite": "meowscarada.webp",
       "usage": 0.0181,
       "usageRank": 61
     },
@@ -1048,7 +1220,10 @@
       "id": "mamoswine",
       "num": 473,
       "name": "Mamoswine",
-      "types": ["Ice", "Ground"],
+      "types": [
+        "Ice",
+        "Ground"
+      ],
       "baseStats": {
         "hp": 110,
         "atk": 130,
@@ -1057,7 +1232,7 @@
         "spd": 60,
         "spe": 80
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/473.png",
+      "sprite": "mamoswine.webp",
       "usage": 0.016,
       "usageRank": 62
     },
@@ -1065,7 +1240,10 @@
       "id": "gallade",
       "num": 475,
       "name": "Gallade",
-      "types": ["Psychic", "Fighting"],
+      "types": [
+        "Psychic",
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 68,
         "atk": 125,
@@ -1074,7 +1252,7 @@
         "spd": 115,
         "spe": 80
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/475.png",
+      "sprite": "gallade.webp",
       "usage": 0.0158,
       "usageRank": 63
     },
@@ -1082,7 +1260,10 @@
       "id": "scizor",
       "num": 212,
       "name": "Scizor",
-      "types": ["Bug", "Steel"],
+      "types": [
+        "Bug",
+        "Steel"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 130,
@@ -1091,7 +1272,7 @@
         "spd": 80,
         "spe": 65
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/212.png",
+      "sprite": "scizor.webp",
       "usage": 0.0155,
       "usageRank": 64
     },
@@ -1099,7 +1280,10 @@
       "id": "staraptor",
       "num": 398,
       "name": "Staraptor",
-      "types": ["Normal", "Flying"],
+      "types": [
+        "Normal",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 85,
         "atk": 120,
@@ -1108,7 +1292,7 @@
         "spd": 60,
         "spe": 100
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/398.png",
+      "sprite": "staraptor.webp",
       "usage": 0.0138,
       "usageRank": 65
     },
@@ -1116,7 +1300,10 @@
       "id": "volcarona",
       "num": 637,
       "name": "Volcarona",
-      "types": ["Bug", "Fire"],
+      "types": [
+        "Bug",
+        "Fire"
+      ],
       "baseStats": {
         "hp": 85,
         "atk": 60,
@@ -1125,7 +1312,7 @@
         "spd": 105,
         "spe": 100
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/637.png",
+      "sprite": "volcarona.webp",
       "usage": 0.0131,
       "usageRank": 66
     },
@@ -1133,7 +1320,10 @@
       "id": "samurott-hisui",
       "num": 503,
       "name": "Samurott-Hisui",
-      "types": ["Water", "Dark"],
+      "types": [
+        "Water",
+        "Dark"
+      ],
       "baseStats": {
         "hp": 90,
         "atk": 108,
@@ -1142,7 +1332,7 @@
         "spd": 65,
         "spe": 85
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10236.png",
+      "sprite": "samurott-hisui.webp",
       "usage": 0.012,
       "usageRank": 67
     },
@@ -1150,7 +1340,9 @@
       "id": "kangaskhan",
       "num": 115,
       "name": "Kangaskhan",
-      "types": ["Normal"],
+      "types": [
+        "Normal"
+      ],
       "baseStats": {
         "hp": 105,
         "atk": 95,
@@ -1159,7 +1351,7 @@
         "spd": 80,
         "spe": 90
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/115.png",
+      "sprite": "kangaskhan.webp",
       "usage": 0.0119,
       "usageRank": 68
     },
@@ -1167,7 +1359,10 @@
       "id": "pyroar-mega",
       "num": 668,
       "name": "Pyroar-Mega",
-      "types": ["Fire", "Normal"],
+      "types": [
+        "Fire",
+        "Normal"
+      ],
       "baseStats": {
         "hp": 86,
         "atk": 88,
@@ -1176,7 +1371,7 @@
         "spd": 86,
         "spe": 126
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10295.png",
+      "sprite": "pyroar-mega.webp",
       "usage": 0.0117,
       "usageRank": 69
     },
@@ -1184,7 +1379,10 @@
       "id": "zoroark-hisui",
       "num": 571,
       "name": "Zoroark-Hisui",
-      "types": ["Normal", "Ghost"],
+      "types": [
+        "Normal",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 55,
         "atk": 100,
@@ -1193,7 +1391,7 @@
         "spd": 60,
         "spe": 110
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10239.png",
+      "sprite": "zoroark-hisui.webp",
       "usage": 0.0115,
       "usageRank": 70
     },
@@ -1201,7 +1399,10 @@
       "id": "chandelure",
       "num": 609,
       "name": "Chandelure",
-      "types": ["Ghost", "Fire"],
+      "types": [
+        "Ghost",
+        "Fire"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 55,
@@ -1210,7 +1411,7 @@
         "spd": 90,
         "spe": 80
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/609.png",
+      "sprite": "chandelure.webp",
       "usage": 0.0115,
       "usageRank": 71
     },
@@ -1218,7 +1419,10 @@
       "id": "dragapult",
       "num": 887,
       "name": "Dragapult",
-      "types": ["Dragon", "Ghost"],
+      "types": [
+        "Dragon",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 88,
         "atk": 120,
@@ -1227,7 +1431,7 @@
         "spd": 75,
         "spe": 142
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/887.png",
+      "sprite": "dragapult.webp",
       "usage": 0.0115,
       "usageRank": 72
     },
@@ -1235,7 +1439,10 @@
       "id": "mimikyu-disguised",
       "num": 778,
       "name": "Mimikyu",
-      "types": ["Ghost", "Fairy"],
+      "types": [
+        "Ghost",
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 55,
         "atk": 90,
@@ -1244,7 +1451,7 @@
         "spd": 105,
         "spe": 96
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/778.png",
+      "sprite": "mimikyu-disguised.webp",
       "usage": 0.0105,
       "usageRank": 73
     },
@@ -1252,7 +1459,10 @@
       "id": "swampert",
       "num": 260,
       "name": "Swampert",
-      "types": ["Water", "Ground"],
+      "types": [
+        "Water",
+        "Ground"
+      ],
       "baseStats": {
         "hp": 100,
         "atk": 110,
@@ -1261,7 +1471,7 @@
         "spd": 90,
         "spe": 60
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/260.png",
+      "sprite": "swampert.webp",
       "usage": 0.0101,
       "usageRank": 74
     },
@@ -1269,7 +1479,10 @@
       "id": "scrafty-mega",
       "num": 560,
       "name": "Scrafty-Mega",
-      "types": ["Dark", "Fighting"],
+      "types": [
+        "Dark",
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 130,
@@ -1278,7 +1491,7 @@
         "spd": 135,
         "spe": 68
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10289.png",
+      "sprite": "scrafty-mega.webp",
       "usage": 0.0096,
       "usageRank": 75
     },
@@ -1286,7 +1499,10 @@
       "id": "aegislash-shield",
       "num": 681,
       "name": "Aegislash",
-      "types": ["Steel", "Ghost"],
+      "types": [
+        "Steel",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 50,
@@ -1295,7 +1511,7 @@
         "spd": 140,
         "spe": 60
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/681.png",
+      "sprite": "aegislash-shield.webp",
       "usage": 0.0095,
       "usageRank": 76
     },
@@ -1303,7 +1519,9 @@
       "id": "vanilluxe",
       "num": 584,
       "name": "Vanilluxe",
-      "types": ["Ice"],
+      "types": [
+        "Ice"
+      ],
       "baseStats": {
         "hp": 71,
         "atk": 95,
@@ -1312,7 +1530,7 @@
         "spd": 95,
         "spe": 79
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/584.png",
+      "sprite": "vanilluxe.webp",
       "usage": 0.0093,
       "usageRank": 77
     },
@@ -1320,7 +1538,10 @@
       "id": "weavile",
       "num": 461,
       "name": "Weavile",
-      "types": ["Dark", "Ice"],
+      "types": [
+        "Dark",
+        "Ice"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 120,
@@ -1329,7 +1550,7 @@
         "spd": 85,
         "spe": 125
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/461.png",
+      "sprite": "weavile.webp",
       "usage": 0.0093,
       "usageRank": 78
     },
@@ -1337,7 +1558,10 @@
       "id": "tinkaton",
       "num": 959,
       "name": "Tinkaton",
-      "types": ["Fairy", "Steel"],
+      "types": [
+        "Fairy",
+        "Steel"
+      ],
       "baseStats": {
         "hp": 85,
         "atk": 75,
@@ -1346,7 +1570,7 @@
         "spd": 105,
         "spe": 94
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/959.png",
+      "sprite": "tinkaton.webp",
       "usage": 0.0093,
       "usageRank": 79
     },
@@ -1354,7 +1578,10 @@
       "id": "meganium-mega",
       "num": 154,
       "name": "Meganium-Mega",
-      "types": ["Grass", "Fairy"],
+      "types": [
+        "Grass",
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 92,
@@ -1363,7 +1590,7 @@
         "spd": 115,
         "spe": 80
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10282.png",
+      "sprite": "meganium-mega.webp",
       "usage": 0.0087,
       "usageRank": 80
     },
@@ -1371,7 +1598,10 @@
       "id": "basculegion-female",
       "num": 902,
       "name": "Basculegion-F",
-      "types": ["Water", "Ghost"],
+      "types": [
+        "Water",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 120,
         "atk": 92,
@@ -1380,7 +1610,7 @@
         "spd": 75,
         "spe": 78
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10248.png",
+      "sprite": "basculegion-female.webp",
       "usage": 0.0085,
       "usageRank": 81
     },
@@ -1388,7 +1618,9 @@
       "id": "mudsdale",
       "num": 750,
       "name": "Mudsdale",
-      "types": ["Ground"],
+      "types": [
+        "Ground"
+      ],
       "baseStats": {
         "hp": 100,
         "atk": 125,
@@ -1397,7 +1629,7 @@
         "spd": 85,
         "spe": 35
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/750.png",
+      "sprite": "mudsdale.webp",
       "usage": 0.008,
       "usageRank": 82
     },
@@ -1405,7 +1637,9 @@
       "id": "clefable",
       "num": 36,
       "name": "Clefable",
-      "types": ["Fairy"],
+      "types": [
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 70,
@@ -1414,7 +1648,7 @@
         "spd": 90,
         "spe": 60
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/36.png",
+      "sprite": "clefable.webp",
       "usage": 0.0079,
       "usageRank": 83
     },
@@ -1422,7 +1656,10 @@
       "id": "scizor-mega",
       "num": 212,
       "name": "Scizor-Mega",
-      "types": ["Bug", "Steel"],
+      "types": [
+        "Bug",
+        "Steel"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 150,
@@ -1431,7 +1668,7 @@
         "spd": 100,
         "spe": 75
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10046.png",
+      "sprite": "scizor-mega.webp",
       "usage": 0.0078,
       "usageRank": 84
     },
@@ -1439,7 +1676,10 @@
       "id": "hatterene",
       "num": 858,
       "name": "Hatterene",
-      "types": ["Psychic", "Fairy"],
+      "types": [
+        "Psychic",
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 57,
         "atk": 90,
@@ -1448,7 +1688,7 @@
         "spd": 103,
         "spe": 29
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/858.png",
+      "sprite": "hatterene.webp",
       "usage": 0.0074,
       "usageRank": 85
     },
@@ -1456,7 +1696,9 @@
       "id": "raichu-mega-x",
       "num": 26,
       "name": "Raichu-Mega-X",
-      "types": ["Electric"],
+      "types": [
+        "Electric"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 135,
@@ -1465,7 +1707,7 @@
         "spd": 95,
         "spe": 110
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10304.png",
+      "sprite": "raichu-mega-x.webp",
       "usage": 0.0073,
       "usageRank": 86
     },
@@ -1473,7 +1715,10 @@
       "id": "gyarados-mega",
       "num": 130,
       "name": "Gyarados-Mega",
-      "types": ["Water", "Dark"],
+      "types": [
+        "Water",
+        "Dark"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 155,
@@ -1482,7 +1727,7 @@
         "spd": 130,
         "spe": 81
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10041.png",
+      "sprite": "gyarados-mega.webp",
       "usage": 0.0072,
       "usageRank": 87
     },
@@ -1490,7 +1735,9 @@
       "id": "palafin-zero",
       "num": 964,
       "name": "Palafin",
-      "types": ["Water"],
+      "types": [
+        "Water"
+      ],
       "baseStats": {
         "hp": 100,
         "atk": 70,
@@ -1499,7 +1746,7 @@
         "spd": 62,
         "spe": 100
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/964.png",
+      "sprite": "palafin-zero.webp",
       "usage": 0.007,
       "usageRank": 88
     },
@@ -1507,7 +1754,10 @@
       "id": "typhlosion-hisui",
       "num": 157,
       "name": "Typhlosion-Hisui",
-      "types": ["Fire", "Ghost"],
+      "types": [
+        "Fire",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 73,
         "atk": 84,
@@ -1516,7 +1766,7 @@
         "spd": 85,
         "spe": 95
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10233.png",
+      "sprite": "typhlosion-hisui.webp",
       "usage": 0.007,
       "usageRank": 89
     },
@@ -1524,7 +1774,9 @@
       "id": "ninetales",
       "num": 38,
       "name": "Ninetales",
-      "types": ["Fire"],
+      "types": [
+        "Fire"
+      ],
       "baseStats": {
         "hp": 73,
         "atk": 76,
@@ -1533,7 +1785,7 @@
         "spd": 100,
         "spe": 100
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/38.png",
+      "sprite": "ninetales.webp",
       "usage": 0.0069,
       "usageRank": 90
     },
@@ -1541,7 +1793,10 @@
       "id": "azumarill",
       "num": 184,
       "name": "Azumarill",
-      "types": ["Water", "Fairy"],
+      "types": [
+        "Water",
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 100,
         "atk": 50,
@@ -1550,7 +1805,7 @@
         "spd": 80,
         "spe": 50
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/184.png",
+      "sprite": "azumarill.webp",
       "usage": 0.0069,
       "usageRank": 91
     },
@@ -1558,7 +1813,10 @@
       "id": "lopunny-mega",
       "num": 428,
       "name": "Lopunny-Mega",
-      "types": ["Normal", "Fighting"],
+      "types": [
+        "Normal",
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 136,
@@ -1567,7 +1825,7 @@
         "spd": 96,
         "spe": 135
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10088.png",
+      "sprite": "lopunny-mega.webp",
       "usage": 0.0069,
       "usageRank": 92
     },
@@ -1575,7 +1833,10 @@
       "id": "rotom-heat",
       "num": 479,
       "name": "Rotom-Heat",
-      "types": ["Electric", "Fire"],
+      "types": [
+        "Electric",
+        "Fire"
+      ],
       "baseStats": {
         "hp": 50,
         "atk": 65,
@@ -1584,7 +1845,7 @@
         "spd": 107,
         "spe": 86
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10008.png",
+      "sprite": "rotom-heat.webp",
       "usage": 0.0067,
       "usageRank": 93
     },
@@ -1592,7 +1853,10 @@
       "id": "charizard-mega-x",
       "num": 6,
       "name": "Charizard-Mega-X",
-      "types": ["Fire", "Dragon"],
+      "types": [
+        "Fire",
+        "Dragon"
+      ],
       "baseStats": {
         "hp": 78,
         "atk": 130,
@@ -1601,7 +1865,7 @@
         "spd": 85,
         "spe": 100
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10034.png",
+      "sprite": "charizard-mega-x.webp",
       "usage": 0.0064,
       "usageRank": 94
     },
@@ -1609,7 +1873,9 @@
       "id": "espathra",
       "num": 956,
       "name": "Espathra",
-      "types": ["Psychic"],
+      "types": [
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 60,
@@ -1618,7 +1884,7 @@
         "spd": 60,
         "spe": 105
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/956.png",
+      "sprite": "espathra.webp",
       "usage": 0.0061,
       "usageRank": 95
     },
@@ -1626,7 +1892,9 @@
       "id": "snorlax",
       "num": 143,
       "name": "Snorlax",
-      "types": ["Normal"],
+      "types": [
+        "Normal"
+      ],
       "baseStats": {
         "hp": 160,
         "atk": 110,
@@ -1635,7 +1903,7 @@
         "spd": 110,
         "spe": 30
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png",
+      "sprite": "snorlax.webp",
       "usage": 0.0059,
       "usageRank": 96
     },
@@ -1643,7 +1911,10 @@
       "id": "araquanid",
       "num": 752,
       "name": "Araquanid",
-      "types": ["Water", "Bug"],
+      "types": [
+        "Water",
+        "Bug"
+      ],
       "baseStats": {
         "hp": 68,
         "atk": 70,
@@ -1652,7 +1923,7 @@
         "spd": 132,
         "spe": 42
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/752.png",
+      "sprite": "araquanid.webp",
       "usage": 0.0059,
       "usageRank": 97
     },
@@ -1660,7 +1931,10 @@
       "id": "overqwil",
       "num": 904,
       "name": "Overqwil",
-      "types": ["Dark", "Poison"],
+      "types": [
+        "Dark",
+        "Poison"
+      ],
       "baseStats": {
         "hp": 85,
         "atk": 115,
@@ -1669,7 +1943,7 @@
         "spd": 65,
         "spe": 85
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/904.png",
+      "sprite": "overqwil.webp",
       "usage": 0.0058,
       "usageRank": 98
     },
@@ -1677,7 +1951,10 @@
       "id": "oranguru",
       "num": 765,
       "name": "Oranguru",
-      "types": ["Normal", "Psychic"],
+      "types": [
+        "Normal",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 90,
         "atk": 60,
@@ -1686,7 +1963,7 @@
         "spd": 110,
         "spe": 60
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/765.png",
+      "sprite": "oranguru.webp",
       "usage": 0.0058,
       "usageRank": 99
     },
@@ -1694,7 +1971,10 @@
       "id": "blaziken",
       "num": 257,
       "name": "Blaziken",
-      "types": ["Fire", "Fighting"],
+      "types": [
+        "Fire",
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 120,
@@ -1703,7 +1983,7 @@
         "spd": 70,
         "spe": 80
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/257.png",
+      "sprite": "blaziken.webp",
       "usage": 0.0056,
       "usageRank": 100
     },
@@ -1711,7 +1991,10 @@
       "id": "kleavor",
       "num": 900,
       "name": "Kleavor",
-      "types": ["Bug", "Rock"],
+      "types": [
+        "Bug",
+        "Rock"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 135,
@@ -1720,7 +2003,7 @@
         "spd": 70,
         "spe": 85
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/900.png",
+      "sprite": "kleavor.webp",
       "usage": 0.0055,
       "usageRank": 101
     },
@@ -1728,7 +2011,9 @@
       "id": "bellibolt",
       "num": 939,
       "name": "Bellibolt",
-      "types": ["Electric"],
+      "types": [
+        "Electric"
+      ],
       "baseStats": {
         "hp": 109,
         "atk": 64,
@@ -1737,7 +2022,7 @@
         "spd": 83,
         "spe": 45
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/939.png",
+      "sprite": "bellibolt.webp",
       "usage": 0.0054,
       "usageRank": 102
     },
@@ -1745,7 +2030,9 @@
       "id": "banette-mega",
       "num": 354,
       "name": "Banette-Mega",
-      "types": ["Ghost"],
+      "types": [
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 64,
         "atk": 165,
@@ -1754,7 +2041,7 @@
         "spd": 83,
         "spe": 75
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10056.png",
+      "sprite": "banette-mega.webp",
       "usage": 0.0053,
       "usageRank": 103
     },
@@ -1762,7 +2049,10 @@
       "id": "slowking-galar",
       "num": 199,
       "name": "Slowking-Galar",
-      "types": ["Poison", "Psychic"],
+      "types": [
+        "Poison",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 65,
@@ -1771,7 +2061,7 @@
         "spd": 110,
         "spe": 30
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10172.png",
+      "sprite": "slowking-galar.webp",
       "usage": 0.0053,
       "usageRank": 104
     },
@@ -1779,7 +2069,9 @@
       "id": "houndstone",
       "num": 972,
       "name": "Houndstone",
-      "types": ["Ghost"],
+      "types": [
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 72,
         "atk": 101,
@@ -1788,7 +2080,7 @@
         "spd": 97,
         "spe": 68
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/972.png",
+      "sprite": "houndstone.webp",
       "usage": 0.0052,
       "usageRank": 105
     },
@@ -1796,7 +2088,10 @@
       "id": "gengar",
       "num": 94,
       "name": "Gengar",
-      "types": ["Ghost", "Poison"],
+      "types": [
+        "Ghost",
+        "Poison"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 65,
@@ -1805,7 +2100,7 @@
         "spd": 75,
         "spe": 110
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png",
+      "sprite": "gengar.webp",
       "usage": 0.005,
       "usageRank": 106
     },
@@ -1813,7 +2108,10 @@
       "id": "vileplume",
       "num": 45,
       "name": "Vileplume",
-      "types": ["Grass", "Poison"],
+      "types": [
+        "Grass",
+        "Poison"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 80,
@@ -1822,7 +2120,7 @@
         "spd": 90,
         "spe": 50
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/45.png",
+      "sprite": "vileplume.webp",
       "usage": 0.005,
       "usageRank": 107
     },
@@ -1830,7 +2128,10 @@
       "id": "armarouge",
       "num": 936,
       "name": "Armarouge",
-      "types": ["Fire", "Psychic"],
+      "types": [
+        "Fire",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 85,
         "atk": 60,
@@ -1839,7 +2140,7 @@
         "spd": 80,
         "spe": 75
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/936.png",
+      "sprite": "armarouge.webp",
       "usage": 0.0049,
       "usageRank": 108
     },
@@ -1847,7 +2148,10 @@
       "id": "greninja-mega",
       "num": 658,
       "name": "Greninja-Mega",
-      "types": ["Water", "Dark"],
+      "types": [
+        "Water",
+        "Dark"
+      ],
       "baseStats": {
         "hp": 72,
         "atk": 125,
@@ -1856,7 +2160,7 @@
         "spd": 81,
         "spe": 142
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10294.png",
+      "sprite": "greninja-mega.webp",
       "usage": 0.0049,
       "usageRank": 109
     },
@@ -1864,7 +2168,10 @@
       "id": "sceptile-mega",
       "num": 254,
       "name": "Sceptile-Mega",
-      "types": ["Grass", "Dragon"],
+      "types": [
+        "Grass",
+        "Dragon"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 110,
@@ -1873,7 +2180,7 @@
         "spd": 85,
         "spe": 145
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10065.png",
+      "sprite": "sceptile-mega.webp",
       "usage": 0.0049,
       "usageRank": 110
     },
@@ -1881,7 +2188,9 @@
       "id": "meowstic-male",
       "num": 678,
       "name": "Meowstic",
-      "types": ["Psychic"],
+      "types": [
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 74,
         "atk": 48,
@@ -1890,7 +2199,7 @@
         "spd": 81,
         "spe": 104
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/678.png",
+      "sprite": "meowstic-male.webp",
       "usage": 0.0047,
       "usageRank": 111
     },
@@ -1898,7 +2207,9 @@
       "id": "glaceon",
       "num": 471,
       "name": "Glaceon",
-      "types": ["Ice"],
+      "types": [
+        "Ice"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 60,
@@ -1907,7 +2218,7 @@
         "spd": 95,
         "spe": 65
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/471.png",
+      "sprite": "glaceon.webp",
       "usage": 0.0043,
       "usageRank": 112
     },
@@ -1915,7 +2226,10 @@
       "id": "altaria",
       "num": 334,
       "name": "Altaria",
-      "types": ["Dragon", "Flying"],
+      "types": [
+        "Dragon",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 70,
@@ -1924,7 +2238,7 @@
         "spd": 105,
         "spe": 80
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/334.png",
+      "sprite": "altaria.webp",
       "usage": 0.0043,
       "usageRank": 113
     },
@@ -1932,7 +2246,10 @@
       "id": "malamar-mega",
       "num": 687,
       "name": "Malamar-Mega",
-      "types": ["Dark", "Psychic"],
+      "types": [
+        "Dark",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 86,
         "atk": 102,
@@ -1941,7 +2258,7 @@
         "spd": 120,
         "spe": 88
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10297.png",
+      "sprite": "malamar-mega.webp",
       "usage": 0.0042,
       "usageRank": 114
     },
@@ -1949,7 +2266,9 @@
       "id": "lycanroc-midday",
       "num": 745,
       "name": "Lycanroc",
-      "types": ["Rock"],
+      "types": [
+        "Rock"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 115,
@@ -1958,7 +2277,7 @@
         "spd": 65,
         "spe": 112
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/745.png",
+      "sprite": "lycanroc-midday.webp",
       "usage": 0.0042,
       "usageRank": 115
     },
@@ -1966,7 +2285,10 @@
       "id": "starmie-mega",
       "num": 121,
       "name": "Starmie-Mega",
-      "types": ["Water", "Psychic"],
+      "types": [
+        "Water",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 100,
@@ -1975,7 +2297,7 @@
         "spd": 105,
         "spe": 120
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10280.png",
+      "sprite": "starmie-mega.webp",
       "usage": 0.0042,
       "usageRank": 116
     },
@@ -1983,7 +2305,9 @@
       "id": "hippowdon",
       "num": 450,
       "name": "Hippowdon",
-      "types": ["Ground"],
+      "types": [
+        "Ground"
+      ],
       "baseStats": {
         "hp": 108,
         "atk": 112,
@@ -1992,7 +2316,7 @@
         "spd": 72,
         "spe": 47
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/450.png",
+      "sprite": "hippowdon.webp",
       "usage": 0.0041,
       "usageRank": 117
     },
@@ -2000,7 +2324,10 @@
       "id": "dragalge-mega",
       "num": 691,
       "name": "Dragalge-Mega",
-      "types": ["Poison", "Dragon"],
+      "types": [
+        "Poison",
+        "Dragon"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 85,
@@ -2009,7 +2336,7 @@
         "spd": 163,
         "spe": 44
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10299.png",
+      "sprite": "dragalge-mega.webp",
       "usage": 0.0041,
       "usageRank": 118
     },
@@ -2017,7 +2344,9 @@
       "id": "audino",
       "num": 531,
       "name": "Audino",
-      "types": ["Normal"],
+      "types": [
+        "Normal"
+      ],
       "baseStats": {
         "hp": 103,
         "atk": 60,
@@ -2026,7 +2355,7 @@
         "spd": 86,
         "spe": 50
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/531.png",
+      "sprite": "audino.webp",
       "usage": 0.0039,
       "usageRank": 119
     },
@@ -2034,7 +2363,10 @@
       "id": "altaria-mega",
       "num": 334,
       "name": "Altaria-Mega",
-      "types": ["Dragon", "Fairy"],
+      "types": [
+        "Dragon",
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 110,
@@ -2043,7 +2375,7 @@
         "spd": 105,
         "spe": 80
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10067.png",
+      "sprite": "altaria-mega.webp",
       "usage": 0.0039,
       "usageRank": 120
     },
@@ -2051,7 +2383,10 @@
       "id": "abomasnow-mega",
       "num": 460,
       "name": "Abomasnow-Mega",
-      "types": ["Grass", "Ice"],
+      "types": [
+        "Grass",
+        "Ice"
+      ],
       "baseStats": {
         "hp": 90,
         "atk": 132,
@@ -2060,7 +2395,7 @@
         "spd": 105,
         "spe": 30
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10060.png",
+      "sprite": "abomasnow-mega.webp",
       "usage": 0.0039,
       "usageRank": 121
     },
@@ -2068,7 +2403,9 @@
       "id": "eelektross-mega",
       "num": 604,
       "name": "Eelektross-Mega",
-      "types": ["Electric"],
+      "types": [
+        "Electric"
+      ],
       "baseStats": {
         "hp": 85,
         "atk": 145,
@@ -2077,7 +2414,7 @@
         "spd": 90,
         "spe": 80
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10290.png",
+      "sprite": "eelektross-mega.webp",
       "usage": 0.0037,
       "usageRank": 122
     },
@@ -2085,7 +2422,10 @@
       "id": "victreebel-mega",
       "num": 71,
       "name": "Victreebel-Mega",
-      "types": ["Grass", "Poison"],
+      "types": [
+        "Grass",
+        "Poison"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 125,
@@ -2094,7 +2434,7 @@
         "spd": 95,
         "spe": 70
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10279.png",
+      "sprite": "victreebel-mega.webp",
       "usage": 0.0035,
       "usageRank": 123
     },
@@ -2102,7 +2442,10 @@
       "id": "gardevoir",
       "num": 282,
       "name": "Gardevoir",
-      "types": ["Psychic", "Fairy"],
+      "types": [
+        "Psychic",
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 68,
         "atk": 65,
@@ -2111,7 +2454,7 @@
         "spd": 115,
         "spe": 80
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/282.png",
+      "sprite": "gardevoir.webp",
       "usage": 0.0035,
       "usageRank": 124
     },
@@ -2119,7 +2462,10 @@
       "id": "chesnaught-mega",
       "num": 652,
       "name": "Chesnaught-Mega",
-      "types": ["Grass", "Fighting"],
+      "types": [
+        "Grass",
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 88,
         "atk": 137,
@@ -2128,7 +2474,7 @@
         "spd": 115,
         "spe": 44
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10292.png",
+      "sprite": "chesnaught-mega.webp",
       "usage": 0.0035,
       "usageRank": 125
     },
@@ -2136,7 +2482,10 @@
       "id": "heliolisk",
       "num": 695,
       "name": "Heliolisk",
-      "types": ["Electric", "Normal"],
+      "types": [
+        "Electric",
+        "Normal"
+      ],
       "baseStats": {
         "hp": 62,
         "atk": 55,
@@ -2145,7 +2494,7 @@
         "spd": 94,
         "spe": 109
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/695.png",
+      "sprite": "heliolisk.webp",
       "usage": 0.0035,
       "usageRank": 126
     },
@@ -2153,7 +2502,9 @@
       "id": "raichu",
       "num": 26,
       "name": "Raichu",
-      "types": ["Electric"],
+      "types": [
+        "Electric"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 90,
@@ -2162,7 +2513,7 @@
         "spd": 80,
         "spe": 110
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png",
+      "sprite": "raichu.webp",
       "usage": 0.0034,
       "usageRank": 127
     },
@@ -2170,7 +2521,10 @@
       "id": "lucario-mega",
       "num": 448,
       "name": "Lucario-Mega",
-      "types": ["Fighting", "Steel"],
+      "types": [
+        "Fighting",
+        "Steel"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 145,
@@ -2179,7 +2533,7 @@
         "spd": 70,
         "spe": 112
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10059.png",
+      "sprite": "lucario-mega.webp",
       "usage": 0.0034,
       "usageRank": 128
     },
@@ -2187,7 +2541,10 @@
       "id": "decidueye-hisui",
       "num": 724,
       "name": "Decidueye-Hisui",
-      "types": ["Grass", "Fighting"],
+      "types": [
+        "Grass",
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 88,
         "atk": 112,
@@ -2196,7 +2553,7 @@
         "spd": 95,
         "spe": 60
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10244.png",
+      "sprite": "decidueye-hisui.webp",
       "usage": 0.0033,
       "usageRank": 129
     },
@@ -2204,7 +2561,10 @@
       "id": "chandelure-mega",
       "num": 609,
       "name": "Chandelure-Mega",
-      "types": ["Ghost", "Fire"],
+      "types": [
+        "Ghost",
+        "Fire"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 75,
@@ -2213,7 +2573,7 @@
         "spd": 110,
         "spe": 90
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10291.png",
+      "sprite": "chandelure-mega.webp",
       "usage": 0.0033,
       "usageRank": 130
     },
@@ -2221,7 +2581,9 @@
       "id": "umbreon",
       "num": 197,
       "name": "Umbreon",
-      "types": ["Dark"],
+      "types": [
+        "Dark"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 65,
@@ -2230,7 +2592,7 @@
         "spd": 130,
         "spe": 65
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/197.png",
+      "sprite": "umbreon.webp",
       "usage": 0.0032,
       "usageRank": 131
     },
@@ -2238,7 +2600,10 @@
       "id": "drampa",
       "num": 780,
       "name": "Drampa",
-      "types": ["Normal", "Dragon"],
+      "types": [
+        "Normal",
+        "Dragon"
+      ],
       "baseStats": {
         "hp": 78,
         "atk": 60,
@@ -2247,7 +2612,7 @@
         "spd": 91,
         "spe": 36
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/780.png",
+      "sprite": "drampa.webp",
       "usage": 0.0031,
       "usageRank": 132
     },
@@ -2255,7 +2620,9 @@
       "id": "aggron-mega",
       "num": 306,
       "name": "Aggron-Mega",
-      "types": ["Steel"],
+      "types": [
+        "Steel"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 140,
@@ -2264,7 +2631,7 @@
         "spd": 80,
         "spe": 50
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10053.png",
+      "sprite": "aggron-mega.webp",
       "usage": 0.0031,
       "usageRank": 133
     },
@@ -2272,7 +2639,10 @@
       "id": "malamar",
       "num": 687,
       "name": "Malamar",
-      "types": ["Dark", "Psychic"],
+      "types": [
+        "Dark",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 86,
         "atk": 92,
@@ -2281,7 +2651,7 @@
         "spd": 75,
         "spe": 73
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/687.png",
+      "sprite": "malamar.webp",
       "usage": 0.0031,
       "usageRank": 134
     },
@@ -2289,7 +2659,10 @@
       "id": "drampa-mega",
       "num": 780,
       "name": "Drampa-Mega",
-      "types": ["Normal", "Dragon"],
+      "types": [
+        "Normal",
+        "Dragon"
+      ],
       "baseStats": {
         "hp": 78,
         "atk": 85,
@@ -2298,7 +2671,7 @@
         "spd": 116,
         "spe": 36
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10302.png",
+      "sprite": "drampa-mega.webp",
       "usage": 0.0031,
       "usageRank": 135
     },
@@ -2306,7 +2679,10 @@
       "id": "feraligatr-mega",
       "num": 160,
       "name": "Feraligatr-Mega",
-      "types": ["Water", "Dragon"],
+      "types": [
+        "Water",
+        "Dragon"
+      ],
       "baseStats": {
         "hp": 85,
         "atk": 160,
@@ -2315,7 +2691,7 @@
         "spd": 93,
         "spe": 78
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10283.png",
+      "sprite": "feraligatr-mega.webp",
       "usage": 0.003,
       "usageRank": 136
     },
@@ -2323,7 +2699,10 @@
       "id": "hawlucha-mega",
       "num": 701,
       "name": "Hawlucha-Mega",
-      "types": ["Fighting", "Flying"],
+      "types": [
+        "Fighting",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 78,
         "atk": 137,
@@ -2332,7 +2711,7 @@
         "spd": 93,
         "spe": 118
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10300.png",
+      "sprite": "hawlucha-mega.webp",
       "usage": 0.0028,
       "usageRank": 137
     },
@@ -2340,7 +2719,10 @@
       "id": "klefki",
       "num": 707,
       "name": "Klefki",
-      "types": ["Steel", "Fairy"],
+      "types": [
+        "Steel",
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 57,
         "atk": 80,
@@ -2349,7 +2731,7 @@
         "spd": 87,
         "spe": 75
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/707.png",
+      "sprite": "klefki.webp",
       "usage": 0.0027,
       "usageRank": 138
     },
@@ -2357,7 +2739,10 @@
       "id": "gallade-mega",
       "num": 475,
       "name": "Gallade-Mega",
-      "types": ["Psychic", "Fighting"],
+      "types": [
+        "Psychic",
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 68,
         "atk": 165,
@@ -2366,7 +2751,7 @@
         "spd": 115,
         "spe": 110
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10068.png",
+      "sprite": "gallade-mega.webp",
       "usage": 0.0027,
       "usageRank": 139
     },
@@ -2374,7 +2759,9 @@
       "id": "conkeldurr",
       "num": 534,
       "name": "Conkeldurr",
-      "types": ["Fighting"],
+      "types": [
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 105,
         "atk": 140,
@@ -2383,7 +2770,7 @@
         "spd": 65,
         "spe": 45
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/534.png",
+      "sprite": "conkeldurr.webp",
       "usage": 0.0026,
       "usageRank": 140
     },
@@ -2391,7 +2778,10 @@
       "id": "scolipede-mega",
       "num": 545,
       "name": "Scolipede-Mega",
-      "types": ["Bug", "Poison"],
+      "types": [
+        "Bug",
+        "Poison"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 140,
@@ -2400,7 +2790,7 @@
         "spd": 99,
         "spe": 62
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10288.png",
+      "sprite": "scolipede-mega.webp",
       "usage": 0.0026,
       "usageRank": 141
     },
@@ -2408,7 +2798,10 @@
       "id": "gliscor",
       "num": 472,
       "name": "Gliscor",
-      "types": ["Ground", "Flying"],
+      "types": [
+        "Ground",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 95,
@@ -2417,7 +2810,7 @@
         "spd": 75,
         "spe": 95
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/472.png",
+      "sprite": "gliscor.webp",
       "usage": 0.0025,
       "usageRank": 142
     },
@@ -2425,7 +2818,9 @@
       "id": "cofagrigus",
       "num": 563,
       "name": "Cofagrigus",
-      "types": ["Ghost"],
+      "types": [
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 58,
         "atk": 50,
@@ -2434,7 +2829,7 @@
         "spd": 105,
         "spe": 30
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/563.png",
+      "sprite": "cofagrigus.webp",
       "usage": 0.0025,
       "usageRank": 143
     },
@@ -2442,7 +2837,10 @@
       "id": "tauros-paldea-aqua-breed",
       "num": 128,
       "name": "Tauros-Paldea-Aqua",
-      "types": ["Fighting", "Water"],
+      "types": [
+        "Fighting",
+        "Water"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 110,
@@ -2451,7 +2849,7 @@
         "spd": 70,
         "spe": 100
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10252.png",
+      "sprite": "tauros-paldea-aqua-breed.webp",
       "usage": 0.0025,
       "usageRank": 144
     },
@@ -2459,7 +2857,9 @@
       "id": "ditto",
       "num": 132,
       "name": "Ditto",
-      "types": ["Normal"],
+      "types": [
+        "Normal"
+      ],
       "baseStats": {
         "hp": 48,
         "atk": 48,
@@ -2468,7 +2868,7 @@
         "spd": 48,
         "spe": 48
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png",
+      "sprite": "ditto.webp",
       "usage": 0.0024,
       "usageRank": 145
     },
@@ -2476,7 +2876,10 @@
       "id": "skarmory-mega",
       "num": 227,
       "name": "Skarmory-Mega",
-      "types": ["Steel", "Flying"],
+      "types": [
+        "Steel",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 140,
@@ -2485,7 +2888,7 @@
         "spd": 100,
         "spe": 110
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10284.png",
+      "sprite": "skarmory-mega.webp",
       "usage": 0.0024,
       "usageRank": 146
     },
@@ -2493,7 +2896,10 @@
       "id": "slowbro-mega",
       "num": 80,
       "name": "Slowbro-Mega",
-      "types": ["Water", "Psychic"],
+      "types": [
+        "Water",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 75,
@@ -2502,7 +2908,7 @@
         "spd": 80,
         "spe": 30
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10071.png",
+      "sprite": "slowbro-mega.webp",
       "usage": 0.0024,
       "usageRank": 147
     },
@@ -2510,7 +2916,10 @@
       "id": "golurk-mega",
       "num": 623,
       "name": "Golurk-Mega",
-      "types": ["Ground", "Ghost"],
+      "types": [
+        "Ground",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 89,
         "atk": 159,
@@ -2519,7 +2928,7 @@
         "spd": 105,
         "spe": 55
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10313.png",
+      "sprite": "golurk-mega.webp",
       "usage": 0.0024,
       "usageRank": 148
     },
@@ -2527,7 +2936,10 @@
       "id": "crabominable-mega",
       "num": 740,
       "name": "Crabominable-Mega",
-      "types": ["Fighting", "Ice"],
+      "types": [
+        "Fighting",
+        "Ice"
+      ],
       "baseStats": {
         "hp": 97,
         "atk": 157,
@@ -2536,7 +2948,7 @@
         "spd": 107,
         "spe": 33
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10315.png",
+      "sprite": "crabominable-mega.webp",
       "usage": 0.0023,
       "usageRank": 149
     },
@@ -2544,7 +2956,10 @@
       "id": "steelix-mega",
       "num": 208,
       "name": "Steelix-Mega",
-      "types": ["Steel", "Ground"],
+      "types": [
+        "Steel",
+        "Ground"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 125,
@@ -2553,7 +2968,7 @@
         "spd": 95,
         "spe": 30
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10072.png",
+      "sprite": "steelix-mega.webp",
       "usage": 0.0023,
       "usageRank": 150
     },
@@ -2561,7 +2976,10 @@
       "id": "houndoom-mega",
       "num": 229,
       "name": "Houndoom-Mega",
-      "types": ["Dark", "Fire"],
+      "types": [
+        "Dark",
+        "Fire"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 90,
@@ -2570,7 +2988,7 @@
         "spd": 90,
         "spe": 115
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10048.png",
+      "sprite": "houndoom-mega.webp",
       "usage": 0.0022,
       "usageRank": 151
     },
@@ -2578,7 +2996,9 @@
       "id": "vaporeon",
       "num": 134,
       "name": "Vaporeon",
-      "types": ["Water"],
+      "types": [
+        "Water"
+      ],
       "baseStats": {
         "hp": 130,
         "atk": 65,
@@ -2587,7 +3007,7 @@
         "spd": 95,
         "spe": 65
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/134.png",
+      "sprite": "vaporeon.webp",
       "usage": 0.0022,
       "usageRank": 152
     },
@@ -2595,7 +3015,10 @@
       "id": "gyarados",
       "num": 130,
       "name": "Gyarados",
-      "types": ["Water", "Flying"],
+      "types": [
+        "Water",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 125,
@@ -2604,7 +3027,7 @@
         "spd": 100,
         "spe": 81
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/130.png",
+      "sprite": "gyarados.webp",
       "usage": 0.0021,
       "usageRank": 153
     },
@@ -2612,7 +3035,9 @@
       "id": "arcanine",
       "num": 59,
       "name": "Arcanine",
-      "types": ["Fire"],
+      "types": [
+        "Fire"
+      ],
       "baseStats": {
         "hp": 90,
         "atk": 110,
@@ -2621,7 +3046,7 @@
         "spd": 80,
         "spe": 95
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/59.png",
+      "sprite": "arcanine.webp",
       "usage": 0.0021,
       "usageRank": 154
     },
@@ -2629,7 +3054,10 @@
       "id": "krookodile",
       "num": 553,
       "name": "Krookodile",
-      "types": ["Ground", "Dark"],
+      "types": [
+        "Ground",
+        "Dark"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 117,
@@ -2638,7 +3066,7 @@
         "spd": 70,
         "spe": 92
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/553.png",
+      "sprite": "krookodile.webp",
       "usage": 0.0021,
       "usageRank": 155
     },
@@ -2646,7 +3074,10 @@
       "id": "clefable-mega",
       "num": 36,
       "name": "Clefable-Mega",
-      "types": ["Fairy", "Flying"],
+      "types": [
+        "Fairy",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 80,
@@ -2655,7 +3086,7 @@
         "spd": 110,
         "spe": 70
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10278.png",
+      "sprite": "clefable-mega.webp",
       "usage": 0.0021,
       "usageRank": 156
     },
@@ -2663,7 +3094,10 @@
       "id": "metagross",
       "num": 376,
       "name": "Metagross",
-      "types": ["Steel", "Psychic"],
+      "types": [
+        "Steel",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 135,
@@ -2672,7 +3106,7 @@
         "spd": 90,
         "spe": 70
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/376.png",
+      "sprite": "metagross.webp",
       "usage": 0.0021,
       "usageRank": 157
     },
@@ -2680,7 +3114,9 @@
       "id": "aromatisse",
       "num": 683,
       "name": "Aromatisse",
-      "types": ["Fairy"],
+      "types": [
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 101,
         "atk": 72,
@@ -2689,7 +3125,7 @@
         "spd": 89,
         "spe": 29
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/683.png",
+      "sprite": "aromatisse.webp",
       "usage": 0.002,
       "usageRank": 158
     },
@@ -2697,7 +3133,10 @@
       "id": "ampharos-mega",
       "num": 181,
       "name": "Ampharos-Mega",
-      "types": ["Electric", "Dragon"],
+      "types": [
+        "Electric",
+        "Dragon"
+      ],
       "baseStats": {
         "hp": 90,
         "atk": 95,
@@ -2706,7 +3145,7 @@
         "spd": 110,
         "spe": 45
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10045.png",
+      "sprite": "ampharos-mega.webp",
       "usage": 0.002,
       "usageRank": 159
     },
@@ -2714,7 +3153,9 @@
       "id": "blastoise",
       "num": 9,
       "name": "Blastoise",
-      "types": ["Water"],
+      "types": [
+        "Water"
+      ],
       "baseStats": {
         "hp": 79,
         "atk": 83,
@@ -2723,7 +3164,7 @@
         "spd": 105,
         "spe": 78
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
+      "sprite": "blastoise.webp",
       "usage": 0.002,
       "usageRank": 160
     },
@@ -2731,7 +3172,10 @@
       "id": "greninja",
       "num": 658,
       "name": "Greninja",
-      "types": ["Water", "Dark"],
+      "types": [
+        "Water",
+        "Dark"
+      ],
       "baseStats": {
         "hp": 72,
         "atk": 95,
@@ -2740,7 +3184,7 @@
         "spd": 71,
         "spe": 122
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/658.png",
+      "sprite": "greninja.webp",
       "usage": 0.002,
       "usageRank": 161
     },
@@ -2748,7 +3192,10 @@
       "id": "excadrill-mega",
       "num": 530,
       "name": "Excadrill-Mega",
-      "types": ["Ground", "Steel"],
+      "types": [
+        "Ground",
+        "Steel"
+      ],
       "baseStats": {
         "hp": 110,
         "atk": 165,
@@ -2757,7 +3204,7 @@
         "spd": 65,
         "spe": 103
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10287.png",
+      "sprite": "excadrill-mega.webp",
       "usage": 0.002,
       "usageRank": 162
     },
@@ -2765,7 +3212,10 @@
       "id": "goodra-hisui",
       "num": 706,
       "name": "Goodra-Hisui",
-      "types": ["Steel", "Dragon"],
+      "types": [
+        "Steel",
+        "Dragon"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 100,
@@ -2774,7 +3224,7 @@
         "spd": 150,
         "spe": 60
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10242.png",
+      "sprite": "goodra-hisui.webp",
       "usage": 0.002,
       "usageRank": 163
     },
@@ -2782,7 +3232,9 @@
       "id": "alcremie",
       "num": 869,
       "name": "Alcremie",
-      "types": ["Fairy"],
+      "types": [
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 60,
@@ -2791,7 +3243,7 @@
         "spd": 121,
         "spe": 64
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/869.png",
+      "sprite": "alcremie.webp",
       "usage": 0.002,
       "usageRank": 164
     },
@@ -2799,7 +3251,10 @@
       "id": "rhyperior",
       "num": 464,
       "name": "Rhyperior",
-      "types": ["Ground", "Rock"],
+      "types": [
+        "Ground",
+        "Rock"
+      ],
       "baseStats": {
         "hp": 115,
         "atk": 140,
@@ -2808,7 +3263,7 @@
         "spd": 55,
         "spe": 40
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/464.png",
+      "sprite": "rhyperior.webp",
       "usage": 0.002,
       "usageRank": 165
     },
@@ -2816,7 +3271,10 @@
       "id": "empoleon",
       "num": 395,
       "name": "Empoleon",
-      "types": ["Water", "Steel"],
+      "types": [
+        "Water",
+        "Steel"
+      ],
       "baseStats": {
         "hp": 84,
         "atk": 86,
@@ -2825,7 +3283,7 @@
         "spd": 101,
         "spe": 60
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/395.png",
+      "sprite": "empoleon.webp",
       "usage": 0.0019,
       "usageRank": 166
     },
@@ -2833,7 +3291,10 @@
       "id": "audino-mega",
       "num": 531,
       "name": "Audino-Mega",
-      "types": ["Normal", "Fairy"],
+      "types": [
+        "Normal",
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 103,
         "atk": 60,
@@ -2842,7 +3303,7 @@
         "spd": 126,
         "spe": 50
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10069.png",
+      "sprite": "audino-mega.webp",
       "usage": 0.0019,
       "usageRank": 167
     },
@@ -2850,7 +3311,10 @@
       "id": "toxicroak",
       "num": 454,
       "name": "Toxicroak",
-      "types": ["Poison", "Fighting"],
+      "types": [
+        "Poison",
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 83,
         "atk": 106,
@@ -2859,7 +3323,7 @@
         "spd": 65,
         "spe": 85
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/454.png",
+      "sprite": "toxicroak.webp",
       "usage": 0.0018,
       "usageRank": 168
     },
@@ -2867,7 +3331,10 @@
       "id": "pinsir-mega",
       "num": 127,
       "name": "Pinsir-Mega",
-      "types": ["Bug", "Flying"],
+      "types": [
+        "Bug",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 155,
@@ -2876,7 +3343,7 @@
         "spd": 90,
         "spe": 105
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10040.png",
+      "sprite": "pinsir-mega.webp",
       "usage": 0.0017,
       "usageRank": 169
     },
@@ -2884,7 +3351,10 @@
       "id": "tyrantrum",
       "num": 697,
       "name": "Tyrantrum",
-      "types": ["Rock", "Dragon"],
+      "types": [
+        "Rock",
+        "Dragon"
+      ],
       "baseStats": {
         "hp": 82,
         "atk": 121,
@@ -2893,7 +3363,7 @@
         "spd": 59,
         "spe": 71
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/697.png",
+      "sprite": "tyrantrum.webp",
       "usage": 0.0017,
       "usageRank": 170
     },
@@ -2901,7 +3371,10 @@
       "id": "morpeko-full-belly",
       "num": 877,
       "name": "Morpeko",
-      "types": ["Electric", "Dark"],
+      "types": [
+        "Electric",
+        "Dark"
+      ],
       "baseStats": {
         "hp": 58,
         "atk": 95,
@@ -2910,7 +3383,7 @@
         "spd": 58,
         "spe": 97
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/877.png",
+      "sprite": "morpeko-full-belly.webp",
       "usage": 0.0016,
       "usageRank": 171
     },
@@ -2918,7 +3391,10 @@
       "id": "medicham-mega",
       "num": 308,
       "name": "Medicham-Mega",
-      "types": ["Fighting", "Psychic"],
+      "types": [
+        "Fighting",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 100,
@@ -2927,7 +3403,7 @@
         "spd": 85,
         "spe": 100
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10054.png",
+      "sprite": "medicham-mega.webp",
       "usage": 0.0016,
       "usageRank": 172
     },
@@ -2935,7 +3411,10 @@
       "id": "scrafty",
       "num": 560,
       "name": "Scrafty",
-      "types": ["Dark", "Fighting"],
+      "types": [
+        "Dark",
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 90,
@@ -2944,7 +3423,7 @@
         "spd": 115,
         "spe": 58
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/560.png",
+      "sprite": "scrafty.webp",
       "usage": 0.0016,
       "usageRank": 173
     },
@@ -2952,7 +3431,10 @@
       "id": "mr-rime",
       "num": 866,
       "name": "Mr. Rime",
-      "types": ["Ice", "Psychic"],
+      "types": [
+        "Ice",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 85,
@@ -2961,7 +3443,7 @@
         "spd": 100,
         "spe": 70
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/866.png",
+      "sprite": "mr-rime.webp",
       "usage": 0.0014,
       "usageRank": 174
     },
@@ -2969,7 +3451,10 @@
       "id": "sharpedo-mega",
       "num": 319,
       "name": "Sharpedo-Mega",
-      "types": ["Water", "Dark"],
+      "types": [
+        "Water",
+        "Dark"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 140,
@@ -2978,7 +3463,7 @@
         "spd": 65,
         "spe": 105
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10070.png",
+      "sprite": "sharpedo-mega.webp",
       "usage": 0.0014,
       "usageRank": 175
     },
@@ -2986,7 +3471,10 @@
       "id": "aurorus",
       "num": 699,
       "name": "Aurorus",
-      "types": ["Rock", "Ice"],
+      "types": [
+        "Rock",
+        "Ice"
+      ],
       "baseStats": {
         "hp": 123,
         "atk": 77,
@@ -2995,7 +3483,7 @@
         "spd": 92,
         "spe": 58
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/699.png",
+      "sprite": "aurorus.webp",
       "usage": 0.0014,
       "usageRank": 176
     },
@@ -3003,7 +3491,9 @@
       "id": "manectric-mega",
       "num": 310,
       "name": "Manectric-Mega",
-      "types": ["Electric"],
+      "types": [
+        "Electric"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 75,
@@ -3012,7 +3502,7 @@
         "spd": 80,
         "spe": 135
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10055.png",
+      "sprite": "manectric-mega.webp",
       "usage": 0.0014,
       "usageRank": 177
     },
@@ -3020,7 +3510,10 @@
       "id": "noivern",
       "num": 715,
       "name": "Noivern",
-      "types": ["Flying", "Dragon"],
+      "types": [
+        "Flying",
+        "Dragon"
+      ],
       "baseStats": {
         "hp": 85,
         "atk": 70,
@@ -3029,7 +3522,7 @@
         "spd": 80,
         "spe": 123
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/715.png",
+      "sprite": "noivern.webp",
       "usage": 0.0014,
       "usageRank": 178
     },
@@ -3037,7 +3530,10 @@
       "id": "rotom-mow",
       "num": 479,
       "name": "Rotom-Mow",
-      "types": ["Electric", "Grass"],
+      "types": [
+        "Electric",
+        "Grass"
+      ],
       "baseStats": {
         "hp": 50,
         "atk": 65,
@@ -3046,7 +3542,7 @@
         "spd": 107,
         "spe": 86
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10012.png",
+      "sprite": "rotom-mow.webp",
       "usage": 0.0014,
       "usageRank": 179
     },
@@ -3054,7 +3550,9 @@
       "id": "orthworm",
       "num": 968,
       "name": "Orthworm",
-      "types": ["Steel"],
+      "types": [
+        "Steel"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 85,
@@ -3063,7 +3561,7 @@
         "spd": 55,
         "spe": 65
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/968.png",
+      "sprite": "orthworm.webp",
       "usage": 0.0014,
       "usageRank": 180
     },
@@ -3071,7 +3569,10 @@
       "id": "pidgeot-mega",
       "num": 18,
       "name": "Pidgeot-Mega",
-      "types": ["Normal", "Flying"],
+      "types": [
+        "Normal",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 83,
         "atk": 80,
@@ -3080,7 +3581,7 @@
         "spd": 80,
         "spe": 121
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10073.png",
+      "sprite": "pidgeot-mega.webp",
       "usage": 0.0013,
       "usageRank": 181
     },
@@ -3088,7 +3589,10 @@
       "id": "hydrapple",
       "num": 1019,
       "name": "Hydrapple",
-      "types": ["Grass", "Dragon"],
+      "types": [
+        "Grass",
+        "Dragon"
+      ],
       "baseStats": {
         "hp": 106,
         "atk": 80,
@@ -3097,7 +3601,7 @@
         "spd": 80,
         "spe": 44
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1019.png",
+      "sprite": "hydrapple.webp",
       "usage": 0.0013,
       "usageRank": 182
     },
@@ -3105,7 +3609,10 @@
       "id": "chesnaught",
       "num": 652,
       "name": "Chesnaught",
-      "types": ["Grass", "Fighting"],
+      "types": [
+        "Grass",
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 88,
         "atk": 107,
@@ -3114,7 +3621,7 @@
         "spd": 75,
         "spe": 64
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/652.png",
+      "sprite": "chesnaught.webp",
       "usage": 0.0013,
       "usageRank": 183
     },
@@ -3122,7 +3629,10 @@
       "id": "wyrdeer",
       "num": 899,
       "name": "Wyrdeer",
-      "types": ["Normal", "Psychic"],
+      "types": [
+        "Normal",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 103,
         "atk": 105,
@@ -3131,7 +3641,7 @@
         "spd": 75,
         "spe": 65
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/899.png",
+      "sprite": "wyrdeer.webp",
       "usage": 0.0013,
       "usageRank": 184
     },
@@ -3139,7 +3649,10 @@
       "id": "heracross-mega",
       "num": 214,
       "name": "Heracross-Mega",
-      "types": ["Bug", "Fighting"],
+      "types": [
+        "Bug",
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 185,
@@ -3148,7 +3661,7 @@
         "spd": 105,
         "spe": 75
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10047.png",
+      "sprite": "heracross-mega.webp",
       "usage": 0.0013,
       "usageRank": 185
     },
@@ -3156,7 +3669,9 @@
       "id": "reuniclus",
       "num": 579,
       "name": "Reuniclus",
-      "types": ["Psychic"],
+      "types": [
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 110,
         "atk": 65,
@@ -3165,7 +3680,7 @@
         "spd": 85,
         "spe": 30
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/579.png",
+      "sprite": "reuniclus.webp",
       "usage": 0.0013,
       "usageRank": 186
     },
@@ -3173,7 +3688,9 @@
       "id": "serperior",
       "num": 497,
       "name": "Serperior",
-      "types": ["Grass"],
+      "types": [
+        "Grass"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 75,
@@ -3182,7 +3699,7 @@
         "spd": 95,
         "spe": 113
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/497.png",
+      "sprite": "serperior.webp",
       "usage": 0.0013,
       "usageRank": 187
     },
@@ -3190,7 +3707,10 @@
       "id": "runerigus",
       "num": 867,
       "name": "Runerigus",
-      "types": ["Ground", "Ghost"],
+      "types": [
+        "Ground",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 58,
         "atk": 95,
@@ -3199,7 +3719,7 @@
         "spd": 105,
         "spe": 30
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/867.png",
+      "sprite": "runerigus.webp",
       "usage": 0.0013,
       "usageRank": 188
     },
@@ -3207,7 +3727,9 @@
       "id": "jolteon",
       "num": 135,
       "name": "Jolteon",
-      "types": ["Electric"],
+      "types": [
+        "Electric"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 65,
@@ -3216,7 +3738,7 @@
         "spd": 95,
         "spe": 130
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/135.png",
+      "sprite": "jolteon.webp",
       "usage": 0.0012,
       "usageRank": 189
     },
@@ -3224,7 +3746,10 @@
       "id": "chimecho-mega",
       "num": 358,
       "name": "Chimecho-Mega",
-      "types": ["Psychic", "Steel"],
+      "types": [
+        "Psychic",
+        "Steel"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 50,
@@ -3233,7 +3758,7 @@
         "spd": 120,
         "spe": 65
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10306.png",
+      "sprite": "chimecho-mega.webp",
       "usage": 0.0012,
       "usageRank": 190
     },
@@ -3241,7 +3766,9 @@
       "id": "clawitzer",
       "num": 693,
       "name": "Clawitzer",
-      "types": ["Water"],
+      "types": [
+        "Water"
+      ],
       "baseStats": {
         "hp": 71,
         "atk": 73,
@@ -3250,7 +3777,7 @@
         "spd": 89,
         "spe": 59
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/693.png",
+      "sprite": "clawitzer.webp",
       "usage": 0.0012,
       "usageRank": 191
     },
@@ -3258,7 +3785,10 @@
       "id": "medicham",
       "num": 308,
       "name": "Medicham",
-      "types": ["Fighting", "Psychic"],
+      "types": [
+        "Fighting",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 60,
@@ -3267,7 +3797,7 @@
         "spd": 75,
         "spe": 80
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/308.png",
+      "sprite": "medicham.webp",
       "usage": 0.0012,
       "usageRank": 192
     },
@@ -3275,7 +3805,9 @@
       "id": "rampardos",
       "num": 409,
       "name": "Rampardos",
-      "types": ["Rock"],
+      "types": [
+        "Rock"
+      ],
       "baseStats": {
         "hp": 97,
         "atk": 165,
@@ -3284,7 +3816,7 @@
         "spd": 50,
         "spe": 58
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/409.png",
+      "sprite": "rampardos.webp",
       "usage": 0.0012,
       "usageRank": 193
     },
@@ -3292,7 +3824,10 @@
       "id": "barbaracle-mega",
       "num": 689,
       "name": "Barbaracle-Mega",
-      "types": ["Rock", "Fighting"],
+      "types": [
+        "Rock",
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 72,
         "atk": 140,
@@ -3301,7 +3836,7 @@
         "spd": 106,
         "spe": 88
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10298.png",
+      "sprite": "barbaracle-mega.webp",
       "usage": 0.0011,
       "usageRank": 194
     },
@@ -3309,7 +3844,9 @@
       "id": "liepard",
       "num": 510,
       "name": "Liepard",
-      "types": ["Dark"],
+      "types": [
+        "Dark"
+      ],
       "baseStats": {
         "hp": 64,
         "atk": 88,
@@ -3318,7 +3855,7 @@
         "spd": 50,
         "spe": 106
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/510.png",
+      "sprite": "liepard.webp",
       "usage": 0.0011,
       "usageRank": 195
     },
@@ -3326,7 +3863,9 @@
       "id": "falinks-mega",
       "num": 870,
       "name": "Falinks-Mega",
-      "types": ["Fighting"],
+      "types": [
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 135,
@@ -3335,7 +3874,7 @@
         "spd": 65,
         "spe": 100
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10303.png",
+      "sprite": "falinks-mega.webp",
       "usage": 0.0011,
       "usageRank": 196
     },
@@ -3343,7 +3882,10 @@
       "id": "quaquaval",
       "num": 914,
       "name": "Quaquaval",
-      "types": ["Water", "Fighting"],
+      "types": [
+        "Water",
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 85,
         "atk": 120,
@@ -3352,7 +3894,7 @@
         "spd": 75,
         "spe": 85
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/914.png",
+      "sprite": "quaquaval.webp",
       "usage": 0.0011,
       "usageRank": 197
     },
@@ -3360,7 +3902,9 @@
       "id": "alakazam-mega",
       "num": 65,
       "name": "Alakazam-Mega",
-      "types": ["Psychic"],
+      "types": [
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 55,
         "atk": 50,
@@ -3369,7 +3913,7 @@
         "spd": 105,
         "spe": 150
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10037.png",
+      "sprite": "alakazam-mega.webp",
       "usage": 0.001,
       "usageRank": 198
     },
@@ -3377,7 +3921,9 @@
       "id": "garganacl",
       "num": 934,
       "name": "Garganacl",
-      "types": ["Rock"],
+      "types": [
+        "Rock"
+      ],
       "baseStats": {
         "hp": 100,
         "atk": 100,
@@ -3386,7 +3932,7 @@
         "spd": 90,
         "spe": 35
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/934.png",
+      "sprite": "garganacl.webp",
       "usage": 0.001,
       "usageRank": 199
     },
@@ -3394,7 +3940,10 @@
       "id": "gourgeist-super",
       "num": 711,
       "name": "Gourgeist-Super",
-      "types": ["Ghost", "Grass"],
+      "types": [
+        "Ghost",
+        "Grass"
+      ],
       "baseStats": {
         "hp": 85,
         "atk": 100,
@@ -3403,7 +3952,7 @@
         "spd": 75,
         "spe": 54
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10032.png",
+      "sprite": "gourgeist-super.webp",
       "usage": 0.0009,
       "usageRank": 200
     },
@@ -3411,7 +3960,10 @@
       "id": "beedrill-mega",
       "num": 15,
       "name": "Beedrill-Mega",
-      "types": ["Bug", "Poison"],
+      "types": [
+        "Bug",
+        "Poison"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 150,
@@ -3420,7 +3972,7 @@
         "spd": 80,
         "spe": 145
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10090.png",
+      "sprite": "beedrill-mega.webp",
       "usage": 0.0009,
       "usageRank": 201
     },
@@ -3428,7 +3980,10 @@
       "id": "torterra",
       "num": 389,
       "name": "Torterra",
-      "types": ["Grass", "Ground"],
+      "types": [
+        "Grass",
+        "Ground"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 109,
@@ -3437,7 +3992,7 @@
         "spd": 85,
         "spe": 56
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/389.png",
+      "sprite": "torterra.webp",
       "usage": 0.0009,
       "usageRank": 202
     },
@@ -3445,7 +4000,10 @@
       "id": "rotom-frost",
       "num": 479,
       "name": "Rotom-Frost",
-      "types": ["Electric", "Ice"],
+      "types": [
+        "Electric",
+        "Ice"
+      ],
       "baseStats": {
         "hp": 50,
         "atk": 65,
@@ -3454,7 +4012,7 @@
         "spd": 107,
         "spe": 86
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10010.png",
+      "sprite": "rotom-frost.webp",
       "usage": 0.0009,
       "usageRank": 203
     },
@@ -3462,7 +4020,9 @@
       "id": "pikachu",
       "num": 25,
       "name": "Pikachu",
-      "types": ["Electric"],
+      "types": [
+        "Electric"
+      ],
       "baseStats": {
         "hp": 35,
         "atk": 55,
@@ -3471,7 +4031,7 @@
         "spd": 50,
         "spe": 90
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+      "sprite": "pikachu.webp",
       "usage": 0.0009,
       "usageRank": 204
     },
@@ -3479,7 +4039,9 @@
       "id": "alakazam",
       "num": 65,
       "name": "Alakazam",
-      "types": ["Psychic"],
+      "types": [
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 55,
         "atk": 50,
@@ -3488,7 +4050,7 @@
         "spd": 95,
         "spe": 120
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/65.png",
+      "sprite": "alakazam.webp",
       "usage": 0.0009,
       "usageRank": 205
     },
@@ -3496,7 +4058,9 @@
       "id": "ampharos",
       "num": 181,
       "name": "Ampharos",
-      "types": ["Electric"],
+      "types": [
+        "Electric"
+      ],
       "baseStats": {
         "hp": 90,
         "atk": 75,
@@ -3505,7 +4069,7 @@
         "spd": 90,
         "spe": 55
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/181.png",
+      "sprite": "ampharos.webp",
       "usage": 0.0009,
       "usageRank": 206
     },
@@ -3513,7 +4077,10 @@
       "id": "skeledirge",
       "num": 911,
       "name": "Skeledirge",
-      "types": ["Fire", "Ghost"],
+      "types": [
+        "Fire",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 104,
         "atk": 75,
@@ -3522,7 +4089,7 @@
         "spd": 75,
         "spe": 66
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/911.png",
+      "sprite": "skeledirge.webp",
       "usage": 0.0008,
       "usageRank": 207
     },
@@ -3530,7 +4097,10 @@
       "id": "slowking",
       "num": 199,
       "name": "Slowking",
-      "types": ["Water", "Psychic"],
+      "types": [
+        "Water",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 75,
@@ -3539,7 +4109,7 @@
         "spd": 110,
         "spe": 30
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/199.png",
+      "sprite": "slowking.webp",
       "usage": 0.0008,
       "usageRank": 208
     },
@@ -3547,7 +4117,10 @@
       "id": "slowbro",
       "num": 80,
       "name": "Slowbro",
-      "types": ["Water", "Psychic"],
+      "types": [
+        "Water",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 75,
@@ -3556,7 +4129,7 @@
         "spd": 80,
         "spe": 30
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/80.png",
+      "sprite": "slowbro.webp",
       "usage": 0.0008,
       "usageRank": 209
     },
@@ -3564,7 +4137,10 @@
       "id": "spiritomb",
       "num": 442,
       "name": "Spiritomb",
-      "types": ["Ghost", "Dark"],
+      "types": [
+        "Ghost",
+        "Dark"
+      ],
       "baseStats": {
         "hp": 50,
         "atk": 92,
@@ -3573,7 +4149,7 @@
         "spd": 108,
         "spe": 35
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/442.png",
+      "sprite": "spiritomb.webp",
       "usage": 0.0008,
       "usageRank": 210
     },
@@ -3581,7 +4157,10 @@
       "id": "salazzle",
       "num": 758,
       "name": "Salazzle",
-      "types": ["Poison", "Fire"],
+      "types": [
+        "Poison",
+        "Fire"
+      ],
       "baseStats": {
         "hp": 68,
         "atk": 64,
@@ -3590,7 +4169,7 @@
         "spd": 60,
         "spe": 117
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/758.png",
+      "sprite": "salazzle.webp",
       "usage": 0.0008,
       "usageRank": 211
     },
@@ -3598,7 +4177,10 @@
       "id": "sableye-mega",
       "num": 302,
       "name": "Sableye-Mega",
-      "types": ["Dark", "Ghost"],
+      "types": [
+        "Dark",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 50,
         "atk": 85,
@@ -3607,7 +4189,7 @@
         "spd": 115,
         "spe": 20
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10066.png",
+      "sprite": "sableye-mega.webp",
       "usage": 0.0008,
       "usageRank": 212
     },
@@ -3615,7 +4197,10 @@
       "id": "starmie",
       "num": 121,
       "name": "Starmie",
-      "types": ["Water", "Psychic"],
+      "types": [
+        "Water",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 75,
@@ -3624,7 +4209,7 @@
         "spd": 85,
         "spe": 115
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/121.png",
+      "sprite": "starmie.webp",
       "usage": 0.0007,
       "usageRank": 213
     },
@@ -3632,7 +4217,10 @@
       "id": "lucario",
       "num": 448,
       "name": "Lucario",
-      "types": ["Fighting", "Steel"],
+      "types": [
+        "Fighting",
+        "Steel"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 110,
@@ -3641,7 +4229,7 @@
         "spd": 70,
         "spe": 90
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/448.png",
+      "sprite": "lucario.webp",
       "usage": 0.0007,
       "usageRank": 214
     },
@@ -3649,7 +4237,9 @@
       "id": "glalie-mega",
       "num": 362,
       "name": "Glalie-Mega",
-      "types": ["Ice"],
+      "types": [
+        "Ice"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 120,
@@ -3658,7 +4248,7 @@
         "spd": 80,
         "spe": 100
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10074.png",
+      "sprite": "glalie-mega.webp",
       "usage": 0.0007,
       "usageRank": 215
     },
@@ -3666,7 +4256,9 @@
       "id": "machamp",
       "num": 68,
       "name": "Machamp",
-      "types": ["Fighting"],
+      "types": [
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 90,
         "atk": 130,
@@ -3675,7 +4267,7 @@
         "spd": 85,
         "spe": 55
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/68.png",
+      "sprite": "machamp.webp",
       "usage": 0.0007,
       "usageRank": 216
     },
@@ -3683,7 +4275,9 @@
       "id": "meowstic-female-mega",
       "num": 678,
       "name": "Meowstic-F-Mega",
-      "types": ["Psychic"],
+      "types": [
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 74,
         "atk": 48,
@@ -3692,7 +4286,7 @@
         "spd": 101,
         "spe": 124
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10326.png",
+      "sprite": "meowstic-female-mega.webp",
       "usage": 0.0006,
       "usageRank": 217
     },
@@ -3700,7 +4294,10 @@
       "id": "avalugg-hisui",
       "num": 713,
       "name": "Avalugg-Hisui",
-      "types": ["Ice", "Rock"],
+      "types": [
+        "Ice",
+        "Rock"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 127,
@@ -3709,7 +4306,7 @@
         "spd": 36,
         "spe": 38
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10243.png",
+      "sprite": "avalugg-hisui.webp",
       "usage": 0.0006,
       "usageRank": 218
     },
@@ -3717,7 +4314,10 @@
       "id": "diggersby",
       "num": 660,
       "name": "Diggersby",
-      "types": ["Normal", "Ground"],
+      "types": [
+        "Normal",
+        "Ground"
+      ],
       "baseStats": {
         "hp": 85,
         "atk": 56,
@@ -3726,7 +4326,7 @@
         "spd": 77,
         "spe": 78
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/660.png",
+      "sprite": "diggersby.webp",
       "usage": 0.0006,
       "usageRank": 219
     },
@@ -3734,7 +4334,10 @@
       "id": "dragalge",
       "num": 691,
       "name": "Dragalge",
-      "types": ["Poison", "Dragon"],
+      "types": [
+        "Poison",
+        "Dragon"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 75,
@@ -3743,7 +4346,7 @@
         "spd": 123,
         "spe": 44
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/691.png",
+      "sprite": "dragalge.webp",
       "usage": 0.0006,
       "usageRank": 220
     },
@@ -3751,7 +4354,10 @@
       "id": "infernape",
       "num": 392,
       "name": "Infernape",
-      "types": ["Fire", "Fighting"],
+      "types": [
+        "Fire",
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 76,
         "atk": 104,
@@ -3760,7 +4366,7 @@
         "spd": 71,
         "spe": 108
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/392.png",
+      "sprite": "infernape.webp",
       "usage": 0.0005,
       "usageRank": 221
     },
@@ -3768,7 +4374,9 @@
       "id": "feraligatr",
       "num": 160,
       "name": "Feraligatr",
-      "types": ["Water"],
+      "types": [
+        "Water"
+      ],
       "baseStats": {
         "hp": 85,
         "atk": 105,
@@ -3777,7 +4385,7 @@
         "spd": 83,
         "spe": 78
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/160.png",
+      "sprite": "feraligatr.webp",
       "usage": 0.0005,
       "usageRank": 222
     },
@@ -3785,7 +4393,10 @@
       "id": "tauros-paldea-blaze-breed",
       "num": 128,
       "name": "Tauros-Paldea-Blaze",
-      "types": ["Fighting", "Fire"],
+      "types": [
+        "Fighting",
+        "Fire"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 110,
@@ -3794,7 +4405,7 @@
         "spd": 70,
         "spe": 100
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10251.png",
+      "sprite": "tauros-paldea-blaze-breed.webp",
       "usage": 0.0005,
       "usageRank": 223
     },
@@ -3802,7 +4413,9 @@
       "id": "espeon",
       "num": 196,
       "name": "Espeon",
-      "types": ["Psychic"],
+      "types": [
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 65,
@@ -3811,7 +4424,7 @@
         "spd": 95,
         "spe": 110
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/196.png",
+      "sprite": "espeon.webp",
       "usage": 0.0005,
       "usageRank": 224
     },
@@ -3819,7 +4432,10 @@
       "id": "charizard",
       "num": 6,
       "name": "Charizard",
-      "types": ["Fire", "Flying"],
+      "types": [
+        "Fire",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 78,
         "atk": 84,
@@ -3828,7 +4444,7 @@
         "spd": 85,
         "spe": 100
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+      "sprite": "charizard.webp",
       "usage": 0.0005,
       "usageRank": 225
     },
@@ -3836,7 +4452,9 @@
       "id": "floette-eternal",
       "num": 670,
       "name": "Floette-Eternal",
-      "types": ["Fairy"],
+      "types": [
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 74,
         "atk": 65,
@@ -3845,7 +4463,7 @@
         "spd": 128,
         "spe": 92
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10061.png",
+      "sprite": "floette-eternal.webp",
       "usage": 0.0005,
       "usageRank": 226
     },
@@ -3853,7 +4471,10 @@
       "id": "roserade",
       "num": 407,
       "name": "Roserade",
-      "types": ["Grass", "Poison"],
+      "types": [
+        "Grass",
+        "Poison"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 70,
@@ -3862,7 +4483,7 @@
         "spd": 105,
         "spe": 90
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/407.png",
+      "sprite": "roserade.webp",
       "usage": 0.0005,
       "usageRank": 227
     },
@@ -3870,7 +4491,10 @@
       "id": "toucannon",
       "num": 733,
       "name": "Toucannon",
-      "types": ["Normal", "Flying"],
+      "types": [
+        "Normal",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 120,
@@ -3879,7 +4503,7 @@
         "spd": 75,
         "spe": 60
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/733.png",
+      "sprite": "toucannon.webp",
       "usage": 0.0005,
       "usageRank": 228
     },
@@ -3887,7 +4511,9 @@
       "id": "meowstic-male-mega",
       "num": 678,
       "name": "Meowstic-M-Mega",
-      "types": ["Psychic"],
+      "types": [
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 74,
         "atk": 48,
@@ -3896,7 +4522,7 @@
         "spd": 101,
         "spe": 124
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10314.png",
+      "sprite": "meowstic-male-mega.webp",
       "usage": 0.0004,
       "usageRank": 229
     },
@@ -3904,7 +4530,9 @@
       "id": "sceptile",
       "num": 254,
       "name": "Sceptile",
-      "types": ["Grass"],
+      "types": [
+        "Grass"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 85,
@@ -3913,7 +4541,7 @@
         "spd": 85,
         "spe": 120
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/254.png",
+      "sprite": "sceptile.webp",
       "usage": 0.0004,
       "usageRank": 230
     },
@@ -3921,7 +4549,10 @@
       "id": "ariados",
       "num": 168,
       "name": "Ariados",
-      "types": ["Bug", "Poison"],
+      "types": [
+        "Bug",
+        "Poison"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 90,
@@ -3930,7 +4561,7 @@
         "spd": 70,
         "spe": 40
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/168.png",
+      "sprite": "ariados.webp",
       "usage": 0.0004,
       "usageRank": 231
     },
@@ -3938,7 +4569,9 @@
       "id": "simipour",
       "num": 516,
       "name": "Simipour",
-      "types": ["Water"],
+      "types": [
+        "Water"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 98,
@@ -3947,7 +4580,7 @@
         "spd": 63,
         "spe": 101
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/516.png",
+      "sprite": "simipour.webp",
       "usage": 0.0004,
       "usageRank": 232
     },
@@ -3955,7 +4588,9 @@
       "id": "goodra",
       "num": 706,
       "name": "Goodra",
-      "types": ["Dragon"],
+      "types": [
+        "Dragon"
+      ],
       "baseStats": {
         "hp": 90,
         "atk": 100,
@@ -3964,7 +4599,7 @@
         "spd": 150,
         "spe": 80
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/706.png",
+      "sprite": "goodra.webp",
       "usage": 0.0004,
       "usageRank": 233
     },
@@ -3972,7 +4607,9 @@
       "id": "beartic",
       "num": 614,
       "name": "Beartic",
-      "types": ["Ice"],
+      "types": [
+        "Ice"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 130,
@@ -3981,7 +4618,7 @@
         "spd": 80,
         "spe": 50
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/614.png",
+      "sprite": "beartic.webp",
       "usage": 0.0004,
       "usageRank": 234
     },
@@ -3989,7 +4626,9 @@
       "id": "typhlosion",
       "num": 157,
       "name": "Typhlosion",
-      "types": ["Fire"],
+      "types": [
+        "Fire"
+      ],
       "baseStats": {
         "hp": 78,
         "atk": 84,
@@ -3998,7 +4637,7 @@
         "spd": 85,
         "spe": 100
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/157.png",
+      "sprite": "typhlosion.webp",
       "usage": 0.0004,
       "usageRank": 235
     },
@@ -4006,7 +4645,10 @@
       "id": "emboar-mega",
       "num": 500,
       "name": "Emboar-Mega",
-      "types": ["Fire", "Fighting"],
+      "types": [
+        "Fire",
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 110,
         "atk": 148,
@@ -4015,7 +4657,7 @@
         "spd": 110,
         "spe": 75
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10286.png",
+      "sprite": "emboar-mega.webp",
       "usage": 0.0004,
       "usageRank": 236
     },
@@ -4023,7 +4665,10 @@
       "id": "slowbro-galar",
       "num": 80,
       "name": "Slowbro-Galar",
-      "types": ["Poison", "Psychic"],
+      "types": [
+        "Poison",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 100,
@@ -4032,7 +4677,7 @@
         "spd": 70,
         "spe": 30
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10165.png",
+      "sprite": "slowbro-galar.webp",
       "usage": 0.0004,
       "usageRank": 237
     },
@@ -4040,7 +4685,10 @@
       "id": "golurk",
       "num": 623,
       "name": "Golurk",
-      "types": ["Ground", "Ghost"],
+      "types": [
+        "Ground",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 89,
         "atk": 124,
@@ -4049,7 +4697,7 @@
         "spd": 80,
         "spe": 55
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/623.png",
+      "sprite": "golurk.webp",
       "usage": 0.0004,
       "usageRank": 238
     },
@@ -4057,7 +4705,9 @@
       "id": "sandaconda",
       "num": 844,
       "name": "Sandaconda",
-      "types": ["Ground"],
+      "types": [
+        "Ground"
+      ],
       "baseStats": {
         "hp": 72,
         "atk": 107,
@@ -4066,7 +4716,7 @@
         "spd": 70,
         "spe": 71
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/844.png",
+      "sprite": "sandaconda.webp",
       "usage": 0.0004,
       "usageRank": 239
     },
@@ -4074,7 +4724,10 @@
       "id": "hawlucha",
       "num": 701,
       "name": "Hawlucha",
-      "types": ["Fighting", "Flying"],
+      "types": [
+        "Fighting",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 78,
         "atk": 92,
@@ -4083,7 +4736,7 @@
         "spd": 63,
         "spe": 118
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/701.png",
+      "sprite": "hawlucha.webp",
       "usage": 0.0003,
       "usageRank": 240
     },
@@ -4091,7 +4744,10 @@
       "id": "abomasnow",
       "num": 460,
       "name": "Abomasnow",
-      "types": ["Grass", "Ice"],
+      "types": [
+        "Grass",
+        "Ice"
+      ],
       "baseStats": {
         "hp": 90,
         "atk": 92,
@@ -4100,7 +4756,7 @@
         "spd": 85,
         "spe": 60
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/460.png",
+      "sprite": "abomasnow.webp",
       "usage": 0.0003,
       "usageRank": 241
     },
@@ -4108,7 +4764,10 @@
       "id": "decidueye",
       "num": 724,
       "name": "Decidueye",
-      "types": ["Grass", "Ghost"],
+      "types": [
+        "Grass",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 78,
         "atk": 107,
@@ -4117,7 +4776,7 @@
         "spd": 100,
         "spe": 70
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/724.png",
+      "sprite": "decidueye.webp",
       "usage": 0.0003,
       "usageRank": 242
     },
@@ -4125,7 +4784,10 @@
       "id": "skarmory",
       "num": 227,
       "name": "Skarmory",
-      "types": ["Steel", "Flying"],
+      "types": [
+        "Steel",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 80,
@@ -4134,7 +4796,7 @@
         "spd": 70,
         "spe": 70
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/227.png",
+      "sprite": "skarmory.webp",
       "usage": 0.0003,
       "usageRank": 243
     },
@@ -4142,7 +4804,10 @@
       "id": "steelix",
       "num": 208,
       "name": "Steelix",
-      "types": ["Steel", "Ground"],
+      "types": [
+        "Steel",
+        "Ground"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 85,
@@ -4151,7 +4816,7 @@
         "spd": 65,
         "spe": 30
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/208.png",
+      "sprite": "steelix.webp",
       "usage": 0.0003,
       "usageRank": 244
     },
@@ -4159,7 +4824,10 @@
       "id": "froslass",
       "num": 478,
       "name": "Froslass",
-      "types": ["Ice", "Ghost"],
+      "types": [
+        "Ice",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 80,
@@ -4168,7 +4836,7 @@
         "spd": 70,
         "spe": 110
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/478.png",
+      "sprite": "froslass.webp",
       "usage": 0.0003,
       "usageRank": 245
     },
@@ -4176,7 +4844,10 @@
       "id": "houndoom",
       "num": 229,
       "name": "Houndoom",
-      "types": ["Dark", "Fire"],
+      "types": [
+        "Dark",
+        "Fire"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 90,
@@ -4185,7 +4856,7 @@
         "spd": 80,
         "spe": 95
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/229.png",
+      "sprite": "houndoom.webp",
       "usage": 0.0003,
       "usageRank": 246
     },
@@ -4193,7 +4864,9 @@
       "id": "flareon",
       "num": 136,
       "name": "Flareon",
-      "types": ["Fire"],
+      "types": [
+        "Fire"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 130,
@@ -4202,7 +4875,7 @@
         "spd": 110,
         "spe": 65
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/136.png",
+      "sprite": "flareon.webp",
       "usage": 0.0003,
       "usageRank": 247
     },
@@ -4210,7 +4883,9 @@
       "id": "leafeon",
       "num": 470,
       "name": "Leafeon",
-      "types": ["Grass"],
+      "types": [
+        "Grass"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 110,
@@ -4219,7 +4894,7 @@
         "spd": 65,
         "spe": 95
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/470.png",
+      "sprite": "leafeon.webp",
       "usage": 0.0003,
       "usageRank": 248
     },
@@ -4227,7 +4902,9 @@
       "id": "luxray",
       "num": 405,
       "name": "Luxray",
-      "types": ["Electric"],
+      "types": [
+        "Electric"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 120,
@@ -4236,7 +4913,7 @@
         "spd": 79,
         "spe": 70
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/405.png",
+      "sprite": "luxray.webp",
       "usage": 0.0003,
       "usageRank": 249
     },
@@ -4244,7 +4921,9 @@
       "id": "polteageist",
       "num": 855,
       "name": "Polteageist",
-      "types": ["Ghost"],
+      "types": [
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 65,
@@ -4253,7 +4932,7 @@
         "spd": 114,
         "spe": 70
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/855.png",
+      "sprite": "polteageist.webp",
       "usage": 0.0003,
       "usageRank": 250
     },
@@ -4261,7 +4940,10 @@
       "id": "pangoro",
       "num": 675,
       "name": "Pangoro",
-      "types": ["Fighting", "Dark"],
+      "types": [
+        "Fighting",
+        "Dark"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 124,
@@ -4270,7 +4952,7 @@
         "spd": 71,
         "spe": 58
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/675.png",
+      "sprite": "pangoro.webp",
       "usage": 0.0003,
       "usageRank": 251
     },
@@ -4278,7 +4960,9 @@
       "id": "passimian",
       "num": 766,
       "name": "Passimian",
-      "types": ["Fighting"],
+      "types": [
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 100,
         "atk": 120,
@@ -4287,7 +4971,7 @@
         "spd": 60,
         "spe": 80
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/766.png",
+      "sprite": "passimian.webp",
       "usage": 0.0003,
       "usageRank": 252
     },
@@ -4295,7 +4979,10 @@
       "id": "trevenant",
       "num": 709,
       "name": "Trevenant",
-      "types": ["Ghost", "Grass"],
+      "types": [
+        "Ghost",
+        "Grass"
+      ],
       "baseStats": {
         "hp": 85,
         "atk": 110,
@@ -4304,7 +4991,7 @@
         "spd": 82,
         "spe": 56
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/709.png",
+      "sprite": "trevenant.webp",
       "usage": 0.0003,
       "usageRank": 253
     },
@@ -4312,7 +4999,10 @@
       "id": "flapple",
       "num": 841,
       "name": "Flapple",
-      "types": ["Grass", "Dragon"],
+      "types": [
+        "Grass",
+        "Dragon"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 110,
@@ -4321,7 +5011,7 @@
         "spd": 60,
         "spe": 70
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/841.png",
+      "sprite": "flapple.webp",
       "usage": 0.0003,
       "usageRank": 254
     },
@@ -4329,7 +5019,10 @@
       "id": "scovillain",
       "num": 952,
       "name": "Scovillain",
-      "types": ["Grass", "Fire"],
+      "types": [
+        "Grass",
+        "Fire"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 108,
@@ -4338,7 +5031,7 @@
         "spd": 65,
         "spe": 75
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/952.png",
+      "sprite": "scovillain.webp",
       "usage": 0.0003,
       "usageRank": 255
     },
@@ -4346,7 +5039,9 @@
       "id": "tauros",
       "num": 128,
       "name": "Tauros",
-      "types": ["Normal"],
+      "types": [
+        "Normal"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 100,
@@ -4355,7 +5050,7 @@
         "spd": 70,
         "spe": 110
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/128.png",
+      "sprite": "tauros.webp",
       "usage": 0.0003,
       "usageRank": 256
     },
@@ -4363,7 +5058,10 @@
       "id": "crabominable",
       "num": 740,
       "name": "Crabominable",
-      "types": ["Fighting", "Ice"],
+      "types": [
+        "Fighting",
+        "Ice"
+      ],
       "baseStats": {
         "hp": 97,
         "atk": 132,
@@ -4372,7 +5070,7 @@
         "spd": 67,
         "spe": 43
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/740.png",
+      "sprite": "crabominable.webp",
       "usage": 0.0002,
       "usageRank": 257
     },
@@ -4380,7 +5078,9 @@
       "id": "simisage",
       "num": 512,
       "name": "Simisage",
-      "types": ["Grass"],
+      "types": [
+        "Grass"
+      ],
       "baseStats": {
         "hp": 75,
         "atk": 98,
@@ -4389,7 +5089,7 @@
         "spd": 63,
         "spe": 101
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/512.png",
+      "sprite": "simisage.webp",
       "usage": 0.0002,
       "usageRank": 258
     },
@@ -4397,7 +5097,9 @@
       "id": "absol-mega",
       "num": 359,
       "name": "Absol-Mega",
-      "types": ["Dark"],
+      "types": [
+        "Dark"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 150,
@@ -4406,7 +5108,7 @@
         "spd": 60,
         "spe": 115
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10057.png",
+      "sprite": "absol-mega.webp",
       "usage": 0.0002,
       "usageRank": 259
     },
@@ -4414,7 +5116,10 @@
       "id": "emolga",
       "num": 587,
       "name": "Emolga",
-      "types": ["Electric", "Flying"],
+      "types": [
+        "Electric",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 55,
         "atk": 75,
@@ -4423,7 +5128,7 @@
         "spd": 60,
         "spe": 103
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/587.png",
+      "sprite": "emolga.webp",
       "usage": 0.0002,
       "usageRank": 260
     },
@@ -4431,7 +5136,9 @@
       "id": "musharna",
       "num": 518,
       "name": "Musharna",
-      "types": ["Psychic"],
+      "types": [
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 116,
         "atk": 55,
@@ -4440,7 +5147,7 @@
         "spd": 95,
         "spe": 29
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/518.png",
+      "sprite": "musharna.webp",
       "usage": 0.0002,
       "usageRank": 261
     },
@@ -4448,7 +5155,9 @@
       "id": "florges",
       "num": 671,
       "name": "Florges",
-      "types": ["Fairy"],
+      "types": [
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 78,
         "atk": 65,
@@ -4457,7 +5166,7 @@
         "spd": 154,
         "spe": 75
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/671.png",
+      "sprite": "florges.webp",
       "usage": 0.0002,
       "usageRank": 262
     },
@@ -4465,7 +5174,9 @@
       "id": "castform",
       "num": 351,
       "name": "Castform",
-      "types": ["Normal"],
+      "types": [
+        "Normal"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 70,
@@ -4474,7 +5185,7 @@
         "spd": 70,
         "spe": 70
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/351.png",
+      "sprite": "castform.webp",
       "usage": 0.0002,
       "usageRank": 263
     },
@@ -4482,7 +5193,10 @@
       "id": "appletun",
       "num": 842,
       "name": "Appletun",
-      "types": ["Grass", "Dragon"],
+      "types": [
+        "Grass",
+        "Dragon"
+      ],
       "baseStats": {
         "hp": 110,
         "atk": 85,
@@ -4491,7 +5205,7 @@
         "spd": 80,
         "spe": 30
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/842.png",
+      "sprite": "appletun.webp",
       "usage": 0.0002,
       "usageRank": 264
     },
@@ -4499,7 +5213,9 @@
       "id": "zoroark",
       "num": 571,
       "name": "Zoroark",
-      "types": ["Dark"],
+      "types": [
+        "Dark"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 105,
@@ -4508,7 +5224,7 @@
         "spd": 60,
         "spe": 105
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/571.png",
+      "sprite": "zoroark.webp",
       "usage": 0.0002,
       "usageRank": 265
     },
@@ -4516,7 +5232,10 @@
       "id": "rotom",
       "num": 479,
       "name": "Rotom",
-      "types": ["Electric", "Ghost"],
+      "types": [
+        "Electric",
+        "Ghost"
+      ],
       "baseStats": {
         "hp": 50,
         "atk": 50,
@@ -4525,7 +5244,7 @@
         "spd": 77,
         "spe": 91
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/479.png",
+      "sprite": "rotom.webp",
       "usage": 0.0002,
       "usageRank": 266
     },
@@ -4533,7 +5252,9 @@
       "id": "manectric",
       "num": 310,
       "name": "Manectric",
-      "types": ["Electric"],
+      "types": [
+        "Electric"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 75,
@@ -4542,7 +5263,7 @@
         "spd": 60,
         "spe": 105
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/310.png",
+      "sprite": "manectric.webp",
       "usage": 0.0002,
       "usageRank": 267
     },
@@ -4550,7 +5271,9 @@
       "id": "avalugg",
       "num": 713,
       "name": "Avalugg",
-      "types": ["Ice"],
+      "types": [
+        "Ice"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 117,
@@ -4559,7 +5282,7 @@
         "spd": 46,
         "spe": 28
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/713.png",
+      "sprite": "avalugg.webp",
       "usage": 0.0002,
       "usageRank": 268
     },
@@ -4567,7 +5290,10 @@
       "id": "raichu-alola",
       "num": 26,
       "name": "Raichu-Alola",
-      "types": ["Electric", "Psychic"],
+      "types": [
+        "Electric",
+        "Psychic"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 85,
@@ -4576,7 +5302,7 @@
         "spd": 85,
         "spe": 110
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10100.png",
+      "sprite": "raichu-alola.webp",
       "usage": 0.0002,
       "usageRank": 269
     },
@@ -4584,7 +5310,9 @@
       "id": "absol",
       "num": 359,
       "name": "Absol",
-      "types": ["Dark"],
+      "types": [
+        "Dark"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 130,
@@ -4593,7 +5321,7 @@
         "spd": 60,
         "spe": 75
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/359.png",
+      "sprite": "absol.webp",
       "usage": 0.0001,
       "usageRank": 270
     },
@@ -4601,7 +5329,9 @@
       "id": "slurpuff",
       "num": 685,
       "name": "Slurpuff",
-      "types": ["Fairy"],
+      "types": [
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 82,
         "atk": 80,
@@ -4610,7 +5340,7 @@
         "spd": 75,
         "spe": 72
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/685.png",
+      "sprite": "slurpuff.webp",
       "usage": 0.0001,
       "usageRank": 271
     },
@@ -4618,7 +5348,10 @@
       "id": "dedenne",
       "num": 702,
       "name": "Dedenne",
-      "types": ["Electric", "Fairy"],
+      "types": [
+        "Electric",
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 67,
         "atk": 58,
@@ -4627,7 +5360,7 @@
         "spd": 67,
         "spe": 101
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/702.png",
+      "sprite": "dedenne.webp",
       "usage": 0.0001,
       "usageRank": 272
     },
@@ -4635,7 +5368,10 @@
       "id": "aggron",
       "num": 306,
       "name": "Aggron",
-      "types": ["Steel", "Rock"],
+      "types": [
+        "Steel",
+        "Rock"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 110,
@@ -4644,7 +5380,7 @@
         "spd": 60,
         "spe": 50
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/306.png",
+      "sprite": "aggron.webp",
       "usage": 0.0001,
       "usageRank": 273
     },
@@ -4652,7 +5388,9 @@
       "id": "eelektross",
       "num": 604,
       "name": "Eelektross",
-      "types": ["Electric"],
+      "types": [
+        "Electric"
+      ],
       "baseStats": {
         "hp": 85,
         "atk": 115,
@@ -4661,7 +5399,7 @@
         "spd": 80,
         "spe": 50
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/604.png",
+      "sprite": "eelektross.webp",
       "usage": 0.0001,
       "usageRank": 274
     },
@@ -4669,7 +5407,10 @@
       "id": "emboar",
       "num": 500,
       "name": "Emboar",
-      "types": ["Fire", "Fighting"],
+      "types": [
+        "Fire",
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 110,
         "atk": 123,
@@ -4678,7 +5419,7 @@
         "spd": 65,
         "spe": 65
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/500.png",
+      "sprite": "emboar.webp",
       "usage": 0.0001,
       "usageRank": 275
     },
@@ -4686,7 +5427,10 @@
       "id": "qwilfish",
       "num": 211,
       "name": "Qwilfish",
-      "types": ["Water", "Poison"],
+      "types": [
+        "Water",
+        "Poison"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 95,
@@ -4695,7 +5439,7 @@
         "spd": 55,
         "spe": 85
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/211.png",
+      "sprite": "qwilfish.webp",
       "usage": 0.0001,
       "usageRank": 276
     },
@@ -4703,7 +5447,10 @@
       "id": "scolipede",
       "num": 545,
       "name": "Scolipede",
-      "types": ["Bug", "Poison"],
+      "types": [
+        "Bug",
+        "Poison"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 100,
@@ -4712,7 +5459,7 @@
         "spd": 69,
         "spe": 112
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/545.png",
+      "sprite": "scolipede.webp",
       "usage": 0.0001,
       "usageRank": 277
     },
@@ -4720,7 +5467,10 @@
       "id": "heracross",
       "num": 214,
       "name": "Heracross",
-      "types": ["Bug", "Fighting"],
+      "types": [
+        "Bug",
+        "Fighting"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 125,
@@ -4729,7 +5479,7 @@
         "spd": 95,
         "spe": 85
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/214.png",
+      "sprite": "heracross.webp",
       "usage": 0.0001,
       "usageRank": 278
     },
@@ -4737,7 +5487,10 @@
       "id": "stunfisk-galar",
       "num": 618,
       "name": "Stunfisk-Galar",
-      "types": ["Ground", "Steel"],
+      "types": [
+        "Ground",
+        "Steel"
+      ],
       "baseStats": {
         "hp": 109,
         "atk": 81,
@@ -4746,7 +5499,7 @@
         "spd": 84,
         "spe": 32
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10180.png",
+      "sprite": "stunfisk-galar.webp",
       "usage": 0.0001,
       "usageRank": 279
     },
@@ -4754,7 +5507,10 @@
       "id": "bastiodon",
       "num": 411,
       "name": "Bastiodon",
-      "types": ["Rock", "Steel"],
+      "types": [
+        "Rock",
+        "Steel"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 52,
@@ -4763,7 +5519,7 @@
         "spd": 138,
         "spe": 30
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/411.png",
+      "sprite": "bastiodon.webp",
       "usage": 0.0001,
       "usageRank": 280
     },
@@ -4771,7 +5527,9 @@
       "id": "lopunny",
       "num": 428,
       "name": "Lopunny",
-      "types": ["Normal"],
+      "types": [
+        "Normal"
+      ],
       "baseStats": {
         "hp": 65,
         "atk": 76,
@@ -4780,7 +5538,7 @@
         "spd": 96,
         "spe": 105
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/428.png",
+      "sprite": "lopunny.webp",
       "usage": 0.0001,
       "usageRank": 281
     },
@@ -4788,7 +5546,10 @@
       "id": "victreebel",
       "num": 71,
       "name": "Victreebel",
-      "types": ["Grass", "Poison"],
+      "types": [
+        "Grass",
+        "Poison"
+      ],
       "baseStats": {
         "hp": 80,
         "atk": 105,
@@ -4797,7 +5558,7 @@
         "spd": 70,
         "spe": 70
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/71.png",
+      "sprite": "victreebel.webp",
       "usage": 0.0001,
       "usageRank": 282
     },
@@ -4805,7 +5566,10 @@
       "id": "sharpedo",
       "num": 319,
       "name": "Sharpedo",
-      "types": ["Water", "Dark"],
+      "types": [
+        "Water",
+        "Dark"
+      ],
       "baseStats": {
         "hp": 70,
         "atk": 120,
@@ -4814,7 +5578,7 @@
         "spd": 40,
         "spe": 95
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/319.png",
+      "sprite": "sharpedo.webp",
       "usage": 0.0001,
       "usageRank": 283
     }

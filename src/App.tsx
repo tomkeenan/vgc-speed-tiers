@@ -1,11 +1,15 @@
-import { useState } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import Box from '@mui/material/Box';
 import { Flashcards } from './features/flashcards/Flashcards';
 import { FasterGame } from './features/faster-game/FasterGame';
-import { SettingsDialog } from './features/settings/SettingsDialog';
 import { Header } from './components/Header';
 import { TabNav } from './components/TabNav';
 import { DecksProvider } from './decks/DecksContext';
+
+// Loaded on demand so its heavy MUI surface (Autocomplete, Dialog) stays out of the initial chunk.
+const SettingsDialog = lazy(() =>
+  import('./features/settings/SettingsDialog').then((m) => ({ default: m.SettingsDialog })),
+);
 
 const TABS = [
   { key: 'flashcards', label: 'Flashcards', render: () => <Flashcards /> },
@@ -45,7 +49,11 @@ export default function App() {
         </Box>
       </Box>
 
-      <SettingsDialog open={settingsOpen} onClose={() => setSettingsOpen(false)} />
+      {settingsOpen && (
+        <Suspense fallback={null}>
+          <SettingsDialog open onClose={() => setSettingsOpen(false)} />
+        </Suspense>
+      )}
     </DecksProvider>
   );
 }

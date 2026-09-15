@@ -19,14 +19,33 @@ import { randomIndex } from '../random';
 export function Flashcards() {
   const { activePokemon: pool, activeDeckId } = useDecks();
   const [index, setIndex] = useState(() => randomIndex(pool.length));
+  const [nextIndex, setNextIndex] = useState(() => randomIndex(pool.length));
   const [revealed, setRevealed] = useState(false);
+
+  const pickNext = (exclude: number) => {
+    let n = randomIndex(pool.length);
+    if (pool.length > 1) while (n === exclude) n = randomIndex(pool.length);
+    return n;
+  };
 
   // Reset to a fresh card whenever the active deck changes.
   useEffect(() => {
     setRevealed(false);
-    setIndex(randomIndex(pool.length || 1));
+    const first = randomIndex(pool.length || 1);
+    setIndex(first);
+    setNextIndex(pickNext(first));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeDeckId]);
+
+  // Warm the browser cache with the upcoming card's sprite so "Next" shows it instantly.
+  useEffect(() => {
+    if (typeof Image === 'undefined') return;
+    const url = pool[nextIndex]?.sprite;
+    if (url) {
+      const img = new Image();
+      img.src = url;
+    }
+  }, [nextIndex, pool]);
 
   if (pool.length === 0) {
     return (
@@ -44,11 +63,8 @@ export function Flashcards() {
 
   const next = () => {
     setRevealed(false);
-    let nextIndex = randomIndex(pool.length);
-    if (pool.length > 1) {
-      while (nextIndex === index) nextIndex = randomIndex(pool.length);
-    }
     setIndex(nextIndex);
+    setNextIndex(pickNext(nextIndex));
   };
 
   return (
@@ -63,7 +79,7 @@ export function Flashcards() {
       >
         <Stack spacing={1.5} sx={{ alignItems: 'center' }}>
           <Box sx={{ width: { xs: 192, sm: 224 }, maxWidth: '100%' }}>
-            <PokemonImage src={pokemon.sprite} name={pokemon.name} />
+            <PokemonImage src={pokemon.sprite} name={pokemon.name} eager />
           </Box>
           <Typography variant="h6" sx={{ fontWeight: 700, color: 'text.primary' }}>
             {pokemon.name}

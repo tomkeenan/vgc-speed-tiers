@@ -8,13 +8,16 @@ interface PokemonImageProps {
   src: string;
   name: string;
   sx?: SxProps<Theme>;
+  /** Load immediately at high priority for the visible card; off-screen images stay lazy. */
+  eager?: boolean;
 }
 
 /**
  * Responsive Pokemon artwork with a loading skeleton and a fallback on error.
- * Takes a sprite src, the Pokemon name (for alt text), and optional sx overrides, returns the element.
+ * Takes a sprite src, the Pokemon name (for alt text), optional sx overrides, and an eager flag
+ * for the currently visible card, returns the element.
  */
-export function PokemonImage({ src, name, sx }: PokemonImageProps) {
+export function PokemonImage({ src, name, sx, eager = false }: PokemonImageProps) {
   const [status, setStatus] = useState<'loading' | 'loaded' | 'error'>('loading');
 
   return (
@@ -49,7 +52,9 @@ export function PokemonImage({ src, name, sx }: PokemonImageProps) {
         component="img"
         src={src}
         alt={name}
-        loading="lazy"
+        loading={eager ? 'eager' : 'lazy'}
+        fetchPriority={eager ? 'high' : 'auto'}
+        decoding="async"
         onLoad={() => setStatus('loaded')}
         onError={() => setStatus('error')}
         sx={{

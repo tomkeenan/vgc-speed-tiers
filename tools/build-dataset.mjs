@@ -18,6 +18,7 @@ const SKIP = new Set([]);
 const roster = JSON.parse(await readFile(new URL('../data/roster.json', import.meta.url), 'utf8'));
 
 const pokemon = [];
+const spriteSources = {};
 const failures = [];
 for (const entry of roster.pokemon) {
   if (SKIP.has(entry.showdownName)) continue;
@@ -26,6 +27,9 @@ for (const entry of roster.pokemon) {
     const baseStats = {};
     for (const s of p.stats) baseStats[STAT_KEY[s.stat.name]] = s.base_stat;
     const speciesNum = Number(p.species.url.split('/').filter(Boolean).pop());
+    const remoteSprite =
+      p.sprites?.other?.['official-artwork']?.front_default ?? p.sprites?.front_default ?? '';
+    if (remoteSprite) spriteSources[entry.id] = remoteSprite;
     pokemon.push({
       id: entry.id,
       num: speciesNum,
@@ -34,8 +38,9 @@ for (const entry of roster.pokemon) {
         .sort((a, b) => a.slot - b.slot)
         .map((t) => t.type.name[0].toUpperCase() + t.type.name.slice(1)),
       baseStats,
-      sprite:
-        p.sprites?.other?.['official-artwork']?.front_default ?? p.sprites?.front_default ?? '',
+      // Local optimized-WebP reference; tools/optimize-sprites.mjs fetches remoteSprite (kept in
+      // data/sprite-sources.json) and produces src/assets/sprites/<id>.webp.
+      sprite: `${entry.id}.webp`,
       usage: entry.usage,
       usageRank: entry.usageRank,
     });
@@ -62,6 +67,11 @@ const dataset = {
 await writeFile(
   new URL('../data/pokemon.json', import.meta.url),
   JSON.stringify(dataset, null, 2) + '\n',
+);
+// Provenance for the optimizer: which remote artwork each local sprite is derived from.
+await writeFile(
+  new URL('../data/sprite-sources.json', import.meta.url),
+  JSON.stringify(spriteSources, null, 2) + '\n',
 );
 console.log(`dataset: ${pokemon.length} written, ${failures.length} failures`);
 if (failures.length) {
