@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { act, fireEvent, screen } from '@testing-library/react';
 import { FasterGame } from './FasterGame';
+import { loadBestStreak } from './bestStreak';
 import { DecksProvider } from '../../decks/DecksContext';
 import { getAllPokemon } from '../../lib/data';
 import { renderWithTheme } from '../../test/renderWithTheme';
@@ -93,6 +94,33 @@ describe('FasterGame', () => {
 
     expect(vi.mocked(pickTwo).mock.calls.length).toBeGreaterThan(callsBefore); // new pair drawn
     expect(screen.queryByText('50')).toBeNull(); // back to idle, values masked again
+  });
+
+  it('tracks the best streak, keeps it after a reset, and persists it', () => {
+    renderGame();
+    const bestValue = () => screen.getByText('Best').previousElementSibling?.textContent;
+    expect(bestValue()).toBe('0');
+
+    click(choices()[1]); // correct
+    advance(600);
+    advance(1000); // resolve: streak 1, best 1
+    expect(streakValue()).toBe('1');
+    expect(bestValue()).toBe('1');
+
+    advance(3000); // auto-advance to a new pair
+    click(choices()[1]); // correct again
+    advance(600);
+    advance(1000); // resolve: streak 2, best 2
+    expect(streakValue()).toBe('2');
+    expect(bestValue()).toBe('2');
+    expect(loadBestStreak()).toBe(2); // persisted
+
+    advance(3000); // auto-advance
+    click(choices()[0]); // wrong: resets streak, best holds
+    advance(600);
+    advance(3000);
+    expect(streakValue()).toBe('0');
+    expect(bestValue()).toBe('2');
   });
 
   it('prompts for the higher base Speed', () => {

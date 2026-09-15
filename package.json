@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
+    "prebuild": "npm run sprites",
     "build": "vite build",
     "preview": "vite preview",
     "test:watch": "vitest",
@@ -19,8 +20,8 @@
     "test": "vitest run"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Tom Keenan",
+  "license": "MIT",
   "type": "module",
   "dependencies": {
     "@emotion/react": "^11.14.0",

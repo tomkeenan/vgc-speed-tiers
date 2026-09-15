@@ -48,6 +48,7 @@ export const theme = createTheme({
       },
     },
   },
+  breakpoints: { values: { xs: 0, sm: 768, md: 900, lg: 1200, xl: 1536 } },
   shape: { borderRadius: 12 },
   tokens: {
     cardShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',

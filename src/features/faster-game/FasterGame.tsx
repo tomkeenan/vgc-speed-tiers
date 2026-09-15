@@ -11,6 +11,7 @@ import { SlotNumber, slotSpinMs } from '../../components/SlotNumber';
 import { StatPill } from '../../components/StatPill';
 import { TypeBadges } from '../../components/TypeBadges';
 import { pickTwo } from '../random';
+import { loadBestStreak, saveBestStreak } from './bestStreak';
 
 type Phase = 'idle' | 'revealClicked' | 'revealBoth' | 'resolved';
 type Outcome = 'correct' | 'wrong' | 'tie';
@@ -20,6 +21,36 @@ const SETTLE_BUFFER_MS = 150;
 const RESOLVE_HOLD_MS = 1800;
 
 const speedOf = (p: Pokemon) => p.baseStats.spe;
+
+/** A single labelled streak counter: the big number above its uppercase label. Returns the element. */
+function StreakStat({ value, label, color }: { value: number; label: string; color: string }) {
+  return (
+    <Box sx={{ textAlign: 'center' }}>
+      <Typography
+        sx={{
+          color,
+          fontWeight: 800,
+          fontSize: { xs: '2.5rem', sm: '3rem' },
+          lineHeight: 1,
+          fontVariantNumeric: 'tabular-nums',
+        }}
+      >
+        {value}
+      </Typography>
+      <Typography
+        sx={{
+          color: 'text.secondary',
+          fontSize: '0.75rem',
+          fontWeight: 600,
+          letterSpacing: '0.08em',
+          textTransform: 'uppercase',
+        }}
+      >
+        {label}
+      </Typography>
+    </Box>
+  );
+}
 
 /**
  * Who's Faster? feature: pick the faster of two Pokemon by base Speed, reveal the picked speed
@@ -35,6 +66,7 @@ export function FasterGame() {
   const [picked, setPicked] = useState<Pokemon | null>(null);
   const [outcome, setOutcome] = useState<Outcome | null>(null);
   const [streak, setStreak] = useState(0);
+  const [best, setBest] = useState(loadBestStreak);
 
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const clearTimers = () => {
@@ -95,13 +127,18 @@ export function FasterGame() {
     setOutcome(result);
     setPhase('revealClicked');
 
+    const next = result === 'wrong' ? 0 : streak + 1;
     const resolveAt = REVEAL_DELAY_MS + slotSpinMs(speedOf(other)) + SETTLE_BUFFER_MS;
     timers.current.push(setTimeout(() => setPhase('revealBoth'), REVEAL_DELAY_MS));
     // Update the streak in step with the green/red highlight, which appears on 'resolved'.
     timers.current.push(
       setTimeout(() => {
         setPhase('resolved');
-        setStreak((s) => (result === 'wrong' ? 0 : s + 1));
+        setStreak(next);
+        if (next > best) {
+          setBest(next);
+          saveBestStreak(next);
+        }
       }, resolveAt),
     );
     if (result !== 'wrong') {
@@ -134,7 +171,7 @@ export function FasterGame() {
             {p.name}
           </Typography>
           <TypeBadges types={p.types} />
-          <Box sx={{ width: '100%' }}>
+          <Box sx={{ width: '100%', pt: 2 }}>
             <StatPill
               label="Base Speed"
               value={showSpeed ? <SlotNumber value={speedOf(p)} /> : '???'}
@@ -147,30 +184,14 @@ export function FasterGame() {
 
   return (
     <Stack spacing={{ xs: 1.5, sm: 2 }}>
-      <Box sx={{ textAlign: 'center' }}>
-        <Typography
-          sx={{
-            color: 'primary.main',
-            fontWeight: 800,
-            fontSize: { xs: '2.5rem', sm: '3rem' },
-            lineHeight: 1,
-            fontVariantNumeric: 'tabular-nums',
-          }}
-        >
-          {streak}
-        </Typography>
-        <Typography
-          sx={{
-            color: 'text.secondary',
-            fontSize: '0.75rem',
-            fontWeight: 600,
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
-          }}
-        >
-          Streak
-        </Typography>
-      </Box>
+      <Stack direction="row" spacing={{ xs: 1, sm: 1.5 }}>
+        <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+          <StreakStat value={streak} label="Streak" color="primary.main" />
+        </Box>
+        <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+          <StreakStat value={best} label="Best" color="text.primary" />
+        </Box>
+      </Stack>
 
       <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'center' }}>
         Which Pokemon has the higher base Speed?
