@@ -1,33 +1,43 @@
-import { beforeEach, describe, expect, it } from 'vitest';
-import { screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { describe, it, expect, beforeEach } from 'vitest';
+import { fireEvent, screen } from '@testing-library/react';
 import { SettingsDialog } from './SettingsDialog';
 import { DecksProvider } from '../../decks/DecksContext';
 import { renderWithTheme } from '../../test/renderWithTheme';
 
-function renderDialog() {
-  return renderWithTheme(
+const renderDialog = () =>
+  renderWithTheme(
     <DecksProvider>
       <SettingsDialog open onClose={() => {}} />
     </DecksProvider>,
   );
-}
 
 describe('SettingsDialog', () => {
   beforeEach(() => localStorage.clear());
 
-  it('shows the built-in All Pokemon deck as an option', () => {
+  it('creates a deck that starts collapsed and expands/collapses via the edit icon', () => {
     renderDialog();
-    expect(screen.getByText(/All Pokemon ·/)).toBeTruthy();
-  });
 
-  it('enables Save deck only once a name is entered', async () => {
-    renderDialog();
-    const save = screen.getByRole('button', { name: 'Save deck' });
-    expect(save).toBeDisabled();
+    fireEvent.change(screen.getByLabelText('Deck name'), { target: { value: 'Rain' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Save deck' }));
 
-    const nameFields = screen.getAllByLabelText('Deck name');
-    await userEvent.type(nameFields[nameFields.length - 1], 'Speed control');
-    expect(save).toBeEnabled();
+    // Collapsed by default: the editor (Delete button) is not mounted.
+    expect(screen.queryByRole('button', { name: 'Delete deck' })).toBeNull();
+
+    const editButton = screen.getByRole('button', { name: 'Edit Rain' });
+    expect(editButton).toHaveAttribute('aria-expanded', 'false');
+
+    fireEvent.click(editButton);
+    expect(screen.getByRole('button', { name: 'Delete deck' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Collapse Rain' })).toHaveAttribute(
+      'aria-expanded',
+      'true',
+    );
+
+    // Toggling back flips the control immediately (the editor then unmounts after the transition).
+    fireEvent.click(screen.getByRole('button', { name: 'Collapse Rain' }));
+    expect(screen.getByRole('button', { name: 'Edit Rain' })).toHaveAttribute(
+      'aria-expanded',
+      'false',
+    );
   });
 });
