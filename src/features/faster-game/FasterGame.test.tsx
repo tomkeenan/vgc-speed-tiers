@@ -2,20 +2,22 @@ import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { act, fireEvent, screen } from '@testing-library/react';
 import { FasterGame } from './FasterGame';
 import { loadBestStreak } from './bestStreak';
+import { buildContenders } from './contenders';
 import { DecksProvider } from '../../decks/DecksContext';
 import { ALL_DECK_ID } from '../../decks/store';
 import { getAllPokemon } from '../../lib/data';
 import { renderWithTheme } from '../../test/renderWithTheme';
-import { pickTwo } from '../random';
+import { pickPairWithin } from '../random';
 
 vi.mock('../random', async (importOriginal) => {
   const actual = await importOriginal<typeof import('../random')>();
-  return { ...actual, pickTwo: vi.fn() };
+  return { ...actual, pickPairWithin: vi.fn() };
 });
 
 const all = getAllPokemon();
 const slow = all.find((p) => p.id === 'kingambit')!; // base spe 50
 const fast = all.find((p) => p.id === 'garchomp')!; // base spe 102
+const [slowC, fastC] = buildContenders([slow, fast], false); // base-Speed contenders
 
 const renderGame = () =>
   renderWithTheme(
@@ -32,13 +34,13 @@ describe('FasterGame', () => {
   beforeEach(() => {
     localStorage.clear();
     vi.useFakeTimers();
-    vi.mocked(pickTwo).mockReturnValue([slow, fast]); // choices()[0] = slow, choices()[1] = fast
+    vi.mocked(pickPairWithin).mockReturnValue([slowC, fastC]); // choices()[0] = slow, choices()[1] = fast
   });
 
   afterEach(() => {
     vi.runOnlyPendingTimers();
     vi.useRealTimers();
-    vi.mocked(pickTwo).mockReset();
+    vi.mocked(pickPairWithin).mockReset();
   });
 
   // The streak value is the <p> immediately before the "Streak" label in the counter block.
@@ -67,15 +69,15 @@ describe('FasterGame', () => {
 
     advance(3000); // let the second reveal settle into the resolved verdict
     expect(screen.getByRole('button', { name: 'Try again' })).toBeTruthy();
-    const callsAfterGuess = vi.mocked(pickTwo).mock.calls.length;
+    const callsAfterGuess = vi.mocked(pickPairWithin).mock.calls.length;
 
     advance(3000); // must NOT auto-advance
     expect(screen.getByRole('button', { name: 'Try again' })).toBeTruthy();
-    expect(vi.mocked(pickTwo).mock.calls.length).toBe(callsAfterGuess);
+    expect(vi.mocked(pickPairWithin).mock.calls.length).toBe(callsAfterGuess);
 
     click(screen.getByRole('button', { name: 'Try again' }));
     expect(screen.queryByRole('button', { name: 'Try again' })).toBeNull();
-    expect(vi.mocked(pickTwo).mock.calls.length).toBeGreaterThan(callsAfterGuess);
+    expect(vi.mocked(pickPairWithin).mock.calls.length).toBeGreaterThan(callsAfterGuess);
   });
 
   it('auto-advances to a new matchup 3s after a correct guess', () => {
@@ -90,10 +92,10 @@ describe('FasterGame', () => {
     advance(1000); // past resolve: the highlight appears and the streak advances with it
     expect(streakValue()).toBe('1');
 
-    const callsBefore = vi.mocked(pickTwo).mock.calls.length;
+    const callsBefore = vi.mocked(pickPairWithin).mock.calls.length;
     advance(3000);
 
-    expect(vi.mocked(pickTwo).mock.calls.length).toBeGreaterThan(callsBefore); // new pair drawn
+    expect(vi.mocked(pickPairWithin).mock.calls.length).toBeGreaterThan(callsBefore); // new pair drawn
     expect(screen.queryByText('50')).toBeNull(); // back to idle, values masked again
   });
 

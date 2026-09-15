@@ -1,18 +1,21 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useDecks } from '../../decks/DecksContext';
-import type { Pokemon } from '../../lib/types';
 import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
+import { NatureBadge } from '../../components/NatureBadge';
 import { PokemonImage } from '../../components/PokemonImage';
 import { SlotNumber, slotSpinMs } from '../../components/SlotNumber';
 import { StatPill } from '../../components/StatPill';
 import { StreakStat } from '../../components/StreakStat';
 import { TypeBadges } from '../../components/TypeBadges';
-import { pickTwo } from '../random';
+import { pickPairWithin, type PairConstraints } from '../random';
 import { loadBestStreak, saveBestStreak } from './bestStreak';
+import { buildContenders, sameSpecies, speedOf, type Contender } from './contenders';
+import { loadMode, saveMode, streakSlot, type GameMode } from './mode';
+import { ModeToggles } from './ModeToggles';
 
 type Phase = 'idle' | 'revealClicked' | 'revealBoth' | 'resolved';
 type Outcome = 'correct' | 'wrong' | 'tie';
@@ -20,24 +23,42 @@ type Outcome = 'correct' | 'wrong' | 'tie';
 const REVEAL_DELAY_MS = 600;
 const SETTLE_BUFFER_MS = 150;
 const RESOLVE_HOLD_MS = 1800;
-
-const speedOf = (p: Pokemon) => p.baseStats.spe;
+const CLOSE_SPEED = 10;
 
 /**
- * Who's Faster? feature: pick the faster of two Pokemon by base Speed, reveal the picked speed
- * then the other, tint the card green/red, and auto-advance on a correct guess.
+ * Who's Faster? feature: pick the faster of two contenders by Speed, reveal the picked speed
+ * then the other, tint the card green/red, and auto-advance on a correct guess. Hard mode draws
+ * only close, non-tied pairs; allowing natures compares level-50 max Speed across nature variants.
  * Returns the element.
  */
 export function FasterGame() {
   const { activePokemon: pool, activeDeckId } = useDecks();
-  const drawPair = (): [Pokemon, Pokemon] | null => (pool.length >= 2 ? pickTwo(pool) : null);
-  const [pair, setPair] = useState<[Pokemon, Pokemon] | null>(drawPair);
-  const [nextPair, setNextPair] = useState<[Pokemon, Pokemon] | null>(drawPair);
+  const [mode, setMode] = useState<GameMode>(loadMode);
+
+  const contenders = useMemo(
+    () => buildContenders(pool, mode.allowNatures),
+    [pool, mode.allowNatures],
+  );
+  const constraints = useMemo<PairConstraints<Contender>>(
+    () => ({
+      valueOf: speedOf,
+      maxDiff: mode.hardMode ? CLOSE_SPEED : undefined,
+      allowEqual: !mode.hardMode,
+      canPair: mode.allowNatures ? (a, b) => !sameSpecies(a, b) : undefined,
+    }),
+    [mode.hardMode, mode.allowNatures],
+  );
+  const drawPair = (): [Contender, Contender] | null =>
+    contenders.length >= 2 ? pickPairWithin(contenders, constraints) : null;
+
+  const slot = streakSlot(activeDeckId, mode);
+  const [pair, setPair] = useState<[Contender, Contender] | null>(drawPair);
+  const [nextPair, setNextPair] = useState<[Contender, Contender] | null>(drawPair);
   const [phase, setPhase] = useState<Phase>('idle');
-  const [picked, setPicked] = useState<Pokemon | null>(null);
+  const [picked, setPicked] = useState<Contender | null>(null);
   const [outcome, setOutcome] = useState<Outcome | null>(null);
   const [streak, setStreak] = useState(0);
-  const [best, setBest] = useState(() => loadBestStreak(activeDeckId));
+  const [best, setBest] = useState(() => loadBestStreak(slot));
 
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const clearTimers = () => {
@@ -60,44 +81,37 @@ export function FasterGame() {
     startRound();
   };
 
+  const changeMode = (next: GameMode) => {
+    saveMode(next);
+    setMode(next);
+  };
+
+  // A new deck or mode resets the round, the streak, and the best from that mode's own slot.
   useEffect(() => {
     clearTimers();
     setPhase('idle');
     setPicked(null);
     setOutcome(null);
     setStreak(0);
-    setBest(loadBestStreak(activeDeckId));
+    setBest(loadBestStreak(slot));
     setPair(drawPair());
     setNextPair(drawPair());
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeDeckId]);
+  }, [activeDeckId, mode.hardMode, mode.allowNatures]);
 
   useEffect(() => {
     if (typeof Image === 'undefined' || !nextPair) return;
-    for (const p of nextPair) {
+    for (const c of nextPair) {
       const img = new Image();
-      img.src = p.sprite;
+      img.src = c.pokemon.sprite;
     }
   }, [nextPair]);
 
   useEffect(() => clearTimers, []);
 
-  if (pool.length < 2 || !pair) {
-    return (
-      <Stack spacing={2}>
-        <Card>
-          <Typography sx={{ color: 'text.secondary' }}>
-            This deck needs at least two Pokemon to play. Add more in Settings.
-          </Typography>
-        </Card>
-      </Stack>
-    );
-  }
-
-  const [left, right] = pair;
-
-  const guess = (choice: Pokemon) => {
-    if (phase !== 'idle') return;
+  const guess = (choice: Contender) => {
+    if (phase !== 'idle' || !pair) return;
+    const [left, right] = pair;
     const other = choice === left ? right : left;
     const diff = speedOf(choice) - speedOf(other);
     const result: Outcome = diff === 0 ? 'tie' : diff > 0 ? 'correct' : 'wrong';
@@ -118,7 +132,7 @@ export function FasterGame() {
           setStreak(next);
           if (next > best) {
             setBest(next);
-            saveBestStreak(activeDeckId, next);
+            saveBestStreak(slot, next);
           }
         }
       }, resolveAt),
@@ -128,8 +142,10 @@ export function FasterGame() {
     }
   };
 
-  const contender = (p: Pokemon) => {
-    const isPicked = picked === p;
+  const speedLabel = mode.allowNatures ? 'Max Speed' : 'Base Speed';
+
+  const contender = (c: Contender) => {
+    const isPicked = picked === c;
     const bothShown = phase === 'revealBoth' || phase === 'resolved';
     const showSpeed = isPicked ? phase !== 'idle' : bothShown;
     const state =
@@ -140,8 +156,8 @@ export function FasterGame() {
         : undefined;
     return (
       <Card
-        onClick={() => guess(p)}
-        ariaLabel={`Choose ${p.name}`}
+        onClick={() => guess(c)}
+        ariaLabel={`Choose ${c.pokemon.name}`}
         state={state}
         stretch
         sx={{ flex: 1, minWidth: 0 }}
@@ -153,21 +169,51 @@ export function FasterGame() {
           sx={{ textAlign: 'center', flex: 1 }}
         >
           <Box sx={{ width: { xs: 112, sm: 160 }, maxWidth: '100%' }}>
-            <PokemonImage src={p.sprite} name={p.name} eager />
+            <PokemonImage src={c.pokemon.sprite} name={c.pokemon.name} eager />
           </Box>
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            {p.name}
+            {c.pokemon.name}
           </Typography>
-          <TypeBadges types={p.types} />
+          {c.nature !== 'base' && <NatureBadge nature={c.nature} />}
+          <TypeBadges types={c.pokemon.types} />
           {/* Pinned to the bottom so the two cards' speeds line up whatever the type count. */}
           <Box sx={{ width: '100%', mt: 'auto', pt: 2 }}>
             <StatPill
-              label="Base Speed"
-              value={showSpeed ? <SlotNumber value={speedOf(p)} /> : '???'}
+              label={speedLabel}
+              value={showSpeed ? <SlotNumber value={speedOf(c)} /> : '???'}
             />
           </Box>
         </Stack>
       </Card>
+    );
+  };
+
+  const body = () => {
+    if (pool.length < 2) {
+      return (
+        <Card>
+          <Typography sx={{ color: 'text.secondary' }}>
+            This deck needs at least two Pokemon to play. Add more in Settings.
+          </Typography>
+        </Card>
+      );
+    }
+    if (!pair) {
+      return (
+        <Card>
+          <Typography sx={{ color: 'text.secondary' }}>
+            No two Pokemon in this deck are within {CLOSE_SPEED} Speed. Widen the deck or turn off
+            Hard mode.
+          </Typography>
+        </Card>
+      );
+    }
+    const [left, right] = pair;
+    return (
+      <Stack direction="row" spacing={{ xs: 1, sm: 1.5 }}>
+        {contender(left)}
+        {contender(right)}
+      </Stack>
     );
   };
 
@@ -182,16 +228,19 @@ export function FasterGame() {
         </Box>
       </Stack>
 
-      <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'center' }}>
-        Which Pokemon has the higher base Speed?
-      </Typography>
+      {pair && (
+        <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'center' }}>
+          {mode.allowNatures
+            ? 'Which Pokemon has the higher Speed?'
+            : 'Which Pokemon has the higher base Speed?'}
+        </Typography>
+      )}
 
-      <Stack direction="row" spacing={{ xs: 1, sm: 1.5 }}>
-        {contender(left)}
-        {contender(right)}
-      </Stack>
+      {body()}
 
       {outcome === 'wrong' && phase === 'resolved' && <Button onClick={tryAgain}>Try again</Button>}
+
+      <ModeToggles mode={mode} onChange={changeMode} />
     </Stack>
   );
 }
