@@ -34,8 +34,6 @@ export function FasterGame() {
   const [phase, setPhase] = useState<Phase>('idle');
   const [picked, setPicked] = useState<Pokemon | null>(null);
   const [outcome, setOutcome] = useState<Outcome | null>(null);
-  const [score, setScore] = useState(0);
-  const [rounds, setRounds] = useState(0);
   const [streak, setStreak] = useState(0);
 
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
@@ -96,17 +94,16 @@ export function FasterGame() {
     setPicked(choice);
     setOutcome(result);
     setPhase('revealClicked');
-    setRounds((n) => n + 1);
-    if (result === 'wrong') {
-      setStreak(0);
-    } else {
-      setScore((s) => s + 1);
-      setStreak((s) => s + 1);
-    }
 
     const resolveAt = REVEAL_DELAY_MS + slotSpinMs(speedOf(other)) + SETTLE_BUFFER_MS;
     timers.current.push(setTimeout(() => setPhase('revealBoth'), REVEAL_DELAY_MS));
-    timers.current.push(setTimeout(() => setPhase('resolved'), resolveAt));
+    // Update the streak in step with the green/red highlight, which appears on 'resolved'.
+    timers.current.push(
+      setTimeout(() => {
+        setPhase('resolved');
+        setStreak((s) => (result === 'wrong' ? 0 : s + 1));
+      }, resolveAt),
+    );
     if (result !== 'wrong') {
       timers.current.push(setTimeout(startRound, resolveAt + RESOLVE_HOLD_MS));
     }
@@ -123,9 +120,14 @@ export function FasterGame() {
           : 'correct'
         : undefined;
     return (
-      <Card onClick={() => guess(p)} ariaLabel={`Choose ${p.name}`} state={state} sx={{ flex: 1 }}>
-        <Stack alignItems="center" spacing={1} sx={{ textAlign: 'center' }}>
-          <Box sx={{ width: { xs: 128, sm: 160 }, maxWidth: '100%' }}>
+      <Card
+        onClick={() => guess(p)}
+        ariaLabel={`Choose ${p.name}`}
+        state={state}
+        sx={{ flex: 1, minWidth: 0 }}
+      >
+        <Stack alignItems="center" spacing={{ xs: 0.75, sm: 1 }} sx={{ textAlign: 'center' }}>
+          <Box sx={{ width: { xs: 112, sm: 160 }, maxWidth: '100%' }}>
             <PokemonImage src={p.sprite} name={p.name} eager />
           </Box>
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
@@ -143,44 +145,41 @@ export function FasterGame() {
     );
   };
 
-  const banner = () => {
-    if (outcome !== 'wrong' || phase !== 'resolved') return null;
-    return (
-      <Box
-        sx={{
-          borderRadius: 1,
-          px: 2,
-          py: 1.5,
-          textAlign: 'center',
-          fontWeight: 600,
-          color: 'common.white',
-          bgcolor: 'primary.main',
-        }}
-      >
-        Not quite.
-      </Box>
-    );
-  };
-
   return (
-    <Stack spacing={2}>
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
-        <Typography sx={{ fontWeight: 600, color: 'text.primary' }}>
-          Score: {score}/{rounds}
+    <Stack spacing={{ xs: 1.5, sm: 2 }}>
+      <Box sx={{ textAlign: 'center' }}>
+        <Typography
+          sx={{
+            color: 'primary.main',
+            fontWeight: 800,
+            fontSize: { xs: '2.5rem', sm: '3rem' },
+            lineHeight: 1,
+            fontVariantNumeric: 'tabular-nums',
+          }}
+        >
+          {streak}
         </Typography>
-        <Typography sx={{ color: 'primary.main', fontWeight: 600 }}>Streak: {streak}</Typography>
+        <Typography
+          sx={{
+            color: 'text.secondary',
+            fontSize: '0.75rem',
+            fontWeight: 600,
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+          }}
+        >
+          Streak
+        </Typography>
       </Box>
 
       <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'center' }}>
         Which Pokemon has the higher base Speed?
       </Typography>
 
-      <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
+      <Stack direction="row" spacing={{ xs: 1, sm: 1.5 }}>
         {contender(left)}
         {contender(right)}
       </Stack>
-
-      {banner()}
 
       {outcome === 'wrong' && phase === 'resolved' && (
         <Button onClick={startRound}>Try again</Button>
