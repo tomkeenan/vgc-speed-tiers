@@ -171,7 +171,7 @@ export function FasterGame() {
             {p.name}
           </Typography>
           <TypeBadges types={p.types} />
-          <Box sx={{ width: '100%', mt: { xs: 1, sm: 0 } }}>
+          <Box sx={{ width: '100%', pt: 2 }}>
             <StatPill
               label="Base Speed"
               value={showSpeed ? <SlotNumber value={speedOf(p)} /> : '???'}
