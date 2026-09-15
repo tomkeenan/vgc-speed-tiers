@@ -63,11 +63,13 @@ export function FasterGame() {
 
   if (pool.length < 2 || !pair) {
     return (
-      <Card>
-        <Typography sx={{ color: 'text.secondary' }}>
-          This deck needs at least two Pokemon to play. Add more in Settings.
-        </Typography>
-      </Card>
+      <Stack spacing={2}>
+        <Card>
+          <Typography sx={{ color: 'text.secondary' }}>
+            This deck needs at least two Pokemon to play. Add more in Settings.
+          </Typography>
+        </Card>
+      </Stack>
     );
   }
 

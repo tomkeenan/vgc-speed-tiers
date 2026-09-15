@@ -1,5 +1,4 @@
 import { useMemo, useState } from 'react';
-import Autocomplete from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
@@ -19,6 +18,7 @@ import { useDecks } from '../../decks/DecksContext';
 import { ALL_DECK_ID } from '../../decks/store';
 import { Button } from '../../components/Button';
 import { CloseIcon } from '../../components/CloseIcon';
+import { MemberPicker } from '../../components/MemberPicker';
 
 interface SettingsDialogProps {
   open: boolean;
@@ -64,20 +64,6 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
     setNewName('');
     setNewMembers([]);
   };
-
-  const memberPicker = (label: string, value: Pokemon[], onChange: (next: Pokemon[]) => void) => (
-    <Autocomplete<Pokemon, true, false, false>
-      multiple
-      disableCloseOnSelect
-      limitTags={4}
-      options={pool}
-      value={value}
-      getOptionLabel={(p) => p.name}
-      isOptionEqualToValue={(a, b) => a.id === b.id}
-      onChange={(_, next) => onChange(next)}
-      renderInput={(params) => <TextField {...params} label={label} placeholder="Add Pokemon" />}
-    />
-  );
 
   return (
     <Dialog open={open} onClose={onClose} fullWidth maxWidth="sm" fullScreen={fullScreen}>
@@ -136,12 +122,17 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
                       onChange={(e) => renameDeck(deck.id, e.target.value)}
                       fullWidth
                     />
-                    {memberPicker('Pokemon', membersOf(deck.pokemonIds), (next) =>
-                      setDeckMembers(
-                        deck.id,
-                        next.map((p) => p.id),
-                      ),
-                    )}
+                    <MemberPicker
+                      label="Pokemon"
+                      options={pool}
+                      value={membersOf(deck.pokemonIds)}
+                      onChange={(next) =>
+                        setDeckMembers(
+                          deck.id,
+                          next.map((p) => p.id),
+                        )
+                      }
+                    />
                     <Button
                       variant="ghost"
                       onClick={() => deleteDeck(deck.id)}
@@ -166,7 +157,12 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
               onChange={(e) => setNewName(e.target.value)}
               fullWidth
             />
-            {memberPicker('Pokemon', newMembers, setNewMembers)}
+            <MemberPicker
+              label="Pokemon"
+              options={pool}
+              value={newMembers}
+              onChange={setNewMembers}
+            />
             <Button
               onClick={saveNewDeck}
               disabled={!newName.trim()}
