@@ -24,6 +24,9 @@ const REVEAL_DELAY_MS = 600;
 const SETTLE_BUFFER_MS = 150;
 const RESOLVE_HOLD_MS = 1800;
 const CLOSE_SPEED = 10;
+// A Pokemon already shown this streak is this many times as likely to be drawn as an unseen one,
+// so recent faces recur less without ever being fully banned (which would exhaust hard mode's pool).
+const REPEAT_PENALTY = 0.12;
 
 /**
  * Who's Faster? feature: pick the faster of two contenders by Speed, reveal the picked speed
@@ -39,13 +42,20 @@ export function FasterGame() {
     () => buildContenders(pool, mode.allowNatures),
     [pool, mode.allowNatures],
   );
+  // Pokemon shown so far in the current streak; drawing weights against them, then it clears on reset.
+  const seenThisStreak = useRef(new Set<string>());
+  const wasSeenThisStreak = (c: Contender) => seenThisStreak.current.has(c.pokemon.id);
+
   const constraints = useMemo<PairConstraints<Contender>>(
     () => ({
       valueOf: speedOf,
       maxDiff: mode.hardMode ? CLOSE_SPEED : undefined,
       allowEqual: !mode.hardMode,
       canPair: mode.allowNatures ? (a, b) => !sameSpecies(a, b) : undefined,
+      weightOf: (c) => (wasSeenThisStreak(c) ? REPEAT_PENALTY : 1),
     }),
+    // wasSeenThisStreak reads a ref, so it stays current without being a dependency.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [mode.hardMode, mode.allowNatures],
   );
   const drawPair = (): [Contender, Contender] | null =>
@@ -66,17 +76,32 @@ export function FasterGame() {
     timers.current = [];
   };
 
+  const rememberSeen = (p: [Contender, Contender] | null) =>
+    p?.forEach((c) => seenThisStreak.current.add(c.pokemon.id));
+  const forgetSeen = () => {
+    seenThisStreak.current = new Set();
+  };
+
+  // Show `shown`, then prefetch the next pair, recording both so the streak's weighting avoids them.
+  const showAndPrefetch = (shown: [Contender, Contender] | null) => {
+    rememberSeen(shown);
+    setPair(shown);
+    const next = drawPair();
+    rememberSeen(next);
+    setNextPair(next);
+  };
+
   const startRound = () => {
     clearTimers();
     setPhase('idle');
     setPicked(null);
     setOutcome(null);
-    setPair(nextPair ?? drawPair());
-    setNextPair(drawPair());
+    showAndPrefetch(nextPair ?? drawPair());
   };
 
   // Wrong guesses hold the streak on screen; it only zeroes when the player taps Try again.
   const tryAgain = () => {
+    forgetSeen();
     setStreak(0);
     startRound();
   };
@@ -94,8 +119,8 @@ export function FasterGame() {
     setOutcome(null);
     setStreak(0);
     setBest(loadBestStreak(slot));
-    setPair(drawPair());
-    setNextPair(drawPair());
+    forgetSeen();
+    showAndPrefetch(drawPair());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeDeckId, mode.hardMode, mode.allowNatures]);
 

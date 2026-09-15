@@ -44,4 +44,19 @@ describe('pickPairWithin', () => {
     const [a, b] = pickPairWithin([7, 7, 9], { valueOf, canPair })!;
     expect(a).not.toBe(b);
   });
+
+  it('never draws a zero-weight item while positive-weight pairs exist', () => {
+    const items = [1, 2, 3];
+    const weightOf = (n: number) => (n === 1 ? 0 : 1); // 1 is fully down-weighted
+    for (let i = 0; i < 50; i++) {
+      const [a, b] = pickPairWithin(items, { valueOf, weightOf })!;
+      expect(a).not.toBe(1);
+      expect(b).not.toBe(1);
+    }
+  });
+
+  it('falls back to a valid pair when every weight is zero', () => {
+    const [a, b] = pickPairWithin([1, 2], { valueOf, weightOf: () => 0 })!;
+    expect([a, b].sort()).toEqual([1, 2]);
+  });
 });
