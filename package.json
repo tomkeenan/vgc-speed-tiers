@@ -19,8 +19,8 @@
     "test": "vitest run"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Tom Keenan",
+  "license": "MIT",
   "type": "module",
   "dependencies": {
     "@emotion/react": "^11.14.0",

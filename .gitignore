@@ -3,3 +3,7 @@ dist
 .cache
 *.log
 .DS_Store
+
+# Pokemon official artwork - not redistributed; regenerated from data/sprite-sources.json
+# via `npm run sprites`. See LICENSE.
+src/assets/sprites/*.webp
