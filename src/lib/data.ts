@@ -3,9 +3,28 @@ import raw from '../../data/pokemon.json';
 
 const dataset = raw as Dataset;
 
+// Optimized sprites are bundled as hashed, long-cache Vite assets. The dataset stores the bare
+// "<id>.webp" filename; map each to its fingerprinted URL once at module load. Missing assets fall
+// back to the raw filename, which PokemonImage renders as a name-only placeholder on error.
+const spriteUrls = import.meta.glob('../assets/sprites/*.webp', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+}) as Record<string, string>;
+const spriteByFile = new Map<string, string>();
+for (const [path, url] of Object.entries(spriteUrls)) {
+  const file = path.split('/').pop();
+  if (file) spriteByFile.set(file, url);
+}
+
+const pokemon: Pokemon[] = dataset.pokemon.map((p) => ({
+  ...p,
+  sprite: spriteByFile.get(p.sprite) ?? p.sprite,
+}));
+
 /** Returns every Pokemon in the dataset, in usage order. */
 export function getAllPokemon(): Pokemon[] {
-  return dataset.pokemon;
+  return pokemon;
 }
 
 /** Returns dataset metadata. */
@@ -18,5 +37,5 @@ export function getMeta(): DatasetMeta {
  * Takes an id, returns the Pokemon or undefined.
  */
 export function getPokemon(id: string): Pokemon | undefined {
-  return dataset.pokemon.find((p) => p.id === id);
+  return pokemon.find((p) => p.id === id);
 }

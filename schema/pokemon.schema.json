@@ -56,7 +56,11 @@
             "spe": { "type": "integer", "minimum": 1 }
           }
         },
-        "sprite": { "type": "string", "format": "uri", "description": "Official artwork URL." },
+        "sprite": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*\\.webp$",
+          "description": "Local optimized-WebP filename (<id>.webp), resolved to a hashed asset URL at build time by src/lib/data.ts. Source artwork is recorded in data/sprite-sources.json."
+        },
         "usage": {
           "type": "number",
           "minimum": 0,

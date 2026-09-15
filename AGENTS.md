@@ -34,7 +34,10 @@ This file is the contract every agent works to. Read it fully before writing cod
 
 - **Dataset:** `schema/pokemon.schema.json`, typed in `src/lib/types.ts` (`Dataset`, `Pokemon`).
   Load it only via `src/lib/data.ts` (`getAllPokemon`, `getPokemon`, `getMeta`). Every Pokemon
-  carries `usage` (0..1) and `usageRank` (1 = most used); the pool is ordered by usage.
+  carries `usage` (0..1) and `usageRank` (1 = most used); the pool is ordered by usage. `sprite` is
+  a local `<id>.webp` filename (self-hosted, optimized), which `src/lib/data.ts` resolves to a
+  hashed asset under `src/assets/sprites/`. Regenerate the assets with `npm run sprites` (part of
+  `npm run data`); the sources are recorded in `data/sprite-sources.json`.
 - **Speed engine (`src/lib/speed.ts`), frozen API:**
   - `computeSpeed({ base, ev?, iv?, nature?, level? }) => number`
   - `applyModifiers(speed, { stage?, tailwind?, choiceScarf?, paralysis?, multiplier? }) => number`

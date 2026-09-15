@@ -28,9 +28,9 @@ const speedOf = (p: Pokemon) => p.baseStats.spe;
  */
 export function FasterGame() {
   const { activePokemon: pool, activeDeckId } = useDecks();
-  const [pair, setPair] = useState<[Pokemon, Pokemon] | null>(() =>
-    pool.length >= 2 ? pickTwo(pool) : null,
-  );
+  const drawPair = (): [Pokemon, Pokemon] | null => (pool.length >= 2 ? pickTwo(pool) : null);
+  const [pair, setPair] = useState<[Pokemon, Pokemon] | null>(drawPair);
+  const [nextPair, setNextPair] = useState<[Pokemon, Pokemon] | null>(drawPair);
   const [phase, setPhase] = useState<Phase>('idle');
   const [picked, setPicked] = useState<Pokemon | null>(null);
   const [outcome, setOutcome] = useState<Outcome | null>(null);
@@ -49,14 +49,29 @@ export function FasterGame() {
     setPhase('idle');
     setPicked(null);
     setOutcome(null);
-    setPair(pool.length >= 2 ? pickTwo(pool) : null);
+    setPair(nextPair ?? drawPair());
+    setNextPair(drawPair());
   };
 
-  // Start a fresh matchup whenever the active deck changes.
+  // Start a fresh matchup with fresh draws whenever the active deck changes.
   useEffect(() => {
-    startRound();
+    clearTimers();
+    setPhase('idle');
+    setPicked(null);
+    setOutcome(null);
+    setPair(drawPair());
+    setNextPair(drawPair());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeDeckId]);
+
+  // Warm the browser cache with the next matchup's sprites so the next round shows instantly.
+  useEffect(() => {
+    if (typeof Image === 'undefined' || !nextPair) return;
+    for (const p of nextPair) {
+      const img = new Image();
+      img.src = p.sprite;
+    }
+  }, [nextPair]);
 
   // Clear any pending timers on unmount.
   useEffect(() => clearTimers, []);
@@ -114,7 +129,7 @@ export function FasterGame() {
       <Card onClick={() => guess(p)} ariaLabel={`Choose ${p.name}`} state={state} sx={{ flex: 1 }}>
         <Stack alignItems="center" spacing={1} sx={{ textAlign: 'center' }}>
           <Box sx={{ width: { xs: 128, sm: 160 }, maxWidth: '100%' }}>
-            <PokemonImage src={p.sprite} name={p.name} />
+            <PokemonImage src={p.sprite} name={p.name} eager />
           </Box>
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
             {p.name}

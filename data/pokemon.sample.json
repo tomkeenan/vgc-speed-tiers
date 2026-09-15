@@ -11,7 +11,10 @@
       "id": "kingambit",
       "num": 983,
       "name": "Kingambit",
-      "types": ["Dark", "Steel"],
+      "types": [
+        "Dark",
+        "Steel"
+      ],
       "baseStats": {
         "hp": 100,
         "atk": 135,
@@ -20,7 +23,7 @@
         "spd": 85,
         "spe": 50
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/983.png",
+      "sprite": "kingambit.webp",
       "usage": 0.4074,
       "usageRank": 1
     },
@@ -28,7 +31,10 @@
       "id": "garchomp",
       "num": 445,
       "name": "Garchomp",
-      "types": ["Dragon", "Ground"],
+      "types": [
+        "Dragon",
+        "Ground"
+      ],
       "baseStats": {
         "hp": 108,
         "atk": 130,
@@ -37,7 +43,7 @@
         "spd": 85,
         "spe": 102
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/445.png",
+      "sprite": "garchomp.webp",
       "usage": 0.276,
       "usageRank": 2
     },
@@ -45,7 +51,10 @@
       "id": "incineroar",
       "num": 727,
       "name": "Incineroar",
-      "types": ["Fire", "Dark"],
+      "types": [
+        "Fire",
+        "Dark"
+      ],
       "baseStats": {
         "hp": 95,
         "atk": 115,
@@ -54,7 +63,7 @@
         "spd": 90,
         "spe": 60
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/727.png",
+      "sprite": "incineroar.webp",
       "usage": 0.269,
       "usageRank": 3
     },
@@ -62,7 +71,10 @@
       "id": "whimsicott",
       "num": 547,
       "name": "Whimsicott",
-      "types": ["Grass", "Fairy"],
+      "types": [
+        "Grass",
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 60,
         "atk": 67,
@@ -71,7 +83,7 @@
         "spd": 75,
         "spe": 116
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/547.png",
+      "sprite": "whimsicott.webp",
       "usage": 0.244,
       "usageRank": 4
     },
@@ -79,7 +91,10 @@
       "id": "charizard-mega-y",
       "num": 6,
       "name": "Charizard-Mega-Y",
-      "types": ["Fire", "Flying"],
+      "types": [
+        "Fire",
+        "Flying"
+      ],
       "baseStats": {
         "hp": 78,
         "atk": 104,
@@ -88,7 +103,7 @@
         "spd": 115,
         "spe": 100
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10035.png",
+      "sprite": "charizard-mega-y.webp",
       "usage": 0.211,
       "usageRank": 5
     },
@@ -96,7 +111,10 @@
       "id": "flutter-mane",
       "num": 987,
       "name": "Flutter Mane",
-      "types": ["Ghost", "Fairy"],
+      "types": [
+        "Ghost",
+        "Fairy"
+      ],
       "baseStats": {
         "hp": 55,
         "atk": 55,
@@ -105,7 +123,7 @@
         "spd": 135,
         "spe": 135
       },
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/987.png",
+      "sprite": "flutter-mane.webp",
       "usage": 0.12,
       "usageRank": 6
     }
