@@ -19,6 +19,7 @@ import { Button } from '../../components/Button';
 import { CloseIcon } from '../../components/CloseIcon';
 import { EditIcon } from '../../components/EditIcon';
 import { MemberPicker } from '../../components/MemberPicker';
+import { PokeballIcon } from '../../components/PokeballIcon';
 
 interface SettingsDialogProps {
   open: boolean;
@@ -119,6 +120,19 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
 
       <DialogContent dividers>
         <Stack spacing={3}>
+          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            A deck is a custom list of Pokemon. Pick one from the{' '}
+            <Box
+              component="span"
+              sx={{ display: 'inline-flex', verticalAlign: 'text-bottom', mx: 0.25 }}
+            >
+              <PokeballIcon size={18} />
+            </Box>{' '}
+            menu in the header to use only those Pokemon in each game mode. The built-in All Pokemon
+            deck uses the full dataset. Streaks are tied to each deck and mode, so don&apos;t panic
+            if switching deck resets your streak. Create, edit, and share your own decks below.
+          </Typography>
+
           {userDecks.length > 0 && (
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
               <Typography component="span" sx={sectionLabelSx}>
