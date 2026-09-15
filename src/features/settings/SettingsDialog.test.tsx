@@ -72,7 +72,7 @@ describe('SettingsDialog', () => {
     fireEvent.change(screen.getByLabelText('Deck name'), { target: { value: 'Sun' } });
     fireEvent.click(screen.getByRole('button', { name: 'Save deck' }));
     fireEvent.click(screen.getByRole('button', { name: 'Edit Sun' }));
-    fireEvent.click(screen.getByRole('button', { name: 'Copy JSON' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Export deck' }));
 
     expect(writeText).toHaveBeenCalledWith(expect.stringContaining('"name": "Sun"'));
     expect(await screen.findByRole('button', { name: 'Copied!' })).toBeInTheDocument();
