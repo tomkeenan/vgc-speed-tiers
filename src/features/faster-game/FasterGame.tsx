@@ -141,9 +141,15 @@ export function FasterGame() {
         onClick={() => guess(p)}
         ariaLabel={`Choose ${p.name}`}
         state={state}
+        stretch
         sx={{ flex: 1, minWidth: 0 }}
       >
-        <Stack alignItems="center" spacing={{ xs: 0.75, sm: 1 }} sx={{ textAlign: 'center' }}>
+        <Stack
+          alignItems="center"
+          spacing={{ xs: 0.75, sm: 1 }}
+          useFlexGap
+          sx={{ textAlign: 'center', flex: 1 }}
+        >
           <Box sx={{ width: { xs: 112, sm: 160 }, maxWidth: '100%' }}>
             <PokemonImage src={p.sprite} name={p.name} eager />
           </Box>
@@ -151,7 +157,8 @@ export function FasterGame() {
             {p.name}
           </Typography>
           <TypeBadges types={p.types} />
-          <Box sx={{ width: '100%', pt: 2 }}>
+          {/* Pinned to the bottom so the two cards' speeds line up whatever the type count. */}
+          <Box sx={{ width: '100%', mt: 'auto', pt: 2 }}>
             <StatPill
               label="Base Speed"
               value={showSpeed ? <SlotNumber value={speedOf(p)} /> : '???'}
