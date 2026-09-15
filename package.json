@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
+    "prebuild": "npm run sprites",
     "build": "vite build",
     "preview": "vite preview",
     "test:watch": "vitest",
