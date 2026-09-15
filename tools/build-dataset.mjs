@@ -17,11 +17,33 @@ const SKIP = new Set([]);
 
 const roster = JSON.parse(await readFile(new URL('../data/roster.json', import.meta.url), 'utf8'));
 
+// Formes PokeAPI has no entry for (new Z-A Megas): trusted straight from the manual dataset,
+// keyed by id. See data/manual-pokemon.json.
+const manual = JSON.parse(
+  await readFile(new URL('../data/manual-pokemon.json', import.meta.url), 'utf8'),
+);
+const manualById = new Map(manual.pokemon.map((m) => [m.id, m]));
+
 const pokemon = [];
 const spriteSources = {};
 const failures = [];
 for (const entry of roster.pokemon) {
   if (SKIP.has(entry.showdownName)) continue;
+  const m = manualById.get(entry.id);
+  if (m) {
+    if (m.spriteUrl) spriteSources[m.id] = m.spriteUrl;
+    pokemon.push({
+      id: m.id,
+      num: m.num,
+      name: entry.showdownName,
+      types: m.types,
+      baseStats: m.baseStats,
+      sprite: `${m.id}.webp`,
+      usage: entry.usage,
+      usageRank: entry.usageRank,
+    });
+    continue;
+  }
   try {
     const p = await fetchPokemon(entry.id);
     const baseStats = {};

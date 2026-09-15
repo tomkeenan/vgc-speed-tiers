@@ -1,9 +1,9 @@
 {
   "meta": {
     "format": "gen9championsvgc2026",
-    "generatedAt": "2026-09-14T18:40:21.815Z",
-    "source": "https://pkmn.github.io/smogon/data/stats/gen9championsvgc2026.json",
-    "count": 283
+    "generatedAt": "2026-09-15T11:35:38.935Z",
+    "source": "https://pkmn.github.io/smogon/data/stats/gen9championsvgc2026.json + manual Reg-MC additions (data/reg-mc-additions.json, data/manual-pokemon.json)",
+    "count": 314
   },
   "pokemon": [
     {
@@ -1703,6 +1703,192 @@
       "id": "sharpedo",
       "usage": 0.0001,
       "usageRank": 283
+    },
+    {
+      "showdownName": "Wigglytuff",
+      "id": "wigglytuff",
+      "usage": 0,
+      "usageRank": 284
+    },
+    {
+      "showdownName": "Persian",
+      "id": "persian",
+      "usage": 0,
+      "usageRank": 285
+    },
+    {
+      "showdownName": "Persian-Alola",
+      "id": "persian-alola",
+      "usage": 0,
+      "usageRank": 286
+    },
+    {
+      "showdownName": "Farfetch'd",
+      "id": "farfetchd",
+      "usage": 0,
+      "usageRank": 287
+    },
+    {
+      "showdownName": "Mr. Mime",
+      "id": "mr-mime",
+      "usage": 0,
+      "usageRank": 288
+    },
+    {
+      "showdownName": "Swalot",
+      "id": "swalot",
+      "usage": 0,
+      "usageRank": 289
+    },
+    {
+      "showdownName": "Salamence",
+      "id": "salamence",
+      "usage": 0,
+      "usageRank": 290
+    },
+    {
+      "showdownName": "Gogoat",
+      "id": "gogoat",
+      "usage": 0,
+      "usageRank": 291
+    },
+    {
+      "showdownName": "Golisopod",
+      "id": "golisopod",
+      "usage": 0,
+      "usageRank": 292
+    },
+    {
+      "showdownName": "Rillaboom",
+      "id": "rillaboom",
+      "usage": 0,
+      "usageRank": 293
+    },
+    {
+      "showdownName": "Cinderace",
+      "id": "cinderace",
+      "usage": 0,
+      "usageRank": 294
+    },
+    {
+      "showdownName": "Inteleon",
+      "id": "inteleon",
+      "usage": 0,
+      "usageRank": 295
+    },
+    {
+      "showdownName": "Thievul",
+      "id": "thievul",
+      "usage": 0,
+      "usageRank": 296
+    },
+    {
+      "showdownName": "Toxtricity",
+      "id": "toxtricity-amped",
+      "usage": 0,
+      "usageRank": 297
+    },
+    {
+      "showdownName": "Grapploct",
+      "id": "grapploct",
+      "usage": 0,
+      "usageRank": 298
+    },
+    {
+      "showdownName": "Perrserker",
+      "id": "perrserker",
+      "usage": 0,
+      "usageRank": 299
+    },
+    {
+      "showdownName": "Sirfetch'd",
+      "id": "sirfetchd",
+      "usage": 0,
+      "usageRank": 300
+    },
+    {
+      "showdownName": "Pincurchin",
+      "id": "pincurchin",
+      "usage": 0,
+      "usageRank": 301
+    },
+    {
+      "showdownName": "Indeedee",
+      "id": "indeedee-male",
+      "usage": 0,
+      "usageRank": 302
+    },
+    {
+      "showdownName": "Indeedee-F",
+      "id": "indeedee-female",
+      "usage": 0,
+      "usageRank": 303
+    },
+    {
+      "showdownName": "Pawmot",
+      "id": "pawmot",
+      "usage": 0,
+      "usageRank": 304
+    },
+    {
+      "showdownName": "Arboliva",
+      "id": "arboliva",
+      "usage": 0,
+      "usageRank": 305
+    },
+    {
+      "showdownName": "Squawkabilly",
+      "id": "squawkabilly-green-plumage",
+      "usage": 0,
+      "usageRank": 306
+    },
+    {
+      "showdownName": "Mabosstiff",
+      "id": "mabosstiff",
+      "usage": 0,
+      "usageRank": 307
+    },
+    {
+      "showdownName": "Baxcalibur",
+      "id": "baxcalibur",
+      "usage": 0,
+      "usageRank": 308
+    },
+    {
+      "showdownName": "Salamence-Mega",
+      "id": "salamence-mega",
+      "usage": 0,
+      "usageRank": 309
+    },
+    {
+      "showdownName": "Golisopod-Mega",
+      "id": "golisopod-mega",
+      "usage": 0,
+      "usageRank": 310
+    },
+    {
+      "showdownName": "Baxcalibur-Mega",
+      "id": "baxcalibur-mega",
+      "usage": 0,
+      "usageRank": 311
+    },
+    {
+      "showdownName": "Absol-Mega-Z",
+      "id": "absol-mega-z",
+      "usage": 0,
+      "usageRank": 312
+    },
+    {
+      "showdownName": "Garchomp-Mega-Z",
+      "id": "garchomp-mega-z",
+      "usage": 0,
+      "usageRank": 313
+    },
+    {
+      "showdownName": "Lucario-Mega-Z",
+      "id": "lucario-mega-z",
+      "usage": 0,
+      "usageRank": 314
     }
   ]
 }
