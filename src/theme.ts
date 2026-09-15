@@ -94,7 +94,7 @@ export const theme = createTheme({
           '&.Mui-checked': {
             color: WHITE,
             '& + .MuiSwitch-track': {
-              backgroundColor: theme.vars.palette.text.primary,
+              backgroundColor: theme.vars.palette.primary.main,
               opacity: 1,
             },
           },
