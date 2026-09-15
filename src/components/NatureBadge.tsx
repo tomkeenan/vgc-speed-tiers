@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import Chip from '@mui/material/Chip';
 
 interface NatureBadgeProps {
@@ -9,10 +10,11 @@ interface NatureBadgeProps {
  * Takes the nature, returns the element.
  */
 export function NatureBadge({ nature }: NatureBadgeProps) {
+  const { t } = useTranslation();
   const positive = nature === 'positive';
   return (
     <Chip
-      label={positive ? '+Spd' : 'Neutral'}
+      label={positive ? t('natureBadge.positive') : t('natureBadge.neutral')}
       size="small"
       sx={{
         bgcolor: positive ? 'speed.main' : 'background.default',

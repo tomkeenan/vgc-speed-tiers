@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -12,6 +13,7 @@ import { PokeballIcon } from './PokeballIcon';
  * Returns the element.
  */
 export function DeckSelector() {
+  const { t } = useTranslation();
   const { decks, activeDeckId, activeDeck, setActiveDeck } = useDecks();
   const poolSize = useMemo(() => getAllPokemon().length, []);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
@@ -27,7 +29,7 @@ export function DeckSelector() {
   return (
     <>
       <IconButton
-        aria-label={`Deck: ${activeDeck.name}`}
+        aria-label={t('deckSelector.deckLabel', { name: activeDeck.name })}
         aria-haspopup="true"
         aria-expanded={open ? true : undefined}
         onClick={(e) => setAnchorEl(e.currentTarget)}

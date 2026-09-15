@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
@@ -12,6 +13,7 @@ const EMAIL = 'tomjameskeenan@gmail.com';
  * The email icon copies the address to the clipboard and briefly confirms.
  */
 export function Footer() {
+  const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
@@ -44,11 +46,11 @@ export function Footer() {
         color: 'text.secondary',
       }}
     >
-      <Typography sx={{ fontSize: '0.75rem' }}>made by tom</Typography>
+      <Typography sx={{ fontSize: '0.75rem' }}>{t('footer.madeBy')}</Typography>
 
-      <Tooltip title={copied ? 'Copied!' : EMAIL}>
+      <Tooltip title={copied ? t('common.copied') : EMAIL}>
         <IconButton
-          aria-label="Copy email address"
+          aria-label={t('footer.copyEmail')}
           onClick={copyEmail}
           size="small"
           sx={{ color: 'inherit' }}

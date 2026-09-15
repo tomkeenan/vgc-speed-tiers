@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -35,6 +36,7 @@ const REPEAT_PENALTY = 0.12;
  * Returns the element.
  */
 export function FasterGame() {
+  const { t } = useTranslation();
   const { activePokemon: pool, activeDeckId } = useDecks();
   const [mode, setMode] = useState<GameMode>(loadMode);
 
@@ -167,7 +169,7 @@ export function FasterGame() {
     }
   };
 
-  const speedLabel = mode.allowNatures ? 'Max Speed' : 'Base Speed';
+  const speedLabel = mode.allowNatures ? t('common.maxSpeed') : t('common.baseSpeed');
 
   const contender = (c: Contender) => {
     const isPicked = picked === c;
@@ -182,7 +184,7 @@ export function FasterGame() {
     return (
       <Card
         onClick={() => guess(c)}
-        ariaLabel={`Choose ${c.pokemon.name}`}
+        ariaLabel={t('faster.chooseAria', { name: c.pokemon.name })}
         state={state}
         stretch
         sx={{ flex: 1, minWidth: 0 }}
@@ -217,9 +219,7 @@ export function FasterGame() {
     if (pool.length < 2) {
       return (
         <Card>
-          <Typography sx={{ color: 'text.secondary' }}>
-            This deck needs at least two Pokemon to play. Add more in Settings.
-          </Typography>
+          <Typography sx={{ color: 'text.secondary' }}>{t('faster.needTwo')}</Typography>
         </Card>
       );
     }
@@ -227,8 +227,7 @@ export function FasterGame() {
       return (
         <Card>
           <Typography sx={{ color: 'text.secondary' }}>
-            No two Pokemon in this deck are within {CLOSE_SPEED} Speed. Widen the deck or turn off
-            Hard mode.
+            {t('faster.noneClose', { max: CLOSE_SPEED })}
           </Typography>
         </Card>
       );
@@ -246,24 +245,24 @@ export function FasterGame() {
     <Stack spacing={{ xs: 1.5, sm: 2 }}>
       <Stack direction="row" spacing={{ xs: 1, sm: 1.5 }}>
         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-          <StreakStat value={streak} label="Streak" color="primary.main" />
+          <StreakStat value={streak} label={t('common.streak')} color="primary.main" />
         </Box>
         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-          <StreakStat value={best} label="Best" color="text.primary" />
+          <StreakStat value={best} label={t('common.best')} color="text.primary" />
         </Box>
       </Stack>
 
       {pair && (
         <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'center' }}>
-          {mode.allowNatures
-            ? 'Which Pokemon has the higher Speed?'
-            : 'Which Pokemon has the higher base Speed?'}
+          {mode.allowNatures ? t('faster.prompt') : t('faster.promptBase')}
         </Typography>
       )}
 
       {body()}
 
-      {outcome === 'wrong' && phase === 'resolved' && <Button onClick={tryAgain}>Try again</Button>}
+      {outcome === 'wrong' && phase === 'resolved' && (
+        <Button onClick={tryAgain}>{t('common.tryAgain')}</Button>
+      )}
 
       <ModeToggles mode={mode} onChange={changeMode} />
     </Stack>

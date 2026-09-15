@@ -1,4 +1,5 @@
 import { lazy, Suspense, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import { Flashcards } from './features/flashcards/Flashcards';
 import { FasterGame } from './features/faster-game/FasterGame';
@@ -14,15 +15,16 @@ const SettingsDialog = lazy(() =>
 );
 
 const TABS = [
-  { key: 'flashcards', label: 'Flashcards', render: () => <Flashcards /> },
-  { key: 'faster', label: "Who's Faster?", render: () => <FasterGame /> },
-  { key: 'howfast', label: 'How Fast?', render: () => <HowFast /> },
+  { key: 'flashcards', labelKey: 'tabs.flashcards', render: () => <Flashcards /> },
+  { key: 'faster', labelKey: 'tabs.faster', render: () => <FasterGame /> },
+  { key: 'howfast', labelKey: 'tabs.howFast', render: () => <HowFast /> },
 ] as const;
 
 type TabKey = (typeof TABS)[number]['key'];
 
 /** Root component: header, tab navigation, the two features, and the settings dialog. */
 export default function App() {
+  const { t } = useTranslation();
   const [tab, setTab] = useState<TabKey>('flashcards');
   const [settingsOpen, setSettingsOpen] = useState(false);
   const active = TABS.find((t) => t.key === tab) ?? TABS[0];
@@ -43,7 +45,7 @@ export default function App() {
         <Header onOpenSettings={() => setSettingsOpen(true)} />
 
         <TabNav
-          tabs={TABS.map(({ key, label }) => ({ key, label }))}
+          tabs={TABS.map(({ key, labelKey }) => ({ key, label: t(labelKey) }))}
           active={tab}
           onChange={setTab}
         />

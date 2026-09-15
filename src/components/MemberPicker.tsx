@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 import MuiButton from '@mui/material/Button';
@@ -29,6 +30,7 @@ const spriteSx = {
  * Takes a label, the option pool, the selected value, and an onChange, returns the element.
  */
 export function MemberPicker({ label, options, value, onChange }: MemberPickerProps) {
+  const { t } = useTranslation();
   const [query, setQuery] = useState('');
   const selectedIds = useMemo(() => new Set(value.map((p) => p.id)), [value]);
   const filtered = useMemo(() => {
@@ -47,23 +49,23 @@ export function MemberPicker({ label, options, value, onChange }: MemberPickerPr
         label={label}
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search Pokemon"
+        placeholder={t('memberPicker.searchPlaceholder')}
         size="small"
         fullWidth
       />
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', px: 0.5 }}>
         <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-          {value.length} selected
+          {t('memberPicker.selectedCount', { n: value.length })}
         </Typography>
         {value.length > 0 && (
           <MuiButton size="small" variant="text" onClick={() => onChange([])}>
-            Clear
+            {t('memberPicker.clear')}
           </MuiButton>
         )}
       </Box>
       <Box
         role="listbox"
-        aria-label={`${label} options`}
+        aria-label={t('memberPicker.optionsAria', { label })}
         aria-multiselectable="true"
         sx={{
           maxHeight: 280,
@@ -75,7 +77,7 @@ export function MemberPicker({ label, options, value, onChange }: MemberPickerPr
       >
         {filtered.length === 0 ? (
           <Typography variant="body2" sx={{ color: 'text.secondary', p: 2, textAlign: 'center' }}>
-            No matches
+            {t('memberPicker.noMatches')}
           </Typography>
         ) : (
           filtered.map((p) => (

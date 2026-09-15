@@ -1,0 +1,97 @@
+{
+  "app": {
+    "title": "Just Move First"
+  },
+  "tabs": {
+    "flashcards": "Flashcards",
+    "faster": "Who's Faster?",
+    "howFast": "How Fast?"
+  },
+  "common": {
+    "baseSpeed": "Base Speed",
+    "maxSpeed": "Max Speed",
+    "tryAgain": "Try again",
+    "streak": "Streak",
+    "best": "Best",
+    "noPokemon": "No Pokemon available.",
+    "features": "Features",
+    "copied": "Copied!"
+  },
+  "header": {
+    "settings": "Settings"
+  },
+  "footer": {
+    "madeBy": "made by tom",
+    "copyEmail": "Copy email address"
+  },
+  "themeToggle": {
+    "toLight": "Switch to light mode",
+    "toDark": "Switch to dark mode"
+  },
+  "deckSelector": {
+    "deckLabel": "Deck: {{name}}"
+  },
+  "decks": {
+    "allPokemon": "All Pokemon"
+  },
+  "flashcards": {
+    "prompt": "Tap the card to reveal its base Speed.",
+    "next": "Next Pokemon",
+    "cardAria": "{{name}} flashcard, {{state}} base Speed",
+    "showing": "showing",
+    "hiding": "hiding"
+  },
+  "howFast": {
+    "prompt": "Type this Pokemon's exact base Speed.",
+    "cardAria": "{{name}} card",
+    "placeholder": "Base Speed",
+    "inputAria": "Your base Speed guess",
+    "submit": "Submit"
+  },
+  "faster": {
+    "promptBase": "Which Pokemon has the higher base Speed?",
+    "prompt": "Which Pokemon has the higher Speed?",
+    "chooseAria": "Choose {{name}}",
+    "needTwo": "This deck needs at least two Pokemon to play. Add more in Settings.",
+    "noneClose": "No two Pokemon in this deck are within {{max}} Speed. Widen the deck or turn off Hard mode.",
+    "hardMode": {
+      "title": "Hard mode",
+      "description": "Only close matchups, within 10 Speed. No ties."
+    },
+    "allowNatures": {
+      "title": "Allow natures",
+      "description": "Compare level-50 max Speed, at neutral and +Spd nature."
+    }
+  },
+  "natureBadge": {
+    "positive": "+Spd",
+    "neutral": "Neutral"
+  },
+  "memberPicker": {
+    "searchPlaceholder": "Search Pokemon",
+    "selectedCount": "{{n}} selected",
+    "clear": "Clear",
+    "noMatches": "No matches",
+    "optionsAria": "{{label}} options"
+  },
+  "settings": {
+    "title": "Settings",
+    "close": "Close",
+    "explainer": "A deck is a custom list of Pokemon. Pick one from the <icon></icon> menu in the header to use only those Pokemon in each game mode. The built-in All Pokemon deck uses the full dataset. Streaks are tied to each deck and mode, so don't panic if switching deck resets your streak. Create, edit, and share your own decks below.",
+    "yourDecks": "Your decks",
+    "createDeck": "Create a deck",
+    "importDeck": "Import a deck",
+    "deckName": "Deck name",
+    "pokemon": "Pokemon",
+    "exportDeck": "Export deck",
+    "deleteDeck": "Delete deck",
+    "saveDeck": "Save deck",
+    "pasteDeckJson": "Paste deck JSON",
+    "pastePlaceholder": "{ \"name\": \"My deck\", \"pokemonIds\": [\"garchomp\", \"...\"] }",
+    "pasteHelper": "Paste JSON copied from a deck above.",
+    "importButton": "Import deck",
+    "noneInDataset": "None of those Pokemon are in the current dataset.",
+    "edit": "Edit {{name}}",
+    "collapse": "Collapse {{name}}"
+  }
+}

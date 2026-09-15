@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Switch from '@mui/material/Switch';
@@ -41,6 +42,7 @@ function ModeRow({ title, description, checked, onChange }: ModeRowProps) {
  * Takes the current mode and a change handler, returns the element.
  */
 export function ModeToggles({ mode, onChange }: ModeTogglesProps) {
+  const { t } = useTranslation();
   return (
     <Box
       sx={{
@@ -54,15 +56,15 @@ export function ModeToggles({ mode, onChange }: ModeTogglesProps) {
       }}
     >
       <ModeRow
-        title="Hard mode"
-        description="Only close matchups, within 10 Speed. No ties."
+        title={t('faster.hardMode.title')}
+        description={t('faster.hardMode.description')}
         checked={mode.hardMode}
         onChange={(hardMode) => onChange({ ...mode, hardMode })}
       />
       <Divider sx={{ my: 1 }} />
       <ModeRow
-        title="Allow natures"
-        description="Compare level-50 max Speed, at neutral and +Spd nature."
+        title={t('faster.allowNatures.title')}
+        description={t('faster.allowNatures.description')}
         checked={mode.allowNatures}
         onChange={(allowNatures) => onChange({ ...mode, allowNatures })}
       />

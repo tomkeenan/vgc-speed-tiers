@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
@@ -17,12 +18,13 @@ interface TabNavProps<T extends string> {
  * Takes the tab list, the active key, and an onChange handler, returns the element.
  */
 export function TabNav<T extends string>({ tabs, active, onChange }: TabNavProps<T>) {
+  const { t } = useTranslation();
   return (
     <Tabs
       value={active}
       onChange={(_, value) => onChange(value as T)}
       variant="fullWidth"
-      aria-label="Features"
+      aria-label={t('common.features')}
     >
       {tabs.map((tab) => (
         <Tab key={tab.key} value={tab.key} label={tab.label} />

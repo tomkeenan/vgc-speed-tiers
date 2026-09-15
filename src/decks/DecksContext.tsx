@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
+import { useTranslation } from 'react-i18next';
 import { getAllPokemon } from '../lib/data';
 import type { Pokemon } from '../lib/types';
 import {
@@ -34,21 +35,28 @@ export interface DecksApi {
 
 const DecksContext = createContext<DecksApi | null>(null);
 
-const ALL_DECK: Deck = { id: ALL_DECK_ID, name: 'All Pokemon', pokemonIds: [], isBuiltIn: true };
-
 function toDeck(stored: StoredDeck): Deck {
   return { ...stored, isBuiltIn: false };
 }
 
 /** Provides deck state (persisted to localStorage) to the tree. Wrap the app in this. */
 export function DecksProvider({ children }: { children: ReactNode }) {
+  const { t } = useTranslation();
   const [state, setState] = useState<PersistedState>(loadState);
 
   useEffect(() => {
     saveState(state);
   }, [state]);
 
-  const decks = useMemo<Deck[]>(() => [ALL_DECK, ...state.decks.map(toDeck)], [state.decks]);
+  const allDeck = useMemo<Deck>(
+    () => ({ id: ALL_DECK_ID, name: t('decks.allPokemon'), pokemonIds: [], isBuiltIn: true }),
+    [t],
+  );
+
+  const decks = useMemo<Deck[]>(
+    () => [allDeck, ...state.decks.map(toDeck)],
+    [allDeck, state.decks],
+  );
 
   const activeDeckId = useMemo(() => {
     if (state.activeDeckId === ALL_DECK_ID) return ALL_DECK_ID;
@@ -56,8 +64,8 @@ export function DecksProvider({ children }: { children: ReactNode }) {
   }, [state.activeDeckId, state.decks]);
 
   const activeDeck = useMemo(
-    () => decks.find((d) => d.id === activeDeckId) ?? ALL_DECK,
-    [decks, activeDeckId],
+    () => decks.find((d) => d.id === activeDeckId) ?? allDeck,
+    [decks, activeDeckId, allDeck],
   );
 
   const activePokemon = useMemo<Pokemon[]>(() => {
