@@ -37,7 +37,7 @@ export function FasterGame() {
   const [picked, setPicked] = useState<Pokemon | null>(null);
   const [outcome, setOutcome] = useState<Outcome | null>(null);
   const [streak, setStreak] = useState(0);
-  const [best, setBest] = useState(loadBestStreak);
+  const [best, setBest] = useState(() => loadBestStreak(activeDeckId));
 
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const clearTimers = () => {
@@ -65,6 +65,8 @@ export function FasterGame() {
     setPhase('idle');
     setPicked(null);
     setOutcome(null);
+    setStreak(0);
+    setBest(loadBestStreak(activeDeckId));
     setPair(drawPair());
     setNextPair(drawPair());
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -116,7 +118,7 @@ export function FasterGame() {
           setStreak(next);
           if (next > best) {
             setBest(next);
-            saveBestStreak(next);
+            saveBestStreak(activeDeckId, next);
           }
         }
       }, resolveAt),

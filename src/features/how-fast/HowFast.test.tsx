@@ -3,6 +3,7 @@ import { act, fireEvent, screen } from '@testing-library/react';
 import { HowFast } from './HowFast';
 import { loadBestStreak } from './bestStreak';
 import { DecksProvider } from '../../decks/DecksContext';
+import { ALL_DECK_ID } from '../../decks/store';
 import { getAllPokemon } from '../../lib/data';
 import { renderWithTheme } from '../../test/renderWithTheme';
 import { randomIndex } from '../random';
@@ -62,7 +63,7 @@ describe('HowFast', () => {
 
     expect(screen.queryByText('???')).toBeNull(); // revealed
     expect(streakValue()).toBe('1'); // streak advanced
-    expect(loadBestStreak()).toBe(1); // best persisted
+    expect(loadBestStreak(ALL_DECK_ID)).toBe(1); // best persisted per deck
     expect(screen.queryByRole('button', { name: 'Try again' })).toBeNull(); // no manual step
 
     advance(10000); // past the reveal + hold
