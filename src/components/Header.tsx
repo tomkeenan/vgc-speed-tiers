@@ -24,7 +24,7 @@ export function Header({ onOpenSettings }: HeaderProps) {
           component="h1"
           sx={{ fontSize: '1.5rem', fontWeight: 700, color: 'text.primary' }}
         >
-          VGC Speed Tiers
+          Just Move First
         </Typography>
       </Box>
 

@@ -14,7 +14,7 @@ describe('Header', () => {
       </DecksProvider>,
     );
 
-    expect(screen.getByRole('heading', { name: 'VGC Speed Tiers' })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: 'Just Move First' })).toBeTruthy();
 
     await userEvent.click(screen.getByRole('button', { name: 'Settings' }));
     expect(onOpenSettings).toHaveBeenCalledTimes(1);
