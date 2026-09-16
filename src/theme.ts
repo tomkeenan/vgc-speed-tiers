@@ -59,6 +59,19 @@ export const theme = createTheme({
     button: { textTransform: 'none', fontWeight: 600 },
   },
   components: {
+    MuiDialog: {
+      styleOverrides: {
+        // In dark mode MUI lightens elevated Paper with a translucent white "elevation
+        // overlay". At the Dialog's elevation 24 that overlay washes the intended dark
+        // surface (background.paper) into a muddy mid-gray, hurting contrast with the
+        // near-white text - and it has no light-mode equivalent, so the two modes diverge.
+        // Drop the overlay so the dialog keeps its solid background.paper in both schemes.
+        paper: ({ theme }) => ({
+          backgroundImage: 'none',
+          backgroundColor: theme.vars.palette.background.paper,
+        }),
+      },
+    },
     MuiTabs: {
       styleOverrides: {
         indicator: ({ theme }) => ({ backgroundColor: theme.vars.palette.text.primary }),
