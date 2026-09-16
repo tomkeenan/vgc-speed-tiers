@@ -15,6 +15,15 @@ const renderDialog = () =>
 describe('SettingsDialog', () => {
   beforeEach(() => localStorage.clear());
 
+  it('renders the Poke Ball icon inline in the explainer (self-closing <icon/> in the string)', () => {
+    renderDialog();
+
+    // The explainer uses <Trans> with an `icon` slot; a self-closing <icon/> tag keeps the
+    // component's own children, so the PokeballIcon SVG must actually render.
+    const explainer = screen.getByText(/A deck is a custom list/i).closest('p');
+    expect(explainer?.querySelectorAll('svg')).toHaveLength(1);
+  });
+
   it('creates a deck that starts collapsed and expands/collapses via the edit icon', () => {
     renderDialog();
 

@@ -79,7 +79,7 @@
     "close": "Sulje",
     "cancelCreate": "Peruuta",
     "language": "Kieli",
-    "explainer": "Pakka on mukautettu lista Pokémoneja. Valitse pakka otsikon <icon></icon>-valikosta käyttääksesi vain kyseisiä Pokémoneja jokaisessa pelitilassa. Sisäänrakennettu Kaikki Pokémonit -pakka käyttää koko aineistoa. Putket ovat sidottuja kuhunkin pakkaan ja tilaan, joten älä hätäänny, jos pakan vaihtaminen nollaa putkesi. Luo, muokkaa ja jaa omia pakkojasi alla.",
+    "explainer": "Pakka on mukautettu lista Pokémoneja. Valitse pakka otsikon <icon/>-valikosta käyttääksesi vain kyseisiä Pokémoneja jokaisessa pelitilassa. Sisäänrakennettu Kaikki Pokémonit -pakka käyttää koko aineistoa. Putket ovat sidottuja kuhunkin pakkaan ja tilaan, joten älä hätäänny, jos pakan vaihtaminen nollaa putkesi. Luo, muokkaa ja jaa omia pakkojasi alla.",
     "yourDecks": "Sinun pakkasi",
     "createDeck": "Luo pakka",
     "importDeck": "Tuo pakka",

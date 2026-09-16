@@ -79,7 +79,7 @@
     "close": "Close",
     "cancelCreate": "Cancel",
     "language": "Language",
-    "explainer": "A deck is a custom list of Pokemon. Pick one from the <icon></icon> menu in the header to use only those Pokemon in each game mode. The built-in All Pokemon deck uses the full dataset. Streaks are tied to each deck and mode, so don't panic if switching deck resets your streak. Create, edit, and share your own decks below.",
+    "explainer": "A deck is a custom list of Pokemon. Pick one from the <icon/> menu in the header to use only those Pokemon in each game mode. The built-in All Pokemon deck uses the full dataset. Streaks are tied to each deck and mode, so don't panic if switching deck resets your streak. Create, edit, and share your own decks below.",
     "yourDecks": "Your decks",
     "createDeck": "Create a deck",
     "importDeck": "Import a deck",
