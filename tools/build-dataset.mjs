@@ -1,5 +1,25 @@
 import { readFile, writeFile } from 'node:fs/promises';
-import { fetchPokemon } from './lib/pokeapi.mjs';
+import { fetchPokemon, fetchResource } from './lib/pokeapi.mjs';
+import { pickLocalizedNames } from './lib/languages.mjs';
+
+/**
+ * Collects localized display names for one Pokemon: the localized species name, overlaid with the
+ * localized form name where PokeAPI has one (so a form shows its own name, else the species name).
+ * Takes the /pokemon response and the roster id, returns `{ <lang>: name }` (possibly empty).
+ */
+async function fetchLocalizedNames(p, id) {
+  let names = {};
+  if (p.species?.url) {
+    const species = await fetchResource(p.species.url);
+    names = pickLocalizedNames(species.names);
+  }
+  const form = p.forms?.find((f) => f.name === id) ?? p.forms?.[0];
+  if (form?.url) {
+    const formData = await fetchResource(form.url);
+    names = { ...names, ...pickLocalizedNames(formData.names) };
+  }
+  return names;
+}
 
 // Stage 2: read data/roster.json, fetch each Pokemon from PokeAPI, and emit the factual
 // app dataset data/pokemon.json (base stats, types, sprite, usage). No speed math here.
@@ -52,10 +72,12 @@ for (const entry of roster.pokemon) {
     const remoteSprite =
       p.sprites?.other?.['official-artwork']?.front_default ?? p.sprites?.front_default ?? '';
     if (remoteSprite) spriteSources[entry.id] = remoteSprite;
+    const names = await fetchLocalizedNames(p, entry.id);
     pokemon.push({
       id: entry.id,
       num: speciesNum,
       name: entry.showdownName,
+      ...(Object.keys(names).length ? { names } : {}),
       types: p.types
         .sort((a, b) => a.slot - b.slot)
         .map((t) => t.type.name[0].toUpperCase() + t.type.name.slice(1)),

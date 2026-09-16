@@ -1,7 +1,19 @@
 import { readJson, writeJson } from './features/streakStore';
 
 /** Languages that ship with a translation bundle. The first entry is the fallback. */
-export const SUPPORTED_LANGUAGES = ['en', 'fi-FI'] as const;
+export const SUPPORTED_LANGUAGES = [
+  'en',
+  'fi-FI',
+  'fr',
+  'de',
+  'es',
+  'es-419',
+  'it',
+  'ja',
+  'ko',
+  'zh-hans',
+  'zh-hant',
+] as const;
 export type SupportedLanguage = (typeof SUPPORTED_LANGUAGES)[number];
 
 const STORAGE_KEY = 'vgc-speed-tiers/language';

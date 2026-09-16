@@ -43,6 +43,15 @@ const sectionLabelSx = {
 const LANGUAGE_NAMES: Record<SupportedLanguage, string> = {
   en: 'English',
   'fi-FI': 'Suomi',
+  fr: 'Français',
+  de: 'Deutsch',
+  es: 'Español',
+  'es-419': 'Español (Latinoamérica)',
+  it: 'Italiano',
+  ja: '日本語',
+  ko: '한국어',
+  'zh-hans': '简体中文',
+  'zh-hant': '繁體中文',
 };
 
 /**
@@ -62,7 +71,9 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
     ids.map((id) => byId.get(id)).filter((p): p is Pokemon => !!p);
 
   const [newName, setNewName] = useState('');
+  const [newNameError, setNewNameError] = useState(false);
   const [newMembers, setNewMembers] = useState<Pokemon[]>([]);
+  const [newMembersError, setNewMembersError] = useState(false);
   const [editing, setEditing] = useState<Set<string>>(new Set());
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [importText, setImportText] = useState('');
@@ -118,13 +129,19 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
 
   const saveNewDeck = () => {
     const name = newName.trim();
-    if (!name) return;
+    const nameMissing = !name;
+    const membersMissing = newMembers.length === 0;
+    setNewNameError(nameMissing);
+    setNewMembersError(membersMissing);
+    if (nameMissing || membersMissing) return;
     createDeck(
       name,
       newMembers.map((p) => p.id),
     );
     setNewName('');
+    setNewNameError(false);
     setNewMembers([]);
+    setNewMembersError(false);
     setCreating(false);
   };
 
@@ -147,114 +164,130 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
 
       <DialogContent dividers>
         <Stack spacing={2.5}>
-          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            <Trans
-              i18nKey="settings.explainer"
-              components={{
-                icon: (
-                  <Box
-                    component="span"
-                    sx={{ display: 'inline-flex', verticalAlign: 'text-bottom', mx: 0.25 }}
-                  >
-                    <PokeballIcon size={18} />
-                  </Box>
-                ),
-              }}
-            />
-          </Typography>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+            <Typography component="span" sx={sectionLabelSx}>
+              {t('settings.decks')}
+            </Typography>
+            <Stack spacing={1.25} sx={{ color: 'text.secondary' }}>
+              <Typography variant="body2">{t('settings.explainer.intro')}</Typography>
+              <Box
+                component="ul"
+                sx={{ m: 0, pl: 2.5, display: 'flex', flexDirection: 'column', gap: 0.75 }}
+              >
+                <Typography component="li" variant="body2">
+                  <Trans
+                    i18nKey="settings.explainer.pick"
+                    components={{
+                      icon: (
+                        <Box
+                          component="span"
+                          sx={{ display: 'inline-flex', verticalAlign: 'text-bottom', mx: 0.25 }}
+                        >
+                          <PokeballIcon size={18} />
+                        </Box>
+                      ),
+                    }}
+                  />
+                </Typography>
+                <Typography component="li" variant="body2">
+                  {t('settings.explainer.allDeck')}
+                </Typography>
+                <Typography component="li" variant="body2">
+                  {t('settings.explainer.streaks')}
+                </Typography>
+              </Box>
+              <Typography variant="body2">{t('settings.explainer.manage')}</Typography>
+            </Stack>
+          </Box>
 
           {userDecks.length > 0 && (
-            <>
-              <Divider />
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                <Typography component="span" sx={sectionLabelSx}>
-                  {t('settings.yourDecks')}
-                </Typography>
-                {userDecks.map((deck) => {
-                  const expanded = editing.has(deck.id);
-                  return (
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+              <Typography component="span" sx={sectionLabelSx}>
+                {t('settings.yourDecks')}
+              </Typography>
+              {userDecks.map((deck) => {
+                const expanded = editing.has(deck.id);
+                return (
+                  <Box
+                    key={deck.id}
+                    sx={{
+                      border: '1px solid',
+                      borderColor: 'divider',
+                      borderRadius: '12px',
+                      p: 1.5,
+                    }}
+                  >
                     <Box
-                      key={deck.id}
                       sx={{
-                        border: '1px solid',
-                        borderColor: 'divider',
-                        borderRadius: '12px',
-                        p: 1.5,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        gap: 1,
                       }}
                     >
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'space-between',
-                          gap: 1,
-                        }}
+                      <Typography sx={{ fontWeight: 600, minWidth: 0 }} noWrap>
+                        {deck.name}
+                        <Box component="span" sx={{ color: 'text.secondary', fontWeight: 400 }}>
+                          {` · ${deckSize(deck.id, deck.pokemonIds)}`}
+                        </Box>
+                      </Typography>
+                      <IconButton
+                        aria-label={
+                          expanded
+                            ? t('settings.collapse', { name: deck.name })
+                            : t('settings.edit', { name: deck.name })
+                        }
+                        aria-expanded={expanded}
+                        onClick={() => toggleEditing(deck.id)}
+                        size="small"
+                        sx={{ color: 'text.primary', flexShrink: 0 }}
                       >
-                        <Typography sx={{ fontWeight: 600, minWidth: 0 }} noWrap>
-                          {deck.name}
-                          <Box component="span" sx={{ color: 'text.secondary', fontWeight: 400 }}>
-                            {` · ${deckSize(deck.id, deck.pokemonIds)}`}
-                          </Box>
-                        </Typography>
-                        <IconButton
-                          aria-label={
-                            expanded
-                              ? t('settings.collapse', { name: deck.name })
-                              : t('settings.edit', { name: deck.name })
-                          }
-                          aria-expanded={expanded}
-                          onClick={() => toggleEditing(deck.id)}
-                          size="small"
-                          sx={{ color: 'text.primary', flexShrink: 0 }}
-                        >
-                          {expanded ? <CloseIcon /> : <EditIcon />}
-                        </IconButton>
-                      </Box>
-
-                      <Collapse in={expanded} unmountOnExit>
-                        <Stack spacing={1.5} sx={{ pt: 1.5 }}>
-                          <TextField
-                            label={t('settings.deckName')}
-                            value={deck.name}
-                            onChange={(e) => renameDeck(deck.id, e.target.value)}
-                            fullWidth
-                          />
-                          <MemberPicker
-                            label={t('settings.pokemon')}
-                            options={pool}
-                            value={membersOf(deck.pokemonIds)}
-                            onChange={(next) =>
-                              setDeckMembers(
-                                deck.id,
-                                next.map((p) => p.id),
-                              )
-                            }
-                          />
-                          <Stack
-                            direction={{ xs: 'column', sm: 'row' }}
-                            spacing={1}
-                            sx={{ alignSelf: { sm: 'flex-start' } }}
-                          >
-                            <Button
-                              variant="ghost"
-                              onClick={() => copyDeck(deck.id, deck.name, deck.pokemonIds)}
-                            >
-                              {copiedId === deck.id ? t('common.copied') : t('settings.exportDeck')}
-                            </Button>
-                            <Button variant="ghost" onClick={() => deleteDeck(deck.id)}>
-                              {t('settings.deleteDeck')}
-                            </Button>
-                          </Stack>
-                        </Stack>
-                      </Collapse>
+                        {expanded ? <CloseIcon /> : <EditIcon />}
+                      </IconButton>
                     </Box>
-                  );
-                })}
-              </Box>
-            </>
+
+                    <Collapse in={expanded} unmountOnExit>
+                      <Stack spacing={1.5} sx={{ pt: 1.5 }}>
+                        <TextField
+                          label={t('settings.deckName')}
+                          value={deck.name}
+                          onChange={(e) => renameDeck(deck.id, e.target.value)}
+                          fullWidth
+                        />
+                        <MemberPicker
+                          label={t('settings.pokemon')}
+                          options={pool}
+                          value={membersOf(deck.pokemonIds)}
+                          onChange={(next) =>
+                            setDeckMembers(
+                              deck.id,
+                              next.map((p) => p.id),
+                            )
+                          }
+                        />
+                        <Stack
+                          direction={{ xs: 'column', sm: 'row' }}
+                          spacing={1}
+                          sx={{ alignSelf: { sm: 'flex-start' } }}
+                        >
+                          <Button
+                            variant="ghost"
+                            onClick={() => copyDeck(deck.id, deck.name, deck.pokemonIds)}
+                          >
+                            {copiedId === deck.id ? t('common.copied') : t('settings.exportDeck')}
+                          </Button>
+                          <Button variant="ghost" onClick={() => deleteDeck(deck.id)}>
+                            {t('settings.deleteDeck')}
+                          </Button>
+                        </Stack>
+                      </Stack>
+                    </Collapse>
+                  </Box>
+                );
+              })}
+            </Box>
           )}
 
-          <Divider />
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
             <Box
               sx={{
@@ -282,27 +315,37 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
                 <TextField
                   label={t('settings.deckName')}
                   value={newName}
-                  onChange={(e) => setNewName(e.target.value)}
+                  onChange={(e) => {
+                    setNewName(e.target.value);
+                    if (newNameError) setNewNameError(false);
+                  }}
+                  error={newNameError}
+                  helperText={newNameError ? t('settings.deckNameRequired') : undefined}
                   fullWidth
                 />
-                <MemberPicker
-                  label={t('settings.pokemon')}
-                  options={pool}
-                  value={newMembers}
-                  onChange={setNewMembers}
-                />
-                <Button
-                  onClick={saveNewDeck}
-                  disabled={!newName.trim()}
-                  sx={{ alignSelf: { sm: 'flex-start' } }}
-                >
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+                  <MemberPicker
+                    label={t('settings.pokemon')}
+                    options={pool}
+                    value={newMembers}
+                    onChange={(next) => {
+                      setNewMembers(next);
+                      if (newMembersError && next.length > 0) setNewMembersError(false);
+                    }}
+                  />
+                  {newMembersError && (
+                    <Typography variant="caption" sx={{ color: 'error.main', px: 0.5 }}>
+                      {t('settings.deckMembersRequired')}
+                    </Typography>
+                  )}
+                </Box>
+                <Button onClick={saveNewDeck} sx={{ alignSelf: { sm: 'flex-start' } }}>
                   {t('settings.saveDeck')}
                 </Button>
               </Stack>
             </Collapse>
           </Box>
 
-          <Divider />
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
             <Box
               sx={{

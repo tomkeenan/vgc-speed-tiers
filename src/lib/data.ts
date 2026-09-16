@@ -27,6 +27,14 @@ export function getAllPokemon(): Pokemon[] {
   return pokemon;
 }
 
+/**
+ * The Pokemon's display name in the given language.
+ * Takes a Pokemon and a language tag, returns the localized name or the default English `name`.
+ */
+export function displayName(p: Pick<Pokemon, 'name' | 'names'>, lang: string): string {
+  return p.names?.[lang] ?? p.name;
+}
+
 /** Returns dataset metadata. */
 export function getMeta(): DatasetMeta {
   return dataset.meta;

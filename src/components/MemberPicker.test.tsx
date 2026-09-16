@@ -61,6 +61,21 @@ describe('MemberPicker', () => {
     expect(onChange).toHaveBeenCalledWith([]);
   });
 
+  it('shows the current selection as removable chips', () => {
+    const onChange = vi.fn();
+    renderWithTheme(
+      <MemberPicker
+        label="Pokemon"
+        options={[pikachu, bulbasaur]}
+        value={[pikachu]}
+        onChange={onChange}
+      />,
+    );
+    // The chip carries a delete control; clicking it removes that Pokemon from the selection.
+    fireEvent.click(screen.getByTestId('CancelIcon'));
+    expect(onChange).toHaveBeenCalledWith([]);
+  });
+
   it('filters the list by the search query without touching the selection', () => {
     renderWithTheme(
       <MemberPicker

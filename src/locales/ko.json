@@ -1,0 +1,128 @@
+{
+  "app": {
+    "title": "Just Move First"
+  },
+  "tabs": {
+    "flashcards": "플래시카드",
+    "faster": "누가 더 빠를까?",
+    "howFast": "얼마나 빠를까?"
+  },
+  "common": {
+    "baseSpeed": "기본 스피드",
+    "maxSpeed": "최대 스피드",
+    "tryAgain": "다시 시도",
+    "streak": "연속 정답",
+    "best": "최고 기록",
+    "noPokemon": "사용 가능한 포켓몬이 없습니다.",
+    "features": "기능",
+    "copied": "복사됨!"
+  },
+  "header": {
+    "settings": "설정"
+  },
+  "footer": {
+    "madeBy": "제작: tom",
+    "copyEmail": "이메일 주소 복사"
+  },
+  "themeToggle": {
+    "toLight": "라이트 모드로 전환",
+    "toDark": "다크 모드로 전환"
+  },
+  "deckSelector": {
+    "deckLabel": "덱: {{name}}"
+  },
+  "decks": {
+    "allPokemon": "모든 포켓몬"
+  },
+  "flashcards": {
+    "prompt": "카드를 탭하여 기본 스피드를 확인하세요.",
+    "next": "다음 포켓몬",
+    "cardAria": "{{name}} 플래시카드, 기본 스피드 {{state}}",
+    "showing": "표시 중",
+    "hiding": "숨김"
+  },
+  "howFast": {
+    "prompt": "이 포켓몬의 정확한 기본 스피드를 입력하세요.",
+    "cardAria": "{{name}} 카드",
+    "placeholder": "기본 스피드",
+    "inputAria": "기본 스피드 예측값",
+    "submit": "제출"
+  },
+  "faster": {
+    "promptBase": "어느 포켓몬의 기본 스피드가 더 높을까요?",
+    "prompt": "어느 포켓몬의 스피드가 더 높을까요?",
+    "chooseAria": "{{name}} 선택",
+    "needTwo": "이 덱으로 플레이하려면 포켓몬이 최소 두 마리 필요합니다. 설정에서 더 추가하세요.",
+    "noneClose": "이 덱에는 스피드 차이가 {{max}} 이하인 포켓몬 조합이 없습니다. 덱을 넓히거나 하드 모드를 끄세요.",
+    "hardMode": {
+      "title": "하드 모드",
+      "description": "스피드 차이 10 이내의 접전만. 무승부 없음."
+    },
+    "allowNatures": {
+      "title": "성격 허용",
+      "description": "레벨 50에서의 최대 스피드를 무보정과 +스피드 성격으로 비교합니다."
+    }
+  },
+  "natureBadge": {
+    "positive": "+스피드",
+    "neutral": "무보정"
+  },
+  "memberPicker": {
+    "searchPlaceholder": "포켓몬 검색",
+    "selectedCount": "{{n}}마리 선택됨",
+    "clear": "지우기",
+    "noMatches": "일치 항목 없음",
+    "optionsAria": "{{label}} 옵션"
+  },
+  "settings": {
+    "title": "설정",
+    "close": "닫기",
+    "cancelCreate": "취소",
+    "language": "언어",
+    "explainer": {
+      "intro": "덱은 포켓몬을 직접 고른 목록입니다.",
+      "pick": "헤더의 <icon/> 메뉴에서 하나를 선택하면 각 게임 모드에서 해당 포켓몬만 사용합니다.",
+      "allDeck": "기본 제공되는 모든 포켓몬 덱은 전체 데이터를 사용합니다.",
+      "streaks": "연속 정답은 각 덱과 모드에 연결되어 있으니 덱을 바꿔 연속 정답이 초기화되어도 당황하지 마세요.",
+      "manage": "아래에서 나만의 덱을 만들고 편집하고 공유하세요."
+    },
+    "yourDecks": "내 덱",
+    "createDeck": "덱 만들기",
+    "importDeck": "덱 가져오기",
+    "deckName": "덱 이름",
+    "pokemon": "포켓몬",
+    "exportDeck": "덱 내보내기",
+    "deleteDeck": "덱 삭제",
+    "saveDeck": "덱 저장",
+    "pasteDeckJson": "덱 JSON 붙여넣기",
+    "pastePlaceholder": "{ \"name\": \"내 덱\", \"pokemonIds\": [\"garchomp\", \"...\"] }",
+    "pasteHelper": "위 덱에서 복사한 JSON을 붙여넣으세요.",
+    "importButton": "덱 가져오기",
+    "noneInDataset": "해당 포켓몬은 현재 데이터셋에 없습니다.",
+    "edit": "{{name}} 편집",
+    "collapse": "{{name}} 접기",
+    "decks": "덱",
+    "deckNameRequired": "덱 이름을 입력하세요",
+    "deckMembersRequired": "포켓몬을 하나 이상 추가하세요"
+  },
+  "types": {
+    "normal": "노말",
+    "fire": "불꽃",
+    "water": "물",
+    "electric": "전기",
+    "grass": "풀",
+    "ice": "얼음",
+    "fighting": "격투",
+    "poison": "독",
+    "ground": "땅",
+    "flying": "비행",
+    "psychic": "에스퍼",
+    "bug": "벌레",
+    "rock": "바위",
+    "ghost": "고스트",
+    "dragon": "드래곤",
+    "dark": "악",
+    "steel": "강철",
+    "fairy": "페어리"
+  }
+}

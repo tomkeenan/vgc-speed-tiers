@@ -1,0 +1,128 @@
+{
+  "app": {
+    "title": "Just Move First"
+  },
+  "tabs": {
+    "flashcards": "フラッシュカード",
+    "faster": "どっちが速い？",
+    "howFast": "どれくらい速い？"
+  },
+  "common": {
+    "baseSpeed": "すばやさ種族値",
+    "maxSpeed": "最大すばやさ",
+    "tryAgain": "もう一度",
+    "streak": "連続正解",
+    "best": "最高記録",
+    "noPokemon": "利用できるポケモンがいません。",
+    "features": "機能",
+    "copied": "コピーしました！"
+  },
+  "header": {
+    "settings": "設定"
+  },
+  "footer": {
+    "madeBy": "作成者：tom",
+    "copyEmail": "メールアドレスをコピー"
+  },
+  "themeToggle": {
+    "toLight": "ライトモードに切り替え",
+    "toDark": "ダークモードに切り替え"
+  },
+  "deckSelector": {
+    "deckLabel": "デッキ：{{name}}"
+  },
+  "decks": {
+    "allPokemon": "すべてのポケモン"
+  },
+  "flashcards": {
+    "prompt": "カードをタップしてすばやさ種族値を表示します。",
+    "next": "次のポケモン",
+    "cardAria": "{{name}}のフラッシュカード、すばやさ種族値は{{state}}",
+    "showing": "表示中",
+    "hiding": "非表示"
+  },
+  "howFast": {
+    "prompt": "このポケモンの正確なすばやさ種族値を入力してください。",
+    "cardAria": "{{name}}のカード",
+    "placeholder": "すばやさ種族値",
+    "inputAria": "すばやさ種族値の予想",
+    "submit": "送信"
+  },
+  "faster": {
+    "promptBase": "すばやさ種族値が高いのはどちらのポケモン？",
+    "prompt": "すばやさが高いのはどちらのポケモン？",
+    "chooseAria": "{{name}}を選ぶ",
+    "needTwo": "このデッキでプレイするにはポケモンが2匹以上必要です。設定で追加してください。",
+    "noneClose": "このデッキにはすばやさの差が{{max}}以内のポケモンの組み合わせがありません。デッキを広げるか、ハードモードをオフにしてください。",
+    "hardMode": {
+      "title": "ハードモード",
+      "description": "接戦のみ、すばやさの差10以内。引き分けなし。"
+    },
+    "allowNatures": {
+      "title": "せいかくを許可",
+      "description": "レベル50での最大すばやさを、無補正と+すばやさ補正で比較します。"
+    }
+  },
+  "natureBadge": {
+    "positive": "+すば",
+    "neutral": "無補正"
+  },
+  "memberPicker": {
+    "searchPlaceholder": "ポケモンを検索",
+    "selectedCount": "{{n}}匹選択中",
+    "clear": "クリア",
+    "noMatches": "一致なし",
+    "optionsAria": "{{label}}のオプション"
+  },
+  "settings": {
+    "title": "設定",
+    "close": "閉じる",
+    "cancelCreate": "キャンセル",
+    "language": "言語",
+    "explainer": {
+      "intro": "デッキはポケモンのカスタムリストです。",
+      "pick": "ヘッダーの<icon/>メニューから選ぶと、各ゲームモードでそれらのポケモンだけを使えます。",
+      "allDeck": "内蔵の「すべてのポケモン」デッキは全データを使用します。",
+      "streaks": "連続正解は各デッキとモードに紐づいているので、デッキを切り替えて連続正解がリセットされても慌てないでください。",
+      "manage": "下から自分のデッキを作成・編集・共有できます。"
+    },
+    "yourDecks": "あなたのデッキ",
+    "createDeck": "デッキを作成",
+    "importDeck": "デッキをインポート",
+    "deckName": "デッキ名",
+    "pokemon": "ポケモン",
+    "exportDeck": "デッキをエクスポート",
+    "deleteDeck": "デッキを削除",
+    "saveDeck": "デッキを保存",
+    "pasteDeckJson": "デッキのJSONを貼り付け",
+    "pastePlaceholder": "{ \"name\": \"マイデッキ\", \"pokemonIds\": [\"garchomp\", \"...\"] }",
+    "pasteHelper": "上のデッキからコピーしたJSONを貼り付けてください。",
+    "importButton": "デッキをインポート",
+    "noneInDataset": "それらのポケモンは現在のデータセットに含まれていません。",
+    "edit": "{{name}}を編集",
+    "collapse": "{{name}}を折りたたむ",
+    "decks": "デッキ",
+    "deckNameRequired": "デッキ名を入力してください",
+    "deckMembersRequired": "ポケモンを1匹以上追加してください"
+  },
+  "types": {
+    "normal": "ノーマル",
+    "fire": "ほのお",
+    "water": "みず",
+    "electric": "でんき",
+    "grass": "くさ",
+    "ice": "こおり",
+    "fighting": "かくとう",
+    "poison": "どく",
+    "ground": "じめん",
+    "flying": "ひこう",
+    "psychic": "エスパー",
+    "bug": "むし",
+    "rock": "いわ",
+    "ghost": "ゴースト",
+    "dragon": "ドラゴン",
+    "dark": "あく",
+    "steel": "はがね",
+    "fairy": "フェアリー"
+  }
+}

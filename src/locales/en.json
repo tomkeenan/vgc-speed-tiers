@@ -79,7 +79,13 @@
     "close": "Close",
     "cancelCreate": "Cancel",
     "language": "Language",
-    "explainer": "A deck is a custom list of Pokemon. Pick one from the <icon/> menu in the header to use only those Pokemon in each game mode. The built-in All Pokemon deck uses the full dataset. Streaks are tied to each deck and mode, so don't panic if switching deck resets your streak. Create, edit, and share your own decks below.",
+    "explainer": {
+      "intro": "A deck is a custom list of Pokemon.",
+      "pick": "Pick one from the <icon/> menu in the header to use only those Pokemon in each game mode.",
+      "allDeck": "The built-in All Pokemon deck uses the full dataset.",
+      "streaks": "Streaks are tied to each deck and mode, so don't panic if switching a deck resets your streak.",
+      "manage": "Create, edit, and share your own decks below."
+    },
     "yourDecks": "Your decks",
     "createDeck": "Create a deck",
     "importDeck": "Import a deck",
@@ -94,6 +100,29 @@
     "importButton": "Import deck",
     "noneInDataset": "None of those Pokemon are in the current dataset.",
     "edit": "Edit {{name}}",
-    "collapse": "Collapse {{name}}"
+    "collapse": "Collapse {{name}}",
+    "decks": "Decks",
+    "deckNameRequired": "Enter a deck name",
+    "deckMembersRequired": "Add at least one Pokemon"
+  },
+  "types": {
+    "normal": "Normal",
+    "fire": "Fire",
+    "water": "Water",
+    "electric": "Electric",
+    "grass": "Grass",
+    "ice": "Ice",
+    "fighting": "Fighting",
+    "poison": "Poison",
+    "ground": "Ground",
+    "flying": "Flying",
+    "psychic": "Psychic",
+    "bug": "Bug",
+    "rock": "Rock",
+    "ghost": "Ghost",
+    "dragon": "Dragon",
+    "dark": "Dark",
+    "steel": "Steel",
+    "fairy": "Fairy"
   }
 }

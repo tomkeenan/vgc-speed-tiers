@@ -8,6 +8,8 @@ export interface Pokemon {
   id: string;
   num: number;
   name: string;
+  /** Localized display names keyed by language tag; English stays in `name`. Sparse - the UI falls back to `name`. */
+  names?: Record<string, string>;
   types: string[];
   baseStats: BaseStats;
   sprite: string;

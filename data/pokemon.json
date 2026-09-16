@@ -1,7 +1,7 @@
 {
   "meta": {
     "format": "gen9championsvgc2026",
-    "generatedAt": "2026-09-15T11:35:39.973Z",
+    "generatedAt": "2026-09-16T13:56:35.039Z",
     "level": 50,
     "count": 314,
     "source": "pokeapi.co + https://pkmn.github.io/smogon/data/stats/gen9championsvgc2026.json + manual Reg-MC additions (data/reg-mc-additions.json, data/manual-pokemon.json)"
@@ -11,6 +11,17 @@
       "id": "kingambit",
       "num": 983,
       "name": "Kingambit",
+      "names": {
+        "fr": "Scalpereur",
+        "de": "Gladimperio",
+        "es": "Kingambit",
+        "es-419": "Kingambit",
+        "it": "Kingambit",
+        "ja": "ドドゲザン",
+        "ko": "대도각참",
+        "zh-hans": "仆刀将军",
+        "zh-hant": "仆刀將軍"
+      },
       "types": [
         "Dark",
         "Steel"
@@ -31,6 +42,17 @@
       "id": "basculegion-male",
       "num": 902,
       "name": "Basculegion",
+      "names": {
+        "fr": "Paragruel Mâle",
+        "de": "Salmagnis",
+        "es": "Basculegion",
+        "es-419": "Basculegion",
+        "it": "Basculegion",
+        "ja": "イダイトウ",
+        "ko": "대쓰여너",
+        "zh-hans": "幽尾玄鱼",
+        "zh-hant": "幽尾玄魚"
+      },
       "types": [
         "Water",
         "Ghost"
@@ -51,6 +73,17 @@
       "id": "garchomp",
       "num": 445,
       "name": "Garchomp",
+      "names": {
+        "fr": "Carchacrok",
+        "de": "Knakrack",
+        "es": "Garchomp",
+        "es-419": "Garchomp",
+        "it": "Garchomp",
+        "ja": "ガブリアス",
+        "ko": "한카리아스",
+        "zh-hans": "烈咬陆鲨",
+        "zh-hant": "烈咬陸鯊"
+      },
       "types": [
         "Dragon",
         "Ground"
@@ -71,6 +104,17 @@
       "id": "incineroar",
       "num": 727,
       "name": "Incineroar",
+      "names": {
+        "fr": "Félinferno",
+        "de": "Fuegro",
+        "es": "Incineroar",
+        "es-419": "Incineroar",
+        "it": "Incineroar",
+        "ja": "ガオガエン",
+        "ko": "어흥염",
+        "zh-hans": "炽焰咆哮虎",
+        "zh-hant": "熾焰咆哮虎"
+      },
       "types": [
         "Fire",
         "Dark"
@@ -91,6 +135,17 @@
       "id": "sneasler",
       "num": 903,
       "name": "Sneasler",
+      "names": {
+        "fr": "Farfurex",
+        "de": "Snieboss",
+        "es": "Sneasler",
+        "es-419": "Sneasler",
+        "it": "Sneasler",
+        "ja": "オオニューラ",
+        "ko": "포푸니크",
+        "zh-hans": "大狃拉",
+        "zh-hant": "大狃拉"
+      },
       "types": [
         "Fighting",
         "Poison"
@@ -111,6 +166,17 @@
       "id": "whimsicott",
       "num": 547,
       "name": "Whimsicott",
+      "names": {
+        "fr": "Farfaduvet",
+        "de": "Elfun",
+        "es": "Whimsicott",
+        "es-419": "Whimsicott",
+        "it": "Whimsicott",
+        "ja": "エルフーン",
+        "ko": "엘풍",
+        "zh-hans": "风妖精",
+        "zh-hant": "風妖精"
+      },
       "types": [
         "Grass",
         "Fairy"
@@ -131,6 +197,17 @@
       "id": "sinistcha",
       "num": 1013,
       "name": "Sinistcha",
+      "names": {
+        "fr": "Théffroyable Forme Médiocre",
+        "de": "Fatalitcha",
+        "es": "Sinistcha",
+        "es-419": "Sinistcha",
+        "it": "Sinistcha",
+        "ja": "ヤバソチャ",
+        "ko": "그우린차",
+        "zh-hans": "来悲粗茶",
+        "zh-hant": "來悲粗茶"
+      },
       "types": [
         "Grass",
         "Ghost"
@@ -151,6 +228,17 @@
       "id": "farigiraf",
       "num": 981,
       "name": "Farigiraf",
+      "names": {
+        "fr": "Farigiraf",
+        "de": "Farigiraf",
+        "es": "Farigiraf",
+        "es-419": "Farigiraf",
+        "it": "Farigiraf",
+        "ja": "リキキリン",
+        "ko": "키키링",
+        "zh-hans": "奇麒麟",
+        "zh-hant": "奇麒麟"
+      },
       "types": [
         "Normal",
         "Psychic"
@@ -171,6 +259,17 @@
       "id": "charizard-mega-y",
       "num": 6,
       "name": "Charizard-Mega-Y",
+      "names": {
+        "fr": "Méga-Dracaufeu Y",
+        "de": "Mega-Glurak Y",
+        "es": "Charizard",
+        "es-419": "Charizard",
+        "it": "Charizard",
+        "ja": "リザードン",
+        "ko": "리자몽",
+        "zh-hans": "喷火龙",
+        "zh-hant": "噴火龍"
+      },
       "types": [
         "Fire",
         "Flying"
@@ -191,6 +290,17 @@
       "id": "staraptor-mega",
       "num": 398,
       "name": "Staraptor-Mega",
+      "names": {
+        "fr": "Méga-Étouraptor",
+        "de": "Staraptor",
+        "es": "Staraptor",
+        "es-419": "Staraptor",
+        "it": "Staraptor",
+        "ja": "ムクホーク",
+        "ko": "찌르호크",
+        "zh-hans": "姆克鹰",
+        "zh-hant": "姆克鷹"
+      },
       "types": [
         "Fighting",
         "Flying"
@@ -211,6 +321,17 @@
       "id": "sylveon",
       "num": 700,
       "name": "Sylveon",
+      "names": {
+        "fr": "Nymphali",
+        "de": "Feelinara",
+        "es": "Sylveon",
+        "es-419": "Sylveon",
+        "it": "Sylveon",
+        "ja": "ニンフィア",
+        "ko": "님피아",
+        "zh-hans": "仙子伊布",
+        "zh-hant": "仙子伊布"
+      },
       "types": [
         "Fairy"
       ],
@@ -230,6 +351,17 @@
       "id": "floette-mega",
       "num": 670,
       "name": "Floette-Mega",
+      "names": {
+        "fr": "Méga-Floette",
+        "de": "Floette",
+        "es": "Floette",
+        "es-419": "Floette",
+        "it": "Floette",
+        "ja": "フラエッテ",
+        "ko": "플라엣테",
+        "zh-hans": "花叶蒂",
+        "zh-hant": "花葉蒂"
+      },
       "types": [
         "Fairy"
       ],
@@ -249,6 +381,17 @@
       "id": "raichu-mega-y",
       "num": 26,
       "name": "Raichu-Mega-Y",
+      "names": {
+        "fr": "Méga-Raichu Y",
+        "de": "Raichu",
+        "es": "Raichu",
+        "es-419": "Raichu",
+        "it": "Raichu",
+        "ja": "ライチュウ",
+        "ko": "라이츄",
+        "zh-hans": "雷丘",
+        "zh-hant": "雷丘"
+      },
       "types": [
         "Electric"
       ],
@@ -268,6 +411,17 @@
       "id": "archaludon",
       "num": 1018,
       "name": "Archaludon",
+      "names": {
+        "fr": "Pondralugon",
+        "de": "Briduradon",
+        "es": "Archaludon",
+        "es-419": "Archaludon",
+        "it": "Archaludon",
+        "ja": "ブリジュラス",
+        "ko": "브리두라스",
+        "zh-hans": "铝钢桥龙",
+        "zh-hant": "鋁鋼橋龍"
+      },
       "types": [
         "Steel",
         "Dragon"
@@ -288,6 +442,17 @@
       "id": "gholdengo",
       "num": 1000,
       "name": "Gholdengo",
+      "names": {
+        "fr": "Gromago",
+        "de": "Monetigo",
+        "es": "Gholdengo",
+        "es-419": "Gholdengo",
+        "it": "Gholdengo",
+        "ja": "サーフゴー",
+        "ko": "타부자고",
+        "zh-hans": "赛富豪",
+        "zh-hant": "賽富豪"
+      },
       "types": [
         "Steel",
         "Ghost"
@@ -308,6 +473,17 @@
       "id": "delphox-mega",
       "num": 655,
       "name": "Delphox-Mega",
+      "names": {
+        "fr": "Méga-Goupelin",
+        "de": "Fennexis",
+        "es": "Delphox",
+        "es-419": "Delphox",
+        "it": "Delphox",
+        "ja": "マフォクシー",
+        "ko": "마폭시",
+        "zh-hans": "妖火红狐",
+        "zh-hant": "妖火紅狐"
+      },
       "types": [
         "Fire",
         "Psychic"
@@ -328,6 +504,17 @@
       "id": "pelipper",
       "num": 279,
       "name": "Pelipper",
+      "names": {
+        "fr": "Bekipan",
+        "de": "Pelipper",
+        "es": "Pelipper",
+        "es-419": "Pelipper",
+        "it": "Pelipper",
+        "ja": "ペリッパー",
+        "ko": "패리퍼",
+        "zh-hans": "大嘴鸥",
+        "zh-hant": "大嘴鷗"
+      },
       "types": [
         "Water",
         "Flying"
@@ -348,6 +535,17 @@
       "id": "blastoise-mega",
       "num": 9,
       "name": "Blastoise-Mega",
+      "names": {
+        "fr": "Méga-Tortank",
+        "de": "Mega-Turtok",
+        "es": "Blastoise",
+        "es-419": "Blastoise",
+        "it": "Blastoise",
+        "ja": "カメックス",
+        "ko": "거북왕",
+        "zh-hans": "水箭龟",
+        "zh-hant": "水箭龜"
+      },
       "types": [
         "Water"
       ],
@@ -367,6 +565,17 @@
       "id": "grimmsnarl",
       "num": 861,
       "name": "Grimmsnarl",
+      "names": {
+        "fr": "Angoliath",
+        "de": "Olangaar",
+        "es": "Grimmsnarl",
+        "es-419": "Grimmsnarl",
+        "it": "Grimmsnarl",
+        "ja": "オーロンゲ",
+        "ko": "오롱털",
+        "zh-hans": "长毛巨魔",
+        "zh-hant": "長毛巨魔"
+      },
       "types": [
         "Dark",
         "Fairy"
@@ -387,6 +596,17 @@
       "id": "froslass-mega",
       "num": 478,
       "name": "Froslass-Mega",
+      "names": {
+        "fr": "Méga-Momartik",
+        "de": "Frosdedje",
+        "es": "Froslass",
+        "es-419": "Froslass",
+        "it": "Froslass",
+        "ja": "ユキメノコ",
+        "ko": "눈여아",
+        "zh-hans": "雪妖女",
+        "zh-hant": "雪妖女"
+      },
       "types": [
         "Ice",
         "Ghost"
@@ -407,6 +627,17 @@
       "id": "milotic",
       "num": 350,
       "name": "Milotic",
+      "names": {
+        "fr": "Milobellus",
+        "de": "Milotic",
+        "es": "Milotic",
+        "es-419": "Milotic",
+        "it": "Milotic",
+        "ja": "ミロカロス",
+        "ko": "밀로틱",
+        "zh-hans": "美纳斯",
+        "zh-hant": "美納斯"
+      },
       "types": [
         "Water"
       ],
@@ -426,6 +657,17 @@
       "id": "maushold-family-of-four",
       "num": 925,
       "name": "Maushold",
+      "names": {
+        "fr": "Famignol Famille de Quatre",
+        "de": "Famieps",
+        "es": "Maushold",
+        "es-419": "Maushold",
+        "it": "Maushold",
+        "ja": "イッカネズミ",
+        "ko": "파밀리쥐",
+        "zh-hans": "一家鼠",
+        "zh-hant": "一家鼠"
+      },
       "types": [
         "Normal"
       ],
@@ -445,6 +687,17 @@
       "id": "aerodactyl-mega",
       "num": 142,
       "name": "Aerodactyl-Mega",
+      "names": {
+        "fr": "Méga-Ptéra",
+        "de": "Mega-Aerodactyl",
+        "es": "Aerodactyl",
+        "es-419": "Aerodactyl",
+        "it": "Aerodactyl",
+        "ja": "プテラ",
+        "ko": "프테라",
+        "zh-hans": "化石翼龙",
+        "zh-hant": "化石翼龍"
+      },
       "types": [
         "Rock",
         "Flying"
@@ -465,6 +718,17 @@
       "id": "swampert-mega",
       "num": 260,
       "name": "Swampert-Mega",
+      "names": {
+        "fr": "Méga-Laggron",
+        "de": "Mega-Sumpex",
+        "es": "Swampert",
+        "es-419": "Swampert",
+        "it": "Swampert",
+        "ja": "ラグラージ",
+        "ko": "대짱이",
+        "zh-hans": "巨沼怪",
+        "zh-hant": "巨沼怪"
+      },
       "types": [
         "Water",
         "Ground"
@@ -485,6 +749,17 @@
       "id": "ninetales-alola",
       "num": 38,
       "name": "Ninetales-Alola",
+      "names": {
+        "fr": "Feunard d’Alola",
+        "de": "Alola Vulnona",
+        "es": "Ninetales",
+        "es-419": "Ninetales",
+        "it": "Ninetales",
+        "ja": "キュウコン",
+        "ko": "나인테일",
+        "zh-hans": "九尾",
+        "zh-hant": "九尾"
+      },
       "types": [
         "Ice",
         "Fairy"
@@ -505,6 +780,17 @@
       "id": "tyranitar-mega",
       "num": 248,
       "name": "Tyranitar-Mega",
+      "names": {
+        "fr": "Méga-Tyranocif",
+        "de": "Mega-Despotar",
+        "es": "Tyranitar",
+        "es-419": "Tyranitar",
+        "it": "Tyranitar",
+        "ja": "バンギラス",
+        "ko": "마기라스",
+        "zh-hans": "班基拉斯",
+        "zh-hant": "班基拉斯"
+      },
       "types": [
         "Rock",
         "Dark"
@@ -525,6 +811,17 @@
       "id": "venusaur",
       "num": 3,
       "name": "Venusaur",
+      "names": {
+        "fr": "Florizarre",
+        "de": "Bisaflor",
+        "es": "Venusaur",
+        "es-419": "Venusaur",
+        "it": "Venusaur",
+        "ja": "フシギバナ",
+        "ko": "이상해꽃",
+        "zh-hans": "妙蛙花",
+        "zh-hant": "妙蛙花"
+      },
       "types": [
         "Grass",
         "Poison"
@@ -545,6 +842,17 @@
       "id": "gengar-mega",
       "num": 94,
       "name": "Gengar-Mega",
+      "names": {
+        "fr": "Méga-Ectoplasma",
+        "de": "Mega-Gengar",
+        "es": "Gengar",
+        "es-419": "Gengar",
+        "it": "Gengar",
+        "ja": "ゲンガー",
+        "ko": "팬텀",
+        "zh-hans": "耿鬼",
+        "zh-hant": "耿鬼"
+      },
       "types": [
         "Ghost",
         "Poison"
@@ -565,6 +873,17 @@
       "id": "arcanine-hisui",
       "num": 59,
       "name": "Arcanine-Hisui",
+      "names": {
+        "fr": "Arcanin de Hisui",
+        "de": "Hisui Arkani",
+        "es": "Arcanine",
+        "es-419": "Arcanine",
+        "it": "Arcanine",
+        "ja": "ウインディ",
+        "ko": "윈디",
+        "zh-hans": "风速狗",
+        "zh-hant": "風速狗"
+      },
       "types": [
         "Fire",
         "Rock"
@@ -585,6 +904,17 @@
       "id": "torkoal",
       "num": 324,
       "name": "Torkoal",
+      "names": {
+        "fr": "Chartor",
+        "de": "Qurtel",
+        "es": "Torkoal",
+        "es-419": "Torkoal",
+        "it": "Torkoal",
+        "ja": "コータス",
+        "ko": "코터스",
+        "zh-hans": "煤炭龟",
+        "zh-hant": "煤炭龜"
+      },
       "types": [
         "Fire"
       ],
@@ -604,6 +934,17 @@
       "id": "excadrill",
       "num": 530,
       "name": "Excadrill",
+      "names": {
+        "fr": "Minotaupe",
+        "de": "Stalobor",
+        "es": "Excadrill",
+        "es-419": "Excadrill",
+        "it": "Excadrill",
+        "ja": "ドリュウズ",
+        "ko": "몰드류",
+        "zh-hans": "龙头地鼠",
+        "zh-hant": "龍頭地鼠"
+      },
       "types": [
         "Ground",
         "Steel"
@@ -624,6 +965,17 @@
       "id": "metagross-mega",
       "num": 376,
       "name": "Metagross-Mega",
+      "names": {
+        "fr": "Méga-Métalosse",
+        "de": "Mega-Metagross",
+        "es": "Metagross",
+        "es-419": "Metagross",
+        "it": "Metagross",
+        "ja": "メタグロス",
+        "ko": "메타그로스",
+        "zh-hans": "巨金怪",
+        "zh-hant": "巨金怪"
+      },
       "types": [
         "Steel",
         "Psychic"
@@ -644,6 +996,17 @@
       "id": "scovillain-mega",
       "num": 952,
       "name": "Scovillain-Mega",
+      "names": {
+        "fr": "Méga-Scovilain",
+        "de": "Halupenjo",
+        "es": "Scovillain",
+        "es-419": "Scovillain",
+        "it": "Scovillain",
+        "ja": "スコヴィラン",
+        "ko": "스코빌런",
+        "zh-hans": "狠辣椒",
+        "zh-hant": "狠辣椒"
+      },
       "types": [
         "Grass",
         "Fire"
@@ -664,6 +1027,17 @@
       "id": "kommo-o",
       "num": 784,
       "name": "Kommo-o",
+      "names": {
+        "fr": "Ékaïser",
+        "de": "Grandiras",
+        "es": "Kommo-o",
+        "es-419": "Kommo-o",
+        "it": "Kommo-o",
+        "ja": "ジャラランガ",
+        "ko": "짜랑고우거",
+        "zh-hans": "杖尾鳞甲龙",
+        "zh-hant": "杖尾鱗甲龍"
+      },
       "types": [
         "Dragon",
         "Fighting"
@@ -684,6 +1058,17 @@
       "id": "glimmora",
       "num": 970,
       "name": "Glimmora",
+      "names": {
+        "fr": "Floréclat",
+        "de": "Lumiflora",
+        "es": "Glimmora",
+        "es-419": "Glimmora",
+        "it": "Glimmora",
+        "ja": "キラフロル",
+        "ko": "킬라플로르",
+        "zh-hans": "晶光花",
+        "zh-hant": "晶光花"
+      },
       "types": [
         "Rock",
         "Poison"
@@ -704,6 +1089,17 @@
       "id": "politoed",
       "num": 186,
       "name": "Politoed",
+      "names": {
+        "fr": "Tarpaud",
+        "de": "Quaxo",
+        "es": "Politoed",
+        "es-419": "Politoed",
+        "it": "Politoed",
+        "ja": "ニョロトノ",
+        "ko": "왕구리",
+        "zh-hans": "蚊香蛙皇",
+        "zh-hant": "蚊香蛙皇"
+      },
       "types": [
         "Water"
       ],
@@ -723,6 +1119,17 @@
       "id": "dragonite-mega",
       "num": 149,
       "name": "Dragonite-Mega",
+      "names": {
+        "fr": "Méga-Dracolosse",
+        "de": "Dragoran",
+        "es": "Dragonite",
+        "es-419": "Dragonite",
+        "it": "Dragonite",
+        "ja": "カイリュー",
+        "ko": "망나뇽",
+        "zh-hans": "快龙",
+        "zh-hant": "快龍"
+      },
       "types": [
         "Dragon",
         "Flying"
@@ -743,6 +1150,17 @@
       "id": "dragonite",
       "num": 149,
       "name": "Dragonite",
+      "names": {
+        "fr": "Dracolosse",
+        "de": "Dragoran",
+        "es": "Dragonite",
+        "es-419": "Dragonite",
+        "it": "Dragonite",
+        "ja": "カイリュー",
+        "ko": "망나뇽",
+        "zh-hans": "快龙",
+        "zh-hant": "快龍"
+      },
       "types": [
         "Dragon",
         "Flying"
@@ -763,6 +1181,17 @@
       "id": "mawile-mega",
       "num": 303,
       "name": "Mawile-Mega",
+      "names": {
+        "fr": "Méga-Mysdibule",
+        "de": "Mega-Flunkifer",
+        "es": "Mawile",
+        "es-419": "Mawile",
+        "it": "Mawile",
+        "ja": "クチート",
+        "ko": "입치트",
+        "zh-hans": "大嘴娃",
+        "zh-hant": "大嘴娃"
+      },
       "types": [
         "Steel",
         "Fairy"
@@ -783,6 +1212,17 @@
       "id": "talonflame",
       "num": 663,
       "name": "Talonflame",
+      "names": {
+        "fr": "Flambusard",
+        "de": "Fiaro",
+        "es": "Talonflame",
+        "es-419": "Talonflame",
+        "it": "Talonflame",
+        "ja": "ファイアロー",
+        "ko": "파이어로",
+        "zh-hans": "烈箭鹰",
+        "zh-hant": "烈箭鷹"
+      },
       "types": [
         "Fire",
         "Flying"
@@ -803,6 +1243,17 @@
       "id": "venusaur-mega",
       "num": 3,
       "name": "Venusaur-Mega",
+      "names": {
+        "fr": "Méga-Florizarre",
+        "de": "Mega-Bisaflor",
+        "es": "Venusaur",
+        "es-419": "Venusaur",
+        "it": "Venusaur",
+        "ja": "フシギバナ",
+        "ko": "이상해꽃",
+        "zh-hans": "妙蛙花",
+        "zh-hant": "妙蛙花"
+      },
       "types": [
         "Grass",
         "Poison"
@@ -823,6 +1274,17 @@
       "id": "tyranitar",
       "num": 248,
       "name": "Tyranitar",
+      "names": {
+        "fr": "Tyranocif",
+        "de": "Despotar",
+        "es": "Tyranitar",
+        "es-419": "Tyranitar",
+        "it": "Tyranitar",
+        "ja": "バンギラス",
+        "ko": "마기라스",
+        "zh-hans": "班基拉斯",
+        "zh-hant": "班基拉斯"
+      },
       "types": [
         "Rock",
         "Dark"
@@ -843,6 +1305,17 @@
       "id": "toxapex",
       "num": 748,
       "name": "Toxapex",
+      "names": {
+        "fr": "Prédastérie",
+        "de": "Aggrostella",
+        "es": "Toxapex",
+        "es-419": "Toxapex",
+        "it": "Toxapex",
+        "ja": "ドヒドイデ",
+        "ko": "더시마사리",
+        "zh-hans": "超坏星",
+        "zh-hant": "超壞星"
+      },
       "types": [
         "Poison",
         "Water"
@@ -863,6 +1336,17 @@
       "id": "sableye",
       "num": 302,
       "name": "Sableye",
+      "names": {
+        "fr": "Ténéfix",
+        "de": "Zobiris",
+        "es": "Sableye",
+        "es-419": "Sableye",
+        "it": "Sableye",
+        "ja": "ヤミラミ",
+        "ko": "깜까미",
+        "zh-hans": "勾魂眼",
+        "zh-hant": "勾魂眼"
+      },
       "types": [
         "Dark",
         "Ghost"
@@ -883,6 +1367,17 @@
       "id": "vivillon",
       "num": 666,
       "name": "Vivillon",
+      "names": {
+        "fr": "Prismillon Floraison",
+        "de": "Vivillon (Blumen)",
+        "es": "Vivillon",
+        "es-419": "Vivillon",
+        "it": "Vivillon",
+        "ja": "ビビヨン",
+        "ko": "비비용",
+        "zh-hans": "彩粉蝶",
+        "zh-hant": "彩粉蝶"
+      },
       "types": [
         "Bug",
         "Flying"
@@ -903,6 +1398,17 @@
       "id": "blaziken-mega",
       "num": 257,
       "name": "Blaziken-Mega",
+      "names": {
+        "fr": "Méga-Braségali",
+        "de": "Mega-Lohgock",
+        "es": "Blaziken",
+        "es-419": "Blaziken",
+        "it": "Blaziken",
+        "ja": "バシャーモ",
+        "ko": "번치코",
+        "zh-hans": "火焰鸡",
+        "zh-hant": "火焰雞"
+      },
       "types": [
         "Fire",
         "Fighting"
@@ -923,6 +1429,17 @@
       "id": "annihilape",
       "num": 979,
       "name": "Annihilape",
+      "names": {
+        "fr": "Courrousinge",
+        "de": "Epitaff",
+        "es": "Annihilape",
+        "es-419": "Annihilape",
+        "it": "Annihilape",
+        "ja": "コノヨザル",
+        "ko": "저승갓숭",
+        "zh-hans": "弃世猴",
+        "zh-hant": "棄世猴"
+      },
       "types": [
         "Fighting",
         "Ghost"
@@ -943,6 +1460,17 @@
       "id": "corviknight",
       "num": 823,
       "name": "Corviknight",
+      "names": {
+        "fr": "Corvaillus",
+        "de": "Krarmor",
+        "es": "Corviknight",
+        "es-419": "Corviknight",
+        "it": "Corviknight",
+        "ja": "アーマーガア",
+        "ko": "아머까오",
+        "zh-hans": "钢铠鸦",
+        "zh-hant": "鋼鎧鴉"
+      },
       "types": [
         "Flying",
         "Steel"
@@ -963,6 +1491,17 @@
       "id": "primarina",
       "num": 730,
       "name": "Primarina",
+      "names": {
+        "fr": "Oratoria",
+        "de": "Primarene",
+        "es": "Primarina",
+        "es-419": "Primarina",
+        "it": "Primarina",
+        "ja": "アシレーヌ",
+        "ko": "누리레느",
+        "zh-hans": "西狮海壬",
+        "zh-hant": "西獅海壬"
+      },
       "types": [
         "Water",
         "Fairy"
@@ -983,6 +1522,17 @@
       "id": "tsareena",
       "num": 763,
       "name": "Tsareena",
+      "names": {
+        "fr": "Sucreine",
+        "de": "Fruyal",
+        "es": "Tsareena",
+        "es-419": "Tsareena",
+        "it": "Tsareena",
+        "ja": "アマージョ",
+        "ko": "달코퀸",
+        "zh-hans": "甜冷美后",
+        "zh-hant": "甜冷美后"
+      },
       "types": [
         "Grass"
       ],
@@ -1002,6 +1552,17 @@
       "id": "ceruledge",
       "num": 937,
       "name": "Ceruledge",
+      "names": {
+        "fr": "Malvalame",
+        "de": "Azugladis",
+        "es": "Ceruledge",
+        "es-419": "Ceruledge",
+        "it": "Ceruledge",
+        "ja": "ソウブレイズ",
+        "ko": "파라블레이즈",
+        "zh-hans": "苍炎刃鬼",
+        "zh-hant": "蒼炎刃鬼"
+      },
       "types": [
         "Fire",
         "Ghost"
@@ -1022,6 +1583,17 @@
       "id": "rotom-wash",
       "num": 479,
       "name": "Rotom-Wash",
+      "names": {
+        "fr": "Motisma Lavage",
+        "de": "Wasch-Rotom",
+        "es": "Rotom",
+        "es-419": "Rotom",
+        "it": "Rotom",
+        "ja": "ロトム",
+        "ko": "로토무",
+        "zh-hans": "洛托姆",
+        "zh-hant": "洛托姆"
+      },
       "types": [
         "Electric",
         "Water"
@@ -1042,6 +1614,17 @@
       "id": "aerodactyl",
       "num": 142,
       "name": "Aerodactyl",
+      "names": {
+        "fr": "Ptéra",
+        "de": "Aerodactyl",
+        "es": "Aerodactyl",
+        "es-419": "Aerodactyl",
+        "it": "Aerodactyl",
+        "ja": "プテラ",
+        "ko": "프테라",
+        "zh-hans": "化石翼龙",
+        "zh-hant": "化石翼龍"
+      },
       "types": [
         "Rock",
         "Flying"
@@ -1062,6 +1645,17 @@
       "id": "hydreigon",
       "num": 635,
       "name": "Hydreigon",
+      "names": {
+        "fr": "Trioxhydre",
+        "de": "Trikephalo",
+        "es": "Hydreigon",
+        "es-419": "Hydreigon",
+        "it": "Hydreigon",
+        "ja": "サザンドラ",
+        "ko": "삼삼드래",
+        "zh-hans": "三首恶龙",
+        "zh-hant": "三首惡龍"
+      },
       "types": [
         "Dark",
         "Dragon"
@@ -1082,6 +1676,17 @@
       "id": "camerupt-mega",
       "num": 323,
       "name": "Camerupt-Mega",
+      "names": {
+        "fr": "Méga-Camérupt",
+        "de": "Mega-Camerupt",
+        "es": "Camerupt",
+        "es-419": "Camerupt",
+        "it": "Camerupt",
+        "ja": "バクーダ",
+        "ko": "폭타",
+        "zh-hans": "喷火驼",
+        "zh-hant": "噴火駝"
+      },
       "types": [
         "Fire",
         "Ground"
@@ -1102,6 +1707,17 @@
       "id": "gardevoir-mega",
       "num": 282,
       "name": "Gardevoir-Mega",
+      "names": {
+        "fr": "Méga-Gardevoir",
+        "de": "Mega-Guardevoir",
+        "es": "Gardevoir",
+        "es-419": "Gardevoir",
+        "it": "Gardevoir",
+        "ja": "サーナイト",
+        "ko": "가디안",
+        "zh-hans": "沙奈朵",
+        "zh-hant": "沙奈朵"
+      },
       "types": [
         "Psychic",
         "Fairy"
@@ -1122,6 +1738,17 @@
       "id": "lycanroc-dusk",
       "num": 745,
       "name": "Lycanroc-Dusk",
+      "names": {
+        "fr": "Lougaroc Forme Crépusculaire",
+        "de": "Wolwerock (Zwielicht)",
+        "es": "Lycanroc",
+        "es-419": "Lycanroc",
+        "it": "Lycanroc",
+        "ja": "ルガルガン",
+        "ko": "루가루암",
+        "zh-hans": "鬃岩狼人",
+        "zh-hant": "鬃岩狼人"
+      },
       "types": [
         "Rock"
       ],
@@ -1141,6 +1768,17 @@
       "id": "garchomp-mega",
       "num": 445,
       "name": "Garchomp-Mega",
+      "names": {
+        "fr": "Méga-Carchacrok",
+        "de": "Mega-Knakrack",
+        "es": "Garchomp",
+        "es-419": "Garchomp",
+        "it": "Garchomp",
+        "ja": "ガブリアス",
+        "ko": "한카리아스",
+        "zh-hans": "烈咬陆鲨",
+        "zh-hant": "烈咬陸鯊"
+      },
       "types": [
         "Dragon",
         "Ground"
@@ -1161,6 +1799,17 @@
       "id": "glimmora-mega",
       "num": 970,
       "name": "Glimmora-Mega",
+      "names": {
+        "fr": "Méga-Floréclat",
+        "de": "Lumiflora",
+        "es": "Glimmora",
+        "es-419": "Glimmora",
+        "it": "Glimmora",
+        "ja": "キラフロル",
+        "ko": "킬라플로르",
+        "zh-hans": "晶光花",
+        "zh-hant": "晶光花"
+      },
       "types": [
         "Rock",
         "Poison"
@@ -1181,6 +1830,17 @@
       "id": "kangaskhan-mega",
       "num": 115,
       "name": "Kangaskhan-Mega",
+      "names": {
+        "fr": "Méga-Kangourex",
+        "de": "Mega-Kangama",
+        "es": "Kangaskhan",
+        "es-419": "Kangaskhan",
+        "it": "Kangaskhan",
+        "ja": "ガルーラ",
+        "ko": "캥카",
+        "zh-hans": "袋兽",
+        "zh-hant": "袋獸"
+      },
       "types": [
         "Normal"
       ],
@@ -1200,6 +1860,17 @@
       "id": "meowscarada",
       "num": 908,
       "name": "Meowscarada",
+      "names": {
+        "fr": "Miascarade",
+        "de": "Maskagato",
+        "es": "Meowscarada",
+        "es-419": "Meowscarada",
+        "it": "Meowscarada",
+        "ja": "マスカーニャ",
+        "ko": "마스카나",
+        "zh-hans": "魔幻假面喵",
+        "zh-hant": "魔幻假面喵"
+      },
       "types": [
         "Grass",
         "Dark"
@@ -1220,6 +1891,17 @@
       "id": "mamoswine",
       "num": 473,
       "name": "Mamoswine",
+      "names": {
+        "fr": "Mammochon",
+        "de": "Mamutel",
+        "es": "Mamoswine",
+        "es-419": "Mamoswine",
+        "it": "Mamoswine",
+        "ja": "マンムー",
+        "ko": "맘모꾸리",
+        "zh-hans": "象牙猪",
+        "zh-hant": "象牙豬"
+      },
       "types": [
         "Ice",
         "Ground"
@@ -1240,6 +1922,17 @@
       "id": "gallade",
       "num": 475,
       "name": "Gallade",
+      "names": {
+        "fr": "Gallame",
+        "de": "Galagladi",
+        "es": "Gallade",
+        "es-419": "Gallade",
+        "it": "Gallade",
+        "ja": "エルレイド",
+        "ko": "엘레이드",
+        "zh-hans": "艾路雷朵",
+        "zh-hant": "艾路雷朵"
+      },
       "types": [
         "Psychic",
         "Fighting"
@@ -1260,6 +1953,17 @@
       "id": "scizor",
       "num": 212,
       "name": "Scizor",
+      "names": {
+        "fr": "Cizayox",
+        "de": "Scherox",
+        "es": "Scizor",
+        "es-419": "Scizor",
+        "it": "Scizor",
+        "ja": "ハッサム",
+        "ko": "핫삼",
+        "zh-hans": "巨钳螳螂",
+        "zh-hant": "巨鉗螳螂"
+      },
       "types": [
         "Bug",
         "Steel"
@@ -1280,6 +1984,17 @@
       "id": "staraptor",
       "num": 398,
       "name": "Staraptor",
+      "names": {
+        "fr": "Étouraptor",
+        "de": "Staraptor",
+        "es": "Staraptor",
+        "es-419": "Staraptor",
+        "it": "Staraptor",
+        "ja": "ムクホーク",
+        "ko": "찌르호크",
+        "zh-hans": "姆克鹰",
+        "zh-hant": "姆克鷹"
+      },
       "types": [
         "Normal",
         "Flying"
@@ -1300,6 +2015,17 @@
       "id": "volcarona",
       "num": 637,
       "name": "Volcarona",
+      "names": {
+        "fr": "Pyrax",
+        "de": "Ramoth",
+        "es": "Volcarona",
+        "es-419": "Volcarona",
+        "it": "Volcarona",
+        "ja": "ウルガモス",
+        "ko": "불카모스",
+        "zh-hans": "火神蛾",
+        "zh-hant": "火神蛾"
+      },
       "types": [
         "Bug",
         "Fire"
@@ -1320,6 +2046,17 @@
       "id": "samurott-hisui",
       "num": 503,
       "name": "Samurott-Hisui",
+      "names": {
+        "fr": "Clamiral de Hisui",
+        "de": "Hisui Admurai",
+        "es": "Samurott",
+        "es-419": "Samurott",
+        "it": "Samurott",
+        "ja": "ダイケンキ",
+        "ko": "대검귀",
+        "zh-hans": "大剑鬼",
+        "zh-hant": "大劍鬼"
+      },
       "types": [
         "Water",
         "Dark"
@@ -1340,6 +2077,17 @@
       "id": "kangaskhan",
       "num": 115,
       "name": "Kangaskhan",
+      "names": {
+        "fr": "Kangourex",
+        "de": "Kangama",
+        "es": "Kangaskhan",
+        "es-419": "Kangaskhan",
+        "it": "Kangaskhan",
+        "ja": "ガルーラ",
+        "ko": "캥카",
+        "zh-hans": "袋兽",
+        "zh-hant": "袋獸"
+      },
       "types": [
         "Normal"
       ],
@@ -1359,6 +2107,17 @@
       "id": "pyroar-mega",
       "num": 668,
       "name": "Pyroar-Mega",
+      "names": {
+        "fr": "Méga-Némélios",
+        "de": "Pyroleo",
+        "es": "Pyroar",
+        "es-419": "Pyroar",
+        "it": "Pyroar",
+        "ja": "カエンジシ",
+        "ko": "화염레오",
+        "zh-hans": "火炎狮",
+        "zh-hant": "火炎獅"
+      },
       "types": [
         "Fire",
         "Normal"
@@ -1379,6 +2138,17 @@
       "id": "zoroark-hisui",
       "num": 571,
       "name": "Zoroark-Hisui",
+      "names": {
+        "fr": "Zoroark de Hisui",
+        "de": "Hisui Zoroark",
+        "es": "Zoroark",
+        "es-419": "Zoroark",
+        "it": "Zoroark",
+        "ja": "ゾロアーク",
+        "ko": "조로아크",
+        "zh-hans": "索罗亚克",
+        "zh-hant": "索羅亞克"
+      },
       "types": [
         "Normal",
         "Ghost"
@@ -1399,6 +2169,17 @@
       "id": "chandelure",
       "num": 609,
       "name": "Chandelure",
+      "names": {
+        "fr": "Lugulabre",
+        "de": "Skelabra",
+        "es": "Chandelure",
+        "es-419": "Chandelure",
+        "it": "Chandelure",
+        "ja": "シャンデラ",
+        "ko": "샹델라",
+        "zh-hans": "水晶灯火灵",
+        "zh-hant": "水晶燈火靈"
+      },
       "types": [
         "Ghost",
         "Fire"
@@ -1419,6 +2200,17 @@
       "id": "dragapult",
       "num": 887,
       "name": "Dragapult",
+      "names": {
+        "fr": "Lanssorien",
+        "de": "Katapuldra",
+        "es": "Dragapult",
+        "es-419": "Dragapult",
+        "it": "Dragapult",
+        "ja": "ドラパルト",
+        "ko": "드래펄트",
+        "zh-hans": "多龙巴鲁托",
+        "zh-hant": "多龍巴魯托"
+      },
       "types": [
         "Dragon",
         "Ghost"
@@ -1439,6 +2231,17 @@
       "id": "mimikyu-disguised",
       "num": 778,
       "name": "Mimikyu",
+      "names": {
+        "fr": "Mimiqui Déguisé",
+        "de": "Mimigma (Getarnt)",
+        "es": "Mimikyu",
+        "es-419": "Mimikyu",
+        "it": "Mimikyu",
+        "ja": "ミミッキュ",
+        "ko": "따라큐",
+        "zh-hans": "谜拟丘",
+        "zh-hant": "謎擬Ｑ"
+      },
       "types": [
         "Ghost",
         "Fairy"
@@ -1459,6 +2262,17 @@
       "id": "swampert",
       "num": 260,
       "name": "Swampert",
+      "names": {
+        "fr": "Laggron",
+        "de": "Sumpex",
+        "es": "Swampert",
+        "es-419": "Swampert",
+        "it": "Swampert",
+        "ja": "ラグラージ",
+        "ko": "대짱이",
+        "zh-hans": "巨沼怪",
+        "zh-hant": "巨沼怪"
+      },
       "types": [
         "Water",
         "Ground"
@@ -1479,6 +2293,17 @@
       "id": "scrafty-mega",
       "num": 560,
       "name": "Scrafty-Mega",
+      "names": {
+        "fr": "Méga-Baggaïd",
+        "de": "Irokex",
+        "es": "Scrafty",
+        "es-419": "Scrafty",
+        "it": "Scrafty",
+        "ja": "ズルズキン",
+        "ko": "곤율거니",
+        "zh-hans": "头巾混混",
+        "zh-hant": "頭巾混混"
+      },
       "types": [
         "Dark",
         "Fighting"
@@ -1499,6 +2324,17 @@
       "id": "aegislash-shield",
       "num": 681,
       "name": "Aegislash",
+      "names": {
+        "fr": "Exagide Parade",
+        "de": "Durengard (Schild)",
+        "es": "Aegislash",
+        "es-419": "Aegislash",
+        "it": "Aegislash",
+        "ja": "ギルガルド",
+        "ko": "킬가르도",
+        "zh-hans": "坚盾剑怪",
+        "zh-hant": "堅盾劍怪"
+      },
       "types": [
         "Steel",
         "Ghost"
@@ -1519,6 +2355,17 @@
       "id": "vanilluxe",
       "num": 584,
       "name": "Vanilluxe",
+      "names": {
+        "fr": "Sorbouboul",
+        "de": "Gelatwino",
+        "es": "Vanilluxe",
+        "es-419": "Vanilluxe",
+        "it": "Vanilluxe",
+        "ja": "バイバニラ",
+        "ko": "배바닐라",
+        "zh-hans": "双倍多多冰",
+        "zh-hant": "雙倍多多冰"
+      },
       "types": [
         "Ice"
       ],
@@ -1538,6 +2385,17 @@
       "id": "weavile",
       "num": 461,
       "name": "Weavile",
+      "names": {
+        "fr": "Dimoret",
+        "de": "Snibunna",
+        "es": "Weavile",
+        "es-419": "Weavile",
+        "it": "Weavile",
+        "ja": "マニューラ",
+        "ko": "포푸니라",
+        "zh-hans": "玛狃拉",
+        "zh-hant": "瑪狃拉"
+      },
       "types": [
         "Dark",
         "Ice"
@@ -1558,6 +2416,17 @@
       "id": "tinkaton",
       "num": 959,
       "name": "Tinkaton",
+      "names": {
+        "fr": "Forgelina",
+        "de": "Granforgita",
+        "es": "Tinkaton",
+        "es-419": "Tinkaton",
+        "it": "Tinkaton",
+        "ja": "デカヌチャン",
+        "ko": "두드리짱",
+        "zh-hans": "巨锻匠",
+        "zh-hant": "巨鍛匠"
+      },
       "types": [
         "Fairy",
         "Steel"
@@ -1578,6 +2447,17 @@
       "id": "meganium-mega",
       "num": 154,
       "name": "Meganium-Mega",
+      "names": {
+        "fr": "Méga-Méganium",
+        "de": "Meganie",
+        "es": "Meganium",
+        "es-419": "Meganium",
+        "it": "Meganium",
+        "ja": "メガニウム",
+        "ko": "메가니움",
+        "zh-hans": "大竺葵",
+        "zh-hant": "大竺葵"
+      },
       "types": [
         "Grass",
         "Fairy"
@@ -1598,6 +2478,17 @@
       "id": "basculegion-female",
       "num": 902,
       "name": "Basculegion-F",
+      "names": {
+        "fr": "Paragruel Femelle",
+        "de": "Barschuft ♀",
+        "es": "Basculegion",
+        "es-419": "Basculegion",
+        "it": "Basculegion",
+        "ja": "イダイトウ",
+        "ko": "대쓰여너",
+        "zh-hans": "幽尾玄鱼",
+        "zh-hant": "幽尾玄魚"
+      },
       "types": [
         "Water",
         "Ghost"
@@ -1618,6 +2509,17 @@
       "id": "mudsdale",
       "num": 750,
       "name": "Mudsdale",
+      "names": {
+        "fr": "Bourrinos",
+        "de": "Pampross",
+        "es": "Mudsdale",
+        "es-419": "Mudsdale",
+        "it": "Mudsdale",
+        "ja": "バンバドロ",
+        "ko": "만마드",
+        "zh-hans": "重泥挽马",
+        "zh-hant": "重泥挽馬"
+      },
       "types": [
         "Ground"
       ],
@@ -1637,6 +2539,17 @@
       "id": "clefable",
       "num": 36,
       "name": "Clefable",
+      "names": {
+        "fr": "Mélodelfe",
+        "de": "Pixi",
+        "es": "Clefable",
+        "es-419": "Clefable",
+        "it": "Clefable",
+        "ja": "ピクシー",
+        "ko": "픽시",
+        "zh-hans": "皮可西",
+        "zh-hant": "皮可西"
+      },
       "types": [
         "Fairy"
       ],
@@ -1656,6 +2569,17 @@
       "id": "scizor-mega",
       "num": 212,
       "name": "Scizor-Mega",
+      "names": {
+        "fr": "Méga-Cizayox",
+        "de": "Mega-Scherox",
+        "es": "Scizor",
+        "es-419": "Scizor",
+        "it": "Scizor",
+        "ja": "ハッサム",
+        "ko": "핫삼",
+        "zh-hans": "巨钳螳螂",
+        "zh-hant": "巨鉗螳螂"
+      },
       "types": [
         "Bug",
         "Steel"
@@ -1676,6 +2600,17 @@
       "id": "hatterene",
       "num": 858,
       "name": "Hatterene",
+      "names": {
+        "fr": "Sorcilence",
+        "de": "Silembrim",
+        "es": "Hatterene",
+        "es-419": "Hatterene",
+        "it": "Hatterene",
+        "ja": "ブリムオン",
+        "ko": "브리무음",
+        "zh-hans": "布莉姆温",
+        "zh-hant": "布莉姆溫"
+      },
       "types": [
         "Psychic",
         "Fairy"
@@ -1696,6 +2631,17 @@
       "id": "raichu-mega-x",
       "num": 26,
       "name": "Raichu-Mega-X",
+      "names": {
+        "fr": "Méga-Raichu X",
+        "de": "Raichu",
+        "es": "Raichu",
+        "es-419": "Raichu",
+        "it": "Raichu",
+        "ja": "ライチュウ",
+        "ko": "라이츄",
+        "zh-hans": "雷丘",
+        "zh-hant": "雷丘"
+      },
       "types": [
         "Electric"
       ],
@@ -1715,6 +2661,17 @@
       "id": "gyarados-mega",
       "num": 130,
       "name": "Gyarados-Mega",
+      "names": {
+        "fr": "Méga-Léviator",
+        "de": "Mega-Garados",
+        "es": "Gyarados",
+        "es-419": "Gyarados",
+        "it": "Gyarados",
+        "ja": "ギャラドス",
+        "ko": "갸라도스",
+        "zh-hans": "暴鲤龙",
+        "zh-hant": "暴鯉龍"
+      },
       "types": [
         "Water",
         "Dark"
@@ -1735,6 +2692,17 @@
       "id": "palafin-zero",
       "num": 964,
       "name": "Palafin",
+      "names": {
+        "fr": "Superdofin Forme Ordinaire",
+        "de": "Delfinator",
+        "es": "Palafin",
+        "es-419": "Palafin",
+        "it": "Palafin",
+        "ja": "イルカマン",
+        "ko": "돌핀맨",
+        "zh-hans": "海豚侠",
+        "zh-hant": "海豚俠"
+      },
       "types": [
         "Water"
       ],
@@ -1754,6 +2722,17 @@
       "id": "typhlosion-hisui",
       "num": 157,
       "name": "Typhlosion-Hisui",
+      "names": {
+        "fr": "Typhlosion de Hisui",
+        "de": "Hisui Tornupto",
+        "es": "Typhlosion",
+        "es-419": "Typhlosion",
+        "it": "Typhlosion",
+        "ja": "バクフーン",
+        "ko": "블레이범",
+        "zh-hans": "火暴兽",
+        "zh-hant": "火爆獸"
+      },
       "types": [
         "Fire",
         "Ghost"
@@ -1774,6 +2753,17 @@
       "id": "ninetales",
       "num": 38,
       "name": "Ninetales",
+      "names": {
+        "fr": "Feunard",
+        "de": "Vulnona",
+        "es": "Ninetales",
+        "es-419": "Ninetales",
+        "it": "Ninetales",
+        "ja": "キュウコン",
+        "ko": "나인테일",
+        "zh-hans": "九尾",
+        "zh-hant": "九尾"
+      },
       "types": [
         "Fire"
       ],
@@ -1793,6 +2783,17 @@
       "id": "azumarill",
       "num": 184,
       "name": "Azumarill",
+      "names": {
+        "fr": "Azumarill",
+        "de": "Azumarill",
+        "es": "Azumarill",
+        "es-419": "Azumarill",
+        "it": "Azumarill",
+        "ja": "マリルリ",
+        "ko": "마릴리",
+        "zh-hans": "玛力露丽",
+        "zh-hant": "瑪力露麗"
+      },
       "types": [
         "Water",
         "Fairy"
@@ -1813,6 +2814,17 @@
       "id": "lopunny-mega",
       "num": 428,
       "name": "Lopunny-Mega",
+      "names": {
+        "fr": "Méga-Lockpin",
+        "de": "Mega-Schlapor",
+        "es": "Lopunny",
+        "es-419": "Lopunny",
+        "it": "Lopunny",
+        "ja": "ミミロップ",
+        "ko": "이어롭",
+        "zh-hans": "长耳兔",
+        "zh-hant": "長耳兔"
+      },
       "types": [
         "Normal",
         "Fighting"
@@ -1833,6 +2845,17 @@
       "id": "rotom-heat",
       "num": 479,
       "name": "Rotom-Heat",
+      "names": {
+        "fr": "Motisma Chaleur",
+        "de": "Hitze-Rotom",
+        "es": "Rotom",
+        "es-419": "Rotom",
+        "it": "Rotom",
+        "ja": "ロトム",
+        "ko": "로토무",
+        "zh-hans": "洛托姆",
+        "zh-hant": "洛托姆"
+      },
       "types": [
         "Electric",
         "Fire"
@@ -1853,6 +2876,17 @@
       "id": "charizard-mega-x",
       "num": 6,
       "name": "Charizard-Mega-X",
+      "names": {
+        "fr": "Méga-Dracaufeu X",
+        "de": "Mega-Glurak X",
+        "es": "Charizard",
+        "es-419": "Charizard",
+        "it": "Charizard",
+        "ja": "リザードン",
+        "ko": "리자몽",
+        "zh-hans": "喷火龙",
+        "zh-hant": "噴火龍"
+      },
       "types": [
         "Fire",
         "Dragon"
@@ -1873,6 +2907,17 @@
       "id": "espathra",
       "num": 956,
       "name": "Espathra",
+      "names": {
+        "fr": "Cléopsytra",
+        "de": "Psiopatra",
+        "es": "Espathra",
+        "es-419": "Espathra",
+        "it": "Espathra",
+        "ja": "クエスパトラ",
+        "ko": "클레스퍼트라",
+        "zh-hans": "超能艳鸵",
+        "zh-hant": "超能艷鴕"
+      },
       "types": [
         "Psychic"
       ],
@@ -1892,6 +2937,17 @@
       "id": "snorlax",
       "num": 143,
       "name": "Snorlax",
+      "names": {
+        "fr": "Ronflex",
+        "de": "Relaxo",
+        "es": "Snorlax",
+        "es-419": "Snorlax",
+        "it": "Snorlax",
+        "ja": "カビゴン",
+        "ko": "잠만보",
+        "zh-hans": "卡比兽",
+        "zh-hant": "卡比獸"
+      },
       "types": [
         "Normal"
       ],
@@ -1911,6 +2967,17 @@
       "id": "araquanid",
       "num": 752,
       "name": "Araquanid",
+      "names": {
+        "fr": "Tarenbulle",
+        "de": "Aranestro",
+        "es": "Araquanid",
+        "es-419": "Araquanid",
+        "it": "Araquanid",
+        "ja": "オニシズクモ",
+        "ko": "깨비물거미",
+        "zh-hans": "滴蛛霸",
+        "zh-hant": "滴蛛霸"
+      },
       "types": [
         "Water",
         "Bug"
@@ -1931,6 +2998,17 @@
       "id": "overqwil",
       "num": 904,
       "name": "Overqwil",
+      "names": {
+        "fr": "Qwilpik",
+        "de": "Myriador",
+        "es": "Overqwil",
+        "es-419": "Overqwil",
+        "it": "Overqwil",
+        "ja": "ハリーマン",
+        "ko": "장침바루",
+        "zh-hans": "万针鱼",
+        "zh-hant": "萬針魚"
+      },
       "types": [
         "Dark",
         "Poison"
@@ -1951,6 +3029,17 @@
       "id": "oranguru",
       "num": 765,
       "name": "Oranguru",
+      "names": {
+        "fr": "Gouroutan",
+        "de": "Kommandutan",
+        "es": "Oranguru",
+        "es-419": "Oranguru",
+        "it": "Oranguru",
+        "ja": "ヤレユータン",
+        "ko": "하랑우탄",
+        "zh-hans": "智挥猩",
+        "zh-hant": "智揮猩"
+      },
       "types": [
         "Normal",
         "Psychic"
@@ -1971,6 +3060,17 @@
       "id": "blaziken",
       "num": 257,
       "name": "Blaziken",
+      "names": {
+        "fr": "Braségali",
+        "de": "Lohgock",
+        "es": "Blaziken",
+        "es-419": "Blaziken",
+        "it": "Blaziken",
+        "ja": "バシャーモ",
+        "ko": "번치코",
+        "zh-hans": "火焰鸡",
+        "zh-hant": "火焰雞"
+      },
       "types": [
         "Fire",
         "Fighting"
@@ -1991,6 +3091,17 @@
       "id": "kleavor",
       "num": 900,
       "name": "Kleavor",
+      "names": {
+        "fr": "Hachécateur",
+        "de": "Axantor",
+        "es": "Kleavor",
+        "es-419": "Kleavor",
+        "it": "Kleavor",
+        "ja": "バサギリ",
+        "ko": "사마자르",
+        "zh-hans": "劈斧螳螂",
+        "zh-hant": "劈斧螳螂"
+      },
       "types": [
         "Bug",
         "Rock"
@@ -2011,6 +3122,17 @@
       "id": "bellibolt",
       "num": 939,
       "name": "Bellibolt",
+      "names": {
+        "fr": "Ampibidou",
+        "de": "Wampitz",
+        "es": "Bellibolt",
+        "es-419": "Bellibolt",
+        "it": "Bellibolt",
+        "ja": "ハラバリー",
+        "ko": "찌리배리",
+        "zh-hans": "电肚蛙",
+        "zh-hant": "電肚蛙"
+      },
       "types": [
         "Electric"
       ],
@@ -2030,6 +3152,17 @@
       "id": "banette-mega",
       "num": 354,
       "name": "Banette-Mega",
+      "names": {
+        "fr": "Méga-Branette",
+        "de": "Mega-Banette",
+        "es": "Banette",
+        "es-419": "Banette",
+        "it": "Banette",
+        "ja": "ジュペッタ",
+        "ko": "다크펫",
+        "zh-hans": "诅咒娃娃",
+        "zh-hant": "詛咒娃娃"
+      },
       "types": [
         "Ghost"
       ],
@@ -2049,6 +3182,17 @@
       "id": "slowking-galar",
       "num": 199,
       "name": "Slowking-Galar",
+      "names": {
+        "fr": "Roigada de Galar",
+        "de": "Galar Laschoking",
+        "es": "Slowking",
+        "es-419": "Slowking",
+        "it": "Slowking",
+        "ja": "ヤドキング",
+        "ko": "야도킹",
+        "zh-hans": "呆呆王",
+        "zh-hant": "呆呆王"
+      },
       "types": [
         "Poison",
         "Psychic"
@@ -2069,6 +3213,17 @@
       "id": "houndstone",
       "num": 972,
       "name": "Houndstone",
+      "names": {
+        "fr": "Tomberro",
+        "de": "Friedwuff",
+        "es": "Houndstone",
+        "es-419": "Houndstone",
+        "it": "Houndstone",
+        "ja": "ハカドッグ",
+        "ko": "묘두기",
+        "zh-hans": "墓扬犬",
+        "zh-hant": "墓揚犬"
+      },
       "types": [
         "Ghost"
       ],
@@ -2088,6 +3243,17 @@
       "id": "gengar",
       "num": 94,
       "name": "Gengar",
+      "names": {
+        "fr": "Ectoplasma",
+        "de": "Gengar",
+        "es": "Gengar",
+        "es-419": "Gengar",
+        "it": "Gengar",
+        "ja": "ゲンガー",
+        "ko": "팬텀",
+        "zh-hans": "耿鬼",
+        "zh-hant": "耿鬼"
+      },
       "types": [
         "Ghost",
         "Poison"
@@ -2108,6 +3274,17 @@
       "id": "vileplume",
       "num": 45,
       "name": "Vileplume",
+      "names": {
+        "fr": "Rafflesia",
+        "de": "Giflor",
+        "es": "Vileplume",
+        "es-419": "Vileplume",
+        "it": "Vileplume",
+        "ja": "ラフレシア",
+        "ko": "라플레시아",
+        "zh-hans": "霸王花",
+        "zh-hant": "霸王花"
+      },
       "types": [
         "Grass",
         "Poison"
@@ -2128,6 +3305,17 @@
       "id": "armarouge",
       "num": 936,
       "name": "Armarouge",
+      "names": {
+        "fr": "Carmadura",
+        "de": "Crimanzo",
+        "es": "Armarouge",
+        "es-419": "Armarouge",
+        "it": "Armarouge",
+        "ja": "グレンアルマ",
+        "ko": "카디나르마",
+        "zh-hans": "红莲铠骑",
+        "zh-hant": "紅蓮鎧騎"
+      },
       "types": [
         "Fire",
         "Psychic"
@@ -2148,6 +3336,17 @@
       "id": "greninja-mega",
       "num": 658,
       "name": "Greninja-Mega",
+      "names": {
+        "fr": "Méga-Amphinobi",
+        "de": "Quajutsu",
+        "es": "Greninja",
+        "es-419": "Greninja",
+        "it": "Greninja",
+        "ja": "ゲッコウガ",
+        "ko": "개굴닌자",
+        "zh-hans": "甲贺忍蛙",
+        "zh-hant": "甲賀忍蛙"
+      },
       "types": [
         "Water",
         "Dark"
@@ -2168,6 +3367,17 @@
       "id": "sceptile-mega",
       "num": 254,
       "name": "Sceptile-Mega",
+      "names": {
+        "fr": "Méga-Jungko",
+        "de": "Mega-Gewaldro",
+        "es": "Sceptile",
+        "es-419": "Sceptile",
+        "it": "Sceptile",
+        "ja": "ジュカイン",
+        "ko": "나무킹",
+        "zh-hans": "蜥蜴王",
+        "zh-hant": "蜥蜴王"
+      },
       "types": [
         "Grass",
         "Dragon"
@@ -2188,6 +3398,17 @@
       "id": "meowstic-male",
       "num": 678,
       "name": "Meowstic",
+      "names": {
+        "fr": "Mistigrix Mâle",
+        "de": "Psiaugon ♂",
+        "es": "Meowstic",
+        "es-419": "Meowstic",
+        "it": "Meowstic",
+        "ja": "ニャオニクス",
+        "ko": "냐오닉스",
+        "zh-hans": "超能妙喵",
+        "zh-hant": "超能妙喵"
+      },
       "types": [
         "Psychic"
       ],
@@ -2207,6 +3428,17 @@
       "id": "glaceon",
       "num": 471,
       "name": "Glaceon",
+      "names": {
+        "fr": "Givrali",
+        "de": "Glaziola",
+        "es": "Glaceon",
+        "es-419": "Glaceon",
+        "it": "Glaceon",
+        "ja": "グレイシア",
+        "ko": "글레이시아",
+        "zh-hans": "冰伊布",
+        "zh-hant": "冰伊布"
+      },
       "types": [
         "Ice"
       ],
@@ -2226,6 +3458,17 @@
       "id": "altaria",
       "num": 334,
       "name": "Altaria",
+      "names": {
+        "fr": "Altaria",
+        "de": "Altaria",
+        "es": "Altaria",
+        "es-419": "Altaria",
+        "it": "Altaria",
+        "ja": "チルタリス",
+        "ko": "파비코리",
+        "zh-hans": "七夕青鸟",
+        "zh-hant": "七夕青鳥"
+      },
       "types": [
         "Dragon",
         "Flying"
@@ -2246,6 +3489,17 @@
       "id": "malamar-mega",
       "num": 687,
       "name": "Malamar-Mega",
+      "names": {
+        "fr": "Méga-Sepiatroce",
+        "de": "Calamanero",
+        "es": "Malamar",
+        "es-419": "Malamar",
+        "it": "Malamar",
+        "ja": "カラマネロ",
+        "ko": "칼라마네로",
+        "zh-hans": "乌贼王",
+        "zh-hant": "烏賊王"
+      },
       "types": [
         "Dark",
         "Psychic"
@@ -2266,6 +3520,17 @@
       "id": "lycanroc-midday",
       "num": 745,
       "name": "Lycanroc",
+      "names": {
+        "fr": "Lougaroc Forme Diurne",
+        "de": "Wolwerock (Tag)",
+        "es": "Lycanroc",
+        "es-419": "Lycanroc",
+        "it": "Lycanroc",
+        "ja": "ルガルガン",
+        "ko": "루가루암",
+        "zh-hans": "鬃岩狼人",
+        "zh-hant": "鬃岩狼人"
+      },
       "types": [
         "Rock"
       ],
@@ -2285,6 +3550,17 @@
       "id": "starmie-mega",
       "num": 121,
       "name": "Starmie-Mega",
+      "names": {
+        "fr": "Méga-Staross",
+        "de": "Starmie",
+        "es": "Starmie",
+        "es-419": "Starmie",
+        "it": "Starmie",
+        "ja": "スターミー",
+        "ko": "아쿠스타",
+        "zh-hans": "宝石海星",
+        "zh-hant": "寶石海星"
+      },
       "types": [
         "Water",
         "Psychic"
@@ -2305,6 +3581,17 @@
       "id": "hippowdon",
       "num": 450,
       "name": "Hippowdon",
+      "names": {
+        "fr": "Hippodocus",
+        "de": "Hippoterus",
+        "es": "Hippowdon",
+        "es-419": "Hippowdon",
+        "it": "Hippowdon",
+        "ja": "カバルドン",
+        "ko": "하마돈",
+        "zh-hans": "河马兽",
+        "zh-hant": "河馬獸"
+      },
       "types": [
         "Ground"
       ],
@@ -2324,6 +3611,17 @@
       "id": "dragalge-mega",
       "num": 691,
       "name": "Dragalge-Mega",
+      "names": {
+        "fr": "Méga-Kravarech",
+        "de": "Tandrak",
+        "es": "Dragalge",
+        "es-419": "Dragalge",
+        "it": "Dragalge",
+        "ja": "ドラミドロ",
+        "ko": "드래캄",
+        "zh-hans": "毒藻龙",
+        "zh-hant": "毒藻龍"
+      },
       "types": [
         "Poison",
         "Dragon"
@@ -2344,6 +3642,17 @@
       "id": "audino",
       "num": 531,
       "name": "Audino",
+      "names": {
+        "fr": "Nanméouïe",
+        "de": "Ohrdoch",
+        "es": "Audino",
+        "es-419": "Audino",
+        "it": "Audino",
+        "ja": "タブンネ",
+        "ko": "다부니",
+        "zh-hans": "差不多娃娃",
+        "zh-hant": "差不多娃娃"
+      },
       "types": [
         "Normal"
       ],
@@ -2363,6 +3672,17 @@
       "id": "altaria-mega",
       "num": 334,
       "name": "Altaria-Mega",
+      "names": {
+        "fr": "Méga-Altaria",
+        "de": "Mega-Altaria",
+        "es": "Altaria",
+        "es-419": "Altaria",
+        "it": "Altaria",
+        "ja": "チルタリス",
+        "ko": "파비코리",
+        "zh-hans": "七夕青鸟",
+        "zh-hant": "七夕青鳥"
+      },
       "types": [
         "Dragon",
         "Fairy"
@@ -2383,6 +3703,17 @@
       "id": "abomasnow-mega",
       "num": 460,
       "name": "Abomasnow-Mega",
+      "names": {
+        "fr": "Méga-Blizzaroi",
+        "de": "Mega-Rexblisar",
+        "es": "Abomasnow",
+        "es-419": "Abomasnow",
+        "it": "Abomasnow",
+        "ja": "ユキノオー",
+        "ko": "눈설왕",
+        "zh-hans": "暴雪王",
+        "zh-hant": "暴雪王"
+      },
       "types": [
         "Grass",
         "Ice"
@@ -2403,6 +3734,17 @@
       "id": "eelektross-mega",
       "num": 604,
       "name": "Eelektross-Mega",
+      "names": {
+        "fr": "Méga-Ohmassacre",
+        "de": "Zapplarang",
+        "es": "Eelektross",
+        "es-419": "Eelektross",
+        "it": "Eelektross",
+        "ja": "シビルドン",
+        "ko": "저리더프",
+        "zh-hans": "麻麻鳗鱼王",
+        "zh-hant": "麻麻鰻魚王"
+      },
       "types": [
         "Electric"
       ],
@@ -2422,6 +3764,17 @@
       "id": "victreebel-mega",
       "num": 71,
       "name": "Victreebel-Mega",
+      "names": {
+        "fr": "Méga-Empiflor",
+        "de": "Sarzenia",
+        "es": "Victreebel",
+        "es-419": "Victreebel",
+        "it": "Victreebel",
+        "ja": "ウツボット",
+        "ko": "우츠보트",
+        "zh-hans": "大食花",
+        "zh-hant": "大食花"
+      },
       "types": [
         "Grass",
         "Poison"
@@ -2442,6 +3795,17 @@
       "id": "gardevoir",
       "num": 282,
       "name": "Gardevoir",
+      "names": {
+        "fr": "Gardevoir",
+        "de": "Guardevoir",
+        "es": "Gardevoir",
+        "es-419": "Gardevoir",
+        "it": "Gardevoir",
+        "ja": "サーナイト",
+        "ko": "가디안",
+        "zh-hans": "沙奈朵",
+        "zh-hant": "沙奈朵"
+      },
       "types": [
         "Psychic",
         "Fairy"
@@ -2462,6 +3826,17 @@
       "id": "chesnaught-mega",
       "num": 652,
       "name": "Chesnaught-Mega",
+      "names": {
+        "fr": "Méga-Blindépique",
+        "de": "Brigaron",
+        "es": "Chesnaught",
+        "es-419": "Chesnaught",
+        "it": "Chesnaught",
+        "ja": "ブリガロン",
+        "ko": "브리가론",
+        "zh-hans": "布里卡隆",
+        "zh-hant": "布里卡隆"
+      },
       "types": [
         "Grass",
         "Fighting"
@@ -2482,6 +3857,17 @@
       "id": "heliolisk",
       "num": 695,
       "name": "Heliolisk",
+      "names": {
+        "fr": "Iguolta",
+        "de": "Elezard",
+        "es": "Heliolisk",
+        "es-419": "Heliolisk",
+        "it": "Heliolisk",
+        "ja": "エレザード",
+        "ko": "일레도리자드",
+        "zh-hans": "光电伞蜥",
+        "zh-hant": "光電傘蜥"
+      },
       "types": [
         "Electric",
         "Normal"
@@ -2502,6 +3888,17 @@
       "id": "raichu",
       "num": 26,
       "name": "Raichu",
+      "names": {
+        "fr": "Raichu",
+        "de": "Raichu",
+        "es": "Raichu",
+        "es-419": "Raichu",
+        "it": "Raichu",
+        "ja": "ライチュウ",
+        "ko": "라이츄",
+        "zh-hans": "雷丘",
+        "zh-hant": "雷丘"
+      },
       "types": [
         "Electric"
       ],
@@ -2521,6 +3918,17 @@
       "id": "lucario-mega",
       "num": 448,
       "name": "Lucario-Mega",
+      "names": {
+        "fr": "Méga-Lucario",
+        "de": "Mega-Lucario",
+        "es": "Lucario",
+        "es-419": "Lucario",
+        "it": "Lucario",
+        "ja": "ルカリオ",
+        "ko": "루카리오",
+        "zh-hans": "路卡利欧",
+        "zh-hant": "路卡利歐"
+      },
       "types": [
         "Fighting",
         "Steel"
@@ -2541,6 +3949,17 @@
       "id": "decidueye-hisui",
       "num": 724,
       "name": "Decidueye-Hisui",
+      "names": {
+        "fr": "Archéduc de Hisui",
+        "de": "Hisui Silvarro",
+        "es": "Decidueye",
+        "es-419": "Decidueye",
+        "it": "Decidueye",
+        "ja": "ジュナイパー",
+        "ko": "모크나이퍼",
+        "zh-hans": "狙射树枭",
+        "zh-hant": "狙射樹梟"
+      },
       "types": [
         "Grass",
         "Fighting"
@@ -2561,6 +3980,17 @@
       "id": "chandelure-mega",
       "num": 609,
       "name": "Chandelure-Mega",
+      "names": {
+        "fr": "Méga-Lugulabre",
+        "de": "Skelabra",
+        "es": "Chandelure",
+        "es-419": "Chandelure",
+        "it": "Chandelure",
+        "ja": "シャンデラ",
+        "ko": "샹델라",
+        "zh-hans": "水晶灯火灵",
+        "zh-hant": "水晶燈火靈"
+      },
       "types": [
         "Ghost",
         "Fire"
@@ -2581,6 +4011,17 @@
       "id": "umbreon",
       "num": 197,
       "name": "Umbreon",
+      "names": {
+        "fr": "Noctali",
+        "de": "Nachtara",
+        "es": "Umbreon",
+        "es-419": "Umbreon",
+        "it": "Umbreon",
+        "ja": "ブラッキー",
+        "ko": "블래키",
+        "zh-hans": "月亮伊布",
+        "zh-hant": "月亮伊布"
+      },
       "types": [
         "Dark"
       ],
@@ -2600,6 +4041,17 @@
       "id": "drampa",
       "num": 780,
       "name": "Drampa",
+      "names": {
+        "fr": "Draïeul",
+        "de": "Sen-Long",
+        "es": "Drampa",
+        "es-419": "Drampa",
+        "it": "Drampa",
+        "ja": "ジジーロン",
+        "ko": "할비롱",
+        "zh-hans": "老翁龙",
+        "zh-hant": "老翁龍"
+      },
       "types": [
         "Normal",
         "Dragon"
@@ -2620,6 +4072,17 @@
       "id": "aggron-mega",
       "num": 306,
       "name": "Aggron-Mega",
+      "names": {
+        "fr": "Méga-Galeking",
+        "de": "Mega-Stolloss",
+        "es": "Aggron",
+        "es-419": "Aggron",
+        "it": "Aggron",
+        "ja": "ボスゴドラ",
+        "ko": "보스로라",
+        "zh-hans": "波士可多拉",
+        "zh-hant": "波士可多拉"
+      },
       "types": [
         "Steel"
       ],
@@ -2639,6 +4102,17 @@
       "id": "malamar",
       "num": 687,
       "name": "Malamar",
+      "names": {
+        "fr": "Sepiatroce",
+        "de": "Calamanero",
+        "es": "Malamar",
+        "es-419": "Malamar",
+        "it": "Malamar",
+        "ja": "カラマネロ",
+        "ko": "칼라마네로",
+        "zh-hans": "乌贼王",
+        "zh-hant": "烏賊王"
+      },
       "types": [
         "Dark",
         "Psychic"
@@ -2659,6 +4133,17 @@
       "id": "drampa-mega",
       "num": 780,
       "name": "Drampa-Mega",
+      "names": {
+        "fr": "Méga-Draïeul",
+        "de": "Sen-Long",
+        "es": "Drampa",
+        "es-419": "Drampa",
+        "it": "Drampa",
+        "ja": "ジジーロン",
+        "ko": "할비롱",
+        "zh-hans": "老翁龙",
+        "zh-hant": "老翁龍"
+      },
       "types": [
         "Normal",
         "Dragon"
@@ -2679,6 +4164,17 @@
       "id": "feraligatr-mega",
       "num": 160,
       "name": "Feraligatr-Mega",
+      "names": {
+        "fr": "Méga-Aligatueur",
+        "de": "Impergator",
+        "es": "Feraligatr",
+        "es-419": "Feraligatr",
+        "it": "Feraligatr",
+        "ja": "オーダイル",
+        "ko": "장크로다일",
+        "zh-hans": "大力鳄",
+        "zh-hant": "大力鱷"
+      },
       "types": [
         "Water",
         "Dragon"
@@ -2699,6 +4195,17 @@
       "id": "hawlucha-mega",
       "num": 701,
       "name": "Hawlucha-Mega",
+      "names": {
+        "fr": "Méga-Brutalibré",
+        "de": "Resladero",
+        "es": "Hawlucha",
+        "es-419": "Hawlucha",
+        "it": "Hawlucha",
+        "ja": "ルチャブル",
+        "ko": "루차불",
+        "zh-hans": "摔角鹰人",
+        "zh-hant": "摔角鷹人"
+      },
       "types": [
         "Fighting",
         "Flying"
@@ -2719,6 +4226,17 @@
       "id": "klefki",
       "num": 707,
       "name": "Klefki",
+      "names": {
+        "fr": "Trousselin",
+        "de": "Clavion",
+        "es": "Klefki",
+        "es-419": "Klefki",
+        "it": "Klefki",
+        "ja": "クレッフィ",
+        "ko": "클레피",
+        "zh-hans": "钥圈儿",
+        "zh-hant": "鑰圈兒"
+      },
       "types": [
         "Steel",
         "Fairy"
@@ -2739,6 +4257,17 @@
       "id": "gallade-mega",
       "num": 475,
       "name": "Gallade-Mega",
+      "names": {
+        "fr": "Méga-Gallame",
+        "de": "Mega-Galagladi",
+        "es": "Gallade",
+        "es-419": "Gallade",
+        "it": "Gallade",
+        "ja": "エルレイド",
+        "ko": "엘레이드",
+        "zh-hans": "艾路雷朵",
+        "zh-hant": "艾路雷朵"
+      },
       "types": [
         "Psychic",
         "Fighting"
@@ -2759,6 +4288,17 @@
       "id": "conkeldurr",
       "num": 534,
       "name": "Conkeldurr",
+      "names": {
+        "fr": "Bétochef",
+        "de": "Meistagrif",
+        "es": "Conkeldurr",
+        "es-419": "Conkeldurr",
+        "it": "Conkeldurr",
+        "ja": "ローブシン",
+        "ko": "노보청",
+        "zh-hans": "修建老匠",
+        "zh-hant": "修建老匠"
+      },
       "types": [
         "Fighting"
       ],
@@ -2778,6 +4318,17 @@
       "id": "scolipede-mega",
       "num": 545,
       "name": "Scolipede-Mega",
+      "names": {
+        "fr": "Méga-Brutapode",
+        "de": "Cerapendra",
+        "es": "Scolipede",
+        "es-419": "Scolipede",
+        "it": "Scolipede",
+        "ja": "ペンドラー",
+        "ko": "펜드라",
+        "zh-hans": "蜈蚣王",
+        "zh-hant": "蜈蚣王"
+      },
       "types": [
         "Bug",
         "Poison"
@@ -2798,6 +4349,17 @@
       "id": "gliscor",
       "num": 472,
       "name": "Gliscor",
+      "names": {
+        "fr": "Scorvol",
+        "de": "Skorgro",
+        "es": "Gliscor",
+        "es-419": "Gliscor",
+        "it": "Gliscor",
+        "ja": "グライオン",
+        "ko": "글라이온",
+        "zh-hans": "天蝎王",
+        "zh-hant": "天蠍王"
+      },
       "types": [
         "Ground",
         "Flying"
@@ -2818,6 +4380,17 @@
       "id": "cofagrigus",
       "num": 563,
       "name": "Cofagrigus",
+      "names": {
+        "fr": "Tutankafer",
+        "de": "Echnatoll",
+        "es": "Cofagrigus",
+        "es-419": "Cofagrigus",
+        "it": "Cofagrigus",
+        "ja": "デスカーン",
+        "ko": "데스니칸",
+        "zh-hans": "迭失棺",
+        "zh-hant": "死神棺"
+      },
       "types": [
         "Ghost"
       ],
@@ -2837,6 +4410,17 @@
       "id": "tauros-paldea-aqua-breed",
       "num": 128,
       "name": "Tauros-Paldea-Aqua",
+      "names": {
+        "fr": "Tauros de Paldéa Race Aquatique",
+        "de": "Tauros",
+        "es": "Tauros",
+        "es-419": "Tauros",
+        "it": "Tauros",
+        "ja": "ケンタロス",
+        "ko": "켄타로스",
+        "zh-hans": "肯泰罗",
+        "zh-hant": "肯泰羅"
+      },
       "types": [
         "Fighting",
         "Water"
@@ -2857,6 +4441,17 @@
       "id": "ditto",
       "num": 132,
       "name": "Ditto",
+      "names": {
+        "fr": "Métamorph",
+        "de": "Ditto",
+        "es": "Ditto",
+        "es-419": "Ditto",
+        "it": "Ditto",
+        "ja": "メタモン",
+        "ko": "메타몽",
+        "zh-hans": "百变怪",
+        "zh-hant": "百變怪"
+      },
       "types": [
         "Normal"
       ],
@@ -2876,6 +4471,17 @@
       "id": "skarmory-mega",
       "num": 227,
       "name": "Skarmory-Mega",
+      "names": {
+        "fr": "Méga-Airmure",
+        "de": "Panzaeron",
+        "es": "Skarmory",
+        "es-419": "Skarmory",
+        "it": "Skarmory",
+        "ja": "エアームド",
+        "ko": "무장조",
+        "zh-hans": "盔甲鸟",
+        "zh-hant": "盔甲鳥"
+      },
       "types": [
         "Steel",
         "Flying"
@@ -2896,6 +4502,17 @@
       "id": "slowbro-mega",
       "num": 80,
       "name": "Slowbro-Mega",
+      "names": {
+        "fr": "Méga-Flagadoss",
+        "de": "Mega-Lahmus",
+        "es": "Slowbro",
+        "es-419": "Slowbro",
+        "it": "Slowbro",
+        "ja": "ヤドラン",
+        "ko": "야도란",
+        "zh-hans": "呆壳兽",
+        "zh-hant": "呆殼獸"
+      },
       "types": [
         "Water",
         "Psychic"
@@ -2916,6 +4533,17 @@
       "id": "golurk-mega",
       "num": 623,
       "name": "Golurk-Mega",
+      "names": {
+        "fr": "Méga-Golemastoc",
+        "de": "Golgantes",
+        "es": "Golurk",
+        "es-419": "Golurk",
+        "it": "Golurk",
+        "ja": "ゴルーグ",
+        "ko": "골루그",
+        "zh-hans": "泥偶巨人",
+        "zh-hant": "泥偶巨人"
+      },
       "types": [
         "Ground",
         "Ghost"
@@ -2936,6 +4564,17 @@
       "id": "crabominable-mega",
       "num": 740,
       "name": "Crabominable-Mega",
+      "names": {
+        "fr": "Méga-Crabominable",
+        "de": "Krawell",
+        "es": "Crabominable",
+        "es-419": "Crabominable",
+        "it": "Crabominable",
+        "ja": "ケケンカニ",
+        "ko": "모단단게",
+        "zh-hans": "好胜毛蟹",
+        "zh-hant": "好勝毛蟹"
+      },
       "types": [
         "Fighting",
         "Ice"
@@ -2956,6 +4595,17 @@
       "id": "steelix-mega",
       "num": 208,
       "name": "Steelix-Mega",
+      "names": {
+        "fr": "Méga-Steelix",
+        "de": "Mega-Stahlos",
+        "es": "Steelix",
+        "es-419": "Steelix",
+        "it": "Steelix",
+        "ja": "ハガネール",
+        "ko": "강철톤",
+        "zh-hans": "大钢蛇",
+        "zh-hant": "大鋼蛇"
+      },
       "types": [
         "Steel",
         "Ground"
@@ -2976,6 +4626,17 @@
       "id": "houndoom-mega",
       "num": 229,
       "name": "Houndoom-Mega",
+      "names": {
+        "fr": "Méga-Démolosse",
+        "de": "Mega-Hundemon",
+        "es": "Houndoom",
+        "es-419": "Houndoom",
+        "it": "Houndoom",
+        "ja": "ヘルガー",
+        "ko": "헬가",
+        "zh-hans": "黑鲁加",
+        "zh-hant": "黑魯加"
+      },
       "types": [
         "Dark",
         "Fire"
@@ -2996,6 +4657,17 @@
       "id": "vaporeon",
       "num": 134,
       "name": "Vaporeon",
+      "names": {
+        "fr": "Aquali",
+        "de": "Aquana",
+        "es": "Vaporeon",
+        "es-419": "Vaporeon",
+        "it": "Vaporeon",
+        "ja": "シャワーズ",
+        "ko": "샤미드",
+        "zh-hans": "水伊布",
+        "zh-hant": "水伊布"
+      },
       "types": [
         "Water"
       ],
@@ -3015,6 +4687,17 @@
       "id": "gyarados",
       "num": 130,
       "name": "Gyarados",
+      "names": {
+        "fr": "Léviator",
+        "de": "Garados",
+        "es": "Gyarados",
+        "es-419": "Gyarados",
+        "it": "Gyarados",
+        "ja": "ギャラドス",
+        "ko": "갸라도스",
+        "zh-hans": "暴鲤龙",
+        "zh-hant": "暴鯉龍"
+      },
       "types": [
         "Water",
         "Flying"
@@ -3035,6 +4718,17 @@
       "id": "arcanine",
       "num": 59,
       "name": "Arcanine",
+      "names": {
+        "fr": "Arcanin",
+        "de": "Arkani",
+        "es": "Arcanine",
+        "es-419": "Arcanine",
+        "it": "Arcanine",
+        "ja": "ウインディ",
+        "ko": "윈디",
+        "zh-hans": "风速狗",
+        "zh-hant": "風速狗"
+      },
       "types": [
         "Fire"
       ],
@@ -3054,6 +4748,17 @@
       "id": "krookodile",
       "num": 553,
       "name": "Krookodile",
+      "names": {
+        "fr": "Crocorible",
+        "de": "Rabigator",
+        "es": "Krookodile",
+        "es-419": "Krookodile",
+        "it": "Krookodile",
+        "ja": "ワルビアル",
+        "ko": "악비아르",
+        "zh-hans": "流氓鳄",
+        "zh-hant": "流氓鱷"
+      },
       "types": [
         "Ground",
         "Dark"
@@ -3074,6 +4779,17 @@
       "id": "clefable-mega",
       "num": 36,
       "name": "Clefable-Mega",
+      "names": {
+        "fr": "Méga-Mélodelfe",
+        "de": "Pixi",
+        "es": "Clefable",
+        "es-419": "Clefable",
+        "it": "Clefable",
+        "ja": "ピクシー",
+        "ko": "픽시",
+        "zh-hans": "皮可西",
+        "zh-hant": "皮可西"
+      },
       "types": [
         "Fairy",
         "Flying"
@@ -3094,6 +4810,17 @@
       "id": "metagross",
       "num": 376,
       "name": "Metagross",
+      "names": {
+        "fr": "Métalosse",
+        "de": "Metagross",
+        "es": "Metagross",
+        "es-419": "Metagross",
+        "it": "Metagross",
+        "ja": "メタグロス",
+        "ko": "메타그로스",
+        "zh-hans": "巨金怪",
+        "zh-hant": "巨金怪"
+      },
       "types": [
         "Steel",
         "Psychic"
@@ -3114,6 +4841,17 @@
       "id": "aromatisse",
       "num": 683,
       "name": "Aromatisse",
+      "names": {
+        "fr": "Cocotine",
+        "de": "Parfinesse",
+        "es": "Aromatisse",
+        "es-419": "Aromatisse",
+        "it": "Aromatisse",
+        "ja": "フレフワン",
+        "ko": "프레프티르",
+        "zh-hans": "芳香精",
+        "zh-hant": "芳香精"
+      },
       "types": [
         "Fairy"
       ],
@@ -3133,6 +4871,17 @@
       "id": "ampharos-mega",
       "num": 181,
       "name": "Ampharos-Mega",
+      "names": {
+        "fr": "Méga-Pharamp",
+        "de": "Mega-Ampharos",
+        "es": "Ampharos",
+        "es-419": "Ampharos",
+        "it": "Ampharos",
+        "ja": "デンリュウ",
+        "ko": "전룡",
+        "zh-hans": "电龙",
+        "zh-hant": "電龍"
+      },
       "types": [
         "Electric",
         "Dragon"
@@ -3153,6 +4902,17 @@
       "id": "blastoise",
       "num": 9,
       "name": "Blastoise",
+      "names": {
+        "fr": "Tortank",
+        "de": "Turtok",
+        "es": "Blastoise",
+        "es-419": "Blastoise",
+        "it": "Blastoise",
+        "ja": "カメックス",
+        "ko": "거북왕",
+        "zh-hans": "水箭龟",
+        "zh-hant": "水箭龜"
+      },
       "types": [
         "Water"
       ],
@@ -3172,6 +4932,17 @@
       "id": "greninja",
       "num": 658,
       "name": "Greninja",
+      "names": {
+        "fr": "Amphinobi",
+        "de": "Quajutsu",
+        "es": "Greninja",
+        "es-419": "Greninja",
+        "it": "Greninja",
+        "ja": "ゲッコウガ",
+        "ko": "개굴닌자",
+        "zh-hans": "甲贺忍蛙",
+        "zh-hant": "甲賀忍蛙"
+      },
       "types": [
         "Water",
         "Dark"
@@ -3192,6 +4963,17 @@
       "id": "excadrill-mega",
       "num": 530,
       "name": "Excadrill-Mega",
+      "names": {
+        "fr": "Méga-Minotaupe",
+        "de": "Stalobor",
+        "es": "Excadrill",
+        "es-419": "Excadrill",
+        "it": "Excadrill",
+        "ja": "ドリュウズ",
+        "ko": "몰드류",
+        "zh-hans": "龙头地鼠",
+        "zh-hant": "龍頭地鼠"
+      },
       "types": [
         "Ground",
         "Steel"
@@ -3212,6 +4994,17 @@
       "id": "goodra-hisui",
       "num": 706,
       "name": "Goodra-Hisui",
+      "names": {
+        "fr": "Muplodocus de Hisui",
+        "de": "Hisui Viscogon",
+        "es": "Goodra",
+        "es-419": "Goodra",
+        "it": "Goodra",
+        "ja": "ヌメルゴン",
+        "ko": "미끄래곤",
+        "zh-hans": "黏美龙",
+        "zh-hant": "黏美龍"
+      },
       "types": [
         "Steel",
         "Dragon"
@@ -3232,6 +5025,17 @@
       "id": "alcremie",
       "num": 869,
       "name": "Alcremie",
+      "names": {
+        "fr": "Charmilly Lait Vanille Fraise en Sucre",
+        "de": "Pokusan (Vanille-Creme)",
+        "es": "Alcremie",
+        "es-419": "Alcremie",
+        "it": "Alcremie",
+        "ja": "マホイップ",
+        "ko": "마휘핑",
+        "zh-hans": "霜奶仙",
+        "zh-hant": "霜奶仙"
+      },
       "types": [
         "Fairy"
       ],
@@ -3251,6 +5055,17 @@
       "id": "rhyperior",
       "num": 464,
       "name": "Rhyperior",
+      "names": {
+        "fr": "Rhinastoc",
+        "de": "Rihornior",
+        "es": "Rhyperior",
+        "es-419": "Rhyperior",
+        "it": "Rhyperior",
+        "ja": "ドサイドン",
+        "ko": "거대코뿌리",
+        "zh-hans": "超甲狂犀",
+        "zh-hant": "超甲狂犀"
+      },
       "types": [
         "Ground",
         "Rock"
@@ -3271,6 +5086,17 @@
       "id": "empoleon",
       "num": 395,
       "name": "Empoleon",
+      "names": {
+        "fr": "Pingoléon",
+        "de": "Impoleon",
+        "es": "Empoleon",
+        "es-419": "Empoleon",
+        "it": "Empoleon",
+        "ja": "エンペルト",
+        "ko": "엠페르트",
+        "zh-hans": "帝王拿波",
+        "zh-hant": "帝王拿波"
+      },
       "types": [
         "Water",
         "Steel"
@@ -3291,6 +5117,17 @@
       "id": "audino-mega",
       "num": 531,
       "name": "Audino-Mega",
+      "names": {
+        "fr": "Méga-Nanméouïe",
+        "de": "Mega-Ohrdoch",
+        "es": "Audino",
+        "es-419": "Audino",
+        "it": "Audino",
+        "ja": "タブンネ",
+        "ko": "다부니",
+        "zh-hans": "差不多娃娃",
+        "zh-hant": "差不多娃娃"
+      },
       "types": [
         "Normal",
         "Fairy"
@@ -3311,6 +5148,17 @@
       "id": "toxicroak",
       "num": 454,
       "name": "Toxicroak",
+      "names": {
+        "fr": "Coatox",
+        "de": "Toxiquak",
+        "es": "Toxicroak",
+        "es-419": "Toxicroak",
+        "it": "Toxicroak",
+        "ja": "ドクロッグ",
+        "ko": "독개굴",
+        "zh-hans": "毒骷蛙",
+        "zh-hant": "毒骷蛙"
+      },
       "types": [
         "Poison",
         "Fighting"
@@ -3331,6 +5179,17 @@
       "id": "pinsir-mega",
       "num": 127,
       "name": "Pinsir-Mega",
+      "names": {
+        "fr": "Méga-Scarabrute",
+        "de": "Mega-Pinsir",
+        "es": "Pinsir",
+        "es-419": "Pinsir",
+        "it": "Pinsir",
+        "ja": "カイロス",
+        "ko": "쁘사이저",
+        "zh-hans": "凯罗斯",
+        "zh-hant": "凱羅斯"
+      },
       "types": [
         "Bug",
         "Flying"
@@ -3351,6 +5210,17 @@
       "id": "tyrantrum",
       "num": 697,
       "name": "Tyrantrum",
+      "names": {
+        "fr": "Rexillius",
+        "de": "Monargoras",
+        "es": "Tyrantrum",
+        "es-419": "Tyrantrum",
+        "it": "Tyrantrum",
+        "ja": "ガチゴラス",
+        "ko": "견고라스",
+        "zh-hans": "怪颚龙",
+        "zh-hant": "怪顎龍"
+      },
       "types": [
         "Rock",
         "Dragon"
@@ -3371,6 +5241,17 @@
       "id": "morpeko-full-belly",
       "num": 877,
       "name": "Morpeko",
+      "names": {
+        "fr": "Morpeko Rassasié",
+        "de": "Morpeko (Pappsattmuster)",
+        "es": "Morpeko",
+        "es-419": "Morpeko",
+        "it": "Morpeko",
+        "ja": "モルペコ",
+        "ko": "모르페코",
+        "zh-hans": "莫鲁贝可",
+        "zh-hant": "莫魯貝可"
+      },
       "types": [
         "Electric",
         "Dark"
@@ -3391,6 +5272,17 @@
       "id": "medicham-mega",
       "num": 308,
       "name": "Medicham-Mega",
+      "names": {
+        "fr": "Méga-Charmina",
+        "de": "Mega-Meditalis",
+        "es": "Medicham",
+        "es-419": "Medicham",
+        "it": "Medicham",
+        "ja": "チャーレム",
+        "ko": "요가램",
+        "zh-hans": "恰雷姆",
+        "zh-hant": "恰雷姆"
+      },
       "types": [
         "Fighting",
         "Psychic"
@@ -3411,6 +5303,17 @@
       "id": "scrafty",
       "num": 560,
       "name": "Scrafty",
+      "names": {
+        "fr": "Baggaïd",
+        "de": "Irokex",
+        "es": "Scrafty",
+        "es-419": "Scrafty",
+        "it": "Scrafty",
+        "ja": "ズルズキン",
+        "ko": "곤율거니",
+        "zh-hans": "头巾混混",
+        "zh-hant": "頭巾混混"
+      },
       "types": [
         "Dark",
         "Fighting"
@@ -3431,6 +5334,17 @@
       "id": "mr-rime",
       "num": 866,
       "name": "Mr. Rime",
+      "names": {
+        "fr": "M. Glaquette",
+        "de": "Pantifrost",
+        "es": "Mr. Rime",
+        "es-419": "Mr. Rime",
+        "it": "Mr. Rime",
+        "ja": "バリコオル",
+        "ko": "마임꽁꽁",
+        "zh-hans": "踏冰人偶",
+        "zh-hant": "踏冰人偶"
+      },
       "types": [
         "Ice",
         "Psychic"
@@ -3451,6 +5365,17 @@
       "id": "sharpedo-mega",
       "num": 319,
       "name": "Sharpedo-Mega",
+      "names": {
+        "fr": "Méga-Sharpedo",
+        "de": "Mega-Tohaido",
+        "es": "Sharpedo",
+        "es-419": "Sharpedo",
+        "it": "Sharpedo",
+        "ja": "サメハダー",
+        "ko": "샤크니아",
+        "zh-hans": "巨牙鲨",
+        "zh-hant": "巨牙鯊"
+      },
       "types": [
         "Water",
         "Dark"
@@ -3471,6 +5396,17 @@
       "id": "aurorus",
       "num": 699,
       "name": "Aurorus",
+      "names": {
+        "fr": "Dragmara",
+        "de": "Amagarga",
+        "es": "Aurorus",
+        "es-419": "Aurorus",
+        "it": "Aurorus",
+        "ja": "アマルルガ",
+        "ko": "아마루르가",
+        "zh-hans": "冰雪巨龙",
+        "zh-hant": "冰雪巨龍"
+      },
       "types": [
         "Rock",
         "Ice"
@@ -3491,6 +5427,17 @@
       "id": "manectric-mega",
       "num": 310,
       "name": "Manectric-Mega",
+      "names": {
+        "fr": "Méga-Élecsprint",
+        "de": "Mega-Voltenso",
+        "es": "Manectric",
+        "es-419": "Manectric",
+        "it": "Manectric",
+        "ja": "ライボルト",
+        "ko": "썬더볼트",
+        "zh-hans": "雷电兽",
+        "zh-hant": "雷電獸"
+      },
       "types": [
         "Electric"
       ],
@@ -3510,6 +5457,17 @@
       "id": "noivern",
       "num": 715,
       "name": "Noivern",
+      "names": {
+        "fr": "Bruyverne",
+        "de": "UHaFnir",
+        "es": "Noivern",
+        "es-419": "Noivern",
+        "it": "Noivern",
+        "ja": "オンバーン",
+        "ko": "음번",
+        "zh-hans": "音波龙",
+        "zh-hant": "音波龍"
+      },
       "types": [
         "Flying",
         "Dragon"
@@ -3530,6 +5488,17 @@
       "id": "rotom-mow",
       "num": 479,
       "name": "Rotom-Mow",
+      "names": {
+        "fr": "Motisma Tonte",
+        "de": "Schneid-Rotom",
+        "es": "Rotom",
+        "es-419": "Rotom",
+        "it": "Rotom",
+        "ja": "ロトム",
+        "ko": "로토무",
+        "zh-hans": "洛托姆",
+        "zh-hant": "洛托姆"
+      },
       "types": [
         "Electric",
         "Grass"
@@ -3550,6 +5519,17 @@
       "id": "orthworm",
       "num": 968,
       "name": "Orthworm",
+      "names": {
+        "fr": "Ferdeter",
+        "de": "Schlurm",
+        "es": "Orthworm",
+        "es-419": "Orthworm",
+        "it": "Orthworm",
+        "ja": "ミミズズ",
+        "ko": "꿈트렁",
+        "zh-hans": "拖拖蚓",
+        "zh-hant": "拖拖蚓"
+      },
       "types": [
         "Steel"
       ],
@@ -3569,6 +5549,17 @@
       "id": "pidgeot-mega",
       "num": 18,
       "name": "Pidgeot-Mega",
+      "names": {
+        "fr": "Méga-Roucarnage",
+        "de": "Mega-Tauboss",
+        "es": "Pidgeot",
+        "es-419": "Pidgeot",
+        "it": "Pidgeot",
+        "ja": "ピジョット",
+        "ko": "피죤투",
+        "zh-hans": "大比鸟",
+        "zh-hant": "大比鳥"
+      },
       "types": [
         "Normal",
         "Flying"
@@ -3589,6 +5580,17 @@
       "id": "hydrapple",
       "num": 1019,
       "name": "Hydrapple",
+      "names": {
+        "fr": "Pomdorochi",
+        "de": "Hydrapfel",
+        "es": "Hydrapple",
+        "es-419": "Hydrapple",
+        "it": "Hydrapple",
+        "ja": "カミツオロチ",
+        "ko": "과미드라",
+        "zh-hans": "蜜集大蛇",
+        "zh-hant": "蜜集大蛇"
+      },
       "types": [
         "Grass",
         "Dragon"
@@ -3609,6 +5611,17 @@
       "id": "chesnaught",
       "num": 652,
       "name": "Chesnaught",
+      "names": {
+        "fr": "Blindépique",
+        "de": "Brigaron",
+        "es": "Chesnaught",
+        "es-419": "Chesnaught",
+        "it": "Chesnaught",
+        "ja": "ブリガロン",
+        "ko": "브리가론",
+        "zh-hans": "布里卡隆",
+        "zh-hant": "布里卡隆"
+      },
       "types": [
         "Grass",
         "Fighting"
@@ -3629,6 +5642,17 @@
       "id": "wyrdeer",
       "num": 899,
       "name": "Wyrdeer",
+      "names": {
+        "fr": "Cerbyllin",
+        "de": "Damythir",
+        "es": "Wyrdeer",
+        "es-419": "Wyrdeer",
+        "it": "Wyrdeer",
+        "ja": "アヤシシ",
+        "ko": "신비록",
+        "zh-hans": "诡角鹿",
+        "zh-hant": "詭角鹿"
+      },
       "types": [
         "Normal",
         "Psychic"
@@ -3649,6 +5673,17 @@
       "id": "heracross-mega",
       "num": 214,
       "name": "Heracross-Mega",
+      "names": {
+        "fr": "Méga-Scarhino",
+        "de": "Mega-Skaraborn",
+        "es": "Heracross",
+        "es-419": "Heracross",
+        "it": "Heracross",
+        "ja": "ヘラクロス",
+        "ko": "헤라크로스",
+        "zh-hans": "赫拉克罗斯",
+        "zh-hant": "赫拉克羅斯"
+      },
       "types": [
         "Bug",
         "Fighting"
@@ -3669,6 +5704,17 @@
       "id": "reuniclus",
       "num": 579,
       "name": "Reuniclus",
+      "names": {
+        "fr": "Symbios",
+        "de": "Zytomega",
+        "es": "Reuniclus",
+        "es-419": "Reuniclus",
+        "it": "Reuniclus",
+        "ja": "ランクルス",
+        "ko": "란쿨루스",
+        "zh-hans": "人造细胞卵",
+        "zh-hant": "人造細胞卵"
+      },
       "types": [
         "Psychic"
       ],
@@ -3688,6 +5734,17 @@
       "id": "serperior",
       "num": 497,
       "name": "Serperior",
+      "names": {
+        "fr": "Majaspic",
+        "de": "Serpiroyal",
+        "es": "Serperior",
+        "es-419": "Serperior",
+        "it": "Serperior",
+        "ja": "ジャローダ",
+        "ko": "샤로다",
+        "zh-hans": "君主蛇",
+        "zh-hant": "君主蛇"
+      },
       "types": [
         "Grass"
       ],
@@ -3707,6 +5764,17 @@
       "id": "runerigus",
       "num": 867,
       "name": "Runerigus",
+      "names": {
+        "fr": "Tutétékri",
+        "de": "Oghnatoll",
+        "es": "Runerigus",
+        "es-419": "Runerigus",
+        "it": "Runerigus",
+        "ja": "デスバーン",
+        "ko": "데스판",
+        "zh-hans": "迭失板",
+        "zh-hant": "死神板"
+      },
       "types": [
         "Ground",
         "Ghost"
@@ -3727,6 +5795,17 @@
       "id": "jolteon",
       "num": 135,
       "name": "Jolteon",
+      "names": {
+        "fr": "Voltali",
+        "de": "Blitza",
+        "es": "Jolteon",
+        "es-419": "Jolteon",
+        "it": "Jolteon",
+        "ja": "サンダース",
+        "ko": "쥬피썬더",
+        "zh-hans": "雷伊布",
+        "zh-hant": "雷伊布"
+      },
       "types": [
         "Electric"
       ],
@@ -3746,6 +5825,17 @@
       "id": "chimecho-mega",
       "num": 358,
       "name": "Chimecho-Mega",
+      "names": {
+        "fr": "Méga-Éoko",
+        "de": "Palimpalim",
+        "es": "Chimecho",
+        "es-419": "Chimecho",
+        "it": "Chimecho",
+        "ja": "チリーン",
+        "ko": "치렁",
+        "zh-hans": "风铃铃",
+        "zh-hant": "風鈴鈴"
+      },
       "types": [
         "Psychic",
         "Steel"
@@ -3766,6 +5856,17 @@
       "id": "clawitzer",
       "num": 693,
       "name": "Clawitzer",
+      "names": {
+        "fr": "Gamblast",
+        "de": "Wummer",
+        "es": "Clawitzer",
+        "es-419": "Clawitzer",
+        "it": "Clawitzer",
+        "ja": "ブロスター",
+        "ko": "블로스터",
+        "zh-hans": "钢炮臂虾",
+        "zh-hant": "鋼炮臂蝦"
+      },
       "types": [
         "Water"
       ],
@@ -3785,6 +5886,17 @@
       "id": "medicham",
       "num": 308,
       "name": "Medicham",
+      "names": {
+        "fr": "Charmina",
+        "de": "Meditalis",
+        "es": "Medicham",
+        "es-419": "Medicham",
+        "it": "Medicham",
+        "ja": "チャーレム",
+        "ko": "요가램",
+        "zh-hans": "恰雷姆",
+        "zh-hant": "恰雷姆"
+      },
       "types": [
         "Fighting",
         "Psychic"
@@ -3805,6 +5917,17 @@
       "id": "rampardos",
       "num": 409,
       "name": "Rampardos",
+      "names": {
+        "fr": "Charkos",
+        "de": "Rameidon",
+        "es": "Rampardos",
+        "es-419": "Rampardos",
+        "it": "Rampardos",
+        "ja": "ラムパルド",
+        "ko": "램펄드",
+        "zh-hans": "战槌龙",
+        "zh-hant": "戰槌龍"
+      },
       "types": [
         "Rock"
       ],
@@ -3824,6 +5947,17 @@
       "id": "barbaracle-mega",
       "num": 689,
       "name": "Barbaracle-Mega",
+      "names": {
+        "fr": "Méga-Golgopathe",
+        "de": "Thanathora",
+        "es": "Barbaracle",
+        "es-419": "Barbaracle",
+        "it": "Barbaracle",
+        "ja": "ガメノデス",
+        "ko": "거북손데스",
+        "zh-hans": "龟足巨铠",
+        "zh-hant": "龜足巨鎧"
+      },
       "types": [
         "Rock",
         "Fighting"
@@ -3844,6 +5978,17 @@
       "id": "liepard",
       "num": 510,
       "name": "Liepard",
+      "names": {
+        "fr": "Léopardus",
+        "de": "Kleoparda",
+        "es": "Liepard",
+        "es-419": "Liepard",
+        "it": "Liepard",
+        "ja": "レパルダス",
+        "ko": "레파르다스",
+        "zh-hans": "酷豹",
+        "zh-hant": "酷豹"
+      },
       "types": [
         "Dark"
       ],
@@ -3863,6 +6008,17 @@
       "id": "falinks-mega",
       "num": 870,
       "name": "Falinks-Mega",
+      "names": {
+        "fr": "Méga-Hexadron",
+        "de": "Legios",
+        "es": "Falinks",
+        "es-419": "Falinks",
+        "it": "Falinks",
+        "ja": "タイレーツ",
+        "ko": "대여르",
+        "zh-hans": "列阵兵",
+        "zh-hant": "列陣兵"
+      },
       "types": [
         "Fighting"
       ],
@@ -3882,6 +6038,17 @@
       "id": "quaquaval",
       "num": 914,
       "name": "Quaquaval",
+      "names": {
+        "fr": "Palmaval",
+        "de": "Bailonda",
+        "es": "Quaquaval",
+        "es-419": "Quaquaval",
+        "it": "Quaquaval",
+        "ja": "ウェーニバル",
+        "ko": "웨이니발",
+        "zh-hans": "狂欢浪舞鸭",
+        "zh-hant": "狂歡浪舞鴨"
+      },
       "types": [
         "Water",
         "Fighting"
@@ -3902,6 +6069,17 @@
       "id": "alakazam-mega",
       "num": 65,
       "name": "Alakazam-Mega",
+      "names": {
+        "fr": "Méga-Alakazam",
+        "de": "Mega-Simsala",
+        "es": "Alakazam",
+        "es-419": "Alakazam",
+        "it": "Alakazam",
+        "ja": "フーディン",
+        "ko": "후딘",
+        "zh-hans": "胡地",
+        "zh-hant": "胡地"
+      },
       "types": [
         "Psychic"
       ],
@@ -3921,6 +6099,17 @@
       "id": "garganacl",
       "num": 934,
       "name": "Garganacl",
+      "names": {
+        "fr": "Gigansel",
+        "de": "Saltigant",
+        "es": "Garganacl",
+        "es-419": "Garganacl",
+        "it": "Garganacl",
+        "ja": "キョジオーン",
+        "ko": "콜로솔트",
+        "zh-hans": "盐石巨灵",
+        "zh-hant": "鹽石巨靈"
+      },
       "types": [
         "Rock"
       ],
@@ -3940,6 +6129,17 @@
       "id": "gourgeist-super",
       "num": 711,
       "name": "Gourgeist-Super",
+      "names": {
+        "fr": "Banshitrouye Ultra",
+        "de": "Pumpdjinn (XL)",
+        "es": "Gourgeist",
+        "es-419": "Gourgeist",
+        "it": "Gourgeist",
+        "ja": "パンプジン",
+        "ko": "펌킨인",
+        "zh-hans": "南瓜怪人",
+        "zh-hant": "南瓜怪人"
+      },
       "types": [
         "Ghost",
         "Grass"
@@ -3960,6 +6160,17 @@
       "id": "beedrill-mega",
       "num": 15,
       "name": "Beedrill-Mega",
+      "names": {
+        "fr": "Méga-Dardargnan",
+        "de": "Mega-Bibor",
+        "es": "Beedrill",
+        "es-419": "Beedrill",
+        "it": "Beedrill",
+        "ja": "スピアー",
+        "ko": "독침붕",
+        "zh-hans": "大针蜂",
+        "zh-hant": "大針蜂"
+      },
       "types": [
         "Bug",
         "Poison"
@@ -3980,6 +6191,17 @@
       "id": "torterra",
       "num": 389,
       "name": "Torterra",
+      "names": {
+        "fr": "Torterra",
+        "de": "Chelterrar",
+        "es": "Torterra",
+        "es-419": "Torterra",
+        "it": "Torterra",
+        "ja": "ドダイトス",
+        "ko": "토대부기",
+        "zh-hans": "土台龟",
+        "zh-hant": "土台龜"
+      },
       "types": [
         "Grass",
         "Ground"
@@ -4000,6 +6222,17 @@
       "id": "rotom-frost",
       "num": 479,
       "name": "Rotom-Frost",
+      "names": {
+        "fr": "Motisma Froid",
+        "de": "Frost-Rotom",
+        "es": "Rotom",
+        "es-419": "Rotom",
+        "it": "Rotom",
+        "ja": "ロトム",
+        "ko": "로토무",
+        "zh-hans": "洛托姆",
+        "zh-hant": "洛托姆"
+      },
       "types": [
         "Electric",
         "Ice"
@@ -4020,6 +6253,17 @@
       "id": "pikachu",
       "num": 25,
       "name": "Pikachu",
+      "names": {
+        "fr": "Pikachu",
+        "de": "Pikachu",
+        "es": "Pikachu",
+        "es-419": "Pikachu",
+        "it": "Pikachu",
+        "ja": "ピカチュウ",
+        "ko": "피카츄",
+        "zh-hans": "皮卡丘",
+        "zh-hant": "皮卡丘"
+      },
       "types": [
         "Electric"
       ],
@@ -4039,6 +6283,17 @@
       "id": "alakazam",
       "num": 65,
       "name": "Alakazam",
+      "names": {
+        "fr": "Alakazam",
+        "de": "Simsala",
+        "es": "Alakazam",
+        "es-419": "Alakazam",
+        "it": "Alakazam",
+        "ja": "フーディン",
+        "ko": "후딘",
+        "zh-hans": "胡地",
+        "zh-hant": "胡地"
+      },
       "types": [
         "Psychic"
       ],
@@ -4058,6 +6313,17 @@
       "id": "ampharos",
       "num": 181,
       "name": "Ampharos",
+      "names": {
+        "fr": "Pharamp",
+        "de": "Ampharos",
+        "es": "Ampharos",
+        "es-419": "Ampharos",
+        "it": "Ampharos",
+        "ja": "デンリュウ",
+        "ko": "전룡",
+        "zh-hans": "电龙",
+        "zh-hant": "電龍"
+      },
       "types": [
         "Electric"
       ],
@@ -4077,6 +6343,17 @@
       "id": "skeledirge",
       "num": 911,
       "name": "Skeledirge",
+      "names": {
+        "fr": "Flâmigator",
+        "de": "Skelokrok",
+        "es": "Skeledirge",
+        "es-419": "Skeledirge",
+        "it": "Skeledirge",
+        "ja": "ラウドボーン",
+        "ko": "라우드본",
+        "zh-hans": "骨纹巨声鳄",
+        "zh-hant": "骨紋巨聲鱷"
+      },
       "types": [
         "Fire",
         "Ghost"
@@ -4097,6 +6374,17 @@
       "id": "slowking",
       "num": 199,
       "name": "Slowking",
+      "names": {
+        "fr": "Roigada",
+        "de": "Laschoking",
+        "es": "Slowking",
+        "es-419": "Slowking",
+        "it": "Slowking",
+        "ja": "ヤドキング",
+        "ko": "야도킹",
+        "zh-hans": "呆呆王",
+        "zh-hant": "呆呆王"
+      },
       "types": [
         "Water",
         "Psychic"
@@ -4117,6 +6405,17 @@
       "id": "slowbro",
       "num": 80,
       "name": "Slowbro",
+      "names": {
+        "fr": "Flagadoss",
+        "de": "Lahmus",
+        "es": "Slowbro",
+        "es-419": "Slowbro",
+        "it": "Slowbro",
+        "ja": "ヤドラン",
+        "ko": "야도란",
+        "zh-hans": "呆壳兽",
+        "zh-hant": "呆殼獸"
+      },
       "types": [
         "Water",
         "Psychic"
@@ -4137,6 +6436,17 @@
       "id": "spiritomb",
       "num": 442,
       "name": "Spiritomb",
+      "names": {
+        "fr": "Spiritomb",
+        "de": "Kryppuk",
+        "es": "Spiritomb",
+        "es-419": "Spiritomb",
+        "it": "Spiritomb",
+        "ja": "ミカルゲ",
+        "ko": "화강돌",
+        "zh-hans": "花岩怪",
+        "zh-hant": "花岩怪"
+      },
       "types": [
         "Ghost",
         "Dark"
@@ -4157,6 +6467,17 @@
       "id": "salazzle",
       "num": 758,
       "name": "Salazzle",
+      "names": {
+        "fr": "Malamandre",
+        "de": "Amfira",
+        "es": "Salazzle",
+        "es-419": "Salazzle",
+        "it": "Salazzle",
+        "ja": "エンニュート",
+        "ko": "염뉴트",
+        "zh-hans": "焰后蜥",
+        "zh-hant": "焰后蜥"
+      },
       "types": [
         "Poison",
         "Fire"
@@ -4177,6 +6498,17 @@
       "id": "sableye-mega",
       "num": 302,
       "name": "Sableye-Mega",
+      "names": {
+        "fr": "Méga-Ténéfix",
+        "de": "Mega-Zobiris",
+        "es": "Sableye",
+        "es-419": "Sableye",
+        "it": "Sableye",
+        "ja": "ヤミラミ",
+        "ko": "깜까미",
+        "zh-hans": "勾魂眼",
+        "zh-hant": "勾魂眼"
+      },
       "types": [
         "Dark",
         "Ghost"
@@ -4197,6 +6529,17 @@
       "id": "starmie",
       "num": 121,
       "name": "Starmie",
+      "names": {
+        "fr": "Staross",
+        "de": "Starmie",
+        "es": "Starmie",
+        "es-419": "Starmie",
+        "it": "Starmie",
+        "ja": "スターミー",
+        "ko": "아쿠스타",
+        "zh-hans": "宝石海星",
+        "zh-hant": "寶石海星"
+      },
       "types": [
         "Water",
         "Psychic"
@@ -4217,6 +6560,17 @@
       "id": "lucario",
       "num": 448,
       "name": "Lucario",
+      "names": {
+        "fr": "Lucario",
+        "de": "Lucario",
+        "es": "Lucario",
+        "es-419": "Lucario",
+        "it": "Lucario",
+        "ja": "ルカリオ",
+        "ko": "루카리오",
+        "zh-hans": "路卡利欧",
+        "zh-hant": "路卡利歐"
+      },
       "types": [
         "Fighting",
         "Steel"
@@ -4237,6 +6591,17 @@
       "id": "glalie-mega",
       "num": 362,
       "name": "Glalie-Mega",
+      "names": {
+        "fr": "Méga-Oniglali",
+        "de": "Mega-Firnontor",
+        "es": "Glalie",
+        "es-419": "Glalie",
+        "it": "Glalie",
+        "ja": "オニゴーリ",
+        "ko": "얼음귀신",
+        "zh-hans": "冰鬼护",
+        "zh-hant": "冰鬼護"
+      },
       "types": [
         "Ice"
       ],
@@ -4256,6 +6621,17 @@
       "id": "machamp",
       "num": 68,
       "name": "Machamp",
+      "names": {
+        "fr": "Mackogneur",
+        "de": "Machomei",
+        "es": "Machamp",
+        "es-419": "Machamp",
+        "it": "Machamp",
+        "ja": "カイリキー",
+        "ko": "괴력몬",
+        "zh-hans": "怪力",
+        "zh-hant": "怪力"
+      },
       "types": [
         "Fighting"
       ],
@@ -4275,6 +6651,17 @@
       "id": "meowstic-female-mega",
       "num": 678,
       "name": "Meowstic-F-Mega",
+      "names": {
+        "fr": "Méga-Mistigrix",
+        "de": "Psiaugon",
+        "es": "Meowstic",
+        "es-419": "Meowstic",
+        "it": "Meowstic",
+        "ja": "ニャオニクス",
+        "ko": "냐오닉스",
+        "zh-hans": "超能妙喵",
+        "zh-hant": "超能妙喵"
+      },
       "types": [
         "Psychic"
       ],
@@ -4294,6 +6681,17 @@
       "id": "avalugg-hisui",
       "num": 713,
       "name": "Avalugg-Hisui",
+      "names": {
+        "fr": "Séracrawl de Hisui",
+        "de": "Hisui Arktilas",
+        "es": "Avalugg",
+        "es-419": "Avalugg",
+        "it": "Avalugg",
+        "ja": "クレベース",
+        "ko": "크레베이스",
+        "zh-hans": "冰岩怪",
+        "zh-hant": "冰岩怪"
+      },
       "types": [
         "Ice",
         "Rock"
@@ -4314,6 +6712,17 @@
       "id": "diggersby",
       "num": 660,
       "name": "Diggersby",
+      "names": {
+        "fr": "Excavarenne",
+        "de": "Grebbit",
+        "es": "Diggersby",
+        "es-419": "Diggersby",
+        "it": "Diggersby",
+        "ja": "ホルード",
+        "ko": "파르토",
+        "zh-hans": "掘地兔",
+        "zh-hant": "掘地兔"
+      },
       "types": [
         "Normal",
         "Ground"
@@ -4334,6 +6743,17 @@
       "id": "dragalge",
       "num": 691,
       "name": "Dragalge",
+      "names": {
+        "fr": "Kravarech",
+        "de": "Tandrak",
+        "es": "Dragalge",
+        "es-419": "Dragalge",
+        "it": "Dragalge",
+        "ja": "ドラミドロ",
+        "ko": "드래캄",
+        "zh-hans": "毒藻龙",
+        "zh-hant": "毒藻龍"
+      },
       "types": [
         "Poison",
         "Dragon"
@@ -4354,6 +6774,17 @@
       "id": "infernape",
       "num": 392,
       "name": "Infernape",
+      "names": {
+        "fr": "Simiabraz",
+        "de": "Panferno",
+        "es": "Infernape",
+        "es-419": "Infernape",
+        "it": "Infernape",
+        "ja": "ゴウカザル",
+        "ko": "초염몽",
+        "zh-hans": "烈焰猴",
+        "zh-hant": "烈焰猴"
+      },
       "types": [
         "Fire",
         "Fighting"
@@ -4374,6 +6805,17 @@
       "id": "feraligatr",
       "num": 160,
       "name": "Feraligatr",
+      "names": {
+        "fr": "Aligatueur",
+        "de": "Impergator",
+        "es": "Feraligatr",
+        "es-419": "Feraligatr",
+        "it": "Feraligatr",
+        "ja": "オーダイル",
+        "ko": "장크로다일",
+        "zh-hans": "大力鳄",
+        "zh-hant": "大力鱷"
+      },
       "types": [
         "Water"
       ],
@@ -4393,6 +6835,17 @@
       "id": "tauros-paldea-blaze-breed",
       "num": 128,
       "name": "Tauros-Paldea-Blaze",
+      "names": {
+        "fr": "Tauros de Paldéa Race Flamboyante",
+        "de": "Tauros",
+        "es": "Tauros",
+        "es-419": "Tauros",
+        "it": "Tauros",
+        "ja": "ケンタロス",
+        "ko": "켄타로스",
+        "zh-hans": "肯泰罗",
+        "zh-hant": "肯泰羅"
+      },
       "types": [
         "Fighting",
         "Fire"
@@ -4413,6 +6866,17 @@
       "id": "espeon",
       "num": 196,
       "name": "Espeon",
+      "names": {
+        "fr": "Mentali",
+        "de": "Psiana",
+        "es": "Espeon",
+        "es-419": "Espeon",
+        "it": "Espeon",
+        "ja": "エーフィ",
+        "ko": "에브이",
+        "zh-hans": "太阳伊布",
+        "zh-hant": "太陽伊布"
+      },
       "types": [
         "Psychic"
       ],
@@ -4432,6 +6896,17 @@
       "id": "charizard",
       "num": 6,
       "name": "Charizard",
+      "names": {
+        "fr": "Dracaufeu",
+        "de": "Glurak",
+        "es": "Charizard",
+        "es-419": "Charizard",
+        "it": "Charizard",
+        "ja": "リザードン",
+        "ko": "리자몽",
+        "zh-hans": "喷火龙",
+        "zh-hant": "噴火龍"
+      },
       "types": [
         "Fire",
         "Flying"
@@ -4452,6 +6927,17 @@
       "id": "floette-eternal",
       "num": 670,
       "name": "Floette-Eternal",
+      "names": {
+        "fr": "Floette Éternel",
+        "de": "Floette (Ewigblütler)",
+        "es": "Floette",
+        "es-419": "Floette",
+        "it": "Floette",
+        "ja": "フラエッテ",
+        "ko": "플라엣테",
+        "zh-hans": "花叶蒂",
+        "zh-hant": "花葉蒂"
+      },
       "types": [
         "Fairy"
       ],
@@ -4471,6 +6957,17 @@
       "id": "roserade",
       "num": 407,
       "name": "Roserade",
+      "names": {
+        "fr": "Roserade",
+        "de": "Roserade",
+        "es": "Roserade",
+        "es-419": "Roserade",
+        "it": "Roserade",
+        "ja": "ロズレイド",
+        "ko": "로즈레이드",
+        "zh-hans": "罗丝雷朵",
+        "zh-hant": "羅絲雷朵"
+      },
       "types": [
         "Grass",
         "Poison"
@@ -4491,6 +6988,17 @@
       "id": "toucannon",
       "num": 733,
       "name": "Toucannon",
+      "names": {
+        "fr": "Bazoucan",
+        "de": "Tukanon",
+        "es": "Toucannon",
+        "es-419": "Toucannon",
+        "it": "Toucannon",
+        "ja": "ドデカバシ",
+        "ko": "왕큰부리",
+        "zh-hans": "铳嘴大鸟",
+        "zh-hant": "銃嘴大鳥"
+      },
       "types": [
         "Normal",
         "Flying"
@@ -4511,6 +7019,17 @@
       "id": "meowstic-male-mega",
       "num": 678,
       "name": "Meowstic-M-Mega",
+      "names": {
+        "fr": "Méga-Mistigrix",
+        "de": "Psiaugon",
+        "es": "Meowstic",
+        "es-419": "Meowstic",
+        "it": "Meowstic",
+        "ja": "ニャオニクス",
+        "ko": "냐오닉스",
+        "zh-hans": "超能妙喵",
+        "zh-hant": "超能妙喵"
+      },
       "types": [
         "Psychic"
       ],
@@ -4530,6 +7049,17 @@
       "id": "sceptile",
       "num": 254,
       "name": "Sceptile",
+      "names": {
+        "fr": "Jungko",
+        "de": "Gewaldro",
+        "es": "Sceptile",
+        "es-419": "Sceptile",
+        "it": "Sceptile",
+        "ja": "ジュカイン",
+        "ko": "나무킹",
+        "zh-hans": "蜥蜴王",
+        "zh-hant": "蜥蜴王"
+      },
       "types": [
         "Grass"
       ],
@@ -4549,6 +7079,17 @@
       "id": "ariados",
       "num": 168,
       "name": "Ariados",
+      "names": {
+        "fr": "Migalos",
+        "de": "Ariados",
+        "es": "Ariados",
+        "es-419": "Ariados",
+        "it": "Ariados",
+        "ja": "アリアドス",
+        "ko": "아리아도스",
+        "zh-hans": "阿利多斯",
+        "zh-hant": "阿利多斯"
+      },
       "types": [
         "Bug",
         "Poison"
@@ -4569,6 +7110,17 @@
       "id": "simipour",
       "num": 516,
       "name": "Simipour",
+      "names": {
+        "fr": "Flotoutan",
+        "de": "Sodachita",
+        "es": "Simipour",
+        "es-419": "Simipour",
+        "it": "Simipour",
+        "ja": "ヒヤッキー",
+        "ko": "앗차키",
+        "zh-hans": "冷水猿",
+        "zh-hant": "冷水猿"
+      },
       "types": [
         "Water"
       ],
@@ -4588,6 +7140,17 @@
       "id": "goodra",
       "num": 706,
       "name": "Goodra",
+      "names": {
+        "fr": "Muplodocus",
+        "de": "Viscogon",
+        "es": "Goodra",
+        "es-419": "Goodra",
+        "it": "Goodra",
+        "ja": "ヌメルゴン",
+        "ko": "미끄래곤",
+        "zh-hans": "黏美龙",
+        "zh-hant": "黏美龍"
+      },
       "types": [
         "Dragon"
       ],
@@ -4607,6 +7170,17 @@
       "id": "beartic",
       "num": 614,
       "name": "Beartic",
+      "names": {
+        "fr": "Polagriffe",
+        "de": "Siberio",
+        "es": "Beartic",
+        "es-419": "Beartic",
+        "it": "Beartic",
+        "ja": "ツンベアー",
+        "ko": "툰베어",
+        "zh-hans": "冻原熊",
+        "zh-hant": "凍原熊"
+      },
       "types": [
         "Ice"
       ],
@@ -4626,6 +7200,17 @@
       "id": "typhlosion",
       "num": 157,
       "name": "Typhlosion",
+      "names": {
+        "fr": "Typhlosion",
+        "de": "Tornupto",
+        "es": "Typhlosion",
+        "es-419": "Typhlosion",
+        "it": "Typhlosion",
+        "ja": "バクフーン",
+        "ko": "블레이범",
+        "zh-hans": "火暴兽",
+        "zh-hant": "火爆獸"
+      },
       "types": [
         "Fire"
       ],
@@ -4645,6 +7230,17 @@
       "id": "emboar-mega",
       "num": 500,
       "name": "Emboar-Mega",
+      "names": {
+        "fr": "Méga-Roitiflam",
+        "de": "Flambirex",
+        "es": "Emboar",
+        "es-419": "Emboar",
+        "it": "Emboar",
+        "ja": "エンブオー",
+        "ko": "염무왕",
+        "zh-hans": "炎武王",
+        "zh-hant": "炎武王"
+      },
       "types": [
         "Fire",
         "Fighting"
@@ -4665,6 +7261,17 @@
       "id": "slowbro-galar",
       "num": 80,
       "name": "Slowbro-Galar",
+      "names": {
+        "fr": "Flagadoss de Galar",
+        "de": "Galar Lahmus",
+        "es": "Slowbro",
+        "es-419": "Slowbro",
+        "it": "Slowbro",
+        "ja": "ヤドラン",
+        "ko": "야도란",
+        "zh-hans": "呆壳兽",
+        "zh-hant": "呆殼獸"
+      },
       "types": [
         "Poison",
         "Psychic"
@@ -4685,6 +7292,17 @@
       "id": "golurk",
       "num": 623,
       "name": "Golurk",
+      "names": {
+        "fr": "Golemastoc",
+        "de": "Golgantes",
+        "es": "Golurk",
+        "es-419": "Golurk",
+        "it": "Golurk",
+        "ja": "ゴルーグ",
+        "ko": "골루그",
+        "zh-hans": "泥偶巨人",
+        "zh-hant": "泥偶巨人"
+      },
       "types": [
         "Ground",
         "Ghost"
@@ -4705,6 +7323,17 @@
       "id": "sandaconda",
       "num": 844,
       "name": "Sandaconda",
+      "names": {
+        "fr": "Dunaconda",
+        "de": "Sanaconda",
+        "es": "Sandaconda",
+        "es-419": "Sandaconda",
+        "it": "Sandaconda",
+        "ja": "サダイジャ",
+        "ko": "사다이사",
+        "zh-hans": "沙螺蟒",
+        "zh-hant": "沙螺蟒"
+      },
       "types": [
         "Ground"
       ],
@@ -4724,6 +7353,17 @@
       "id": "hawlucha",
       "num": 701,
       "name": "Hawlucha",
+      "names": {
+        "fr": "Brutalibré",
+        "de": "Resladero",
+        "es": "Hawlucha",
+        "es-419": "Hawlucha",
+        "it": "Hawlucha",
+        "ja": "ルチャブル",
+        "ko": "루차불",
+        "zh-hans": "摔角鹰人",
+        "zh-hant": "摔角鷹人"
+      },
       "types": [
         "Fighting",
         "Flying"
@@ -4744,6 +7384,17 @@
       "id": "abomasnow",
       "num": 460,
       "name": "Abomasnow",
+      "names": {
+        "fr": "Blizzaroi",
+        "de": "Rexblisar",
+        "es": "Abomasnow",
+        "es-419": "Abomasnow",
+        "it": "Abomasnow",
+        "ja": "ユキノオー",
+        "ko": "눈설왕",
+        "zh-hans": "暴雪王",
+        "zh-hant": "暴雪王"
+      },
       "types": [
         "Grass",
         "Ice"
@@ -4764,6 +7415,17 @@
       "id": "decidueye",
       "num": 724,
       "name": "Decidueye",
+      "names": {
+        "fr": "Archéduc",
+        "de": "Silvarro",
+        "es": "Decidueye",
+        "es-419": "Decidueye",
+        "it": "Decidueye",
+        "ja": "ジュナイパー",
+        "ko": "모크나이퍼",
+        "zh-hans": "狙射树枭",
+        "zh-hant": "狙射樹梟"
+      },
       "types": [
         "Grass",
         "Ghost"
@@ -4784,6 +7446,17 @@
       "id": "skarmory",
       "num": 227,
       "name": "Skarmory",
+      "names": {
+        "fr": "Airmure",
+        "de": "Panzaeron",
+        "es": "Skarmory",
+        "es-419": "Skarmory",
+        "it": "Skarmory",
+        "ja": "エアームド",
+        "ko": "무장조",
+        "zh-hans": "盔甲鸟",
+        "zh-hant": "盔甲鳥"
+      },
       "types": [
         "Steel",
         "Flying"
@@ -4804,6 +7477,17 @@
       "id": "steelix",
       "num": 208,
       "name": "Steelix",
+      "names": {
+        "fr": "Steelix",
+        "de": "Stahlos",
+        "es": "Steelix",
+        "es-419": "Steelix",
+        "it": "Steelix",
+        "ja": "ハガネール",
+        "ko": "강철톤",
+        "zh-hans": "大钢蛇",
+        "zh-hant": "大鋼蛇"
+      },
       "types": [
         "Steel",
         "Ground"
@@ -4824,6 +7508,17 @@
       "id": "froslass",
       "num": 478,
       "name": "Froslass",
+      "names": {
+        "fr": "Momartik",
+        "de": "Frosdedje",
+        "es": "Froslass",
+        "es-419": "Froslass",
+        "it": "Froslass",
+        "ja": "ユキメノコ",
+        "ko": "눈여아",
+        "zh-hans": "雪妖女",
+        "zh-hant": "雪妖女"
+      },
       "types": [
         "Ice",
         "Ghost"
@@ -4844,6 +7539,17 @@
       "id": "houndoom",
       "num": 229,
       "name": "Houndoom",
+      "names": {
+        "fr": "Démolosse",
+        "de": "Hundemon",
+        "es": "Houndoom",
+        "es-419": "Houndoom",
+        "it": "Houndoom",
+        "ja": "ヘルガー",
+        "ko": "헬가",
+        "zh-hans": "黑鲁加",
+        "zh-hant": "黑魯加"
+      },
       "types": [
         "Dark",
         "Fire"
@@ -4864,6 +7570,17 @@
       "id": "flareon",
       "num": 136,
       "name": "Flareon",
+      "names": {
+        "fr": "Pyroli",
+        "de": "Flamara",
+        "es": "Flareon",
+        "es-419": "Flareon",
+        "it": "Flareon",
+        "ja": "ブースター",
+        "ko": "부스터",
+        "zh-hans": "火伊布",
+        "zh-hant": "火伊布"
+      },
       "types": [
         "Fire"
       ],
@@ -4883,6 +7600,17 @@
       "id": "leafeon",
       "num": 470,
       "name": "Leafeon",
+      "names": {
+        "fr": "Phyllali",
+        "de": "Folipurba",
+        "es": "Leafeon",
+        "es-419": "Leafeon",
+        "it": "Leafeon",
+        "ja": "リーフィア",
+        "ko": "리피아",
+        "zh-hans": "叶伊布",
+        "zh-hant": "葉伊布"
+      },
       "types": [
         "Grass"
       ],
@@ -4902,6 +7630,17 @@
       "id": "luxray",
       "num": 405,
       "name": "Luxray",
+      "names": {
+        "fr": "Luxray",
+        "de": "Luxtra",
+        "es": "Luxray",
+        "es-419": "Luxray",
+        "it": "Luxray",
+        "ja": "レントラー",
+        "ko": "렌트라",
+        "zh-hans": "伦琴猫",
+        "zh-hant": "倫琴貓"
+      },
       "types": [
         "Electric"
       ],
@@ -4921,6 +7660,17 @@
       "id": "polteageist",
       "num": 855,
       "name": "Polteageist",
+      "names": {
+        "fr": "Polthégeist Contrefaçon",
+        "de": "Mortipot (Fälschung)",
+        "es": "Polteageist",
+        "es-419": "Polteageist",
+        "it": "Polteageist",
+        "ja": "ポットデス",
+        "ko": "포트데스",
+        "zh-hans": "怖思壶",
+        "zh-hant": "怖思壺"
+      },
       "types": [
         "Ghost"
       ],
@@ -4940,6 +7690,17 @@
       "id": "pangoro",
       "num": 675,
       "name": "Pangoro",
+      "names": {
+        "fr": "Pandarbare",
+        "de": "Pandagro",
+        "es": "Pangoro",
+        "es-419": "Pangoro",
+        "it": "Pangoro",
+        "ja": "ゴロンダ",
+        "ko": "부란다",
+        "zh-hans": "霸道熊猫",
+        "zh-hant": "流氓熊貓"
+      },
       "types": [
         "Fighting",
         "Dark"
@@ -4960,6 +7721,17 @@
       "id": "passimian",
       "num": 766,
       "name": "Passimian",
+      "names": {
+        "fr": "Quartermac",
+        "de": "Quartermak",
+        "es": "Passimian",
+        "es-419": "Passimian",
+        "it": "Passimian",
+        "ja": "ナゲツケサル",
+        "ko": "내던숭이",
+        "zh-hans": "投掷猴",
+        "zh-hant": "投擲猴"
+      },
       "types": [
         "Fighting"
       ],
@@ -4979,6 +7751,17 @@
       "id": "trevenant",
       "num": 709,
       "name": "Trevenant",
+      "names": {
+        "fr": "Desséliande",
+        "de": "Trombork",
+        "es": "Trevenant",
+        "es-419": "Trevenant",
+        "it": "Trevenant",
+        "ja": "オーロット",
+        "ko": "대로트",
+        "zh-hans": "朽木妖",
+        "zh-hant": "朽木妖"
+      },
       "types": [
         "Ghost",
         "Grass"
@@ -4999,6 +7782,17 @@
       "id": "flapple",
       "num": 841,
       "name": "Flapple",
+      "names": {
+        "fr": "Pomdrapi",
+        "de": "Drapfel",
+        "es": "Flapple",
+        "es-419": "Flapple",
+        "it": "Flapple",
+        "ja": "アップリュー",
+        "ko": "애프룡",
+        "zh-hans": "苹裹龙",
+        "zh-hant": "蘋裹龍"
+      },
       "types": [
         "Grass",
         "Dragon"
@@ -5019,6 +7813,17 @@
       "id": "scovillain",
       "num": 952,
       "name": "Scovillain",
+      "names": {
+        "fr": "Scovilain",
+        "de": "Halupenjo",
+        "es": "Scovillain",
+        "es-419": "Scovillain",
+        "it": "Scovillain",
+        "ja": "スコヴィラン",
+        "ko": "스코빌런",
+        "zh-hans": "狠辣椒",
+        "zh-hant": "狠辣椒"
+      },
       "types": [
         "Grass",
         "Fire"
@@ -5039,6 +7844,17 @@
       "id": "tauros",
       "num": 128,
       "name": "Tauros",
+      "names": {
+        "fr": "Tauros",
+        "de": "Tauros",
+        "es": "Tauros",
+        "es-419": "Tauros",
+        "it": "Tauros",
+        "ja": "ケンタロス",
+        "ko": "켄타로스",
+        "zh-hans": "肯泰罗",
+        "zh-hant": "肯泰羅"
+      },
       "types": [
         "Normal"
       ],
@@ -5058,6 +7874,17 @@
       "id": "crabominable",
       "num": 740,
       "name": "Crabominable",
+      "names": {
+        "fr": "Crabominable",
+        "de": "Krawell",
+        "es": "Crabominable",
+        "es-419": "Crabominable",
+        "it": "Crabominable",
+        "ja": "ケケンカニ",
+        "ko": "모단단게",
+        "zh-hans": "好胜毛蟹",
+        "zh-hant": "好勝毛蟹"
+      },
       "types": [
         "Fighting",
         "Ice"
@@ -5078,6 +7905,17 @@
       "id": "simisage",
       "num": 512,
       "name": "Simisage",
+      "names": {
+        "fr": "Feuiloutan",
+        "de": "Vegichita",
+        "es": "Simisage",
+        "es-419": "Simisage",
+        "it": "Simisage",
+        "ja": "ヤナッキー",
+        "ko": "야나키",
+        "zh-hans": "花椰猿",
+        "zh-hant": "花椰猿"
+      },
       "types": [
         "Grass"
       ],
@@ -5097,6 +7935,17 @@
       "id": "absol-mega",
       "num": 359,
       "name": "Absol-Mega",
+      "names": {
+        "fr": "Méga-Absol",
+        "de": "Mega-Absol",
+        "es": "Absol",
+        "es-419": "Absol",
+        "it": "Absol",
+        "ja": "アブソル",
+        "ko": "앱솔",
+        "zh-hans": "阿勃梭鲁",
+        "zh-hant": "阿勃梭魯"
+      },
       "types": [
         "Dark"
       ],
@@ -5116,6 +7965,17 @@
       "id": "emolga",
       "num": 587,
       "name": "Emolga",
+      "names": {
+        "fr": "Emolga",
+        "de": "Emolga",
+        "es": "Emolga",
+        "es-419": "Emolga",
+        "it": "Emolga",
+        "ja": "エモンガ",
+        "ko": "에몽가",
+        "zh-hans": "电飞鼠",
+        "zh-hant": "電飛鼠"
+      },
       "types": [
         "Electric",
         "Flying"
@@ -5136,6 +7996,17 @@
       "id": "musharna",
       "num": 518,
       "name": "Musharna",
+      "names": {
+        "fr": "Mushana",
+        "de": "Somnivora",
+        "es": "Musharna",
+        "es-419": "Musharna",
+        "it": "Musharna",
+        "ja": "ムシャーナ",
+        "ko": "몽얌나",
+        "zh-hans": "梦梦蚀",
+        "zh-hant": "夢夢蝕"
+      },
       "types": [
         "Psychic"
       ],
@@ -5155,6 +8026,17 @@
       "id": "florges",
       "num": 671,
       "name": "Florges",
+      "names": {
+        "fr": "Florges Rouge",
+        "de": "Florges (Rot)",
+        "es": "Florges",
+        "es-419": "Florges",
+        "it": "Florges",
+        "ja": "フラージェス",
+        "ko": "플라제스",
+        "zh-hans": "花洁夫人",
+        "zh-hant": "花潔夫人"
+      },
       "types": [
         "Fairy"
       ],
@@ -5174,6 +8056,17 @@
       "id": "castform",
       "num": 351,
       "name": "Castform",
+      "names": {
+        "fr": "Morphéo",
+        "de": "Formeo",
+        "es": "Castform",
+        "es-419": "Castform",
+        "it": "Castform",
+        "ja": "ポワルン",
+        "ko": "캐스퐁",
+        "zh-hans": "飘浮泡泡",
+        "zh-hant": "飄浮泡泡"
+      },
       "types": [
         "Normal"
       ],
@@ -5193,6 +8086,17 @@
       "id": "appletun",
       "num": 842,
       "name": "Appletun",
+      "names": {
+        "fr": "Dratatin",
+        "de": "Schlapfel",
+        "es": "Appletun",
+        "es-419": "Appletun",
+        "it": "Appletun",
+        "ja": "タルップル",
+        "ko": "단지래플",
+        "zh-hans": "丰蜜龙",
+        "zh-hant": "豐蜜龍"
+      },
       "types": [
         "Grass",
         "Dragon"
@@ -5213,6 +8117,17 @@
       "id": "zoroark",
       "num": 571,
       "name": "Zoroark",
+      "names": {
+        "fr": "Zoroark",
+        "de": "Zoroark",
+        "es": "Zoroark",
+        "es-419": "Zoroark",
+        "it": "Zoroark",
+        "ja": "ゾロアーク",
+        "ko": "조로아크",
+        "zh-hans": "索罗亚克",
+        "zh-hant": "索羅亞克"
+      },
       "types": [
         "Dark"
       ],
@@ -5232,6 +8147,17 @@
       "id": "rotom",
       "num": 479,
       "name": "Rotom",
+      "names": {
+        "fr": "Motisma",
+        "de": "Rotom",
+        "es": "Rotom",
+        "es-419": "Rotom",
+        "it": "Rotom",
+        "ja": "ロトム",
+        "ko": "로토무",
+        "zh-hans": "洛托姆",
+        "zh-hant": "洛托姆"
+      },
       "types": [
         "Electric",
         "Ghost"
@@ -5252,6 +8178,17 @@
       "id": "manectric",
       "num": 310,
       "name": "Manectric",
+      "names": {
+        "fr": "Élecsprint",
+        "de": "Voltenso",
+        "es": "Manectric",
+        "es-419": "Manectric",
+        "it": "Manectric",
+        "ja": "ライボルト",
+        "ko": "썬더볼트",
+        "zh-hans": "雷电兽",
+        "zh-hant": "雷電獸"
+      },
       "types": [
         "Electric"
       ],
@@ -5271,6 +8208,17 @@
       "id": "avalugg",
       "num": 713,
       "name": "Avalugg",
+      "names": {
+        "fr": "Séracrawl",
+        "de": "Arktilas",
+        "es": "Avalugg",
+        "es-419": "Avalugg",
+        "it": "Avalugg",
+        "ja": "クレベース",
+        "ko": "크레베이스",
+        "zh-hans": "冰岩怪",
+        "zh-hant": "冰岩怪"
+      },
       "types": [
         "Ice"
       ],
@@ -5290,6 +8238,17 @@
       "id": "raichu-alola",
       "num": 26,
       "name": "Raichu-Alola",
+      "names": {
+        "fr": "Raichu d’Alola",
+        "de": "Alola Raichu",
+        "es": "Raichu",
+        "es-419": "Raichu",
+        "it": "Raichu",
+        "ja": "ライチュウ",
+        "ko": "라이츄",
+        "zh-hans": "雷丘",
+        "zh-hant": "雷丘"
+      },
       "types": [
         "Electric",
         "Psychic"
@@ -5310,6 +8269,17 @@
       "id": "absol",
       "num": 359,
       "name": "Absol",
+      "names": {
+        "fr": "Absol",
+        "de": "Absol",
+        "es": "Absol",
+        "es-419": "Absol",
+        "it": "Absol",
+        "ja": "アブソル",
+        "ko": "앱솔",
+        "zh-hans": "阿勃梭鲁",
+        "zh-hant": "阿勃梭魯"
+      },
       "types": [
         "Dark"
       ],
@@ -5329,6 +8299,17 @@
       "id": "slurpuff",
       "num": 685,
       "name": "Slurpuff",
+      "names": {
+        "fr": "Cupcanaille",
+        "de": "Sabbaione",
+        "es": "Slurpuff",
+        "es-419": "Slurpuff",
+        "it": "Slurpuff",
+        "ja": "ペロリーム",
+        "ko": "나루림",
+        "zh-hans": "胖甜妮",
+        "zh-hant": "胖甜妮"
+      },
       "types": [
         "Fairy"
       ],
@@ -5348,6 +8329,17 @@
       "id": "dedenne",
       "num": 702,
       "name": "Dedenne",
+      "names": {
+        "fr": "Dedenne",
+        "de": "Dedenne",
+        "es": "Dedenne",
+        "es-419": "Dedenne",
+        "it": "Dedenne",
+        "ja": "デデンネ",
+        "ko": "데덴네",
+        "zh-hans": "咚咚鼠",
+        "zh-hant": "咚咚鼠"
+      },
       "types": [
         "Electric",
         "Fairy"
@@ -5368,6 +8360,17 @@
       "id": "aggron",
       "num": 306,
       "name": "Aggron",
+      "names": {
+        "fr": "Galeking",
+        "de": "Stolloss",
+        "es": "Aggron",
+        "es-419": "Aggron",
+        "it": "Aggron",
+        "ja": "ボスゴドラ",
+        "ko": "보스로라",
+        "zh-hans": "波士可多拉",
+        "zh-hant": "波士可多拉"
+      },
       "types": [
         "Steel",
         "Rock"
@@ -5388,6 +8391,17 @@
       "id": "eelektross",
       "num": 604,
       "name": "Eelektross",
+      "names": {
+        "fr": "Ohmassacre",
+        "de": "Zapplarang",
+        "es": "Eelektross",
+        "es-419": "Eelektross",
+        "it": "Eelektross",
+        "ja": "シビルドン",
+        "ko": "저리더프",
+        "zh-hans": "麻麻鳗鱼王",
+        "zh-hant": "麻麻鰻魚王"
+      },
       "types": [
         "Electric"
       ],
@@ -5407,6 +8421,17 @@
       "id": "emboar",
       "num": 500,
       "name": "Emboar",
+      "names": {
+        "fr": "Roitiflam",
+        "de": "Flambirex",
+        "es": "Emboar",
+        "es-419": "Emboar",
+        "it": "Emboar",
+        "ja": "エンブオー",
+        "ko": "염무왕",
+        "zh-hans": "炎武王",
+        "zh-hant": "炎武王"
+      },
       "types": [
         "Fire",
         "Fighting"
@@ -5427,6 +8452,17 @@
       "id": "qwilfish",
       "num": 211,
       "name": "Qwilfish",
+      "names": {
+        "fr": "Qwilfish",
+        "de": "Baldorfish",
+        "es": "Qwilfish",
+        "es-419": "Qwilfish",
+        "it": "Qwilfish",
+        "ja": "ハリーセン",
+        "ko": "침바루",
+        "zh-hans": "千针鱼",
+        "zh-hant": "千針魚"
+      },
       "types": [
         "Water",
         "Poison"
@@ -5447,6 +8483,17 @@
       "id": "scolipede",
       "num": 545,
       "name": "Scolipede",
+      "names": {
+        "fr": "Brutapode",
+        "de": "Cerapendra",
+        "es": "Scolipede",
+        "es-419": "Scolipede",
+        "it": "Scolipede",
+        "ja": "ペンドラー",
+        "ko": "펜드라",
+        "zh-hans": "蜈蚣王",
+        "zh-hant": "蜈蚣王"
+      },
       "types": [
         "Bug",
         "Poison"
@@ -5467,6 +8514,17 @@
       "id": "heracross",
       "num": 214,
       "name": "Heracross",
+      "names": {
+        "fr": "Scarhino",
+        "de": "Skaraborn",
+        "es": "Heracross",
+        "es-419": "Heracross",
+        "it": "Heracross",
+        "ja": "ヘラクロス",
+        "ko": "헤라크로스",
+        "zh-hans": "赫拉克罗斯",
+        "zh-hant": "赫拉克羅斯"
+      },
       "types": [
         "Bug",
         "Fighting"
@@ -5487,6 +8545,17 @@
       "id": "stunfisk-galar",
       "num": 618,
       "name": "Stunfisk-Galar",
+      "names": {
+        "fr": "Limonde de Galar",
+        "de": "Galar Flunschlik",
+        "es": "Stunfisk",
+        "es-419": "Stunfisk",
+        "it": "Stunfisk",
+        "ja": "マッギョ",
+        "ko": "메더",
+        "zh-hans": "泥巴鱼",
+        "zh-hant": "泥巴魚"
+      },
       "types": [
         "Ground",
         "Steel"
@@ -5507,6 +8576,17 @@
       "id": "bastiodon",
       "num": 411,
       "name": "Bastiodon",
+      "names": {
+        "fr": "Bastiodon",
+        "de": "Bollterus",
+        "es": "Bastiodon",
+        "es-419": "Bastiodon",
+        "it": "Bastiodon",
+        "ja": "トリデプス",
+        "ko": "바리톱스",
+        "zh-hans": "护城龙",
+        "zh-hant": "護城龍"
+      },
       "types": [
         "Rock",
         "Steel"
@@ -5527,6 +8607,17 @@
       "id": "lopunny",
       "num": 428,
       "name": "Lopunny",
+      "names": {
+        "fr": "Lockpin",
+        "de": "Schlapor",
+        "es": "Lopunny",
+        "es-419": "Lopunny",
+        "it": "Lopunny",
+        "ja": "ミミロップ",
+        "ko": "이어롭",
+        "zh-hans": "长耳兔",
+        "zh-hant": "長耳兔"
+      },
       "types": [
         "Normal"
       ],
@@ -5546,6 +8637,17 @@
       "id": "victreebel",
       "num": 71,
       "name": "Victreebel",
+      "names": {
+        "fr": "Empiflor",
+        "de": "Sarzenia",
+        "es": "Victreebel",
+        "es-419": "Victreebel",
+        "it": "Victreebel",
+        "ja": "ウツボット",
+        "ko": "우츠보트",
+        "zh-hans": "大食花",
+        "zh-hant": "大食花"
+      },
       "types": [
         "Grass",
         "Poison"
@@ -5566,6 +8668,17 @@
       "id": "sharpedo",
       "num": 319,
       "name": "Sharpedo",
+      "names": {
+        "fr": "Sharpedo",
+        "de": "Tohaido",
+        "es": "Sharpedo",
+        "es-419": "Sharpedo",
+        "it": "Sharpedo",
+        "ja": "サメハダー",
+        "ko": "샤크니아",
+        "zh-hans": "巨牙鲨",
+        "zh-hant": "巨牙鯊"
+      },
       "types": [
         "Water",
         "Dark"
@@ -5586,6 +8699,17 @@
       "id": "wigglytuff",
       "num": 40,
       "name": "Wigglytuff",
+      "names": {
+        "fr": "Grodoudou",
+        "de": "Knuddeluff",
+        "es": "Wigglytuff",
+        "es-419": "Wigglytuff",
+        "it": "Wigglytuff",
+        "ja": "プクリン",
+        "ko": "푸크린",
+        "zh-hans": "胖可丁",
+        "zh-hant": "胖可丁"
+      },
       "types": [
         "Normal",
         "Fairy"
@@ -5606,6 +8730,17 @@
       "id": "persian",
       "num": 53,
       "name": "Persian",
+      "names": {
+        "fr": "Persian",
+        "de": "Snobilikat",
+        "es": "Persian",
+        "es-419": "Persian",
+        "it": "Persian",
+        "ja": "ペルシアン",
+        "ko": "페르시온",
+        "zh-hans": "猫老大",
+        "zh-hant": "貓老大"
+      },
       "types": [
         "Normal"
       ],
@@ -5625,6 +8760,17 @@
       "id": "persian-alola",
       "num": 53,
       "name": "Persian-Alola",
+      "names": {
+        "fr": "Persian d’Alola",
+        "de": "Alola Snobilikat",
+        "es": "Persian",
+        "es-419": "Persian",
+        "it": "Persian",
+        "ja": "ペルシアン",
+        "ko": "페르시온",
+        "zh-hans": "猫老大",
+        "zh-hant": "貓老大"
+      },
       "types": [
         "Dark"
       ],
@@ -5644,6 +8790,17 @@
       "id": "farfetchd",
       "num": 83,
       "name": "Farfetch'd",
+      "names": {
+        "fr": "Canarticho",
+        "de": "Porenta",
+        "es": "Farfetch’d",
+        "es-419": "Farfetch’d",
+        "it": "Farfetch’d",
+        "ja": "カモネギ",
+        "ko": "파오리",
+        "zh-hans": "大葱鸭",
+        "zh-hant": "大蔥鴨"
+      },
       "types": [
         "Normal",
         "Flying"
@@ -5664,6 +8821,17 @@
       "id": "mr-mime",
       "num": 122,
       "name": "Mr. Mime",
+      "names": {
+        "fr": "M. Mime",
+        "de": "Pantimos",
+        "es": "Mr. Mime",
+        "es-419": "Mr. Mime",
+        "it": "Mr. Mime",
+        "ja": "バリヤード",
+        "ko": "마임맨",
+        "zh-hans": "魔墙人偶",
+        "zh-hant": "魔牆人偶"
+      },
       "types": [
         "Psychic",
         "Fairy"
@@ -5684,6 +8852,17 @@
       "id": "swalot",
       "num": 317,
       "name": "Swalot",
+      "names": {
+        "fr": "Avaltout",
+        "de": "Schlukwech",
+        "es": "Swalot",
+        "es-419": "Swalot",
+        "it": "Swalot",
+        "ja": "マルノーム",
+        "ko": "꿀꺽몬",
+        "zh-hans": "吞食兽",
+        "zh-hant": "吞食獸"
+      },
       "types": [
         "Poison"
       ],
@@ -5703,6 +8882,17 @@
       "id": "salamence",
       "num": 373,
       "name": "Salamence",
+      "names": {
+        "fr": "Drattak",
+        "de": "Brutalanda",
+        "es": "Salamence",
+        "es-419": "Salamence",
+        "it": "Salamence",
+        "ja": "ボーマンダ",
+        "ko": "보만다",
+        "zh-hans": "暴飞龙",
+        "zh-hant": "暴飛龍"
+      },
       "types": [
         "Dragon",
         "Flying"
@@ -5723,6 +8913,17 @@
       "id": "gogoat",
       "num": 673,
       "name": "Gogoat",
+      "names": {
+        "fr": "Chevroum",
+        "de": "Chevrumm",
+        "es": "Gogoat",
+        "es-419": "Gogoat",
+        "it": "Gogoat",
+        "ja": "ゴーゴート",
+        "ko": "고고트",
+        "zh-hans": "坐骑山羊",
+        "zh-hant": "坐騎山羊"
+      },
       "types": [
         "Grass"
       ],
@@ -5742,6 +8943,17 @@
       "id": "golisopod",
       "num": 768,
       "name": "Golisopod",
+      "names": {
+        "fr": "Sarmuraï",
+        "de": "Tectass",
+        "es": "Golisopod",
+        "es-419": "Golisopod",
+        "it": "Golisopod",
+        "ja": "グソクムシャ",
+        "ko": "갑주무사",
+        "zh-hans": "具甲武者",
+        "zh-hant": "具甲武者"
+      },
       "types": [
         "Bug",
         "Water"
@@ -5762,6 +8974,17 @@
       "id": "rillaboom",
       "num": 812,
       "name": "Rillaboom",
+      "names": {
+        "fr": "Gorythmic",
+        "de": "Gortrom",
+        "es": "Rillaboom",
+        "es-419": "Rillaboom",
+        "it": "Rillaboom",
+        "ja": "ゴリランダー",
+        "ko": "고릴타",
+        "zh-hans": "轰擂金刚猩",
+        "zh-hant": "轟擂金剛猩"
+      },
       "types": [
         "Grass"
       ],
@@ -5781,6 +9004,17 @@
       "id": "cinderace",
       "num": 815,
       "name": "Cinderace",
+      "names": {
+        "fr": "Pyrobut",
+        "de": "Liberlo",
+        "es": "Cinderace",
+        "es-419": "Cinderace",
+        "it": "Cinderace",
+        "ja": "エースバーン",
+        "ko": "에이스번",
+        "zh-hans": "闪焰王牌",
+        "zh-hant": "閃焰王牌"
+      },
       "types": [
         "Fire"
       ],
@@ -5800,6 +9034,17 @@
       "id": "inteleon",
       "num": 818,
       "name": "Inteleon",
+      "names": {
+        "fr": "Lézargus",
+        "de": "Intelleon",
+        "es": "Inteleon",
+        "es-419": "Inteleon",
+        "it": "Inteleon",
+        "ja": "インテレオン",
+        "ko": "인텔리레온",
+        "zh-hans": "千面避役",
+        "zh-hant": "千面避役"
+      },
       "types": [
         "Water"
       ],
@@ -5819,6 +9064,17 @@
       "id": "thievul",
       "num": 828,
       "name": "Thievul",
+      "names": {
+        "fr": "Roublenard",
+        "de": "Gaunux",
+        "es": "Thievul",
+        "es-419": "Thievul",
+        "it": "Thievul",
+        "ja": "フォクスライ",
+        "ko": "폭슬라이",
+        "zh-hans": "猾大狐",
+        "zh-hant": "狐大盜"
+      },
       "types": [
         "Dark"
       ],
@@ -5838,6 +9094,17 @@
       "id": "toxtricity-amped",
       "num": 849,
       "name": "Toxtricity",
+      "names": {
+        "fr": "Salarsen Forme Aigüe",
+        "de": "Riffex (Hochform)",
+        "es": "Toxtricity",
+        "es-419": "Toxtricity",
+        "it": "Toxtricity",
+        "ja": "ストリンダー",
+        "ko": "스트린더",
+        "zh-hans": "颤弦蝾螈",
+        "zh-hant": "顫弦蠑螈"
+      },
       "types": [
         "Electric",
         "Poison"
@@ -5858,6 +9125,17 @@
       "id": "grapploct",
       "num": 853,
       "name": "Grapploct",
+      "names": {
+        "fr": "Krakos",
+        "de": "Kaocto",
+        "es": "Grapploct",
+        "es-419": "Grapploct",
+        "it": "Grapploct",
+        "ja": "オトスパス",
+        "ko": "케오퍼스",
+        "zh-hans": "八爪武师",
+        "zh-hant": "八爪武師"
+      },
       "types": [
         "Fighting"
       ],
@@ -5877,6 +9155,17 @@
       "id": "perrserker",
       "num": 863,
       "name": "Perrserker",
+      "names": {
+        "fr": "Berserkatt",
+        "de": "Mauzinger",
+        "es": "Perrserker",
+        "es-419": "Perrserker",
+        "it": "Perrserker",
+        "ja": "ニャイキング",
+        "ko": "나이킹",
+        "zh-hans": "喵头目",
+        "zh-hant": "喵頭目"
+      },
       "types": [
         "Steel"
       ],
@@ -5896,6 +9185,17 @@
       "id": "sirfetchd",
       "num": 865,
       "name": "Sirfetch'd",
+      "names": {
+        "fr": "Palarticho",
+        "de": "Lauchzelot",
+        "es": "Sirfetch’d",
+        "es-419": "Sirfetch’d",
+        "it": "Sirfetch’d",
+        "ja": "ネギガナイト",
+        "ko": "창파나이트",
+        "zh-hans": "葱游兵",
+        "zh-hant": "蔥遊兵"
+      },
       "types": [
         "Fighting"
       ],
@@ -5915,6 +9215,17 @@
       "id": "pincurchin",
       "num": 871,
       "name": "Pincurchin",
+      "names": {
+        "fr": "Wattapik",
+        "de": "Britzigel",
+        "es": "Pincurchin",
+        "es-419": "Pincurchin",
+        "it": "Pincurchin",
+        "ja": "バチンウニ",
+        "ko": "찌르성게",
+        "zh-hans": "啪嚓海胆",
+        "zh-hant": "啪嚓海膽"
+      },
       "types": [
         "Electric"
       ],
@@ -5934,6 +9245,17 @@
       "id": "indeedee-male",
       "num": 876,
       "name": "Indeedee",
+      "names": {
+        "fr": "Wimessir Mâle",
+        "de": "Servol ♂",
+        "es": "Indeedee",
+        "es-419": "Indeedee",
+        "it": "Indeedee",
+        "ja": "イエッサン",
+        "ko": "에써르",
+        "zh-hans": "爱管侍",
+        "zh-hant": "愛管侍"
+      },
       "types": [
         "Psychic",
         "Normal"
@@ -5954,6 +9276,17 @@
       "id": "indeedee-female",
       "num": 876,
       "name": "Indeedee-F",
+      "names": {
+        "fr": "Wimessir Femelle",
+        "de": "Servol ♀",
+        "es": "Indeedee",
+        "es-419": "Indeedee",
+        "it": "Indeedee",
+        "ja": "イエッサン",
+        "ko": "에써르",
+        "zh-hans": "爱管侍",
+        "zh-hant": "愛管侍"
+      },
       "types": [
         "Psychic",
         "Normal"
@@ -5974,6 +9307,17 @@
       "id": "pawmot",
       "num": 923,
       "name": "Pawmot",
+      "names": {
+        "fr": "Pohmarmotte",
+        "de": "Pamomamo",
+        "es": "Pawmot",
+        "es-419": "Pawmot",
+        "it": "Pawmot",
+        "ja": "パーモット",
+        "ko": "빠르모트",
+        "zh-hans": "巴布土拨",
+        "zh-hant": "巴布土撥"
+      },
       "types": [
         "Electric",
         "Fighting"
@@ -5994,6 +9338,17 @@
       "id": "arboliva",
       "num": 930,
       "name": "Arboliva",
+      "names": {
+        "fr": "Arboliva",
+        "de": "Olithena",
+        "es": "Arboliva",
+        "es-419": "Arboliva",
+        "it": "Arboliva",
+        "ja": "オリーヴァ",
+        "ko": "올리르바",
+        "zh-hans": "奥利瓦",
+        "zh-hant": "奧利瓦"
+      },
       "types": [
         "Grass",
         "Normal"
@@ -6014,6 +9369,17 @@
       "id": "squawkabilly-green-plumage",
       "num": 931,
       "name": "Squawkabilly",
+      "names": {
+        "fr": "Tapatoès Plumage Vert",
+        "de": "Krawalloro",
+        "es": "Squawkabilly",
+        "es-419": "Squawkabilly",
+        "it": "Squawkabilly",
+        "ja": "イキリンコ",
+        "ko": "시비꼬",
+        "zh-hans": "怒鹦哥",
+        "zh-hant": "怒鸚哥"
+      },
       "types": [
         "Normal",
         "Flying"
@@ -6034,6 +9400,17 @@
       "id": "mabosstiff",
       "num": 943,
       "name": "Mabosstiff",
+      "names": {
+        "fr": "Dogrino",
+        "de": "Mastifioso",
+        "es": "Mabosstiff",
+        "es-419": "Mabosstiff",
+        "it": "Mabosstiff",
+        "ja": "マフィティフ",
+        "ko": "마피티프",
+        "zh-hans": "獒教父",
+        "zh-hant": "獒教父"
+      },
       "types": [
         "Dark"
       ],
@@ -6053,6 +9430,17 @@
       "id": "baxcalibur",
       "num": 998,
       "name": "Baxcalibur",
+      "names": {
+        "fr": "Glaivodo",
+        "de": "Espinodon",
+        "es": "Baxcalibur",
+        "es-419": "Baxcalibur",
+        "it": "Baxcalibur",
+        "ja": "セグレイブ",
+        "ko": "드닐레이브",
+        "zh-hans": "戟脊龙",
+        "zh-hant": "戟脊龍"
+      },
       "types": [
         "Dragon",
         "Ice"

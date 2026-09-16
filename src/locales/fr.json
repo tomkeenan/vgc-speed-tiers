@@ -1,0 +1,128 @@
+{
+  "app": {
+    "title": "Just Move First"
+  },
+  "tabs": {
+    "flashcards": "Cartes mémo",
+    "faster": "Qui est le plus rapide ?",
+    "howFast": "À quelle vitesse ?"
+  },
+  "common": {
+    "baseSpeed": "Vitesse de base",
+    "maxSpeed": "Vitesse max",
+    "tryAgain": "Réessayer",
+    "streak": "Série",
+    "best": "Record",
+    "noPokemon": "Aucun Pokémon disponible.",
+    "features": "Fonctionnalités",
+    "copied": "Copié !"
+  },
+  "header": {
+    "settings": "Paramètres"
+  },
+  "footer": {
+    "madeBy": "créé par tom",
+    "copyEmail": "Copier l'adresse e-mail"
+  },
+  "themeToggle": {
+    "toLight": "Passer en mode clair",
+    "toDark": "Passer en mode sombre"
+  },
+  "deckSelector": {
+    "deckLabel": "Deck : {{name}}"
+  },
+  "decks": {
+    "allPokemon": "Tous les Pokémon"
+  },
+  "flashcards": {
+    "prompt": "Touchez la carte pour révéler sa vitesse de base.",
+    "next": "Pokémon suivant",
+    "cardAria": "Carte mémo {{name}}, vitesse de base {{state}}",
+    "showing": "affichée",
+    "hiding": "masquée"
+  },
+  "howFast": {
+    "prompt": "Saisissez la vitesse de base exacte de ce Pokémon.",
+    "cardAria": "Carte {{name}}",
+    "placeholder": "Vitesse de base",
+    "inputAria": "Votre estimation de vitesse de base",
+    "submit": "Valider"
+  },
+  "faster": {
+    "promptBase": "Quel Pokémon a la vitesse de base la plus élevée ?",
+    "prompt": "Quel Pokémon a la vitesse la plus élevée ?",
+    "chooseAria": "Choisir {{name}}",
+    "needTwo": "Ce deck a besoin d'au moins deux Pokémon pour jouer. Ajoutez-en dans les paramètres.",
+    "noneClose": "Aucune paire de Pokémon de ce deck n'a un écart de vitesse inférieur ou égal à {{max}}. Élargissez le deck ou désactivez le mode difficile.",
+    "hardMode": {
+      "title": "Mode difficile",
+      "description": "Uniquement les duels serrés, à 10 points de vitesse près. Pas d'égalités."
+    },
+    "allowNatures": {
+      "title": "Autoriser les natures",
+      "description": "Compare la vitesse max au niveau 50, avec nature neutre et +Vitesse."
+    }
+  },
+  "natureBadge": {
+    "positive": "+Vit",
+    "neutral": "Neutre"
+  },
+  "memberPicker": {
+    "searchPlaceholder": "Rechercher un Pokémon",
+    "selectedCount": "{{n}} sélectionné(s)",
+    "clear": "Effacer",
+    "noMatches": "Aucun résultat",
+    "optionsAria": "Options {{label}}"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "close": "Fermer",
+    "cancelCreate": "Annuler",
+    "language": "Langue",
+    "explainer": {
+      "intro": "Un deck est une liste personnalisée de Pokémon.",
+      "pick": "Choisissez-en un dans le menu <icon/> de l'en-tête pour n'utiliser que ces Pokémon dans chaque mode de jeu.",
+      "allDeck": "Le deck intégré Tous les Pokémon utilise l'ensemble des données.",
+      "streaks": "Les séries sont liées à chaque deck et à chaque mode, alors pas de panique si changer de deck réinitialise votre série.",
+      "manage": "Créez, modifiez et partagez vos propres decks ci-dessous."
+    },
+    "yourDecks": "Vos decks",
+    "createDeck": "Créer un deck",
+    "importDeck": "Importer un deck",
+    "deckName": "Nom du deck",
+    "pokemon": "Pokémon",
+    "exportDeck": "Exporter le deck",
+    "deleteDeck": "Supprimer le deck",
+    "saveDeck": "Enregistrer le deck",
+    "pasteDeckJson": "Coller le JSON du deck",
+    "pastePlaceholder": "{ \"name\": \"Mon deck\", \"pokemonIds\": [\"garchomp\", \"...\"] }",
+    "pasteHelper": "Collez le JSON copié depuis un deck ci-dessus.",
+    "importButton": "Importer le deck",
+    "noneInDataset": "Aucun de ces Pokémon n'est présent dans le jeu de données actuel.",
+    "edit": "Modifier {{name}}",
+    "collapse": "Réduire {{name}}",
+    "decks": "Decks",
+    "deckNameRequired": "Saisissez un nom de deck",
+    "deckMembersRequired": "Ajoutez au moins un Pokémon"
+  },
+  "types": {
+    "normal": "Normal",
+    "fire": "Feu",
+    "water": "Eau",
+    "electric": "Électrik",
+    "grass": "Plante",
+    "ice": "Glace",
+    "fighting": "Combat",
+    "poison": "Poison",
+    "ground": "Sol",
+    "flying": "Vol",
+    "psychic": "Psy",
+    "bug": "Insecte",
+    "rock": "Roche",
+    "ghost": "Spectre",
+    "dragon": "Dragon",
+    "dark": "Ténèbres",
+    "steel": "Acier",
+    "fairy": "Fée"
+  }
+}

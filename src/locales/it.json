@@ -1,0 +1,128 @@
+{
+  "app": {
+    "title": "Just Move First"
+  },
+  "tabs": {
+    "flashcards": "Flashcard",
+    "faster": "Chi è più veloce?",
+    "howFast": "Quanto è veloce?"
+  },
+  "common": {
+    "baseSpeed": "Velocità base",
+    "maxSpeed": "Velocità max",
+    "tryAgain": "Riprova",
+    "streak": "Serie",
+    "best": "Record",
+    "noPokemon": "Nessun Pokémon disponibile.",
+    "features": "Funzionalità",
+    "copied": "Copiato!"
+  },
+  "header": {
+    "settings": "Impostazioni"
+  },
+  "footer": {
+    "madeBy": "creato da tom",
+    "copyEmail": "Copia indirizzo email"
+  },
+  "themeToggle": {
+    "toLight": "Passa alla modalità chiara",
+    "toDark": "Passa alla modalità scura"
+  },
+  "deckSelector": {
+    "deckLabel": "Mazzo: {{name}}"
+  },
+  "decks": {
+    "allPokemon": "Tutti i Pokémon"
+  },
+  "flashcards": {
+    "prompt": "Tocca la carta per rivelare la sua velocità base.",
+    "next": "Pokémon successivo",
+    "cardAria": "Flashcard di {{name}}, velocità base {{state}}",
+    "showing": "mostrata",
+    "hiding": "nascosta"
+  },
+  "howFast": {
+    "prompt": "Digita la velocità base esatta di questo Pokémon.",
+    "cardAria": "Carta di {{name}}",
+    "placeholder": "Velocità base",
+    "inputAria": "La tua stima della velocità base",
+    "submit": "Invia"
+  },
+  "faster": {
+    "promptBase": "Quale Pokémon ha la velocità base più alta?",
+    "prompt": "Quale Pokémon ha la velocità più alta?",
+    "chooseAria": "Scegli {{name}}",
+    "needTwo": "Questo mazzo ha bisogno di almeno due Pokémon per giocare. Aggiungine altri nelle impostazioni.",
+    "noneClose": "Non ci sono due Pokémon in questo mazzo con una differenza di velocità di {{max}} o meno. Amplia il mazzo o disattiva la modalità difficile.",
+    "hardMode": {
+      "title": "Modalità difficile",
+      "description": "Solo scontri equilibrati, entro 10 di velocità. Nessun pareggio."
+    },
+    "allowNatures": {
+      "title": "Consenti nature",
+      "description": "Confronta la velocità massima al livello 50, con natura neutra e +Vel."
+    }
+  },
+  "natureBadge": {
+    "positive": "+Vel",
+    "neutral": "Neutra"
+  },
+  "memberPicker": {
+    "searchPlaceholder": "Cerca Pokémon",
+    "selectedCount": "{{n}} selezionati",
+    "clear": "Cancella",
+    "noMatches": "Nessun risultato",
+    "optionsAria": "Opzioni {{label}}"
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "close": "Chiudi",
+    "cancelCreate": "Annulla",
+    "language": "Lingua",
+    "explainer": {
+      "intro": "Un mazzo è un elenco personalizzato di Pokémon.",
+      "pick": "Scegline uno dal menu <icon/> nell’intestazione per usare solo quei Pokémon in ogni modalità di gioco.",
+      "allDeck": "Il mazzo integrato Tutti i Pokémon usa l’intero set di dati.",
+      "streaks": "Le serie sono legate a ciascun mazzo e modalità, quindi non preoccuparti se cambiando mazzo la tua serie si azzera.",
+      "manage": "Crea, modifica e condividi i tuoi mazzi qui sotto."
+    },
+    "yourDecks": "I tuoi mazzi",
+    "createDeck": "Crea un mazzo",
+    "importDeck": "Importa un mazzo",
+    "deckName": "Nome del mazzo",
+    "pokemon": "Pokémon",
+    "exportDeck": "Esporta mazzo",
+    "deleteDeck": "Elimina mazzo",
+    "saveDeck": "Salva mazzo",
+    "pasteDeckJson": "Incolla il JSON del mazzo",
+    "pastePlaceholder": "{ \"name\": \"Il mio mazzo\", \"pokemonIds\": [\"garchomp\", \"...\"] }",
+    "pasteHelper": "Incolla il JSON copiato da un mazzo qui sopra.",
+    "importButton": "Importa mazzo",
+    "noneInDataset": "Nessuno di quei Pokémon è presente nel set di dati attuale.",
+    "edit": "Modifica {{name}}",
+    "collapse": "Comprimi {{name}}",
+    "decks": "Mazzi",
+    "deckNameRequired": "Inserisci un nome per il mazzo",
+    "deckMembersRequired": "Aggiungi almeno un Pokémon"
+  },
+  "types": {
+    "normal": "Normale",
+    "fire": "Fuoco",
+    "water": "Acqua",
+    "electric": "Elettro",
+    "grass": "Erba",
+    "ice": "Ghiaccio",
+    "fighting": "Lotta",
+    "poison": "Veleno",
+    "ground": "Terra",
+    "flying": "Volante",
+    "psychic": "Psico",
+    "bug": "Coleottero",
+    "rock": "Roccia",
+    "ghost": "Spettro",
+    "dragon": "Drago",
+    "dark": "Buio",
+    "steel": "Acciaio",
+    "fairy": "Folletto"
+  }
+}

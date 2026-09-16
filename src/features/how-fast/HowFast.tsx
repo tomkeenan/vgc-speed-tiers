@@ -12,6 +12,7 @@ import { slotSpinMs } from '../../components/SlotNumber';
 import { SpeedReveal } from '../../components/SpeedReveal';
 import { StreakStat } from '../../components/StreakStat';
 import { TypeBadges } from '../../components/TypeBadges';
+import { displayName } from '../../lib/data';
 import { randomIndex } from '../random';
 import { loadBestStreak, saveBestStreak } from './bestStreak';
 
@@ -24,7 +25,7 @@ const RESOLVE_HOLD_MS = 1800;
  * auto-advances to the next card while a wrong one holds until Try again. Returns the element.
  */
 export function HowFast() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { activePokemon: pool, activeDeckId } = useDecks();
   const [index, setIndex] = useState(() => randomIndex(pool.length));
   const [nextIndex, setNextIndex] = useState(() => randomIndex(pool.length));
@@ -93,6 +94,7 @@ export function HowFast() {
   }
 
   const pokemon = pool[Math.min(index, pool.length - 1)];
+  const name = displayName(pokemon, i18n.language);
   const base = pokemon.baseStats.spe;
   const correct = revealed && Number(guess) === base;
   const canSubmit = guess.trim() !== '';
@@ -129,14 +131,14 @@ export function HowFast() {
 
       <Card
         state={revealed ? (correct ? 'correct' : 'wrong') : undefined}
-        ariaLabel={t('howFast.cardAria', { name: pokemon.name })}
+        ariaLabel={t('howFast.cardAria', { name })}
       >
         <Stack spacing={1.5} sx={{ alignItems: 'center' }}>
           <Box sx={{ width: { xs: 192, sm: 224 }, maxWidth: '100%' }}>
-            <PokemonImage src={pokemon.sprite} name={pokemon.name} eager />
+            <PokemonImage src={pokemon.sprite} name={name} eager />
           </Box>
           <Typography variant="h6" sx={{ fontWeight: 700, color: 'text.primary' }}>
-            {pokemon.name}
+            {name}
           </Typography>
           <TypeBadges types={pokemon.types} />
 

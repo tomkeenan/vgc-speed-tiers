@@ -1,0 +1,128 @@
+{
+  "app": {
+    "title": "Just Move First"
+  },
+  "tabs": {
+    "flashcards": "记忆卡",
+    "faster": "谁更快？",
+    "howFast": "有多快？"
+  },
+  "common": {
+    "baseSpeed": "基础速度",
+    "maxSpeed": "最大速度",
+    "tryAgain": "重试",
+    "streak": "连胜",
+    "best": "最佳",
+    "noPokemon": "没有可用的宝可梦。",
+    "features": "功能",
+    "copied": "已复制！"
+  },
+  "header": {
+    "settings": "设置"
+  },
+  "footer": {
+    "madeBy": "由 tom 制作",
+    "copyEmail": "复制邮箱地址"
+  },
+  "themeToggle": {
+    "toLight": "切换到浅色模式",
+    "toDark": "切换到深色模式"
+  },
+  "deckSelector": {
+    "deckLabel": "卡组：{{name}}"
+  },
+  "decks": {
+    "allPokemon": "所有宝可梦"
+  },
+  "flashcards": {
+    "prompt": "点击卡片以显示其基础速度。",
+    "next": "下一只宝可梦",
+    "cardAria": "{{name}} 记忆卡，基础速度{{state}}",
+    "showing": "显示中",
+    "hiding": "隐藏中"
+  },
+  "howFast": {
+    "prompt": "输入这只宝可梦的准确基础速度。",
+    "cardAria": "{{name}} 卡片",
+    "placeholder": "基础速度",
+    "inputAria": "你的基础速度猜测",
+    "submit": "提交"
+  },
+  "faster": {
+    "promptBase": "哪只宝可梦的基础速度更高？",
+    "prompt": "哪只宝可梦的速度更高？",
+    "chooseAria": "选择 {{name}}",
+    "needTwo": "这个卡组至少需要两只宝可梦才能游玩。请在设置中添加更多。",
+    "noneClose": "这个卡组中没有速度差在 {{max}} 以内的两只宝可梦。请扩大卡组或关闭困难模式。",
+    "hardMode": {
+      "title": "困难模式",
+      "description": "仅限势均力敌的对决，速度差在 10 以内。没有平局。"
+    },
+    "allowNatures": {
+      "title": "允许性格",
+      "description": "比较 50 级时的最大速度，分别采用无修正和 +速度性格。"
+    }
+  },
+  "natureBadge": {
+    "positive": "+速度",
+    "neutral": "无修正"
+  },
+  "memberPicker": {
+    "searchPlaceholder": "搜索宝可梦",
+    "selectedCount": "已选择 {{n}} 只",
+    "clear": "清除",
+    "noMatches": "无匹配结果",
+    "optionsAria": "{{label}} 选项"
+  },
+  "settings": {
+    "title": "设置",
+    "close": "关闭",
+    "cancelCreate": "取消",
+    "language": "语言",
+    "explainer": {
+      "intro": "卡组是自定义的宝可梦列表。",
+      "pick": "从标题栏的 <icon/> 菜单中选择一个，即可在每个游戏模式中只使用这些宝可梦。",
+      "allDeck": "内置的“所有宝可梦”卡组使用完整数据集。",
+      "streaks": "连胜与每个卡组和模式绑定，所以切换卡组重置连胜时不必惊慌。",
+      "manage": "在下方创建、编辑和分享你自己的卡组。"
+    },
+    "yourDecks": "你的卡组",
+    "createDeck": "创建卡组",
+    "importDeck": "导入卡组",
+    "deckName": "卡组名称",
+    "pokemon": "宝可梦",
+    "exportDeck": "导出卡组",
+    "deleteDeck": "删除卡组",
+    "saveDeck": "保存卡组",
+    "pasteDeckJson": "粘贴卡组 JSON",
+    "pastePlaceholder": "{ \"name\": \"我的卡组\", \"pokemonIds\": [\"garchomp\", \"...\"] }",
+    "pasteHelper": "粘贴从上方卡组复制的 JSON。",
+    "importButton": "导入卡组",
+    "noneInDataset": "这些宝可梦均不在当前数据集中。",
+    "edit": "编辑 {{name}}",
+    "collapse": "折叠 {{name}}",
+    "decks": "卡组",
+    "deckNameRequired": "请输入卡组名称",
+    "deckMembersRequired": "请至少添加一只宝可梦"
+  },
+  "types": {
+    "normal": "一般",
+    "fire": "火",
+    "water": "水",
+    "electric": "电",
+    "grass": "草",
+    "ice": "冰",
+    "fighting": "格斗",
+    "poison": "毒",
+    "ground": "地面",
+    "flying": "飞行",
+    "psychic": "超能力",
+    "bug": "虫",
+    "rock": "岩石",
+    "ghost": "幽灵",
+    "dragon": "龙",
+    "dark": "恶",
+    "steel": "钢",
+    "fairy": "妖精"
+  }
+}

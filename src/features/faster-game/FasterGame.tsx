@@ -12,6 +12,7 @@ import { SlotNumber, slotSpinMs } from '../../components/SlotNumber';
 import { StatPill } from '../../components/StatPill';
 import { StreakStat } from '../../components/StreakStat';
 import { TypeBadges } from '../../components/TypeBadges';
+import { displayName } from '../../lib/data';
 import { pickPairWithin, type PairConstraints } from '../random';
 import { loadBestStreak, saveBestStreak } from './bestStreak';
 import { buildContenders, sameSpecies, speedOf, type Contender } from './contenders';
@@ -36,7 +37,7 @@ const REPEAT_PENALTY = 0.12;
  * Returns the element.
  */
 export function FasterGame() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { activePokemon: pool, activeDeckId } = useDecks();
   const [mode, setMode] = useState<GameMode>(loadMode);
 
@@ -172,6 +173,7 @@ export function FasterGame() {
   const speedLabel = mode.allowNatures ? t('common.maxSpeed') : t('common.baseSpeed');
 
   const contender = (c: Contender) => {
+    const name = displayName(c.pokemon, i18n.language);
     const isPicked = picked === c;
     const bothShown = phase === 'revealBoth' || phase === 'resolved';
     const showSpeed = isPicked ? phase !== 'idle' : bothShown;
@@ -184,7 +186,7 @@ export function FasterGame() {
     return (
       <Card
         onClick={() => guess(c)}
-        ariaLabel={t('faster.chooseAria', { name: c.pokemon.name })}
+        ariaLabel={t('faster.chooseAria', { name })}
         state={state}
         stretch
         sx={{ flex: 1, minWidth: 0 }}
@@ -196,10 +198,10 @@ export function FasterGame() {
           sx={{ textAlign: 'center', flex: 1 }}
         >
           <Box sx={{ width: { xs: 112, sm: 160 }, maxWidth: '100%' }}>
-            <PokemonImage src={c.pokemon.sprite} name={c.pokemon.name} eager />
+            <PokemonImage src={c.pokemon.sprite} name={name} eager />
           </Box>
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            {c.pokemon.name}
+            {name}
           </Typography>
           {c.nature !== 'base' && <NatureBadge nature={c.nature} />}
           <TypeBadges types={c.pokemon.types} />

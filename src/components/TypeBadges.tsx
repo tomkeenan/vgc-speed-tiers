@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
+import { useTranslation } from 'react-i18next';
 
 interface TypeBadgesProps {
   types: string[];
@@ -42,14 +43,16 @@ function textColor(bg: string): string {
  * Takes the list of type names, returns the element.
  */
 export function TypeBadges({ types }: TypeBadgesProps) {
+  const { t } = useTranslation();
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 0.75 }}>
       {types.map((type) => {
-        const bg = TYPE_COLORS[type.toLowerCase()] ?? FALLBACK;
+        const key = type.toLowerCase();
+        const bg = TYPE_COLORS[key] ?? FALLBACK;
         return (
           <Chip
             key={type}
-            label={type}
+            label={t(`types.${key}`, { defaultValue: type })}
             size="small"
             sx={{
               bgcolor: bg,

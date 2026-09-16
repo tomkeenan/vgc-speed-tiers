@@ -1,0 +1,128 @@
+{
+  "app": {
+    "title": "Just Move First"
+  },
+  "tabs": {
+    "flashcards": "Lernkarten",
+    "faster": "Wer ist schneller?",
+    "howFast": "Wie schnell?"
+  },
+  "common": {
+    "baseSpeed": "Basis-Initiative",
+    "maxSpeed": "Max. Initiative",
+    "tryAgain": "Erneut versuchen",
+    "streak": "Serie",
+    "best": "Bestwert",
+    "noPokemon": "Keine Pokémon verfügbar.",
+    "features": "Funktionen",
+    "copied": "Kopiert!"
+  },
+  "header": {
+    "settings": "Einstellungen"
+  },
+  "footer": {
+    "madeBy": "erstellt von tom",
+    "copyEmail": "E-Mail-Adresse kopieren"
+  },
+  "themeToggle": {
+    "toLight": "Zum hellen Modus wechseln",
+    "toDark": "Zum dunklen Modus wechseln"
+  },
+  "deckSelector": {
+    "deckLabel": "Deck: {{name}}"
+  },
+  "decks": {
+    "allPokemon": "Alle Pokémon"
+  },
+  "flashcards": {
+    "prompt": "Tippe auf die Karte, um ihre Basis-Initiative aufzudecken.",
+    "next": "Nächstes Pokémon",
+    "cardAria": "{{name}} Lernkarte, Basis-Initiative {{state}}",
+    "showing": "sichtbar",
+    "hiding": "verborgen"
+  },
+  "howFast": {
+    "prompt": "Gib die genaue Basis-Initiative dieses Pokémon ein.",
+    "cardAria": "{{name}} Karte",
+    "placeholder": "Basis-Initiative",
+    "inputAria": "Deine Schätzung der Basis-Initiative",
+    "submit": "Bestätigen"
+  },
+  "faster": {
+    "promptBase": "Welches Pokémon hat die höhere Basis-Initiative?",
+    "prompt": "Welches Pokémon hat die höhere Initiative?",
+    "chooseAria": "{{name}} wählen",
+    "needTwo": "Dieses Deck braucht mindestens zwei Pokémon zum Spielen. Füge in den Einstellungen weitere hinzu.",
+    "noneClose": "Kein Pokémon-Paar in diesem Deck liegt innerhalb von {{max}} Initiative. Erweitere das Deck oder deaktiviere den schweren Modus.",
+    "hardMode": {
+      "title": "Schwerer Modus",
+      "description": "Nur knappe Duelle, innerhalb von 10 Initiative. Keine Gleichstände."
+    },
+    "allowNatures": {
+      "title": "Wesen zulassen",
+      "description": "Vergleicht die max. Initiative auf Level 50, bei neutralem und +Init-Wesen."
+    }
+  },
+  "natureBadge": {
+    "positive": "+Init",
+    "neutral": "Neutral"
+  },
+  "memberPicker": {
+    "searchPlaceholder": "Pokémon suchen",
+    "selectedCount": "{{n}} ausgewählt",
+    "clear": "Löschen",
+    "noMatches": "Keine Treffer",
+    "optionsAria": "{{label}} Optionen"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "close": "Schließen",
+    "cancelCreate": "Abbrechen",
+    "language": "Sprache",
+    "explainer": {
+      "intro": "Ein Deck ist eine benutzerdefinierte Liste von Pokémon.",
+      "pick": "Wähle im <icon/>-Menü in der Kopfzeile eines aus, um in jedem Spielmodus nur diese Pokémon zu verwenden.",
+      "allDeck": "Das integrierte Deck Alle Pokémon nutzt den gesamten Datensatz.",
+      "streaks": "Serien sind an das jeweilige Deck und den jeweiligen Modus gebunden - keine Panik also, wenn ein Deckwechsel deine Serie zurücksetzt.",
+      "manage": "Erstelle, bearbeite und teile deine eigenen Decks unten."
+    },
+    "yourDecks": "Deine Decks",
+    "createDeck": "Deck erstellen",
+    "importDeck": "Deck importieren",
+    "deckName": "Deckname",
+    "pokemon": "Pokémon",
+    "exportDeck": "Deck exportieren",
+    "deleteDeck": "Deck löschen",
+    "saveDeck": "Deck speichern",
+    "pasteDeckJson": "Deck-JSON einfügen",
+    "pastePlaceholder": "{ \"name\": \"Mein Deck\", \"pokemonIds\": [\"garchomp\", \"...\"] }",
+    "pasteHelper": "Füge das aus einem Deck oben kopierte JSON ein.",
+    "importButton": "Deck importieren",
+    "noneInDataset": "Keines dieser Pokémon ist im aktuellen Datensatz enthalten.",
+    "edit": "{{name}} bearbeiten",
+    "collapse": "{{name}} einklappen",
+    "decks": "Decks",
+    "deckNameRequired": "Gib einen Deck-Namen ein",
+    "deckMembersRequired": "Füge mindestens ein Pokémon hinzu"
+  },
+  "types": {
+    "normal": "Normal",
+    "fire": "Feuer",
+    "water": "Wasser",
+    "electric": "Elektro",
+    "grass": "Pflanze",
+    "ice": "Eis",
+    "fighting": "Kampf",
+    "poison": "Gift",
+    "ground": "Boden",
+    "flying": "Flug",
+    "psychic": "Psycho",
+    "bug": "Käfer",
+    "rock": "Gestein",
+    "ghost": "Geist",
+    "dragon": "Drache",
+    "dark": "Unlicht",
+    "steel": "Stahl",
+    "fairy": "Fee"
+  }
+}

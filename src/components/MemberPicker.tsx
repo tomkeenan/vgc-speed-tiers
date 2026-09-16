@@ -1,11 +1,14 @@
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
+import Chip from '@mui/material/Chip';
 import MuiButton from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import type { Pokemon } from '../lib/types';
+import { displayName } from '../lib/data';
 
 interface MemberPickerProps {
   label: string;
@@ -24,22 +27,28 @@ const spriteSx = {
 } as const;
 
 /**
- * A searchable multi-select for Pokemon: a pinned search field above an always-visible,
- * scrollable checklist of options (checkbox + sprite + name), so on mobile the on-screen
- * keyboard never hides the list the way a dropdown would.
+ * A searchable multi-select for Pokemon: a pinned search field, the current selection shown as
+ * removable chips, then an always-visible scrollable checklist of options (checkbox + sprite +
+ * name), so on mobile the on-screen keyboard never hides the list the way a dropdown would.
  * Takes a label, the option pool, the selected value, and an onChange, returns the element.
  */
 export function MemberPicker({ label, options, value, onChange }: MemberPickerProps) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language;
   const [query, setQuery] = useState('');
   const selectedIds = useMemo(() => new Set(value.map((p) => p.id)), [value]);
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return q ? options.filter((p) => p.name.toLowerCase().includes(q)) : options;
-  }, [options, query]);
+    if (!q) return options;
+    // Match either the localized name or the base English name, so both spellings find the Pokemon.
+    return options.filter(
+      (p) => displayName(p, lang).toLowerCase().includes(q) || p.name.toLowerCase().includes(q),
+    );
+  }, [options, query, lang]);
 
+  const remove = (id: string) => onChange(value.filter((v) => v.id !== id));
   const toggle = (p: Pokemon) => {
-    if (selectedIds.has(p.id)) onChange(value.filter((v) => v.id !== p.id));
+    if (selectedIds.has(p.id)) remove(p.id);
     else onChange([...value, p]);
   };
 
@@ -63,6 +72,20 @@ export function MemberPicker({ label, options, value, onChange }: MemberPickerPr
           </MuiButton>
         )}
       </Box>
+      {value.length > 0 && (
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
+          {value.map((p) => (
+            <Chip
+              key={p.id}
+              avatar={<Avatar src={p.sprite} alt="" imgProps={{ loading: 'lazy' }} />}
+              label={displayName(p, lang)}
+              onDelete={() => remove(p.id)}
+              size="small"
+              variant="outlined"
+            />
+          ))}
+        </Box>
+      )}
       <Box
         role="listbox"
         aria-label={t('memberPicker.optionsAria', { label })}
@@ -110,7 +133,7 @@ export function MemberPicker({ label, options, value, onChange }: MemberPickerPr
                 sx={spriteSx}
               />
               <Typography component="span" variant="body2">
-                {p.name}
+                {displayName(p, lang)}
               </Typography>
             </Box>
           ))

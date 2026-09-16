@@ -9,6 +9,7 @@ import { Card } from '../../components/Card';
 import { PokemonImage } from '../../components/PokemonImage';
 import { SpeedReveal } from '../../components/SpeedReveal';
 import { TypeBadges } from '../../components/TypeBadges';
+import { displayName } from '../../lib/data';
 import { randomIndex } from '../random';
 
 /**
@@ -16,7 +17,7 @@ import { randomIndex } from '../random';
  * and shuffles to the next card. Returns the element.
  */
 export function Flashcards() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { activePokemon: pool, activeDeckId } = useDecks();
   const [index, setIndex] = useState(() => randomIndex(pool.length));
   const [nextIndex, setNextIndex] = useState(() => randomIndex(pool.length));
@@ -56,6 +57,7 @@ export function Flashcards() {
   }
 
   const pokemon = pool[Math.min(index, pool.length - 1)];
+  const name = displayName(pokemon, i18n.language);
   const base = pokemon.baseStats.spe;
 
   const next = () => {
@@ -73,16 +75,16 @@ export function Flashcards() {
       <Card
         onClick={() => setRevealed((r) => !r)}
         ariaLabel={t('flashcards.cardAria', {
-          name: pokemon.name,
+          name,
           state: revealed ? t('flashcards.showing') : t('flashcards.hiding'),
         })}
       >
         <Stack spacing={1.5} sx={{ alignItems: 'center' }}>
           <Box sx={{ width: { xs: 192, sm: 224 }, maxWidth: '100%' }}>
-            <PokemonImage src={pokemon.sprite} name={pokemon.name} eager />
+            <PokemonImage src={pokemon.sprite} name={name} eager />
           </Box>
           <Typography variant="h6" sx={{ fontWeight: 700, color: 'text.primary' }}>
-            {pokemon.name}
+            {name}
           </Typography>
           <TypeBadges types={pokemon.types} />
 

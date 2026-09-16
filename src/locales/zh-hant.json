@@ -1,0 +1,128 @@
+{
+  "app": {
+    "title": "Just Move First"
+  },
+  "tabs": {
+    "flashcards": "記憶卡",
+    "faster": "誰比較快？",
+    "howFast": "有多快？"
+  },
+  "common": {
+    "baseSpeed": "基礎速度",
+    "maxSpeed": "最大速度",
+    "tryAgain": "重試",
+    "streak": "連勝",
+    "best": "最佳",
+    "noPokemon": "沒有可用的寶可夢。",
+    "features": "功能",
+    "copied": "已複製！"
+  },
+  "header": {
+    "settings": "設定"
+  },
+  "footer": {
+    "madeBy": "由 tom 製作",
+    "copyEmail": "複製電子郵件地址"
+  },
+  "themeToggle": {
+    "toLight": "切換至淺色模式",
+    "toDark": "切換至深色模式"
+  },
+  "deckSelector": {
+    "deckLabel": "牌組：{{name}}"
+  },
+  "decks": {
+    "allPokemon": "所有寶可夢"
+  },
+  "flashcards": {
+    "prompt": "點擊卡片以顯示其基礎速度。",
+    "next": "下一隻寶可夢",
+    "cardAria": "{{name}} 記憶卡，基礎速度{{state}}",
+    "showing": "顯示中",
+    "hiding": "隱藏中"
+  },
+  "howFast": {
+    "prompt": "輸入這隻寶可夢的準確基礎速度。",
+    "cardAria": "{{name}} 卡片",
+    "placeholder": "基礎速度",
+    "inputAria": "你的基礎速度猜測",
+    "submit": "送出"
+  },
+  "faster": {
+    "promptBase": "哪隻寶可夢的基礎速度較高？",
+    "prompt": "哪隻寶可夢的速度較高？",
+    "chooseAria": "選擇 {{name}}",
+    "needTwo": "這個牌組至少需要兩隻寶可夢才能遊玩。請在設定中新增更多。",
+    "noneClose": "這個牌組中沒有速度差在 {{max}} 以內的兩隻寶可夢。請擴大牌組或關閉困難模式。",
+    "hardMode": {
+      "title": "困難模式",
+      "description": "僅限勢均力敵的對決，速度差在 10 以內。沒有平手。"
+    },
+    "allowNatures": {
+      "title": "允許性格",
+      "description": "比較 50 級時的最大速度，分別採用無修正與 +速度性格。"
+    }
+  },
+  "natureBadge": {
+    "positive": "+速度",
+    "neutral": "無修正"
+  },
+  "memberPicker": {
+    "searchPlaceholder": "搜尋寶可夢",
+    "selectedCount": "已選擇 {{n}} 隻",
+    "clear": "清除",
+    "noMatches": "無相符結果",
+    "optionsAria": "{{label}} 選項"
+  },
+  "settings": {
+    "title": "設定",
+    "close": "關閉",
+    "cancelCreate": "取消",
+    "language": "語言",
+    "explainer": {
+      "intro": "牌組是自訂的寶可夢清單。",
+      "pick": "從標題列的 <icon/> 選單中選擇一個，即可在每個遊戲模式中只使用這些寶可夢。",
+      "allDeck": "內建的「所有寶可夢」牌組使用完整資料集。",
+      "streaks": "連勝與每個牌組和模式綁定，所以切換牌組重置連勝時不必驚慌。",
+      "manage": "在下方建立、編輯與分享你自己的牌組。"
+    },
+    "yourDecks": "你的牌組",
+    "createDeck": "建立牌組",
+    "importDeck": "匯入牌組",
+    "deckName": "牌組名稱",
+    "pokemon": "寶可夢",
+    "exportDeck": "匯出牌組",
+    "deleteDeck": "刪除牌組",
+    "saveDeck": "儲存牌組",
+    "pasteDeckJson": "貼上牌組 JSON",
+    "pastePlaceholder": "{ \"name\": \"我的牌組\", \"pokemonIds\": [\"garchomp\", \"...\"] }",
+    "pasteHelper": "貼上從上方牌組複製的 JSON。",
+    "importButton": "匯入牌組",
+    "noneInDataset": "這些寶可夢皆不在目前的資料集中。",
+    "edit": "編輯 {{name}}",
+    "collapse": "收合 {{name}}",
+    "decks": "牌組",
+    "deckNameRequired": "請輸入牌組名稱",
+    "deckMembersRequired": "請至少加入一隻寶可夢"
+  },
+  "types": {
+    "normal": "一般",
+    "fire": "火",
+    "water": "水",
+    "electric": "電",
+    "grass": "草",
+    "ice": "冰",
+    "fighting": "格鬥",
+    "poison": "毒",
+    "ground": "地面",
+    "flying": "飛行",
+    "psychic": "超能力",
+    "bug": "蟲",
+    "rock": "岩石",
+    "ghost": "幽靈",
+    "dragon": "龍",
+    "dark": "惡",
+    "steel": "鋼",
+    "fairy": "妖精"
+  }
+}

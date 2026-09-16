@@ -1,0 +1,128 @@
+{
+  "app": {
+    "title": "Just Move First"
+  },
+  "tabs": {
+    "flashcards": "Tarjetas",
+    "faster": "¿Quién es más rápido?",
+    "howFast": "¿Cómo de rápido?"
+  },
+  "common": {
+    "baseSpeed": "Velocidad base",
+    "maxSpeed": "Velocidad máx.",
+    "tryAgain": "Inténtalo de nuevo",
+    "streak": "Racha",
+    "best": "Mejor",
+    "noPokemon": "No hay Pokémon disponibles.",
+    "features": "Funciones",
+    "copied": "¡Copiado!"
+  },
+  "header": {
+    "settings": "Ajustes"
+  },
+  "footer": {
+    "madeBy": "hecho por tom",
+    "copyEmail": "Copiar dirección de correo"
+  },
+  "themeToggle": {
+    "toLight": "Cambiar a modo claro",
+    "toDark": "Cambiar a modo oscuro"
+  },
+  "deckSelector": {
+    "deckLabel": "Mazo: {{name}}"
+  },
+  "decks": {
+    "allPokemon": "Todos los Pokémon"
+  },
+  "flashcards": {
+    "prompt": "Toca la tarjeta para revelar su velocidad base.",
+    "next": "Siguiente Pokémon",
+    "cardAria": "Tarjeta de {{name}}, velocidad base {{state}}",
+    "showing": "mostrando",
+    "hiding": "ocultando"
+  },
+  "howFast": {
+    "prompt": "Escribe la velocidad base exacta de este Pokémon.",
+    "cardAria": "Tarjeta de {{name}}",
+    "placeholder": "Velocidad base",
+    "inputAria": "Tu estimación de velocidad base",
+    "submit": "Enviar"
+  },
+  "faster": {
+    "promptBase": "¿Qué Pokémon tiene mayor velocidad base?",
+    "prompt": "¿Qué Pokémon tiene mayor velocidad?",
+    "chooseAria": "Elegir {{name}}",
+    "needTwo": "Este mazo necesita al menos dos Pokémon para jugar. Añade más en los ajustes.",
+    "noneClose": "No hay dos Pokémon en este mazo con una diferencia de velocidad de {{max}} o menos. Amplía el mazo o desactiva el modo difícil.",
+    "hardMode": {
+      "title": "Modo difícil",
+      "description": "Solo enfrentamientos ajustados, con 10 de velocidad de diferencia. Sin empates."
+    },
+    "allowNatures": {
+      "title": "Permitir naturalezas",
+      "description": "Compara la velocidad máxima a nivel 50, con naturaleza neutral y +Vel."
+    }
+  },
+  "natureBadge": {
+    "positive": "+Vel",
+    "neutral": "Neutral"
+  },
+  "memberPicker": {
+    "searchPlaceholder": "Buscar Pokémon",
+    "selectedCount": "{{n}} seleccionados",
+    "clear": "Borrar",
+    "noMatches": "Sin resultados",
+    "optionsAria": "Opciones de {{label}}"
+  },
+  "settings": {
+    "title": "Ajustes",
+    "close": "Cerrar",
+    "cancelCreate": "Cancelar",
+    "language": "Idioma",
+    "explainer": {
+      "intro": "Un mazo es una lista personalizada de Pokémon.",
+      "pick": "Elige uno en el menú <icon/> de la cabecera para usar solo esos Pokémon en cada modo de juego.",
+      "allDeck": "El mazo integrado Todos los Pokémon usa el conjunto de datos completo.",
+      "streaks": "Las rachas están vinculadas a cada mazo y modo, así que no te asustes si cambiar de mazo reinicia tu racha.",
+      "manage": "Crea, edita y comparte tus propios mazos abajo."
+    },
+    "yourDecks": "Tus mazos",
+    "createDeck": "Crear un mazo",
+    "importDeck": "Importar un mazo",
+    "deckName": "Nombre del mazo",
+    "pokemon": "Pokémon",
+    "exportDeck": "Exportar mazo",
+    "deleteDeck": "Eliminar mazo",
+    "saveDeck": "Guardar mazo",
+    "pasteDeckJson": "Pegar JSON del mazo",
+    "pastePlaceholder": "{ \"name\": \"Mi mazo\", \"pokemonIds\": [\"garchomp\", \"...\"] }",
+    "pasteHelper": "Pega el JSON copiado de un mazo de arriba.",
+    "importButton": "Importar mazo",
+    "noneInDataset": "Ninguno de esos Pokémon está en el conjunto de datos actual.",
+    "edit": "Editar {{name}}",
+    "collapse": "Contraer {{name}}",
+    "decks": "Mazos",
+    "deckNameRequired": "Introduce un nombre de mazo",
+    "deckMembersRequired": "Añade al menos un Pokémon"
+  },
+  "types": {
+    "normal": "Normal",
+    "fire": "Fuego",
+    "water": "Agua",
+    "electric": "Eléctrico",
+    "grass": "Planta",
+    "ice": "Hielo",
+    "fighting": "Lucha",
+    "poison": "Veneno",
+    "ground": "Tierra",
+    "flying": "Volador",
+    "psychic": "Psíquico",
+    "bug": "Bicho",
+    "rock": "Roca",
+    "ghost": "Fantasma",
+    "dragon": "Dragón",
+    "dark": "Siniestro",
+    "steel": "Acero",
+    "fairy": "Hada"
+  }
+}

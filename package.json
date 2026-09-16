@@ -15,8 +15,9 @@
     "roster": "node tools/generate-roster.mjs",
     "build:data": "node tools/build-dataset.mjs",
     "sprites": "node tools/optimize-sprites.mjs",
+    "i18n:types": "node tools/build-i18n-types.mjs",
     "validate": "node tools/validate.mjs",
-    "data": "npm run roster && npm run build:data && npm run sprites && npm run validate",
+    "data": "npm run roster && npm run build:data && npm run sprites && npm run i18n:types && npm run validate",
     "check": "npm run typecheck && npm run lint && npm run test",
     "test": "vitest run"
   },
