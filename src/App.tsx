@@ -25,7 +25,7 @@ type TabKey = (typeof TABS)[number]['key'];
 /** Root component: header, tab navigation, the two features, and the settings dialog. */
 export default function App() {
   const { t } = useTranslation();
-  const [tab, setTab] = useState<TabKey>('flashcards');
+  const [tab, setTab] = useState<TabKey>('faster');
   const [settingsOpen, setSettingsOpen] = useState(false);
   const active = TABS.find((t) => t.key === tab) ?? TABS[0];
 
