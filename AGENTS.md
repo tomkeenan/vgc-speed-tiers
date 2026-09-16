@@ -14,8 +14,12 @@ This file is the contract every agent works to. Read it fully before writing cod
 3. **Build against the frozen contracts**, not against each other: the JSON schema
    (`schema/pokemon.schema.json`), the `src/lib/speed.ts` API, and the fixture
    (`data/pokemon.sample.json`). These do not change without updating this file.
-4. **Definition of Done:** `npm run typecheck`, `npm run test`, and `npm run format` all pass;
-   `npm run dev` boots with no console errors.
+4. **Definition of Done:** `npm run typecheck`, `npm run lint`, `npm run test`, and `npm run format`
+   all pass (`npm run check` runs the first three); `npm run dev` boots with no console errors.
+5. **Every user-facing string is translated.** Never hardcode display text. Route it through
+   `t('namespace.key')` / `<Trans>` and add the key to `src/locales/en.json` (see i18n conventions
+   below). `npm run lint` fails on any literal string in JSX; `npm run test` fails if a used key is
+   missing from `en.json` or if a locale file drifts out of sync.
 
 ## Commands
 
@@ -24,6 +28,8 @@ This file is the contract every agent works to. Read it fully before writing cod
 | `npm run dev`        | Vite dev server                                  |
 | `npm run test`       | Vitest (single run)                              |
 | `npm run typecheck`  | `tsc --noEmit`                                   |
+| `npm run lint`       | ESLint - fails on hardcoded UI strings           |
+| `npm run check`      | typecheck + lint + test (the gate)               |
 | `npm run format`     | Prettier write                                   |
 | `npm run roster`     | Stage 1: usage stats -> `data/roster.json`       |
 | `npm run build:data` | Stage 2: roster + PokeAPI -> `data/pokemon.json` |
@@ -61,6 +67,14 @@ This file is the contract every agent works to. Read it fully before writing cod
 - **Tests = Vitest only.** Keep them simple and minimal. Co-locate as `*.test.ts(x)` next to the
   code. Test behavior, not implementation. Core logic (`speed.ts`) gets real assertions; components
   get a single smoke test.
+- **i18n.** All display text lives in `src/locales/en.json`, keyed `namespace.camelCaseKey`, grouped
+  by feature (`faster.*`, `settings.*`) or `common.*` for shared strings. Reference keys with
+  `t('faster.prompt')` / `<Trans i18nKey="...">`; interpolate with `{{name}}`, and use i18next plural
+  suffixes (`key_one` / `key_other`, variable named `count`) for counted strings. Add the key to
+  every locale file, not just `en.json` - the parity test fails otherwise. For a rare deliberate
+  literal (a symbol or brand term that must not be translated), add
+  `// eslint-disable-next-line i18next/no-literal-string` on the line above. The guards are the
+  `i18next/no-literal-string` ESLint rule (`eslint.config.js`) and `src/locales/key-parity.test.ts`.
 - **Component-first.** One component per file in `src/components/` (shared) or a feature folder.
   Components are small and single-purpose; presentational components take props and do no data
   fetching. Features compose components; no monolithic files.
