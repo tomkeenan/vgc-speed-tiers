@@ -72,6 +72,16 @@ export const theme = createTheme({
         }),
       },
     },
+    MuiPopover: {
+      // Dropdown menus (e.g. the Select popovers) are elevated Paper too, so the same
+      // dark-mode overlay washes them gray. Keep them on the solid background.paper.
+      styleOverrides: {
+        paper: ({ theme }) => ({
+          backgroundImage: 'none',
+          backgroundColor: theme.vars.palette.background.paper,
+        }),
+      },
+    },
     MuiTabs: {
       styleOverrides: {
         indicator: ({ theme }) => ({ backgroundColor: theme.vars.palette.text.primary }),
