@@ -7,6 +7,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
+import MenuItem from '@mui/material/MenuItem';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
@@ -20,7 +21,14 @@ import { Button } from '../../components/Button';
 import { CloseIcon } from '../../components/CloseIcon';
 import { EditIcon } from '../../components/EditIcon';
 import { MemberPicker } from '../../components/MemberPicker';
+import { PlusIcon } from '../../components/PlusIcon';
 import { PokeballIcon } from '../../components/PokeballIcon';
+import {
+  loadLanguage,
+  saveLanguage,
+  SUPPORTED_LANGUAGES,
+  type SupportedLanguage,
+} from '../../language';
 
 interface SettingsDialogProps {
   open: boolean;
@@ -28,12 +36,14 @@ interface SettingsDialogProps {
 }
 
 const sectionLabelSx = {
-  fontSize: '0.75rem',
   fontWeight: 600,
-  letterSpacing: '0.05em',
-  textTransform: 'uppercase',
-  color: 'text.secondary',
 } as const;
+
+/** Each language's own endonym, shown regardless of the active UI language. */
+const LANGUAGE_NAMES: Record<SupportedLanguage, string> = {
+  en: 'English',
+  'fi-FI': 'Suomi',
+};
 
 /**
  * The settings dialog: create, rename, edit, or delete decks. Switching the active deck lives
@@ -41,7 +51,7 @@ const sectionLabelSx = {
  * Takes open and onClose, returns the element.
  */
 export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const { decks, createDeck, renameDeck, setDeckMembers, deleteDeck } = useDecks();
@@ -57,7 +67,16 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [importText, setImportText] = useState('');
   const [importError, setImportError] = useState<string | null>(null);
+  const [language, setLanguage] = useState<SupportedLanguage>(() => loadLanguage());
+  const [creating, setCreating] = useState(false);
+  const [importingOpen, setImportingOpen] = useState(false);
   const copyTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  const changeLanguage = (lang: SupportedLanguage) => {
+    setLanguage(lang);
+    saveLanguage(lang);
+    void i18n.changeLanguage(lang);
+  };
 
   const copyDeck = async (id: string, name: string, pokemonIds: string[]) => {
     try {
@@ -84,6 +103,7 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
     createDeck(result.deck.name, known);
     setImportText('');
     setImportError(null);
+    setImportingOpen(false);
   };
 
   const toggleEditing = (id: string) =>
@@ -105,6 +125,7 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
     );
     setNewName('');
     setNewMembers([]);
+    setCreating(false);
   };
 
   return (
@@ -125,7 +146,7 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
       </DialogTitle>
 
       <DialogContent dividers>
-        <Stack spacing={3}>
+        <Stack spacing={2.5}>
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
             <Trans
               i18nKey="settings.explainer"
@@ -143,145 +164,212 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
           </Typography>
 
           {userDecks.length > 0 && (
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-              <Typography component="span" sx={sectionLabelSx}>
-                {t('settings.yourDecks')}
-              </Typography>
-              {userDecks.map((deck) => {
-                const expanded = editing.has(deck.id);
-                return (
-                  <Box
-                    key={deck.id}
-                    sx={{
-                      border: '1px solid',
-                      borderColor: 'divider',
-                      borderRadius: '12px',
-                      p: 1.5,
-                    }}
-                  >
+            <>
+              <Divider />
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                <Typography component="span" sx={sectionLabelSx}>
+                  {t('settings.yourDecks')}
+                </Typography>
+                {userDecks.map((deck) => {
+                  const expanded = editing.has(deck.id);
+                  return (
                     <Box
+                      key={deck.id}
                       sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        gap: 1,
+                        border: '1px solid',
+                        borderColor: 'divider',
+                        borderRadius: '12px',
+                        p: 1.5,
                       }}
                     >
-                      <Typography sx={{ fontWeight: 600, minWidth: 0 }} noWrap>
-                        {deck.name}
-                        <Box component="span" sx={{ color: 'text.secondary', fontWeight: 400 }}>
-                          {` · ${deckSize(deck.id, deck.pokemonIds)}`}
-                        </Box>
-                      </Typography>
-                      <IconButton
-                        aria-label={
-                          expanded
-                            ? t('settings.collapse', { name: deck.name })
-                            : t('settings.edit', { name: deck.name })
-                        }
-                        aria-expanded={expanded}
-                        onClick={() => toggleEditing(deck.id)}
-                        size="small"
-                        sx={{ color: 'text.primary', flexShrink: 0 }}
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          gap: 1,
+                        }}
                       >
-                        {expanded ? <CloseIcon /> : <EditIcon />}
-                      </IconButton>
-                    </Box>
-
-                    <Collapse in={expanded} unmountOnExit>
-                      <Stack spacing={1.5} sx={{ pt: 1.5 }}>
-                        <TextField
-                          label={t('settings.deckName')}
-                          value={deck.name}
-                          onChange={(e) => renameDeck(deck.id, e.target.value)}
-                          fullWidth
-                        />
-                        <MemberPicker
-                          label={t('settings.pokemon')}
-                          options={pool}
-                          value={membersOf(deck.pokemonIds)}
-                          onChange={(next) =>
-                            setDeckMembers(
-                              deck.id,
-                              next.map((p) => p.id),
-                            )
+                        <Typography sx={{ fontWeight: 600, minWidth: 0 }} noWrap>
+                          {deck.name}
+                          <Box component="span" sx={{ color: 'text.secondary', fontWeight: 400 }}>
+                            {` · ${deckSize(deck.id, deck.pokemonIds)}`}
+                          </Box>
+                        </Typography>
+                        <IconButton
+                          aria-label={
+                            expanded
+                              ? t('settings.collapse', { name: deck.name })
+                              : t('settings.edit', { name: deck.name })
                           }
-                        />
-                        <Stack
-                          direction={{ xs: 'column', sm: 'row' }}
-                          spacing={1}
-                          sx={{ alignSelf: { sm: 'flex-start' } }}
+                          aria-expanded={expanded}
+                          onClick={() => toggleEditing(deck.id)}
+                          size="small"
+                          sx={{ color: 'text.primary', flexShrink: 0 }}
                         >
-                          <Button
-                            variant="ghost"
-                            onClick={() => copyDeck(deck.id, deck.name, deck.pokemonIds)}
+                          {expanded ? <CloseIcon /> : <EditIcon />}
+                        </IconButton>
+                      </Box>
+
+                      <Collapse in={expanded} unmountOnExit>
+                        <Stack spacing={1.5} sx={{ pt: 1.5 }}>
+                          <TextField
+                            label={t('settings.deckName')}
+                            value={deck.name}
+                            onChange={(e) => renameDeck(deck.id, e.target.value)}
+                            fullWidth
+                          />
+                          <MemberPicker
+                            label={t('settings.pokemon')}
+                            options={pool}
+                            value={membersOf(deck.pokemonIds)}
+                            onChange={(next) =>
+                              setDeckMembers(
+                                deck.id,
+                                next.map((p) => p.id),
+                              )
+                            }
+                          />
+                          <Stack
+                            direction={{ xs: 'column', sm: 'row' }}
+                            spacing={1}
+                            sx={{ alignSelf: { sm: 'flex-start' } }}
                           >
-                            {copiedId === deck.id ? t('common.copied') : t('settings.exportDeck')}
-                          </Button>
-                          <Button variant="ghost" onClick={() => deleteDeck(deck.id)}>
-                            {t('settings.deleteDeck')}
-                          </Button>
+                            <Button
+                              variant="ghost"
+                              onClick={() => copyDeck(deck.id, deck.name, deck.pokemonIds)}
+                            >
+                              {copiedId === deck.id ? t('common.copied') : t('settings.exportDeck')}
+                            </Button>
+                            <Button variant="ghost" onClick={() => deleteDeck(deck.id)}>
+                              {t('settings.deleteDeck')}
+                            </Button>
+                          </Stack>
                         </Stack>
-                      </Stack>
-                    </Collapse>
-                  </Box>
-                );
-              })}
-            </Box>
+                      </Collapse>
+                    </Box>
+                  );
+                })}
+              </Box>
+            </>
           )}
 
-          {userDecks.length > 0 && <Divider />}
+          <Divider />
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
-            <Typography component="span" sx={sectionLabelSx}>
-              {t('settings.createDeck')}
-            </Typography>
-            <TextField
-              label={t('settings.deckName')}
-              value={newName}
-              onChange={(e) => setNewName(e.target.value)}
-              fullWidth
-            />
-            <MemberPicker
-              label={t('settings.pokemon')}
-              options={pool}
-              value={newMembers}
-              onChange={setNewMembers}
-            />
-            <Button
-              onClick={saveNewDeck}
-              disabled={!newName.trim()}
-              sx={{ alignSelf: { sm: 'flex-start' } }}
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: 1,
+              }}
             >
-              {t('settings.saveDeck')}
-            </Button>
+              <Typography component="span" sx={sectionLabelSx}>
+                {t('settings.createDeck')}
+              </Typography>
+              <IconButton
+                aria-label={creating ? t('settings.cancelCreate') : t('settings.createDeck')}
+                aria-expanded={creating}
+                onClick={() => setCreating((v) => !v)}
+                size="small"
+                sx={{ color: 'text.primary' }}
+              >
+                {creating ? <CloseIcon /> : <PlusIcon />}
+              </IconButton>
+            </Box>
+            <Collapse in={creating} unmountOnExit>
+              <Stack spacing={1.5} sx={{ pt: 0.5 }}>
+                <TextField
+                  label={t('settings.deckName')}
+                  value={newName}
+                  onChange={(e) => setNewName(e.target.value)}
+                  fullWidth
+                />
+                <MemberPicker
+                  label={t('settings.pokemon')}
+                  options={pool}
+                  value={newMembers}
+                  onChange={setNewMembers}
+                />
+                <Button
+                  onClick={saveNewDeck}
+                  disabled={!newName.trim()}
+                  sx={{ alignSelf: { sm: 'flex-start' } }}
+                >
+                  {t('settings.saveDeck')}
+                </Button>
+              </Stack>
+            </Collapse>
+          </Box>
+
+          <Divider />
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: 1,
+              }}
+            >
+              <Typography component="span" sx={sectionLabelSx}>
+                {t('settings.importDeck')}
+              </Typography>
+              <IconButton
+                aria-label={importingOpen ? t('settings.cancelCreate') : t('settings.importDeck')}
+                aria-expanded={importingOpen}
+                onClick={() => setImportingOpen((v) => !v)}
+                size="small"
+                sx={{ color: 'text.primary' }}
+              >
+                {importingOpen ? <CloseIcon /> : <PlusIcon />}
+              </IconButton>
+            </Box>
+            <Collapse in={importingOpen} unmountOnExit>
+              <Stack spacing={1.5} sx={{ pt: 0.5 }}>
+                <TextField
+                  label={t('settings.pasteDeckJson')}
+                  placeholder={t('settings.pastePlaceholder')}
+                  value={importText}
+                  onChange={(e) => {
+                    setImportText(e.target.value);
+                    if (importError) setImportError(null);
+                  }}
+                  error={!!importError}
+                  helperText={importError ?? t('settings.pasteHelper')}
+                  multiline
+                  minRows={3}
+                  fullWidth
+                />
+                <Button
+                  onClick={importDeck}
+                  disabled={!importText.trim()}
+                  sx={{ alignSelf: { sm: 'flex-start' } }}
+                >
+                  {t('settings.importButton')}
+                </Button>
+              </Stack>
+            </Collapse>
           </Box>
 
           <Divider />
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
             <Typography component="span" sx={sectionLabelSx}>
-              {t('settings.importDeck')}
+              {t('settings.language')}
             </Typography>
             <TextField
-              label={t('settings.pasteDeckJson')}
-              placeholder={t('settings.pastePlaceholder')}
-              value={importText}
-              onChange={(e) => {
-                setImportText(e.target.value);
-                if (importError) setImportError(null);
-              }}
-              error={!!importError}
-              helperText={importError ?? t('settings.pasteHelper')}
-              multiline
-              minRows={3}
+              select
+              value={language}
+              onChange={(e) => changeLanguage(e.target.value as SupportedLanguage)}
               fullWidth
-            />
-            <Button
-              onClick={importDeck}
-              disabled={!importText.trim()}
-              sx={{ alignSelf: { sm: 'flex-start' } }}
+              aria-label={t('settings.language')}
             >
-              {t('settings.importButton')}
-            </Button>
+              {SUPPORTED_LANGUAGES.map((lang) => (
+                <MenuItem key={lang} value={lang}>
+                  {LANGUAGE_NAMES[lang]}
+                </MenuItem>
+              ))}
+            </TextField>
           </Box>
         </Stack>
       </DialogContent>

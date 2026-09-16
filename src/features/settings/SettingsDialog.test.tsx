@@ -18,6 +18,10 @@ describe('SettingsDialog', () => {
   it('creates a deck that starts collapsed and expands/collapses via the edit icon', () => {
     renderDialog();
 
+    // The create form is hidden until the "Create a deck" control is clicked.
+    expect(screen.queryByLabelText('Deck name')).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: 'Create a deck' }));
+
     fireEvent.change(screen.getByLabelText('Deck name'), { target: { value: 'Rain' } });
     fireEvent.click(screen.getByRole('button', { name: 'Save deck' }));
 
@@ -47,6 +51,9 @@ describe('SettingsDialog', () => {
     const known = getAllPokemon()[0].id;
     const json = JSON.stringify({ name: 'Imported', pokemonIds: [known, 'not-a-real-mon'] });
 
+    // The import form is hidden until the "Import a deck" control is clicked.
+    expect(screen.queryByLabelText('Paste deck JSON')).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: 'Import a deck' }));
     fireEvent.change(screen.getByLabelText('Paste deck JSON'), { target: { value: json } });
     fireEvent.click(screen.getByRole('button', { name: 'Import deck' }));
 
@@ -57,6 +64,7 @@ describe('SettingsDialog', () => {
 
   it('shows an error for invalid import JSON and imports nothing', () => {
     renderDialog();
+    fireEvent.click(screen.getByRole('button', { name: 'Import a deck' }));
     fireEvent.change(screen.getByLabelText('Paste deck JSON'), { target: { value: '{bad json' } });
     fireEvent.click(screen.getByRole('button', { name: 'Import deck' }));
 
@@ -69,6 +77,7 @@ describe('SettingsDialog', () => {
     Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
 
     renderDialog();
+    fireEvent.click(screen.getByRole('button', { name: 'Create a deck' }));
     fireEvent.change(screen.getByLabelText('Deck name'), { target: { value: 'Sun' } });
     fireEvent.click(screen.getByRole('button', { name: 'Save deck' }));
     fireEvent.click(screen.getByRole('button', { name: 'Edit Sun' }));

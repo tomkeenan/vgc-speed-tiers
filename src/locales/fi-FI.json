@@ -1,0 +1,99 @@
+{
+  "app": {
+    "title": "Just Move First"
+  },
+  "tabs": {
+    "flashcards": "Muistikortit",
+    "faster": "Kumpi on nopeampi?",
+    "howFast": "Kuinka nopea?"
+  },
+  "common": {
+    "baseSpeed": "Perusnopeus",
+    "maxSpeed": "Maksiminopeus",
+    "tryAgain": "Yritä uudelleen",
+    "streak": "Putki",
+    "best": "Paras",
+    "noPokemon": "Ei Pokémoneja saatavilla.",
+    "features": "Ominaisuudet",
+    "copied": "Kopioitu!"
+  },
+  "header": {
+    "settings": "Asetukset"
+  },
+  "footer": {
+    "madeBy": "tehnyt tom",
+    "copyEmail": "Kopioi sähköpostiosoite"
+  },
+  "themeToggle": {
+    "toLight": "Vaihda vaaleaan tilaan",
+    "toDark": "Vaihda tummaan tilaan"
+  },
+  "deckSelector": {
+    "deckLabel": "Pakka: {{name}}"
+  },
+  "decks": {
+    "allPokemon": "Kaikki Pokémonit"
+  },
+  "flashcards": {
+    "prompt": "Napauta korttia paljastaaksesi sen perusnopeuden.",
+    "next": "Seuraava Pokémon",
+    "cardAria": "{{name}} muistikortti, perusnopeus {{state}}",
+    "showing": "näkyvissä",
+    "hiding": "piilotettu"
+  },
+  "howFast": {
+    "prompt": "Kirjoita tämän Pokémonin tarkka perusnopeus.",
+    "cardAria": "{{name}} kortti",
+    "placeholder": "Perusnopeus",
+    "inputAria": "Perusnopeusarvauksesi",
+    "submit": "Lähetä"
+  },
+  "faster": {
+    "promptBase": "Kummalla Pokémonilla on korkeampi perusnopeus?",
+    "prompt": "Kummalla Pokémonilla on korkeampi nopeus?",
+    "chooseAria": "Valitse {{name}}",
+    "needTwo": "Tämä pakka tarvitsee vähintään kaksi Pokémonia pelataksesi. Lisää lisää asetuksissa.",
+    "noneClose": "Tässä pakassa ei ole kahta Pokémonia, joiden nopeusero on enintään {{max}}. Laajenna pakkaa tai poista vaikea tila käytöstä.",
+    "hardMode": {
+      "title": "Vaikea tila",
+      "description": "Vain tasaiset kohtaamiset, enintään 10 nopeuden ero. Ei tasapelejä."
+    },
+    "allowNatures": {
+      "title": "Salli luonteet",
+      "description": "Vertaa tason 50 maksiminopeutta neutraalilla ja +Nop-luonteella."
+    }
+  },
+  "natureBadge": {
+    "positive": "+Nop",
+    "neutral": "Neutraali"
+  },
+  "memberPicker": {
+    "searchPlaceholder": "Hae Pokémonia",
+    "selectedCount": "{{n}} valittu",
+    "clear": "Tyhjennä",
+    "noMatches": "Ei osumia",
+    "optionsAria": "{{label}} vaihtoehdot"
+  },
+  "settings": {
+    "title": "Asetukset",
+    "close": "Sulje",
+    "cancelCreate": "Peruuta",
+    "language": "Kieli",
+    "explainer": "Pakka on mukautettu lista Pokémoneja. Valitse pakka otsikon <icon></icon>-valikosta käyttääksesi vain kyseisiä Pokémoneja jokaisessa pelitilassa. Sisäänrakennettu Kaikki Pokémonit -pakka käyttää koko aineistoa. Putket ovat sidottuja kuhunkin pakkaan ja tilaan, joten älä hätäänny, jos pakan vaihtaminen nollaa putkesi. Luo, muokkaa ja jaa omia pakkojasi alla.",
+    "yourDecks": "Sinun pakkasi",
+    "createDeck": "Luo pakka",
+    "importDeck": "Tuo pakka",
+    "deckName": "Pakan nimi",
+    "pokemon": "Pokémon",
+    "exportDeck": "Vie pakka",
+    "deleteDeck": "Poista pakka",
+    "saveDeck": "Tallenna pakka",
+    "pasteDeckJson": "Liitä pakan JSON",
+    "pastePlaceholder": "{ \"name\": \"Oma pakka\", \"pokemonIds\": [\"garchomp\", \"...\"] }",
+    "pasteHelper": "Liitä yllä olevasta pakasta kopioitu JSON.",
+    "importButton": "Tuo pakka",
+    "noneInDataset": "Yksikään noista Pokémoneista ei ole nykyisessä aineistossa.",
+    "edit": "Muokkaa {{name}}",
+    "collapse": "Pienennä {{name}}"
+  }
+}
