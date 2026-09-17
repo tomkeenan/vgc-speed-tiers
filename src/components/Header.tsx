@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
+import { AuthControl } from './AuthControl';
 import { DeckSelector } from './DeckSelector';
 import { GearIcon } from './GearIcon';
 import { ThemeToggle } from './ThemeToggle';
@@ -40,6 +41,7 @@ export function Header({ onOpenSettings }: HeaderProps) {
         >
           <GearIcon />
         </IconButton>
+        <AuthControl />
       </Box>
     </Box>
   );

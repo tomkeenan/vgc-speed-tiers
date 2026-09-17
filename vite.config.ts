@@ -3,6 +3,15 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  // Proxy the API to a locally-running `wrangler dev` so the SPA and Worker share an origin in dev.
+  // Port is pinned so the origin stays http://localhost:5173 (must match the Google OAuth origin).
+  server: {
+    port: 5173,
+    strictPort: true,
+    proxy: {
+      '/api': 'http://localhost:8787',
+    },
+  },
   build: {
     rollupOptions: {
       output: {

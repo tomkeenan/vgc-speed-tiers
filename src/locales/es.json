@@ -126,5 +126,27 @@
     "dark": "Siniestro",
     "steel": "Acero",
     "fairy": "Hada"
+  },
+  "auth": {
+    "account": "Cuenta",
+    "signInPrompt": "Inicia sesión para acceder al modo clasificatorio.",
+    "signInWithGoogle": "Iniciar sesión",
+    "signInError": "No se pudo iniciar sesión. Inténtalo de nuevo.",
+    "signedIn": "Has iniciado sesión.",
+    "signOut": "Cerrar sesión",
+    "chooseDisplayName": "Elige un nombre para mostrar",
+    "changeDisplayName": "Cambiar nombre para mostrar",
+    "editName": "Cambiar nombre para mostrar",
+    "displayNameSubtitle": "Es el único nombre que verán otros jugadores.",
+    "displayNameLabel": "Nombre para mostrar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "nameTaken": "Ese nombre ya está en uso.",
+    "nameLength": "Usa entre 3 y 20 caracteres.",
+    "nameChars": "Solo se permiten letras, números, espacios, - y _.",
+    "saveFailed": "No se pudo guardar tu nombre. Inténtalo de nuevo.",
+    "renameAvailableOn": "Podrás cambiar tu nombre de nuevo el {{date}}.",
+    "renameTooSoon": "Solo puedes cambiar tu nombre una vez por semana.",
+    "sessionExpired": "Tu sesión expiró. Inicia sesión de nuevo."
   }
 }

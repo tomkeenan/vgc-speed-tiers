@@ -126,5 +126,27 @@
     "dark": "Dark",
     "steel": "Steel",
     "fairy": "Fairy"
+  },
+  "auth": {
+    "account": "Tili",
+    "signInPrompt": "Kirjaudu sisään käyttääksesi ranked-tilaa.",
+    "signInWithGoogle": "Kirjaudu sisään",
+    "signInError": "Kirjautuminen epäonnistui. Yritä uudelleen.",
+    "signedIn": "Olet kirjautunut sisään.",
+    "signOut": "Kirjaudu ulos",
+    "chooseDisplayName": "Valitse näyttönimi",
+    "changeDisplayName": "Vaihda näyttönimi",
+    "editName": "Vaihda näyttönimi",
+    "displayNameSubtitle": "Tämä on ainoa nimi, jonka muut pelaajat näkevät.",
+    "displayNameLabel": "Näyttönimi",
+    "save": "Tallenna",
+    "cancel": "Peruuta",
+    "nameTaken": "Tämä nimi on jo varattu.",
+    "nameLength": "Käytä 3-20 merkkiä.",
+    "nameChars": "Vain kirjaimet, numerot, välilyönnit, - ja _ ovat sallittuja.",
+    "saveFailed": "Nimen tallennus epäonnistui. Yritä uudelleen.",
+    "renameAvailableOn": "Voit vaihtaa nimesi uudelleen {{date}}.",
+    "renameTooSoon": "Voit vaihtaa nimesi vain kerran viikossa.",
+    "sessionExpired": "Istuntosi vanheni. Kirjaudu uudelleen sisään."
   }
 }

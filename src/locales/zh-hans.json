@@ -126,5 +126,27 @@
     "dark": "恶",
     "steel": "钢",
     "fairy": "妖精"
+  },
+  "auth": {
+    "account": "账户",
+    "signInPrompt": "登录以进入排位模式。",
+    "signInWithGoogle": "登录",
+    "signInError": "登录失败，请重试。",
+    "signedIn": "你已登录。",
+    "signOut": "退出登录",
+    "chooseDisplayName": "选择显示名称",
+    "changeDisplayName": "更改显示名称",
+    "editName": "更改显示名称",
+    "displayNameSubtitle": "这是其他玩家唯一能看到的名称。",
+    "displayNameLabel": "显示名称",
+    "save": "保存",
+    "cancel": "取消",
+    "nameTaken": "该名称已被使用。",
+    "nameLength": "请输入 3 到 20 个字符。",
+    "nameChars": "仅允许字母、数字、空格、- 和 _。",
+    "saveFailed": "无法保存名称，请重试。",
+    "renameAvailableOn": "你可以在 {{date}} 再次更改名称。",
+    "renameTooSoon": "每周只能更改一次名称。",
+    "sessionExpired": "会话已过期，请重新登录。"
   }
 }

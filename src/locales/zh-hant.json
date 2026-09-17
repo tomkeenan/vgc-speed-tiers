@@ -126,5 +126,27 @@
     "dark": "惡",
     "steel": "鋼",
     "fairy": "妖精"
+  },
+  "auth": {
+    "account": "帳戶",
+    "signInPrompt": "登入以進入排位模式。",
+    "signInWithGoogle": "登入",
+    "signInError": "登入失敗，請重試。",
+    "signedIn": "你已登入。",
+    "signOut": "登出",
+    "chooseDisplayName": "選擇顯示名稱",
+    "changeDisplayName": "變更顯示名稱",
+    "editName": "變更顯示名稱",
+    "displayNameSubtitle": "這是其他玩家唯一會看到的名稱。",
+    "displayNameLabel": "顯示名稱",
+    "save": "儲存",
+    "cancel": "取消",
+    "nameTaken": "此名稱已被使用。",
+    "nameLength": "請輸入 3 到 20 個字元。",
+    "nameChars": "僅允許字母、數字、空格、- 和 _。",
+    "saveFailed": "無法儲存名稱，請重試。",
+    "renameAvailableOn": "你可以在 {{date}} 再次變更名稱。",
+    "renameTooSoon": "每週只能變更一次名稱。",
+    "sessionExpired": "工作階段已過期，請重新登入。"
   }
 }

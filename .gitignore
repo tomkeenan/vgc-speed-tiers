@@ -3,6 +3,12 @@ dist
 .cache
 *.log
 .DS_Store
+.env
+.env.local
+.dev.vars
+
+# Local wrangler / D1 state
+.wrangler
 
 # Pokemon official artwork - not redistributed; regenerated from data/sprite-sources.json
 # via `npm run sprites`. See LICENSE.

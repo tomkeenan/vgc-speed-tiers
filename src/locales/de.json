@@ -126,5 +126,27 @@
     "dark": "Unlicht",
     "steel": "Stahl",
     "fairy": "Fee"
+  },
+  "auth": {
+    "account": "Konto",
+    "signInPrompt": "Melde dich an, um den Ranglisten-Modus zu nutzen.",
+    "signInWithGoogle": "Anmelden",
+    "signInError": "Anmeldung fehlgeschlagen. Bitte versuche es erneut.",
+    "signedIn": "Du bist angemeldet.",
+    "signOut": "Abmelden",
+    "chooseDisplayName": "Anzeigenamen wählen",
+    "changeDisplayName": "Anzeigenamen ändern",
+    "editName": "Anzeigenamen ändern",
+    "displayNameSubtitle": "Das ist der einzige Name, den andere Spieler sehen.",
+    "displayNameLabel": "Anzeigename",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "nameTaken": "Dieser Name ist bereits vergeben.",
+    "nameLength": "Verwende 3 bis 20 Zeichen.",
+    "nameChars": "Erlaubt sind nur Buchstaben, Zahlen, Leerzeichen, - und _.",
+    "saveFailed": "Speichern fehlgeschlagen. Bitte versuche es erneut.",
+    "renameAvailableOn": "Du kannst deinen Namen wieder am {{date}} ändern.",
+    "renameTooSoon": "Du kannst deinen Namen nur einmal pro Woche ändern.",
+    "sessionExpired": "Deine Sitzung ist abgelaufen. Bitte melde dich erneut an."
   }
 }

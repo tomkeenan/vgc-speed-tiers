@@ -16,5 +16,5 @@
     "skipLibCheck": true,
     "types": ["vitest/globals", "node"]
   },
-  "include": ["src", "data"]
+  "include": ["src", "data", "worker"]
 }

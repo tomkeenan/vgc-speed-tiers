@@ -126,5 +126,27 @@
     "dark": "Ténèbres",
     "steel": "Acier",
     "fairy": "Fée"
+  },
+  "auth": {
+    "account": "Compte",
+    "signInPrompt": "Connecte-toi pour accéder au mode classé.",
+    "signInWithGoogle": "Se connecter",
+    "signInError": "Échec de la connexion. Réessaie.",
+    "signedIn": "Tu es connecté.",
+    "signOut": "Se déconnecter",
+    "chooseDisplayName": "Choisis un nom d'affichage",
+    "changeDisplayName": "Changer de nom d'affichage",
+    "editName": "Changer de nom d'affichage",
+    "displayNameSubtitle": "C'est le seul nom que les autres joueurs verront.",
+    "displayNameLabel": "Nom d'affichage",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "nameTaken": "Ce nom est déjà pris.",
+    "nameLength": "Utilise entre 3 et 20 caractères.",
+    "nameChars": "Seuls les lettres, chiffres, espaces, - et _ sont autorisés.",
+    "saveFailed": "Impossible d'enregistrer ton nom. Réessaie.",
+    "renameAvailableOn": "Tu pourras changer de nom à nouveau le {{date}}.",
+    "renameTooSoon": "Tu ne peux changer de nom qu’une fois par semaine.",
+    "sessionExpired": "Ta session a expiré. Reconnecte-toi."
   }
 }

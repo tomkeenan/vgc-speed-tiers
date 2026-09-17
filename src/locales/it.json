@@ -126,5 +126,27 @@
     "dark": "Buio",
     "steel": "Acciaio",
     "fairy": "Folletto"
+  },
+  "auth": {
+    "account": "Account",
+    "signInPrompt": "Accedi per usare la modalità competitiva.",
+    "signInWithGoogle": "Accedi",
+    "signInError": "Accesso non riuscito. Riprova.",
+    "signedIn": "Hai effettuato l'accesso.",
+    "signOut": "Esci",
+    "chooseDisplayName": "Scegli un nome visualizzato",
+    "changeDisplayName": "Cambia nome visualizzato",
+    "editName": "Cambia nome visualizzato",
+    "displayNameSubtitle": "È l'unico nome che vedranno gli altri giocatori.",
+    "displayNameLabel": "Nome visualizzato",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "nameTaken": "Questo nome è già in uso.",
+    "nameLength": "Usa da 3 a 20 caratteri.",
+    "nameChars": "Sono ammessi solo lettere, numeri, spazi, - e _.",
+    "saveFailed": "Impossibile salvare il nome. Riprova.",
+    "renameAvailableOn": "Potrai cambiare di nuovo il nome il {{date}}.",
+    "renameTooSoon": "Puoi cambiare il nome solo una volta a settimana.",
+    "sessionExpired": "La sessione è scaduta. Accedi di nuovo."
   }
 }

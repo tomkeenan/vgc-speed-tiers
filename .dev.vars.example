@@ -1,0 +1,6 @@
+# Local `wrangler dev` vars. Copy to `.dev.vars` (gitignored) and fill in.
+# Must match VITE_GOOGLE_CLIENT_ID - the Worker checks the token's audience against it.
+GOOGLE_CLIENT_ID=
+# HMAC secret for signing session cookies. Any long random string for local dev.
+# Prod: set with `wrangler secret put SESSION_SECRET` (do not commit it).
+SESSION_SECRET=

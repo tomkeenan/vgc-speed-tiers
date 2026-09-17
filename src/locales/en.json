@@ -126,5 +126,27 @@
     "dark": "Dark",
     "steel": "Steel",
     "fairy": "Fairy"
+  },
+  "auth": {
+    "account": "Account",
+    "signInPrompt": "Sign in to access ranked mode.",
+    "signInWithGoogle": "Sign in",
+    "signInError": "Sign-in failed. Please try again.",
+    "signedIn": "You're signed in.",
+    "signOut": "Sign out",
+    "chooseDisplayName": "Choose a display name",
+    "changeDisplayName": "Change your display name",
+    "editName": "Change display name",
+    "displayNameSubtitle": "This is the only name other players will see.",
+    "displayNameLabel": "Display name",
+    "save": "Save",
+    "cancel": "Cancel",
+    "nameTaken": "That name is already taken.",
+    "nameLength": "Use 3 to 20 characters.",
+    "nameChars": "Only letters, numbers, spaces, - and _ are allowed.",
+    "saveFailed": "Couldn't save your name. Try again.",
+    "renameAvailableOn": "You can change your name again on {{date}}.",
+    "renameTooSoon": "You can only change your name once a week.",
+    "sessionExpired": "Your session expired. Please sign in again."
   }
 }

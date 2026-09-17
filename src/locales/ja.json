@@ -126,5 +126,27 @@
     "dark": "あく",
     "steel": "はがね",
     "fairy": "フェアリー"
+  },
+  "auth": {
+    "account": "アカウント",
+    "signInPrompt": "ランクモードを利用するにはサインインしてください。",
+    "signInWithGoogle": "サインイン",
+    "signInError": "サインインに失敗しました。もう一度お試しください。",
+    "signedIn": "サインインしています。",
+    "signOut": "ログアウト",
+    "chooseDisplayName": "表示名を選択",
+    "changeDisplayName": "表示名を変更",
+    "editName": "表示名を変更",
+    "displayNameSubtitle": "他のプレイヤーに表示されるのはこの名前だけです。",
+    "displayNameLabel": "表示名",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "nameTaken": "その名前はすでに使われています。",
+    "nameLength": "3〜20文字で入力してください。",
+    "nameChars": "使用できるのは文字、数字、スペース、-、_ のみです。",
+    "saveFailed": "名前を保存できませんでした。もう一度お試しください。",
+    "renameAvailableOn": "次に名前を変更できるのは {{date}} です。",
+    "renameTooSoon": "名前は週に1回だけ変更できます。",
+    "sessionExpired": "セッションの有効期限が切れました。もう一度サインインしてください。"
   }
 }
