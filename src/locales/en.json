@@ -32,7 +32,8 @@
     "deckLabel": "Deck: {{name}}"
   },
   "decks": {
-    "allPokemon": "All Pokemon"
+    "allPokemon": "All Pokemon",
+    "meta": "Meta"
   },
   "flashcards": {
     "prompt": "Tap the card to reveal its base Speed.",
@@ -83,6 +84,7 @@
       "intro": "A deck is a custom list of Pokemon.",
       "pick": "Pick one from the <icon/> menu in the header to use only those Pokemon in each game mode.",
       "allDeck": "The built-in All Pokemon deck uses the full dataset.",
+      "metaDeck": "The built-in Meta deck holds the 50 most-used Pokemon from recent tournaments.",
       "streaks": "Streaks are tied to each deck and mode, so don't panic if switching a deck resets your streak.",
       "manage": "Create, edit, and share your own decks below."
     },

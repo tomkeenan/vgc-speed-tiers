@@ -32,7 +32,8 @@
     "deckLabel": "Deck: {{name}}"
   },
   "decks": {
-    "allPokemon": "Alle Pokémon"
+    "allPokemon": "Alle Pokémon",
+    "meta": "Meta"
   },
   "flashcards": {
     "prompt": "Tippe auf die Karte, um ihre Basis-Initiative aufzudecken.",
@@ -83,6 +84,7 @@
       "intro": "Ein Deck ist eine benutzerdefinierte Liste von Pokémon.",
       "pick": "Wähle im <icon/>-Menü in der Kopfzeile eines aus, um in jedem Spielmodus nur diese Pokémon zu verwenden.",
       "allDeck": "Das integrierte Deck Alle Pokémon nutzt den gesamten Datensatz.",
+      "metaDeck": "Das integrierte Meta-Deck enthält die 50 meistgenutzten Pokémon aus den letzten Turnieren.",
       "streaks": "Serien sind an das jeweilige Deck und den jeweiligen Modus gebunden - keine Panik also, wenn ein Deckwechsel deine Serie zurücksetzt.",
       "manage": "Erstelle, bearbeite und teile deine eigenen Decks unten."
     },

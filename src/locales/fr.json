@@ -32,7 +32,8 @@
     "deckLabel": "Deck : {{name}}"
   },
   "decks": {
-    "allPokemon": "Tous les Pokémon"
+    "allPokemon": "Tous les Pokémon",
+    "meta": "Meta"
   },
   "flashcards": {
     "prompt": "Touchez la carte pour révéler sa vitesse de base.",
@@ -83,6 +84,7 @@
       "intro": "Un deck est une liste personnalisée de Pokémon.",
       "pick": "Choisissez-en un dans le menu <icon/> de l'en-tête pour n'utiliser que ces Pokémon dans chaque mode de jeu.",
       "allDeck": "Le deck intégré Tous les Pokémon utilise l'ensemble des données.",
+      "metaDeck": "Le deck intégré Meta contient les 50 Pokémon les plus utilisés dans les tournois récents.",
       "streaks": "Les séries sont liées à chaque deck et à chaque mode, alors pas de panique si changer de deck réinitialise votre série.",
       "manage": "Créez, modifiez et partagez vos propres decks ci-dessous."
     },

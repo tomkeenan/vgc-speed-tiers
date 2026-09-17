@@ -24,9 +24,9 @@ import { MemberPicker } from '../../components/MemberPicker';
 import { PlusIcon } from '../../components/PlusIcon';
 import { PokeballIcon } from '../../components/PokeballIcon';
 import {
-  loadLanguage,
   saveLanguage,
   SUPPORTED_LANGUAGES,
+  toSupportedLanguage,
   type SupportedLanguage,
 } from '../../language';
 
@@ -78,13 +78,13 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [importText, setImportText] = useState('');
   const [importError, setImportError] = useState<string | null>(null);
-  const [language, setLanguage] = useState<SupportedLanguage>(() => loadLanguage());
+  const language = toSupportedLanguage(i18n.language ?? i18n.resolvedLanguage);
   const [creating, setCreating] = useState(false);
   const [importingOpen, setImportingOpen] = useState(false);
   const copyTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
+  /** Switches the UI language and persists it, so the choice wins over the browser locale on every future load. */
   const changeLanguage = (lang: SupportedLanguage) => {
-    setLanguage(lang);
     saveLanguage(lang);
     void i18n.changeLanguage(lang);
   };
@@ -191,6 +191,9 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
                 </Typography>
                 <Typography component="li" variant="body2">
                   {t('settings.explainer.allDeck')}
+                </Typography>
+                <Typography component="li" variant="body2">
+                  {t('settings.explainer.metaDeck')}
                 </Typography>
                 <Typography component="li" variant="body2">
                   {t('settings.explainer.streaks')}

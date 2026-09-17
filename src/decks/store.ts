@@ -1,6 +1,12 @@
 /** The id of the virtual, built-in "All Pokemon" deck. Never stored; always available. */
 export const ALL_DECK_ID = 'all';
 
+/** The id of the virtual, built-in "Meta" deck: the most-used Pokemon by tournament usage. */
+export const META_DECK_ID = 'meta';
+
+/** How many top-usage Pokemon the built-in Meta deck holds. */
+export const META_DECK_SIZE = 50;
+
 const STORAGE_KEY = 'vgc-speed-tiers/decks';
 const SCHEMA_VERSION = 1;
 

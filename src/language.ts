@@ -34,6 +34,14 @@ function matchTag(tag: string): SupportedLanguage | undefined {
   return SUPPORTED_LANGUAGES.find((l) => l.toLowerCase().split('-')[0] === base);
 }
 
+/**
+ * Normalizes an active i18n language tag to a supported language, falling back to English.
+ * Used to drive the language selector from the live i18n state so it always reflects what's active.
+ */
+export function toSupportedLanguage(tag: string | undefined | null): SupportedLanguage {
+  return (tag ? matchTag(tag) : undefined) ?? FALLBACK;
+}
+
 /** The browser's preferred supported language, or the fallback (English) when none match. */
 export function detectBrowserLanguage(): SupportedLanguage {
   const tags =

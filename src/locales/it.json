@@ -32,7 +32,8 @@
     "deckLabel": "Mazzo: {{name}}"
   },
   "decks": {
-    "allPokemon": "Tutti i Pokémon"
+    "allPokemon": "Tutti i Pokémon",
+    "meta": "Meta"
   },
   "flashcards": {
     "prompt": "Tocca la carta per rivelare la sua velocità base.",
@@ -83,6 +84,7 @@
       "intro": "Un mazzo è un elenco personalizzato di Pokémon.",
       "pick": "Scegline uno dal menu <icon/> nell’intestazione per usare solo quei Pokémon in ogni modalità di gioco.",
       "allDeck": "Il mazzo integrato Tutti i Pokémon usa l’intero set di dati.",
+      "metaDeck": "Il mazzo integrato Meta contiene i 50 Pokémon più usati nei tornei recenti.",
       "streaks": "Le serie sono legate a ciascun mazzo e modalità, quindi non preoccuparti se cambiando mazzo la tua serie si azzera.",
       "manage": "Crea, modifica e condividi i tuoi mazzi qui sotto."
     },

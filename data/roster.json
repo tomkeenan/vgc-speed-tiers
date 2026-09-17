@@ -1,1894 +1,1768 @@
 {
   "meta": {
-    "format": "gen9championsvgc2026",
-    "generatedAt": "2026-09-15T11:35:38.935Z",
-    "source": "https://pkmn.github.io/smogon/data/stats/gen9championsvgc2026.json + manual Reg-MC additions (data/reg-mc-additions.json, data/manual-pokemon.json)",
-    "count": 314
+    "format": "gen9championsvgc2026regmc",
+    "generatedAt": "2026-09-17T15:22:16.309Z",
+    "source": "Limitless tournament team lists (https://play.limitlesstcg.com/api), Reg M-C: 52 events, 3242 teams (team-presence usage)",
+    "count": 293
   },
   "pokemon": [
     {
-      "showdownName": "Kingambit",
-      "id": "kingambit",
-      "usage": 0.4074,
+      "showdownName": "Rillaboom",
+      "id": "rillaboom",
+      "usage": 0.540407156076496,
       "usageRank": 1
-    },
-    {
-      "showdownName": "Basculegion",
-      "id": "basculegion-male",
-      "usage": 0.304,
-      "usageRank": 2
-    },
-    {
-      "showdownName": "Garchomp",
-      "id": "garchomp",
-      "usage": 0.2755,
-      "usageRank": 3
-    },
-    {
-      "showdownName": "Incineroar",
-      "id": "incineroar",
-      "usage": 0.2685,
-      "usageRank": 4
     },
     {
       "showdownName": "Sneasler",
       "id": "sneasler",
-      "usage": 0.2664,
+      "usage": 0.4784083898827884,
+      "usageRank": 2
+    },
+    {
+      "showdownName": "Salamence",
+      "id": "salamence",
+      "usage": 0.3701418877236274,
+      "usageRank": 3
+    },
+    {
+      "showdownName": "Salamence-Mega",
+      "id": "salamence-mega",
+      "usage": 0.36705737199259714,
+      "usageRank": 4
+    },
+    {
+      "showdownName": "Incineroar",
+      "id": "incineroar",
+      "usage": 0.34083898827884024,
       "usageRank": 5
     },
     {
-      "showdownName": "Whimsicott",
-      "id": "whimsicott",
-      "usage": 0.244,
+      "showdownName": "Kingambit",
+      "id": "kingambit",
+      "usage": 0.2917951881554596,
       "usageRank": 6
     },
     {
-      "showdownName": "Sinistcha",
-      "id": "sinistcha",
-      "usage": 0.2379,
+      "showdownName": "Basculegion",
+      "id": "basculegion-male",
+      "usage": 0.2550894509561999,
       "usageRank": 7
     },
     {
-      "showdownName": "Farigiraf",
-      "id": "farigiraf",
-      "usage": 0.2256,
+      "showdownName": "Indeedee-F",
+      "id": "indeedee-female",
+      "usage": 0.189389265885256,
       "usageRank": 8
-    },
-    {
-      "showdownName": "Charizard-Mega-Y",
-      "id": "charizard-mega-y",
-      "usage": 0.2109,
-      "usageRank": 9
-    },
-    {
-      "showdownName": "Staraptor-Mega",
-      "id": "staraptor-mega",
-      "usage": 0.1861,
-      "usageRank": 10
-    },
-    {
-      "showdownName": "Sylveon",
-      "id": "sylveon",
-      "usage": 0.1715,
-      "usageRank": 11
-    },
-    {
-      "showdownName": "Floette-Mega",
-      "id": "floette-mega",
-      "usage": 0.1326,
-      "usageRank": 12
-    },
-    {
-      "showdownName": "Raichu-Mega-Y",
-      "id": "raichu-mega-y",
-      "usage": 0.1257,
-      "usageRank": 13
-    },
-    {
-      "showdownName": "Archaludon",
-      "id": "archaludon",
-      "usage": 0.1094,
-      "usageRank": 14
     },
     {
       "showdownName": "Gholdengo",
       "id": "gholdengo",
-      "usage": 0.1033,
+      "usage": 0.17550894509561998,
+      "usageRank": 9
+    },
+    {
+      "showdownName": "Golisopod",
+      "id": "golisopod",
+      "usage": 0.16779765576804442,
+      "usageRank": 10
+    },
+    {
+      "showdownName": "Golisopod-Mega",
+      "id": "golisopod-mega",
+      "usage": 0.16687230104873535,
+      "usageRank": 11
+    },
+    {
+      "showdownName": "Farigiraf",
+      "id": "farigiraf",
+      "usage": 0.16409623689080816,
+      "usageRank": 12
+    },
+    {
+      "showdownName": "Floette-Eternal",
+      "id": "floette-eternal",
+      "usage": 0.15854410857495374,
+      "usageRank": 13
+    },
+    {
+      "showdownName": "Floette-Mega",
+      "id": "floette-mega",
+      "usage": 0.15823565700185072,
+      "usageRank": 14
+    },
+    {
+      "showdownName": "Arcanine-Hisui",
+      "id": "arcanine-hisui",
+      "usage": 0.1418877236273905,
       "usageRank": 15
     },
     {
-      "showdownName": "Delphox-Mega",
-      "id": "delphox-mega",
-      "usage": 0.0988,
+      "showdownName": "Garchomp",
+      "id": "garchomp",
+      "usage": 0.13417643429981493,
       "usageRank": 16
     },
     {
       "showdownName": "Pelipper",
       "id": "pelipper",
-      "usage": 0.0948,
+      "usage": 0.1314003701418877,
       "usageRank": 17
     },
     {
-      "showdownName": "Blastoise-Mega",
-      "id": "blastoise-mega",
-      "usage": 0.0848,
+      "showdownName": "Sylveon",
+      "id": "sylveon",
+      "usage": 0.107958050586058,
       "usageRank": 18
     },
     {
-      "showdownName": "Grimmsnarl",
-      "id": "grimmsnarl",
-      "usage": 0.0772,
+      "showdownName": "Archaludon",
+      "id": "archaludon",
+      "usage": 0.10394818013571869,
       "usageRank": 19
-    },
-    {
-      "showdownName": "Froslass-Mega",
-      "id": "froslass-mega",
-      "usage": 0.0744,
-      "usageRank": 20
-    },
-    {
-      "showdownName": "Milotic",
-      "id": "milotic",
-      "usage": 0.0743,
-      "usageRank": 21
-    },
-    {
-      "showdownName": "Maushold",
-      "id": "maushold-family-of-four",
-      "usage": 0.0732,
-      "usageRank": 22
-    },
-    {
-      "showdownName": "Aerodactyl-Mega",
-      "id": "aerodactyl-mega",
-      "usage": 0.066,
-      "usageRank": 23
-    },
-    {
-      "showdownName": "Swampert-Mega",
-      "id": "swampert-mega",
-      "usage": 0.0651,
-      "usageRank": 24
-    },
-    {
-      "showdownName": "Ninetales-Alola",
-      "id": "ninetales-alola",
-      "usage": 0.0648,
-      "usageRank": 25
-    },
-    {
-      "showdownName": "Tyranitar-Mega",
-      "id": "tyranitar-mega",
-      "usage": 0.0623,
-      "usageRank": 26
-    },
-    {
-      "showdownName": "Venusaur",
-      "id": "venusaur",
-      "usage": 0.0612,
-      "usageRank": 27
-    },
-    {
-      "showdownName": "Gengar-Mega",
-      "id": "gengar-mega",
-      "usage": 0.0595,
-      "usageRank": 28
-    },
-    {
-      "showdownName": "Arcanine-Hisui",
-      "id": "arcanine-hisui",
-      "usage": 0.0572,
-      "usageRank": 29
-    },
-    {
-      "showdownName": "Torkoal",
-      "id": "torkoal",
-      "usage": 0.0567,
-      "usageRank": 30
-    },
-    {
-      "showdownName": "Excadrill",
-      "id": "excadrill",
-      "usage": 0.0521,
-      "usageRank": 31
-    },
-    {
-      "showdownName": "Metagross-Mega",
-      "id": "metagross-mega",
-      "usage": 0.0484,
-      "usageRank": 32
-    },
-    {
-      "showdownName": "Scovillain-Mega",
-      "id": "scovillain-mega",
-      "usage": 0.0483,
-      "usageRank": 33
-    },
-    {
-      "showdownName": "Kommo-o",
-      "id": "kommo-o",
-      "usage": 0.0479,
-      "usageRank": 34
-    },
-    {
-      "showdownName": "Glimmora",
-      "id": "glimmora",
-      "usage": 0.0443,
-      "usageRank": 35
-    },
-    {
-      "showdownName": "Politoed",
-      "id": "politoed",
-      "usage": 0.0413,
-      "usageRank": 36
-    },
-    {
-      "showdownName": "Dragonite-Mega",
-      "id": "dragonite-mega",
-      "usage": 0.0408,
-      "usageRank": 37
-    },
-    {
-      "showdownName": "Dragonite",
-      "id": "dragonite",
-      "usage": 0.0392,
-      "usageRank": 38
-    },
-    {
-      "showdownName": "Mawile-Mega",
-      "id": "mawile-mega",
-      "usage": 0.0376,
-      "usageRank": 39
-    },
-    {
-      "showdownName": "Talonflame",
-      "id": "talonflame",
-      "usage": 0.0371,
-      "usageRank": 40
-    },
-    {
-      "showdownName": "Venusaur-Mega",
-      "id": "venusaur-mega",
-      "usage": 0.0357,
-      "usageRank": 41
-    },
-    {
-      "showdownName": "Tyranitar",
-      "id": "tyranitar",
-      "usage": 0.035,
-      "usageRank": 42
-    },
-    {
-      "showdownName": "Toxapex",
-      "id": "toxapex",
-      "usage": 0.0323,
-      "usageRank": 43
-    },
-    {
-      "showdownName": "Sableye",
-      "id": "sableye",
-      "usage": 0.0318,
-      "usageRank": 44
-    },
-    {
-      "showdownName": "Vivillon",
-      "id": "vivillon",
-      "usage": 0.0315,
-      "usageRank": 45
-    },
-    {
-      "showdownName": "Blaziken-Mega",
-      "id": "blaziken-mega",
-      "usage": 0.0305,
-      "usageRank": 46
-    },
-    {
-      "showdownName": "Annihilape",
-      "id": "annihilape",
-      "usage": 0.0303,
-      "usageRank": 47
-    },
-    {
-      "showdownName": "Corviknight",
-      "id": "corviknight",
-      "usage": 0.03,
-      "usageRank": 48
-    },
-    {
-      "showdownName": "Primarina",
-      "id": "primarina",
-      "usage": 0.0294,
-      "usageRank": 49
-    },
-    {
-      "showdownName": "Tsareena",
-      "id": "tsareena",
-      "usage": 0.0288,
-      "usageRank": 50
-    },
-    {
-      "showdownName": "Ceruledge",
-      "id": "ceruledge",
-      "usage": 0.0282,
-      "usageRank": 51
-    },
-    {
-      "showdownName": "Rotom-Wash",
-      "id": "rotom-wash",
-      "usage": 0.027,
-      "usageRank": 52
-    },
-    {
-      "showdownName": "Aerodactyl",
-      "id": "aerodactyl",
-      "usage": 0.0253,
-      "usageRank": 53
-    },
-    {
-      "showdownName": "Hydreigon",
-      "id": "hydreigon",
-      "usage": 0.0253,
-      "usageRank": 54
-    },
-    {
-      "showdownName": "Camerupt-Mega",
-      "id": "camerupt-mega",
-      "usage": 0.0246,
-      "usageRank": 55
-    },
-    {
-      "showdownName": "Gardevoir-Mega",
-      "id": "gardevoir-mega",
-      "usage": 0.0237,
-      "usageRank": 56
-    },
-    {
-      "showdownName": "Lycanroc-Dusk",
-      "id": "lycanroc-dusk",
-      "usage": 0.023,
-      "usageRank": 57
-    },
-    {
-      "showdownName": "Garchomp-Mega",
-      "id": "garchomp-mega",
-      "usage": 0.0213,
-      "usageRank": 58
-    },
-    {
-      "showdownName": "Glimmora-Mega",
-      "id": "glimmora-mega",
-      "usage": 0.0205,
-      "usageRank": 59
-    },
-    {
-      "showdownName": "Kangaskhan-Mega",
-      "id": "kangaskhan-mega",
-      "usage": 0.0191,
-      "usageRank": 60
-    },
-    {
-      "showdownName": "Meowscarada",
-      "id": "meowscarada",
-      "usage": 0.0181,
-      "usageRank": 61
-    },
-    {
-      "showdownName": "Mamoswine",
-      "id": "mamoswine",
-      "usage": 0.016,
-      "usageRank": 62
-    },
-    {
-      "showdownName": "Gallade",
-      "id": "gallade",
-      "usage": 0.0158,
-      "usageRank": 63
-    },
-    {
-      "showdownName": "Scizor",
-      "id": "scizor",
-      "usage": 0.0155,
-      "usageRank": 64
-    },
-    {
-      "showdownName": "Staraptor",
-      "id": "staraptor",
-      "usage": 0.0138,
-      "usageRank": 65
-    },
-    {
-      "showdownName": "Volcarona",
-      "id": "volcarona",
-      "usage": 0.0131,
-      "usageRank": 66
-    },
-    {
-      "showdownName": "Samurott-Hisui",
-      "id": "samurott-hisui",
-      "usage": 0.012,
-      "usageRank": 67
-    },
-    {
-      "showdownName": "Kangaskhan",
-      "id": "kangaskhan",
-      "usage": 0.0119,
-      "usageRank": 68
-    },
-    {
-      "showdownName": "Pyroar-Mega",
-      "id": "pyroar-mega",
-      "usage": 0.0117,
-      "usageRank": 69
-    },
-    {
-      "showdownName": "Zoroark-Hisui",
-      "id": "zoroark-hisui",
-      "usage": 0.0115,
-      "usageRank": 70
-    },
-    {
-      "showdownName": "Chandelure",
-      "id": "chandelure",
-      "usage": 0.0115,
-      "usageRank": 71
-    },
-    {
-      "showdownName": "Dragapult",
-      "id": "dragapult",
-      "usage": 0.0115,
-      "usageRank": 72
-    },
-    {
-      "showdownName": "Mimikyu",
-      "id": "mimikyu-disguised",
-      "usage": 0.0105,
-      "usageRank": 73
-    },
-    {
-      "showdownName": "Swampert",
-      "id": "swampert",
-      "usage": 0.0101,
-      "usageRank": 74
-    },
-    {
-      "showdownName": "Scrafty-Mega",
-      "id": "scrafty-mega",
-      "usage": 0.0096,
-      "usageRank": 75
-    },
-    {
-      "showdownName": "Aegislash",
-      "id": "aegislash-shield",
-      "usage": 0.0095,
-      "usageRank": 76
-    },
-    {
-      "showdownName": "Vanilluxe",
-      "id": "vanilluxe",
-      "usage": 0.0093,
-      "usageRank": 77
-    },
-    {
-      "showdownName": "Weavile",
-      "id": "weavile",
-      "usage": 0.0093,
-      "usageRank": 78
-    },
-    {
-      "showdownName": "Tinkaton",
-      "id": "tinkaton",
-      "usage": 0.0093,
-      "usageRank": 79
-    },
-    {
-      "showdownName": "Meganium-Mega",
-      "id": "meganium-mega",
-      "usage": 0.0087,
-      "usageRank": 80
-    },
-    {
-      "showdownName": "Basculegion-F",
-      "id": "basculegion-female",
-      "usage": 0.0085,
-      "usageRank": 81
-    },
-    {
-      "showdownName": "Mudsdale",
-      "id": "mudsdale",
-      "usage": 0.008,
-      "usageRank": 82
-    },
-    {
-      "showdownName": "Clefable",
-      "id": "clefable",
-      "usage": 0.0079,
-      "usageRank": 83
-    },
-    {
-      "showdownName": "Scizor-Mega",
-      "id": "scizor-mega",
-      "usage": 0.0078,
-      "usageRank": 84
-    },
-    {
-      "showdownName": "Hatterene",
-      "id": "hatterene",
-      "usage": 0.0074,
-      "usageRank": 85
-    },
-    {
-      "showdownName": "Raichu-Mega-X",
-      "id": "raichu-mega-x",
-      "usage": 0.0073,
-      "usageRank": 86
-    },
-    {
-      "showdownName": "Gyarados-Mega",
-      "id": "gyarados-mega",
-      "usage": 0.0072,
-      "usageRank": 87
-    },
-    {
-      "showdownName": "Palafin",
-      "id": "palafin-zero",
-      "usage": 0.007,
-      "usageRank": 88
-    },
-    {
-      "showdownName": "Typhlosion-Hisui",
-      "id": "typhlosion-hisui",
-      "usage": 0.007,
-      "usageRank": 89
-    },
-    {
-      "showdownName": "Ninetales",
-      "id": "ninetales",
-      "usage": 0.0069,
-      "usageRank": 90
-    },
-    {
-      "showdownName": "Azumarill",
-      "id": "azumarill",
-      "usage": 0.0069,
-      "usageRank": 91
-    },
-    {
-      "showdownName": "Lopunny-Mega",
-      "id": "lopunny-mega",
-      "usage": 0.0069,
-      "usageRank": 92
-    },
-    {
-      "showdownName": "Rotom-Heat",
-      "id": "rotom-heat",
-      "usage": 0.0067,
-      "usageRank": 93
-    },
-    {
-      "showdownName": "Charizard-Mega-X",
-      "id": "charizard-mega-x",
-      "usage": 0.0064,
-      "usageRank": 94
-    },
-    {
-      "showdownName": "Espathra",
-      "id": "espathra",
-      "usage": 0.0061,
-      "usageRank": 95
-    },
-    {
-      "showdownName": "Snorlax",
-      "id": "snorlax",
-      "usage": 0.0059,
-      "usageRank": 96
-    },
-    {
-      "showdownName": "Araquanid",
-      "id": "araquanid",
-      "usage": 0.0059,
-      "usageRank": 97
-    },
-    {
-      "showdownName": "Overqwil",
-      "id": "overqwil",
-      "usage": 0.0058,
-      "usageRank": 98
-    },
-    {
-      "showdownName": "Oranguru",
-      "id": "oranguru",
-      "usage": 0.0058,
-      "usageRank": 99
-    },
-    {
-      "showdownName": "Blaziken",
-      "id": "blaziken",
-      "usage": 0.0056,
-      "usageRank": 100
-    },
-    {
-      "showdownName": "Kleavor",
-      "id": "kleavor",
-      "usage": 0.0055,
-      "usageRank": 101
-    },
-    {
-      "showdownName": "Bellibolt",
-      "id": "bellibolt",
-      "usage": 0.0054,
-      "usageRank": 102
-    },
-    {
-      "showdownName": "Banette-Mega",
-      "id": "banette-mega",
-      "usage": 0.0053,
-      "usageRank": 103
-    },
-    {
-      "showdownName": "Slowking-Galar",
-      "id": "slowking-galar",
-      "usage": 0.0053,
-      "usageRank": 104
-    },
-    {
-      "showdownName": "Houndstone",
-      "id": "houndstone",
-      "usage": 0.0052,
-      "usageRank": 105
-    },
-    {
-      "showdownName": "Gengar",
-      "id": "gengar",
-      "usage": 0.005,
-      "usageRank": 106
-    },
-    {
-      "showdownName": "Vileplume",
-      "id": "vileplume",
-      "usage": 0.005,
-      "usageRank": 107
-    },
-    {
-      "showdownName": "Armarouge",
-      "id": "armarouge",
-      "usage": 0.0049,
-      "usageRank": 108
-    },
-    {
-      "showdownName": "Greninja-Mega",
-      "id": "greninja-mega",
-      "usage": 0.0049,
-      "usageRank": 109
-    },
-    {
-      "showdownName": "Sceptile-Mega",
-      "id": "sceptile-mega",
-      "usage": 0.0049,
-      "usageRank": 110
-    },
-    {
-      "showdownName": "Meowstic",
-      "id": "meowstic-male",
-      "usage": 0.0047,
-      "usageRank": 111
-    },
-    {
-      "showdownName": "Glaceon",
-      "id": "glaceon",
-      "usage": 0.0043,
-      "usageRank": 112
-    },
-    {
-      "showdownName": "Altaria",
-      "id": "altaria",
-      "usage": 0.0043,
-      "usageRank": 113
-    },
-    {
-      "showdownName": "Malamar-Mega",
-      "id": "malamar-mega",
-      "usage": 0.0042,
-      "usageRank": 114
-    },
-    {
-      "showdownName": "Lycanroc",
-      "id": "lycanroc-midday",
-      "usage": 0.0042,
-      "usageRank": 115
-    },
-    {
-      "showdownName": "Starmie-Mega",
-      "id": "starmie-mega",
-      "usage": 0.0042,
-      "usageRank": 116
-    },
-    {
-      "showdownName": "Hippowdon",
-      "id": "hippowdon",
-      "usage": 0.0041,
-      "usageRank": 117
-    },
-    {
-      "showdownName": "Dragalge-Mega",
-      "id": "dragalge-mega",
-      "usage": 0.0041,
-      "usageRank": 118
-    },
-    {
-      "showdownName": "Audino",
-      "id": "audino",
-      "usage": 0.0039,
-      "usageRank": 119
-    },
-    {
-      "showdownName": "Altaria-Mega",
-      "id": "altaria-mega",
-      "usage": 0.0039,
-      "usageRank": 120
-    },
-    {
-      "showdownName": "Abomasnow-Mega",
-      "id": "abomasnow-mega",
-      "usage": 0.0039,
-      "usageRank": 121
-    },
-    {
-      "showdownName": "Eelektross-Mega",
-      "id": "eelektross-mega",
-      "usage": 0.0037,
-      "usageRank": 122
-    },
-    {
-      "showdownName": "Victreebel-Mega",
-      "id": "victreebel-mega",
-      "usage": 0.0035,
-      "usageRank": 123
-    },
-    {
-      "showdownName": "Gardevoir",
-      "id": "gardevoir",
-      "usage": 0.0035,
-      "usageRank": 124
-    },
-    {
-      "showdownName": "Chesnaught-Mega",
-      "id": "chesnaught-mega",
-      "usage": 0.0035,
-      "usageRank": 125
-    },
-    {
-      "showdownName": "Heliolisk",
-      "id": "heliolisk",
-      "usage": 0.0035,
-      "usageRank": 126
     },
     {
       "showdownName": "Raichu",
       "id": "raichu",
-      "usage": 0.0034,
-      "usageRank": 127
-    },
-    {
-      "showdownName": "Lucario-Mega",
-      "id": "lucario-mega",
-      "usage": 0.0034,
-      "usageRank": 128
-    },
-    {
-      "showdownName": "Decidueye-Hisui",
-      "id": "decidueye-hisui",
-      "usage": 0.0033,
-      "usageRank": 129
-    },
-    {
-      "showdownName": "Chandelure-Mega",
-      "id": "chandelure-mega",
-      "usage": 0.0033,
-      "usageRank": 130
-    },
-    {
-      "showdownName": "Umbreon",
-      "id": "umbreon",
-      "usage": 0.0032,
-      "usageRank": 131
-    },
-    {
-      "showdownName": "Drampa",
-      "id": "drampa",
-      "usage": 0.0031,
-      "usageRank": 132
-    },
-    {
-      "showdownName": "Aggron-Mega",
-      "id": "aggron-mega",
-      "usage": 0.0031,
-      "usageRank": 133
-    },
-    {
-      "showdownName": "Malamar",
-      "id": "malamar",
-      "usage": 0.0031,
-      "usageRank": 134
-    },
-    {
-      "showdownName": "Drampa-Mega",
-      "id": "drampa-mega",
-      "usage": 0.0031,
-      "usageRank": 135
-    },
-    {
-      "showdownName": "Feraligatr-Mega",
-      "id": "feraligatr-mega",
-      "usage": 0.003,
-      "usageRank": 136
-    },
-    {
-      "showdownName": "Hawlucha-Mega",
-      "id": "hawlucha-mega",
-      "usage": 0.0028,
-      "usageRank": 137
-    },
-    {
-      "showdownName": "Klefki",
-      "id": "klefki",
-      "usage": 0.0027,
-      "usageRank": 138
-    },
-    {
-      "showdownName": "Gallade-Mega",
-      "id": "gallade-mega",
-      "usage": 0.0027,
-      "usageRank": 139
-    },
-    {
-      "showdownName": "Conkeldurr",
-      "id": "conkeldurr",
-      "usage": 0.0026,
-      "usageRank": 140
-    },
-    {
-      "showdownName": "Scolipede-Mega",
-      "id": "scolipede-mega",
-      "usage": 0.0026,
-      "usageRank": 141
-    },
-    {
-      "showdownName": "Gliscor",
-      "id": "gliscor",
-      "usage": 0.0025,
-      "usageRank": 142
-    },
-    {
-      "showdownName": "Cofagrigus",
-      "id": "cofagrigus",
-      "usage": 0.0025,
-      "usageRank": 143
-    },
-    {
-      "showdownName": "Tauros-Paldea-Aqua",
-      "id": "tauros-paldea-aqua-breed",
-      "usage": 0.0025,
-      "usageRank": 144
-    },
-    {
-      "showdownName": "Ditto",
-      "id": "ditto",
-      "usage": 0.0024,
-      "usageRank": 145
-    },
-    {
-      "showdownName": "Skarmory-Mega",
-      "id": "skarmory-mega",
-      "usage": 0.0024,
-      "usageRank": 146
-    },
-    {
-      "showdownName": "Slowbro-Mega",
-      "id": "slowbro-mega",
-      "usage": 0.0024,
-      "usageRank": 147
-    },
-    {
-      "showdownName": "Golurk-Mega",
-      "id": "golurk-mega",
-      "usage": 0.0024,
-      "usageRank": 148
-    },
-    {
-      "showdownName": "Crabominable-Mega",
-      "id": "crabominable-mega",
-      "usage": 0.0023,
-      "usageRank": 149
-    },
-    {
-      "showdownName": "Steelix-Mega",
-      "id": "steelix-mega",
-      "usage": 0.0023,
-      "usageRank": 150
-    },
-    {
-      "showdownName": "Houndoom-Mega",
-      "id": "houndoom-mega",
-      "usage": 0.0022,
-      "usageRank": 151
-    },
-    {
-      "showdownName": "Vaporeon",
-      "id": "vaporeon",
-      "usage": 0.0022,
-      "usageRank": 152
-    },
-    {
-      "showdownName": "Gyarados",
-      "id": "gyarados",
-      "usage": 0.0021,
-      "usageRank": 153
-    },
-    {
-      "showdownName": "Arcanine",
-      "id": "arcanine",
-      "usage": 0.0021,
-      "usageRank": 154
-    },
-    {
-      "showdownName": "Krookodile",
-      "id": "krookodile",
-      "usage": 0.0021,
-      "usageRank": 155
-    },
-    {
-      "showdownName": "Clefable-Mega",
-      "id": "clefable-mega",
-      "usage": 0.0021,
-      "usageRank": 156
-    },
-    {
-      "showdownName": "Metagross",
-      "id": "metagross",
-      "usage": 0.0021,
-      "usageRank": 157
-    },
-    {
-      "showdownName": "Aromatisse",
-      "id": "aromatisse",
-      "usage": 0.002,
-      "usageRank": 158
-    },
-    {
-      "showdownName": "Ampharos-Mega",
-      "id": "ampharos-mega",
-      "usage": 0.002,
-      "usageRank": 159
-    },
-    {
-      "showdownName": "Blastoise",
-      "id": "blastoise",
-      "usage": 0.002,
-      "usageRank": 160
-    },
-    {
-      "showdownName": "Greninja",
-      "id": "greninja",
-      "usage": 0.002,
-      "usageRank": 161
-    },
-    {
-      "showdownName": "Excadrill-Mega",
-      "id": "excadrill-mega",
-      "usage": 0.002,
-      "usageRank": 162
-    },
-    {
-      "showdownName": "Goodra-Hisui",
-      "id": "goodra-hisui",
-      "usage": 0.002,
-      "usageRank": 163
-    },
-    {
-      "showdownName": "Alcremie",
-      "id": "alcremie",
-      "usage": 0.002,
-      "usageRank": 164
-    },
-    {
-      "showdownName": "Rhyperior",
-      "id": "rhyperior",
-      "usage": 0.002,
-      "usageRank": 165
-    },
-    {
-      "showdownName": "Empoleon",
-      "id": "empoleon",
-      "usage": 0.0019,
-      "usageRank": 166
-    },
-    {
-      "showdownName": "Audino-Mega",
-      "id": "audino-mega",
-      "usage": 0.0019,
-      "usageRank": 167
-    },
-    {
-      "showdownName": "Toxicroak",
-      "id": "toxicroak",
-      "usage": 0.0018,
-      "usageRank": 168
-    },
-    {
-      "showdownName": "Pinsir-Mega",
-      "id": "pinsir-mega",
-      "usage": 0.0017,
-      "usageRank": 169
-    },
-    {
-      "showdownName": "Tyrantrum",
-      "id": "tyrantrum",
-      "usage": 0.0017,
-      "usageRank": 170
-    },
-    {
-      "showdownName": "Morpeko",
-      "id": "morpeko-full-belly",
-      "usage": 0.0016,
-      "usageRank": 171
-    },
-    {
-      "showdownName": "Medicham-Mega",
-      "id": "medicham-mega",
-      "usage": 0.0016,
-      "usageRank": 172
-    },
-    {
-      "showdownName": "Scrafty",
-      "id": "scrafty",
-      "usage": 0.0016,
-      "usageRank": 173
-    },
-    {
-      "showdownName": "Mr. Rime",
-      "id": "mr-rime",
-      "usage": 0.0014,
-      "usageRank": 174
-    },
-    {
-      "showdownName": "Sharpedo-Mega",
-      "id": "sharpedo-mega",
-      "usage": 0.0014,
-      "usageRank": 175
-    },
-    {
-      "showdownName": "Aurorus",
-      "id": "aurorus",
-      "usage": 0.0014,
-      "usageRank": 176
-    },
-    {
-      "showdownName": "Manectric-Mega",
-      "id": "manectric-mega",
-      "usage": 0.0014,
-      "usageRank": 177
-    },
-    {
-      "showdownName": "Noivern",
-      "id": "noivern",
-      "usage": 0.0014,
-      "usageRank": 178
-    },
-    {
-      "showdownName": "Rotom-Mow",
-      "id": "rotom-mow",
-      "usage": 0.0014,
-      "usageRank": 179
-    },
-    {
-      "showdownName": "Orthworm",
-      "id": "orthworm",
-      "usage": 0.0014,
-      "usageRank": 180
-    },
-    {
-      "showdownName": "Pidgeot-Mega",
-      "id": "pidgeot-mega",
-      "usage": 0.0013,
-      "usageRank": 181
-    },
-    {
-      "showdownName": "Hydrapple",
-      "id": "hydrapple",
-      "usage": 0.0013,
-      "usageRank": 182
-    },
-    {
-      "showdownName": "Chesnaught",
-      "id": "chesnaught",
-      "usage": 0.0013,
-      "usageRank": 183
-    },
-    {
-      "showdownName": "Wyrdeer",
-      "id": "wyrdeer",
-      "usage": 0.0013,
-      "usageRank": 184
-    },
-    {
-      "showdownName": "Heracross-Mega",
-      "id": "heracross-mega",
-      "usage": 0.0013,
-      "usageRank": 185
-    },
-    {
-      "showdownName": "Reuniclus",
-      "id": "reuniclus",
-      "usage": 0.0013,
-      "usageRank": 186
-    },
-    {
-      "showdownName": "Serperior",
-      "id": "serperior",
-      "usage": 0.0013,
-      "usageRank": 187
-    },
-    {
-      "showdownName": "Runerigus",
-      "id": "runerigus",
-      "usage": 0.0013,
-      "usageRank": 188
-    },
-    {
-      "showdownName": "Jolteon",
-      "id": "jolteon",
-      "usage": 0.0012,
-      "usageRank": 189
-    },
-    {
-      "showdownName": "Chimecho-Mega",
-      "id": "chimecho-mega",
-      "usage": 0.0012,
-      "usageRank": 190
-    },
-    {
-      "showdownName": "Clawitzer",
-      "id": "clawitzer",
-      "usage": 0.0012,
-      "usageRank": 191
-    },
-    {
-      "showdownName": "Medicham",
-      "id": "medicham",
-      "usage": 0.0012,
-      "usageRank": 192
-    },
-    {
-      "showdownName": "Rampardos",
-      "id": "rampardos",
-      "usage": 0.0012,
-      "usageRank": 193
-    },
-    {
-      "showdownName": "Barbaracle-Mega",
-      "id": "barbaracle-mega",
-      "usage": 0.0011,
-      "usageRank": 194
-    },
-    {
-      "showdownName": "Liepard",
-      "id": "liepard",
-      "usage": 0.0011,
-      "usageRank": 195
-    },
-    {
-      "showdownName": "Falinks-Mega",
-      "id": "falinks-mega",
-      "usage": 0.0011,
-      "usageRank": 196
-    },
-    {
-      "showdownName": "Quaquaval",
-      "id": "quaquaval",
-      "usage": 0.0011,
-      "usageRank": 197
-    },
-    {
-      "showdownName": "Alakazam-Mega",
-      "id": "alakazam-mega",
-      "usage": 0.001,
-      "usageRank": 198
-    },
-    {
-      "showdownName": "Garganacl",
-      "id": "garganacl",
-      "usage": 0.001,
-      "usageRank": 199
-    },
-    {
-      "showdownName": "Gourgeist-Super",
-      "id": "gourgeist-super",
-      "usage": 0.0009,
-      "usageRank": 200
-    },
-    {
-      "showdownName": "Beedrill-Mega",
-      "id": "beedrill-mega",
-      "usage": 0.0009,
-      "usageRank": 201
-    },
-    {
-      "showdownName": "Torterra",
-      "id": "torterra",
-      "usage": 0.0009,
-      "usageRank": 202
-    },
-    {
-      "showdownName": "Rotom-Frost",
-      "id": "rotom-frost",
-      "usage": 0.0009,
-      "usageRank": 203
-    },
-    {
-      "showdownName": "Pikachu",
-      "id": "pikachu",
-      "usage": 0.0009,
-      "usageRank": 204
-    },
-    {
-      "showdownName": "Alakazam",
-      "id": "alakazam",
-      "usage": 0.0009,
-      "usageRank": 205
-    },
-    {
-      "showdownName": "Ampharos",
-      "id": "ampharos",
-      "usage": 0.0009,
-      "usageRank": 206
-    },
-    {
-      "showdownName": "Skeledirge",
-      "id": "skeledirge",
-      "usage": 0.0008,
-      "usageRank": 207
-    },
-    {
-      "showdownName": "Slowking",
-      "id": "slowking",
-      "usage": 0.0008,
-      "usageRank": 208
-    },
-    {
-      "showdownName": "Slowbro",
-      "id": "slowbro",
-      "usage": 0.0008,
-      "usageRank": 209
-    },
-    {
-      "showdownName": "Spiritomb",
-      "id": "spiritomb",
-      "usage": 0.0008,
-      "usageRank": 210
-    },
-    {
-      "showdownName": "Salazzle",
-      "id": "salazzle",
-      "usage": 0.0008,
-      "usageRank": 211
-    },
-    {
-      "showdownName": "Sableye-Mega",
-      "id": "sableye-mega",
-      "usage": 0.0008,
-      "usageRank": 212
-    },
-    {
-      "showdownName": "Starmie",
-      "id": "starmie",
-      "usage": 0.0007,
-      "usageRank": 213
-    },
-    {
-      "showdownName": "Lucario",
-      "id": "lucario",
-      "usage": 0.0007,
-      "usageRank": 214
-    },
-    {
-      "showdownName": "Glalie-Mega",
-      "id": "glalie-mega",
-      "usage": 0.0007,
-      "usageRank": 215
-    },
-    {
-      "showdownName": "Machamp",
-      "id": "machamp",
-      "usage": 0.0007,
-      "usageRank": 216
-    },
-    {
-      "showdownName": "Meowstic-F-Mega",
-      "id": "meowstic-female-mega",
-      "usage": 0.0006,
-      "usageRank": 217
-    },
-    {
-      "showdownName": "Avalugg-Hisui",
-      "id": "avalugg-hisui",
-      "usage": 0.0006,
-      "usageRank": 218
-    },
-    {
-      "showdownName": "Diggersby",
-      "id": "diggersby",
-      "usage": 0.0006,
-      "usageRank": 219
-    },
-    {
-      "showdownName": "Dragalge",
-      "id": "dragalge",
-      "usage": 0.0006,
-      "usageRank": 220
-    },
-    {
-      "showdownName": "Infernape",
-      "id": "infernape",
-      "usage": 0.0005,
-      "usageRank": 221
-    },
-    {
-      "showdownName": "Feraligatr",
-      "id": "feraligatr",
-      "usage": 0.0005,
-      "usageRank": 222
-    },
-    {
-      "showdownName": "Tauros-Paldea-Blaze",
-      "id": "tauros-paldea-blaze-breed",
-      "usage": 0.0005,
-      "usageRank": 223
-    },
-    {
-      "showdownName": "Espeon",
-      "id": "espeon",
-      "usage": 0.0005,
-      "usageRank": 224
+      "usage": 0.10302282541640963,
+      "usageRank": 20
     },
     {
       "showdownName": "Charizard",
       "id": "charizard",
-      "usage": 0.0005,
-      "usageRank": 225
+      "usage": 0.10240592227020358,
+      "usageRank": 21
     },
     {
-      "showdownName": "Floette-Eternal",
-      "id": "floette-eternal",
-      "usage": 0.0005,
-      "usageRank": 226
+      "showdownName": "Charizard-Mega-Y",
+      "id": "charizard-mega-y",
+      "usage": 0.09839605181986429,
+      "usageRank": 22
     },
     {
-      "showdownName": "Roserade",
-      "id": "roserade",
-      "usage": 0.0005,
-      "usageRank": 227
+      "showdownName": "Raichu-Mega-Y",
+      "id": "raichu-mega-y",
+      "usage": 0.09839605181986429,
+      "usageRank": 23
     },
     {
-      "showdownName": "Toucannon",
-      "id": "toucannon",
-      "usage": 0.0005,
-      "usageRank": 228
+      "showdownName": "Milotic",
+      "id": "milotic",
+      "usage": 0.09654534238124614,
+      "usageRank": 24
     },
     {
-      "showdownName": "Meowstic-M-Mega",
-      "id": "meowstic-male-mega",
-      "usage": 0.0004,
-      "usageRank": 229
+      "showdownName": "Gardevoir",
+      "id": "gardevoir",
+      "usage": 0.08173966687230105,
+      "usageRank": 25
     },
     {
-      "showdownName": "Sceptile",
-      "id": "sceptile",
-      "usage": 0.0004,
-      "usageRank": 230
+      "showdownName": "Gardevoir-Mega",
+      "id": "gardevoir-mega",
+      "usage": 0.08050586057988895,
+      "usageRank": 26
     },
     {
-      "showdownName": "Ariados",
-      "id": "ariados",
-      "usage": 0.0004,
-      "usageRank": 231
+      "showdownName": "Tyranitar",
+      "id": "tyranitar",
+      "usage": 0.0783466995681678,
+      "usageRank": 27
     },
     {
-      "showdownName": "Simipour",
-      "id": "simipour",
-      "usage": 0.0004,
-      "usageRank": 232
-    },
-    {
-      "showdownName": "Goodra",
-      "id": "goodra",
-      "usage": 0.0004,
-      "usageRank": 233
-    },
-    {
-      "showdownName": "Beartic",
-      "id": "beartic",
-      "usage": 0.0004,
-      "usageRank": 234
-    },
-    {
-      "showdownName": "Typhlosion",
-      "id": "typhlosion",
-      "usage": 0.0004,
-      "usageRank": 235
-    },
-    {
-      "showdownName": "Emboar-Mega",
-      "id": "emboar-mega",
-      "usage": 0.0004,
-      "usageRank": 236
-    },
-    {
-      "showdownName": "Slowbro-Galar",
-      "id": "slowbro-galar",
-      "usage": 0.0004,
-      "usageRank": 237
-    },
-    {
-      "showdownName": "Golurk",
-      "id": "golurk",
-      "usage": 0.0004,
-      "usageRank": 238
-    },
-    {
-      "showdownName": "Sandaconda",
-      "id": "sandaconda",
-      "usage": 0.0004,
-      "usageRank": 239
-    },
-    {
-      "showdownName": "Hawlucha",
-      "id": "hawlucha",
-      "usage": 0.0003,
-      "usageRank": 240
-    },
-    {
-      "showdownName": "Abomasnow",
-      "id": "abomasnow",
-      "usage": 0.0003,
-      "usageRank": 241
-    },
-    {
-      "showdownName": "Decidueye",
-      "id": "decidueye",
-      "usage": 0.0003,
-      "usageRank": 242
-    },
-    {
-      "showdownName": "Skarmory",
-      "id": "skarmory",
-      "usage": 0.0003,
-      "usageRank": 243
-    },
-    {
-      "showdownName": "Steelix",
-      "id": "steelix",
-      "usage": 0.0003,
-      "usageRank": 244
-    },
-    {
-      "showdownName": "Froslass",
-      "id": "froslass",
-      "usage": 0.0003,
-      "usageRank": 245
-    },
-    {
-      "showdownName": "Houndoom",
-      "id": "houndoom",
-      "usage": 0.0003,
-      "usageRank": 246
-    },
-    {
-      "showdownName": "Flareon",
-      "id": "flareon",
-      "usage": 0.0003,
-      "usageRank": 247
-    },
-    {
-      "showdownName": "Leafeon",
-      "id": "leafeon",
-      "usage": 0.0003,
-      "usageRank": 248
-    },
-    {
-      "showdownName": "Luxray",
-      "id": "luxray",
-      "usage": 0.0003,
-      "usageRank": 249
-    },
-    {
-      "showdownName": "Polteageist",
-      "id": "polteageist",
-      "usage": 0.0003,
-      "usageRank": 250
-    },
-    {
-      "showdownName": "Pangoro",
-      "id": "pangoro",
-      "usage": 0.0003,
-      "usageRank": 251
-    },
-    {
-      "showdownName": "Passimian",
-      "id": "passimian",
-      "usage": 0.0003,
-      "usageRank": 252
-    },
-    {
-      "showdownName": "Trevenant",
-      "id": "trevenant",
-      "usage": 0.0003,
-      "usageRank": 253
-    },
-    {
-      "showdownName": "Flapple",
-      "id": "flapple",
-      "usage": 0.0003,
-      "usageRank": 254
-    },
-    {
-      "showdownName": "Scovillain",
-      "id": "scovillain",
-      "usage": 0.0003,
-      "usageRank": 255
-    },
-    {
-      "showdownName": "Tauros",
-      "id": "tauros",
-      "usage": 0.0003,
-      "usageRank": 256
-    },
-    {
-      "showdownName": "Crabominable",
-      "id": "crabominable",
-      "usage": 0.0002,
-      "usageRank": 257
-    },
-    {
-      "showdownName": "Simisage",
-      "id": "simisage",
-      "usage": 0.0002,
-      "usageRank": 258
-    },
-    {
-      "showdownName": "Absol-Mega",
-      "id": "absol-mega",
-      "usage": 0.0002,
-      "usageRank": 259
-    },
-    {
-      "showdownName": "Emolga",
-      "id": "emolga",
-      "usage": 0.0002,
-      "usageRank": 260
-    },
-    {
-      "showdownName": "Musharna",
-      "id": "musharna",
-      "usage": 0.0002,
-      "usageRank": 261
-    },
-    {
-      "showdownName": "Florges",
-      "id": "florges",
-      "usage": 0.0002,
-      "usageRank": 262
-    },
-    {
-      "showdownName": "Castform",
-      "id": "castform",
-      "usage": 0.0002,
-      "usageRank": 263
-    },
-    {
-      "showdownName": "Appletun",
-      "id": "appletun",
-      "usage": 0.0002,
-      "usageRank": 264
-    },
-    {
-      "showdownName": "Zoroark",
-      "id": "zoroark",
-      "usage": 0.0002,
-      "usageRank": 265
-    },
-    {
-      "showdownName": "Rotom",
-      "id": "rotom",
-      "usage": 0.0002,
-      "usageRank": 266
-    },
-    {
-      "showdownName": "Manectric",
-      "id": "manectric",
-      "usage": 0.0002,
-      "usageRank": 267
-    },
-    {
-      "showdownName": "Avalugg",
-      "id": "avalugg",
-      "usage": 0.0002,
-      "usageRank": 268
-    },
-    {
-      "showdownName": "Raichu-Alola",
-      "id": "raichu-alola",
-      "usage": 0.0002,
-      "usageRank": 269
-    },
-    {
-      "showdownName": "Absol",
-      "id": "absol",
-      "usage": 0.0001,
-      "usageRank": 270
-    },
-    {
-      "showdownName": "Slurpuff",
-      "id": "slurpuff",
-      "usage": 0.0001,
-      "usageRank": 271
-    },
-    {
-      "showdownName": "Dedenne",
-      "id": "dedenne",
-      "usage": 0.0001,
-      "usageRank": 272
-    },
-    {
-      "showdownName": "Aggron",
-      "id": "aggron",
-      "usage": 0.0001,
-      "usageRank": 273
-    },
-    {
-      "showdownName": "Eelektross",
-      "id": "eelektross",
-      "usage": 0.0001,
-      "usageRank": 274
-    },
-    {
-      "showdownName": "Emboar",
-      "id": "emboar",
-      "usage": 0.0001,
-      "usageRank": 275
-    },
-    {
-      "showdownName": "Qwilfish",
-      "id": "qwilfish",
-      "usage": 0.0001,
-      "usageRank": 276
-    },
-    {
-      "showdownName": "Scolipede",
-      "id": "scolipede",
-      "usage": 0.0001,
-      "usageRank": 277
-    },
-    {
-      "showdownName": "Heracross",
-      "id": "heracross",
-      "usage": 0.0001,
-      "usageRank": 278
-    },
-    {
-      "showdownName": "Stunfisk-Galar",
-      "id": "stunfisk-galar",
-      "usage": 0.0001,
-      "usageRank": 279
-    },
-    {
-      "showdownName": "Bastiodon",
-      "id": "bastiodon",
-      "usage": 0.0001,
-      "usageRank": 280
-    },
-    {
-      "showdownName": "Lopunny",
-      "id": "lopunny",
-      "usage": 0.0001,
-      "usageRank": 281
-    },
-    {
-      "showdownName": "Victreebel",
-      "id": "victreebel",
-      "usage": 0.0001,
-      "usageRank": 282
-    },
-    {
-      "showdownName": "Sharpedo",
-      "id": "sharpedo",
-      "usage": 0.0001,
-      "usageRank": 283
-    },
-    {
-      "showdownName": "Wigglytuff",
-      "id": "wigglytuff",
-      "usage": 0,
-      "usageRank": 284
-    },
-    {
-      "showdownName": "Persian",
-      "id": "persian",
-      "usage": 0,
-      "usageRank": 285
-    },
-    {
-      "showdownName": "Persian-Alola",
-      "id": "persian-alola",
-      "usage": 0,
-      "usageRank": 286
-    },
-    {
-      "showdownName": "Farfetch'd",
-      "id": "farfetchd",
-      "usage": 0,
-      "usageRank": 287
-    },
-    {
-      "showdownName": "Mr. Mime",
-      "id": "mr-mime",
-      "usage": 0,
-      "usageRank": 288
-    },
-    {
-      "showdownName": "Swalot",
-      "id": "swalot",
-      "usage": 0,
-      "usageRank": 289
-    },
-    {
-      "showdownName": "Salamence",
-      "id": "salamence",
-      "usage": 0,
-      "usageRank": 290
-    },
-    {
-      "showdownName": "Gogoat",
-      "id": "gogoat",
-      "usage": 0,
-      "usageRank": 291
-    },
-    {
-      "showdownName": "Golisopod",
-      "id": "golisopod",
-      "usage": 0,
-      "usageRank": 292
-    },
-    {
-      "showdownName": "Rillaboom",
-      "id": "rillaboom",
-      "usage": 0,
-      "usageRank": 293
-    },
-    {
-      "showdownName": "Cinderace",
-      "id": "cinderace",
-      "usage": 0,
-      "usageRank": 294
-    },
-    {
-      "showdownName": "Inteleon",
-      "id": "inteleon",
-      "usage": 0,
-      "usageRank": 295
-    },
-    {
-      "showdownName": "Thievul",
-      "id": "thievul",
-      "usage": 0,
-      "usageRank": 296
-    },
-    {
-      "showdownName": "Toxtricity",
-      "id": "toxtricity-amped",
-      "usage": 0,
-      "usageRank": 297
-    },
-    {
-      "showdownName": "Grapploct",
-      "id": "grapploct",
-      "usage": 0,
-      "usageRank": 298
-    },
-    {
-      "showdownName": "Perrserker",
-      "id": "perrserker",
-      "usage": 0,
-      "usageRank": 299
-    },
-    {
-      "showdownName": "Sirfetch'd",
-      "id": "sirfetchd",
-      "usage": 0,
-      "usageRank": 300
-    },
-    {
-      "showdownName": "Pincurchin",
-      "id": "pincurchin",
-      "usage": 0,
-      "usageRank": 301
-    },
-    {
-      "showdownName": "Indeedee",
-      "id": "indeedee-male",
-      "usage": 0,
-      "usageRank": 302
-    },
-    {
-      "showdownName": "Indeedee-F",
-      "id": "indeedee-female",
-      "usage": 0,
-      "usageRank": 303
-    },
-    {
-      "showdownName": "Pawmot",
-      "id": "pawmot",
-      "usage": 0,
-      "usageRank": 304
-    },
-    {
-      "showdownName": "Arboliva",
-      "id": "arboliva",
-      "usage": 0,
-      "usageRank": 305
-    },
-    {
-      "showdownName": "Squawkabilly",
-      "id": "squawkabilly-green-plumage",
-      "usage": 0,
-      "usageRank": 306
-    },
-    {
-      "showdownName": "Mabosstiff",
-      "id": "mabosstiff",
-      "usage": 0,
-      "usageRank": 307
-    },
-    {
-      "showdownName": "Baxcalibur",
-      "id": "baxcalibur",
-      "usage": 0,
-      "usageRank": 308
-    },
-    {
-      "showdownName": "Salamence-Mega",
-      "id": "salamence-mega",
-      "usage": 0,
-      "usageRank": 309
-    },
-    {
-      "showdownName": "Golisopod-Mega",
-      "id": "golisopod-mega",
-      "usage": 0,
-      "usageRank": 310
-    },
-    {
-      "showdownName": "Baxcalibur-Mega",
-      "id": "baxcalibur-mega",
-      "usage": 0,
-      "usageRank": 311
-    },
-    {
-      "showdownName": "Absol-Mega-Z",
-      "id": "absol-mega-z",
-      "usage": 0,
-      "usageRank": 312
-    },
-    {
-      "showdownName": "Garchomp-Mega-Z",
-      "id": "garchomp-mega-z",
-      "usage": 0,
-      "usageRank": 313
+      "showdownName": "Lucario",
+      "id": "lucario",
+      "usage": 0.0703269586674892,
+      "usageRank": 28
     },
     {
       "showdownName": "Lucario-Mega-Z",
       "id": "lucario-mega-z",
-      "usage": 0,
-      "usageRank": 314
+      "usage": 0.06816779765576804,
+      "usageRank": 29
+    },
+    {
+      "showdownName": "Sinistcha",
+      "id": "sinistcha",
+      "usage": 0.06816779765576804,
+      "usageRank": 30
+    },
+    {
+      "showdownName": "Whimsicott",
+      "id": "whimsicott",
+      "usage": 0.0663170882171499,
+      "usageRank": 31
+    },
+    {
+      "showdownName": "Froslass",
+      "id": "froslass",
+      "usage": 0.0635410240592227,
+      "usageRank": 32
+    },
+    {
+      "showdownName": "Froslass-Mega",
+      "id": "froslass-mega",
+      "usage": 0.06323257248611967,
+      "usageRank": 33
+    },
+    {
+      "showdownName": "Tyranitar-Mega",
+      "id": "tyranitar-mega",
+      "usage": 0.06292412091301666,
+      "usageRank": 34
+    },
+    {
+      "showdownName": "Indeedee",
+      "id": "indeedee-male",
+      "usage": 0.05737199259716225,
+      "usageRank": 35
+    },
+    {
+      "showdownName": "Torkoal",
+      "id": "torkoal",
+      "usage": 0.05737199259716225,
+      "usageRank": 36
+    },
+    {
+      "showdownName": "Armarouge",
+      "id": "armarouge",
+      "usage": 0.05644663787785318,
+      "usageRank": 37
+    },
+    {
+      "showdownName": "Staraptor",
+      "id": "staraptor",
+      "usage": 0.05521283158544109,
+      "usageRank": 38
+    },
+    {
+      "showdownName": "Excadrill",
+      "id": "excadrill",
+      "usage": 0.05367057371992597,
+      "usageRank": 39
+    },
+    {
+      "showdownName": "Garchomp-Mega-Z",
+      "id": "garchomp-mega-z",
+      "usage": 0.05305367057371992,
+      "usageRank": 40
+    },
+    {
+      "showdownName": "Volcarona",
+      "id": "volcarona",
+      "usage": 0.052128315854410856,
+      "usageRank": 41
+    },
+    {
+      "showdownName": "Grimmsnarl",
+      "id": "grimmsnarl",
+      "usage": 0.05181986428130783,
+      "usageRank": 42
+    },
+    {
+      "showdownName": "Baxcalibur",
+      "id": "baxcalibur",
+      "usage": 0.051511412708204814,
+      "usageRank": 43
+    },
+    {
+      "showdownName": "Staraptor-Mega",
+      "id": "staraptor-mega",
+      "usage": 0.04780999383096854,
+      "usageRank": 44
+    },
+    {
+      "showdownName": "Baxcalibur-Mega",
+      "id": "baxcalibur-mega",
+      "usage": 0.04380012338062924,
+      "usageRank": 45
+    },
+    {
+      "showdownName": "Pawmot",
+      "id": "pawmot",
+      "usage": 0.040715607649599014,
+      "usageRank": 46
+    },
+    {
+      "showdownName": "Hatterene",
+      "id": "hatterene",
+      "usage": 0.040098704503392965,
+      "usageRank": 47
+    },
+    {
+      "showdownName": "Primarina",
+      "id": "primarina",
+      "usage": 0.040098704503392965,
+      "usageRank": 48
+    },
+    {
+      "showdownName": "Metagross",
+      "id": "metagross",
+      "usage": 0.0391733497840839,
+      "usageRank": 49
+    },
+    {
+      "showdownName": "Swampert",
+      "id": "swampert",
+      "usage": 0.0391733497840839,
+      "usageRank": 50
+    },
+    {
+      "showdownName": "Venusaur",
+      "id": "venusaur",
+      "usage": 0.0391733497840839,
+      "usageRank": 51
+    },
+    {
+      "showdownName": "Aerodactyl",
+      "id": "aerodactyl",
+      "usage": 0.03824799506477483,
+      "usageRank": 52
+    },
+    {
+      "showdownName": "Metagross-Mega",
+      "id": "metagross-mega",
+      "usage": 0.03793954349167181,
+      "usageRank": 53
+    },
+    {
+      "showdownName": "Dragonite",
+      "id": "dragonite",
+      "usage": 0.036705737199259715,
+      "usageRank": 54
+    },
+    {
+      "showdownName": "Delphox",
+      "id": "delphox",
+      "usage": 0.03578038247995065,
+      "usageRank": 55
+    },
+    {
+      "showdownName": "Delphox-Mega",
+      "id": "delphox-mega",
+      "usage": 0.035471930906847624,
+      "usageRank": 56
+    },
+    {
+      "showdownName": "Swampert-Mega",
+      "id": "swampert-mega",
+      "usage": 0.03454657618753856,
+      "usageRank": 57
+    },
+    {
+      "showdownName": "Politoed",
+      "id": "politoed",
+      "usage": 0.03300431832202344,
+      "usageRank": 58
+    },
+    {
+      "showdownName": "Gengar",
+      "id": "gengar",
+      "usage": 0.030845157310302282,
+      "usageRank": 59
+    },
+    {
+      "showdownName": "Ninetales-Alola",
+      "id": "ninetales-alola",
+      "usage": 0.030845157310302282,
+      "usageRank": 60
+    },
+    {
+      "showdownName": "Gengar-Mega",
+      "id": "gengar-mega",
+      "usage": 0.03053670573719926,
+      "usageRank": 61
+    },
+    {
+      "showdownName": "Glimmora",
+      "id": "glimmora",
+      "usage": 0.028685996298581123,
+      "usageRank": 62
+    },
+    {
+      "showdownName": "Dragonite-Mega",
+      "id": "dragonite-mega",
+      "usage": 0.027143738433066007,
+      "usageRank": 63
+    },
+    {
+      "showdownName": "Aerodactyl-Mega",
+      "id": "aerodactyl-mega",
+      "usage": 0.02652683528685996,
+      "usageRank": 64
+    },
+    {
+      "showdownName": "Blastoise",
+      "id": "blastoise",
+      "usage": 0.02498457742134485,
+      "usageRank": 65
+    },
+    {
+      "showdownName": "Annihilape",
+      "id": "annihilape",
+      "usage": 0.024367674275138803,
+      "usageRank": 66
+    },
+    {
+      "showdownName": "Blastoise-Mega",
+      "id": "blastoise-mega",
+      "usage": 0.024367674275138803,
+      "usageRank": 67
+    },
+    {
+      "showdownName": "Camerupt",
+      "id": "camerupt",
+      "usage": 0.023442319555829736,
+      "usageRank": 68
+    },
+    {
+      "showdownName": "Camerupt-Mega",
+      "id": "camerupt-mega",
+      "usage": 0.023442319555829736,
+      "usageRank": 69
+    },
+    {
+      "showdownName": "Absol",
+      "id": "absol",
+      "usage": 0.02282541640962369,
+      "usageRank": 70
+    },
+    {
+      "showdownName": "Absol-Mega-Z",
+      "id": "absol-mega-z",
+      "usage": 0.022516964836520666,
+      "usageRank": 71
+    },
+    {
+      "showdownName": "Mawile",
+      "id": "mawile",
+      "usage": 0.020357803824799507,
+      "usageRank": 72
+    },
+    {
+      "showdownName": "Mawile-Mega",
+      "id": "mawile-mega",
+      "usage": 0.020357803824799507,
+      "usageRank": 73
+    },
+    {
+      "showdownName": "Talonflame",
+      "id": "talonflame",
+      "usage": 0.01881554595928439,
+      "usageRank": 74
+    },
+    {
+      "showdownName": "Toxapex",
+      "id": "toxapex",
+      "usage": 0.01850709438618137,
+      "usageRank": 75
+    },
+    {
+      "showdownName": "Glimmora-Mega",
+      "id": "glimmora-mega",
+      "usage": 0.017890191239975324,
+      "usageRank": 76
+    },
+    {
+      "showdownName": "Maushold",
+      "id": "maushold-family-of-four",
+      "usage": 0.0175817396668723,
+      "usageRank": 77
+    },
+    {
+      "showdownName": "Hydreigon",
+      "id": "hydreigon",
+      "usage": 0.016656384947563233,
+      "usageRank": 78
+    },
+    {
+      "showdownName": "Lycanroc-Dusk",
+      "id": "lycanroc-dusk",
+      "usage": 0.016656384947563233,
+      "usageRank": 79
+    },
+    {
+      "showdownName": "Sableye",
+      "id": "sableye",
+      "usage": 0.015731030228254166,
+      "usageRank": 80
+    },
+    {
+      "showdownName": "Blaziken",
+      "id": "blaziken",
+      "usage": 0.014805675508945095,
+      "usageRank": 81
+    },
+    {
+      "showdownName": "Corviknight",
+      "id": "corviknight",
+      "usage": 0.012029611351017891,
+      "usageRank": 82
+    },
+    {
+      "showdownName": "Gallade",
+      "id": "gallade",
+      "usage": 0.012029611351017891,
+      "usageRank": 83
+    },
+    {
+      "showdownName": "Blaziken-Mega",
+      "id": "blaziken-mega",
+      "usage": 0.011721159777914868,
+      "usageRank": 84
+    },
+    {
+      "showdownName": "Scovillain",
+      "id": "scovillain",
+      "usage": 0.011412708204811845,
+      "usageRank": 85
+    },
+    {
+      "showdownName": "Scovillain-Mega",
+      "id": "scovillain-mega",
+      "usage": 0.011104256631708822,
+      "usageRank": 86
+    },
+    {
+      "showdownName": "Rotom-Wash",
+      "id": "rotom-wash",
+      "usage": 0.010178901912399754,
+      "usageRank": 87
+    },
+    {
+      "showdownName": "Ceruledge",
+      "id": "ceruledge",
+      "usage": 0.009561998766193708,
+      "usageRank": 88
+    },
+    {
+      "showdownName": "Kommo-o",
+      "id": "kommo-o",
+      "usage": 0.009253547193090685,
+      "usageRank": 89
+    },
+    {
+      "showdownName": "Snorlax",
+      "id": "snorlax",
+      "usage": 0.008945095619987662,
+      "usageRank": 90
+    },
+    {
+      "showdownName": "Sirfetch'd",
+      "id": "sirfetchd",
+      "usage": 0.008019740900678593,
+      "usageRank": 91
+    },
+    {
+      "showdownName": "Toxtricity",
+      "id": "toxtricity-amped",
+      "usage": 0.0077112893275755705,
+      "usageRank": 92
+    },
+    {
+      "showdownName": "Dragapult",
+      "id": "dragapult",
+      "usage": 0.007402837754472548,
+      "usageRank": 93
+    },
+    {
+      "showdownName": "Scizor",
+      "id": "scizor",
+      "usage": 0.007402837754472548,
+      "usageRank": 94
+    },
+    {
+      "showdownName": "Alakazam",
+      "id": "alakazam",
+      "usage": 0.007094386181369525,
+      "usageRank": 95
+    },
+    {
+      "showdownName": "Weavile",
+      "id": "weavile",
+      "usage": 0.006477483035163479,
+      "usageRank": 96
+    },
+    {
+      "showdownName": "Clefable",
+      "id": "clefable",
+      "usage": 0.006169031462060457,
+      "usageRank": 97
+    },
+    {
+      "showdownName": "Kleavor",
+      "id": "kleavor",
+      "usage": 0.006169031462060457,
+      "usageRank": 98
+    },
+    {
+      "showdownName": "Rotom-Heat",
+      "id": "rotom-heat",
+      "usage": 0.006169031462060457,
+      "usageRank": 99
+    },
+    {
+      "showdownName": "Aegislash",
+      "id": "aegislash-shield",
+      "usage": 0.005860579888957434,
+      "usageRank": 100
+    },
+    {
+      "showdownName": "Alakazam-Mega",
+      "id": "alakazam-mega",
+      "usage": 0.005860579888957434,
+      "usageRank": 101
+    },
+    {
+      "showdownName": "Typhlosion-Hisui",
+      "id": "typhlosion-hisui",
+      "usage": 0.005860579888957434,
+      "usageRank": 102
+    },
+    {
+      "showdownName": "Crabominable",
+      "id": "crabominable",
+      "usage": 0.005552128315854411,
+      "usageRank": 103
+    },
+    {
+      "showdownName": "Crabominable-Mega",
+      "id": "crabominable-mega",
+      "usage": 0.005552128315854411,
+      "usageRank": 104
+    },
+    {
+      "showdownName": "Greninja",
+      "id": "greninja",
+      "usage": 0.005552128315854411,
+      "usageRank": 105
+    },
+    {
+      "showdownName": "Scizor-Mega",
+      "id": "scizor-mega",
+      "usage": 0.005552128315854411,
+      "usageRank": 106
+    },
+    {
+      "showdownName": "Tsareena",
+      "id": "tsareena",
+      "usage": 0.005552128315854411,
+      "usageRank": 107
+    },
+    {
+      "showdownName": "Scrafty",
+      "id": "scrafty",
+      "usage": 0.005243676742751388,
+      "usageRank": 108
+    },
+    {
+      "showdownName": "Low Key Toxtricity",
+      "id": "toxtricity-low-key",
+      "usage": 0.004935225169648365,
+      "usageRank": 109
+    },
+    {
+      "showdownName": "Chandelure",
+      "id": "chandelure",
+      "usage": 0.0046267735965453425,
+      "usageRank": 110
+    },
+    {
+      "showdownName": "Garchomp-Mega",
+      "id": "garchomp-mega",
+      "usage": 0.0046267735965453425,
+      "usageRank": 111
+    },
+    {
+      "showdownName": "Hawlucha",
+      "id": "hawlucha",
+      "usage": 0.0046267735965453425,
+      "usageRank": 112
+    },
+    {
+      "showdownName": "Mamoswine",
+      "id": "mamoswine",
+      "usage": 0.0046267735965453425,
+      "usageRank": 113
+    },
+    {
+      "showdownName": "Meowscarada",
+      "id": "meowscarada",
+      "usage": 0.0046267735965453425,
+      "usageRank": 114
+    },
+    {
+      "showdownName": "Cinderace",
+      "id": "cinderace",
+      "usage": 0.00431832202344232,
+      "usageRank": 115
+    },
+    {
+      "showdownName": "Kangaskhan",
+      "id": "kangaskhan",
+      "usage": 0.00431832202344232,
+      "usageRank": 116
+    },
+    {
+      "showdownName": "Meganium",
+      "id": "meganium",
+      "usage": 0.00431832202344232,
+      "usageRank": 117
+    },
+    {
+      "showdownName": "Meganium-Mega",
+      "id": "meganium-mega",
+      "usage": 0.00431832202344232,
+      "usageRank": 118
+    },
+    {
+      "showdownName": "Raichu-Mega-X",
+      "id": "raichu-mega-x",
+      "usage": 0.00431832202344232,
+      "usageRank": 119
+    },
+    {
+      "showdownName": "Vanilluxe",
+      "id": "vanilluxe",
+      "usage": 0.00431832202344232,
+      "usageRank": 120
+    },
+    {
+      "showdownName": "Vileplume",
+      "id": "vileplume",
+      "usage": 0.00431832202344232,
+      "usageRank": 121
+    },
+    {
+      "showdownName": "Zoroark-Hisui",
+      "id": "zoroark-hisui",
+      "usage": 0.00431832202344232,
+      "usageRank": 122
+    },
+    {
+      "showdownName": "Greninja-Mega",
+      "id": "greninja-mega",
+      "usage": 0.004009870450339297,
+      "usageRank": 123
+    },
+    {
+      "showdownName": "Hawlucha-Mega",
+      "id": "hawlucha-mega",
+      "usage": 0.004009870450339297,
+      "usageRank": 124
+    },
+    {
+      "showdownName": "Tinkaton",
+      "id": "tinkaton",
+      "usage": 0.004009870450339297,
+      "usageRank": 125
+    },
+    {
+      "showdownName": "Vivillon",
+      "id": "vivillon",
+      "usage": 0.004009870450339297,
+      "usageRank": 126
+    },
+    {
+      "showdownName": "Charizard-Mega-X",
+      "id": "charizard-mega-x",
+      "usage": 0.003701418877236274,
+      "usageRank": 127
+    },
+    {
+      "showdownName": "Golurk",
+      "id": "golurk",
+      "usage": 0.003701418877236274,
+      "usageRank": 128
+    },
+    {
+      "showdownName": "Golurk-Mega",
+      "id": "golurk-mega",
+      "usage": 0.003701418877236274,
+      "usageRank": 129
+    },
+    {
+      "showdownName": "Pincurchin",
+      "id": "pincurchin",
+      "usage": 0.003701418877236274,
+      "usageRank": 130
+    },
+    {
+      "showdownName": "Samurott-Hisui",
+      "id": "samurott-hisui",
+      "usage": 0.003392967304133251,
+      "usageRank": 131
+    },
+    {
+      "showdownName": "Scrafty-Mega",
+      "id": "scrafty-mega",
+      "usage": 0.003392967304133251,
+      "usageRank": 132
+    },
+    {
+      "showdownName": "Spiritomb",
+      "id": "spiritomb",
+      "usage": 0.003392967304133251,
+      "usageRank": 133
+    },
+    {
+      "showdownName": "Venusaur-Mega",
+      "id": "venusaur-mega",
+      "usage": 0.003392967304133251,
+      "usageRank": 134
+    },
+    {
+      "showdownName": "Aggron",
+      "id": "aggron",
+      "usage": 0.0030845157310302285,
+      "usageRank": 135
+    },
+    {
+      "showdownName": "Aggron-Mega",
+      "id": "aggron-mega",
+      "usage": 0.0030845157310302285,
+      "usageRank": 136
+    },
+    {
+      "showdownName": "Chandelure-Mega",
+      "id": "chandelure-mega",
+      "usage": 0.0030845157310302285,
+      "usageRank": 137
+    },
+    {
+      "showdownName": "Mr. Mime",
+      "id": "mr-mime",
+      "usage": 0.0030845157310302285,
+      "usageRank": 138
+    },
+    {
+      "showdownName": "Ninetales",
+      "id": "ninetales",
+      "usage": 0.0030845157310302285,
+      "usageRank": 139
+    },
+    {
+      "showdownName": "Inteleon",
+      "id": "inteleon",
+      "usage": 0.0027760641579272056,
+      "usageRank": 140
+    },
+    {
+      "showdownName": "Malamar",
+      "id": "malamar",
+      "usage": 0.0027760641579272056,
+      "usageRank": 141
+    },
+    {
+      "showdownName": "Slowbro",
+      "id": "slowbro",
+      "usage": 0.0027760641579272056,
+      "usageRank": 142
+    },
+    {
+      "showdownName": "Abomasnow",
+      "id": "abomasnow",
+      "usage": 0.0024676125848241827,
+      "usageRank": 143
+    },
+    {
+      "showdownName": "Abomasnow-Mega",
+      "id": "abomasnow-mega",
+      "usage": 0.0024676125848241827,
+      "usageRank": 144
+    },
+    {
+      "showdownName": "Empoleon",
+      "id": "empoleon",
+      "usage": 0.0024676125848241827,
+      "usageRank": 145
+    },
+    {
+      "showdownName": "Goodra-Hisui",
+      "id": "goodra-hisui",
+      "usage": 0.0024676125848241827,
+      "usageRank": 146
+    },
+    {
+      "showdownName": "Grapploct",
+      "id": "grapploct",
+      "usage": 0.0024676125848241827,
+      "usageRank": 147
+    },
+    {
+      "showdownName": "Gyarados",
+      "id": "gyarados",
+      "usage": 0.0024676125848241827,
+      "usageRank": 148
+    },
+    {
+      "showdownName": "Kangaskhan-Mega",
+      "id": "kangaskhan-mega",
+      "usage": 0.0024676125848241827,
+      "usageRank": 149
+    },
+    {
+      "showdownName": "Skarmory",
+      "id": "skarmory",
+      "usage": 0.0024676125848241827,
+      "usageRank": 150
+    },
+    {
+      "showdownName": "Slowbro-Mega",
+      "id": "slowbro-mega",
+      "usage": 0.0024676125848241827,
+      "usageRank": 151
+    },
+    {
+      "showdownName": "Wigglytuff",
+      "id": "wigglytuff",
+      "usage": 0.0024676125848241827,
+      "usageRank": 152
+    },
+    {
+      "showdownName": "Altaria",
+      "id": "altaria",
+      "usage": 0.00215916101172116,
+      "usageRank": 153
+    },
+    {
+      "showdownName": "Araquanid",
+      "id": "araquanid",
+      "usage": 0.00215916101172116,
+      "usageRank": 154
+    },
+    {
+      "showdownName": "Azumarill",
+      "id": "azumarill",
+      "usage": 0.00215916101172116,
+      "usageRank": 155
+    },
+    {
+      "showdownName": "Conkeldurr",
+      "id": "conkeldurr",
+      "usage": 0.00215916101172116,
+      "usageRank": 156
+    },
+    {
+      "showdownName": "Houndoom",
+      "id": "houndoom",
+      "usage": 0.00215916101172116,
+      "usageRank": 157
+    },
+    {
+      "showdownName": "Houndoom-Mega",
+      "id": "houndoom-mega",
+      "usage": 0.00215916101172116,
+      "usageRank": 158
+    },
+    {
+      "showdownName": "Meowstic ♀",
+      "id": "meowstic-female",
+      "usage": 0.00215916101172116,
+      "usageRank": 159
+    },
+    {
+      "showdownName": "Persian-Alola",
+      "id": "persian-alola",
+      "usage": 0.00215916101172116,
+      "usageRank": 160
+    },
+    {
+      "showdownName": "Pyroar",
+      "id": "pyroar-male",
+      "usage": 0.00215916101172116,
+      "usageRank": 161
+    },
+    {
+      "showdownName": "Pyroar-Mega",
+      "id": "pyroar-mega",
+      "usage": 0.00215916101172116,
+      "usageRank": 162
+    },
+    {
+      "showdownName": "Skarmory-Mega",
+      "id": "skarmory-mega",
+      "usage": 0.00215916101172116,
+      "usageRank": 163
+    },
+    {
+      "showdownName": "Steelix",
+      "id": "steelix",
+      "usage": 0.00215916101172116,
+      "usageRank": 164
+    },
+    {
+      "showdownName": "Basculegion-F",
+      "id": "basculegion-female",
+      "usage": 0.001850709438618137,
+      "usageRank": 165
+    },
+    {
+      "showdownName": "Chesnaught",
+      "id": "chesnaught",
+      "usage": 0.001850709438618137,
+      "usageRank": 166
+    },
+    {
+      "showdownName": "Chimecho",
+      "id": "chimecho",
+      "usage": 0.001850709438618137,
+      "usageRank": 167
+    },
+    {
+      "showdownName": "Chimecho-Mega",
+      "id": "chimecho-mega",
+      "usage": 0.001850709438618137,
+      "usageRank": 168
+    },
+    {
+      "showdownName": "Drampa",
+      "id": "drampa",
+      "usage": 0.001850709438618137,
+      "usageRank": 169
+    },
+    {
+      "showdownName": "Meowstic-F-Mega",
+      "id": "meowstic-female-mega",
+      "usage": 0.001850709438618137,
+      "usageRank": 170
+    },
+    {
+      "showdownName": "Mimikyu",
+      "id": "mimikyu-disguised",
+      "usage": 0.001850709438618137,
+      "usageRank": 171
+    },
+    {
+      "showdownName": "Oranguru",
+      "id": "oranguru",
+      "usage": 0.001850709438618137,
+      "usageRank": 172
+    },
+    {
+      "showdownName": "Steelix-Mega",
+      "id": "steelix-mega",
+      "usage": 0.001850709438618137,
+      "usageRank": 173
+    },
+    {
+      "showdownName": "Altaria-Mega",
+      "id": "altaria-mega",
+      "usage": 0.0015422578655151142,
+      "usageRank": 174
+    },
+    {
+      "showdownName": "Arcanine",
+      "id": "arcanine",
+      "usage": 0.0015422578655151142,
+      "usageRank": 175
+    },
+    {
+      "showdownName": "Chesnaught-Mega",
+      "id": "chesnaught-mega",
+      "usage": 0.0015422578655151142,
+      "usageRank": 176
+    },
+    {
+      "showdownName": "Drampa-Mega",
+      "id": "drampa-mega",
+      "usage": 0.0015422578655151142,
+      "usageRank": 177
+    },
+    {
+      "showdownName": "Feraligatr",
+      "id": "feraligatr",
+      "usage": 0.0015422578655151142,
+      "usageRank": 178
+    },
+    {
+      "showdownName": "Feraligatr-Mega",
+      "id": "feraligatr-mega",
+      "usage": 0.0015422578655151142,
+      "usageRank": 179
+    },
+    {
+      "showdownName": "Lopunny",
+      "id": "lopunny",
+      "usage": 0.0015422578655151142,
+      "usageRank": 180
+    },
+    {
+      "showdownName": "Lopunny-Mega",
+      "id": "lopunny-mega",
+      "usage": 0.0015422578655151142,
+      "usageRank": 181
+    },
+    {
+      "showdownName": "Lucario-Mega",
+      "id": "lucario-mega",
+      "usage": 0.0015422578655151142,
+      "usageRank": 182
+    },
+    {
+      "showdownName": "Mudsdale",
+      "id": "mudsdale",
+      "usage": 0.0015422578655151142,
+      "usageRank": 183
+    },
+    {
+      "showdownName": "Overqwil",
+      "id": "overqwil",
+      "usage": 0.0015422578655151142,
+      "usageRank": 184
+    },
+    {
+      "showdownName": "Raichu-Alola",
+      "id": "raichu-alola",
+      "usage": 0.0015422578655151142,
+      "usageRank": 185
+    },
+    {
+      "showdownName": "Sceptile",
+      "id": "sceptile",
+      "usage": 0.0015422578655151142,
+      "usageRank": 186
+    },
+    {
+      "showdownName": "Sceptile-Mega",
+      "id": "sceptile-mega",
+      "usage": 0.0015422578655151142,
+      "usageRank": 187
+    },
+    {
+      "showdownName": "Swalot",
+      "id": "swalot",
+      "usage": 0.0015422578655151142,
+      "usageRank": 188
+    },
+    {
+      "showdownName": "Tauros-Paldea-Aqua",
+      "id": "tauros-paldea-aqua-breed",
+      "usage": 0.0015422578655151142,
+      "usageRank": 189
+    },
+    {
+      "showdownName": "Ampharos",
+      "id": "ampharos",
+      "usage": 0.0012338062924120913,
+      "usageRank": 190
+    },
+    {
+      "showdownName": "Ampharos-Mega",
+      "id": "ampharos-mega",
+      "usage": 0.0012338062924120913,
+      "usageRank": 191
+    },
+    {
+      "showdownName": "Aurorus",
+      "id": "aurorus",
+      "usage": 0.0012338062924120913,
+      "usageRank": 192
+    },
+    {
+      "showdownName": "Decidueye-Hisui",
+      "id": "decidueye-hisui",
+      "usage": 0.0012338062924120913,
+      "usageRank": 193
+    },
+    {
+      "showdownName": "Gliscor",
+      "id": "gliscor",
+      "usage": 0.0012338062924120913,
+      "usageRank": 194
+    },
+    {
+      "showdownName": "Gyarados-Mega",
+      "id": "gyarados-mega",
+      "usage": 0.0012338062924120913,
+      "usageRank": 195
+    },
+    {
+      "showdownName": "Heliolisk",
+      "id": "heliolisk",
+      "usage": 0.0012338062924120913,
+      "usageRank": 196
+    },
+    {
+      "showdownName": "Houndstone",
+      "id": "houndstone",
+      "usage": 0.0012338062924120913,
+      "usageRank": 197
+    },
+    {
+      "showdownName": "Malamar-Mega",
+      "id": "malamar-mega",
+      "usage": 0.0012338062924120913,
+      "usageRank": 198
+    },
+    {
+      "showdownName": "Orthworm",
+      "id": "orthworm",
+      "usage": 0.0012338062924120913,
+      "usageRank": 199
+    },
+    {
+      "showdownName": "Palafin",
+      "id": "palafin-zero",
+      "usage": 0.0012338062924120913,
+      "usageRank": 200
+    },
+    {
+      "showdownName": "Pangoro",
+      "id": "pangoro",
+      "usage": 0.0012338062924120913,
+      "usageRank": 201
+    },
+    {
+      "showdownName": "Perrserker",
+      "id": "perrserker",
+      "usage": 0.0012338062924120913,
+      "usageRank": 202
+    },
+    {
+      "showdownName": "Rhyperior",
+      "id": "rhyperior",
+      "usage": 0.0012338062924120913,
+      "usageRank": 203
+    },
+    {
+      "showdownName": "Starmie",
+      "id": "starmie",
+      "usage": 0.0012338062924120913,
+      "usageRank": 204
+    },
+    {
+      "showdownName": "Arboliva",
+      "id": "arboliva",
+      "usage": 0.0009253547193090684,
+      "usageRank": 205
+    },
+    {
+      "showdownName": "Clawitzer",
+      "id": "clawitzer",
+      "usage": 0.0009253547193090684,
+      "usageRank": 206
+    },
+    {
+      "showdownName": "Ditto",
+      "id": "ditto",
+      "usage": 0.0009253547193090684,
+      "usageRank": 207
+    },
+    {
+      "showdownName": "Dragalge",
+      "id": "dragalge",
+      "usage": 0.0009253547193090684,
+      "usageRank": 208
+    },
+    {
+      "showdownName": "Eelektross",
+      "id": "eelektross",
+      "usage": 0.0009253547193090684,
+      "usageRank": 209
+    },
+    {
+      "showdownName": "Eelektross-Mega",
+      "id": "eelektross-mega",
+      "usage": 0.0009253547193090684,
+      "usageRank": 210
+    },
+    {
+      "showdownName": "Espathra",
+      "id": "espathra",
+      "usage": 0.0009253547193090684,
+      "usageRank": 211
+    },
+    {
+      "showdownName": "Farfetch'd",
+      "id": "farfetchd",
+      "usage": 0.0009253547193090684,
+      "usageRank": 212
+    },
+    {
+      "showdownName": "Flapple",
+      "id": "flapple",
+      "usage": 0.0009253547193090684,
+      "usageRank": 213
+    },
+    {
+      "showdownName": "Florges",
+      "id": "florges",
+      "usage": 0.0009253547193090684,
+      "usageRank": 214
+    },
+    {
+      "showdownName": "Glalie",
+      "id": "glalie",
+      "usage": 0.0009253547193090684,
+      "usageRank": 215
+    },
+    {
+      "showdownName": "Glalie-Mega",
+      "id": "glalie-mega",
+      "usage": 0.0009253547193090684,
+      "usageRank": 216
+    },
+    {
+      "showdownName": "Klefki",
+      "id": "klefki",
+      "usage": 0.0009253547193090684,
+      "usageRank": 217
+    },
+    {
+      "showdownName": "Meowstic",
+      "id": "meowstic-male",
+      "usage": 0.0009253547193090684,
+      "usageRank": 218
+    },
+    {
+      "showdownName": "Noivern",
+      "id": "noivern",
+      "usage": 0.0009253547193090684,
+      "usageRank": 219
+    },
+    {
+      "showdownName": "Rampardos",
+      "id": "rampardos",
+      "usage": 0.0009253547193090684,
+      "usageRank": 220
+    },
+    {
+      "showdownName": "Serperior",
+      "id": "serperior",
+      "usage": 0.0009253547193090684,
+      "usageRank": 221
+    },
+    {
+      "showdownName": "Slowbro-Galar",
+      "id": "slowbro-galar",
+      "usage": 0.0009253547193090684,
+      "usageRank": 222
+    },
+    {
+      "showdownName": "Slowking-Galar",
+      "id": "slowking-galar",
+      "usage": 0.0009253547193090684,
+      "usageRank": 223
+    },
+    {
+      "showdownName": "Starmie-Mega",
+      "id": "starmie-mega",
+      "usage": 0.0009253547193090684,
+      "usageRank": 224
+    },
+    {
+      "showdownName": "Typhlosion",
+      "id": "typhlosion",
+      "usage": 0.0009253547193090684,
+      "usageRank": 225
+    },
+    {
+      "showdownName": "Wyrdeer",
+      "id": "wyrdeer",
+      "usage": 0.0009253547193090684,
+      "usageRank": 226
+    },
+    {
+      "showdownName": "Aromatisse",
+      "id": "aromatisse",
+      "usage": 0.0006169031462060457,
+      "usageRank": 227
+    },
+    {
+      "showdownName": "Avalugg-Hisui",
+      "id": "avalugg-hisui",
+      "usage": 0.0006169031462060457,
+      "usageRank": 228
+    },
+    {
+      "showdownName": "Beedrill",
+      "id": "beedrill",
+      "usage": 0.0006169031462060457,
+      "usageRank": 229
+    },
+    {
+      "showdownName": "Beedrill-Mega",
+      "id": "beedrill-mega",
+      "usage": 0.0006169031462060457,
+      "usageRank": 230
+    },
+    {
+      "showdownName": "Emboar",
+      "id": "emboar",
+      "usage": 0.0006169031462060457,
+      "usageRank": 231
+    },
+    {
+      "showdownName": "Forretress",
+      "id": "forretress",
+      "usage": 0.0006169031462060457,
+      "usageRank": 232
+    },
+    {
+      "showdownName": "Hydrapple",
+      "id": "hydrapple",
+      "usage": 0.0006169031462060457,
+      "usageRank": 233
+    },
+    {
+      "showdownName": "Infernape",
+      "id": "infernape",
+      "usage": 0.0006169031462060457,
+      "usageRank": 234
+    },
+    {
+      "showdownName": "Krookodile",
+      "id": "krookodile",
+      "usage": 0.0006169031462060457,
+      "usageRank": 235
+    },
+    {
+      "showdownName": "Luxray",
+      "id": "luxray",
+      "usage": 0.0006169031462060457,
+      "usageRank": 236
+    },
+    {
+      "showdownName": "Lycanroc",
+      "id": "lycanroc-midday",
+      "usage": 0.0006169031462060457,
+      "usageRank": 237
+    },
+    {
+      "showdownName": "Machamp",
+      "id": "machamp",
+      "usage": 0.0006169031462060457,
+      "usageRank": 238
+    },
+    {
+      "showdownName": "Manectric",
+      "id": "manectric",
+      "usage": 0.0006169031462060457,
+      "usageRank": 239
+    },
+    {
+      "showdownName": "Manectric-Mega",
+      "id": "manectric-mega",
+      "usage": 0.0006169031462060457,
+      "usageRank": 240
+    },
+    {
+      "showdownName": "Pikachu",
+      "id": "pikachu",
+      "usage": 0.0006169031462060457,
+      "usageRank": 241
+    },
+    {
+      "showdownName": "Rotom-Frost",
+      "id": "rotom-frost",
+      "usage": 0.0006169031462060457,
+      "usageRank": 242
+    },
+    {
+      "showdownName": "Runerigus",
+      "id": "runerigus",
+      "usage": 0.0006169031462060457,
+      "usageRank": 243
+    },
+    {
+      "showdownName": "Scolipede",
+      "id": "scolipede",
+      "usage": 0.0006169031462060457,
+      "usageRank": 244
+    },
+    {
+      "showdownName": "Scolipede-Mega",
+      "id": "scolipede-mega",
+      "usage": 0.0006169031462060457,
+      "usageRank": 245
+    },
+    {
+      "showdownName": "Skeledirge",
+      "id": "skeledirge",
+      "usage": 0.0006169031462060457,
+      "usageRank": 246
+    },
+    {
+      "showdownName": "Squawkabilly",
+      "id": "squawkabilly-green-plumage",
+      "usage": 0.0006169031462060457,
+      "usageRank": 247
+    },
+    {
+      "showdownName": "Trevenant",
+      "id": "trevenant",
+      "usage": 0.0006169031462060457,
+      "usageRank": 248
+    },
+    {
+      "showdownName": "Umbreon",
+      "id": "umbreon",
+      "usage": 0.0006169031462060457,
+      "usageRank": 249
+    },
+    {
+      "showdownName": "Absol-Mega",
+      "id": "absol-mega",
+      "usage": 0.00030845157310302283,
+      "usageRank": 250
+    },
+    {
+      "showdownName": "Aegislash Blade Forme",
+      "id": "aegislash-blade",
+      "usage": 0.00030845157310302283,
+      "usageRank": 251
+    },
+    {
+      "showdownName": "Alcremie",
+      "id": "alcremie",
+      "usage": 0.00030845157310302283,
+      "usageRank": 252
+    },
+    {
+      "showdownName": "Arbok",
+      "id": "arbok",
+      "usage": 0.00030845157310302283,
+      "usageRank": 253
+    },
+    {
+      "showdownName": "Audino",
+      "id": "audino",
+      "usage": 0.00030845157310302283,
+      "usageRank": 254
+    },
+    {
+      "showdownName": "Audino-Mega",
+      "id": "audino-mega",
+      "usage": 0.00030845157310302283,
+      "usageRank": 255
+    },
+    {
+      "showdownName": "Barbaracle",
+      "id": "barbaracle",
+      "usage": 0.00030845157310302283,
+      "usageRank": 256
+    },
+    {
+      "showdownName": "Barbaracle-Mega",
+      "id": "barbaracle-mega",
+      "usage": 0.00030845157310302283,
+      "usageRank": 257
+    },
+    {
+      "showdownName": "Bastiodon",
+      "id": "bastiodon",
+      "usage": 0.00030845157310302283,
+      "usageRank": 258
+    },
+    {
+      "showdownName": "Beartic",
+      "id": "beartic",
+      "usage": 0.00030845157310302283,
+      "usageRank": 259
+    },
+    {
+      "showdownName": "Bellibolt",
+      "id": "bellibolt",
+      "usage": 0.00030845157310302283,
+      "usageRank": 260
+    },
+    {
+      "showdownName": "Castform",
+      "id": "castform",
+      "usage": 0.00030845157310302283,
+      "usageRank": 261
+    },
+    {
+      "showdownName": "Clefable-Mega",
+      "id": "clefable-mega",
+      "usage": 0.00030845157310302283,
+      "usageRank": 262
+    },
+    {
+      "showdownName": "Cofagrigus",
+      "id": "cofagrigus",
+      "usage": 0.00030845157310302283,
+      "usageRank": 263
+    },
+    {
+      "showdownName": "Decidueye",
+      "id": "decidueye",
+      "usage": 0.00030845157310302283,
+      "usageRank": 264
+    },
+    {
+      "showdownName": "Dragalge-Mega",
+      "id": "dragalge-mega",
+      "usage": 0.00030845157310302283,
+      "usageRank": 265
+    },
+    {
+      "showdownName": "Emboar-Mega",
+      "id": "emboar-mega",
+      "usage": 0.00030845157310302283,
+      "usageRank": 266
+    },
+    {
+      "showdownName": "Excadrill-Mega",
+      "id": "excadrill-mega",
+      "usage": 0.00030845157310302283,
+      "usageRank": 267
+    },
+    {
+      "showdownName": "Falinks",
+      "id": "falinks",
+      "usage": 0.00030845157310302283,
+      "usageRank": 268
+    },
+    {
+      "showdownName": "Falinks-Mega",
+      "id": "falinks-mega",
+      "usage": 0.00030845157310302283,
+      "usageRank": 269
+    },
+    {
+      "showdownName": "Furfrou",
+      "id": "furfrou",
+      "usage": 0.00030845157310302283,
+      "usageRank": 270
+    },
+    {
+      "showdownName": "Glaceon",
+      "id": "glaceon",
+      "usage": 0.00030845157310302283,
+      "usageRank": 271
+    },
+    {
+      "showdownName": "Goodra",
+      "id": "goodra",
+      "usage": 0.00030845157310302283,
+      "usageRank": 272
+    },
+    {
+      "showdownName": "Gourgeist",
+      "id": "gourgeist-average",
+      "usage": 0.00030845157310302283,
+      "usageRank": 273
+    },
+    {
+      "showdownName": "Heracross",
+      "id": "heracross",
+      "usage": 0.00030845157310302283,
+      "usageRank": 274
+    },
+    {
+      "showdownName": "Heracross-Mega",
+      "id": "heracross-mega",
+      "usage": 0.00030845157310302283,
+      "usageRank": 275
+    },
+    {
+      "showdownName": "Hitmontop",
+      "id": "hitmontop",
+      "usage": 0.00030845157310302283,
+      "usageRank": 276
+    },
+    {
+      "showdownName": "Jolteon",
+      "id": "jolteon",
+      "usage": 0.00030845157310302283,
+      "usageRank": 277
+    },
+    {
+      "showdownName": "Leafeon",
+      "id": "leafeon",
+      "usage": 0.00030845157310302283,
+      "usageRank": 278
+    },
+    {
+      "showdownName": "Mabosstiff",
+      "id": "mabosstiff",
+      "usage": 0.00030845157310302283,
+      "usageRank": 279
+    },
+    {
+      "showdownName": "Persian",
+      "id": "persian",
+      "usage": 0.00030845157310302283,
+      "usageRank": 280
+    },
+    {
+      "showdownName": "Pidgeot",
+      "id": "pidgeot",
+      "usage": 0.00030845157310302283,
+      "usageRank": 281
+    },
+    {
+      "showdownName": "Pidgeot-Mega",
+      "id": "pidgeot-mega",
+      "usage": 0.00030845157310302283,
+      "usageRank": 282
+    },
+    {
+      "showdownName": "Quaquaval",
+      "id": "quaquaval",
+      "usage": 0.00030845157310302283,
+      "usageRank": 283
+    },
+    {
+      "showdownName": "Reuniclus",
+      "id": "reuniclus",
+      "usage": 0.00030845157310302283,
+      "usageRank": 284
+    },
+    {
+      "showdownName": "Rotom-Mow",
+      "id": "rotom-mow",
+      "usage": 0.00030845157310302283,
+      "usageRank": 285
+    },
+    {
+      "showdownName": "Sableye-Mega",
+      "id": "sableye-mega",
+      "usage": 0.00030845157310302283,
+      "usageRank": 286
+    },
+    {
+      "showdownName": "Salazzle",
+      "id": "salazzle",
+      "usage": 0.00030845157310302283,
+      "usageRank": 287
+    },
+    {
+      "showdownName": "Sandaconda",
+      "id": "sandaconda",
+      "usage": 0.00030845157310302283,
+      "usageRank": 288
+    },
+    {
+      "showdownName": "Slowking",
+      "id": "slowking",
+      "usage": 0.00030845157310302283,
+      "usageRank": 289
+    },
+    {
+      "showdownName": "Slurpuff",
+      "id": "slurpuff",
+      "usage": 0.00030845157310302283,
+      "usageRank": 290
+    },
+    {
+      "showdownName": "Tauros-Paldea-Blaze",
+      "id": "tauros-paldea-blaze-breed",
+      "usage": 0.00030845157310302283,
+      "usageRank": 291
+    },
+    {
+      "showdownName": "Toucannon",
+      "id": "toucannon",
+      "usage": 0.00030845157310302283,
+      "usageRank": 292
+    },
+    {
+      "showdownName": "Toxicroak",
+      "id": "toxicroak",
+      "usage": 0.00030845157310302283,
+      "usageRank": 293
     }
   ]
 }

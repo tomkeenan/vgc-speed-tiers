@@ -32,7 +32,8 @@
     "deckLabel": "Pakka: {{name}}"
   },
   "decks": {
-    "allPokemon": "Kaikki Pokémonit"
+    "allPokemon": "Kaikki Pokémonit",
+    "meta": "Meta"
   },
   "flashcards": {
     "prompt": "Napauta korttia paljastaaksesi sen perusnopeuden.",
@@ -83,6 +84,7 @@
       "intro": "Pakka on mukautettu lista Pokémoneja.",
       "pick": "Valitse pakka otsikon <icon/>-valikosta käyttääksesi vain kyseisiä Pokémoneja jokaisessa pelitilassa.",
       "allDeck": "Sisäänrakennettu Kaikki Pokémonit -pakka käyttää koko aineistoa.",
+      "metaDeck": "Sisäänrakennettu Meta-pakka sisältää 50 käytetyintä Pokémonia viimeaikaisista turnauksista.",
       "streaks": "Putket ovat sidottuja kuhunkin pakkaan ja tilaan, joten älä hätäänny, jos pakan vaihtaminen nollaa putkesi.",
       "manage": "Luo, muokkaa ja jaa omia pakkojasi alla."
     },

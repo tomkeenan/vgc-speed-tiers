@@ -6,6 +6,8 @@ import type { Pokemon } from '../lib/types';
 import {
   ALL_DECK_ID,
   loadState,
+  META_DECK_ID,
+  META_DECK_SIZE,
   newDeckId,
   saveState,
   type PersistedState,
@@ -53,13 +55,29 @@ export function DecksProvider({ children }: { children: ReactNode }) {
     [t],
   );
 
+  // The built-in Meta deck: the top-usage Pokemon, resolved fresh from the dataset each render so it
+  // always tracks the current tournament data. Members are ids, so it flows through like any deck.
+  const metaDeck = useMemo<Deck>(
+    () => ({
+      id: META_DECK_ID,
+      name: t('decks.meta'),
+      pokemonIds: getAllPokemon()
+        .slice(0, META_DECK_SIZE)
+        .map((p) => p.id),
+      isBuiltIn: true,
+    }),
+    [t],
+  );
+
   const decks = useMemo<Deck[]>(
-    () => [allDeck, ...state.decks.map(toDeck)],
-    [allDeck, state.decks],
+    () => [allDeck, metaDeck, ...state.decks.map(toDeck)],
+    [allDeck, metaDeck, state.decks],
   );
 
   const activeDeckId = useMemo(() => {
-    if (state.activeDeckId === ALL_DECK_ID) return ALL_DECK_ID;
+    if (state.activeDeckId === ALL_DECK_ID || state.activeDeckId === META_DECK_ID) {
+      return state.activeDeckId;
+    }
     return state.decks.some((d) => d.id === state.activeDeckId) ? state.activeDeckId : ALL_DECK_ID;
   }, [state.activeDeckId, state.decks]);
 

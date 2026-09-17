@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { act, render, screen } from '@testing-library/react';
 import { getAllPokemon } from '../lib/data';
 import { DecksProvider, useDecks, type DecksApi } from './DecksContext';
+import { META_DECK_SIZE } from './store';
 
 function capture(onReady: (api: DecksApi) => void) {
   function Probe() {
@@ -54,9 +55,25 @@ describe('DecksContext', () => {
     });
     act(() => api.setActiveDeck(id));
 
-    expect(screen.getByTestId('decks').textContent).toBe('2');
+    // Built-in All + Meta, plus the new user deck.
+    expect(screen.getByTestId('decks').textContent).toBe('3');
     expect(api.activeDeckId).toBe(id);
     expect(api.activePokemon.map((p) => p.id)).toEqual([all[0].id, all[2].id]);
+  });
+
+  it('exposes a built-in Meta deck of the top-usage Pokemon', () => {
+    let api!: DecksApi;
+    capture((a) => (api = a));
+    const all = getAllPokemon();
+    const top = all.slice(0, Math.min(META_DECK_SIZE, all.length)).map((p) => p.id);
+
+    const meta = api.decks.find((d) => d.id === 'meta');
+    expect(meta?.isBuiltIn).toBe(true);
+    expect(meta?.pokemonIds).toEqual(top);
+
+    act(() => api.setActiveDeck('meta'));
+    expect(api.activeDeckId).toBe('meta');
+    expect(api.activePokemon.map((p) => p.id)).toEqual(top);
   });
 
   it('does not auto-activate a newly created deck', () => {
@@ -81,12 +98,14 @@ describe('DecksContext', () => {
     expect(api.activeDeckId).toBe('all');
   });
 
-  it('does not mutate the built-in All deck', () => {
+  it('does not mutate the built-in decks', () => {
     let api!: DecksApi;
     capture((a) => (api = a));
     act(() => api.renameDeck('all', 'Nope'));
     act(() => api.deleteDeck('all'));
+    act(() => api.deleteDeck('meta'));
     expect(api.decks[0].name).toBe('All Pokemon');
-    expect(api.decks.length).toBe(1);
+    // The two built-in decks survive rename/delete attempts.
+    expect(api.decks.length).toBe(2);
   });
 });
