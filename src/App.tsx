@@ -56,7 +56,6 @@ export default function App() {
           onOpenSettings={() => setSettingsOpen(true)}
           onToggleLeaderboard={() => setShowLeaderboard((v) => !v)}
           leaderboardActive={showLeaderboard}
-          settingsActive={settingsOpen}
         />
 
         <TabNav

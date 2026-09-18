@@ -1,12 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { AuthControl } from './AuthControl';
+import { AccountMenu } from './AccountMenu';
 import { DeckSelector } from './DeckSelector';
-import { GearIcon } from './GearIcon';
 import { HeaderIconButton } from './HeaderIconButton';
 import { LeaderboardIcon } from './LeaderboardIcon';
-import { ThemeToggle } from './ThemeToggle';
 import { useAuth } from '../auth/AuthContext';
 
 interface HeaderProps {
@@ -14,21 +12,17 @@ interface HeaderProps {
   onToggleLeaderboard: () => void;
   /** Whether the leaderboard screen is currently open, so the crown reads as active. */
   leaderboardActive: boolean;
-  /** Whether the settings dialog is currently open, so the cog reads as active. */
-  settingsActive: boolean;
 }
 
 /**
- * The app header: title on the left, deck / theme / leaderboard / settings controls on the right.
- * The leaderboard crown only shows when sign-in is configured (ranked is an account feature) and
- * toggles its own screen.
- * Takes onOpenSettings and onToggleLeaderboard handlers plus the leaderboard's open state.
+ * The app header: title on the left, and the deck selector, leaderboard crown and account menu on the
+ * right. The crown only renders when sign-in is configured. Takes onOpenSettings and
+ * onToggleLeaderboard handlers plus the leaderboard's open state; returns the element.
  */
 export function Header({
   onOpenSettings,
   onToggleLeaderboard,
   leaderboardActive,
-  settingsActive,
 }: HeaderProps) {
   const { t } = useTranslation();
   const { configured } = useAuth();
@@ -48,7 +42,6 @@ export function Header({
 
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, flexShrink: 0 }}>
         <DeckSelector />
-        <ThemeToggle />
         {configured && (
           <HeaderIconButton
             label={t('ranked.leaderboard')}
@@ -58,14 +51,7 @@ export function Header({
             <LeaderboardIcon />
           </HeaderIconButton>
         )}
-        <HeaderIconButton
-          label={t('header.settings')}
-          active={settingsActive}
-          onClick={onOpenSettings}
-        >
-          <GearIcon />
-        </HeaderIconButton>
-        <AuthControl />
+        <AccountMenu onOpenSettings={onOpenSettings} />
       </Box>
     </Box>
   );

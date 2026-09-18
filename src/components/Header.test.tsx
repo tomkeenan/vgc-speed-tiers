@@ -23,7 +23,6 @@ const renderHeader = (props: Partial<Parameters<typeof Header>[0]> = {}) =>
           onOpenSettings={vi.fn()}
           onToggleLeaderboard={vi.fn()}
           leaderboardActive={false}
-          settingsActive={false}
           {...props}
         />
       </DecksProvider>
@@ -36,12 +35,16 @@ afterEach(() => {
 });
 
 describe('Header', () => {
-  it('renders the title and fires onOpenSettings when the cog is clicked', async () => {
+  it('renders the title and fires onOpenSettings from the account menu', async () => {
+    // Configured, so the menu trigger is the account icon and the Settings item inside it is the
+    // only control named "Settings" - no collision with the trigger.
+    configured = true;
     const onOpenSettings = vi.fn();
     renderHeader({ onOpenSettings });
 
     expect(screen.getByRole('heading', { name: 'Just Move First' })).toBeTruthy();
 
+    await userEvent.click(screen.getByRole('button', { name: 'Account' }));
     await userEvent.click(screen.getByRole('button', { name: 'Settings' }));
     expect(onOpenSettings).toHaveBeenCalledTimes(1);
   });
