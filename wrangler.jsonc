@@ -1,24 +1,23 @@
 {
-  "name": "vgc-speed-tiers",
-  "compatibility_date": "2026-09-11",
-  "main": "worker/index.ts",
-  "assets": {
-    "directory": "./dist",
-    "binding": "ASSETS",
-    "not_found_handling": "single-page-application",
-  },
-  "vars": {
-    // Public OAuth client id (safe to commit). Overridden per-env via `wrangler secret`/dashboard
-    // if you prefer; local `wrangler dev` reads it from .dev.vars.
-    "GOOGLE_CLIENT_ID": "",
-  },
-  "d1_databases": [
-    {
-      "binding": "DB",
-      "database_name": "speedtiers",
-      // Local `wrangler dev`/migrations use a local SQLite keyed by the binding and ignore this id.
-      // Replace with the real id from `wrangler d1 create speedtiers` before deploying.
-      "database_id": "REPLACE_WITH_REAL_D1_ID",
-    },
-  ],
+	"name": "vgc-speed-tiers",
+	"compatibility_date": "2026-09-11",
+	"main": "worker/index.ts",
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS",
+		"not_found_handling": "single-page-application",
+	},
+	"vars": {
+		// Public OAuth client id (safe to commit). Overridden per-env via `wrangler secret`/dashboard
+		// if you prefer; local `wrangler dev` reads it from .dev.vars.
+		"GOOGLE_CLIENT_ID": "599355306407-o7no4ijq6ra3obdh81m7j0b98l30hjbd.apps.googleusercontent.com",
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "speedtiers",
+			// Local `wrangler dev`/migrations use a local SQLite keyed by the binding and ignore this id.
+			"database_id": "c5047834-1cca-46d5-a9f9-b66d0accb4b3",
+		},
+	],
 }
