@@ -8,11 +8,16 @@ import { ALL_DECK_ID } from '../decks/store';
 import { HeaderIconButton } from './HeaderIconButton';
 import { PokeballIcon } from './PokeballIcon';
 
+interface DeckSelectorProps {
+  /** Greys the button out and blocks the menu; used in ranked, which always plays the full roster. */
+  disabled?: boolean;
+}
+
 /**
  * A Poke Ball button that opens a menu of decks and switches the active one.
  * Returns the element.
  */
-export function DeckSelector() {
+export function DeckSelector({ disabled = false }: DeckSelectorProps) {
   const { t } = useTranslation();
   const { decks, activeDeckId, activeDeck, setActiveDeck } = useDecks();
   const poolSize = useMemo(() => getAllPokemon().length, []);
@@ -31,6 +36,7 @@ export function DeckSelector() {
       <HeaderIconButton
         label={t('deckSelector.deckLabel', { name: activeDeck.name })}
         active={open}
+        disabled={disabled}
         aria-pressed={undefined}
         aria-haspopup="true"
         aria-expanded={open ? true : undefined}

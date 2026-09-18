@@ -7,7 +7,7 @@ import { AuthProvider } from '../auth/AuthContext';
 import { renderWithTheme } from '../test/renderWithTheme';
 
 // Sign-in configuration is toggled per test; loadGoogleIdentity never resolves so no Google UI
-// mounts. Header only reads `configured` to decide whether the leaderboard crown shows.
+// mounts. Header only reads `configured` to decide whether the Practice/Ranked switch shows.
 let configured = false;
 vi.mock('../auth/googleIdentity', () => ({
   isAuthConfigured: () => configured,
@@ -21,8 +21,6 @@ const renderHeader = (props: Partial<Parameters<typeof Header>[0]> = {}) =>
       <DecksProvider>
         <Header
           onOpenSettings={vi.fn()}
-          onToggleLeaderboard={vi.fn()}
-          leaderboardActive={false}
           ranked={false}
           onRankedChange={vi.fn()}
           {...props}
@@ -58,19 +56,6 @@ describe('Header', () => {
     expect(onOpenSettings).toHaveBeenCalledTimes(1);
   });
 
-  it('hides the leaderboard crown when sign-in is not configured', () => {
-    renderHeader();
-    expect(screen.queryByRole('button', { name: 'Leaderboard' })).toBeNull();
-  });
-
-  it('shows the crown and toggles the leaderboard when configured', async () => {
-    configured = true;
-    const onToggleLeaderboard = vi.fn();
-    renderHeader({ onToggleLeaderboard });
-    await userEvent.click(screen.getByRole('button', { name: 'Leaderboard' }));
-    expect(onToggleLeaderboard).toHaveBeenCalledTimes(1);
-  });
-
   it('hides the mode switch when sign-in is not configured', () => {
     renderHeader();
     expect(screen.queryByRole('button', { name: 'Practice' })).toBeNull();
@@ -96,25 +81,19 @@ describe('Header', () => {
     expect(onRankedChange).toHaveBeenCalledWith(true);
   });
 
-  it('hides the deck selector in ranked mode', () => {
+  it('greys out the deck selector in ranked mode', () => {
     configured = true;
     signIn();
     const { rerender } = renderHeader({ ranked: false });
-    expect(screen.getByRole('button', { name: /Deck:/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Deck:/ })).toBeEnabled();
 
     rerender(
       <AuthProvider>
         <DecksProvider>
-          <Header
-            onOpenSettings={vi.fn()}
-            onToggleLeaderboard={vi.fn()}
-            leaderboardActive={false}
-            ranked
-            onRankedChange={vi.fn()}
-          />
+          <Header onOpenSettings={vi.fn()} ranked onRankedChange={vi.fn()} />
         </DecksProvider>
       </AuthProvider>,
     );
-    expect(screen.queryByRole('button', { name: /Deck:/ })).toBeNull();
+    expect(screen.getByRole('button', { name: /Deck:/ })).toBeDisabled();
   });
 });

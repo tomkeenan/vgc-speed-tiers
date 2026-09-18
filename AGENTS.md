@@ -15,7 +15,8 @@ This file is the contract every agent works to. Read it fully before writing cod
    (`schema/pokemon.schema.json`), the `src/lib/speed.ts` API, and the fixture
    (`data/pokemon.sample.json`). These do not change without updating this file.
 4. **Definition of Done:** `npm run typecheck`, `npm run lint`, `npm run test`, and `npm run format`
-   all pass (`npm run check` runs the first three); `npm run dev` boots with no console errors.
+   all pass (`npm run check` runs the first three); `npm run dev` boots with no console errors; and
+   `~/.git-hooks/check-new-comments.sh` passes (the comment gate - see Conventions).
 5. **Every user-facing string is translated.** Never hardcode display text. Route it through
    `t('namespace.key')` / `<Trans>` and add the key to `src/locales/en.json` (see i18n conventions
    below). `npm run lint` fails on any literal string in JSX; `npm run test` fails if a used key is
@@ -64,6 +65,15 @@ This file is the contract every agent works to. Read it fully before writing cod
    * Takes a base Speed and level (default 50), returns SpeedTiers.
    */
   ```
+- **The comment gate runs on every commit.** `~/.git-hooks/check-new-comments.sh` blocks any commit
+  that adds a plain-line (`//`) comment. Before committing, run it and clear each new line: a comment
+  that says WHAT the code does means renaming or extracting a well-named function so it reads for
+  itself; a comment that pins a WHY / constraint (a magic number, an ordering, a retry count) means
+  writing a test that fails if the reason is violated. Only `/** ... */` JSDoc is exempt, so prefer it
+  for the sanctioned function/component doc above. Do **not** use the `ALLOW_NEW_COMMENTS=true`
+  override to get a commit through - that flag is a deliberate human decision, not an agent's. If a
+  comment is genuinely unavoidable (a vendor-bug workaround, a spec reference, a security invariant),
+  stop and surface it to the human rather than overriding.
 - **Tests = Vitest only.** Keep them simple and minimal. Co-locate as `*.test.ts(x)` next to the
   code. Test behavior, not implementation. Core logic (`speed.ts`) gets real assertions; components
   get a single smoke test.

@@ -13,15 +13,24 @@ interface HeaderIconButtonProps extends Omit<ComponentProps<typeof IconButton>, 
 /**
  * A header control icon button. Renders in the primary colour while the surface it opens is open and
  * the usual text colour otherwise, so the deck, leaderboard, settings and account controls all read
- * the same way. Takes a label, active flag and the icon, forwards any other IconButton props (with
- * sx merged onto the colour rule); returns the element.
+ * the same way. The disabled state greys out with a solid colour dimmed by one element-level opacity
+ * so the icon composites as a single layer: MUI's default semi-transparent disabled colour stacks
+ * alpha where a glyph's strokes overlap (e.g. the Poke Ball's centre) and darkens those spots. Takes
+ * a label, active flag and the icon, forwards any other IconButton props (with sx merged onto the
+ * colour rule); returns the element.
  */
 export function HeaderIconButton({ label, active = false, children, sx, ...rest }: HeaderIconButtonProps) {
   return (
     <IconButton
       aria-label={label}
       aria-pressed={active}
-      sx={[{ color: active ? 'primary.main' : 'text.primary' }, ...(Array.isArray(sx) ? sx : [sx])]}
+      sx={[
+        {
+          color: active ? 'primary.main' : 'text.primary',
+          '&.Mui-disabled': { color: active ? 'primary.main' : 'text.primary', opacity: 0.38 },
+        },
+        ...(Array.isArray(sx) ? sx : [sx]),
+      ]}
       {...rest}
     >
       {children}

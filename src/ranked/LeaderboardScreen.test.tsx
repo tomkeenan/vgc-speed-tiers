@@ -33,10 +33,10 @@ const boards = (
 ): LeaderboardResult[] =>
   BOARD_KEYS.map((board) => ({ board, entries: entriesFor(board), me: null, ...over[board] }));
 
-const renderScreen = (onClose = vi.fn()) =>
+const renderScreen = () =>
   renderWithTheme(
     <AuthProvider>
-      <LeaderboardScreen initialBoard="faster:standard" onClose={onClose} />
+      <LeaderboardScreen initialBoard="faster:standard" />
     </AuthProvider>,
   );
 
@@ -158,13 +158,5 @@ describe('LeaderboardScreen', () => {
     expect(screen.queryByRole('progressbar')).not.toBeInTheDocument();
     // A background revalidation still fires.
     expect(fetchAllLeaderboards).toHaveBeenCalledWith(10);
-  });
-
-  it('closes when the close control is clicked', async () => {
-    const onClose = vi.fn();
-    renderScreen(onClose);
-    await screen.findByText('Ash');
-    await userEvent.click(screen.getByRole('button', { name: 'Close leaderboard' }));
-    expect(onClose).toHaveBeenCalledTimes(1);
   });
 });

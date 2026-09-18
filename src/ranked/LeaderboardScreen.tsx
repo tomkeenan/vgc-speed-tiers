@@ -3,16 +3,10 @@ import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import CircularProgress from '@mui/material/CircularProgress';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
-import { useMediaQuery, useTheme } from '@mui/material';
-import { CloseIcon } from '../components/CloseIcon';
 import { TrophyIcon } from '../components/TrophyIcon';
 import { useAuth } from '../auth/AuthContext';
 import { fasterBoard, HOWFAST_BOARD, type BoardKey } from '../../worker/boards';
@@ -32,8 +26,7 @@ function decompose(board: BoardKey): { game: Game; hard: boolean; natures: boole
 
 interface LeaderboardScreenProps {
   /** The board to open on; the game tab and modifier chips can switch it afterwards. */
-  initialBoard: BoardKey;
-  onClose: () => void;
+  initialBoard?: BoardKey;
 }
 
 const ROW_COLUMNS = '2.5rem 1fr auto';
@@ -133,15 +126,13 @@ function Row({
 }
 
 /**
- * The ranked leaderboard modal: a tab per game (Who's Faster? / How Fast?) over a scrollable top-N
- * list. Who's Faster? carries independent Hard and Natures toggle chips that switch between its four
- * boards. Opens on the board matching the current game, highlights the signed-in player's rows, and
- * surfaces their own standing at the foot even when they are not in the visible top-N.
+ * The ranked leaderboard: a tab per game (Who's Faster? / How Fast?) over a scrollable top-N list.
+ * Who's Faster? carries independent Hard and Natures toggle chips that switch between its four boards.
+ * Opens on the board matching the current game, highlights the signed-in player's rows, and surfaces
+ * their own standing at the foot even when they are not in the visible top-N.
  */
-export function LeaderboardScreen({ initialBoard, onClose }: LeaderboardScreenProps) {
+export function LeaderboardScreen({ initialBoard = 'faster:standard' }: LeaderboardScreenProps) {
   const { t } = useTranslation();
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const { user } = useAuth();
   const initial = decompose(initialBoard);
   const [game, setGame] = useState<Game>(initial.game);
@@ -270,79 +261,50 @@ export function LeaderboardScreen({ initialBoard, onClose }: LeaderboardScreenPr
   );
 
   return (
-    <Dialog
-      open
-      onClose={onClose}
-      fullWidth
-      maxWidth="sm"
-      fullScreen={fullScreen}
-      // The modal sizes to its content (the rows plus the "you" footer), so short boards leave no
-      // dead space. MUI still caps the height to the viewport, scrolling the list if a board is tall.
-    >
-      <DialogTitle
-        sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1 }}
+    <Stack spacing={2}>
+      {/* One tab per game. The modifier chips sit below the list so switching tabs never
+          shifts it, and their row height is reserved on every tab so the board keeps a
+          constant size (only the Who's Faster? tab actually fills the row). */}
+      <Tabs
+        value={game}
+        onChange={(_, next: Game) => setGame(next)}
+        variant="fullWidth"
+        aria-label={t('ranked.leaderboardTitle')}
       >
-        <Box component="span" sx={{ fontWeight: 700 }}>
-          {t('ranked.leaderboardTitle')}
-        </Box>
-        <IconButton
-          aria-label={t('ranked.closeLeaderboard')}
-          onClick={onClose}
-          sx={{ color: 'text.primary' }}
-        >
-          <CloseIcon />
-        </IconButton>
-      </DialogTitle>
+        <Tab value="faster" label={t('ranked.games.faster')} />
+        <Tab value="howfast" label={t('ranked.games.howFast')} />
+      </Tabs>
 
-      <DialogContent dividers>
-        <Stack spacing={2}>
-          {/* One tab per game. The modifier chips sit below the list so switching tabs never
-              shifts it, and their row height is reserved on every tab so the modal keeps a
-              constant size (only the Who's Faster? tab actually fills the row). */}
-          <Tabs
-            value={game}
-            onChange={(_, next: Game) => setGame(next)}
-            variant="fullWidth"
-            aria-label={t('ranked.leaderboardTitle')}
-          >
-            <Tab value="faster" label={t('ranked.games.faster')} />
-            <Tab value="howfast" label={t('ranked.games.howFast')} />
-          </Tabs>
+      <Box sx={{ minHeight: BODY_MIN_HEIGHT }}>{body()}</Box>
 
-          <Box sx={{ minHeight: BODY_MIN_HEIGHT }}>{body()}</Box>
+      {/* Modifier chips: each toggles its own Who's Faster? board. Off by default (outlined),
+          primary and filled when on. Hard and Natures are independent. The row's height is
+          reserved (MUI Chip default, 32px) even on the How Fast? tab so the board never
+          resizes when tabs change. */}
+      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, minHeight: 32 }}>
+        {game === 'faster' && (
+          <>
+            <Chip
+              label={t('ranked.chips.hard')}
+              clickable
+              color={hard ? 'primary' : 'default'}
+              variant={hard ? 'filled' : 'outlined'}
+              onClick={() => setHard((on) => !on)}
+              aria-pressed={hard}
+            />
+            <Chip
+              label={t('ranked.chips.natures')}
+              clickable
+              color={natures ? 'primary' : 'default'}
+              variant={natures ? 'filled' : 'outlined'}
+              onClick={() => setNatures((on) => !on)}
+              aria-pressed={natures}
+            />
+          </>
+        )}
+      </Box>
 
-          {/* Modifier chips: each toggles its own Who's Faster? board. Off by default (outlined),
-              primary and filled when on. Hard and Natures are independent. The row's height is
-              reserved (MUI Chip default, 32px) even on the How Fast? tab so the modal never
-              resizes when tabs change. */}
-          <Box
-            sx={{ display: 'flex', justifyContent: 'center', gap: 1, minHeight: 32 }}
-          >
-            {game === 'faster' && (
-              <>
-                <Chip
-                  label={t('ranked.chips.hard')}
-                  clickable
-                  color={hard ? 'primary' : 'default'}
-                  variant={hard ? 'filled' : 'outlined'}
-                  onClick={() => setHard((on) => !on)}
-                  aria-pressed={hard}
-                />
-                <Chip
-                  label={t('ranked.chips.natures')}
-                  clickable
-                  color={natures ? 'primary' : 'default'}
-                  variant={natures ? 'filled' : 'outlined'}
-                  onClick={() => setNatures((on) => !on)}
-                  aria-pressed={natures}
-                />
-              </>
-            )}
-          </Box>
-
-          {data && meFooter()}
-        </Stack>
-      </DialogContent>
-    </Dialog>
+      {data && meFooter()}
+    </Stack>
   );
 }
