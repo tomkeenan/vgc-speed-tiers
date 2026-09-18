@@ -117,20 +117,22 @@ describe('LeaderboardScreen', () => {
     expect(fetchAllLeaderboards).toHaveBeenCalledTimes(1);
   });
 
-  it('toggles the Hard and Natures chips as independent boards', async () => {
+  it('switches the Who’s Faster? board from the Mode dropdown', async () => {
     renderScreen();
     await screen.findByText('Ash');
 
-    // Natures on its own is a board of its own, no Hard required.
-    await userEvent.click(screen.getByRole('button', { name: 'Natures' }));
+    const pickMode = async (name: string) => {
+      await userEvent.click(screen.getByRole('combobox', { name: 'Mode' }));
+      await userEvent.click(await screen.findByRole('option', { name }));
+    };
+
+    await pickMode('Natures');
     expect(await screen.findByText('NatureAce')).toBeInTheDocument();
 
-    // Adding Hard moves to the combined board.
-    await userEvent.click(screen.getByRole('button', { name: 'Hard' }));
+    await pickMode('Hard + Natures');
     expect(await screen.findByText('ComboAce')).toBeInTheDocument();
 
-    // Dropping Natures leaves the Hard-only board.
-    await userEvent.click(screen.getByRole('button', { name: 'Natures' }));
+    await pickMode('Hard');
     expect(await screen.findByText('HardAce')).toBeInTheDocument();
 
     // Still just the single open request across every switch.

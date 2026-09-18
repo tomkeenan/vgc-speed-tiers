@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -9,6 +9,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { Button } from '../components/Button';
 import { MedalIcon } from '../components/MedalIcon';
+import { StarIcon } from '../components/StarIcon';
 import { TrophyIcon } from '../components/TrophyIcon';
 import type { BoardKey } from '../../worker/boards';
 import type { Celebration } from './celebration';
@@ -24,6 +25,14 @@ interface CelebrationDialogProps {
 }
 
 type Variant = 'rank1' | 'rank2' | 'rank3' | 'top' | 'pb';
+
+type BodyKey = `ranked.celebration.${
+  | 'rank1Body'
+  | 'rank2Body'
+  | 'rank3Body'
+  | 'topBody'
+  | 'pbBody'
+  | 'practiceBody'}`;
 
 function variantFor(rank: number | null): Variant {
   if (rank === 1) return 'rank1';
@@ -50,6 +59,7 @@ export function CelebrationDialog({ celebration, onClose, onViewLeaderboard }: C
     if (celebration) void fireCelebration(celebration).catch(() => {});
   }, [celebration]);
 
+  const practiceBest = variant === 'pb' && board == null;
   const iconColor =
     variant === 'rank1'
       ? MEDAL_TRIM[1]
@@ -57,43 +67,28 @@ export function CelebrationDialog({ celebration, onClose, onViewLeaderboard }: C
         ? MEDAL_TRIM[2]
         : variant === 'rank3'
           ? MEDAL_TRIM[3]
-          : 'primary.main';
+          : practiceBest
+            ? 'gold.main'
+            : 'primary.main';
 
-  const heading = (): { title: string; body: string } => {
+  // Returns the body's key and values (not a resolved string) so <Trans> keeps the <strong> markup.
+  const heading = (): { title: string; bodyKey: BodyKey; values: Record<string, number> } => {
     switch (variant) {
       case 'rank1':
-        return {
-          title: t('ranked.celebration.rank1Title'),
-          body: t('ranked.celebration.rank1Body', { streak }),
-        };
+        return { title: t('ranked.celebration.rank1Title'), bodyKey: 'ranked.celebration.rank1Body', values: { streak } };
       case 'rank2':
-        return {
-          title: t('ranked.celebration.rank2Title'),
-          body: t('ranked.celebration.rank2Body', { streak }),
-        };
+        return { title: t('ranked.celebration.rank2Title'), bodyKey: 'ranked.celebration.rank2Body', values: { streak } };
       case 'rank3':
-        return {
-          title: t('ranked.celebration.rank3Title'),
-          body: t('ranked.celebration.rank3Body', { streak }),
-        };
+        return { title: t('ranked.celebration.rank3Title'), bodyKey: 'ranked.celebration.rank3Body', values: { streak } };
       case 'top':
-        return {
-          title: t('ranked.celebration.topTitle'),
-          body: t('ranked.celebration.topBody', { streak, rank }),
-        };
+        return { title: t('ranked.celebration.topTitle'), bodyKey: 'ranked.celebration.topBody', values: { streak, rank: rank ?? 0 } };
       default:
         return board != null
-          ? {
-              title: t('ranked.celebration.pbTitle'),
-              body: t('ranked.celebration.pbBody', { streak }),
-            }
-          : {
-              title: t('ranked.celebration.practiceTitle'),
-              body: t('ranked.celebration.practiceBody', { streak }),
-            };
+          ? { title: t('ranked.celebration.pbTitle'), bodyKey: 'ranked.celebration.pbBody', values: { streak } }
+          : { title: t('ranked.celebration.practiceTitle'), bodyKey: 'ranked.celebration.practiceBody', values: { streak } };
     }
   };
-  const { title, body } = heading();
+  const { title, bodyKey, values } = heading();
 
   const viewLeaderboard = () => {
     if (board) onViewLeaderboard?.(board);
@@ -107,12 +102,28 @@ export function CelebrationDialog({ celebration, onClose, onViewLeaderboard }: C
           <DialogContent sx={{ pt: 4, pb: 2 }}>
             <Stack spacing={2} alignItems="center" sx={{ textAlign: 'center' }}>
               <Box sx={{ color: iconColor }}>
-                {variant === 'top' ? <MedalIcon size={56} /> : <TrophyIcon size={56} />}
+                {practiceBest ? (
+                  <StarIcon size={56} />
+                ) : variant === 'top' ? (
+                  <MedalIcon size={56} />
+                ) : (
+                  <TrophyIcon size={56} />
+                )}
               </Box>
               <Typography variant="h5" sx={{ fontWeight: 800 }}>
                 {title}
               </Typography>
-              <Typography sx={{ color: 'text.secondary' }}>{body}</Typography>
+              <Typography sx={{ color: 'text.secondary' }}>
+                <Trans
+                  i18nKey={bodyKey}
+                  values={values}
+                  components={{
+                    strong: (
+                      <Box component="strong" sx={{ color: 'gold.main', fontWeight: 700 }} />
+                    ),
+                  }}
+                />
+              </Typography>
             </Stack>
           </DialogContent>
           <DialogActions sx={{ justifyContent: 'center', pb: 3 }}>

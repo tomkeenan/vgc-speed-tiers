@@ -216,7 +216,7 @@ export function HowFast({ ranked = false, onViewLeaderboard }: HowFastProps) {
           {masked ? <MysteryArt /> : <PokemonImage src={pokemon.sprite} name={name} eager />}
         </Box>
         <Typography variant="h6" sx={{ fontWeight: 700, color: 'text.primary' }}>
-          {masked ? t('common.unknown') : name}
+          {masked ? t('common.unown') : name}
         </Typography>
         {masked ? (
           <Box aria-hidden sx={{ visibility: 'hidden' }}>
@@ -235,20 +235,20 @@ export function HowFast({ ranked = false, onViewLeaderboard }: HowFastProps) {
     <Stack spacing={2}>
       <Stack direction="row" spacing={{ xs: 1, sm: 1.5 }}>
         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-          <StreakStat value={streak} label={t('common.streak')} color="primary.main" />
+          <StreakStat value={streak} label={t('common.streak')} color="text.primary" />
         </Box>
-        {/* Ranked adds a per-round countdown between the counters; the last second flashes red. */}
+        {/* Ranked adds a per-round countdown between the counters; it darkens on the last second. */}
         {ranked && (
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
             <StreakStat
               value={secondsLeft}
               label={t('common.time')}
-              color={secondsLeft <= 1 ? 'error.main' : 'text.primary'}
+              color={secondsLeft <= 1 ? 'primary.dark' : 'primary.main'}
             />
           </Box>
         )}
         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-          <StreakStat value={best} label={t('common.best')} color="text.primary" />
+          <StreakStat value={best} label={t('common.best')} color="gold.main" />
         </Box>
       </Stack>
 

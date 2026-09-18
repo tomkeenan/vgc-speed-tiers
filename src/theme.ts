@@ -3,9 +3,11 @@ import { createTheme } from '@mui/material/styles';
 declare module '@mui/material/styles' {
   interface Palette {
     speed: Palette['primary'];
+    gold: Palette['primary'];
   }
   interface PaletteOptions {
     speed?: PaletteOptions['primary'];
+    gold?: PaletteOptions['primary'];
   }
   interface Theme {
     tokens: {
@@ -32,6 +34,7 @@ export const theme = createTheme({
         primary: { main: '#ef4444', dark: '#b91c1c', contrastText: WHITE },
         success: { main: '#16a34a', dark: '#15803d', contrastText: WHITE },
         speed: { main: '#2563eb', dark: '#1d4ed8', contrastText: WHITE },
+        gold: { main: '#ca8a04', dark: '#a16207', contrastText: WHITE },
         text: { primary: '#18181b', secondary: '#71717a' },
         background: { paper: WHITE, default: '#f4f4f5' },
         divider: 'rgba(24, 24, 27, 0.1)',
@@ -42,6 +45,7 @@ export const theme = createTheme({
         primary: { main: '#f87171', dark: '#ef4444', contrastText: '#18181b' },
         success: { main: '#22c55e', dark: '#16a34a', contrastText: '#18181b' },
         speed: { main: '#60a5fa', dark: '#3b82f6', contrastText: '#18181b' },
+        gold: { main: '#facc15', dark: '#eab308', contrastText: '#18181b' },
         text: { primary: '#f4f4f5', secondary: '#a1a1aa' },
         background: { paper: '#27272a', default: '#18181b' },
         divider: 'rgba(244, 244, 245, 0.12)',

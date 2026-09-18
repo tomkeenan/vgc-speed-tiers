@@ -152,7 +152,11 @@ describe('FasterGame', () => {
 
     expect(screen.getByText('New PB!')).toBeTruthy();
     expect(
-      screen.getByText('A streak of 1 beats your record. Ready to make it count in Ranked?'),
+      screen.getByText(
+        (_content, el) =>
+          el?.tagName === 'P' &&
+          el.textContent === 'A streak of 1 beats your record. Ready to make it count in Ranked?',
+      ),
     ).toBeTruthy();
   });
 

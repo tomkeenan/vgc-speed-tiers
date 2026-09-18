@@ -7,37 +7,34 @@ function prefersReducedMotion(): boolean {
   return typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
-function tierFor(rank: number | null): { particleCount: number; colors?: string[]; grand: boolean } {
+function tierFor(rank: number | null): { particleCount: number; colors?: string[] } {
   if (rank === 1) {
-    return {
-      particleCount: 160,
-      colors: [MEDAL_TRIM[1], MEDAL_TRIM[2], MEDAL_TRIM[3], '#ffffff'],
-      grand: true,
-    };
+    return { particleCount: 160, colors: [MEDAL_TRIM[1], MEDAL_TRIM[2], MEDAL_TRIM[3], '#ffffff'] };
   }
-  if (rank === 2) return { particleCount: 110, colors: [MEDAL_TRIM[2], '#ffffff'], grand: false };
-  if (rank === 3) return { particleCount: 110, colors: [MEDAL_TRIM[3], '#ffffff'], grand: false };
-  if (rank != null) return { particleCount: 90, grand: false };
-  return { particleCount: 60, grand: false };
+  if (rank === 2) return { particleCount: 120, colors: [MEDAL_TRIM[2], '#ffffff'] };
+  if (rank === 3) return { particleCount: 120, colors: [MEDAL_TRIM[3], '#ffffff'] };
+  if (rank != null) return { particleCount: 100 };
+  return { particleCount: 80 };
 }
 
 /**
  * Fires a celebratory confetti burst for a finished run, scaled and coloured by its placement (a
- * grand gold/silver/bronze shower for 1st, smaller bursts down to a plain best). Loads the confetti
- * library on demand so it never touches the initial bundle, and stays silent under reduced motion.
+ * fuller gold/silver/bronze shower for 1st, smaller bursts down to a plain best). Uses the layered
+ * "realistic look" pattern: several overlapping bursts from just below centre, mixing spreads and
+ * velocities so the pieces fill the screen naturally. Loads the confetti library on demand so it
+ * never touches the initial bundle, and stays silent under reduced motion.
  */
 export async function fireCelebration(celebration: Celebration): Promise<void> {
   if (prefersReducedMotion()) return;
   const confetti = (await import('canvas-confetti')).default;
-  const { particleCount, colors, grand } = tierFor(celebration.rank);
-  const base = { zIndex: ABOVE_MUI_MODAL_Z_INDEX, colors, origin: { y: 0.35 } };
+  const { particleCount, colors } = tierFor(celebration.rank);
+  const base = { zIndex: ABOVE_MUI_MODAL_Z_INDEX, colors, origin: { y: 0.7 } };
+  const fire = (ratio: number, opts: Record<string, number>) =>
+    confetti({ ...base, ...opts, particleCount: Math.floor(particleCount * ratio) });
 
-  if (!grand) {
-    confetti({ ...base, particleCount, spread: 75, startVelocity: 45 });
-    return;
-  }
-  confetti({ ...base, particleCount: particleCount * 0.25, spread: 26, startVelocity: 55 });
-  confetti({ ...base, particleCount: particleCount * 0.2, spread: 60 });
-  confetti({ ...base, particleCount: particleCount * 0.35, spread: 100, decay: 0.91, scalar: 0.8 });
-  confetti({ ...base, particleCount: particleCount * 0.2, spread: 120, startVelocity: 45 });
+  fire(0.25, { spread: 26, startVelocity: 55 });
+  fire(0.2, { spread: 60 });
+  fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+  fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+  fire(0.1, { spread: 120, startVelocity: 45 });
 }

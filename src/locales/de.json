@@ -19,7 +19,7 @@
     "noPokemon": "Keine Pokémon verfügbar.",
     "features": "Funktionen",
     "copied": "Kopiert!",
-    "unknown": "Unbekannt"
+    "unown": "Unown"
   },
   "header": {
     "settings": "Einstellungen"
@@ -183,19 +183,23 @@
     },
     "celebration": {
       "rank1Title": "Du bist der Champion!",
-      "rank1Body": "Eine Serie von {{streak}} führt die Bestenliste an. Du bist der Allerbeste, wie keiner zuvor!",
+      "rank1Body": "Eine Serie von <strong>{{streak}}</strong> führt die Bestenliste an. Du bist der Allerbeste, wie keiner zuvor!",
       "rank2Title": "Fast ganz oben!",
-      "rank2Body": "Eine Serie von {{streak}} bringt dir Silber. Zum Greifen nah!",
+      "rank2Body": "Eine Serie von <strong>{{streak}}</strong> bringt dir Silber. Zum Greifen nah!",
       "rank3Title": "Auf dem Podium!",
-      "rank3Body": "Eine Serie von {{streak}} bringt dich auf Platz 3. Eine Stufe höher ist die Aussicht noch besser.",
+      "rank3Body": "Eine Serie von <strong>{{streak}}</strong> bringt dich auf Platz 3. Eine Stufe höher ist die Aussicht noch besser.",
       "topTitle": "Du bist auf der Bestenliste!",
-      "topBody": "Eine Serie von {{streak}} bringt dich auf #{{rank}}. Das Podium ist in Sicht.",
+      "topBody": "Eine Serie von <strong>{{streak}}</strong> bringt dich auf #<strong>{{rank}}</strong>. Das Podium ist in Sicht.",
       "pbTitle": "Neuer Rekord!",
-      "pbBody": "Eine Serie von {{streak}}, und es geht weiter. Die Top 10 rufen.",
+      "pbBody": "Eine Serie von <strong>{{streak}}</strong>, und es geht weiter. Die Top 10 rufen.",
       "practiceTitle": "Neuer Rekord!",
-      "practiceBody": "Eine Serie von {{streak}} schlägt deinen Rekord. Bereit, es in der Rangliste zählen zu lassen?",
+      "practiceBody": "Eine Serie von <strong>{{streak}}</strong> schlägt deinen Rekord. Bereit, es in der Rangliste zählen zu lassen?",
       "viewLeaderboard": "Bestenliste ansehen",
       "dismiss": "Weiterspielen"
+    },
+    "modes": {
+      "label": "Modus",
+      "standard": "Standard"
     }
   }
 }

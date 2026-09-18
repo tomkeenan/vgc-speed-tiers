@@ -310,7 +310,7 @@ export function FasterGame({ ranked = false, onViewLeaderboard }: FasterGameProp
             {masked ? <MysteryArt /> : <PokemonImage src={c.pokemon.sprite} name={name} eager />}
           </Box>
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            {masked ? t('common.unknown') : name}
+            {masked ? t('common.unown') : name}
           </Typography>
           {/* Always reserve the nature-badge row (an invisible placeholder when there's no nature or
               the card is masked) so toggling Natures on or off never changes the card's height. */}
@@ -382,20 +382,20 @@ export function FasterGame({ ranked = false, onViewLeaderboard }: FasterGameProp
     <Stack spacing={{ xs: 1.5, sm: 2 }}>
       <Stack direction="row" spacing={{ xs: 1, sm: 1.5 }}>
         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-          <StreakStat value={streak} label={t('common.streak')} color="primary.main" />
+          <StreakStat value={streak} label={t('common.streak')} color="text.primary" />
         </Box>
-        {/* Ranked adds a per-round countdown between the counters; the last second flashes red. */}
+        {/* Ranked adds a per-round countdown between the counters; it darkens on the last second. */}
         {ranked && (
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
             <StreakStat
               value={secondsLeft}
               label={t('common.time')}
-              color={secondsLeft <= 1 ? 'error.main' : 'text.primary'}
+              color={secondsLeft <= 1 ? 'primary.dark' : 'primary.main'}
             />
           </Box>
         )}
         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-          <StreakStat value={best} label={t('common.best')} color="text.primary" />
+          <StreakStat value={best} label={t('common.best')} color="gold.main" />
         </Box>
       </Stack>
 

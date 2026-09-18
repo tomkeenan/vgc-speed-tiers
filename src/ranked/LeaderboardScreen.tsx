@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
-import Chip from '@mui/material/Chip';
 import CircularProgress from '@mui/material/CircularProgress';
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
 import Stack from '@mui/material/Stack';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
@@ -21,7 +24,7 @@ function decompose(board: BoardKey): { game: Game; hard: boolean; natures: boole
   return {
     game: 'faster',
     hard: board === 'faster:hard' || board === 'faster:hard+natures',
-    natures: board === 'faster:hard+natures',
+    natures: board === 'faster:natures' || board === 'faster:hard+natures',
   };
 }
 
@@ -124,9 +127,9 @@ function Row({
 
 /**
  * The ranked leaderboard: a segment per game (Who's Faster? / How Fast?) over a scrollable top-N list.
- * Who's Faster? carries independent Hard and Natures toggle chips that switch between its four boards.
- * Opens on the board matching the current game, highlights the signed-in player's rows, and surfaces
- * their own standing at the foot even when they are not in the visible top-N.
+ * Who's Faster? carries a Mode dropdown that switches between its four boards (Standard, Hard, Natures,
+ * Hard + Natures). Opens on the board matching the current game, highlights the signed-in player's rows,
+ * and surfaces their own standing at the foot even when they are not in the visible top-N.
  */
 export function LeaderboardScreen({ initialBoard = 'faster:standard' }: LeaderboardScreenProps) {
   const { t } = useTranslation();
@@ -257,11 +260,14 @@ export function LeaderboardScreen({ initialBoard = 'faster:standard' }: Leaderbo
     </Box>
   );
 
+  const onModeChange = (value: BoardKey) => {
+    const d = decompose(value);
+    setHard(d.hard);
+    setNatures(d.natures);
+  };
+
   return (
     <Stack spacing={2}>
-      {/* One segment per game, styled like the header's Practice/Ranked switch. The modifier chips
-          sit below the list so switching games never shifts it, and their row height is reserved on
-          every game so the board keeps a constant size (only Who's Faster? actually fills the row). */}
       <ToggleButtonGroup
         exclusive
         size="small"
@@ -281,34 +287,29 @@ export function LeaderboardScreen({ initialBoard = 'faster:standard' }: Leaderbo
         </ToggleButton>
       </ToggleButtonGroup>
 
-      <Box sx={{ minHeight: BODY_MIN_HEIGHT }}>{body()}</Box>
-
-      {/* Modifier chips: each toggles its own Who's Faster? board. Off by default (outlined),
-          primary and filled when on. Hard and Natures are independent. The row's height is
-          reserved (MUI Chip default, 32px) even on the How Fast? tab so the board never
-          resizes when tabs change. */}
-      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, minHeight: 32 }}>
-        {game === 'faster' && (
-          <>
-            <Chip
-              label={t('ranked.chips.hard')}
-              clickable
-              color={hard ? 'primary' : 'default'}
-              variant={hard ? 'filled' : 'outlined'}
-              onClick={() => setHard((on) => !on)}
-              aria-pressed={hard}
-            />
-            <Chip
-              label={t('ranked.chips.natures')}
-              clickable
-              color={natures ? 'primary' : 'default'}
-              variant={natures ? 'filled' : 'outlined'}
-              onClick={() => setNatures((on) => !on)}
-              aria-pressed={natures}
-            />
-          </>
-        )}
+      {/* The Mode dropdown chooses among Who's Faster?'s four boards. How Fast? has only one board, so
+          it hides the control while keeping its space reserved (visibility, not display) - both tabs
+          take the same height and the list below never shifts when switching games. */}
+      <Box sx={{ visibility: game === 'faster' ? 'visible' : 'hidden' }} aria-hidden={game !== 'faster'}>
+        <FormControl size="small" fullWidth disabled={game !== 'faster'}>
+          <InputLabel id="leaderboard-mode-label">{t('ranked.modes.label')}</InputLabel>
+          <Select
+            labelId="leaderboard-mode-label"
+            label={t('ranked.modes.label')}
+            value={fasterBoard(hard, natures)}
+            onChange={(e) => onModeChange(e.target.value as BoardKey)}
+          >
+            <MenuItem value="faster:standard">{t('ranked.modes.standard')}</MenuItem>
+            <MenuItem value="faster:hard">{t('ranked.chips.hard')}</MenuItem>
+            <MenuItem value="faster:natures">{t('ranked.chips.natures')}</MenuItem>
+            <MenuItem value="faster:hard+natures">
+              {`${t('ranked.chips.hard')} + ${t('ranked.chips.natures')}`}
+            </MenuItem>
+          </Select>
+        </FormControl>
       </Box>
+
+      <Box sx={{ minHeight: BODY_MIN_HEIGHT }}>{body()}</Box>
 
       {data && meFooter()}
     </Stack>

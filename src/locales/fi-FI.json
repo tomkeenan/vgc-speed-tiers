@@ -19,7 +19,7 @@
     "noPokemon": "Ei Pokémoneja saatavilla.",
     "features": "Ominaisuudet",
     "copied": "Kopioitu!",
-    "unknown": "Tuntematon"
+    "unown": "Unown"
   },
   "header": {
     "settings": "Asetukset"
@@ -183,19 +183,23 @@
     },
     "celebration": {
       "rank1Title": "Olet mestari!",
-      "rank1Body": "{{streak}} oikean vastauksen putki vie tulostaulun kärkeen. Olet kaikkien aikojen paras, kuten ei kukaan ennen!",
+      "rank1Body": "<strong>{{streak}}</strong> oikean vastauksen putki vie tulostaulun kärkeen. Olet kaikkien aikojen paras, kuten ei kukaan ennen!",
       "rank2Title": "Melkein paras!",
-      "rank2Body": "{{streak}} oikean vastauksen putki tuo sinulle hopeaa. Niin lähellä, että voit melkein maistaa sen.",
+      "rank2Body": "<strong>{{streak}}</strong> oikean vastauksen putki tuo sinulle hopeaa. Niin lähellä, että voit melkein maistaa sen.",
       "rank3Title": "Palkintokorokkeella!",
-      "rank3Body": "{{streak}} oikean vastauksen putki nostaa sinut 3. sijalle. Yksi askel ylemmäs, ja näkymä on vielä parempi.",
+      "rank3Body": "<strong>{{streak}}</strong> oikean vastauksen putki nostaa sinut 3. sijalle. Yksi askel ylemmäs, ja näkymä on vielä parempi.",
       "topTitle": "Pääsit tulostauluun!",
-      "topBody": "{{streak}} oikean vastauksen putki nostaa sinut sijalle #{{rank}}. Palkintokoroke häämöttää.",
+      "topBody": "<strong>{{streak}}</strong> oikean vastauksen putki nostaa sinut sijalle #<strong>{{rank}}</strong>. Palkintokoroke häämöttää.",
       "pbTitle": "Uusi ennätys!",
-      "pbBody": "{{streak}} oikean vastauksen putki, ja lisää on tulossa. Top 10 kutsuu.",
+      "pbBody": "<strong>{{streak}}</strong> oikean vastauksen putki, ja lisää on tulossa. Top 10 kutsuu.",
       "practiceTitle": "Uusi ennätys!",
-      "practiceBody": "{{streak}} oikean vastauksen putki päihittää ennätyksesi. Valmiina laittamaan se peliin Ranked-tilassa?",
+      "practiceBody": "<strong>{{streak}}</strong> oikean vastauksen putki päihittää ennätyksesi. Valmiina laittamaan se peliin Ranked-tilassa?",
       "viewLeaderboard": "Näytä tulostaulu",
       "dismiss": "Jatka pelaamista"
+    },
+    "modes": {
+      "label": "Tila",
+      "standard": "Vakio"
     }
   }
 }

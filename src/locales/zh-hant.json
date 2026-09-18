@@ -19,7 +19,7 @@
     "noPokemon": "沒有可用的寶可夢。",
     "features": "功能",
     "copied": "已複製！",
-    "unknown": "未知"
+    "unown": "Unown"
   },
   "header": {
     "settings": "設定"
@@ -183,19 +183,23 @@
     },
     "celebration": {
       "rank1Title": "你就是冠軍！",
-      "rank1Body": "連續答對 {{streak}} 次，登頂排行榜。你是史上最強，前無古人！",
+      "rank1Body": "連續答對 <strong>{{streak}}</strong> 次，登頂排行榜。你是史上最強，前無古人！",
       "rank2Title": "距離登頂只差一步！",
-      "rank2Body": "連續答對 {{streak}} 次，摘得銀牌。勝利近在咫尺。",
+      "rank2Body": "連續答對 <strong>{{streak}}</strong> 次，摘得銀牌。勝利近在咫尺。",
       "rank3Title": "登上頒獎台！",
-      "rank3Body": "連續答對 {{streak}} 次，位列第 3。再上一級，風景更好。",
+      "rank3Body": "連續答對 <strong>{{streak}}</strong> 次，位列第 3。再上一級，風景更好。",
       "topTitle": "你登上排行榜了！",
-      "topBody": "連續答對 {{streak}} 次，讓你排在第 {{rank}} 名。頒獎台已在眼前。",
+      "topBody": "連續答對 <strong>{{streak}}</strong> 次，讓你排在第 <strong>{{rank}}</strong> 名。頒獎台已在眼前。",
       "pbTitle": "個人最佳紀錄！",
-      "pbBody": "連續答對 {{streak}} 次，還在繼續。前 10 名在向你招手。",
+      "pbBody": "連續答對 <strong>{{streak}}</strong> 次，還在繼續。前 10 名在向你招手。",
       "practiceTitle": "個人最佳紀錄！",
-      "practiceBody": "連續答對 {{streak}} 次，打破了你的紀錄。準備好在排位賽中大展身手了嗎？",
+      "practiceBody": "連續答對 <strong>{{streak}}</strong> 次，打破了你的紀錄。準備好在排位賽中大展身手了嗎？",
       "viewLeaderboard": "查看排行榜",
       "dismiss": "繼續遊戲"
+    },
+    "modes": {
+      "label": "模式",
+      "standard": "標準"
     }
   }
 }

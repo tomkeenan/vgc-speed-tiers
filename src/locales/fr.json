@@ -19,7 +19,7 @@
     "noPokemon": "Aucun Pokémon disponible.",
     "features": "Fonctionnalités",
     "copied": "Copié !",
-    "unknown": "Inconnu"
+    "unown": "Unown"
   },
   "header": {
     "settings": "Paramètres"
@@ -183,19 +183,23 @@
     },
     "celebration": {
       "rank1Title": "Tu es le champion !",
-      "rank1Body": "Une série de {{streak}} domine le classement. Tu es le meilleur, comme personne avant toi !",
+      "rank1Body": "Une série de <strong>{{streak}}</strong> domine le classement. Tu es le meilleur, comme personne avant toi !",
       "rank2Title": "Presque le meilleur !",
-      "rank2Body": "Une série de {{streak}} te vaut l'argent. C'est à portée de main.",
+      "rank2Body": "Une série de <strong>{{streak}}</strong> te vaut l'argent. C'est à portée de main.",
       "rank3Title": "Sur le podium !",
-      "rank3Body": "Une série de {{streak}} te place 3e. Une marche plus haut, la vue est encore plus belle.",
+      "rank3Body": "Une série de <strong>{{streak}}</strong> te place 3e. Une marche plus haut, la vue est encore plus belle.",
       "topTitle": "Tu es dans le classement !",
-      "topBody": "Une série de {{streak}} te place au rang n° {{rank}}. Le podium est en vue.",
+      "topBody": "Une série de <strong>{{streak}}</strong> te place au rang n° <strong>{{rank}}</strong>. Le podium est en vue.",
       "pbTitle": "Nouveau record !",
-      "pbBody": "Une série de {{streak}}, et ça continue de grimper. Le Top 10 t'appelle.",
+      "pbBody": "Une série de <strong>{{streak}}</strong>, et ça continue de grimper. Le Top 10 t'appelle.",
       "practiceTitle": "Nouveau record !",
-      "practiceBody": "Une série de {{streak}} bat ton record. Prêt à le faire compter en mode Classé ?",
+      "practiceBody": "Une série de <strong>{{streak}}</strong> bat ton record. Prêt à le faire compter en mode Classé ?",
       "viewLeaderboard": "Voir le classement",
       "dismiss": "Continuer à jouer"
+    },
+    "modes": {
+      "label": "Mode",
+      "standard": "Standard"
     }
   }
 }

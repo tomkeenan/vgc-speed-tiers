@@ -22,13 +22,13 @@ describe('fireCelebration', () => {
   beforeEach(() => confettiFn.mockClear());
   afterEach(() => vi.unstubAllGlobals());
 
-  it('fires a single burst for a plain best', async () => {
+  it('fires a layered, uncoloured burst for a plain best', async () => {
     await fireCelebration(celebration({ rank: null }));
-    expect(confettiFn).toHaveBeenCalledTimes(1);
+    expect(confettiFn.mock.calls.length).toBeGreaterThan(1);
     expect(firstCallColors()).toBeUndefined();
   });
 
-  it('fires a grand multi-burst tinted with the medal colours for first place', async () => {
+  it('tints the burst with the medal colours for first place', async () => {
     await fireCelebration(celebration({ rank: 1, board: 'faster:hard' }));
     expect(confettiFn.mock.calls.length).toBeGreaterThan(1);
     expect(firstCallColors()).toContain('#E4B21E');

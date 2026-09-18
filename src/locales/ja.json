@@ -19,7 +19,7 @@
     "noPokemon": "利用できるポケモンがいません。",
     "features": "機能",
     "copied": "コピーしました！",
-    "unknown": "不明"
+    "unown": "Unown"
   },
   "header": {
     "settings": "設定"
@@ -183,19 +183,23 @@
     },
     "celebration": {
       "rank1Title": "あなたがチャンピオンだ！",
-      "rank1Body": "{{streak}}連続正解でランキングの頂点に。誰もなしえなかった、最高のトレーナーだ！",
+      "rank1Body": "<strong>{{streak}}</strong>連続正解でランキングの頂点に。誰もなしえなかった、最高のトレーナーだ！",
       "rank2Title": "あと一歩で頂点！",
-      "rank2Body": "{{streak}}連続正解で銀メダル。頂点はもう目の前だ。",
+      "rank2Body": "<strong>{{streak}}</strong>連続正解で銀メダル。頂点はもう目の前だ。",
       "rank3Title": "表彰台に登場！",
-      "rank3Body": "{{streak}}連続正解で3位に。もう一段上がれば、景色はもっといい。",
+      "rank3Body": "<strong>{{streak}}</strong>連続正解で3位に。もう一段上がれば、景色はもっといい。",
       "topTitle": "ランキング入り！",
-      "topBody": "{{streak}}連続正解でランキング#{{rank}}位に。表彰台はもう目前だ。",
+      "topBody": "<strong>{{streak}}</strong>連続正解でランキング#<strong>{{rank}}</strong>位に。表彰台はもう目前だ。",
       "pbTitle": "自己ベスト更新！",
-      "pbBody": "{{streak}}連続正解、まだまだ伸びる。トップ10が呼んでいる。",
+      "pbBody": "<strong>{{streak}}</strong>連続正解、まだまだ伸びる。トップ10が呼んでいる。",
       "practiceTitle": "自己ベスト更新！",
-      "practiceBody": "{{streak}}連続正解で自己記録を更新。ランクモードで本気を出す準備はいい？",
+      "practiceBody": "<strong>{{streak}}</strong>連続正解で自己記録を更新。ランクモードで本気を出す準備はいい？",
       "viewLeaderboard": "ランキングを見る",
       "dismiss": "プレイを続ける"
+    },
+    "modes": {
+      "label": "モード",
+      "standard": "標準"
     }
   }
 }
