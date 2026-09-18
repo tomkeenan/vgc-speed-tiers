@@ -148,5 +148,33 @@
     "renameAvailableOn": "Voit vaihtaa nimesi uudelleen {{date}}.",
     "renameTooSoon": "Voit vaihtaa nimesi vain kerran viikossa.",
     "sessionExpired": "Istuntosi vanheni. Kirjaudu uudelleen sisään."
+  },
+  "ranked": {
+    "title": "Ranked-tila",
+    "description": "Pelaa kaikilla Pokémoneilla yhteisissä tulostauluissa.",
+    "signInPrompt": "Kirjaudu sisään tili-valikosta pelataksesi ranked-tilassa.",
+    "usesAllPokemon": "Ranked-tila käyttää aina kaikkia Pokémoneja.",
+    "leaderboard": "Tulostaulu",
+    "leaderboardTitle": "Tulostaulu",
+    "closeLeaderboard": "Sulje tulostaulu",
+    "prevBoard": "Edellinen tulostaulu",
+    "nextBoard": "Seuraava tulostaulu",
+    "loading": "Ladataan tulostaulua",
+    "loadError": "Tulostaulun lataaminen epäonnistui. Yritä uudelleen.",
+    "empty": "Ei vielä tuloksia. Pelaa ranked-kierros ja nappaa kärkipaikka.",
+    "colRank": "#",
+    "colPlayer": "Pelaaja",
+    "you": "Sinä",
+    "yourStanding": "Olet sijalla #{{rank}}, putkesi on {{streak}}.",
+    "naturesNeedsHard": "Luonteet lasketaan vain vaikean tilan kanssa.",
+    "colStreak": "Putki",
+    "games": {
+      "faster": "Kumpi on nopeampi?",
+      "howFast": "Kuinka nopea?"
+    },
+    "chips": {
+      "hard": "Vaikea",
+      "natures": "Luonteet"
+    }
   }
 }

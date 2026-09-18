@@ -148,5 +148,33 @@
     "renameAvailableOn": "Du kannst deinen Namen wieder am {{date}} ändern.",
     "renameTooSoon": "Du kannst deinen Namen nur einmal pro Woche ändern.",
     "sessionExpired": "Deine Sitzung ist abgelaufen. Bitte melde dich erneut an."
+  },
+  "ranked": {
+    "title": "Ranglisten-Modus",
+    "description": "Spiele mit allen Pokémon um Plätze in den Ranglisten.",
+    "signInPrompt": "Melde dich über das Konto-Menü an, um den Ranglisten-Modus zu spielen.",
+    "usesAllPokemon": "Der Ranglisten-Modus nutzt immer alle Pokémon.",
+    "leaderboard": "Rangliste",
+    "leaderboardTitle": "Rangliste",
+    "closeLeaderboard": "Rangliste schließen",
+    "prevBoard": "Vorherige Rangliste",
+    "nextBoard": "Nächste Rangliste",
+    "loading": "Rangliste wird geladen",
+    "loadError": "Rangliste konnte nicht geladen werden. Bitte versuche es erneut.",
+    "empty": "Noch keine Ergebnisse. Spiele eine Ranglisten-Runde und sichere dir den ersten Platz.",
+    "colRank": "#",
+    "colPlayer": "Spieler",
+    "you": "Du",
+    "yourStanding": "Du bist auf Platz #{{rank}} mit einer Serie von {{streak}}.",
+    "naturesNeedsHard": "Wesen werden nur zusammen mit dem schweren Modus gewertet.",
+    "colStreak": "Serie",
+    "games": {
+      "faster": "Wer ist schneller?",
+      "howFast": "Wie schnell?"
+    },
+    "chips": {
+      "hard": "Schwer",
+      "natures": "Wesen"
+    }
   }
 }

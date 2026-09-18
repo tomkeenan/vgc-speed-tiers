@@ -148,5 +148,33 @@
     "renameAvailableOn": "次に名前を変更できるのは {{date}} です。",
     "renameTooSoon": "名前は週に1回だけ変更できます。",
     "sessionExpired": "セッションの有効期限が切れました。もう一度サインインしてください。"
+  },
+  "ranked": {
+    "title": "ランクモード",
+    "description": "すべてのポケモンで共有ランキングに挑戦しよう。",
+    "signInPrompt": "ランクモードをプレイするには、アカウントメニューからサインインしてください。",
+    "usesAllPokemon": "ランクモードでは常にすべてのポケモンを使います。",
+    "leaderboard": "ランキング",
+    "leaderboardTitle": "ランキング",
+    "closeLeaderboard": "ランキングを閉じる",
+    "prevBoard": "前のランキング",
+    "nextBoard": "次のランキング",
+    "loading": "ランキングを読み込み中",
+    "loadError": "ランキングを読み込めませんでした。もう一度お試しください。",
+    "empty": "まだスコアがありません。ランクマッチをプレイしてトップを目指しましょう。",
+    "colRank": "#",
+    "colPlayer": "プレイヤー",
+    "you": "あなた",
+    "yourStanding": "あなたは{{streak}}連続で#{{rank}}位です。",
+    "naturesNeedsHard": "せいかくはハードモードと組み合わせた場合のみランキング対象です。",
+    "colStreak": "連続正解",
+    "games": {
+      "faster": "どっちが速い？",
+      "howFast": "どれくらい速い？"
+    },
+    "chips": {
+      "hard": "ハード",
+      "natures": "せいかく"
+    }
   }
 }

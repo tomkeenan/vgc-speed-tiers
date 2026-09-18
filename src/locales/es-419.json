@@ -148,5 +148,33 @@
     "renameAvailableOn": "Podrás cambiar tu nombre de nuevo el {{date}}.",
     "renameTooSoon": "Solo puedes cambiar tu nombre una vez por semana.",
     "sessionExpired": "Tu sesión expiró. Inicia sesión de nuevo."
+  },
+  "ranked": {
+    "title": "Modo clasificatorio",
+    "description": "Juega con todos los Pokémon en las clasificaciones compartidas.",
+    "signInPrompt": "Inicia sesión desde el menú de cuenta para jugar en modo clasificatorio.",
+    "usesAllPokemon": "El modo clasificatorio siempre usa todos los Pokémon.",
+    "leaderboard": "Clasificación",
+    "leaderboardTitle": "Clasificación",
+    "closeLeaderboard": "Cerrar clasificación",
+    "prevBoard": "Clasificación anterior",
+    "nextBoard": "Clasificación siguiente",
+    "loading": "Cargando clasificación",
+    "loadError": "No se pudo cargar la clasificación. Inténtalo de nuevo.",
+    "empty": "Aún no hay puntuaciones. Juega una ronda clasificatoria para conseguir el primer puesto.",
+    "colRank": "#",
+    "colPlayer": "Jugador",
+    "you": "Tú",
+    "yourStanding": "Estás en el puesto #{{rank}} con una racha de {{streak}}.",
+    "naturesNeedsHard": "Las naturalezas solo puntúan junto al modo difícil.",
+    "colStreak": "Racha",
+    "games": {
+      "faster": "¿Quién es más rápido?",
+      "howFast": "¿Qué tan rápido?"
+    },
+    "chips": {
+      "hard": "Difícil",
+      "natures": "Naturalezas"
+    }
   }
 }

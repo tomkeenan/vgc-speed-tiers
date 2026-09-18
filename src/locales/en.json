@@ -148,5 +148,33 @@
     "renameAvailableOn": "You can change your name again on {{date}}.",
     "renameTooSoon": "You can only change your name once a week.",
     "sessionExpired": "Your session expired. Please sign in again."
+  },
+  "ranked": {
+    "title": "Ranked",
+    "description": "Play the full roster on shared leaderboards.",
+    "signInPrompt": "Sign in from the account menu to play ranked.",
+    "usesAllPokemon": "Ranked always uses all Pokemon.",
+    "leaderboard": "Leaderboard",
+    "leaderboardTitle": "Leaderboard",
+    "closeLeaderboard": "Close leaderboard",
+    "prevBoard": "Previous leaderboard",
+    "nextBoard": "Next leaderboard",
+    "loading": "Loading leaderboard",
+    "loadError": "Couldn't load the leaderboard. Try again.",
+    "empty": "No scores yet. Play a ranked round to claim the top spot.",
+    "colRank": "#",
+    "colPlayer": "Player",
+    "you": "You",
+    "yourStanding": "You're #{{rank}} with a streak of {{streak}}.",
+    "naturesNeedsHard": "Natures only rank alongside Hard mode.",
+    "colStreak": "Streak",
+    "games": {
+      "faster": "Who's Faster?",
+      "howFast": "How Fast?"
+    },
+    "chips": {
+      "hard": "Hard",
+      "natures": "Natures"
+    }
   }
 }

@@ -148,5 +148,33 @@
     "renameAvailableOn": "你可以在 {{date}} 再次變更名稱。",
     "renameTooSoon": "每週只能變更一次名稱。",
     "sessionExpired": "工作階段已過期，請重新登入。"
+  },
+  "ranked": {
+    "title": "排位模式",
+    "description": "使用全部寶可夢爭奪共享排行榜名次。",
+    "signInPrompt": "從帳戶選單登入以進行排位遊戲。",
+    "usesAllPokemon": "排位模式始終使用所有寶可夢。",
+    "leaderboard": "排行榜",
+    "leaderboardTitle": "排行榜",
+    "closeLeaderboard": "關閉排行榜",
+    "prevBoard": "上一個排行榜",
+    "nextBoard": "下一個排行榜",
+    "loading": "正在載入排行榜",
+    "loadError": "無法載入排行榜。請重試。",
+    "empty": "暫無成績。玩一局排位賽來奪取榜首吧。",
+    "colRank": "#",
+    "colPlayer": "玩家",
+    "you": "你",
+    "yourStanding": "你以 {{streak}} 連勝排名第 {{rank}} 位。",
+    "naturesNeedsHard": "性格僅在困難模式下參與排名。",
+    "colStreak": "連勝",
+    "games": {
+      "faster": "誰比較快？",
+      "howFast": "有多快？"
+    },
+    "chips": {
+      "hard": "困難",
+      "natures": "性格"
+    }
   }
 }

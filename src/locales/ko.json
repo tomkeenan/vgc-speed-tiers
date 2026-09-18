@@ -148,5 +148,33 @@
     "renameAvailableOn": "{{date}}에 이름을 다시 변경할 수 있습니다.",
     "renameTooSoon": "이름은 일주일에 한 번만 변경할 수 있습니다.",
     "sessionExpired": "세션이 만료되었습니다. 다시 로그인하세요."
+  },
+  "ranked": {
+    "title": "랭크 모드",
+    "description": "모든 포켓몬으로 공용 순위표에 도전하세요.",
+    "signInPrompt": "랭크 모드를 플레이하려면 계정 메뉴에서 로그인하세요.",
+    "usesAllPokemon": "랭크 모드는 항상 모든 포켓몬을 사용합니다.",
+    "leaderboard": "순위표",
+    "leaderboardTitle": "순위표",
+    "closeLeaderboard": "순위표 닫기",
+    "prevBoard": "이전 순위표",
+    "nextBoard": "다음 순위표",
+    "loading": "순위표 불러오는 중",
+    "loadError": "순위표를 불러오지 못했습니다. 다시 시도하세요.",
+    "empty": "아직 점수가 없습니다. 랭크 라운드를 플레이해 1위를 차지하세요.",
+    "colRank": "#",
+    "colPlayer": "플레이어",
+    "you": "나",
+    "yourStanding": "{{streak}}연속으로 #{{rank}}위입니다.",
+    "naturesNeedsHard": "성격은 하드 모드와 함께일 때만 순위에 반영됩니다.",
+    "colStreak": "연속 정답",
+    "games": {
+      "faster": "누가 더 빠를까?",
+      "howFast": "얼마나 빠를까?"
+    },
+    "chips": {
+      "hard": "하드",
+      "natures": "성격"
+    }
   }
 }
