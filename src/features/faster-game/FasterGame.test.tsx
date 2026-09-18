@@ -4,6 +4,7 @@ import { FasterGame } from './FasterGame';
 import { loadBestStreak } from './bestStreak';
 import { buildContenders } from './contenders';
 import { DecksProvider } from '../../decks/DecksContext';
+import { AuthProvider } from '../../auth/AuthContext';
 import { ALL_DECK_ID } from '../../decks/store';
 import { getAllPokemon } from '../../lib/data';
 import { renderWithTheme } from '../../test/renderWithTheme';
@@ -21,9 +22,11 @@ const [slowC, fastC] = buildContenders([slow, fast], false); // base-Speed conte
 
 const renderGame = () =>
   renderWithTheme(
-    <DecksProvider>
-      <FasterGame />
-    </DecksProvider>,
+    <AuthProvider>
+      <DecksProvider>
+        <FasterGame />
+      </DecksProvider>
+    </AuthProvider>,
   );
 
 const choices = () => screen.getAllByRole('button', { name: /choose/i });

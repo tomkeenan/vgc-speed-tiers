@@ -3,6 +3,7 @@ import { act, fireEvent, screen } from '@testing-library/react';
 import { HowFast } from './HowFast';
 import { loadBestStreak } from './bestStreak';
 import { DecksProvider } from '../../decks/DecksContext';
+import { AuthProvider } from '../../auth/AuthContext';
 import { ALL_DECK_ID } from '../../decks/store';
 import { getAllPokemon } from '../../lib/data';
 import { renderWithTheme } from '../../test/renderWithTheme';
@@ -20,9 +21,11 @@ const second = all[1];
 
 const render = () =>
   renderWithTheme(
-    <DecksProvider>
-      <HowFast />
-    </DecksProvider>,
+    <AuthProvider>
+      <DecksProvider>
+        <HowFast />
+      </DecksProvider>
+    </AuthProvider>,
   );
 
 const input = () => screen.getByLabelText('Your base Speed guess') as HTMLInputElement;

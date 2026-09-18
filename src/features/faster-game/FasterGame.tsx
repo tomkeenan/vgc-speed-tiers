@@ -4,6 +4,11 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useDecks } from '../../decks/DecksContext';
+import { ALL_DECK_ID } from '../../decks/store';
+import { useAuth } from '../../auth/AuthContext';
+import { RankedPanel } from '../../ranked/RankedPanel';
+import { submitScore, type MyStanding } from '../../ranked/api';
+import { fasterBoard } from '../../../worker/boards';
 import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
 import { NatureBadge } from '../../components/NatureBadge';
@@ -12,7 +17,7 @@ import { SlotNumber, slotSpinMs } from '../../components/SlotNumber';
 import { StatPill } from '../../components/StatPill';
 import { StreakStat } from '../../components/StreakStat';
 import { TypeBadges } from '../../components/TypeBadges';
-import { displayName } from '../../lib/data';
+import { displayName, getAllPokemon } from '../../lib/data';
 import { pickPairWithin, type PairConstraints } from '../random';
 import { loadBestStreak, saveBestStreak } from './bestStreak';
 import { buildContenders, sameSpecies, speedOf, type Contender } from './contenders';
@@ -38,8 +43,18 @@ const REPEAT_PENALTY = 0.12;
  */
 export function FasterGame() {
   const { t, i18n } = useTranslation();
-  const { activePokemon: pool, activeDeckId } = useDecks();
+  const { activePokemon: deckPool, activeDeckId: deckId } = useDecks();
+  const { configured, user } = useAuth();
   const [mode, setMode] = useState<GameMode>(loadMode);
+  const [ranked, setRanked] = useState(false);
+  const [standing, setStanding] = useState<MyStanding | null>(null);
+
+  // Ranked always plays the canonical roster (all Pokemon) so every score is comparable; custom
+  // decks stay casual and local-only. The board is derived from the mode toggles.
+  const allPokemon = useMemo(() => getAllPokemon(), []);
+  const pool = ranked ? allPokemon : deckPool;
+  const activeDeckId = ranked ? ALL_DECK_ID : deckId;
+  const board = fasterBoard(mode.hardMode, mode.allowNatures);
 
   const contenders = useMemo(
     () => buildContenders(pool, mode.allowNatures),
@@ -110,9 +125,22 @@ export function FasterGame() {
   };
 
   const changeMode = (next: GameMode) => {
+    // Hard and Natures are independent ranked boards, so every combination is playable as-is.
     saveMode(next);
     setMode(next);
   };
+
+  // Ranked play needs a signed-in player; a sign-out mid-session drops back to casual.
+  useEffect(() => {
+    if (ranked && !user) setRanked(false);
+  }, [ranked, user]);
+
+  // A fresh ranked standing only applies to the run that produced it; clear it when ranked toggles.
+  useEffect(() => {
+    setStanding(null);
+  }, [ranked]);
+
+  const changeRanked = (next: boolean) => setRanked(next);
 
   // A new deck or mode resets the round, the streak, and the best from that mode's own slot.
   useEffect(() => {
@@ -125,7 +153,7 @@ export function FasterGame() {
     forgetSeen();
     showAndPrefetch(drawPair());
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeDeckId, mode.hardMode, mode.allowNatures]);
+  }, [activeDeckId, mode.hardMode, mode.allowNatures, ranked]);
 
   useEffect(() => {
     if (typeof Image === 'undefined' || !nextPair) return;
@@ -162,6 +190,11 @@ export function FasterGame() {
             setBest(next);
             saveBestStreak(slot, next);
           }
+        } else if (ranked && streak >= 1) {
+          // The run just ended: submit the streak it reached. The server keeps only the best.
+          void submitScore(board, streak)
+            .then(setStanding)
+            .catch(() => {});
         }
       }, resolveAt),
     );
@@ -265,6 +298,14 @@ export function FasterGame() {
       {outcome === 'wrong' && phase === 'resolved' && (
         <Button onClick={tryAgain}>{t('common.tryAgain')}</Button>
       )}
+
+      <RankedPanel
+        configured={configured}
+        signedIn={Boolean(user)}
+        ranked={ranked}
+        onRankedChange={changeRanked}
+        standing={standing}
+      />
 
       <ModeToggles mode={mode} onChange={changeMode} />
     </Stack>

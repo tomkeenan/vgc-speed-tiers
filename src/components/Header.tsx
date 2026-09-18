@@ -5,18 +5,26 @@ import Typography from '@mui/material/Typography';
 import { AuthControl } from './AuthControl';
 import { DeckSelector } from './DeckSelector';
 import { GearIcon } from './GearIcon';
+import { LeaderboardIcon } from './LeaderboardIcon';
 import { ThemeToggle } from './ThemeToggle';
+import { useAuth } from '../auth/AuthContext';
 
 interface HeaderProps {
   onOpenSettings: () => void;
+  onToggleLeaderboard: () => void;
+  /** Whether the leaderboard screen is currently open, so the crown reads as active. */
+  leaderboardActive: boolean;
 }
 
 /**
- * The app header: title on the left, deck / theme / settings controls on the right.
- * Takes an onOpenSettings handler, returns the element.
+ * The app header: title on the left, deck / theme / leaderboard / settings controls on the right.
+ * The leaderboard crown only shows when sign-in is configured (ranked is an account feature) and
+ * toggles its own screen.
+ * Takes onOpenSettings and onToggleLeaderboard handlers plus the leaderboard's open state.
  */
-export function Header({ onOpenSettings }: HeaderProps) {
+export function Header({ onOpenSettings, onToggleLeaderboard, leaderboardActive }: HeaderProps) {
   const { t } = useTranslation();
+  const { configured } = useAuth();
   return (
     <Box
       component="header"
@@ -34,6 +42,16 @@ export function Header({ onOpenSettings }: HeaderProps) {
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, flexShrink: 0 }}>
         <DeckSelector />
         <ThemeToggle />
+        {configured && (
+          <IconButton
+            aria-label={t('ranked.leaderboard')}
+            aria-pressed={leaderboardActive}
+            onClick={onToggleLeaderboard}
+            sx={{ color: leaderboardActive ? 'primary.main' : 'text.primary' }}
+          >
+            <LeaderboardIcon />
+          </IconButton>
+        )}
         <IconButton
           aria-label={t('header.settings')}
           onClick={onOpenSettings}

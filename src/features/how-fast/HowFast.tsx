@@ -1,10 +1,15 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { useDecks } from '../../decks/DecksContext';
+import { ALL_DECK_ID } from '../../decks/store';
+import { useAuth } from '../../auth/AuthContext';
+import { RankedPanel } from '../../ranked/RankedPanel';
+import { submitScore, type MyStanding } from '../../ranked/api';
+import { HOWFAST_BOARD } from '../../../worker/boards';
 import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
 import { PokemonImage } from '../../components/PokemonImage';
@@ -12,7 +17,7 @@ import { slotSpinMs } from '../../components/SlotNumber';
 import { SpeedReveal } from '../../components/SpeedReveal';
 import { StreakStat } from '../../components/StreakStat';
 import { TypeBadges } from '../../components/TypeBadges';
-import { displayName } from '../../lib/data';
+import { displayName, getAllPokemon } from '../../lib/data';
 import { randomIndex } from '../random';
 import { loadBestStreak, saveBestStreak } from './bestStreak';
 
@@ -26,7 +31,17 @@ const RESOLVE_HOLD_MS = 1800;
  */
 export function HowFast() {
   const { t, i18n } = useTranslation();
-  const { activePokemon: pool, activeDeckId } = useDecks();
+  const { activePokemon: deckPool, activeDeckId: deckId } = useDecks();
+  const { configured, user } = useAuth();
+  const [ranked, setRanked] = useState(false);
+  const [standing, setStanding] = useState<MyStanding | null>(null);
+
+  // Ranked always plays the canonical roster (all Pokemon) so every score is comparable; custom
+  // decks stay casual and local-only.
+  const allPokemon = useMemo(() => getAllPokemon(), []);
+  const pool = ranked ? allPokemon : deckPool;
+  const activeDeckId = ranked ? ALL_DECK_ID : deckId;
+
   const [index, setIndex] = useState(() => randomIndex(pool.length));
   const [nextIndex, setNextIndex] = useState(() => randomIndex(pool.length));
   const [guess, setGuess] = useState('');
@@ -70,7 +85,19 @@ export function HowFast() {
     setIndex(first);
     setNextIndex(pickNext(first));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeDeckId]);
+  }, [activeDeckId, ranked]);
+
+  // Ranked play needs a signed-in player; a sign-out mid-session drops back to casual.
+  useEffect(() => {
+    if (ranked && !user) setRanked(false);
+  }, [ranked, user]);
+
+  // A fresh ranked standing only applies to the run that produced it; clear it when ranked toggles.
+  useEffect(() => {
+    setStanding(null);
+  }, [ranked]);
+
+  const changeRanked = (next: boolean) => setRanked(next);
 
   useEffect(() => {
     if (typeof Image === 'undefined') return;
@@ -102,7 +129,15 @@ export function HowFast() {
   const submit = () => {
     if (!canSubmit || revealed) return;
     setRevealed(true);
-    if (Number(guess) !== base) return; // wrong: hold the streak until Try again
+    if (Number(guess) !== base) {
+      // The run just ended: submit the streak it reached. The server keeps only the best.
+      if (ranked && streak >= 1) {
+        void submitScore(HOWFAST_BOARD, streak)
+          .then(setStanding)
+          .catch(() => {});
+      }
+      return; // wrong: hold the streak until Try again
+    }
     const next = streak + 1;
     setStreak(next);
     if (next > best) {
@@ -165,6 +200,14 @@ export function HowFast() {
         </Button>
       )}
       {revealed && !correct && <Button onClick={tryAgain}>{t('common.tryAgain')}</Button>}
+
+      <RankedPanel
+        configured={configured}
+        signedIn={Boolean(user)}
+        ranked={ranked}
+        onRankedChange={changeRanked}
+        standing={standing}
+      />
     </Stack>
   );
 }
