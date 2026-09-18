@@ -10,6 +10,7 @@ import { useAuth } from '../../auth/AuthContext';
 import { RankedIntroCard } from '../../ranked/RankedIntroCard';
 import { RankedPanel } from '../../ranked/RankedPanel';
 import { submitScore, type MyStanding } from '../../ranked/api';
+import { useGuessTimer } from '../../ranked/useGuessTimer';
 import { HOWFAST_BOARD } from '../../../worker/boards';
 import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
@@ -50,6 +51,11 @@ export function HowFast() {
   const [nextIndex, setNextIndex] = useState(() => randomIndex(pool.length));
   const [guess, setGuess] = useState('');
   const [revealed, setRevealed] = useState(false);
+  // Ranked only: the round's clock ran out before the player submitted. Forces a failure even if the
+  // typed value happened to be right, and holds the streak until Try again.
+  const [timedOut, setTimedOut] = useState(false);
+  // Bumps once per card so the ranked countdown restarts from full each time.
+  const [roundId, setRoundId] = useState(0);
   const [streak, setStreak] = useState(0);
   const [best, setBest] = useState(() => loadBestStreak(activeDeckId));
 
@@ -69,6 +75,8 @@ export function HowFast() {
     clearTimers();
     setRevealed(false);
     setGuess('');
+    setTimedOut(false);
+    setRoundId((n) => n + 1);
     setIndex(nextIndex);
     setNextIndex(pickNext(nextIndex));
   };
@@ -83,6 +91,7 @@ export function HowFast() {
     clearTimers();
     setRevealed(false);
     setGuess('');
+    setTimedOut(false);
     setStreak(0);
     setBest(loadBestStreak(activeDeckId));
     const first = randomIndex(pool.length || 1);
@@ -129,6 +138,33 @@ export function HowFast() {
 
   useEffect(() => clearTimers, []);
 
+  // A ranked run ends on a wrong guess or a timeout; submit the streak it reached (the server keeps
+  // only the best).
+  const submitRankedRun = () => {
+    if (ranked && streak >= 1) {
+      void submitScore(HOWFAST_BOARD, streak)
+        .then(setStanding)
+        .catch(() => {});
+    }
+  };
+
+  // Ranked only: the clock ran out before the player submitted. Reveal the answer as a failure (the
+  // typed value no longer counts) and hold the streak until Try again.
+  const handleTimeout = () => {
+    if (revealed || showRankedIntro) return;
+    clearTimers();
+    setTimedOut(true);
+    setRevealed(true);
+    submitRankedRun();
+  };
+
+  // The per-round countdown runs only while a ranked card is actually awaiting an answer.
+  const secondsLeft = useGuessTimer({
+    running: ranked && rankedStarted && !revealed && pool.length > 0,
+    roundKey: roundId,
+    onExpire: handleTimeout,
+  });
+
   if (pool.length === 0) {
     return (
       <Stack spacing={2}>
@@ -142,20 +178,16 @@ export function HowFast() {
   const pokemon = pool[Math.min(index, pool.length - 1)];
   const name = displayName(pokemon, i18n.language);
   const base = pokemon.baseStats.spe;
-  const correct = revealed && Number(guess) === base;
+  // A timed-out round is always a loss, even if the value in the box happened to be right.
+  const correct = revealed && !timedOut && Number(guess) === base;
   const canSubmit = guess.trim() !== '';
 
   const submit = () => {
     if (!canSubmit || revealed) return;
     setRevealed(true);
     if (Number(guess) !== base) {
-      // The run just ended: submit the streak it reached. The server keeps only the best.
-      if (ranked && streak >= 1) {
-        void submitScore(HOWFAST_BOARD, streak)
-          .then(setStanding)
-          .catch(() => {});
-      }
-      return; // wrong: hold the streak until Try again
+      submitRankedRun(); // wrong: end the run, then hold the streak until Try again
+      return;
     }
     const next = streak + 1;
     setStreak(next);
@@ -193,6 +225,16 @@ export function HowFast() {
         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
           <StreakStat value={streak} label={t('common.streak')} color="primary.main" />
         </Box>
+        {/* Ranked adds a per-round countdown between the counters; the last second flashes red. */}
+        {ranked && (
+          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+            <StreakStat
+              value={secondsLeft}
+              label={t('common.time')}
+              color={secondsLeft <= 1 ? 'error.main' : 'text.primary'}
+            />
+          </Box>
+        )}
         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
           <StreakStat value={best} label={t('common.best')} color="text.primary" />
         </Box>
@@ -228,7 +270,23 @@ export function HowFast() {
           {t('howFast.submit')}
         </Button>
       )}
-      {revealed && !correct && <Button onClick={tryAgain}>{t('common.tryAgain')}</Button>}
+      {/* Once revealed, this row holds Try again; on a correct answer it stays hidden but keeps its
+          space so the surface below never jumps while the card auto-advances. The column flex
+          stretches the button to full width just as it would as a direct Stack child. */}
+      {revealed && (
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            visibility: correct ? 'hidden' : 'visible',
+          }}
+          aria-hidden={correct}
+        >
+          <Button onClick={tryAgain} tabIndex={correct ? -1 : undefined}>
+            {t('common.tryAgain')}
+          </Button>
+        </Box>
+      )}
 
       <RankedPanel
         configured={configured}

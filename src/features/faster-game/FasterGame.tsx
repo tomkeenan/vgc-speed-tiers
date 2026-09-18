@@ -9,6 +9,7 @@ import { useAuth } from '../../auth/AuthContext';
 import { RankedIntroCard } from '../../ranked/RankedIntroCard';
 import { RankedPanel } from '../../ranked/RankedPanel';
 import { submitScore, type MyStanding } from '../../ranked/api';
+import { useGuessTimer } from '../../ranked/useGuessTimer';
 import { fasterBoard } from '../../../worker/boards';
 import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
@@ -89,6 +90,11 @@ export function FasterGame() {
   const [phase, setPhase] = useState<Phase>('idle');
   const [picked, setPicked] = useState<Contender | null>(null);
   const [outcome, setOutcome] = useState<Outcome | null>(null);
+  // Ranked only: the round's clock ran out before the player answered. Freezes play like a wrong
+  // guess (reveal both, hold the streak) until Try again, but with no picked card to tint.
+  const [timedOut, setTimedOut] = useState(false);
+  // Bumps once per round so the ranked countdown restarts from full each time.
+  const [roundId, setRoundId] = useState(0);
   const [streak, setStreak] = useState(0);
   const [best, setBest] = useState(() => loadBestStreak(slot));
 
@@ -118,6 +124,8 @@ export function FasterGame() {
     setPhase('idle');
     setPicked(null);
     setOutcome(null);
+    setTimedOut(false);
+    setRoundId((n) => n + 1);
     showAndPrefetch(nextPair ?? drawPair());
   };
 
@@ -168,6 +176,7 @@ export function FasterGame() {
     setPhase('idle');
     setPicked(null);
     setOutcome(null);
+    setTimedOut(false);
     setStreak(0);
     setBest(loadBestStreak(slot));
     forgetSeen();
@@ -184,6 +193,38 @@ export function FasterGame() {
   }, [nextPair]);
 
   useEffect(() => clearTimers, []);
+
+  // A ranked run ends on a wrong guess or a timeout; submit the streak it reached (the server keeps
+  // only the best). Reads the streak captured when the round ended, so it stays correct if called
+  // from a delayed timer.
+  const submitRankedRun = () => {
+    if (ranked && streak >= 1) {
+      void submitScore(board, streak)
+        .then(setStanding)
+        .catch(() => {});
+    }
+  };
+
+  // Ranked only: the clock ran out before the player answered. Freeze the round like a loss - reveal
+  // both speeds (no card is tinted, since nothing was picked) and hold the streak until Try again.
+  const handleTimeout = () => {
+    if (phase !== 'idle' || !pair) return;
+    clearTimers();
+    setTimedOut(true);
+    setPhase('resolved');
+    submitRankedRun();
+  };
+
+  // The per-round countdown runs only while a ranked round is actually awaiting an answer.
+  const secondsLeft = useGuessTimer({
+    running: ranked && rankedStarted && phase === 'idle' && Boolean(pair),
+    roundKey: roundId,
+    onExpire: handleTimeout,
+  });
+  // The clock counts down while the round is live, then holds where it stopped once answered (a
+  // timeout holds at 0); it resets to full only when the next round begins.
+  const guessFailed = timedOut || outcome === 'wrong';
+  const showTryAgain = guessFailed && phase === 'resolved';
 
   const guess = (choice: Contender) => {
     if (phase !== 'idle' || !pair) return;
@@ -210,11 +251,9 @@ export function FasterGame() {
             setBest(next);
             saveBestStreak(slot, next);
           }
-        } else if (ranked && streak >= 1) {
-          // The run just ended: submit the streak it reached. The server keeps only the best.
-          void submitScore(board, streak)
-            .then(setStanding)
-            .catch(() => {});
+        } else {
+          // The run just ended on a wrong guess: submit the streak it reached.
+          submitRankedRun();
         }
       }, resolveAt),
     );
@@ -329,6 +368,16 @@ export function FasterGame() {
         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
           <StreakStat value={streak} label={t('common.streak')} color="primary.main" />
         </Box>
+        {/* Ranked adds a per-round countdown between the counters; the last second flashes red. */}
+        {ranked && (
+          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+            <StreakStat
+              value={secondsLeft}
+              label={t('common.time')}
+              color={secondsLeft <= 1 ? 'error.main' : 'text.primary'}
+            />
+          </Box>
+        )}
         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
           <StreakStat value={best} label={t('common.best')} color="text.primary" />
         </Box>
@@ -342,9 +391,20 @@ export function FasterGame() {
 
       {body()}
 
-      {outcome === 'wrong' && phase === 'resolved' && (
-        <Button onClick={tryAgain}>{t('common.tryAgain')}</Button>
-      )}
+      {/* Always reserve the Try again row so the surface below never jumps when a round ends. The
+          column flex stretches the button to full width just as it would as a direct Stack child. */}
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          visibility: showTryAgain ? 'visible' : 'hidden',
+        }}
+        aria-hidden={!showTryAgain}
+      >
+        <Button onClick={tryAgain} tabIndex={showTryAgain ? undefined : -1}>
+          {t('common.tryAgain')}
+        </Button>
+      </Box>
 
       <RankedPanel
         configured={configured}

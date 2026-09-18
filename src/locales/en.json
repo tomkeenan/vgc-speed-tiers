@@ -13,6 +13,7 @@
     "tryAgain": "Try again",
     "streak": "Streak",
     "best": "Best",
+    "time": "Time",
     "noPokemon": "No Pokemon available.",
     "features": "Features",
     "copied": "Copied!"
@@ -154,7 +155,7 @@
     "description": "Play the full roster on shared leaderboards.",
     "signInPrompt": "Sign in from the account menu to play ranked.",
     "introTitle": "Ranked mode",
-    "introBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Play the full roster and climb the shared leaderboard. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "introBody": "Be the very best, like no one ever was. Climb the global leaderboard in this timed mode.",
     "start": "Start",
     "leaderboard": "Leaderboard",
     "leaderboardTitle": "Leaderboard",
