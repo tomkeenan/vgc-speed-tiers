@@ -30,7 +30,7 @@ function ModeRow({ title, description, checked, onChange }: ModeRowProps) {
       <Switch
         checked={checked}
         onChange={(e) => onChange(e.target.checked)}
-        inputProps={{ 'aria-label': title }}
+        slotProps={{ input: { 'aria-label': title } }}
         sx={{ flexShrink: 0 }}
       />
     </Box>

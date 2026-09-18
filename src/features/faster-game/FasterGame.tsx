@@ -137,9 +137,12 @@ export function FasterGame() {
   };
 
   const changeMode = (next: GameMode) => {
-    // Hard and Natures are independent ranked boards, so every combination is playable as-is.
     saveMode(next);
     setMode(next);
+    // In ranked, Hard and Natures pick which leaderboard board you play, and a streak can't carry
+    // across boards. Changing one mid-run therefore drops back to the intro card to Start fresh on
+    // the newly selected board (the mode-change reset effect below clears the streak and round).
+    if (ranked) setRankedStarted(false);
   };
 
   // Ranked play needs a signed-in player; a sign-out mid-session drops back to casual.
