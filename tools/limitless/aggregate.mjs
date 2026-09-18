@@ -39,7 +39,9 @@ const ID_OVERRIDES = {
 
 /** Reads the current dataset as the catalog of valid ids, Mega slugs, and display names. */
 async function loadCatalog() {
-  const data = JSON.parse(await readFile(new URL('../../data/pokemon.json', import.meta.url), 'utf8'));
+  const data = JSON.parse(
+    await readFile(new URL('../../data/pokemon.json', import.meta.url), 'utf8'),
+  );
   const ids = data.pokemon.map((p) => p.id);
   const megaSlugs = new Set(ids.filter((id) => id.includes('-mega')));
   const megaBases = megaBasesFrom(megaSlugs);
@@ -97,7 +99,8 @@ export async function buildLimitlessRoster({ regulation = 'M-C', game = 'VGC', l
         const baseSlug = toSlug(mon.id);
         present.add(baseSlug);
         if (catalog.validIds.has(baseSlug)) {
-          if (!nameOf.has(baseSlug)) nameOf.set(baseSlug, catalog.nameById.get(baseSlug) ?? mon.name);
+          if (!nameOf.has(baseSlug))
+            nameOf.set(baseSlug, catalog.nameById.get(baseSlug) ?? mon.name);
         } else {
           note(unknownIds, mon.id);
           if (!nameOf.has(baseSlug)) nameOf.set(baseSlug, mon.name);

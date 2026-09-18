@@ -27,7 +27,9 @@ const BASE_STEM = {
 const NOT_A_STONE = new Set(['eviolite']);
 
 /** Reverse of BASE_STEM: mega-slug stem -> the Limitless base id that produces it. */
-const STEM_TO_BASE = Object.fromEntries(Object.entries(BASE_STEM).map(([base, stem]) => [stem, base]));
+const STEM_TO_BASE = Object.fromEntries(
+  Object.entries(BASE_STEM).map(([base, stem]) => [stem, base]),
+);
 
 /**
  * Derives the set of Limitless base ids that have a Mega, from our valid mega slugs.

@@ -21,7 +21,9 @@ async function fromLimitless() {
   }
   const unknown = [...report.unknownIds].sort((a, b) => b[1] - a[1]);
   if (unknown.length) {
-    console.warn(`  ? ${unknown.length} unmapped Limitless ids (add to ID_OVERRIDES if unresolved downstream):`);
+    console.warn(
+      `  ? ${unknown.length} unmapped Limitless ids (add to ID_OVERRIDES if unresolved downstream):`,
+    );
     for (const [id, n] of unknown) console.warn(`      ${id} (x${n})`);
   }
 
@@ -84,7 +86,11 @@ async function fromSmogon() {
   };
 }
 
-const { pokemon: pool, format, source } = SOURCE === 'smogon' ? await fromSmogon() : await fromLimitless();
+const {
+  pokemon: pool,
+  format,
+  source,
+} = SOURCE === 'smogon' ? await fromSmogon() : await fromLimitless();
 const pokemon = pool.map((p, i) => ({ ...p, usageRank: i + 1 }));
 
 const roster = {
