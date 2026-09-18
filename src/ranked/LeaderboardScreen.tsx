@@ -4,8 +4,8 @@ import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import CircularProgress from '@mui/material/CircularProgress';
 import Stack from '@mui/material/Stack';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Typography from '@mui/material/Typography';
 import { TrophyIcon } from '../components/TrophyIcon';
 import { useAuth } from '../auth/AuthContext';
@@ -30,6 +30,10 @@ interface LeaderboardScreenProps {
 }
 
 const ROW_COLUMNS = '2.5rem 1fr auto';
+
+// The game selector mirrors the header's Practice/Ranked segmented control: a full-width, exclusive
+// ToggleButtonGroup whose buttons share the row evenly.
+const GAME_TOGGLE_SX = { flex: 1, textTransform: 'none', fontWeight: 600, lineHeight: 1.2 } as const;
 
 /** The leaderboard shows the top ten; a player outside it still sees their own standing at the foot. */
 const TOP_N = 10;
@@ -126,7 +130,7 @@ function Row({
 }
 
 /**
- * The ranked leaderboard: a tab per game (Who's Faster? / How Fast?) over a scrollable top-N list.
+ * The ranked leaderboard: a segment per game (Who's Faster? / How Fast?) over a scrollable top-N list.
  * Who's Faster? carries independent Hard and Natures toggle chips that switch between its four boards.
  * Opens on the board matching the current game, highlights the signed-in player's rows, and surfaces
  * their own standing at the foot even when they are not in the visible top-N.
@@ -262,18 +266,27 @@ export function LeaderboardScreen({ initialBoard = 'faster:standard' }: Leaderbo
 
   return (
     <Stack spacing={2}>
-      {/* One tab per game. The modifier chips sit below the list so switching tabs never
-          shifts it, and their row height is reserved on every tab so the board keeps a
-          constant size (only the Who's Faster? tab actually fills the row). */}
-      <Tabs
+      {/* One segment per game, styled like the header's Practice/Ranked switch. The modifier chips
+          sit below the list so switching games never shifts it, and their row height is reserved on
+          every game so the board keeps a constant size (only Who's Faster? actually fills the row). */}
+      <ToggleButtonGroup
+        exclusive
+        size="small"
+        color="primary"
         value={game}
-        onChange={(_, next: Game) => setGame(next)}
-        variant="fullWidth"
+        onChange={(_, next: Game | null) => {
+          if (next) setGame(next);
+        }}
         aria-label={t('ranked.leaderboardTitle')}
+        sx={{ display: 'flex', width: '100%' }}
       >
-        <Tab value="faster" label={t('ranked.games.faster')} />
-        <Tab value="howfast" label={t('ranked.games.howFast')} />
-      </Tabs>
+        <ToggleButton value="faster" sx={GAME_TOGGLE_SX}>
+          {t('ranked.games.faster')}
+        </ToggleButton>
+        <ToggleButton value="howfast" sx={GAME_TOGGLE_SX}>
+          {t('ranked.games.howFast')}
+        </ToggleButton>
+      </ToggleButtonGroup>
 
       <Box sx={{ minHeight: BODY_MIN_HEIGHT }}>{body()}</Box>
 

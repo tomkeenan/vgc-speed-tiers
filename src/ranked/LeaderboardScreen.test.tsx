@@ -108,12 +108,12 @@ describe('LeaderboardScreen', () => {
     );
   });
 
-  it('switches to the How Fast? board from its tab without another fetch', async () => {
+  it('switches to the How Fast? board from its segment without another fetch', async () => {
     renderScreen();
     await screen.findByText('Ash');
-    await userEvent.click(screen.getByRole('tab', { name: 'How Fast?' }));
+    await userEvent.click(screen.getByRole('button', { name: 'How Fast?' }));
     expect(await screen.findByText('FastTyper')).toBeInTheDocument();
-    // All boards came in the one open request; switching tabs must not hit the network again.
+    // All boards came in the one open request; switching games must not hit the network again.
     expect(fetchAllLeaderboards).toHaveBeenCalledTimes(1);
   });
 
