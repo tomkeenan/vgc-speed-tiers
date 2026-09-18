@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import { FasterGame } from './features/faster-game/FasterGame';
@@ -54,8 +54,9 @@ type TabKey = (typeof TABS)[number]['key'];
 export default function App() {
   const { t } = useTranslation();
   const { user } = useAuth();
+  const signedIn = Boolean(user);
   const [tab, setTab] = useState<TabKey>('faster');
-  const [ranked, setRanked] = useState(false);
+  const [ranked, setRanked] = useState(signedIn);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [leaderboardBoard, setLeaderboardBoard] = useState<BoardKey | undefined>(undefined);
   const active = TABS.find((t) => t.key === tab) ?? TABS[0];
@@ -65,10 +66,13 @@ export default function App() {
     setTab('leaderboard');
   };
 
-  // Ranked play needs a signed-in player; a sign-out drops the whole app back to practice.
+  const prevSignedIn = useRef(signedIn);
   useEffect(() => {
-    if (ranked && !user) setRanked(false);
-  }, [ranked, user]);
+    if (prevSignedIn.current !== signedIn) {
+      setRanked(signedIn);
+      prevSignedIn.current = signedIn;
+    }
+  }, [signedIn]);
 
   return (
     <DecksProvider>

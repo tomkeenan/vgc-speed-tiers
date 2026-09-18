@@ -11,28 +11,28 @@ const result = (over: Partial<ScoreResult> = {}): ScoreResult => ({
 });
 
 describe('rankedCelebration', () => {
-  it('celebrates a first score in the top ranks as a best, a placement, and its board', () => {
+  it('celebrates a first score in the top ranks as a best, a fresh placement, and its board', () => {
     expect(
       rankedCelebration(result({ rank: 5, previousRank: null, isPersonalBest: true }), 'faster:hard'),
-    ).toEqual({ streak: 10, personalBest: true, rank: 5, board: 'faster:hard' });
+    ).toEqual({ streak: 10, personalBest: true, rank: 5, climbed: true, board: 'faster:hard' });
   });
 
   it('celebrates a personal best outside the top ranks without a rank but with its board', () => {
     expect(
       rankedCelebration(result({ rank: 42, previousRank: 88, isPersonalBest: true }), 'faster:hard'),
-    ).toEqual({ streak: 10, personalBest: true, rank: null, board: 'faster:hard' });
+    ).toEqual({ streak: 10, personalBest: true, rank: null, climbed: false, board: 'faster:hard' });
   });
 
   it('celebrates a climb into the top ranks from outside', () => {
     expect(
       rankedCelebration(result({ rank: 8, previousRank: 15, isPersonalBest: true }), 'howfast:standard'),
-    ).toEqual({ streak: 10, personalBest: true, rank: 8, board: 'howfast:standard' });
+    ).toEqual({ streak: 10, personalBest: true, rank: 8, climbed: true, board: 'howfast:standard' });
   });
 
-  it('does not show a placement when the rank is unchanged (beat your own best while already #1)', () => {
+  it('keeps the placement (not climbed) on a best that holds the rank (beat your own best while #1)', () => {
     expect(
       rankedCelebration(result({ rank: 1, previousRank: 1, isPersonalBest: true }), 'faster:standard'),
-    ).toEqual({ streak: 10, personalBest: true, rank: null, board: 'faster:standard' });
+    ).toEqual({ streak: 10, personalBest: true, rank: 1, climbed: false, board: 'faster:standard' });
   });
 
   it('never announces a worse placement: 3rd stays quiet about landing at 9th', () => {
@@ -50,6 +50,12 @@ describe('rankedCelebration', () => {
 
 describe('practiceCelebration', () => {
   it('is a personal best with no rank and no board', () => {
-    expect(practiceCelebration(7)).toEqual({ streak: 7, personalBest: true, rank: null, board: null });
+    expect(practiceCelebration(7)).toEqual({
+      streak: 7,
+      personalBest: true,
+      rank: null,
+      climbed: false,
+      board: null,
+    });
   });
 });

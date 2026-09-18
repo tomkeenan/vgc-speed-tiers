@@ -31,6 +31,7 @@ type BodyKey = `ranked.celebration.${
   | 'rank2Body'
   | 'rank3Body'
   | 'topBody'
+  | 'combinedBody'
   | 'pbBody'
   | 'practiceBody'}`;
 
@@ -53,6 +54,7 @@ export function CelebrationDialog({ celebration, onClose, onViewLeaderboard }: C
   const streak = celebration?.streak ?? 0;
   const rank = celebration?.rank ?? null;
   const board = celebration?.board ?? null;
+  const climbed = celebration?.climbed ?? false;
   const variant = variantFor(rank);
 
   useEffect(() => {
@@ -73,6 +75,13 @@ export function CelebrationDialog({ celebration, onClose, onViewLeaderboard }: C
 
   // Returns the body's key and values (not a resolved string) so <Trans> keeps the <strong> markup.
   const heading = (): { title: string; bodyKey: BodyKey; values: Record<string, number> } => {
+    if (rank != null && !climbed) {
+      return {
+        title: t('ranked.celebration.combinedTitle'),
+        bodyKey: 'ranked.celebration.combinedBody',
+        values: { streak, rank },
+      };
+    }
     switch (variant) {
       case 'rank1':
         return { title: t('ranked.celebration.rank1Title'), bodyKey: 'ranked.celebration.rank1Body', values: { streak } };

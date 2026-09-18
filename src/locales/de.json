@@ -191,6 +191,8 @@
       "rank3Body": "Eine Serie von <strong>{{streak}}</strong> bringt dich auf Platz 3. Eine Stufe höher ist die Aussicht noch besser.",
       "topTitle": "Du bist auf der Bestenliste!",
       "topBody": "Eine Serie von <strong>{{streak}}</strong> bringt dich auf #<strong>{{rank}}</strong>. Das Podium ist in Sicht.",
+      "combinedTitle": "Neuer Rekord!",
+      "combinedBody": "Eine Serie von <strong>{{streak}}</strong> stellt einen neuen Rekord auf - und du bleibst auf #<strong>{{rank}}</strong>.",
       "pbTitle": "Neuer Rekord!",
       "pbBody": "Eine Serie von <strong>{{streak}}</strong>, und es geht weiter. Die Top 10 rufen.",
       "practiceTitle": "Neuer Rekord!",

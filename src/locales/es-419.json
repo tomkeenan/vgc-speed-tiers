@@ -191,6 +191,8 @@
       "rank3Body": "Una racha de <strong>{{streak}}</strong> te ubica 3.º. Un escalón más arriba la vista es aún mejor.",
       "topTitle": "¡Estás en la tabla de posiciones!",
       "topBody": "Una racha de <strong>{{streak}}</strong> te ubica en el puesto n.º <strong>{{rank}}</strong>. El podio está a la vista.",
+      "combinedTitle": "¡Nuevo récord!",
+      "combinedBody": "Una racha de <strong>{{streak}}</strong> supera tu marca, y sigues en el puesto n.º <strong>{{rank}}</strong>.",
       "pbTitle": "¡Nuevo récord!",
       "pbBody": "Una racha de <strong>{{streak}}</strong> y subiendo. El Top 10 te llama.",
       "practiceTitle": "¡Nuevo récord!",

@@ -191,6 +191,8 @@
       "rank3Body": "連續答對 <strong>{{streak}}</strong> 次，位列第 3。再上一級，風景更好。",
       "topTitle": "你登上排行榜了！",
       "topBody": "連續答對 <strong>{{streak}}</strong> 次，讓你排在第 <strong>{{rank}}</strong> 名。頒獎台已在眼前。",
+      "combinedTitle": "個人最佳紀錄！",
+      "combinedBody": "連續答對 <strong>{{streak}}</strong> 次刷新了紀錄，你依然排在第 <strong>{{rank}}</strong> 名。",
       "pbTitle": "個人最佳紀錄！",
       "pbBody": "連續答對 <strong>{{streak}}</strong> 次，還在繼續。前 10 名在向你招手。",
       "practiceTitle": "個人最佳紀錄！",

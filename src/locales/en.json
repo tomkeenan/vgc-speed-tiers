@@ -191,6 +191,8 @@
       "rank3Body": "A streak of <strong>{{streak}}</strong> puts you 3rd. The view's even better one step up.",
       "topTitle": "You made the board!",
       "topBody": "A streak of <strong>{{streak}}</strong> puts you at #<strong>{{rank}}</strong>. The podium's in sight.",
+      "combinedTitle": "New personal best!",
+      "combinedBody": "A streak of <strong>{{streak}}</strong> raises your record - and you're still #<strong>{{rank}}</strong> on the board.",
       "pbTitle": "New PB!",
       "pbBody": "A streak of <strong>{{streak}}</strong> and climbing. The top 10 is calling.",
       "practiceTitle": "New PB!",

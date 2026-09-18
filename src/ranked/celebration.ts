@@ -8,31 +8,34 @@ export const TOP_RANKS = 10;
 export interface Celebration {
   streak: number;
   personalBest: boolean;
-  /** The new leaderboard rank when the run climbed into the top ranks, else null. */
+  /** The current leaderboard rank when the run sits in the top ranks, else null. */
   rank: number | null;
+  /** Whether that rank is a fresh climb (pure placement fanfare) rather than a held position. */
+  climbed: boolean;
   /** The leaderboard board the run counted towards, or null for a local practice best. */
   board: BoardKey | null;
 }
 
 /**
- * Decides what to celebrate for a completed ranked run, or null when there's nothing new. A top-N
- * placement shows only when it improves on the player's previous rank (climbing from 3rd doesn't
- * pop for landing at 9th), and a rank can only improve on a new best, so a top-N popup is always
- * also a personal best.
+ * Decides what to celebrate for a completed ranked run, or null when there's nothing new. Only a new
+ * personal best pops (a run can only change the player's own best, and a rank never worsens on a
+ * best). A top-N placement is shown whenever the best lands in the top ranks: `climbed` marks a rank
+ * that improved on the previous one - the caller gives that the placement fanfare and gives a held
+ * top-N rank a combined "new best, still #N" message instead.
  */
 export function rankedCelebration(result: ScoreResult, board: BoardKey): Celebration | null {
-  const climbedIntoTop =
-    result.rank <= TOP_RANKS && (result.previousRank == null || result.rank < result.previousRank);
-  if (!result.isPersonalBest && !climbedIntoTop) return null;
+  if (!result.isPersonalBest) return null;
+  const inTop = result.rank <= TOP_RANKS;
   return {
     streak: result.streak,
-    personalBest: result.isPersonalBest,
-    rank: climbedIntoTop ? result.rank : null,
+    personalBest: true,
+    rank: inTop ? result.rank : null,
+    climbed: inTop && (result.previousRank == null || result.rank < result.previousRank),
     board,
   };
 }
 
 /** A local (practice) personal best, which has no leaderboard rank or board. */
 export function practiceCelebration(streak: number): Celebration {
-  return { streak, personalBest: true, rank: null, board: null };
+  return { streak, personalBest: true, rank: null, climbed: false, board: null };
 }

@@ -191,6 +191,8 @@
       "rank3Body": "<strong>{{streak}}</strong> oikean vastauksen putki nostaa sinut 3. sijalle. Yksi askel ylemmäs, ja näkymä on vielä parempi.",
       "topTitle": "Pääsit tulostauluun!",
       "topBody": "<strong>{{streak}}</strong> oikean vastauksen putki nostaa sinut sijalle #<strong>{{rank}}</strong>. Palkintokoroke häämöttää.",
+      "combinedTitle": "Uusi ennätys!",
+      "combinedBody": "<strong>{{streak}}</strong> oikean vastauksen putki rikkoo ennätyksesi, ja pysyt yhä sijalla #<strong>{{rank}}</strong>.",
       "pbTitle": "Uusi ennätys!",
       "pbBody": "<strong>{{streak}}</strong> oikean vastauksen putki, ja lisää on tulossa. Top 10 kutsuu.",
       "practiceTitle": "Uusi ennätys!",

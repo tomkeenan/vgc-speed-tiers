@@ -25,6 +25,7 @@ import { loadBestStreak, saveBestStreak } from './bestStreak';
 
 const SETTLE_BUFFER_MS = 150;
 const RESOLVE_HOLD_MS = 1800;
+const AUTOSUBMIT_DELAY_MS = 700;
 
 /**
  * How Fast? feature: shows a Pokemon's artwork and asks the player to type its exact base Speed.
@@ -67,9 +68,13 @@ export function HowFast({ ranked = false, onViewLeaderboard }: HowFastProps) {
 
   const inputRef = useRef<HTMLInputElement>(null);
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
+  const autoSubmitTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const submitRef = useRef<() => void>(() => {});
   const clearTimers = () => {
     timers.current.forEach(clearTimeout);
     timers.current = [];
+    if (autoSubmitTimer.current) clearTimeout(autoSubmitTimer.current);
+    autoSubmitTimer.current = undefined;
   };
 
   const pickNext = (exclude: number) => {
@@ -207,6 +212,14 @@ export function HowFast({ ranked = false, onViewLeaderboard }: HowFastProps) {
     const advanceAt = slotSpinMs(base) + SETTLE_BUFFER_MS + RESOLVE_HOLD_MS;
     timers.current.push(setTimeout(nextCard, advanceAt));
   };
+  submitRef.current = submit;
+
+  const scheduleAutoSubmit = (value: string) => {
+    if (autoSubmitTimer.current) clearTimeout(autoSubmitTimer.current);
+    autoSubmitTimer.current = undefined;
+    if (value.trim() === '') return;
+    autoSubmitTimer.current = setTimeout(() => submitRef.current(), AUTOSUBMIT_DELAY_MS);
+  };
 
   // Renders the play card. When masked, it shows the mystery placeholder (question-mark art, name,
   // types and speed) that ranked opens on; its footprint matches the played card exactly, so
@@ -269,14 +282,22 @@ export function HowFast({ ranked = false, onViewLeaderboard }: HowFastProps) {
         type="number"
         inputRef={inputRef}
         value={guess}
-        onChange={(e) => setGuess(e.target.value)}
+        onChange={(e) => {
+          setGuess(e.target.value);
+          if (!revealed && !showRankedIntro) scheduleAutoSubmit(e.target.value);
+        }}
         onKeyDown={(e) => {
           if (e.key === 'Enter' && !revealed && !showRankedIntro) submit();
         }}
         disabled={revealed || showRankedIntro}
         placeholder={t('howFast.placeholder')}
         fullWidth
-        inputProps={{ inputMode: 'numeric', min: 0, 'aria-label': t('howFast.inputAria') }}
+        inputProps={{
+          inputMode: 'numeric',
+          enterKeyHint: 'done',
+          min: 0,
+          'aria-label': t('howFast.inputAria'),
+        }}
       />
 
       {/* Before a ranked run starts this row holds Play; during play it holds Submit; once a card is

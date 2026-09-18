@@ -59,6 +59,23 @@ describe('HowFast', () => {
     expect(submitBtn()).toHaveProperty('disabled', false);
   });
 
+  it('auto-submits the guess after a pause with no button click', () => {
+    render();
+    type(String(first.baseStats.spe));
+    advance(1000); // pause after the last digit
+    expect(screen.queryByText('???')).toBeNull(); // revealed via auto-submit
+    expect(streakValue()).toBe('1');
+  });
+
+  it('does not auto-submit while the player is still entering digits', () => {
+    render();
+    type('1');
+    advance(400); // shorter than the debounce
+    type('12'); // another digit resets the timer
+    advance(400);
+    expect(screen.getByText('???')).toBeTruthy(); // still masked, not submitted mid-entry
+  });
+
   it('counts an exact match, reveals the speed, and auto-advances to a fresh card', () => {
     render();
     type(String(first.baseStats.spe));

@@ -191,6 +191,8 @@
       "rank3Body": "<strong>{{streak}}</strong>連続正解で3位に。もう一段上がれば、景色はもっといい。",
       "topTitle": "ランキング入り！",
       "topBody": "<strong>{{streak}}</strong>連続正解でランキング#<strong>{{rank}}</strong>位に。表彰台はもう目前だ。",
+      "combinedTitle": "自己ベスト更新！",
+      "combinedBody": "<strong>{{streak}}</strong>連続正解で自己ベスト更新、ランキングは#<strong>{{rank}}</strong>位のまま。",
       "pbTitle": "自己ベスト更新！",
       "pbBody": "<strong>{{streak}}</strong>連続正解、まだまだ伸びる。トップ10が呼んでいる。",
       "practiceTitle": "自己ベスト更新！",

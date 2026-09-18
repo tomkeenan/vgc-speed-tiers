@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import { HeaderIconButton } from './HeaderIconButton';
+import { SwordsIcon } from './SwordsIcon';
 
 interface ModeSwitchProps {
   ranked: boolean;
@@ -9,45 +12,53 @@ interface ModeSwitchProps {
   signedIn: boolean;
 }
 
-const BUTTON_SX = {
-  px: 1.5,
-  py: 0.5,
-  textTransform: 'none',
-  fontWeight: 600,
-  lineHeight: 1.2,
-} as const;
-
 /**
- * The header's Practice/Ranked segmented control that switches the whole app's game mode. The Ranked
- * option is disabled until the player signs in. Takes the current mode, a change handler and the
- * sign-in state, returns the element.
+ * The header's crossed-swords button that opens a menu to switch the whole app's game mode. The
+ * Ranked option is disabled until the player signs in. Takes the current mode, a change handler and
+ * the sign-in state, returns the element.
  */
 export function ModeSwitch({ ranked, onChange, signedIn }: ModeSwitchProps) {
   const { t } = useTranslation();
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+  const open = Boolean(anchorEl);
+
+  const choose = (next: boolean) => {
+    onChange(next);
+    setAnchorEl(null);
+  };
+
   return (
-    <ToggleButtonGroup
-      exclusive
-      size="small"
-      color="primary"
-      value={ranked ? 'ranked' : 'practice'}
-      onChange={(_, value) => {
-        if (value === 'practice') onChange(false);
-        else if (value === 'ranked') onChange(true);
-      }}
-      aria-label={t('mode.label')}
-      sx={{ flexShrink: 0 }}
-    >
-      <ToggleButton value="practice" sx={BUTTON_SX}>
-        {t('mode.practice')}
-      </ToggleButton>
-      <ToggleButton
-        value="ranked"
-        disabled={!signedIn}
-        title={signedIn ? undefined : t('mode.signInRequired')}
-        sx={BUTTON_SX}
+    <>
+      <HeaderIconButton
+        label={t('mode.label')}
+        active={open}
+        aria-pressed={undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? true : undefined}
+        onClick={(e) => setAnchorEl(e.currentTarget)}
+        sx={{ flexShrink: 0 }}
       >
-        {t('mode.ranked')}
-      </ToggleButton>
-    </ToggleButtonGroup>
+        <SwordsIcon />
+      </HeaderIconButton>
+      <Menu
+        anchorEl={anchorEl}
+        open={open}
+        onClose={() => setAnchorEl(null)}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      >
+        <MenuItem selected={!ranked} onClick={() => choose(false)}>
+          {t('mode.practice')}
+        </MenuItem>
+        <MenuItem
+          selected={ranked}
+          disabled={!signedIn}
+          title={signedIn ? undefined : t('mode.signInRequired')}
+          onClick={() => choose(true)}
+        >
+          {t('mode.ranked')}
+        </MenuItem>
+      </Menu>
+    </>
   );
 }

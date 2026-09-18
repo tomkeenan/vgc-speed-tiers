@@ -191,6 +191,8 @@
       "rank3Body": "<strong>{{streak}}</strong>연속 정답으로 3위예요. 한 계단만 더 오르면 경치가 더 좋아요.",
       "topTitle": "순위표에 올랐어요!",
       "topBody": "<strong>{{streak}}</strong>연속 정답으로 순위표 #<strong>{{rank}}</strong>위에 올랐어요. 시상대가 눈앞이에요.",
+      "combinedTitle": "새로운 최고 기록!",
+      "combinedBody": "<strong>{{streak}}</strong>연속 정답으로 최고 기록을 경신했고, 순위는 여전히 #<strong>{{rank}}</strong>위예요.",
       "pbTitle": "새로운 최고 기록!",
       "pbBody": "<strong>{{streak}}</strong>연속 정답, 계속 올라가는 중이에요. Top 10이 부르고 있어요.",
       "practiceTitle": "새로운 최고 기록!",

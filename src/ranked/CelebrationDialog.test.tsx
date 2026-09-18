@@ -8,6 +8,7 @@ const celebration = (over: Partial<Celebration>): Celebration => ({
   streak: 12,
   personalBest: true,
   rank: null,
+  climbed: true,
   board: null,
   ...over,
 });
@@ -82,6 +83,18 @@ describe('CelebrationDialog', () => {
     fireEvent.click(screen.getByRole('button', { name: 'View leaderboard' }));
     expect(onViewLeaderboard).toHaveBeenCalledWith('faster:hard');
     expect(onClose).toHaveBeenCalled();
+  });
+
+  it('shows the combined best-and-placement copy for a best that holds a top-ten rank', () => {
+    renderWithTheme(
+      <CelebrationDialog
+        celebration={celebration({ streak: 30, rank: 1, climbed: false, board: 'faster:hard' })}
+        onClose={() => {}}
+      />,
+    );
+    expect(screen.getByText('New personal best!')).toBeTruthy();
+    expect(bodyText("A streak of 30 raises your record - and you're still #1 on the board.")).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'View leaderboard' })).toBeTruthy();
   });
 
   it('continues playing without opening the leaderboard from the secondary link', () => {

@@ -12,6 +12,7 @@ const celebration = (over: Partial<Celebration>): Celebration => ({
   streak: 10,
   personalBest: true,
   rank: null,
+  climbed: false,
   board: null,
   ...over,
 });

@@ -19,12 +19,7 @@ const renderHeader = (props: Partial<Parameters<typeof Header>[0]> = {}) =>
   renderWithTheme(
     <AuthProvider>
       <DecksProvider>
-        <Header
-          onOpenSettings={vi.fn()}
-          ranked={false}
-          onRankedChange={vi.fn()}
-          {...props}
-        />
+        <Header onOpenSettings={vi.fn()} ranked={false} onRankedChange={vi.fn()} {...props} />
       </DecksProvider>
     </AuthProvider>,
   );
@@ -58,26 +53,31 @@ describe('Header', () => {
 
   it('hides the mode switch when sign-in is not configured', () => {
     renderHeader();
-    expect(screen.queryByRole('button', { name: 'Practice' })).toBeNull();
-    expect(screen.queryByRole('button', { name: 'Ranked' })).toBeNull();
+    expect(screen.queryByRole('button', { name: 'Game mode' })).toBeNull();
   });
 
-  it('disables the Ranked option until the player signs in', () => {
+  it('disables the Ranked option until the player signs in', async () => {
     configured = true;
     renderHeader();
-    expect(screen.getByRole('button', { name: 'Practice' })).toBeEnabled();
-    expect(screen.getByRole('button', { name: 'Ranked' })).toBeDisabled();
+    await userEvent.click(screen.getByRole('button', { name: 'Game mode' }));
+    expect(screen.getByRole('menuitem', { name: 'Practice' })).not.toHaveAttribute(
+      'aria-disabled',
+      'true',
+    );
+    expect(screen.getByRole('menuitem', { name: 'Ranked' })).toHaveAttribute(
+      'aria-disabled',
+      'true',
+    );
   });
 
-  it('switches to ranked from the mode switch when signed in', async () => {
+  it('switches to ranked from the mode menu when signed in', async () => {
     configured = true;
     signIn();
     const onRankedChange = vi.fn();
     renderHeader({ onRankedChange });
 
-    const ranked = screen.getByRole('button', { name: 'Ranked' });
-    expect(ranked).toBeEnabled();
-    await userEvent.click(ranked);
+    await userEvent.click(screen.getByRole('button', { name: 'Game mode' }));
+    await userEvent.click(screen.getByRole('menuitem', { name: 'Ranked' }));
     expect(onRankedChange).toHaveBeenCalledWith(true);
   });
 
