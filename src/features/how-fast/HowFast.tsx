@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import { useDecks } from '../../decks/DecksContext';
 import { ALL_DECK_ID } from '../../decks/store';
 import { useAuth } from '../../auth/AuthContext';
+import { RankedIntroCard } from '../../ranked/RankedIntroCard';
 import { RankedPanel } from '../../ranked/RankedPanel';
 import { submitScore, type MyStanding } from '../../ranked/api';
 import { HOWFAST_BOARD } from '../../../worker/boards';
@@ -35,6 +36,9 @@ export function HowFast() {
   const { configured, user } = useAuth();
   const [ranked, setRanked] = useState(false);
   const [standing, setStanding] = useState<MyStanding | null>(null);
+  // Ranked opens on a single centered intro card (not a play card) that explains the mode and holds
+  // a Start button; play begins only once the player starts it. Mirrors Who's Faster?.
+  const [rankedStarted, setRankedStarted] = useState(false);
 
   // Ranked always plays the canonical roster (all Pokemon) so every score is comparable; custom
   // decks stay casual and local-only.
@@ -99,6 +103,21 @@ export function HowFast() {
 
   const changeRanked = (next: boolean) => setRanked(next);
 
+  // Ranked always opens on the intro card; toggling it off drops straight back to casual play.
+  useEffect(() => {
+    setRankedStarted(false);
+  }, [ranked]);
+
+  // Start leaves the intro card for a fresh ranked run.
+  const startRanked = () => {
+    setStreak(0);
+    setRankedStarted(true);
+    nextCard();
+  };
+
+  // While ranked is on but not yet started, the game shows its single intro card in place of play.
+  const showRankedIntro = ranked && !rankedStarted;
+
   useEffect(() => {
     if (typeof Image === 'undefined') return;
     const url = pool[nextIndex]?.sprite;
@@ -149,6 +168,25 @@ export function HowFast() {
     timers.current.push(setTimeout(nextCard, advanceAt));
   };
 
+  const playCard = () => (
+    <Card
+      state={revealed ? (correct ? 'correct' : 'wrong') : undefined}
+      ariaLabel={t('howFast.cardAria', { name })}
+    >
+      <Stack spacing={1.5} sx={{ alignItems: 'center' }}>
+        <Box sx={{ width: { xs: 192, sm: 224 }, maxWidth: '100%' }}>
+          <PokemonImage src={pokemon.sprite} name={name} eager />
+        </Box>
+        <Typography variant="h6" sx={{ fontWeight: 700, color: 'text.primary' }}>
+          {name}
+        </Typography>
+        <TypeBadges types={pokemon.types} />
+
+        <SpeedReveal value={base} revealed={revealed} />
+      </Stack>
+    </Card>
+  );
+
   return (
     <Stack spacing={2}>
       <Stack direction="row" spacing={{ xs: 1, sm: 1.5 }}>
@@ -164,38 +202,29 @@ export function HowFast() {
         {t('howFast.prompt')}
       </Typography>
 
-      <Card
-        state={revealed ? (correct ? 'correct' : 'wrong') : undefined}
-        ariaLabel={t('howFast.cardAria', { name })}
-      >
-        <Stack spacing={1.5} sx={{ alignItems: 'center' }}>
-          <Box sx={{ width: { xs: 192, sm: 224 }, maxWidth: '100%' }}>
-            <PokemonImage src={pokemon.sprite} name={name} eager />
-          </Box>
-          <Typography variant="h6" sx={{ fontWeight: 700, color: 'text.primary' }}>
-            {name}
-          </Typography>
-          <TypeBadges types={pokemon.types} />
+      {showRankedIntro ? (
+        <RankedIntroCard onStart={startRanked} cardSx={{ width: '100%' }} footprint={playCard()} />
+      ) : (
+        playCard()
+      )}
 
-          <SpeedReveal value={base} revealed={revealed} />
-        </Stack>
-      </Card>
-
+      {/* The input and submit stay in place through the intro (inert until Start) so the surface
+          keeps the same shape whether ranked is starting or being played. */}
       <TextField
         type="number"
         value={guess}
         onChange={(e) => setGuess(e.target.value)}
         onKeyDown={(e) => {
-          if (e.key === 'Enter' && !revealed) submit();
+          if (e.key === 'Enter' && !revealed && !showRankedIntro) submit();
         }}
-        disabled={revealed}
+        disabled={revealed || showRankedIntro}
         placeholder={t('howFast.placeholder')}
         fullWidth
         inputProps={{ inputMode: 'numeric', min: 0, 'aria-label': t('howFast.inputAria') }}
       />
 
       {!revealed && (
-        <Button onClick={submit} disabled={!canSubmit}>
+        <Button onClick={submit} disabled={!canSubmit || showRankedIntro}>
           {t('howFast.submit')}
         </Button>
       )}

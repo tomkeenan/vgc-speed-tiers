@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import { useDecks } from '../../decks/DecksContext';
 import { ALL_DECK_ID } from '../../decks/store';
 import { useAuth } from '../../auth/AuthContext';
+import { RankedIntroCard } from '../../ranked/RankedIntroCard';
 import { RankedPanel } from '../../ranked/RankedPanel';
 import { submitScore, type MyStanding } from '../../ranked/api';
 import { fasterBoard } from '../../../worker/boards';
@@ -48,6 +49,9 @@ export function FasterGame() {
   const [mode, setMode] = useState<GameMode>(loadMode);
   const [ranked, setRanked] = useState(false);
   const [standing, setStanding] = useState<MyStanding | null>(null);
+  // Ranked opens on a single centered intro card (not the two contenders) that explains the mode
+  // and holds a Start button; play begins only once the player starts it.
+  const [rankedStarted, setRankedStarted] = useState(false);
 
   // Ranked always plays the canonical roster (all Pokemon) so every score is comparable; custom
   // decks stay casual and local-only. The board is derived from the mode toggles.
@@ -141,6 +145,22 @@ export function FasterGame() {
   }, [ranked]);
 
   const changeRanked = (next: boolean) => setRanked(next);
+
+  // Ranked always opens on the intro card; toggling it off drops straight back to casual play.
+  useEffect(() => {
+    setRankedStarted(false);
+  }, [ranked]);
+
+  // Start leaves the intro card for a fresh ranked run.
+  const startRanked = () => {
+    forgetSeen();
+    setStreak(0);
+    setRankedStarted(true);
+    startRound();
+  };
+
+  // While ranked is on but not yet started, the game shows its single intro card in place of play.
+  const showRankedIntro = ranked && !rankedStarted;
 
   // A new deck or mode resets the round, the streak, and the best from that mode's own slot.
   useEffect(() => {
@@ -236,7 +256,15 @@ export function FasterGame() {
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
             {name}
           </Typography>
-          {c.nature !== 'base' && <NatureBadge nature={c.nature} />}
+          {/* Always reserve the nature-badge row (an invisible placeholder when there's no nature)
+              so toggling Natures on or off never changes the card's height. */}
+          {c.nature !== 'base' ? (
+            <NatureBadge nature={c.nature} />
+          ) : (
+            <Box aria-hidden sx={{ visibility: 'hidden' }}>
+              <NatureBadge nature="neutral" />
+            </Box>
+          )}
           <TypeBadges types={c.pokemon.types} />
           {/* Pinned to the bottom so the two cards' speeds line up whatever the type count. */}
           <Box sx={{ width: '100%', mt: 'auto', pt: 2 }}>
@@ -250,7 +278,26 @@ export function FasterGame() {
     );
   };
 
+  // Ranked opens on a single centered intro card, the width of one contender and sitting where the
+  // pair would, that holds the Start button. It reserves the pair's footprint (via RankedIntroCard)
+  // so toggling ranked on never shrinks the surface.
+  const rankedIntroCard = (shownPair: [Contender, Contender]) => (
+    <RankedIntroCard
+      onStart={startRanked}
+      cardSx={{ width: { xs: 'calc(50% - 4px)', sm: 'calc(50% - 6px)' } }}
+      footprint={
+        <Stack direction="row" spacing={{ xs: 1, sm: 1.5 }}>
+          {contender(shownPair[0])}
+          {contender(shownPair[1])}
+        </Stack>
+      }
+    />
+  );
+
   const body = () => {
+    if (showRankedIntro && pair) {
+      return rankedIntroCard(pair);
+    }
     if (pool.length < 2) {
       return (
         <Card>
