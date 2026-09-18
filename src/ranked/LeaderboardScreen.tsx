@@ -16,7 +16,7 @@ import { CloseIcon } from '../components/CloseIcon';
 import { TrophyIcon } from '../components/TrophyIcon';
 import { useAuth } from '../auth/AuthContext';
 import { fasterBoard, HOWFAST_BOARD, type BoardKey } from '../../worker/boards';
-import { cachedLeaderboard, fetchLeaderboard, type LeaderboardResult } from './api';
+import { cachedLeaderboards, fetchAllLeaderboards, type LeaderboardResult } from './api';
 
 type Game = 'faster' | 'howfast';
 
@@ -54,21 +54,27 @@ const MEDAL_TRIM: Record<number, string> = {
   3: '#C77B3B', // bronze
 };
 
-/** A single ranked row: rank, player, streak. The top-3 get medal trim; the signed-in player's rows are highlighted. */
+/**
+ * A single ranked row: rank, player, streak. The top-3 get medal trim; the signed-in player's rows
+ * are highlighted. A null rank (a player with no result yet) shows a dash. The "You" chip only
+ * renders when `showChip` is set - it marks the pinned footer row, not the player's list row.
+ */
 function Row({
   rank,
   name,
   streak,
   isYou,
   youLabel,
+  showChip = false,
 }: {
-  rank: number;
+  rank: number | null;
   name: string;
   streak: number;
   isYou: boolean;
   youLabel: string;
+  showChip?: boolean;
 }) {
-  const medal = MEDAL_TRIM[rank];
+  const medal = rank != null ? MEDAL_TRIM[rank] : undefined;
   return (
     <Box
       sx={{
@@ -90,7 +96,7 @@ function Row({
           fontVariantNumeric: 'tabular-nums',
         }}
       >
-        {rank}
+        {rank ?? '-'}
       </Typography>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, minWidth: 0 }}>
         <Typography sx={{ fontWeight: isYou ? 700 : 500 }} noWrap>
@@ -101,7 +107,7 @@ function Row({
             <TrophyIcon size={16} />
           </Box>
         )}
-        {isYou && (
+        {showChip && (
           <Typography
             component="span"
             sx={{
@@ -145,43 +151,36 @@ export function LeaderboardScreen({ initialBoard, onClose }: LeaderboardScreenPr
   // The board is derived from the tab and the two independent modifier chips.
   const board: BoardKey = game === 'howfast' ? HOWFAST_BOARD : fasterBoard(hard, natures);
 
-  // Reads come from a stale-while-revalidate cache: a board we have loaded before shows instantly
-  // (no spinner, no resize), and every open still refetches in the background to stay current.
-  const [data, setData] = useState<LeaderboardResult | null>(() => cachedLeaderboard(board, TOP_N) ?? null);
+  // Every board is fetched in a single request when the modal opens, so switching tabs and chips
+  // reads straight from `boards` state with no per-board request and no flicker. A stale-while-
+  // revalidate cache paints a reopen instantly while the background refetch keeps it current.
+  const [boards, setBoards] = useState<LeaderboardResult[] | null>(
+    () => cachedLeaderboards(TOP_N) ?? null,
+  );
   const [failed, setFailed] = useState(false);
 
-  // On a tab/chip switch, swap to the new board's cached data during render (React re-renders before
-  // painting, so the previous board's rows are never shown for a frame). This is what keeps the modal
-  // from collapsing to a spinner and flashing the game screen behind it. Uncached boards fall back to
-  // the reserved-height spinner until the fetch lands.
-  const [shownBoard, setShownBoard] = useState(board);
-  if (board !== shownBoard) {
-    setShownBoard(board);
-    setData(cachedLeaderboard(board, TOP_N) ?? null);
-    setFailed(false);
-  }
-
-  // Background revalidation for whichever board is showing. The `active` guard drops a stale response
-  // if the board changes again mid-flight; a failed refresh only surfaces when nothing is cached.
   useEffect(() => {
     let active = true;
-    fetchLeaderboard(board, TOP_N)
+    fetchAllLeaderboards(TOP_N)
       .then((result) => {
         if (active) {
-          setData(result);
+          setBoards(result);
           setFailed(false);
         }
       })
       .catch(() => {
-        if (active && cachedLeaderboard(board, TOP_N) == null) {
-          setData(null);
+        if (active && cachedLeaderboards(TOP_N) == null) {
+          setBoards(null);
           setFailed(true);
         }
       });
     return () => {
       active = false;
     };
-  }, [board]);
+  }, []);
+
+  // The shown board's slice, derived from the single all-boards read - switching is instant.
+  const data = boards?.find((b) => b.board === board) ?? null;
 
   const myName = user?.displayName ?? null;
   const entries = data?.entries ?? [];
@@ -246,10 +245,29 @@ export function LeaderboardScreen({ initialBoard, onClose }: LeaderboardScreenPr
     );
   };
 
-  // Footer: the signed-in player's own standing when it is not already visible in the top-N.
+  // Footer: the signed-in player's own standing, always pinned below the list so they can see where
+  // they stand even when they're inside the top-N or have no result on this board yet. Signed out,
+  // it invites them to sign in instead.
   const me = data?.me ?? null;
-  const meInList = me != null && entries.some((e) => e.rank === me.rank && e.streak === me.streak);
-  const showMe = me != null && !meInList;
+
+  const meFooter = () => (
+    <Box sx={{ pt: 1.5, borderTop: '1px solid', borderColor: 'divider' }}>
+      {user ? (
+        <Row
+          rank={me?.rank ?? null}
+          name={myName ?? t('ranked.you')}
+          streak={me?.streak ?? 0}
+          isYou
+          showChip
+          youLabel={t('ranked.you')}
+        />
+      ) : (
+        <Typography sx={{ color: 'text.secondary', textAlign: 'center', py: 0.75 }}>
+          {t('ranked.signInToRank')}
+        </Typography>
+      )}
+    </Box>
+  );
 
   return (
     <Dialog
@@ -322,17 +340,7 @@ export function LeaderboardScreen({ initialBoard, onClose }: LeaderboardScreenPr
             )}
           </Box>
 
-          {showMe && me && (
-            <Box sx={{ pt: 1.5, borderTop: '1px solid', borderColor: 'divider' }}>
-              <Row
-                rank={me.rank}
-                name={myName ?? t('ranked.you')}
-                streak={me.streak}
-                isYou
-                youLabel={t('ranked.you')}
-              />
-            </Box>
-          )}
+          {data && meFooter()}
         </Stack>
       </DialogContent>
     </Dialog>

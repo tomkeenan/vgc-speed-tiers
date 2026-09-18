@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { cachedLeaderboard, fetchLeaderboard, submitScore } from './api';
+import { cachedLeaderboards, fetchAllLeaderboards, submitScore } from './api';
 
 function mockFetch(status: number, body: unknown) {
   const fetchMock = vi.fn().mockResolvedValue({
@@ -33,50 +33,51 @@ describe('submitScore', () => {
   });
 });
 
-describe('fetchLeaderboard', () => {
-  it('builds the board query and returns the result', async () => {
-    const result = { board: 'howfast:standard', entries: [], me: null };
-    const fetchMock = mockFetch(200, result);
-    const data = await fetchLeaderboard('howfast:standard');
-    expect(data).toEqual(result);
-    expect(fetchMock).toHaveBeenCalledWith('/api/leaderboard?board=howfast%3Astandard');
+describe('fetchAllLeaderboards', () => {
+  it('fetches all boards in one request and returns them', async () => {
+    const boards = [{ board: 'faster:standard', entries: [], me: null }];
+    const fetchMock = mockFetch(200, { boards });
+    const data = await fetchAllLeaderboards();
+    expect(data).toEqual(boards);
+    expect(fetchMock).toHaveBeenCalledWith('/api/leaderboards');
   });
 
   it('includes the limit when given', async () => {
-    const fetchMock = mockFetch(200, { board: 'faster:standard', entries: [], me: null });
-    await fetchLeaderboard('faster:standard', 10);
-    expect(fetchMock).toHaveBeenCalledWith('/api/leaderboard?board=faster%3Astandard&limit=10');
+    const fetchMock = mockFetch(200, { boards: [] });
+    await fetchAllLeaderboards(10);
+    expect(fetchMock).toHaveBeenCalledWith('/api/leaderboards?limit=10');
   });
 
   it('throws on a non-ok response', async () => {
-    mockFetch(400, { error: 'invalid_board' });
-    await expect(fetchLeaderboard('faster:standard')).rejects.toThrow('leaderboard_failed_400');
+    mockFetch(500, { error: 'boom' });
+    await expect(fetchAllLeaderboards()).rejects.toThrow('leaderboards_failed_500');
   });
 });
 
-describe('leaderboard cache', () => {
+describe('leaderboards cache', () => {
+  // The cache is module-level and outlives each test, so these use limits no other test touches.
   it('caches a successful read so it can be served synchronously', async () => {
-    const result = { board: 'faster:hard' as const, entries: [], me: null };
-    mockFetch(200, result);
-    expect(cachedLeaderboard('faster:hard', 10)).toBeUndefined();
-    await fetchLeaderboard('faster:hard', 10);
-    expect(cachedLeaderboard('faster:hard', 10)).toEqual(result);
+    const boards = [{ board: 'faster:hard' as const, entries: [], me: null }];
+    mockFetch(200, { boards });
+    expect(cachedLeaderboards(7)).toBeUndefined();
+    await fetchAllLeaderboards(7);
+    expect(cachedLeaderboards(7)).toEqual(boards);
   });
 
-  it('keys the cache by board and limit', async () => {
-    mockFetch(200, { board: 'howfast:standard', entries: [], me: null });
-    await fetchLeaderboard('howfast:standard', 5);
-    expect(cachedLeaderboard('howfast:standard', 5)).toBeDefined();
-    expect(cachedLeaderboard('howfast:standard', 10)).toBeUndefined();
+  it('keys the cache by limit', async () => {
+    mockFetch(200, { boards: [{ board: 'howfast:standard', entries: [], me: null }] });
+    await fetchAllLeaderboards(8);
+    expect(cachedLeaderboards(8)).toBeDefined();
+    expect(cachedLeaderboards(9)).toBeUndefined();
   });
 
-  it('invalidates a board in the cache when a score is submitted for it', async () => {
-    mockFetch(200, { board: 'faster:natures', entries: [], me: null });
-    await fetchLeaderboard('faster:natures', 10);
-    expect(cachedLeaderboard('faster:natures', 10)).toBeDefined();
+  it('invalidates the cache when a score is submitted', async () => {
+    mockFetch(200, { boards: [{ board: 'faster:natures', entries: [], me: null }] });
+    await fetchAllLeaderboards(11);
+    expect(cachedLeaderboards(11)).toBeDefined();
 
     mockFetch(200, { streak: 4, rank: 1 });
     await submitScore('faster:natures', 4);
-    expect(cachedLeaderboard('faster:natures', 10)).toBeUndefined();
+    expect(cachedLeaderboards(11)).toBeUndefined();
   });
 });

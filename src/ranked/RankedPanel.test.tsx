@@ -37,9 +37,8 @@ describe('RankedPanel', () => {
     expect(onRankedChange).toHaveBeenCalledWith(true);
   });
 
-  it('shows the all-roster note and standing feedback when ranked', () => {
+  it('shows standing feedback when ranked', () => {
     renderPanel({ ranked: true, standing: { rank: 4, streak: 8 } });
-    expect(screen.getByText('Ranked always uses all Pokemon.')).toBeInTheDocument();
     expect(screen.getByText("You're #4 with a streak of 8.")).toBeInTheDocument();
   });
 });

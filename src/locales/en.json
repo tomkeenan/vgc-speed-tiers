@@ -168,8 +168,8 @@
     "colRank": "#",
     "colPlayer": "Player",
     "you": "You",
+    "signInToRank": "Sign in to get on the leaderboard",
     "yourStanding": "You're #{{rank}} with a streak of {{streak}}.",
-    "naturesNeedsHard": "Natures only rank alongside Hard mode.",
     "colStreak": "Streak",
     "games": {
       "faster": "Who's Faster?",

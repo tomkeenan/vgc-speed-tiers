@@ -19,6 +19,15 @@ export type RenameResult =
   | { ok: false; reason: 'cooldown'; nextAt: number }
   | { ok: false; reason: 'not_registered' };
 
+/** Returns the stable player id for a Google subject, or null if they have not registered. */
+export async function getPlayerIdBySub(db: D1Database, sub: string): Promise<string | null> {
+  const row = await db
+    .prepare('SELECT id FROM players WHERE auth_sub = ?')
+    .bind(sub)
+    .first<{ id: string }>();
+  return row?.id ?? null;
+}
+
 /** Returns the player for a Google subject, or null if they have not registered. */
 export async function getPlayerBySub(db: D1Database, sub: string): Promise<Player | null> {
   const row = await db

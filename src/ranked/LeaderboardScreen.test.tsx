@@ -1,22 +1,37 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { screen, waitFor } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { renderWithTheme } from '../test/renderWithTheme';
 import { AuthProvider } from '../auth/AuthContext';
 import { LeaderboardScreen } from './LeaderboardScreen';
-import { cachedLeaderboard, fetchLeaderboard, type LeaderboardResult } from './api';
+import { cachedLeaderboards, fetchAllLeaderboards, type LeaderboardResult } from './api';
+import { BOARD_KEYS, type BoardKey } from '../../worker/boards';
 
-vi.mock('./api', () => ({ fetchLeaderboard: vi.fn(), cachedLeaderboard: vi.fn() }));
+vi.mock('./api', () => ({ fetchAllLeaderboards: vi.fn(), cachedLeaderboards: vi.fn() }));
 
-const result = (over: Partial<LeaderboardResult> = {}): LeaderboardResult => ({
-  board: 'faster:standard',
-  entries: [
-    { rank: 1, displayName: 'Ash', streak: 12, achievedAt: 1 },
-    { rank: 2, displayName: 'PikaFast', streak: 9, achievedAt: 2 },
-  ],
-  me: null,
-  ...over,
-});
+// Each board carries a distinct leader name so a tab/chip switch can be verified by the row it shows
+// (there is no per-board fetch to assert on any more - every board arrives in the one open request).
+const LEADER: Record<BoardKey, string> = {
+  'faster:standard': 'Ash',
+  'faster:hard': 'HardAce',
+  'faster:natures': 'NatureAce',
+  'faster:hard+natures': 'ComboAce',
+  'howfast:standard': 'FastTyper',
+};
+
+const entriesFor = (board: BoardKey): LeaderboardResult['entries'] =>
+  board === 'faster:standard'
+    ? [
+        { rank: 1, displayName: 'Ash', streak: 12, achievedAt: 1 },
+        { rank: 2, displayName: 'PikaFast', streak: 9, achievedAt: 2 },
+      ]
+    : [{ rank: 1, displayName: LEADER[board], streak: 5, achievedAt: 1 }];
+
+/** All boards, as the single open request returns them; override any board's slice per test. */
+const boards = (
+  over: Partial<Record<BoardKey, Partial<LeaderboardResult>>> = {},
+): LeaderboardResult[] =>
+  BOARD_KEYS.map((board) => ({ board, entries: entriesFor(board), me: null, ...over[board] }));
 
 const renderScreen = (onClose = vi.fn()) =>
   renderWithTheme(
@@ -27,15 +42,15 @@ const renderScreen = (onClose = vi.fn()) =>
 
 afterEach(() => {
   localStorage.clear();
-  vi.mocked(fetchLeaderboard).mockReset();
-  vi.mocked(cachedLeaderboard).mockReset();
+  vi.mocked(fetchAllLeaderboards).mockReset();
+  vi.mocked(cachedLeaderboards).mockReset();
 });
 
 describe('LeaderboardScreen', () => {
   beforeEach(() => {
-    vi.mocked(fetchLeaderboard).mockResolvedValue(result());
-    // Default: nothing cached, so boards load via fetch (the pre-cache behaviour).
-    vi.mocked(cachedLeaderboard).mockReturnValue(undefined);
+    vi.mocked(fetchAllLeaderboards).mockResolvedValue(boards());
+    // Default: nothing cached, so the boards load via the one open fetch.
+    vi.mocked(cachedLeaderboards).mockReturnValue(undefined);
   });
 
   it('lists the ranked entries for the opening board', async () => {
@@ -43,37 +58,63 @@ describe('LeaderboardScreen', () => {
     expect(await screen.findByText('Ash')).toBeInTheDocument();
     expect(screen.getByText('PikaFast')).toBeInTheDocument();
     expect(screen.getByText('12')).toBeInTheDocument();
-    expect(fetchLeaderboard).toHaveBeenCalledWith('faster:standard', 10);
+    expect(fetchAllLeaderboards).toHaveBeenCalledWith(10);
   });
 
-  it('highlights the signed-in player with a You badge', async () => {
+  it('pins the You row for the signed-in player even when they are in the top-N', async () => {
     localStorage.setItem('speedtiers.auth.user', JSON.stringify({ displayName: 'PikaFast' }));
+    vi.mocked(fetchAllLeaderboards).mockResolvedValue(
+      boards({ 'faster:standard': { me: { streak: 9, rank: 2 } } }),
+    );
     renderScreen();
-    await screen.findByText('PikaFast');
+    await screen.findByText('Ash');
+    // Appears both in the list and in the pinned footer row.
+    expect(screen.getAllByText('PikaFast')).toHaveLength(2);
+    // The You chip only marks the footer row, never the list row.
     expect(screen.getByText('You')).toBeInTheDocument();
   });
 
+  it('shows a 0-streak You row when the signed-in player has no result on the board', async () => {
+    localStorage.setItem('speedtiers.auth.user', JSON.stringify({ displayName: 'Newbie' }));
+    // me stays null (no ranked result yet).
+    renderScreen();
+    await screen.findByText('Ash');
+    expect(screen.getByText('Newbie')).toBeInTheDocument();
+    expect(screen.getByText('You')).toBeInTheDocument();
+    expect(screen.getByText('0')).toBeInTheDocument(); // streak defaults to 0
+    expect(screen.getByText('-')).toBeInTheDocument(); // no rank yet
+  });
+
+  it('invites a signed-out visitor to sign in from the footer', async () => {
+    renderScreen(); // no user in storage
+    await screen.findByText('Ash');
+    expect(screen.getByText('Sign in to get on the leaderboard')).toBeInTheDocument();
+    expect(screen.queryByText('You')).not.toBeInTheDocument();
+  });
+
   it('shows the empty state when a board has no scores', async () => {
-    vi.mocked(fetchLeaderboard).mockResolvedValue(result({ entries: [] }));
+    vi.mocked(fetchAllLeaderboards).mockResolvedValue(boards({ 'faster:standard': { entries: [] } }));
     renderScreen();
     expect(
       await screen.findByText('No scores yet. Play a ranked round to claim the top spot.'),
     ).toBeInTheDocument();
   });
 
-  it('shows an error when the board fails to load', async () => {
-    vi.mocked(fetchLeaderboard).mockRejectedValue(new Error('boom'));
+  it('shows an error when the boards fail to load', async () => {
+    vi.mocked(fetchAllLeaderboards).mockRejectedValue(new Error('boom'));
     renderScreen();
     expect(await screen.findByRole('alert')).toHaveTextContent(
       "Couldn't load the leaderboard. Try again.",
     );
   });
 
-  it('switches to the How Fast? board from its tab', async () => {
+  it('switches to the How Fast? board from its tab without another fetch', async () => {
     renderScreen();
     await screen.findByText('Ash');
     await userEvent.click(screen.getByRole('tab', { name: 'How Fast?' }));
-    await waitFor(() => expect(fetchLeaderboard).toHaveBeenCalledWith('howfast:standard', 10));
+    expect(await screen.findByText('FastTyper')).toBeInTheDocument();
+    // All boards came in the one open request; switching tabs must not hit the network again.
+    expect(fetchAllLeaderboards).toHaveBeenCalledTimes(1);
   });
 
   it('toggles the Hard and Natures chips as independent boards', async () => {
@@ -82,36 +123,41 @@ describe('LeaderboardScreen', () => {
 
     // Natures on its own is a board of its own, no Hard required.
     await userEvent.click(screen.getByRole('button', { name: 'Natures' }));
-    await waitFor(() => expect(fetchLeaderboard).toHaveBeenCalledWith('faster:natures', 10));
+    expect(await screen.findByText('NatureAce')).toBeInTheDocument();
 
     // Adding Hard moves to the combined board.
     await userEvent.click(screen.getByRole('button', { name: 'Hard' }));
-    await waitFor(() => expect(fetchLeaderboard).toHaveBeenCalledWith('faster:hard+natures', 10));
+    expect(await screen.findByText('ComboAce')).toBeInTheDocument();
 
     // Dropping Natures leaves the Hard-only board.
     await userEvent.click(screen.getByRole('button', { name: 'Natures' }));
-    await waitFor(() => expect(fetchLeaderboard).toHaveBeenCalledWith('faster:hard', 10));
+    expect(await screen.findByText('HardAce')).toBeInTheDocument();
+
+    // Still just the single open request across every switch.
+    expect(fetchAllLeaderboards).toHaveBeenCalledTimes(1);
   });
 
   it("surfaces the player's own standing when they are not in the visible top-N", async () => {
     localStorage.setItem('speedtiers.auth.user', JSON.stringify({ displayName: 'FarBehind' }));
-    vi.mocked(fetchLeaderboard).mockResolvedValue(result({ me: { streak: 2, rank: 57 } }));
+    vi.mocked(fetchAllLeaderboards).mockResolvedValue(
+      boards({ 'faster:standard': { me: { streak: 2, rank: 57 } } }),
+    );
     renderScreen();
     await screen.findByText('Ash');
     expect(screen.getByText('57')).toBeInTheDocument();
     expect(screen.getByText('FarBehind')).toBeInTheDocument();
   });
 
-  it('renders a cached board instantly and still revalidates in the background', () => {
-    // The board is already cached; leave the fetch pending so the rows can only have come from cache.
-    vi.mocked(cachedLeaderboard).mockReturnValue(result());
-    vi.mocked(fetchLeaderboard).mockReturnValue(new Promise<LeaderboardResult>(() => {}));
+  it('renders cached boards instantly and still revalidates in the background', () => {
+    // Boards are already cached; leave the fetch pending so the rows can only have come from cache.
+    vi.mocked(cachedLeaderboards).mockReturnValue(boards());
+    vi.mocked(fetchAllLeaderboards).mockReturnValue(new Promise<LeaderboardResult[]>(() => {}));
     renderScreen();
     // No await: the rows are on the first render, and there is no loading spinner.
     expect(screen.getByText('Ash')).toBeInTheDocument();
     expect(screen.queryByRole('progressbar')).not.toBeInTheDocument();
     // A background revalidation still fires.
-    expect(fetchLeaderboard).toHaveBeenCalledWith('faster:standard', 10);
+    expect(fetchAllLeaderboards).toHaveBeenCalledWith(10);
   });
 
   it('closes when the close control is clicked', async () => {

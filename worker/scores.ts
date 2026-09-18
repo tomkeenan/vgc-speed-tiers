@@ -2,7 +2,7 @@
 // name is joined in only for reads. best_scores holds the current best per (player, board); scores
 // is an append-only audit log.
 
-import type { BoardKey } from './boards';
+import { BOARD_KEYS, type BoardKey } from './boards';
 
 export interface LeaderboardEntry {
   rank: number;
@@ -80,6 +80,31 @@ async function rankForStreak(db: D1Database, boardKey: BoardKey, streak: number)
     .bind(boardKey, streak)
     .first<{ n: number }>();
   return (row?.n ?? 0) + 1;
+}
+
+/** One board's public top-N plus the caller's own standing (null when signed out or unranked). */
+export interface BoardResult {
+  board: BoardKey;
+  entries: LeaderboardEntry[];
+  me: MyStanding | null;
+}
+
+/**
+ * Every board's top-N in one read, each with the caller's own standing when `playerId` is given.
+ * The client fetches all boards on opening the leaderboard so switching tabs/chips is instant.
+ */
+export async function getAllLeaderboards(
+  db: D1Database,
+  limit: number,
+  playerId: string | null,
+): Promise<BoardResult[]> {
+  const results: BoardResult[] = [];
+  for (const board of BOARD_KEYS) {
+    const entries = await getLeaderboard(db, board, limit);
+    const me = playerId ? await getStanding(db, playerId, board) : null;
+    results.push({ board, entries, me });
+  }
+  return results;
 }
 
 /** Top N entries for a board, highest streak first (earlier achiever wins ties). */

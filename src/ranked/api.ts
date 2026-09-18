@@ -1,7 +1,7 @@
 // Client for the ranked leaderboard endpoints. Same-origin fetch, so the HttpOnly session cookie
 // set at sign-in flows automatically and authorizes score submissions.
 
-import type { BoardKey } from '../../worker/boards';
+import { BOARD_KEYS, type BoardKey } from '../../worker/boards';
 
 /** One row on a public board, highest streak first. */
 export interface LeaderboardEntry {
@@ -24,15 +24,15 @@ export interface LeaderboardResult {
   me: MyStanding | null;
 }
 
-// Last successful read per (board, limit). The leaderboard modal reads this synchronously so
-// revisiting a tab is instant, then revalidates in the background (stale-while-revalidate). Boards
-// are few (four Who's Faster? variants plus How Fast?), so the map stays tiny.
-const cache = new Map<string, LeaderboardResult>();
-const cacheKey = (board: BoardKey, limit?: number) => `${board}:${limit ?? 'all'}`;
+// Last successful all-boards read per limit. The leaderboard modal reads this synchronously so a
+// reopen paints instantly, then revalidates in the background (stale-while-revalidate). All boards
+// come in one fetch, so switching between tabs and chips inside the modal never hits the network.
+const cache = new Map<string, LeaderboardResult[]>();
+const cacheKey = (limit?: number) => `all:${limit ?? 'all'}`;
 
-/** The last-read result for a board, if one is cached. Synchronous; safe to call during render. */
-export function cachedLeaderboard(board: BoardKey, limit?: number): LeaderboardResult | undefined {
-  return cache.get(cacheKey(board, limit));
+/** The last all-boards read for a limit, if cached. Synchronous; safe to call during render. */
+export function cachedLeaderboards(limit?: number): LeaderboardResult[] | undefined {
+  return cache.get(cacheKey(limit));
 }
 
 /** Records a ranked streak and returns the player's resulting best and rank on the board. */
@@ -43,10 +43,8 @@ export async function submitScore(boardKey: BoardKey, streak: number): Promise<M
     body: JSON.stringify({ boardKey, streak }),
   });
   if (!res.ok) throw new Error(`score_failed_${res.status}`);
-  // A new score can change this board's standings, so drop any cached reads for it.
-  for (const key of cache.keys()) {
-    if (key.startsWith(`${boardKey}:`)) cache.delete(key);
-  }
+  // A new score can change the standings, so drop cached reads; the next open refetches every board.
+  cache.clear();
   return (await res.json()) as MyStanding;
 }
 
@@ -80,24 +78,25 @@ function devLeaderboard(board: BoardKey): LeaderboardResult {
   return { board, entries, me: { streak: 6, rank: 128 } };
 }
 
-/** Fetches a board's public top-N (default 50) plus the caller's own standing when signed in. */
-export async function fetchLeaderboard(
-  board: BoardKey,
-  limit?: number,
-): Promise<LeaderboardResult> {
+/**
+ * Fetches every board's public top-N (default 50) plus the caller's own standing on each, in a
+ * single request. The modal calls this once on open so switching tabs and chips is instant.
+ */
+export async function fetchAllLeaderboards(limit?: number): Promise<LeaderboardResult[]> {
   try {
-    const params = new URLSearchParams({ board });
+    const params = new URLSearchParams();
     if (limit != null) params.set('limit', String(limit));
-    const res = await fetch(`/api/leaderboard?${params.toString()}`);
-    if (!res.ok) throw new Error(`leaderboard_failed_${res.status}`);
-    const result = (await res.json()) as LeaderboardResult;
-    cache.set(cacheKey(board, limit), result);
-    return result;
+    const query = params.toString();
+    const res = await fetch(`/api/leaderboards${query ? `?${query}` : ''}`);
+    if (!res.ok) throw new Error(`leaderboards_failed_${res.status}`);
+    const { boards } = (await res.json()) as { boards: LeaderboardResult[] };
+    cache.set(cacheKey(limit), boards);
+    return boards;
   } catch (err) {
     if (USE_DEV_MOCK) {
-      const result = devLeaderboard(board);
-      cache.set(cacheKey(board, limit), result);
-      return result;
+      const boards = BOARD_KEYS.map((board) => devLeaderboard(board));
+      cache.set(cacheKey(limit), boards);
+      return boards;
     }
     throw err;
   }

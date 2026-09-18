@@ -61,12 +61,6 @@ export function RankedPanel({
         />
       </Box>
 
-      {ranked && (
-        <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-          {t('ranked.usesAllPokemon')}
-        </Typography>
-      )}
-
       {standing && (
         <Typography variant="body2" sx={{ color: 'primary.main', fontWeight: 600 }}>
           {t('ranked.yourStanding', { rank: standing.rank, streak: standing.streak })}

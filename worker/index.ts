@@ -7,9 +7,11 @@
 // email, or picture.
 
 import { verifyGoogleToken } from './verifyGoogleToken';
-import { getPlayerBySub, registerPlayer, renamePlayer } from './players';
+import { getPlayerBySub, getPlayerIdBySub, registerPlayer, renamePlayer } from './players';
 import type { Player } from './players';
 import { normalizeDisplayName } from './validateDisplayName';
+import { isBoardKey, MAX_PLAUSIBLE_STREAK } from './boards';
+import { getAllLeaderboards, recentSubmissionCount, submitScore } from './scores';
 import {
   clearSessionCookie,
   createSession,
@@ -20,6 +22,12 @@ import {
 
 const SESSION_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
 const RENAME_COOLDOWN_MS = 7 * 24 * 60 * 60 * 1000; // once a week
+
+// Score submission rate limit: at most this many submissions per player within the window.
+const SCORE_WINDOW_MS = 60 * 1000;
+const SCORE_MAX_PER_WINDOW = 20;
+const LEADERBOARD_DEFAULT_LIMIT = 50;
+const LEADERBOARD_MAX_LIMIT = 100;
 
 interface Env {
   GOOGLE_CLIENT_ID: string;
@@ -138,6 +146,58 @@ async function handleRename(request: Request, env: Env): Promise<Response> {
   return json({ error: 'not_registered' }, 400);
 }
 
+/** POST /api/score {boardKey, streak} -> record a ranked streak (session + rate limit + cap). */
+async function handleScore(request: Request, env: Env): Promise<Response> {
+  if (request.method !== 'POST') return json({ error: 'method_not_allowed' }, 405);
+
+  const sub = await sessionSub(request, env);
+  if (!sub) return json({ error: 'unauthorized' }, 401);
+
+  let boardKey: unknown;
+  let streak: unknown;
+  try {
+    ({ boardKey, streak } = (await request.json()) as { boardKey?: unknown; streak?: unknown });
+  } catch {
+    return json({ error: 'invalid_body' }, 400);
+  }
+  if (!isBoardKey(boardKey)) return json({ error: 'invalid_board' }, 400);
+  if (typeof streak !== 'number' || !Number.isInteger(streak) || streak < 0) {
+    return json({ error: 'invalid_streak' }, 400);
+  }
+  if (streak > MAX_PLAUSIBLE_STREAK) return json({ error: 'implausible_streak' }, 422);
+
+  const playerId = await getPlayerIdBySub(env.DB, sub);
+  if (!playerId) return json({ error: 'not_registered' }, 403);
+
+  const recent = await recentSubmissionCount(env.DB, playerId, Date.now() - SCORE_WINDOW_MS);
+  if (recent >= SCORE_MAX_PER_WINDOW) return json({ error: 'rate_limited' }, 429);
+
+  const standing = await submitScore(env.DB, playerId, boardKey, streak);
+  return json(standing);
+}
+
+/**
+ * GET /api/leaderboards?limit=50 -> every board's public top-N in one read, each with the caller's
+ * own standing when signed in and registered. The client fetches all boards on opening the
+ * leaderboard so switching between tabs and chips never waits on a per-board request.
+ */
+async function handleLeaderboards(request: Request, env: Env): Promise<Response> {
+  if (request.method !== 'GET') return json({ error: 'method_not_allowed' }, 405);
+
+  const url = new URL(request.url);
+  const requested = Number(url.searchParams.get('limit') ?? LEADERBOARD_DEFAULT_LIMIT);
+  const limit = Number.isFinite(requested)
+    ? Math.min(Math.max(Math.trunc(requested), 1), LEADERBOARD_MAX_LIMIT)
+    : LEADERBOARD_DEFAULT_LIMIT;
+
+  let playerId: string | null = null;
+  const sub = await sessionSub(request, env);
+  if (sub) playerId = await getPlayerIdBySub(env.DB, sub);
+
+  const boards = await getAllLeaderboards(env.DB, limit, playerId);
+  return json({ boards });
+}
+
 /** POST /api/signout -> clear the session cookie. */
 function handleSignOut(request: Request): Response {
   if (request.method !== 'POST') return json({ error: 'method_not_allowed' }, 405);
@@ -151,6 +211,8 @@ export default {
     if (url.pathname === '/api/auth/google') return handleGoogleAuth(request, env);
     if (url.pathname === '/api/register') return handleRegister(request, env);
     if (url.pathname === '/api/rename') return handleRename(request, env);
+    if (url.pathname === '/api/score') return handleScore(request, env);
+    if (url.pathname === '/api/leaderboards') return handleLeaderboards(request, env);
     if (url.pathname === '/api/signout') return handleSignOut(request);
     if (url.pathname.startsWith('/api/')) return json({ error: 'not_found' }, 404);
     return env.ASSETS.fetch(request);
