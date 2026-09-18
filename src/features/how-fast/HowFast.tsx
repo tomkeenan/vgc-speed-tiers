@@ -65,6 +65,7 @@ export function HowFast({ ranked = false, onViewLeaderboard }: HowFastProps) {
   const [celebration, setCelebration] = useState<Celebration | null>(null);
   const bestBeforeRun = useRef(best);
 
+  const inputRef = useRef<HTMLInputElement>(null);
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const clearTimers = () => {
     timers.current.forEach(clearTimeout);
@@ -135,6 +136,10 @@ export function HowFast({ ranked = false, onViewLeaderboard }: HowFastProps) {
   }, [nextIndex, pool]);
 
   useEffect(() => clearTimers, []);
+
+  useEffect(() => {
+    if (roundId > 0 && !revealed && !showRankedIntro) inputRef.current?.focus();
+  }, [roundId, revealed, showRankedIntro]);
 
   // A ranked run ends on a wrong guess or a timeout; submit the streak it reached (the server keeps
   // only the best).
@@ -262,6 +267,7 @@ export function HowFast({ ranked = false, onViewLeaderboard }: HowFastProps) {
           shape whether ranked is starting or being played. */}
       <TextField
         type="number"
+        inputRef={inputRef}
         value={guess}
         onChange={(e) => setGuess(e.target.value)}
         onKeyDown={(e) => {

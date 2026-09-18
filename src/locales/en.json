@@ -71,11 +71,11 @@
     },
     "allowNatures": {
       "title": "Allow natures",
-      "description": "Compare level-50 max Speed, at neutral and +Spd nature."
+      "description": "Compare level-50 max Speed, at neutral and +Spe nature."
     }
   },
   "natureBadge": {
-    "positive": "+Spd",
+    "positive": "+Spe",
     "neutral": "Neutral"
   },
   "memberPicker": {

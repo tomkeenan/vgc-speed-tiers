@@ -74,6 +74,17 @@ describe('HowFast', () => {
     expect(streakValue()).toBe('1'); // streak retained
   });
 
+  it('focuses the answer box on a fresh card but not the opening one', () => {
+    render();
+    expect(document.activeElement).not.toBe(input());
+
+    type(String(first.baseStats.spe)); // correct -> auto-advance to a fresh card
+    click(submitBtn());
+    advance(10000);
+
+    expect(document.activeElement).toBe(input());
+  });
+
   it('holds the streak on a wrong guess and only zeroes it on Try again', () => {
     render();
     type(String(first.baseStats.spe)); // correct: build the streak to 1
