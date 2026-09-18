@@ -11,15 +11,23 @@
     "baseSpeed": "Basis-Initiative",
     "maxSpeed": "Max. Initiative",
     "tryAgain": "Erneut versuchen",
+    "play": "Spielen",
     "streak": "Serie",
     "best": "Bestwert",
     "time": "Zeit",
     "noPokemon": "Keine Pokémon verfügbar.",
     "features": "Funktionen",
-    "copied": "Kopiert!"
+    "copied": "Kopiert!",
+    "unknown": "Unbekannt"
   },
   "header": {
     "settings": "Einstellungen"
+  },
+  "mode": {
+    "label": "Spielmodus",
+    "practice": "Übung",
+    "ranked": "Rangliste",
+    "signInRequired": "Melde dich an, um in der Rangliste zu spielen"
   },
   "footer": {
     "madeBy": "erstellt von tom",
@@ -151,12 +159,6 @@
     "sessionExpired": "Deine Sitzung ist abgelaufen. Bitte melde dich erneut an."
   },
   "ranked": {
-    "title": "Ranglisten-Modus",
-    "description": "Spiele mit allen Pokémon um Plätze in den Ranglisten.",
-    "signInPrompt": "Melde dich über das Konto-Menü an, um den Ranglisten-Modus zu spielen.",
-    "introTitle": "Ranglisten-Modus",
-    "introBody": "Der Beste sein, wie keiner zuvor. Erklimme in diesem Modus auf Zeit die globale Rangliste.",
-    "start": "Start",
     "leaderboard": "Rangliste",
     "leaderboardTitle": "Rangliste",
     "closeLeaderboard": "Rangliste schließen",
@@ -169,7 +171,6 @@
     "colPlayer": "Spieler",
     "you": "Du",
     "signInToRank": "Melde dich an, um in die Rangliste zu kommen",
-    "yourStanding": "Du bist auf Platz #{{rank}} mit einer Serie von {{streak}}.",
     "colStreak": "Serie",
     "games": {
       "faster": "Wer ist schneller?",

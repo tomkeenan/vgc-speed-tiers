@@ -11,15 +11,23 @@
     "baseSpeed": "Perusnopeus",
     "maxSpeed": "Maksiminopeus",
     "tryAgain": "Yritä uudelleen",
+    "play": "Pelaa",
     "streak": "Putki",
     "best": "Paras",
     "time": "Aika",
     "noPokemon": "Ei Pokémoneja saatavilla.",
     "features": "Ominaisuudet",
-    "copied": "Kopioitu!"
+    "copied": "Kopioitu!",
+    "unknown": "Tuntematon"
   },
   "header": {
     "settings": "Asetukset"
+  },
+  "mode": {
+    "label": "Pelitila",
+    "practice": "Harjoittelu",
+    "ranked": "Ranked",
+    "signInRequired": "Kirjaudu sisään pelataksesi ranked-tilassa"
   },
   "footer": {
     "madeBy": "tehnyt tom",
@@ -151,12 +159,6 @@
     "sessionExpired": "Istuntosi vanheni. Kirjaudu uudelleen sisään."
   },
   "ranked": {
-    "title": "Ranked-tila",
-    "description": "Pelaa kaikilla Pokémoneilla yhteisissä tulostauluissa.",
-    "signInPrompt": "Kirjaudu sisään tili-valikosta pelataksesi ranked-tilassa.",
-    "introTitle": "Ranked-tila",
-    "introBody": "Ole paras, kuten kukaan ennen. Kiipeä maailman tulostaulun huipulle tässä aikarajoitetussa tilassa.",
-    "start": "Aloita",
     "leaderboard": "Tulostaulu",
     "leaderboardTitle": "Tulostaulu",
     "closeLeaderboard": "Sulje tulostaulu",
@@ -169,7 +171,6 @@
     "colPlayer": "Pelaaja",
     "you": "Sinä",
     "signInToRank": "Kirjaudu sisään päästäksesi tulostaululle",
-    "yourStanding": "Olet sijalla #{{rank}}, putkesi on {{streak}}.",
     "colStreak": "Putki",
     "games": {
       "faster": "Kumpi on nopeampi?",

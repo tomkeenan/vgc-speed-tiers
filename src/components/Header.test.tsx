@@ -23,14 +23,23 @@ const renderHeader = (props: Partial<Parameters<typeof Header>[0]> = {}) =>
           onOpenSettings={vi.fn()}
           onToggleLeaderboard={vi.fn()}
           leaderboardActive={false}
+          ranked={false}
+          onRankedChange={vi.fn()}
           {...props}
         />
       </DecksProvider>
     </AuthProvider>,
   );
 
+const signIn = () =>
+  localStorage.setItem(
+    'speedtiers.auth.user',
+    JSON.stringify({ displayName: 'Tester', canRenameAt: null }),
+  );
+
 afterEach(() => {
   configured = false;
+  localStorage.clear();
   vi.clearAllMocks();
 });
 
@@ -60,5 +69,52 @@ describe('Header', () => {
     renderHeader({ onToggleLeaderboard });
     await userEvent.click(screen.getByRole('button', { name: 'Leaderboard' }));
     expect(onToggleLeaderboard).toHaveBeenCalledTimes(1);
+  });
+
+  it('hides the mode switch when sign-in is not configured', () => {
+    renderHeader();
+    expect(screen.queryByRole('button', { name: 'Practice' })).toBeNull();
+    expect(screen.queryByRole('button', { name: 'Ranked' })).toBeNull();
+  });
+
+  it('disables the Ranked option until the player signs in', () => {
+    configured = true;
+    renderHeader();
+    expect(screen.getByRole('button', { name: 'Practice' })).toBeEnabled();
+    expect(screen.getByRole('button', { name: 'Ranked' })).toBeDisabled();
+  });
+
+  it('switches to ranked from the mode switch when signed in', async () => {
+    configured = true;
+    signIn();
+    const onRankedChange = vi.fn();
+    renderHeader({ onRankedChange });
+
+    const ranked = screen.getByRole('button', { name: 'Ranked' });
+    expect(ranked).toBeEnabled();
+    await userEvent.click(ranked);
+    expect(onRankedChange).toHaveBeenCalledWith(true);
+  });
+
+  it('hides the deck selector in ranked mode', () => {
+    configured = true;
+    signIn();
+    const { rerender } = renderHeader({ ranked: false });
+    expect(screen.getByRole('button', { name: /Deck:/ })).toBeInTheDocument();
+
+    rerender(
+      <AuthProvider>
+        <DecksProvider>
+          <Header
+            onOpenSettings={vi.fn()}
+            onToggleLeaderboard={vi.fn()}
+            leaderboardActive={false}
+            ranked
+            onRankedChange={vi.fn()}
+          />
+        </DecksProvider>
+      </AuthProvider>,
+    );
+    expect(screen.queryByRole('button', { name: /Deck:/ })).toBeNull();
   });
 });

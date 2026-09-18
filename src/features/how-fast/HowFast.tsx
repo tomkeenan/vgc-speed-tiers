@@ -6,14 +6,12 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { useDecks } from '../../decks/DecksContext';
 import { ALL_DECK_ID } from '../../decks/store';
-import { useAuth } from '../../auth/AuthContext';
-import { RankedIntroCard } from '../../ranked/RankedIntroCard';
-import { RankedPanel } from '../../ranked/RankedPanel';
-import { submitScore, type MyStanding } from '../../ranked/api';
+import { submitScore } from '../../ranked/api';
 import { useGuessTimer } from '../../ranked/useGuessTimer';
 import { HOWFAST_BOARD } from '../../../worker/boards';
 import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
+import { MysteryArt } from '../../components/MysteryArt';
 import { PokemonImage } from '../../components/PokemonImage';
 import { slotSpinMs } from '../../components/SlotNumber';
 import { SpeedReveal } from '../../components/SpeedReveal';
@@ -31,14 +29,16 @@ const RESOLVE_HOLD_MS = 1800;
  * Submitting reveals the answer and tints the card green (exact match) or red; a correct guess
  * auto-advances to the next card while a wrong one holds until Try again. Returns the element.
  */
-export function HowFast() {
+interface HowFastProps {
+  /** Whether the app is in ranked mode; ranked plays the full roster against a timed clock. */
+  ranked?: boolean;
+}
+
+export function HowFast({ ranked = false }: HowFastProps) {
   const { t, i18n } = useTranslation();
   const { activePokemon: deckPool, activeDeckId: deckId } = useDecks();
-  const { configured, user } = useAuth();
-  const [ranked, setRanked] = useState(false);
-  const [standing, setStanding] = useState<MyStanding | null>(null);
-  // Ranked opens on a single centered intro card (not a play card) that explains the mode and holds
-  // a Start button; play begins only once the player starts it. Mirrors Who's Faster?.
+  // Ranked opens on the card masked as a mystery, with a Play button in place of Submit; play begins
+  // only once the player starts it, which reveals the real card. Mirrors Who's Faster?.
   const [rankedStarted, setRankedStarted] = useState(false);
 
   // Ranked always plays the canonical roster (all Pokemon) so every score is comparable; custom
@@ -100,31 +100,19 @@ export function HowFast() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeDeckId, ranked]);
 
-  // Ranked play needs a signed-in player; a sign-out mid-session drops back to casual.
-  useEffect(() => {
-    if (ranked && !user) setRanked(false);
-  }, [ranked, user]);
-
-  // A fresh ranked standing only applies to the run that produced it; clear it when ranked toggles.
-  useEffect(() => {
-    setStanding(null);
-  }, [ranked]);
-
-  const changeRanked = (next: boolean) => setRanked(next);
-
-  // Ranked always opens on the intro card; toggling it off drops straight back to casual play.
+  // Ranked always opens on the mystery card; leaving ranked drops straight back to casual play.
   useEffect(() => {
     setRankedStarted(false);
   }, [ranked]);
 
-  // Start leaves the intro card for a fresh ranked run.
+  // Play reveals the real card and begins a fresh ranked run.
   const startRanked = () => {
     setStreak(0);
     setRankedStarted(true);
     nextCard();
   };
 
-  // While ranked is on but not yet started, the game shows its single intro card in place of play.
+  // While ranked is on but not yet started, the game shows the masked mystery card in place of play.
   const showRankedIntro = ranked && !rankedStarted;
 
   useEffect(() => {
@@ -142,9 +130,7 @@ export function HowFast() {
   // only the best).
   const submitRankedRun = () => {
     if (ranked && streak >= 1) {
-      void submitScore(HOWFAST_BOARD, streak)
-        .then(setStanding)
-        .catch(() => {});
+      void submitScore(HOWFAST_BOARD, streak).catch(() => {});
     }
   };
 
@@ -200,21 +186,30 @@ export function HowFast() {
     timers.current.push(setTimeout(nextCard, advanceAt));
   };
 
-  const playCard = () => (
+  // Renders the play card. When masked, it shows the mystery placeholder (question-mark art, name,
+  // types and speed) that ranked opens on; its footprint matches the played card exactly, so
+  // revealing the real card on Play never shifts the surface.
+  const playCard = (masked = false) => (
     <Card
-      state={revealed ? (correct ? 'correct' : 'wrong') : undefined}
-      ariaLabel={t('howFast.cardAria', { name })}
+      state={masked ? undefined : revealed ? (correct ? 'correct' : 'wrong') : undefined}
+      ariaLabel={masked ? undefined : t('howFast.cardAria', { name })}
     >
       <Stack spacing={1.5} sx={{ alignItems: 'center' }}>
         <Box sx={{ width: { xs: 192, sm: 224 }, maxWidth: '100%' }}>
-          <PokemonImage src={pokemon.sprite} name={name} eager />
+          {masked ? <MysteryArt /> : <PokemonImage src={pokemon.sprite} name={name} eager />}
         </Box>
         <Typography variant="h6" sx={{ fontWeight: 700, color: 'text.primary' }}>
-          {name}
+          {masked ? t('common.unknown') : name}
         </Typography>
-        <TypeBadges types={pokemon.types} />
+        {masked ? (
+          <Box aria-hidden sx={{ visibility: 'hidden' }}>
+            <TypeBadges types={pokemon.types} />
+          </Box>
+        ) : (
+          <TypeBadges types={pokemon.types} />
+        )}
 
-        <SpeedReveal value={base} revealed={revealed} />
+        <SpeedReveal value={base} revealed={masked ? false : revealed} />
       </Stack>
     </Card>
   );
@@ -244,14 +239,10 @@ export function HowFast() {
         {t('howFast.prompt')}
       </Typography>
 
-      {showRankedIntro ? (
-        <RankedIntroCard onStart={startRanked} cardSx={{ width: '100%' }} footprint={playCard()} />
-      ) : (
-        playCard()
-      )}
+      {showRankedIntro ? playCard(true) : playCard()}
 
-      {/* The input and submit stay in place through the intro (inert until Start) so the surface
-          keeps the same shape whether ranked is starting or being played. */}
+      {/* The input stays in place through the intro (inert until Play) so the surface keeps the same
+          shape whether ranked is starting or being played. */}
       <TextField
         type="number"
         value={guess}
@@ -265,15 +256,16 @@ export function HowFast() {
         inputProps={{ inputMode: 'numeric', min: 0, 'aria-label': t('howFast.inputAria') }}
       />
 
-      {!revealed && (
-        <Button onClick={submit} disabled={!canSubmit || showRankedIntro}>
+      {/* Before a ranked run starts this row holds Play; during play it holds Submit; once a card is
+          revealed it holds Try again (hidden but space-reserved on a correct answer so the surface
+          never jumps while the card auto-advances). */}
+      {showRankedIntro ? (
+        <Button onClick={startRanked}>{t('common.play')}</Button>
+      ) : !revealed ? (
+        <Button onClick={submit} disabled={!canSubmit}>
           {t('howFast.submit')}
         </Button>
-      )}
-      {/* Once revealed, this row holds Try again; on a correct answer it stays hidden but keeps its
-          space so the surface below never jumps while the card auto-advances. The column flex
-          stretches the button to full width just as it would as a direct Stack child. */}
-      {revealed && (
+      ) : (
         <Box
           sx={{
             display: 'flex',
@@ -287,14 +279,6 @@ export function HowFast() {
           </Button>
         </Box>
       )}
-
-      <RankedPanel
-        configured={configured}
-        signedIn={Boolean(user)}
-        ranked={ranked}
-        onRankedChange={changeRanked}
-        standing={standing}
-      />
     </Stack>
   );
 }

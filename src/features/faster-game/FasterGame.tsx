@@ -5,14 +5,12 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useDecks } from '../../decks/DecksContext';
 import { ALL_DECK_ID } from '../../decks/store';
-import { useAuth } from '../../auth/AuthContext';
-import { RankedIntroCard } from '../../ranked/RankedIntroCard';
-import { RankedPanel } from '../../ranked/RankedPanel';
-import { submitScore, type MyStanding } from '../../ranked/api';
+import { submitScore } from '../../ranked/api';
 import { useGuessTimer } from '../../ranked/useGuessTimer';
 import { fasterBoard } from '../../../worker/boards';
 import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
+import { MysteryArt } from '../../components/MysteryArt';
 import { NatureBadge } from '../../components/NatureBadge';
 import { PokemonImage } from '../../components/PokemonImage';
 import { SlotNumber, slotSpinMs } from '../../components/SlotNumber';
@@ -25,6 +23,11 @@ import { loadBestStreak, saveBestStreak } from './bestStreak';
 import { buildContenders, sameSpecies, speedOf, type Contender } from './contenders';
 import { loadMode, saveMode, streakSlot, type GameMode } from './mode';
 import { ModeToggles } from './ModeToggles';
+
+interface FasterGameProps {
+  /** Whether the app is in ranked mode; ranked plays the full roster against a timed clock. */
+  ranked?: boolean;
+}
 
 type Phase = 'idle' | 'revealClicked' | 'revealBoth' | 'resolved';
 type Outcome = 'correct' | 'wrong' | 'tie';
@@ -43,15 +46,12 @@ const REPEAT_PENALTY = 0.12;
  * only close, non-tied pairs; allowing natures compares level-50 max Speed across nature variants.
  * Returns the element.
  */
-export function FasterGame() {
+export function FasterGame({ ranked = false }: FasterGameProps) {
   const { t, i18n } = useTranslation();
   const { activePokemon: deckPool, activeDeckId: deckId } = useDecks();
-  const { configured, user } = useAuth();
   const [mode, setMode] = useState<GameMode>(loadMode);
-  const [ranked, setRanked] = useState(false);
-  const [standing, setStanding] = useState<MyStanding | null>(null);
-  // Ranked opens on a single centered intro card (not the two contenders) that explains the mode
-  // and holds a Start button; play begins only once the player starts it.
+  // Ranked opens on the two contenders masked as mystery cards, with a Play button in the Try again
+  // row; play begins only once the player starts it, which reveals the real pair.
   const [rankedStarted, setRankedStarted] = useState(false);
 
   // Ranked always plays the canonical roster (all Pokemon) so every score is comparable; custom
@@ -140,29 +140,17 @@ export function FasterGame() {
     saveMode(next);
     setMode(next);
     // In ranked, Hard and Natures pick which leaderboard board you play, and a streak can't carry
-    // across boards. Changing one mid-run therefore drops back to the intro card to Start fresh on
+    // across boards. Changing one mid-run therefore drops back to the mystery cards to Play fresh on
     // the newly selected board (the mode-change reset effect below clears the streak and round).
     if (ranked) setRankedStarted(false);
   };
 
-  // Ranked play needs a signed-in player; a sign-out mid-session drops back to casual.
-  useEffect(() => {
-    if (ranked && !user) setRanked(false);
-  }, [ranked, user]);
-
-  // A fresh ranked standing only applies to the run that produced it; clear it when ranked toggles.
-  useEffect(() => {
-    setStanding(null);
-  }, [ranked]);
-
-  const changeRanked = (next: boolean) => setRanked(next);
-
-  // Ranked always opens on the intro card; toggling it off drops straight back to casual play.
+  // Ranked always opens on the mystery cards; leaving ranked drops straight back to casual play.
   useEffect(() => {
     setRankedStarted(false);
   }, [ranked]);
 
-  // Start leaves the intro card for a fresh ranked run.
+  // Play reveals the real pair and begins a fresh ranked run.
   const startRanked = () => {
     forgetSeen();
     setStreak(0);
@@ -170,7 +158,8 @@ export function FasterGame() {
     startRound();
   };
 
-  // While ranked is on but not yet started, the game shows its single intro card in place of play.
+  // While ranked is on but not yet started, the game shows the two masked mystery cards in place of
+  // live play.
   const showRankedIntro = ranked && !rankedStarted;
 
   // A new deck or mode resets the round, the streak, and the best from that mode's own slot.
@@ -202,9 +191,7 @@ export function FasterGame() {
   // from a delayed timer.
   const submitRankedRun = () => {
     if (ranked && streak >= 1) {
-      void submitScore(board, streak)
-        .then(setStanding)
-        .catch(() => {});
+      void submitScore(board, streak).catch(() => {});
     }
   };
 
@@ -228,6 +215,14 @@ export function FasterGame() {
   // timeout holds at 0); it resets to full only when the next round begins.
   const guessFailed = timedOut || outcome === 'wrong';
   const showTryAgain = guessFailed && phase === 'resolved';
+  // The reserved bottom row holds Play before a ranked run starts and Try again after one ends; it
+  // shares the same footprint either way so the surface never jumps.
+  const showPlay = showRankedIntro && Boolean(pair);
+  const action = showPlay
+    ? { label: t('common.play'), onClick: startRanked }
+    : showTryAgain
+      ? { label: t('common.tryAgain'), onClick: tryAgain }
+      : null;
 
   const guess = (choice: Contender) => {
     if (phase !== 'idle' || !pair) return;
@@ -267,11 +262,14 @@ export function FasterGame() {
 
   const speedLabel = mode.allowNatures ? t('common.maxSpeed') : t('common.baseSpeed');
 
-  const contender = (c: Contender) => {
+  // Renders one contender card. When masked, the card is inert and shows the mystery placeholder
+  // (question-mark art, name, types and speed) that ranked opens on; its footprint matches a played
+  // card exactly, so revealing the real pair on Play never shifts the surface.
+  const contender = (c: Contender, masked = false) => {
     const name = displayName(c.pokemon, i18n.language);
-    const isPicked = picked === c;
+    const isPicked = !masked && picked === c;
     const bothShown = phase === 'revealBoth' || phase === 'resolved';
-    const showSpeed = isPicked ? phase !== 'idle' : bothShown;
+    const showSpeed = masked ? false : isPicked ? phase !== 'idle' : bothShown;
     const state =
       isPicked && outcome && phase === 'resolved'
         ? outcome === 'wrong'
@@ -280,8 +278,8 @@ export function FasterGame() {
         : undefined;
     return (
       <Card
-        onClick={() => guess(c)}
-        ariaLabel={t('faster.chooseAria', { name })}
+        onClick={masked ? undefined : () => guess(c)}
+        ariaLabel={masked ? undefined : t('faster.chooseAria', { name })}
         state={state}
         stretch
         sx={{ flex: 1, minWidth: 0 }}
@@ -293,26 +291,33 @@ export function FasterGame() {
           sx={{ textAlign: 'center', flex: 1 }}
         >
           <Box sx={{ width: { xs: 112, sm: 160 }, maxWidth: '100%' }}>
-            <PokemonImage src={c.pokemon.sprite} name={name} eager />
+            {masked ? <MysteryArt /> : <PokemonImage src={c.pokemon.sprite} name={name} eager />}
           </Box>
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            {name}
+            {masked ? t('common.unknown') : name}
           </Typography>
-          {/* Always reserve the nature-badge row (an invisible placeholder when there's no nature)
-              so toggling Natures on or off never changes the card's height. */}
-          {c.nature !== 'base' ? (
+          {/* Always reserve the nature-badge row (an invisible placeholder when there's no nature or
+              the card is masked) so toggling Natures on or off never changes the card's height. */}
+          {!masked && c.nature !== 'base' ? (
             <NatureBadge nature={c.nature} />
           ) : (
             <Box aria-hidden sx={{ visibility: 'hidden' }}>
               <NatureBadge nature="neutral" />
             </Box>
           )}
-          <TypeBadges types={c.pokemon.types} />
+          {/* Reserve the type-badge row's height while masked so the card keeps the same shape. */}
+          {masked ? (
+            <Box aria-hidden sx={{ visibility: 'hidden' }}>
+              <TypeBadges types={c.pokemon.types} />
+            </Box>
+          ) : (
+            <TypeBadges types={c.pokemon.types} />
+          )}
           {/* Pinned to the bottom so the two cards' speeds line up whatever the type count. */}
           <Box sx={{ width: '100%', mt: 'auto', pt: 2 }}>
             <StatPill
               label={speedLabel}
-              value={showSpeed ? <SlotNumber value={speedOf(c)} /> : '???'}
+              value={masked ? '???' : showSpeed ? <SlotNumber value={speedOf(c)} /> : '???'}
             />
           </Box>
         </Stack>
@@ -320,25 +325,17 @@ export function FasterGame() {
     );
   };
 
-  // Ranked opens on a single centered intro card, the width of one contender and sitting where the
-  // pair would, that holds the Start button. It reserves the pair's footprint (via RankedIntroCard)
-  // so toggling ranked on never shrinks the surface.
-  const rankedIntroCard = (shownPair: [Contender, Contender]) => (
-    <RankedIntroCard
-      onStart={startRanked}
-      cardSx={{ width: { xs: 'calc(50% - 4px)', sm: 'calc(50% - 6px)' } }}
-      footprint={
-        <Stack direction="row" spacing={{ xs: 1, sm: 1.5 }}>
-          {contender(shownPair[0])}
-          {contender(shownPair[1])}
-        </Stack>
-      }
-    />
-  );
-
   const body = () => {
+    // Ranked opens on the two contenders masked as mystery cards, in the exact spot live play
+    // occupies, so revealing the real pair on Play never shrinks or shifts the surface.
     if (showRankedIntro && pair) {
-      return rankedIntroCard(pair);
+      const [left, right] = pair;
+      return (
+        <Stack direction="row" spacing={{ xs: 1, sm: 1.5 }}>
+          {contender(left, true)}
+          {contender(right, true)}
+        </Stack>
+      );
     }
     if (pool.length < 2) {
       return (
@@ -394,28 +391,20 @@ export function FasterGame() {
 
       {body()}
 
-      {/* Always reserve the Try again row so the surface below never jumps when a round ends. The
+      {/* Always reserve the action row so the surface below never jumps when a run starts or ends. The
           column flex stretches the button to full width just as it would as a direct Stack child. */}
       <Box
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          visibility: showTryAgain ? 'visible' : 'hidden',
+          visibility: action ? 'visible' : 'hidden',
         }}
-        aria-hidden={!showTryAgain}
+        aria-hidden={!action}
       >
-        <Button onClick={tryAgain} tabIndex={showTryAgain ? undefined : -1}>
-          {t('common.tryAgain')}
+        <Button onClick={() => action?.onClick()} tabIndex={action ? undefined : -1}>
+          {action?.label ?? t('common.tryAgain')}
         </Button>
       </Box>
-
-      <RankedPanel
-        configured={configured}
-        signedIn={Boolean(user)}
-        ranked={ranked}
-        onRankedChange={changeRanked}
-        standing={standing}
-      />
 
       <ModeToggles mode={mode} onChange={changeMode} />
     </Stack>

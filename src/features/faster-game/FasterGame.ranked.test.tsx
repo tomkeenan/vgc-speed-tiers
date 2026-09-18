@@ -24,11 +24,12 @@ const slow = all.find((p) => p.id === 'kingambit')!; // base spe 50
 const fast = all.find((p) => p.id === 'garchomp')!; // base spe 102
 const [slowC, fastC] = buildContenders([slow, fast], false);
 
+// The app owns the ranked flag now, so render the game already in ranked mode.
 const renderGame = () =>
   renderWithTheme(
     <AuthProvider>
       <DecksProvider>
-        <FasterGame />
+        <FasterGame ranked />
       </DecksProvider>
     </AuthProvider>,
   );
@@ -36,15 +37,14 @@ const renderGame = () =>
 const click = (el: HTMLElement) => act(() => void fireEvent.click(el));
 const advance = (ms: number) => act(() => void vi.advanceTimersByTime(ms));
 const choices = () => screen.getAllByRole('button', { name: /choose/i });
-const startButton = () => screen.queryByRole('button', { name: 'Start' });
+const playButton = () => screen.queryByRole('button', { name: 'Play' });
 const streakValue = () => screen.getByText('Streak').previousElementSibling?.textContent;
 
-// Turn ranked on (needs sign-in + a configured build) and leave the intro card for a live run.
+// Ranked opens on the masked mystery cards; Play reveals the real pair for a live run.
 const startRankedRun = () => {
-  click(screen.getByLabelText('Ranked'));
-  expect(startButton()).toBeTruthy(); // ranked opens on the intro card
-  click(startButton()!);
-  expect(startButton()).toBeNull(); // now playing
+  expect(playButton()).toBeTruthy(); // ranked opens on the mystery cards with Play
+  click(playButton()!);
+  expect(playButton()).toBeNull(); // now playing
 };
 
 describe('FasterGame ranked mode', () => {
@@ -68,23 +68,23 @@ describe('FasterGame ranked mode', () => {
   });
 
   // Hard and Natures pick which leaderboard board you play, and a streak can't carry across boards,
-  // so changing one during a ranked run drops back to the intro card to Start fresh on the new board.
-  it('returns to the intro card when the board (Hard mode) changes mid-run', () => {
+  // so changing one during a ranked run drops back to the mystery cards to Play fresh on the new board.
+  it('returns to the mystery cards when the board (Hard mode) changes mid-run', () => {
     renderGame();
     startRankedRun();
 
     click(screen.getByLabelText('Hard mode'));
 
-    expect(startButton()).toBeTruthy(); // back on the ranked intro card
+    expect(playButton()).toBeTruthy(); // back on the ranked mystery cards
   });
 
-  it('returns to the intro card when the board (Allow natures) changes mid-run', () => {
+  it('returns to the mystery cards when the board (Allow natures) changes mid-run', () => {
     renderGame();
     startRankedRun();
 
     click(screen.getByLabelText('Allow natures'));
 
-    expect(startButton()).toBeTruthy();
+    expect(playButton()).toBeTruthy();
   });
 
   it('resets the streak for the fresh run on the new board', () => {
@@ -97,14 +97,14 @@ describe('FasterGame ranked mode', () => {
     advance(1000); // resolve: streak advances
     expect(streakValue()).toBe('1');
 
-    // Switch the board: back to the intro card with a cleared streak.
+    // Switch the board: back to the mystery cards with a cleared streak.
     click(screen.getByLabelText('Hard mode'));
-    expect(startButton()).toBeTruthy();
+    expect(playButton()).toBeTruthy();
     expect(streakValue()).toBe('0');
 
-    // Starting again begins a clean run on the new board.
-    click(startButton()!);
-    expect(startButton()).toBeNull();
+    // Playing again begins a clean run on the new board.
+    click(playButton()!);
+    expect(playButton()).toBeNull();
     expect(streakValue()).toBe('0');
   });
 });

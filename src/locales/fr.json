@@ -11,15 +11,23 @@
     "baseSpeed": "Vitesse de base",
     "maxSpeed": "Vitesse max",
     "tryAgain": "Réessayer",
+    "play": "Jouer",
     "streak": "Série",
     "best": "Record",
     "time": "Temps",
     "noPokemon": "Aucun Pokémon disponible.",
     "features": "Fonctionnalités",
-    "copied": "Copié !"
+    "copied": "Copié !",
+    "unknown": "Inconnu"
   },
   "header": {
     "settings": "Paramètres"
+  },
+  "mode": {
+    "label": "Mode de jeu",
+    "practice": "Entraînement",
+    "ranked": "Classé",
+    "signInRequired": "Connecte-toi pour jouer en classé"
   },
   "footer": {
     "madeBy": "créé par tom",
@@ -151,12 +159,6 @@
     "sessionExpired": "Ta session a expiré. Reconnecte-toi."
   },
   "ranked": {
-    "title": "Mode classé",
-    "description": "Joue avec tous les Pokémon dans les classements partagés.",
-    "signInPrompt": "Connecte-toi depuis le menu du compte pour jouer en mode classé.",
-    "introTitle": "Mode classé",
-    "introBody": "Devenir le meilleur dresseur, comme personne avant toi. Grimpe au classement mondial dans ce mode chronométré.",
-    "start": "Commencer",
     "leaderboard": "Classement",
     "leaderboardTitle": "Classement",
     "closeLeaderboard": "Fermer le classement",
@@ -169,7 +171,6 @@
     "colPlayer": "Joueur",
     "you": "Toi",
     "signInToRank": "Connecte-toi pour figurer au classement",
-    "yourStanding": "Tu es #{{rank}} avec une série de {{streak}}.",
     "colStreak": "Série",
     "games": {
       "faster": "Qui est le plus rapide ?",

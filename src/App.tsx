@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import { Flashcards } from './features/flashcards/Flashcards';
@@ -8,6 +8,7 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { TabNav } from './components/TabNav';
 import { DecksProvider } from './decks/DecksContext';
+import { useAuth } from './auth/AuthContext';
 import type { BoardKey } from '../worker/boards';
 
 // Loaded on demand so its heavy MUI surface (Autocomplete, Dialog) stays out of the initial chunk.
@@ -21,9 +22,17 @@ const LeaderboardScreen = lazy(() =>
 );
 
 const TABS = [
-  { key: 'flashcards', labelKey: 'tabs.flashcards', render: () => <Flashcards /> },
-  { key: 'faster', labelKey: 'tabs.faster', render: () => <FasterGame /> },
-  { key: 'howfast', labelKey: 'tabs.howFast', render: () => <HowFast /> },
+  { key: 'flashcards', labelKey: 'tabs.flashcards', render: (_ranked: boolean) => <Flashcards /> },
+  {
+    key: 'faster',
+    labelKey: 'tabs.faster',
+    render: (ranked: boolean) => <FasterGame ranked={ranked} />,
+  },
+  {
+    key: 'howfast',
+    labelKey: 'tabs.howFast',
+    render: (ranked: boolean) => <HowFast ranked={ranked} />,
+  },
 ] as const;
 
 type TabKey = (typeof TABS)[number]['key'];
@@ -31,10 +40,17 @@ type TabKey = (typeof TABS)[number]['key'];
 /** Root component: header, tab navigation, the two features, and the settings dialog. */
 export default function App() {
   const { t } = useTranslation();
+  const { user } = useAuth();
   const [tab, setTab] = useState<TabKey>('faster');
+  const [ranked, setRanked] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [showLeaderboard, setShowLeaderboard] = useState(false);
   const active = TABS.find((t) => t.key === tab) ?? TABS[0];
+
+  // Ranked play needs a signed-in player; a sign-out drops the whole app back to practice.
+  useEffect(() => {
+    if (ranked && !user) setRanked(false);
+  }, [ranked, user]);
 
   // Open the leaderboard on the board that matches the current game; the screen can switch boards.
   const leaderboardBoard: BoardKey = tab === 'howfast' ? 'howfast:standard' : 'faster:standard';
@@ -56,6 +72,8 @@ export default function App() {
           onOpenSettings={() => setSettingsOpen(true)}
           onToggleLeaderboard={() => setShowLeaderboard((v) => !v)}
           leaderboardActive={showLeaderboard}
+          ranked={ranked}
+          onRankedChange={setRanked}
         />
 
         <TabNav
@@ -64,7 +82,9 @@ export default function App() {
           onChange={setTab}
         />
 
-        <Box component="main" sx={{ flex: 1 }}>{active.render()}</Box>
+        <Box component="main" sx={{ flex: 1 }}>
+          {active.render(ranked)}
+        </Box>
 
         <Footer />
       </Box>

@@ -11,15 +11,23 @@
     "baseSpeed": "Velocidad base",
     "maxSpeed": "Velocidad máx.",
     "tryAgain": "Intentar de nuevo",
+    "play": "Jugar",
     "streak": "Racha",
     "best": "Mejor",
     "time": "Tiempo",
     "noPokemon": "No hay Pokémon disponibles.",
     "features": "Funciones",
-    "copied": "¡Copiado!"
+    "copied": "¡Copiado!",
+    "unknown": "Desconocido"
   },
   "header": {
     "settings": "Configuración"
+  },
+  "mode": {
+    "label": "Modo de juego",
+    "practice": "Práctica",
+    "ranked": "Clasificatorio",
+    "signInRequired": "Inicia sesión para jugar en clasificatorio"
   },
   "footer": {
     "madeBy": "hecho por tom",
@@ -151,12 +159,6 @@
     "sessionExpired": "Tu sesión expiró. Inicia sesión de nuevo."
   },
   "ranked": {
-    "title": "Modo clasificatorio",
-    "description": "Juega con todos los Pokémon en las clasificaciones compartidas.",
-    "signInPrompt": "Inicia sesión desde el menú de cuenta para jugar en modo clasificatorio.",
-    "introTitle": "Modo clasificatorio",
-    "introBody": "Ser el mejor, como nadie más lo fue. Escala la clasificación global en este modo contrarreloj.",
-    "start": "Empezar",
     "leaderboard": "Clasificación",
     "leaderboardTitle": "Clasificación",
     "closeLeaderboard": "Cerrar clasificación",
@@ -169,7 +171,6 @@
     "colPlayer": "Jugador",
     "you": "Tú",
     "signInToRank": "Inicia sesión para entrar en la clasificación",
-    "yourStanding": "Estás en el puesto #{{rank}} con una racha de {{streak}}.",
     "colStreak": "Racha",
     "games": {
       "faster": "¿Quién es más rápido?",

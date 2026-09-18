@@ -11,15 +11,23 @@
     "baseSpeed": "Velocità base",
     "maxSpeed": "Velocità max",
     "tryAgain": "Riprova",
+    "play": "Gioca",
     "streak": "Serie",
     "best": "Record",
     "time": "Tempo",
     "noPokemon": "Nessun Pokémon disponibile.",
     "features": "Funzionalità",
-    "copied": "Copiato!"
+    "copied": "Copiato!",
+    "unknown": "Sconosciuto"
   },
   "header": {
     "settings": "Impostazioni"
+  },
+  "mode": {
+    "label": "Modalità di gioco",
+    "practice": "Allenamento",
+    "ranked": "Competitiva",
+    "signInRequired": "Accedi per giocare in competitiva"
   },
   "footer": {
     "madeBy": "creato da tom",
@@ -151,12 +159,6 @@
     "sessionExpired": "La sessione è scaduta. Accedi di nuovo."
   },
   "ranked": {
-    "title": "Modalità competitiva",
-    "description": "Gioca con tutti i Pokémon nelle classifiche condivise.",
-    "signInPrompt": "Accedi dal menu dell'account per giocare in modalità competitiva.",
-    "introTitle": "Modalità competitiva",
-    "introBody": "Diventa il migliore, come nessuno mai. Scala la classifica globale in questa modalità a tempo.",
-    "start": "Inizia",
     "leaderboard": "Classifica",
     "leaderboardTitle": "Classifica",
     "closeLeaderboard": "Chiudi la classifica",
@@ -169,7 +171,6 @@
     "colPlayer": "Giocatore",
     "you": "Tu",
     "signInToRank": "Accedi per entrare in classifica",
-    "yourStanding": "Sei #{{rank}} con una serie di {{streak}}.",
     "colStreak": "Serie",
     "games": {
       "faster": "Chi è più veloce?",

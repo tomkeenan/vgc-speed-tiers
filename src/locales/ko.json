@@ -11,15 +11,23 @@
     "baseSpeed": "기본 스피드",
     "maxSpeed": "최대 스피드",
     "tryAgain": "다시 시도",
+    "play": "플레이",
     "streak": "연속 정답",
     "best": "최고 기록",
     "time": "시간",
     "noPokemon": "사용 가능한 포켓몬이 없습니다.",
     "features": "기능",
-    "copied": "복사됨!"
+    "copied": "복사됨!",
+    "unknown": "알 수 없음"
   },
   "header": {
     "settings": "설정"
+  },
+  "mode": {
+    "label": "게임 모드",
+    "practice": "연습",
+    "ranked": "랭크",
+    "signInRequired": "랭크를 플레이하려면 로그인하세요"
   },
   "footer": {
     "madeBy": "제작: tom",
@@ -151,12 +159,6 @@
     "sessionExpired": "세션이 만료되었습니다. 다시 로그인하세요."
   },
   "ranked": {
-    "title": "랭크 모드",
-    "description": "모든 포켓몬으로 공용 순위표에 도전하세요.",
-    "signInPrompt": "랭크 모드를 플레이하려면 계정 메뉴에서 로그인하세요.",
-    "introTitle": "랭크 모드",
-    "introBody": "누구보다 최고가 되어라. 시간제한이 있는 이 모드에서 글로벌 리더보드 정상에 올라보세요.",
-    "start": "시작",
     "leaderboard": "순위표",
     "leaderboardTitle": "순위표",
     "closeLeaderboard": "순위표 닫기",
@@ -169,7 +171,6 @@
     "colPlayer": "플레이어",
     "you": "나",
     "signInToRank": "리더보드에 오르려면 로그인하세요",
-    "yourStanding": "{{streak}}연속으로 #{{rank}}위입니다.",
     "colStreak": "연속 정답",
     "games": {
       "faster": "누가 더 빠를까?",

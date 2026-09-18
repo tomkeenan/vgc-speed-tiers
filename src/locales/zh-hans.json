@@ -11,15 +11,23 @@
     "baseSpeed": "基础速度",
     "maxSpeed": "最大速度",
     "tryAgain": "重试",
+    "play": "开始",
     "streak": "连胜",
     "best": "最佳",
     "time": "时间",
     "noPokemon": "没有可用的宝可梦。",
     "features": "功能",
-    "copied": "已复制！"
+    "copied": "已复制！",
+    "unknown": "未知"
   },
   "header": {
     "settings": "设置"
+  },
+  "mode": {
+    "label": "游戏模式",
+    "practice": "练习",
+    "ranked": "排位",
+    "signInRequired": "登录后才能玩排位"
   },
   "footer": {
     "madeBy": "由 tom 制作",
@@ -151,12 +159,6 @@
     "sessionExpired": "会话已过期，请重新登录。"
   },
   "ranked": {
-    "title": "排位模式",
-    "description": "使用全部宝可梦争夺共享排行榜名次。",
-    "signInPrompt": "从账户菜单登录以进行排位游戏。",
-    "introTitle": "排位模式",
-    "introBody": "成为最强，前所未有。在这个限时模式中登顶全球排行榜。",
-    "start": "开始",
     "leaderboard": "排行榜",
     "leaderboardTitle": "排行榜",
     "closeLeaderboard": "关闭排行榜",
@@ -169,7 +171,6 @@
     "colPlayer": "玩家",
     "you": "你",
     "signInToRank": "登录后即可登上排行榜",
-    "yourStanding": "你以 {{streak}} 连胜排名第 {{rank}} 位。",
     "colStreak": "连胜",
     "games": {
       "faster": "谁更快？",

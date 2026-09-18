@@ -11,15 +11,23 @@
     "baseSpeed": "すばやさ種族値",
     "maxSpeed": "最大すばやさ",
     "tryAgain": "もう一度",
+    "play": "プレイ",
     "streak": "連続正解",
     "best": "最高記録",
     "time": "タイム",
     "noPokemon": "利用できるポケモンがいません。",
     "features": "機能",
-    "copied": "コピーしました！"
+    "copied": "コピーしました！",
+    "unknown": "不明"
   },
   "header": {
     "settings": "設定"
+  },
+  "mode": {
+    "label": "ゲームモード",
+    "practice": "フリー",
+    "ranked": "ランク",
+    "signInRequired": "ランクをプレイするにはサインインしてください"
   },
   "footer": {
     "madeBy": "作成者：tom",
@@ -151,12 +159,6 @@
     "sessionExpired": "セッションの有効期限が切れました。もう一度サインインしてください。"
   },
   "ranked": {
-    "title": "ランクモード",
-    "description": "すべてのポケモンで共有ランキングに挑戦しよう。",
-    "signInPrompt": "ランクモードをプレイするには、アカウントメニューからサインインしてください。",
-    "introTitle": "ランクモード",
-    "introBody": "誰よりも強くなろう。制限時間ありのこのモードで、世界ランキングの頂点を目指せ。",
-    "start": "スタート",
     "leaderboard": "ランキング",
     "leaderboardTitle": "ランキング",
     "closeLeaderboard": "ランキングを閉じる",
@@ -169,7 +171,6 @@
     "colPlayer": "プレイヤー",
     "you": "あなた",
     "signInToRank": "ランキングに載るにはサインインしてください",
-    "yourStanding": "あなたは{{streak}}連続で#{{rank}}位です。",
     "colStreak": "連続正解",
     "games": {
       "faster": "どっちが速い？",

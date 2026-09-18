@@ -5,6 +5,7 @@ import { AccountMenu } from './AccountMenu';
 import { DeckSelector } from './DeckSelector';
 import { HeaderIconButton } from './HeaderIconButton';
 import { LeaderboardIcon } from './LeaderboardIcon';
+import { ModeSwitch } from './ModeSwitch';
 import { useAuth } from '../auth/AuthContext';
 
 interface HeaderProps {
@@ -12,20 +13,27 @@ interface HeaderProps {
   onToggleLeaderboard: () => void;
   /** Whether the leaderboard screen is currently open, so the crown reads as active. */
   leaderboardActive: boolean;
+  /** Whether the app is in ranked mode; drives the mode switch and hides the deck selector. */
+  ranked: boolean;
+  onRankedChange: (ranked: boolean) => void;
 }
 
 /**
- * The app header: title on the left, and the deck selector, leaderboard crown and account menu on the
- * right. The crown only renders when sign-in is configured. Takes onOpenSettings and
- * onToggleLeaderboard handlers plus the leaderboard's open state; returns the element.
+ * The app header: title on the left, and the Practice/Ranked switch, deck selector, leaderboard crown
+ * and account menu on the right. The mode switch and crown only render when sign-in is configured, and
+ * the deck selector is hidden in ranked (which always plays the full roster). Takes onOpenSettings and
+ * onToggleLeaderboard handlers, the leaderboard's open state, and the ranked mode plus its change
+ * handler; returns the element.
  */
 export function Header({
   onOpenSettings,
   onToggleLeaderboard,
   leaderboardActive,
+  ranked,
+  onRankedChange,
 }: HeaderProps) {
   const { t } = useTranslation();
-  const { configured } = useAuth();
+  const { configured, user } = useAuth();
   return (
     <Box
       component="header"
@@ -41,7 +49,10 @@ export function Header({
       </Box>
 
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, flexShrink: 0 }}>
-        <DeckSelector />
+        {configured && (
+          <ModeSwitch ranked={ranked} onChange={onRankedChange} signedIn={Boolean(user)} />
+        )}
+        {!ranked && <DeckSelector />}
         {configured && (
           <HeaderIconButton
             label={t('ranked.leaderboard')}

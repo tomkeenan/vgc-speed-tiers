@@ -11,15 +11,23 @@
     "baseSpeed": "Base Speed",
     "maxSpeed": "Max Speed",
     "tryAgain": "Try again",
+    "play": "Play",
     "streak": "Streak",
     "best": "Best",
     "time": "Time",
     "noPokemon": "No Pokemon available.",
     "features": "Features",
-    "copied": "Copied!"
+    "copied": "Copied!",
+    "unknown": "Unknown"
   },
   "header": {
     "settings": "Settings"
+  },
+  "mode": {
+    "label": "Game mode",
+    "practice": "Practice",
+    "ranked": "Ranked",
+    "signInRequired": "Sign in to play ranked"
   },
   "footer": {
     "madeBy": "made by tom",
@@ -151,12 +159,6 @@
     "sessionExpired": "Your session expired. Please sign in again."
   },
   "ranked": {
-    "title": "Ranked",
-    "description": "Play the full roster on shared leaderboards.",
-    "signInPrompt": "Sign in from the account menu to play ranked.",
-    "introTitle": "Ranked mode",
-    "introBody": "Be the very best, like no one ever was. Climb the global leaderboard in this timed mode.",
-    "start": "Start",
     "leaderboard": "Leaderboard",
     "leaderboardTitle": "Leaderboard",
     "closeLeaderboard": "Close leaderboard",
@@ -169,7 +171,6 @@
     "colPlayer": "Player",
     "you": "You",
     "signInToRank": "Sign in to get on the leaderboard",
-    "yourStanding": "You're #{{rank}} with a streak of {{streak}}.",
     "colStreak": "Streak",
     "games": {
       "faster": "Who's Faster?",
