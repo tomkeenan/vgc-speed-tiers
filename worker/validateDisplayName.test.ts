@@ -6,11 +6,11 @@ describe('checkDisplayName', () => {
     expect(checkDisplayName('  PikaFast  ')).toEqual({ ok: true, name: 'PikaFast' });
   });
 
-  it('collapses internal whitespace', () => {
-    expect(checkDisplayName('Ash   Ketchum')).toEqual({ ok: true, name: 'Ash Ketchum' });
+  it('rejects internal spaces', () => {
+    expect(checkDisplayName('Ash Ketchum')).toEqual({ ok: false, error: 'chars' });
   });
 
-  it('allows letters, numbers, spaces, hyphens and underscores', () => {
+  it('allows letters, numbers, hyphens and underscores', () => {
     expect(checkDisplayName('red_9-x')).toEqual({ ok: true, name: 'red_9-x' });
   });
 
@@ -33,6 +33,16 @@ describe('checkDisplayName', () => {
   it('reports a chars error for leading/trailing separators', () => {
     expect(checkDisplayName('-name')).toEqual({ ok: false, error: 'chars' });
     expect(checkDisplayName('name_')).toEqual({ ok: false, error: 'chars' });
+  });
+
+  it('reports a profanity error for blocklisted names, including leetspeak', () => {
+    expect(checkDisplayName('fuck')).toEqual({ ok: false, error: 'profanity' });
+    expect(checkDisplayName('sh1t')).toEqual({ ok: false, error: 'profanity' });
+  });
+
+  it('does not flag innocent names that merely contain a blocked substring', () => {
+    expect(checkDisplayName('Scunthorpe')).toEqual({ ok: true, name: 'Scunthorpe' });
+    expect(checkDisplayName('assassin')).toEqual({ ok: true, name: 'assassin' });
   });
 });
 

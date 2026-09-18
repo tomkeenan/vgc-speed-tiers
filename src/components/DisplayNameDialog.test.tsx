@@ -25,7 +25,19 @@ describe('DisplayNameDialog', () => {
     await user.type(screen.getByLabelText('Display name'), 'bad.name');
     await user.click(screen.getByRole('button', { name: 'Save' }));
     expect(onSubmit).not.toHaveBeenCalled();
-    expect(screen.getByText('Only letters, numbers, spaces, - and _ are allowed.')).toBeVisible();
+    expect(screen.getByText('Only letters, numbers, - and _ are allowed.')).toBeVisible();
+  });
+
+  it('shows a profanity error and does not submit a blocklisted name', async () => {
+    const onSubmit = vi.fn();
+    const user = userEvent.setup();
+    renderWithTheme(
+      <DisplayNameDialog open mode="register" onSubmit={onSubmit} onClose={vi.fn()} />,
+    );
+    await user.type(screen.getByLabelText('Display name'), 'sh1t');
+    await user.click(screen.getByRole('button', { name: 'Save' }));
+    expect(onSubmit).not.toHaveBeenCalled();
+    expect(screen.getByText('Please choose a different name.')).toBeVisible();
   });
 
   it('surfaces a taken-name error from the server', async () => {

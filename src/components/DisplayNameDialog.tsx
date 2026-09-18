@@ -8,15 +8,26 @@ import DialogTitle from '@mui/material/DialogTitle';
 import TextField from '@mui/material/TextField';
 import { Button } from './Button';
 import type { NameActionError } from '../auth/AuthContext';
-import { checkDisplayName, DISPLAY_NAME_MAX } from '../../worker/validateDisplayName';
+import {
+  checkDisplayName,
+  DISPLAY_NAME_MAX,
+  type DisplayNameError,
+} from '../../worker/validateDisplayName';
 
 type ErrorKey =
   | 'auth.nameTaken'
   | 'auth.nameLength'
   | 'auth.nameChars'
+  | 'auth.nameProfanity'
   | 'auth.renameTooSoon'
   | 'auth.sessionExpired'
   | 'auth.saveFailed';
+
+const CHECK_ERROR_KEYS: Record<DisplayNameError, ErrorKey> = {
+  length: 'auth.nameLength',
+  chars: 'auth.nameChars',
+  profanity: 'auth.nameProfanity',
+};
 
 // Maps a server-side rejection to its message. The client validates first, so 'invalid_name' is
 // only a fallback.
@@ -65,7 +76,7 @@ export function DisplayNameDialog({
     event.preventDefault();
     const checked = checkDisplayName(value);
     if (!checked.ok) {
-      setErrorKey(checked.error === 'length' ? 'auth.nameLength' : 'auth.nameChars');
+      setErrorKey(CHECK_ERROR_KEYS[checked.error]);
       return;
     }
     setSubmitting(true);
