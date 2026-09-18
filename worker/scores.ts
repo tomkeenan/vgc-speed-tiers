@@ -16,6 +16,14 @@ export interface MyStanding {
   rank: number;
 }
 
+/** A player's standing after a submission, with the info needed to celebrate a PB or a top-N climb. */
+export interface ScoreResult extends MyStanding {
+  /** The player's rank on the board before this submission, or null if they had no score there. */
+  previousRank: number | null;
+  /** Whether the submitted streak beat the player's previous best on the board (first score counts). */
+  isPersonalBest: boolean;
+}
+
 /** Number of recent submissions by a player within the rate-limit window. */
 export async function recentSubmissionCount(
   db: D1Database,
@@ -31,14 +39,16 @@ export async function recentSubmissionCount(
 
 /**
  * Records a streak: appends to the audit log and updates the player's best for the board if higher.
- * Returns the player's resulting best and rank on that board.
+ * Returns the player's resulting best and rank, plus the prior rank and whether it was a new best,
+ * so the client can celebrate a personal best or a climb into the top ranks.
  */
 export async function submitScore(
   db: D1Database,
   playerId: string,
   boardKey: BoardKey,
   streak: number,
-): Promise<MyStanding> {
+): Promise<ScoreResult> {
+  const standingBeforeUpsert = await getStanding(db, playerId, boardKey);
   const now = Date.now();
   await db
     .prepare('INSERT INTO scores (player_id, board_key, streak, created_at) VALUES (?, ?, ?, ?)')
@@ -54,9 +64,12 @@ export async function submitScore(
     .bind(playerId, boardKey, streak, now)
     .run();
 
-  const standing = await getStanding(db, playerId, boardKey);
-  // A player who just submitted always has a row; fall back defensively.
-  return standing ?? { streak, rank: 1 };
+  const standing = (await getStanding(db, playerId, boardKey)) ?? { streak, rank: 1 };
+  return {
+    ...standing,
+    previousRank: standingBeforeUpsert?.rank ?? null,
+    isPersonalBest: standingBeforeUpsert == null || streak > standingBeforeUpsert.streak,
+  };
 }
 
 /** The player's best streak and rank on a board, or null if they have no score there. */

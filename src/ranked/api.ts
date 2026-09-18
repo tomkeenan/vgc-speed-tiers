@@ -17,6 +17,12 @@ export interface MyStanding {
   rank: number;
 }
 
+/** The player's standing after a submission, with what's needed to celebrate a PB or a top-N climb. */
+export interface ScoreResult extends MyStanding {
+  previousRank: number | null;
+  isPersonalBest: boolean;
+}
+
 /** A board read: the public top-N plus the caller's own standing when signed in and registered. */
 export interface LeaderboardResult {
   board: BoardKey;
@@ -35,8 +41,8 @@ export function cachedLeaderboards(limit?: number): LeaderboardResult[] | undefi
   return cache.get(cacheKey(limit));
 }
 
-/** Records a ranked streak and returns the player's resulting best and rank on the board. */
-export async function submitScore(boardKey: BoardKey, streak: number): Promise<MyStanding> {
+/** Records a ranked streak and returns the player's resulting standing, prior rank and PB flag. */
+export async function submitScore(boardKey: BoardKey, streak: number): Promise<ScoreResult> {
   const res = await fetch('/api/score', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
@@ -45,7 +51,7 @@ export async function submitScore(boardKey: BoardKey, streak: number): Promise<M
   if (!res.ok) throw new Error(`score_failed_${res.status}`);
   // A new score can change the standings, so drop cached reads; the next open refetches every board.
   cache.clear();
-  return (await res.json()) as MyStanding;
+  return (await res.json()) as ScoreResult;
 }
 
 // In `vite dev` the API is proxied to a locally-running `wrangler dev`; when that Worker is not up,

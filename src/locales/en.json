@@ -180,6 +180,22 @@
     "chips": {
       "hard": "Hard",
       "natures": "Natures"
+    },
+    "celebration": {
+      "rank1Title": "You are the champion!",
+      "rank1Body": "A streak of {{streak}} tops the leaderboard. You're the very best, like no one ever was!",
+      "rank2Title": "Almost the best!",
+      "rank2Body": "A streak of {{streak}} lands you silver. So close you can taste it.",
+      "rank3Title": "On the podium!",
+      "rank3Body": "A streak of {{streak}} puts you 3rd. The view's even better one step up.",
+      "topTitle": "You made the board!",
+      "topBody": "A streak of {{streak}} puts you at #{{rank}}. The podium's in sight.",
+      "pbTitle": "New PB!",
+      "pbBody": "A streak of {{streak}} and climbing. The top 10 is calling.",
+      "practiceTitle": "New PB!",
+      "practiceBody": "A streak of {{streak}} beats your record. Ready to make it count in Ranked?",
+      "viewLeaderboard": "View leaderboard",
+      "dismiss": "Continue playing"
     }
   }
 }

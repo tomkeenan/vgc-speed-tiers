@@ -180,6 +180,22 @@
     "chips": {
       "hard": "困难",
       "natures": "性格"
+    },
+    "celebration": {
+      "rank1Title": "你就是冠军！",
+      "rank1Body": "连续答对 {{streak}} 次，登顶排行榜。你是史上最强，前无古人！",
+      "rank2Title": "距离登顶只差一步！",
+      "rank2Body": "连续答对 {{streak}} 次，摘得银牌。胜利近在咫尺。",
+      "rank3Title": "登上领奖台！",
+      "rank3Body": "连续答对 {{streak}} 次，位列第 3。再上一级，风景更好。",
+      "topTitle": "你登上排行榜了！",
+      "topBody": "连续答对 {{streak}} 次，让你排在第 {{rank}} 名。领奖台已在眼前。",
+      "pbTitle": "个人最佳纪录！",
+      "pbBody": "连续答对 {{streak}} 次，还在继续。前 10 名在向你招手。",
+      "practiceTitle": "个人最佳纪录！",
+      "practiceBody": "连续答对 {{streak}} 次，打破了你的纪录。准备好在排位赛中大展身手了吗？",
+      "viewLeaderboard": "查看排行榜",
+      "dismiss": "继续游戏"
     }
   }
 }

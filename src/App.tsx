@@ -8,6 +8,7 @@ import { Footer } from './components/Footer';
 import { TabNav } from './components/TabNav';
 import { DecksProvider } from './decks/DecksContext';
 import { useAuth } from './auth/AuthContext';
+import type { BoardKey } from '../worker/boards';
 
 // Loaded on demand so its heavy MUI surface (Autocomplete, Dialog) stays out of the initial chunk.
 const SettingsDialog = lazy(() =>
@@ -19,17 +20,31 @@ const LeaderboardScreen = lazy(() =>
   import('./ranked/LeaderboardScreen').then((m) => ({ default: m.LeaderboardScreen })),
 );
 
+interface TabContext {
+  ranked: boolean;
+  leaderboardBoard: BoardKey | undefined;
+  onViewLeaderboard: (board: BoardKey) => void;
+}
+
 const TABS = [
-  { key: 'leaderboard', labelKey: 'tabs.leaderboard', render: (_ranked: boolean) => <LeaderboardScreen /> },
+  {
+    key: 'leaderboard',
+    labelKey: 'tabs.leaderboard',
+    render: (ctx: TabContext) => <LeaderboardScreen initialBoard={ctx.leaderboardBoard} />,
+  },
   {
     key: 'faster',
     labelKey: 'tabs.faster',
-    render: (ranked: boolean) => <FasterGame ranked={ranked} />,
+    render: (ctx: TabContext) => (
+      <FasterGame ranked={ctx.ranked} onViewLeaderboard={ctx.onViewLeaderboard} />
+    ),
   },
   {
     key: 'howfast',
     labelKey: 'tabs.howFast',
-    render: (ranked: boolean) => <HowFast ranked={ranked} />,
+    render: (ctx: TabContext) => (
+      <HowFast ranked={ctx.ranked} onViewLeaderboard={ctx.onViewLeaderboard} />
+    ),
   },
 ] as const;
 
@@ -42,7 +57,13 @@ export default function App() {
   const [tab, setTab] = useState<TabKey>('faster');
   const [ranked, setRanked] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [leaderboardBoard, setLeaderboardBoard] = useState<BoardKey | undefined>(undefined);
   const active = TABS.find((t) => t.key === tab) ?? TABS[0];
+
+  const viewLeaderboard = (board: BoardKey) => {
+    setLeaderboardBoard(board);
+    setTab('leaderboard');
+  };
 
   // Ranked play needs a signed-in player; a sign-out drops the whole app back to practice.
   useEffect(() => {
@@ -75,7 +96,9 @@ export default function App() {
         />
 
         <Box component="main" sx={{ flex: 1 }}>
-          <Suspense fallback={null}>{active.render(ranked)}</Suspense>
+          <Suspense fallback={null}>
+            {active.render({ ranked, leaderboardBoard, onViewLeaderboard: viewLeaderboard })}
+          </Suspense>
         </Box>
 
         <Footer />

@@ -180,6 +180,22 @@
     "chips": {
       "hard": "Difficile",
       "natures": "Nature"
+    },
+    "celebration": {
+      "rank1Title": "Sei il campione!",
+      "rank1Body": "Una serie di {{streak}} conquista la vetta della classifica. Sei il migliore, come nessuno mai!",
+      "rank2Title": "Quasi il migliore!",
+      "rank2Body": "Una serie di {{streak}} ti vale l'argento. Ci sei quasi, lo senti.",
+      "rank3Title": "Sul podio!",
+      "rank3Body": "Una serie di {{streak}} ti mette al 3° posto. Un gradino più su la vista è ancora migliore.",
+      "topTitle": "Sei in classifica!",
+      "topBody": "Una serie di {{streak}} ti mette al {{rank}}° posto. Il podio è in vista.",
+      "pbTitle": "Nuovo record!",
+      "pbBody": "Una serie di {{streak}} e continui a salire. La Top 10 ti chiama.",
+      "practiceTitle": "Nuovo record!",
+      "practiceBody": "Una serie di {{streak}} batte il tuo record. Pronto a farla valere in Competitiva?",
+      "viewLeaderboard": "Vedi la classifica",
+      "dismiss": "Continua a giocare"
     }
   }
 }

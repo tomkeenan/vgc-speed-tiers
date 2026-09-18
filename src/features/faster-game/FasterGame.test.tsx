@@ -128,6 +128,8 @@ describe('FasterGame', () => {
     expect(streakValue()).toBe('2'); // streak held on screen after a loss
     expect(bestValue()).toBe('2');
 
+    click(screen.getByRole('button', { name: 'Continue playing' }));
+    advance(500); // let the dialog's close transition finish
     click(screen.getByRole('button', { name: 'Try again' }));
     expect(streakValue()).toBe('0'); // reset only on Try again
     expect(bestValue()).toBe('2'); // best holds
@@ -136,5 +138,50 @@ describe('FasterGame', () => {
   it('prompts for the higher base Speed', () => {
     renderGame();
     expect(screen.getByText('Which Pokemon has the higher base Speed?')).toBeTruthy();
+  });
+
+  it('celebrates a new personal best with the streak it reached when a practice run ends', () => {
+    renderGame();
+    click(choices()[1]); // correct: streak 1 (a new best over 0)
+    advance(600);
+    advance(1000);
+    advance(3000); // auto-advance
+    click(choices()[0]); // wrong: the run ends
+    advance(600);
+    advance(3000); // resolved
+
+    expect(screen.getByText('New PB!')).toBeTruthy();
+    expect(
+      screen.getByText('A streak of 1 beats your record. Ready to make it count in Ranked?'),
+    ).toBeTruthy();
+  });
+
+  it('does not celebrate a later practice run that falls short of the best', () => {
+    renderGame();
+    click(choices()[1]);
+    advance(600);
+    advance(1000); // streak 1
+    advance(3000);
+    click(choices()[1]);
+    advance(600);
+    advance(1000); // streak 2
+    advance(3000);
+    click(choices()[0]);
+    advance(600);
+    advance(3000); // wrong: resolved, best beaten
+    click(screen.getByRole('button', { name: 'Continue playing' })); // dismiss the celebration
+    advance(500); // let the dialog's close transition finish
+    click(screen.getByRole('button', { name: 'Try again' }));
+
+    click(choices()[1]);
+    advance(600);
+    advance(1000); // streak 1
+    advance(3000);
+    click(choices()[0]);
+    advance(600);
+    advance(3000); // wrong: resolved
+
+    expect(screen.queryByRole('button', { name: 'Continue playing' })).toBeNull();
+    expect(screen.getByRole('button', { name: 'Try again' })).toBeTruthy();
   });
 });

@@ -11,6 +11,7 @@ import { TrophyIcon } from '../components/TrophyIcon';
 import { useAuth } from '../auth/AuthContext';
 import { fasterBoard, HOWFAST_BOARD, type BoardKey } from '../../worker/boards';
 import { cachedLeaderboards, fetchAllLeaderboards, type LeaderboardResult } from './api';
+import { MEDAL_TRIM } from './medals';
 
 type Game = 'faster' | 'howfast';
 
@@ -42,14 +43,6 @@ const TOP_N = 10;
 // load - never resizes the modal (the resize was flashing the game screen behind the dialog). A tall
 // board just grows past this; a short one keeps this floor. ~36px per row plus the column header.
 const BODY_MIN_HEIGHT = TOP_N * 36 + 20;
-
-// Medal colours for the podium places. Fixed metallic hues that read on both the light and dark
-// themes; the podium rank number and a trophy icon beside the name are tinted in their medal colour.
-const MEDAL_TRIM: Record<number, string> = {
-  1: '#E4B21E', // gold
-  2: '#9AA0A6', // silver
-  3: '#C77B3B', // bronze
-};
 
 /**
  * A single ranked row: rank, player, streak. The top-3 get medal trim; the signed-in player's rows

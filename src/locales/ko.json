@@ -180,6 +180,22 @@
     "chips": {
       "hard": "하드",
       "natures": "성격"
+    },
+    "celebration": {
+      "rank1Title": "당신이 챔피언이에요!",
+      "rank1Body": "{{streak}}연속 정답으로 순위표 정상에 올랐어요. 누구도 이루지 못한 최고예요!",
+      "rank2Title": "정상까지 한 걸음!",
+      "rank2Body": "{{streak}}연속 정답으로 은메달이에요. 정상이 손에 잡힐 듯해요.",
+      "rank3Title": "시상대에 올랐어요!",
+      "rank3Body": "{{streak}}연속 정답으로 3위예요. 한 계단만 더 오르면 경치가 더 좋아요.",
+      "topTitle": "순위표에 올랐어요!",
+      "topBody": "{{streak}}연속 정답으로 순위표 #{{rank}}위에 올랐어요. 시상대가 눈앞이에요.",
+      "pbTitle": "새로운 최고 기록!",
+      "pbBody": "{{streak}}연속 정답, 계속 올라가는 중이에요. Top 10이 부르고 있어요.",
+      "practiceTitle": "새로운 최고 기록!",
+      "practiceBody": "{{streak}}연속 정답으로 최고 기록을 경신했어요. 랭크에서 제대로 보여줄 준비됐나요?",
+      "viewLeaderboard": "순위표 보기",
+      "dismiss": "계속 플레이하기"
     }
   }
 }

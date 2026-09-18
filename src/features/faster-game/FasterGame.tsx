@@ -6,8 +6,10 @@ import Typography from '@mui/material/Typography';
 import { useDecks } from '../../decks/DecksContext';
 import { ALL_DECK_ID } from '../../decks/store';
 import { submitScore } from '../../ranked/api';
+import { CelebrationDialog } from '../../ranked/CelebrationDialog';
+import { practiceCelebration, rankedCelebration, type Celebration } from '../../ranked/celebration';
 import { useGuessTimer } from '../../ranked/useGuessTimer';
-import { fasterBoard } from '../../../worker/boards';
+import { fasterBoard, type BoardKey } from '../../../worker/boards';
 import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
 import { MysteryArt } from '../../components/MysteryArt';
@@ -27,6 +29,8 @@ import { ModeToggles } from './ModeToggles';
 interface FasterGameProps {
   /** Whether the app is in ranked mode; ranked plays the full roster against a timed clock. */
   ranked?: boolean;
+  /** Opens the leaderboard on the given board, offered after a leaderboard personal best. */
+  onViewLeaderboard?: (board: BoardKey) => void;
 }
 
 type Phase = 'idle' | 'revealClicked' | 'revealBoth' | 'resolved';
@@ -46,7 +50,7 @@ const REPEAT_PENALTY = 0.12;
  * only close, non-tied pairs; allowing natures compares level-50 max Speed across nature variants.
  * Returns the element.
  */
-export function FasterGame({ ranked = false }: FasterGameProps) {
+export function FasterGame({ ranked = false, onViewLeaderboard }: FasterGameProps) {
   const { t, i18n } = useTranslation();
   const { activePokemon: deckPool, activeDeckId: deckId } = useDecks();
   const [mode, setMode] = useState<GameMode>(loadMode);
@@ -97,6 +101,8 @@ export function FasterGame({ ranked = false }: FasterGameProps) {
   const [roundId, setRoundId] = useState(0);
   const [streak, setStreak] = useState(0);
   const [best, setBest] = useState(() => loadBestStreak(slot));
+  const [celebration, setCelebration] = useState<Celebration | null>(null);
+  const bestBeforeRun = useRef(best);
 
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const clearTimers = () => {
@@ -133,6 +139,7 @@ export function FasterGame({ ranked = false }: FasterGameProps) {
   const tryAgain = () => {
     forgetSeen();
     setStreak(0);
+    bestBeforeRun.current = best;
     startRound();
   };
 
@@ -154,6 +161,7 @@ export function FasterGame({ ranked = false }: FasterGameProps) {
   const startRanked = () => {
     forgetSeen();
     setStreak(0);
+    bestBeforeRun.current = best;
     setRankedStarted(true);
     startRound();
   };
@@ -170,7 +178,9 @@ export function FasterGame({ ranked = false }: FasterGameProps) {
     setOutcome(null);
     setTimedOut(false);
     setStreak(0);
-    setBest(loadBestStreak(slot));
+    const loadedBest = loadBestStreak(slot);
+    setBest(loadedBest);
+    bestBeforeRun.current = loadedBest;
     forgetSeen();
     showAndPrefetch(drawPair());
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -191,8 +201,14 @@ export function FasterGame({ ranked = false }: FasterGameProps) {
   // from a delayed timer.
   const submitRankedRun = () => {
     if (ranked && streak >= 1) {
-      void submitScore(board, streak).catch(() => {});
+      submitScore(board, streak)
+        .then((result) => setCelebration(rankedCelebration(result, board)))
+        .catch(() => {});
     }
+  };
+
+  const celebratePracticeBest = () => {
+    if (!ranked && streak > bestBeforeRun.current) setCelebration(practiceCelebration(streak));
   };
 
   // Ranked only: the clock ran out before the player answered. Freeze the round like a loss - reveal
@@ -250,8 +266,8 @@ export function FasterGame({ ranked = false }: FasterGameProps) {
             saveBestStreak(slot, next);
           }
         } else {
-          // The run just ended on a wrong guess: submit the streak it reached.
           submitRankedRun();
+          celebratePracticeBest();
         }
       }, resolveAt),
     );
@@ -407,6 +423,12 @@ export function FasterGame({ ranked = false }: FasterGameProps) {
       </Box>
 
       <ModeToggles mode={mode} onChange={changeMode} />
+
+      <CelebrationDialog
+        celebration={celebration}
+        onClose={() => setCelebration(null)}
+        onViewLeaderboard={onViewLeaderboard}
+      />
     </Stack>
   );
 }

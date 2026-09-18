@@ -7,8 +7,10 @@ import Typography from '@mui/material/Typography';
 import { useDecks } from '../../decks/DecksContext';
 import { ALL_DECK_ID } from '../../decks/store';
 import { submitScore } from '../../ranked/api';
+import { CelebrationDialog } from '../../ranked/CelebrationDialog';
+import { practiceCelebration, rankedCelebration, type Celebration } from '../../ranked/celebration';
 import { useGuessTimer } from '../../ranked/useGuessTimer';
-import { HOWFAST_BOARD } from '../../../worker/boards';
+import { HOWFAST_BOARD, type BoardKey } from '../../../worker/boards';
 import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
 import { MysteryArt } from '../../components/MysteryArt';
@@ -32,9 +34,11 @@ const RESOLVE_HOLD_MS = 1800;
 interface HowFastProps {
   /** Whether the app is in ranked mode; ranked plays the full roster against a timed clock. */
   ranked?: boolean;
+  /** Opens the leaderboard on the given board, offered after a leaderboard personal best. */
+  onViewLeaderboard?: (board: BoardKey) => void;
 }
 
-export function HowFast({ ranked = false }: HowFastProps) {
+export function HowFast({ ranked = false, onViewLeaderboard }: HowFastProps) {
   const { t, i18n } = useTranslation();
   const { activePokemon: deckPool, activeDeckId: deckId } = useDecks();
   // Ranked opens on the card masked as a mystery, with a Play button in place of Submit; play begins
@@ -58,6 +62,8 @@ export function HowFast({ ranked = false }: HowFastProps) {
   const [roundId, setRoundId] = useState(0);
   const [streak, setStreak] = useState(0);
   const [best, setBest] = useState(() => loadBestStreak(activeDeckId));
+  const [celebration, setCelebration] = useState<Celebration | null>(null);
+  const bestBeforeRun = useRef(best);
 
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const clearTimers = () => {
@@ -84,6 +90,7 @@ export function HowFast({ ranked = false }: HowFastProps) {
   // Wrong guesses hold the streak on screen; it only zeroes when the player taps Try again.
   const tryAgain = () => {
     setStreak(0);
+    bestBeforeRun.current = best;
     nextCard();
   };
 
@@ -93,7 +100,9 @@ export function HowFast({ ranked = false }: HowFastProps) {
     setGuess('');
     setTimedOut(false);
     setStreak(0);
-    setBest(loadBestStreak(activeDeckId));
+    const loadedBest = loadBestStreak(activeDeckId);
+    setBest(loadedBest);
+    bestBeforeRun.current = loadedBest;
     const first = randomIndex(pool.length || 1);
     setIndex(first);
     setNextIndex(pickNext(first));
@@ -108,6 +117,7 @@ export function HowFast({ ranked = false }: HowFastProps) {
   // Play reveals the real card and begins a fresh ranked run.
   const startRanked = () => {
     setStreak(0);
+    bestBeforeRun.current = best;
     setRankedStarted(true);
     nextCard();
   };
@@ -130,8 +140,14 @@ export function HowFast({ ranked = false }: HowFastProps) {
   // only the best).
   const submitRankedRun = () => {
     if (ranked && streak >= 1) {
-      void submitScore(HOWFAST_BOARD, streak).catch(() => {});
+      submitScore(HOWFAST_BOARD, streak)
+        .then((result) => setCelebration(rankedCelebration(result, HOWFAST_BOARD)))
+        .catch(() => {});
     }
+  };
+
+  const celebratePracticeBest = () => {
+    if (!ranked && streak > bestBeforeRun.current) setCelebration(practiceCelebration(streak));
   };
 
   // Ranked only: the clock ran out before the player submitted. Reveal the answer as a failure (the
@@ -172,7 +188,8 @@ export function HowFast({ ranked = false }: HowFastProps) {
     if (!canSubmit || revealed) return;
     setRevealed(true);
     if (Number(guess) !== base) {
-      submitRankedRun(); // wrong: end the run, then hold the streak until Try again
+      submitRankedRun();
+      celebratePracticeBest();
       return;
     }
     const next = streak + 1;
@@ -279,6 +296,12 @@ export function HowFast({ ranked = false }: HowFastProps) {
           </Button>
         </Box>
       )}
+
+      <CelebrationDialog
+        celebration={celebration}
+        onClose={() => setCelebration(null)}
+        onViewLeaderboard={onViewLeaderboard}
+      />
     </Stack>
   );
 }

@@ -83,6 +83,8 @@ describe('HowFast', () => {
 
     type(String(second.baseStats.spe + 1)); // guaranteed wrong
     click(submitBtn());
+    click(screen.getByRole('button', { name: 'Continue playing' }));
+    advance(500); // let the dialog's close transition finish
     expect(streakValue()).toBe('1'); // streak still shown, not reset
     expect(screen.getByRole('button', { name: 'Try again' })).toBeTruthy();
 
