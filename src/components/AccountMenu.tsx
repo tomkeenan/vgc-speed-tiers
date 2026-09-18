@@ -13,12 +13,24 @@ import { EditIcon } from './EditIcon';
 import { GoogleIcon } from './GoogleIcon';
 import { MoonIcon } from './MoonIcon';
 import { SunIcon } from './SunIcon';
+import MuiButton from '@mui/material/Button';
 import { Button } from './Button';
 import { DisplayNameDialog } from './DisplayNameDialog';
 import { useAuth } from '../auth/AuthContext';
 import { getClientId, loadGoogleIdentity } from '../auth/googleIdentity';
 
 const SIGN_IN_WIDTH = 240;
+
+const ROW_SX = {
+  justifyContent: 'flex-start',
+  gap: 0.5,
+  px: 1,
+  py: 0.75,
+  borderRadius: 1,
+  textTransform: 'none',
+  fontWeight: 500,
+  color: 'text.primary',
+} as const;
 
 interface AccountMenuProps {
   onOpenSettings: () => void;
@@ -197,26 +209,30 @@ export function AccountMenu({ onOpenSettings }: AccountMenuProps) {
           {configured && <Divider sx={{ mx: -2 }} />}
 
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
-            <Button
-              variant="ghost"
+            <MuiButton
+              variant="text"
+              color="inherit"
+              fullWidth
               startIcon={<GearIcon />}
               onClick={() => {
                 setAnchorEl(null);
                 onOpenSettings();
               }}
-              sx={{ justifyContent: 'flex-start' }}
+              sx={ROW_SX}
             >
               {t('header.settings')}
-            </Button>
-            <Button
-              variant="ghost"
+            </MuiButton>
+            <MuiButton
+              variant="text"
+              color="inherit"
+              fullWidth
               disabled={!mode}
               startIcon={isDark ? <SunIcon /> : <MoonIcon />}
               onClick={() => setMode(isDark ? 'light' : 'dark')}
-              sx={{ justifyContent: 'flex-start' }}
+              sx={ROW_SX}
             >
               {isDark ? t('themeToggle.toLight') : t('themeToggle.toDark')}
-            </Button>
+            </MuiButton>
           </Box>
         </Box>
       </Popover>
