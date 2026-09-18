@@ -1,11 +1,11 @@
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { getAllPokemon } from '../lib/data';
 import { useDecks } from '../decks/DecksContext';
 import { ALL_DECK_ID } from '../decks/store';
+import { HeaderIconButton } from './HeaderIconButton';
 import { PokeballIcon } from './PokeballIcon';
 
 /**
@@ -28,15 +28,17 @@ export function DeckSelector() {
 
   return (
     <>
-      <IconButton
-        aria-label={t('deckSelector.deckLabel', { name: activeDeck.name })}
+      <HeaderIconButton
+        label={t('deckSelector.deckLabel', { name: activeDeck.name })}
+        active={open}
+        aria-pressed={undefined}
         aria-haspopup="true"
         aria-expanded={open ? true : undefined}
         onClick={(e) => setAnchorEl(e.currentTarget)}
-        sx={{ flexShrink: 0, color: 'text.primary' }}
+        sx={{ flexShrink: 0 }}
       >
         <PokeballIcon />
-      </IconButton>
+      </HeaderIconButton>
       <Menu
         anchorEl={anchorEl}
         open={open}

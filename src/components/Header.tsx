@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { AuthControl } from './AuthControl';
 import { DeckSelector } from './DeckSelector';
 import { GearIcon } from './GearIcon';
+import { HeaderIconButton } from './HeaderIconButton';
 import { LeaderboardIcon } from './LeaderboardIcon';
 import { ThemeToggle } from './ThemeToggle';
 import { useAuth } from '../auth/AuthContext';
@@ -14,6 +14,8 @@ interface HeaderProps {
   onToggleLeaderboard: () => void;
   /** Whether the leaderboard screen is currently open, so the crown reads as active. */
   leaderboardActive: boolean;
+  /** Whether the settings dialog is currently open, so the cog reads as active. */
+  settingsActive: boolean;
 }
 
 /**
@@ -22,7 +24,12 @@ interface HeaderProps {
  * toggles its own screen.
  * Takes onOpenSettings and onToggleLeaderboard handlers plus the leaderboard's open state.
  */
-export function Header({ onOpenSettings, onToggleLeaderboard, leaderboardActive }: HeaderProps) {
+export function Header({
+  onOpenSettings,
+  onToggleLeaderboard,
+  leaderboardActive,
+  settingsActive,
+}: HeaderProps) {
   const { t } = useTranslation();
   const { configured } = useAuth();
   return (
@@ -43,22 +50,21 @@ export function Header({ onOpenSettings, onToggleLeaderboard, leaderboardActive 
         <DeckSelector />
         <ThemeToggle />
         {configured && (
-          <IconButton
-            aria-label={t('ranked.leaderboard')}
-            aria-pressed={leaderboardActive}
+          <HeaderIconButton
+            label={t('ranked.leaderboard')}
+            active={leaderboardActive}
             onClick={onToggleLeaderboard}
-            sx={{ color: leaderboardActive ? 'primary.main' : 'text.primary' }}
           >
             <LeaderboardIcon />
-          </IconButton>
+          </HeaderIconButton>
         )}
-        <IconButton
-          aria-label={t('header.settings')}
+        <HeaderIconButton
+          label={t('header.settings')}
+          active={settingsActive}
           onClick={onOpenSettings}
-          sx={{ color: 'text.primary' }}
         >
           <GearIcon />
-        </IconButton>
+        </HeaderIconButton>
         <AuthControl />
       </Box>
     </Box>

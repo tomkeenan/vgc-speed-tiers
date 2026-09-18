@@ -5,6 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
 import { AccountIcon } from './AccountIcon';
+import { HeaderIconButton } from './HeaderIconButton';
 import { EditIcon } from './EditIcon';
 import { GoogleIcon } from './GoogleIcon';
 import { Button } from './Button';
@@ -85,16 +86,16 @@ export function AuthControl() {
 
   return (
     <>
-      <IconButton
-        aria-label={t('auth.account')}
+      <HeaderIconButton
+        label={t('auth.account')}
+        active={open}
         onClick={(event) => {
           setSignInFailed(false);
           setAnchorEl(event.currentTarget);
         }}
-        sx={{ color: 'text.primary' }}
       >
         <AccountIcon />
-      </IconButton>
+      </HeaderIconButton>
 
       <Popover
         open={open}

@@ -23,6 +23,7 @@ const renderHeader = (props: Partial<Parameters<typeof Header>[0]> = {}) =>
           onOpenSettings={vi.fn()}
           onToggleLeaderboard={vi.fn()}
           leaderboardActive={false}
+          settingsActive={false}
           {...props}
         />
       </DecksProvider>
