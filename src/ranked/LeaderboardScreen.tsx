@@ -37,7 +37,12 @@ const ROW_COLUMNS = '2.5rem 1fr auto';
 
 // The game selector mirrors the header's Practice/Ranked segmented control: a full-width, exclusive
 // ToggleButtonGroup whose buttons share the row evenly.
-const GAME_TOGGLE_SX = { flex: 1, textTransform: 'none', fontWeight: 600, lineHeight: 1.2 } as const;
+const GAME_TOGGLE_SX = {
+  flex: 1,
+  textTransform: 'none',
+  fontWeight: 600,
+  lineHeight: 1.2,
+} as const;
 
 /** The leaderboard shows the top ten; a player outside it still sees their own standing at the foot. */
 const TOP_N = 10;
@@ -188,7 +193,9 @@ export function LeaderboardScreen({ initialBoard = 'faster:standard' }: Leaderbo
     // their rows straight away. The reserved min-height on the body wrapper keeps this from resizing.
     if (!data) {
       return (
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+        <Box
+          sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}
+        >
           <CircularProgress aria-label={t('ranked.loading')} />
         </Box>
       );
@@ -290,7 +297,10 @@ export function LeaderboardScreen({ initialBoard = 'faster:standard' }: Leaderbo
       {/* The Mode dropdown chooses among Who's Faster?'s four boards. How Fast? has only one board, so
           it hides the control while keeping its space reserved (visibility, not display) - both tabs
           take the same height and the list below never shifts when switching games. */}
-      <Box sx={{ visibility: game === 'faster' ? 'visible' : 'hidden' }} aria-hidden={game !== 'faster'}>
+      <Box
+        sx={{ visibility: game === 'faster' ? 'visible' : 'hidden' }}
+        aria-hidden={game !== 'faster'}
+      >
         <FormControl size="small" fullWidth disabled={game !== 'faster'}>
           <InputLabel id="leaderboard-mode-label">{t('ranked.modes.label')}</InputLabel>
           <Select

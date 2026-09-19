@@ -9,7 +9,7 @@ import { ALL_DECK_ID } from '../../decks/store';
 import { submitScore } from '../../ranked/api';
 import { CelebrationDialog } from '../../ranked/CelebrationDialog';
 import { practiceCelebration, rankedCelebration, type Celebration } from '../../ranked/celebration';
-import { useGuessTimer } from '../../ranked/useGuessTimer';
+import { HOW_FAST_GUESS_LIMIT_MS, useGuessTimer } from '../../ranked/useGuessTimer';
 import { HOWFAST_BOARD, type BoardKey } from '../../../worker/boards';
 import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
@@ -175,6 +175,7 @@ export function HowFast({ ranked = false, onViewLeaderboard }: HowFastProps) {
     running: ranked && rankedStarted && !revealed && pool.length > 0,
     roundKey: roundId,
     onExpire: handleTimeout,
+    durationMs: HOW_FAST_GUESS_LIMIT_MS,
   });
 
   if (pool.length === 0) {

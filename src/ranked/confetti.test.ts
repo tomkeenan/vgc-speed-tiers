@@ -36,7 +36,10 @@ describe('fireCelebration', () => {
   });
 
   it('stays silent when the viewer prefers reduced motion', async () => {
-    vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: true })));
+    vi.stubGlobal(
+      'matchMedia',
+      vi.fn(() => ({ matches: true })),
+    );
     await fireCelebration(celebration({ rank: 1, board: 'faster:hard' }));
     expect(confettiFn).not.toHaveBeenCalled();
   });

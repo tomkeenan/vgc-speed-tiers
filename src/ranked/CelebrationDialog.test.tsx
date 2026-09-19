@@ -24,9 +24,13 @@ describe('CelebrationDialog', () => {
   });
 
   it('shows the practice copy and only Continue playing for a local best', () => {
-    renderWithTheme(<CelebrationDialog celebration={celebration({ streak: 8 })} onClose={() => {}} />);
+    renderWithTheme(
+      <CelebrationDialog celebration={celebration({ streak: 8 })} onClose={() => {}} />,
+    );
     expect(screen.getByText('New PB!')).toBeTruthy();
-    expect(bodyText('A streak of 8 beats your record. Ready to make it count in Ranked?')).toBeTruthy();
+    expect(
+      bodyText('A streak of 8 beats your record. Ready to make it count in Ranked?'),
+    ).toBeTruthy();
     expect(screen.getByText('8').tagName).toBe('STRONG');
     expect(screen.getByRole('button', { name: 'Continue playing' })).toBeTruthy();
     expect(screen.queryByRole('button', { name: 'View leaderboard' })).toBeNull();
@@ -34,7 +38,10 @@ describe('CelebrationDialog', () => {
 
   it('shows the ranked copy for a best that did not reach the top ten', () => {
     renderWithTheme(
-      <CelebrationDialog celebration={celebration({ streak: 8, board: 'faster:hard' })} onClose={() => {}} />,
+      <CelebrationDialog
+        celebration={celebration({ streak: 8, board: 'faster:hard' })}
+        onClose={() => {}}
+      />,
     );
     expect(screen.getByText('New PB!')).toBeTruthy();
     expect(bodyText('A streak of 8 and climbing. The top 10 is calling.')).toBeTruthy();
@@ -43,15 +50,23 @@ describe('CelebrationDialog', () => {
 
   it('crowns the champion for first place', () => {
     renderWithTheme(
-      <CelebrationDialog celebration={celebration({ streak: 30, rank: 1, board: 'faster:hard' })} onClose={() => {}} />,
+      <CelebrationDialog
+        celebration={celebration({ streak: 30, rank: 1, board: 'faster:hard' })}
+        onClose={() => {}}
+      />,
     );
     expect(screen.getByText('You are the champion!')).toBeTruthy();
-    expect(bodyText("A streak of 30 tops the leaderboard. You're the very best, like no one ever was!")).toBeTruthy();
+    expect(
+      bodyText("A streak of 30 tops the leaderboard. You're the very best, like no one ever was!"),
+    ).toBeTruthy();
   });
 
   it('shows the silver copy for second place', () => {
     renderWithTheme(
-      <CelebrationDialog celebration={celebration({ streak: 25, rank: 2, board: 'faster:hard' })} onClose={() => {}} />,
+      <CelebrationDialog
+        celebration={celebration({ streak: 25, rank: 2, board: 'faster:hard' })}
+        onClose={() => {}}
+      />,
     );
     expect(screen.getByText('Almost the best!')).toBeTruthy();
     expect(bodyText('A streak of 25 lands you silver. So close you can taste it.')).toBeTruthy();
@@ -59,10 +74,15 @@ describe('CelebrationDialog', () => {
 
   it('shows the podium copy for third place', () => {
     renderWithTheme(
-      <CelebrationDialog celebration={celebration({ streak: 22, rank: 3, board: 'faster:hard' })} onClose={() => {}} />,
+      <CelebrationDialog
+        celebration={celebration({ streak: 22, rank: 3, board: 'faster:hard' })}
+        onClose={() => {}}
+      />,
     );
     expect(screen.getByText('On the podium!')).toBeTruthy();
-    expect(bodyText("A streak of 22 puts you 3rd. The view's even better one step up.")).toBeTruthy();
+    expect(
+      bodyText("A streak of 22 puts you 3rd. The view's even better one step up."),
+    ).toBeTruthy();
   });
 
   it('shows the board copy and opens the run’s board for a top-ten place', () => {
@@ -93,7 +113,9 @@ describe('CelebrationDialog', () => {
       />,
     );
     expect(screen.getByText('New personal best!')).toBeTruthy();
-    expect(bodyText("A streak of 30 raises your record - and you're still #1 on the board.")).toBeTruthy();
+    expect(
+      bodyText("A streak of 30 raises your record - and you're still #1 on the board."),
+    ).toBeTruthy();
     expect(screen.getByRole('button', { name: 'View leaderboard' })).toBeTruthy();
   });
 

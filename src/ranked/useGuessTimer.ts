@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
 /** Ranked play gives the player this long to answer each round before it counts as a failure. */
-export const GUESS_LIMIT_MS = 5000;
+export const GUESS_LIMIT_MS = 3000;
+
+/** How Fast? asks for a typed number, so it gets a longer limit than the tap-to-pick modes. */
+export const HOW_FAST_GUESS_LIMIT_MS = 5000;
 
 // How often the countdown recomputes the displayed value. Coarse enough to stay cheap, fine enough
 // that the fires-at-zero check lands within a tenth of a second of the true deadline.
