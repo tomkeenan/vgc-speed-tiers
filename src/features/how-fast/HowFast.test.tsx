@@ -62,7 +62,7 @@ describe('HowFast', () => {
   it('auto-submits the guess after a pause with no button click', () => {
     render();
     type(String(first.baseStats.spe));
-    advance(1000); // pause after the last digit
+    advance(1500); // pause after the last digit
     expect(screen.queryByText('???')).toBeNull(); // revealed via auto-submit
     expect(streakValue()).toBe('1');
   });

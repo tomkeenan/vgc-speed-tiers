@@ -25,7 +25,7 @@ import { loadBestStreak, saveBestStreak } from './bestStreak';
 
 const SETTLE_BUFFER_MS = 150;
 const RESOLVE_HOLD_MS = 1800;
-const AUTOSUBMIT_DELAY_MS = 700;
+const AUTOSUBMIT_DELAY_MS = 1200;
 
 /**
  * How Fast? feature: shows a Pokemon's artwork and asks the player to type its exact base Speed.

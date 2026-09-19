@@ -79,7 +79,7 @@ export default function App() {
         sx={{
           mx: 'auto',
           maxWidth: '42rem',
-          minHeight: '100dvh',
+          minHeight: '100svh',
           display: 'flex',
           flexDirection: 'column',
           gap: 2,
