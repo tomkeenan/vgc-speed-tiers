@@ -93,7 +93,9 @@ describe('LeaderboardScreen', () => {
   });
 
   it('shows the empty state when a board has no scores', async () => {
-    vi.mocked(fetchAllLeaderboards).mockResolvedValue(boards({ 'faster:standard': { entries: [] } }));
+    vi.mocked(fetchAllLeaderboards).mockResolvedValue(
+      boards({ 'faster:standard': { entries: [] } }),
+    );
     renderScreen();
     expect(
       await screen.findByText('No scores yet. Play a ranked round to claim the top spot.'),

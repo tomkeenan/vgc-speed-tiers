@@ -9,7 +9,7 @@ import { ALL_DECK_ID } from '../../decks/store';
 import { submitScore } from '../../ranked/api';
 import { CelebrationDialog } from '../../ranked/CelebrationDialog';
 import { practiceCelebration, rankedCelebration, type Celebration } from '../../ranked/celebration';
-import { useGuessTimer } from '../../ranked/useGuessTimer';
+import { HOW_FAST_GUESS_LIMIT_MS, useGuessTimer } from '../../ranked/useGuessTimer';
 import { HOWFAST_BOARD, type BoardKey } from '../../../worker/boards';
 import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
@@ -22,6 +22,8 @@ import { TypeBadges } from '../../components/TypeBadges';
 import { displayName, getAllPokemon } from '../../lib/data';
 import { randomIndex } from '../random';
 import { loadBestStreak, saveBestStreak } from './bestStreak';
+import { useFitScale } from './useFitScale';
+import { useKeyboardViewport } from './useKeyboardViewport';
 
 const SETTLE_BUFFER_MS = 150;
 const RESOLVE_HOLD_MS = 1800;
@@ -175,7 +177,14 @@ export function HowFast({ ranked = false, onViewLeaderboard }: HowFastProps) {
     running: ranked && rankedStarted && !revealed && pool.length > 0,
     roundKey: roundId,
     onExpire: handleTimeout,
+    durationMs: HOW_FAST_GUESS_LIMIT_MS,
   });
+
+  const keyboard = useKeyboardViewport();
+  const regionRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const immersive = keyboard.open && !revealed && !showRankedIntro;
+  const fit = useFitScale(regionRef, cardRef, immersive);
 
   if (pool.length === 0) {
     return (
@@ -244,14 +253,36 @@ export function HowFast({ ranked = false, onViewLeaderboard }: HowFastProps) {
           <TypeBadges types={pokemon.types} />
         )}
 
-        <SpeedReveal value={base} revealed={masked ? false : revealed} />
+        {!immersive && <SpeedReveal value={base} revealed={masked ? false : revealed} />}
       </Stack>
     </Card>
   );
 
   return (
-    <Stack spacing={2}>
-      <Stack direction="row" spacing={{ xs: 1, sm: 1.5 }}>
+    <Box
+      sx={
+        immersive
+          ? {
+              position: 'fixed',
+              left: 0,
+              right: 0,
+              zIndex: (theme) => theme.zIndex.appBar,
+              bgcolor: 'background.default',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 1,
+              px: 2,
+              py: 1.5,
+            }
+          : { display: 'flex', flexDirection: 'column', gap: 2 }
+      }
+      style={
+        immersive
+          ? { top: 0, height: `${keyboard.height}px`, transform: `translateY(${keyboard.top}px)` }
+          : undefined
+      }
+    >
+      <Stack direction="row" spacing={{ xs: 1, sm: 1.5 }} sx={{ flexShrink: 0 }}>
         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
           <StreakStat value={streak} label={t('common.streak')} color="text.primary" />
         </Box>
@@ -270,11 +301,51 @@ export function HowFast({ ranked = false, onViewLeaderboard }: HowFastProps) {
         </Box>
       </Stack>
 
-      <Typography sx={{ textAlign: 'center', color: 'text.secondary', fontSize: '0.875rem' }}>
+      <Typography
+        sx={{
+          textAlign: 'center',
+          color: 'text.secondary',
+          fontSize: '0.875rem',
+          display: immersive ? 'none' : 'block',
+        }}
+      >
         {t('howFast.prompt')}
       </Typography>
 
-      {showRankedIntro ? playCard(true) : playCard()}
+      <Box
+        ref={regionRef}
+        sx={
+          immersive
+            ? {
+                flex: 1,
+                minHeight: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                overflow: 'hidden',
+              }
+            : undefined
+        }
+      >
+        <Box
+          sx={{ width: immersive ? undefined : '100%' }}
+          style={
+            immersive ? { width: fit.width * fit.scale, height: fit.height * fit.scale } : undefined
+          }
+        >
+          <Box
+            ref={cardRef}
+            sx={{ width: immersive ? 'max-content' : '100%' }}
+            style={
+              immersive
+                ? { transform: `scale(${fit.scale})`, transformOrigin: 'top left' }
+                : undefined
+            }
+          >
+            {showRankedIntro ? playCard(true) : playCard()}
+          </Box>
+        </Box>
+      </Box>
 
       {/* The input stays in place through the intro (inert until Play) so the surface keeps the same
           shape whether ranked is starting or being played. */}
@@ -292,6 +363,7 @@ export function HowFast({ ranked = false, onViewLeaderboard }: HowFastProps) {
         disabled={revealed || showRankedIntro}
         placeholder={t('howFast.placeholder')}
         fullWidth
+        sx={{ flexShrink: 0 }}
         inputProps={{
           inputMode: 'numeric',
           enterKeyHint: 'done',
@@ -302,33 +374,36 @@ export function HowFast({ ranked = false, onViewLeaderboard }: HowFastProps) {
 
       {/* Before a ranked run starts this row holds Play; during play it holds Submit; once a card is
           revealed it holds Try again (hidden but space-reserved on a correct answer so the surface
-          never jumps while the card auto-advances). */}
-      {showRankedIntro ? (
-        <Button onClick={startRanked}>{t('common.play')}</Button>
-      ) : !revealed ? (
-        <Button onClick={submit} disabled={!canSubmit}>
-          {t('howFast.submit')}
-        </Button>
-      ) : (
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            visibility: correct ? 'hidden' : 'visible',
-          }}
-          aria-hidden={correct}
-        >
-          <Button onClick={tryAgain} tabIndex={correct ? -1 : undefined}>
-            {t('common.tryAgain')}
+          never jumps while the card auto-advances). The keyboard-up surface drops it entirely, since
+          Enter submits. */}
+      <Box sx={{ display: immersive ? 'none' : 'flex', flexDirection: 'column' }}>
+        {showRankedIntro ? (
+          <Button onClick={startRanked}>{t('common.play')}</Button>
+        ) : !revealed ? (
+          <Button onClick={submit} disabled={!canSubmit}>
+            {t('howFast.submit')}
           </Button>
-        </Box>
-      )}
+        ) : (
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              visibility: correct ? 'hidden' : 'visible',
+            }}
+            aria-hidden={correct}
+          >
+            <Button onClick={tryAgain} tabIndex={correct ? -1 : undefined}>
+              {t('common.tryAgain')}
+            </Button>
+          </Box>
+        )}
+      </Box>
 
       <CelebrationDialog
         celebration={celebration}
         onClose={() => setCelebration(null)}
         onViewLeaderboard={onViewLeaderboard}
       />
-    </Stack>
+    </Box>
   );
 }

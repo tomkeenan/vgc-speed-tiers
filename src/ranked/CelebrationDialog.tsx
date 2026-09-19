@@ -49,7 +49,11 @@ function variantFor(rank: number | null): Variant {
  * a plain best gets a trophy. A leaderboard best offers View leaderboard with Continue playing beneath
  * it; a practice best just continues.
  */
-export function CelebrationDialog({ celebration, onClose, onViewLeaderboard }: CelebrationDialogProps) {
+export function CelebrationDialog({
+  celebration,
+  onClose,
+  onViewLeaderboard,
+}: CelebrationDialogProps) {
   const { t } = useTranslation();
   const streak = celebration?.streak ?? 0;
   const rank = celebration?.rank ?? null;
@@ -84,17 +88,41 @@ export function CelebrationDialog({ celebration, onClose, onViewLeaderboard }: C
     }
     switch (variant) {
       case 'rank1':
-        return { title: t('ranked.celebration.rank1Title'), bodyKey: 'ranked.celebration.rank1Body', values: { streak } };
+        return {
+          title: t('ranked.celebration.rank1Title'),
+          bodyKey: 'ranked.celebration.rank1Body',
+          values: { streak },
+        };
       case 'rank2':
-        return { title: t('ranked.celebration.rank2Title'), bodyKey: 'ranked.celebration.rank2Body', values: { streak } };
+        return {
+          title: t('ranked.celebration.rank2Title'),
+          bodyKey: 'ranked.celebration.rank2Body',
+          values: { streak },
+        };
       case 'rank3':
-        return { title: t('ranked.celebration.rank3Title'), bodyKey: 'ranked.celebration.rank3Body', values: { streak } };
+        return {
+          title: t('ranked.celebration.rank3Title'),
+          bodyKey: 'ranked.celebration.rank3Body',
+          values: { streak },
+        };
       case 'top':
-        return { title: t('ranked.celebration.topTitle'), bodyKey: 'ranked.celebration.topBody', values: { streak, rank: rank ?? 0 } };
+        return {
+          title: t('ranked.celebration.topTitle'),
+          bodyKey: 'ranked.celebration.topBody',
+          values: { streak, rank: rank ?? 0 },
+        };
       default:
         return board != null
-          ? { title: t('ranked.celebration.pbTitle'), bodyKey: 'ranked.celebration.pbBody', values: { streak } }
-          : { title: t('ranked.celebration.practiceTitle'), bodyKey: 'ranked.celebration.practiceBody', values: { streak } };
+          ? {
+              title: t('ranked.celebration.pbTitle'),
+              bodyKey: 'ranked.celebration.pbBody',
+              values: { streak },
+            }
+          : {
+              title: t('ranked.celebration.practiceTitle'),
+              bodyKey: 'ranked.celebration.practiceBody',
+              values: { streak },
+            };
     }
   };
   const { title, bodyKey, values } = heading();
@@ -127,9 +155,7 @@ export function CelebrationDialog({ celebration, onClose, onViewLeaderboard }: C
                   i18nKey={bodyKey}
                   values={values}
                   components={{
-                    strong: (
-                      <Box component="strong" sx={{ color: 'gold.main', fontWeight: 700 }} />
-                    ),
+                    strong: <Box component="strong" sx={{ color: 'gold.main', fontWeight: 700 }} />,
                   }}
                 />
               </Typography>
@@ -138,9 +164,7 @@ export function CelebrationDialog({ celebration, onClose, onViewLeaderboard }: C
           <DialogActions sx={{ justifyContent: 'center', pb: 3 }}>
             {board ? (
               <Stack spacing={1.5} alignItems="center">
-                <Button onClick={viewLeaderboard}>
-                  {t('ranked.celebration.viewLeaderboard')}
-                </Button>
+                <Button onClick={viewLeaderboard}>{t('ranked.celebration.viewLeaderboard')}</Button>
                 <Link
                   component="button"
                   underline="none"

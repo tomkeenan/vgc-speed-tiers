@@ -19,7 +19,13 @@ interface HeaderIconButtonProps extends Omit<ComponentProps<typeof IconButton>, 
  * a label, active flag and the icon, forwards any other IconButton props (with sx merged onto the
  * colour rule); returns the element.
  */
-export function HeaderIconButton({ label, active = false, children, sx, ...rest }: HeaderIconButtonProps) {
+export function HeaderIconButton({
+  label,
+  active = false,
+  children,
+  sx,
+  ...rest
+}: HeaderIconButtonProps) {
   return (
     <IconButton
       aria-label={label}
