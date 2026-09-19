@@ -1,14 +1,27 @@
 import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import {
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from 'react-router-dom';
 import Box from '@mui/material/Box';
-import { FasterGame } from './features/faster-game/FasterGame';
-import { HowFast } from './features/how-fast/HowFast';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { TabNav } from './components/TabNav';
 import { DecksProvider } from './decks/DecksContext';
 import { useAuth } from './auth/AuthContext';
 import type { BoardKey } from '../worker/boards';
+
+const FasterGame = lazy(() =>
+  import('./features/faster-game/FasterGame').then((m) => ({ default: m.FasterGame })),
+);
+const HowFast = lazy(() =>
+  import('./features/how-fast/HowFast').then((m) => ({ default: m.HowFast })),
+);
 
 // Loaded on demand so its heavy MUI surface (Autocomplete, Dialog) stays out of the initial chunk.
 const SettingsDialog = lazy(() =>
@@ -20,50 +33,36 @@ const LeaderboardScreen = lazy(() =>
   import('./ranked/LeaderboardScreen').then((m) => ({ default: m.LeaderboardScreen })),
 );
 
-interface TabContext {
-  ranked: boolean;
-  leaderboardBoard: BoardKey | undefined;
-  onViewLeaderboard: (board: BoardKey) => void;
-}
-
 const TABS = [
-  {
-    key: 'leaderboard',
-    labelKey: 'tabs.leaderboard',
-    render: (ctx: TabContext) => <LeaderboardScreen initialBoard={ctx.leaderboardBoard} />,
-  },
-  {
-    key: 'faster',
-    labelKey: 'tabs.faster',
-    render: (ctx: TabContext) => (
-      <FasterGame ranked={ctx.ranked} onViewLeaderboard={ctx.onViewLeaderboard} />
-    ),
-  },
-  {
-    key: 'howfast',
-    labelKey: 'tabs.howFast',
-    render: (ctx: TabContext) => (
-      <HowFast ranked={ctx.ranked} onViewLeaderboard={ctx.onViewLeaderboard} />
-    ),
-  },
+  { key: 'leaderboard', path: '/leaderboard', labelKey: 'tabs.leaderboard' },
+  { key: 'faster', path: '/faster', labelKey: 'tabs.faster' },
+  { key: 'howfast', path: '/howfast', labelKey: 'tabs.howFast' },
 ] as const;
 
 type TabKey = (typeof TABS)[number]['key'];
 
-/** Root component: header, tab navigation, the active feature, and the settings dialog. */
+/** Root component: header, tab navigation, the active feature route, and the settings dialog. */
 export default function App() {
   const { t } = useTranslation();
   const { user } = useAuth();
   const signedIn = Boolean(user);
-  const [tab, setTab] = useState<TabKey>('faster');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [searchParams] = useSearchParams();
   const [ranked, setRanked] = useState(signedIn);
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [leaderboardBoard, setLeaderboardBoard] = useState<BoardKey | undefined>(undefined);
-  const active = TABS.find((t) => t.key === tab) ?? TABS[0];
+
+  const activeTab: TabKey =
+    TABS.find((tab) => location.pathname.startsWith(tab.path))?.key ?? 'faster';
+  const leaderboardBoard = (searchParams.get('board') as BoardKey | null) ?? undefined;
+
+  const goToTab = (key: TabKey) => {
+    const target = TABS.find((tab) => tab.key === key);
+    if (target) navigate(target.path);
+  };
 
   const viewLeaderboard = (board: BoardKey) => {
-    setLeaderboardBoard(board);
-    setTab('leaderboard');
+    navigate(`/leaderboard?board=${encodeURIComponent(board)}`);
   };
 
   const prevSignedIn = useRef(signedIn);
@@ -95,13 +94,28 @@ export default function App() {
 
         <TabNav
           tabs={TABS.map(({ key, labelKey }) => ({ key, label: t(labelKey) }))}
-          active={tab}
-          onChange={setTab}
+          active={activeTab}
+          onChange={goToTab}
         />
 
         <Box component="main" sx={{ flex: 1 }}>
           <Suspense fallback={null}>
-            {active.render({ ranked, leaderboardBoard, onViewLeaderboard: viewLeaderboard })}
+            <Routes>
+              <Route path="/" element={<Navigate to="/faster" replace />} />
+              <Route
+                path="/faster"
+                element={<FasterGame ranked={ranked} onViewLeaderboard={viewLeaderboard} />}
+              />
+              <Route
+                path="/howfast"
+                element={<HowFast ranked={ranked} onViewLeaderboard={viewLeaderboard} />}
+              />
+              <Route
+                path="/leaderboard"
+                element={<LeaderboardScreen initialBoard={leaderboardBoard} />}
+              />
+              <Route path="*" element={<Navigate to="/faster" replace />} />
+            </Routes>
           </Suspense>
         </Box>
 
