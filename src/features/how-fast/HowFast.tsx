@@ -277,39 +277,43 @@ export function HowFast({ ranked = false, onViewLeaderboard }: HowFastProps) {
 
       {showRankedIntro ? playCard(true) : playCard()}
 
-      {/* The input stays in place through the intro (inert until Play) so the surface keeps the same
-          shape whether ranked is starting or being played. */}
-      <TextField
-        type="number"
-        inputRef={inputRef}
-        value={guess}
-        onChange={(e) => {
-          setGuess(e.target.value);
-          if (!revealed && !showRankedIntro) scheduleAutoSubmit(e.target.value);
-        }}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' && !revealed && !showRankedIntro) submit();
-        }}
-        disabled={revealed || showRankedIntro}
-        placeholder={t('howFast.placeholder')}
-        fullWidth
-        inputProps={{
-          inputMode: 'numeric',
-          enterKeyHint: 'done',
-          min: 0,
-          'aria-label': t('howFast.inputAria'),
-        }}
-      />
+      {!showRankedIntro && (
+        <TextField
+          type="number"
+          inputRef={inputRef}
+          value={guess}
+          onChange={(e) => {
+            setGuess(e.target.value);
+            if (!revealed) scheduleAutoSubmit(e.target.value);
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' && !revealed) submit();
+          }}
+          disabled={revealed}
+          placeholder={t('howFast.placeholder')}
+          fullWidth
+          inputProps={{
+            inputMode: 'numeric',
+            enterKeyHint: 'done',
+            min: 0,
+            'aria-label': t('howFast.inputAria'),
+          }}
+        />
+      )}
 
       {/* Before a ranked run starts this row holds Play; during play it holds Submit; once a card is
           revealed it holds Try again (hidden but space-reserved on a correct answer so the surface
-          never jumps while the card auto-advances). */}
+          never jumps while the card auto-advances). Submit is desktop-only: on mobile the input is
+          the last element so the on-screen keyboard sits directly under it, and Enter/auto-submit
+          stand in for the button. */}
       {showRankedIntro ? (
         <Button onClick={startRanked}>{t('common.play')}</Button>
       ) : !revealed ? (
-        <Button onClick={submit} disabled={!canSubmit}>
-          {t('howFast.submit')}
-        </Button>
+        <Box sx={{ display: { xs: 'none', sm: 'flex' }, flexDirection: 'column' }}>
+          <Button onClick={submit} disabled={!canSubmit}>
+            {t('howFast.submit')}
+          </Button>
+        </Box>
       ) : (
         <Box
           sx={{
