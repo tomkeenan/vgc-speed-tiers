@@ -16,8 +16,8 @@ interface CardProps {
 }
 
 const STATE_SX = {
-  correct: { borderColor: 'success.main', borderWidth: 2 },
-  wrong: { borderColor: 'primary.main', borderWidth: 2 },
+  correct: { borderColor: 'success.main' },
+  wrong: { borderColor: 'primary.main' },
 } as const;
 
 const fill = { display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0 } as const;
@@ -43,6 +43,7 @@ export function Card({ children, onClick, ariaLabel, sx, state, stretch }: CardP
       sx={[
         (theme) => ({
           borderRadius: 1,
+          borderWidth: 2,
           boxShadow: theme.tokens.cardShadow,
           transition: theme.transitions.create('border-color', {
             duration: theme.transitions.duration.shorter,
