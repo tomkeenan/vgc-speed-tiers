@@ -302,14 +302,21 @@ export function HowFast({ ranked = false, onViewLeaderboard }: HowFastProps) {
       )}
 
       {/* Before a ranked run starts this row holds Play; during play it holds Submit; once a card is
-          revealed it holds Try again (hidden but space-reserved on a correct answer so the surface
-          never jumps while the card auto-advances). Submit is desktop-only: on mobile the input is
-          the last element so the on-screen keyboard sits directly under it, and Enter/auto-submit
-          stand in for the button. */}
+          revealed it holds Try again. The row keeps a constant height across every state so the
+          surface never jumps: Try again is hidden-but-reserved on a correct answer while the card
+          auto-advances, and Submit is hidden-but-reserved on mobile - it is desktop-only because the
+          input is the last visible element there so the on-screen keyboard sits directly under it,
+          with Enter/auto-submit standing in for the button. */}
       {showRankedIntro ? (
         <Button onClick={startRanked}>{t('common.play')}</Button>
       ) : !revealed ? (
-        <Box sx={{ display: { xs: 'none', sm: 'flex' }, flexDirection: 'column' }}>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            visibility: { xs: 'hidden', sm: 'visible' },
+          }}
+        >
           <Button onClick={submit} disabled={!canSubmit}>
             {t('howFast.submit')}
           </Button>
