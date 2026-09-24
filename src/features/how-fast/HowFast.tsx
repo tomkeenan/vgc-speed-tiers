@@ -279,12 +279,13 @@ export function HowFast({ ranked = false, onViewLeaderboard }: HowFastProps) {
 
       {!showRankedIntro && (
         <TextField
-          type="number"
+          type="text"
           inputRef={inputRef}
           value={guess}
           onChange={(e) => {
-            setGuess(e.target.value);
-            if (!revealed) scheduleAutoSubmit(e.target.value);
+            const digits = e.target.value.replace(/\D/g, '');
+            setGuess(digits);
+            if (!revealed) scheduleAutoSubmit(digits);
           }}
           onKeyDown={(e) => {
             if (e.key === 'Enter' && !revealed) submit();
@@ -294,8 +295,8 @@ export function HowFast({ ranked = false, onViewLeaderboard }: HowFastProps) {
           fullWidth
           inputProps={{
             inputMode: 'numeric',
+            pattern: '[0-9]*',
             enterKeyHint: 'done',
-            min: 0,
             'aria-label': t('howFast.inputAria'),
           }}
         />

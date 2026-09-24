@@ -126,4 +126,16 @@ describe('HowFast', () => {
     expect(input().value).toBe('');
     expect(screen.getByText('???')).toBeTruthy();
   });
+
+  it('uses a text input with a numeric keypad, not type=number (mobile backspace-rewrite desync)', () => {
+    render();
+    expect(input().type).toBe('text');
+    expect(input().inputMode).toBe('numeric');
+  });
+
+  it('keeps only digits in the guess so a mistyped character cannot skew the compare', () => {
+    render();
+    type('8a0');
+    expect(input().value).toBe('80');
+  });
 });
