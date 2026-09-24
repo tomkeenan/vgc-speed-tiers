@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "regulation": "M-C",
+    "source": "https://www.pokedata.ovh/standingsVGC",
+    "note": "Official Play! Pokemon events run under Reg M-C. pokedata does not expose the regulation, so events are curated here by code. Add each new M-C major's Masters-division code as it publishes."
+  },
+  "events": [
+    {
+      "code": "0000192",
+      "name": "2027 Baltimore Regional Championships",
+      "date": "2026-09-18"
+    }
+  ]
+}

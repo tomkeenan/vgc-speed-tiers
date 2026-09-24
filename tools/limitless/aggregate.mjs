@@ -13,6 +13,8 @@ import { resolveMega, megaBasesFrom, readStone } from './megas.mjs';
 // Limitless base id -> our dataset slug, where the two conventions differ. Seeded from known
 // form-name mismatches; extend from the "unknown ids" report below when build-dataset can't resolve one.
 const ID_OVERRIDES = {
+  'calyrex-ice-rider': 'calyrex-ice',
+  'calyrex-shadow-rider': 'calyrex-shadow',
   'indeedee-f': 'indeedee-female',
   'indeedee-m': 'indeedee-male',
   indeedee: 'indeedee-male',

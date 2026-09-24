@@ -18,6 +18,7 @@
  *  to a differently-stemmed mega slug. Everything else uses `<baseId>-mega[-suffix]`. */
 const BASE_STEM = {
   'floette-eternal': 'floette',
+  'pyroar-male': 'pyroar',
   'meowstic-f': 'meowstic-female',
   'meowstic-m': 'meowstic-male',
   meowstic: 'meowstic-male',

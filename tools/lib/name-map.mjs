@@ -22,6 +22,7 @@ const OVERRIDES = {
   Meowstic: 'meowstic-male',
   'Meowstic-M-Mega': 'meowstic-male-mega',
   'Meowstic-F-Mega': 'meowstic-female-mega',
+  Pyroar: 'pyroar-male',
   Lycanroc: 'lycanroc-midday',
   Morpeko: 'morpeko-full-belly',
   'Tauros-Paldea-Combat': 'tauros-paldea-combat-breed',
